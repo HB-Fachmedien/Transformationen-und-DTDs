@@ -267,52 +267,111 @@
 === create toc and local toc
 =========================================================== -->
 <xsl:template name="createToc">
-	<toc>
-		<node title="root" childOrder="BySequenceNr">
-			<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
-				<node sequenceNr="100" childOrder="ByTitleReverseAlphanumeric">
-					<xsl:attribute name="title">
-						<xsl:choose>
-							<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
-								<xsl:text>StR kompakt</xsl:text>
-							</xsl:when>
-							<xsl:when test="descendant::pubtitle/text() = 'Steuerboard-Blog'">
-								<xsl:text>Steuerboard-Blog</xsl:text>
-							</xsl:when>
-							<xsl:when test="descendant::pubtitle/text() = 'Rechtsboard-Blog'">
-								<xsl:text>Rechtsboard-Blog</xsl:text>
-							</xsl:when>
-							<xsl:when test="descendant::pubabbr/text() = 'BWP'">
-								<xsl:text>Bewertungspraktiker</xsl:text>
-							</xsl:when>
-							<xsl:when test="descendant::pubabbr/text() = 'IFST'">
-								<xsl:text>ifst-Schrift</xsl:text>
-							</xsl:when>
-							<xsl:when test="descendant::pubabbr/text() = 'DB'">
-								<xsl:text>Der Betrieb</xsl:text>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:text>Unbekannte Zeitschrift</xsl:text>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:attribute>
-					
-					<!-- get year from element date -->
-					<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}" childOrder="ByTitleReverseAlphanumeric">
-						<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr">
-						
-							<!-- calculate sequenceNr from first page and article's position on page -->
-							<leaf sequenceNr="{
-								(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-								+
-								((number(descendant::article_order/text()) - 1) * 10)
-							}"/>
+	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or (descendant::pubabbr/text()='SU') or ( descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah'))">
+			<toc>
+				<node title="root" childOrder="BySequenceNr">
+					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
+						<node sequenceNr="100" childOrder="ByTitleReverseAlphanumeric">
+							<xsl:attribute name="title">
+								<xsl:choose>
+									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
+										<xsl:text>StR kompakt</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
+										<xsl:text>Bewertungspraktiker</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
+										<xsl:text>ifst-Schriften</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'DB'">
+										<xsl:text>Der Betrieb</xsl:text>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:text>Unbekannte Zeitschrift</xsl:text>
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:attribute>
+
+							<!-- get year from element date -->
+							<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
+								<xsl:choose>
+									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
+										<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
+											<!-- calculate sequenceNr from first page and article's position on page -->
+											<leaf
+												sequenceNr="{
+												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+												+
+												((number(descendant::article_order/text()) - 1) * 10)
+												}"
+											/>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										
+										<node title="Schrift {descendant::pubedition}"
+											childOrder="BySequenceNr">
+											<!-- calculate sequenceNr from first page and article's position on page -->
+											<leaf
+												sequenceNr="{
+												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+												+
+												((number(descendant::article_order/text()) - 1) * 10)
+												}"
+											/>
+										</node>
+									</xsl:when>
+									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
+										<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
+										
+										<xsl:variable name="monat" select="number(tokenize(descendant::date/text(), '-')[2])"/>
+										
+										<xsl:variable name="monatAusgeschrieben">
+											<xsl:choose>
+												<xsl:when test="$monat=1">Januar</xsl:when>
+												<xsl:when test="$monat=2">Februar</xsl:when>
+												<xsl:when test="$monat=3">März</xsl:when>
+												<xsl:when test="$monat=4">April</xsl:when>
+												<xsl:when test="$monat=5">Mai</xsl:when>
+												<xsl:when test="$monat=6">Juni</xsl:when>
+												<xsl:when test="$monat=7">Juli</xsl:when>
+												<xsl:when test="$monat=8">August</xsl:when>
+												<xsl:when test="$monat=9">September</xsl:when>
+												<xsl:when test="$monat=10">Oktober</xsl:when>
+												<xsl:when test="$monat=11">November</xsl:when>
+												<xsl:when test="$monat=12">Dezember</xsl:when>
+											</xsl:choose>
+										</xsl:variable>
+										<!--xsl:comment>MONAT <xsl:value-of select="$monatAusgeschrieben"/></xsl:comment-->
+										<node title="{$monatAusgeschrieben}"
+											childOrder="ByTitleReverseAlphanumeric" sequenceNr="{$monat}">
+											<leaf sequenceNr="100" />
+										</node>
+									</xsl:when>
+									<xsl:otherwise>
+										<!-- Default Verarbeitung -->
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										
+										<node title="Heft {descendant::pubedition}"
+											childOrder="BySequenceNr">
+											
+											<!-- calculate sequenceNr from first page and article's position on page -->
+											<leaf
+												sequenceNr="{
+												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+												+
+												((number(descendant::article_order/text()) - 1) * 10)
+												}"
+											/>
+										</node>
+									</xsl:otherwise>
+								</xsl:choose>							
+							</node>
 						</node>
 					</node>
 				</node>
-			</node>
-		</node>
-	</toc>
+			</toc>
+		</xsl:if>
 </xsl:template>
 
 <xsl:template name="createLocalToc">
