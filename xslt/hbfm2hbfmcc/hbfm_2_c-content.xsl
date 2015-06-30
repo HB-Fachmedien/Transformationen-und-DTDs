@@ -132,6 +132,23 @@
 
 <xsl:template match="pub/date"/>
 
+
+<!-- =========================================================
+=== flaten keywords
+========================================================= -->
+<xsl:template match="keywords">
+	<keywords>
+		<xsl:for-each select="descendant::text()">
+			<xsl:variable name="keywordCandidate" select="normalize-space(.)"/>
+			<xsl:if test="$keywordCandidate != ''">
+				<keyword>
+					<xsl:value-of select="$keywordCandidate"/>
+				</keyword>
+			</xsl:if>
+		</xsl:for-each>
+	</keywords>
+</xsl:template>
+
 <!-- =========================================================
 === create type/origfile from extfile
 ========================================================= -->
@@ -285,6 +302,25 @@
 									</xsl:when>
 									<xsl:when test="descendant::pubabbr/text() = 'DB'">
 										<xsl:text>Der Betrieb</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'CF'">
+										<xsl:text>Corporate Finance</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'CFL'">
+										<xsl:text>Corporate Finance Heft </xsl:text>
+										<xsl:value-of select="descendant::pubedition/text()"/>
+										<xsl:text> CFL</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'CFB'">
+										<xsl:text>Corporate Finance Heft </xsl:text>
+										<xsl:value-of select="descendant::pubedition/text()"/>
+										<xsl:text> CFB</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'FB'">
+										<xsl:text>Finanz Betrieb</xsl:text>
+									</xsl:when>
+									<xsl:when test="descendant::pubabbr/text() = 'KOR'">
+										<xsl:text>Zeitschrift für internationale und kapitalmarktorientierte Rechnungslegung</xsl:text>
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:text>Unbekannte Zeitschrift</xsl:text>
