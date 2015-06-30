@@ -267,7 +267,7 @@
 === create toc and local toc
 =========================================================== -->
 <xsl:template name="createToc">
-	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or (descendant::pubabbr/text()='SU') or ( descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah'))">
+	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or (descendant::pubabbr/text()='SU') or ( descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav'))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
