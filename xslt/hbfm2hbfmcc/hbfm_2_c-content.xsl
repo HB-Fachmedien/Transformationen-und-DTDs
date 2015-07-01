@@ -27,46 +27,67 @@
 
 
 <!-- metadata elements -->
-<xsl:template match="metadata">
-	<metadata>
-		<!-- create elements from attributes -->
-		<xsl:if test="../@docid">
-			<docid><xsl:value-of select="../@docid"/></docid>
-		</xsl:if>
-		<xsl:if test="../@altdocid">
-			<altdocid><xsl:value-of select="../@altdocid"/></altdocid>
-		</xsl:if>
-		<xsl:if test="../@rawid">
-			<rawid><xsl:value-of select="../@rawid"/></rawid>
-		</xsl:if>
-		<xsl:if test="../@extid">
-			<extid><xsl:value-of select="../@extid"/></extid>
-		</xsl:if>
-		
-		<!-- create element maindate -->
-		<maindate>
-			<xsl:choose>
-				<xsl:when test="not(descendant::instdoc[1]/instdocdate)">
-					<!-- create maindate from pub/date -->
-					<xsl:apply-templates select="descendant::pub/date/node()"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<!-- in entscheidungen: use date of entscheidung -->
-					<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</maindate>
+	<xsl:template match="metadata">
+		<metadata>
+			<!-- create elements from attributes -->
+			<xsl:if test="../@docid">
+				<docid>
+					<xsl:value-of select="../@docid"/>
+				</docid>
+			</xsl:if>
+			<xsl:variable name="altdocid" select="../@altdocid"/>
+			<xsl:if test="$altdocid">
+					<!-- Test, ob mehrere altdocids, getrennt durch Leerzeichen, vorhanden sind -->
+					<xsl:choose>
+					<xsl:when test="not(contains($altdocid, ' '))">
+						<altdocid>
+							<xsl:value-of select="$altdocid"/>
+						</altdocid>
+					</xsl:when>
+						<xsl:otherwise>
+							<xsl:variable name="altdocIDs" select="tokenize($altdocid, ' ')"/>
+							<xsl:for-each select="$altdocIDs">
+								<altdocid><xsl:value-of select="."/></altdocid>
+							</xsl:for-each>
+						</xsl:otherwise>
+					</xsl:choose>
+			</xsl:if>
+			<xsl:if test="../@rawid">
+				<rawid>
+					<xsl:value-of select="../@rawid"/>
+				</rawid>
+			</xsl:if>
+			<xsl:if test="../@extid">
+				<extid>
+					<xsl:value-of select="../@extid"/>
+				</extid>
+			</xsl:if>
 
-		
-		<xsl:apply-templates select="*[name() != 'all_doc_type' 
+			<!-- create element maindate -->
+			<maindate>
+				<xsl:choose>
+					<xsl:when test="not(descendant::instdoc[1]/instdocdate)">
+						<!-- create maindate from pub/date -->
+						<xsl:apply-templates select="descendant::pub/date/node()"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<!-- in entscheidungen: use date of entscheidung -->
+						<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</maindate>
+
+
+			<xsl:apply-templates
+				select="*[name() != 'all_doc_type' 
 		                               and name() != 'all_source']"/>
-		
-		<xsl:call-template name="createToc"/>
-		<xsl:call-template name="createLocalToc"/>
-		
-		<xsl:apply-templates select="all_doc_type | all_source"/>
-	</metadata>
-</xsl:template>
+
+			<xsl:call-template name="createToc"/>
+			<xsl:call-template name="createLocalToc"/>
+
+			<xsl:apply-templates select="all_doc_type | all_source"/>
+		</metadata>
+	</xsl:template>
 
 
 
