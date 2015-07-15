@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+    
+    <!-- TODO:
+    
+    1. matches durch = Vergleiche wie in Regel 1 ersetzen
+    2. Regel für all_source Elemente
+    
+    -->
     <pattern>  
         <rule context="all_doc_type[@level='1']">
-            <assert test="matches( text(), '(nb|zs|ko|zt|gt|ent|va|div)')">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>
+            <assert test="text()= 'nb' or text() ='zs' or text() ='ko' or text() ='zt' or text() ='gt' or text() ='ent' or text() ='va' or text() ='div'">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>
         </rule>
     </pattern>
-    <pattern>  
-        <rule context="all_doc_type[@level='2']">
-            <assert test="matches( text(), '(au|divah|divsu|divso|ed|ent|entk|entv|gh|gk|gtdraft|toc|kk|nbb|nr|sp|va|vadraft|vav)')">Das all-doc-type @level=2 Element besitzt unbekannten Content!</assert>
+    
+    <!-- Nicht nötig, überprüft die DTD: -->
+    <!--<pattern>  
+        <rule context="/*">
+            <assert test="name() = 'au' or name() ='divah' or name() ='divsu' or name() ='divso' or name() ='ed' or name() ='ent' or name() ='entk' or name() ='entv' or name() ='gh' or name() ='gk' or name() ='gtdraft' or name() ='toc' or name() ='kk' or name() ='nbb' or name() ='nr' or name() ='sp' or name() ='va' or name() ='vadraft' or name() ='vav'">Das all-doc-type @level=2 Element besitzt unbekannten Content!</assert>
+        </rule>
+    </pattern>-->
+    
+    <pattern>
+        <rule context="pub/add_target">
+            <assert test="text() = ancestor::metadata/all_source[@level='2']/text()">Das add_target Element muss dem all-source @level=2 Element gleichen! Hier wäre das: "<value-of select="ancestor::metadata/all_source[@level='2']/text()"/>"</assert>
         </rule>
     </pattern>
     <pattern>
