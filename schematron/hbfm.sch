@@ -33,16 +33,23 @@
     <pattern>
         <rule context="/*/@altdocid">
             <assert test="string-length(replace(., '[A-Z]','')) &gt;= 7">Das @altdocid Attribut besitzt die falsche Länge!</assert>
+            <assert test="string(number(.)) = 'NaN'">Das @altdocid Attribut darf nicht nur aus Ziffern bestehen, sondern benötigt noch einen Buchstaben Präfix!</assert>
         </rule>
     </pattern>
     <pattern>
         <rule context="/*/@docid">
             <assert test="string-length(replace(., '[A-Z]','')) = 7">Das @docid Attribut besitzt die falsche Länge!</assert>
+            <assert test="string(number(.)) = 'NaN'">Das @docid Attribut darf nicht nur aus Ziffern bestehen, sondern benötigt noch einen Buchstaben Präfix!</assert>
         </rule>
     </pattern>
     <pattern>
         <rule context="pub/pubyear">
             <assert test="string-length(.) = 4">Das Pubyear muss vierstellig sein!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="/*/@rawid">
+            <assert test="not(string(number(.)) = 'NaN')">Das @rawid Attribut darf nur aus Ziffern bestehen!</assert>
         </rule>
     </pattern>
 </schema>
