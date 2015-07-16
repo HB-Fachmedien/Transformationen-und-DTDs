@@ -42,7 +42,7 @@
     <pattern>
         <rule context="pub/date |instdoc/instdocdate">
             <assert test="string-length(text()) = 10  and (translate(text(), '0123456789-', '') = '')">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD</assert>    
-            <!-- http://stackoverflow.com/questions/1188748/xslt-function-to-validate-date-in-the-format-of-yyyymmdd -->
+            <assert test="number(substring(text(), 1, 4)) &gt;= 1900">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD (rule2)</assert>
         </rule>
     </pattern>
     <pattern>
