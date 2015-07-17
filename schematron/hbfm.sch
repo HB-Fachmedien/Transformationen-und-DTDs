@@ -5,6 +5,7 @@
     
     1. matches durch = Vergleiche wie in Regel 1 ersetzen
     2. Regel für all_source Elemente
+    3. pub/date und pubyear Überprüfung bei den Entscheidungen auslassen
     
     -->
     <pattern>  
