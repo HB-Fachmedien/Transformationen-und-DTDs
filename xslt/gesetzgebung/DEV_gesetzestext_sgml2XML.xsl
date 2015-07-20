@@ -76,8 +76,8 @@
                     </law>
                 </xsl:if>
                 <all_doc_type level="1">gt</all_doc_type>
-                <all_source level="1">ent</all_source>
-                <all_source level="2">entges</all_source>
+                <all_source level="1">draft</all_source>
+                <all_source level="2">draftges</all_source>
                 <sgml_root_element doctype="{name()}">
                     <xsl:value-of
                         select="concat(name(), ' SIRIUS-ID=', @SIRIUS-ID, ' TYP=', @TYP, ' ID=', @ID, ' RU=', @RU)"
