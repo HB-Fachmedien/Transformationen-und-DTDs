@@ -83,8 +83,8 @@
                     <instdocnrs><instdocnr><xsl:value-of select="URTZEILE/AZ"/></instdocnr></instdocnrs>
                 </instdoc>
                 <all_doc_type level="1">va</all_doc_type>
-                <all_source level="1">draft</all_source>
-                <all_source level="2">draftvwa</all_source>
+                <all_source level="1">vwa</all_source>
+                <all_source level="2">vwa_collection</all_source>
                 <sgml_root_element doctype="{name()}">
                     <xsl:value-of
                         select="concat(name(), ' SIRIUS-ID=', @SIRIUS-ID, ' TYP=', @TYP, ' ID=', @ID, ' RU=', @RU)"
