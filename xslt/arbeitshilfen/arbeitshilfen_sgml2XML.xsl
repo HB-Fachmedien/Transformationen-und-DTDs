@@ -17,10 +17,10 @@
                 <xsl:with-param name="id" select="@SIRIUS-ID"/>
             </xsl:call-template>
         </xsl:variable>
-        <divah>
-            <!--<xsl:attribute name="docid">
-                <xsl:value-of select="concat('DB', $sevenDigitID)"/>
-            </xsl:attribute>-->
+        <divah rawid="{@SIRIUS-ID}">
+            <xsl:attribute name="docid">
+                <xsl:value-of select="concat('XQ', $sevenDigitID)"/>
+            </xsl:attribute>
             <xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('DB', $sevenDigitID)"/>
             </xsl:attribute>
@@ -63,6 +63,7 @@
                         </last_page>
                         <article_order>1</article_order>
                     </pages>
+                    <add_target>db</add_target>
                 </pub>
                 <extfile display="true" type="{lower-case(DATEI-REF/DATEI/@TYP)}">
                     <xsl:value-of select="DATEI-REF/DATEI/@NAME"/>

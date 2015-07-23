@@ -6,7 +6,7 @@
     version="2.0">
     
     <xsl:output indent="yes"
-        doctype-public="-//Handelsblatt Fachmedien CContent//DTD V1.0//DE"
+        doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE"
         doctype-system="hbfm.dtd"
         encoding="UTF-8" 
     />

@@ -21,9 +21,9 @@
             </xsl:call-template>
         </xsl:variable>
         <vadraft rawid="{@SIRIUS-ID}">
-            <!--<xsl:attribute name="docid">
+            <xsl:attribute name="docid">
                 <xsl:value-of select="concat('VA', $sevenDigitID)"/>
-            </xsl:attribute>-->
+            </xsl:attribute>
             <xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('DB', $sevenDigitID)"/>
             </xsl:attribute>
@@ -42,7 +42,7 @@
                 </xsl:if>
                 <pub>
                     <pubtitle>Verwaltungsanweisungentwurf</pubtitle>
-                    <pubabbr>XQ</pubabbr>
+                    <pubabbr>VA</pubabbr>
                     <pubyear>
                         <xsl:value-of select="PUB/DATUM/JAHR"/>
                     </pubyear>

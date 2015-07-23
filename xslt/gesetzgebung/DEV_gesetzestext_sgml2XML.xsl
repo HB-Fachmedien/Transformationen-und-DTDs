@@ -18,9 +18,9 @@
             </xsl:call-template>
         </xsl:variable>
         <gtdraft rawid="{@SIRIUS-ID}">
-            <!--<xsl:attribute name="docid">
-                <xsl:value-of select="concat('DB', $sevenDigitID)"/>
-            </xsl:attribute>-->
+            <xsl:attribute name="docid">
+                <xsl:value-of select="concat('XQ', $sevenDigitID)"/>
+            </xsl:attribute>
             <xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('DB', $sevenDigitID)"/>
             </xsl:attribute>

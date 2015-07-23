@@ -21,11 +21,12 @@
         </rule>
     </pattern>-->
     
-    <pattern>
+    <!-- Regel mal rausgenommen, nicht sicher, ob wir die noch brauchen -->
+    <!--<pattern>
         <rule context="pub/add_target">
             <assert test="text() = ancestor::metadata/all_source[@level='2']/text()">Das add_target Element muss dem all-source @level=2 Element gleichen! Hier wäre das: "<value-of select="ancestor::metadata/all_source[@level='2']/text()"/>"</assert>
         </rule>
-    </pattern>
+    </pattern>-->
     <pattern>
         <rule context="instdoctype">
             <assert test="matches( text(), '(Kurzinformation|Beschluss|Beschlüsse|Beschluss (Teilentscheidung)|Beschluss (Zwischenentscheidung)|Vorlagebeschluss|Hinweisbeschluss|Nichtannahmebeschluss|Zwischenbeschluss|Teilbeschluss|Kammerbeschluss|Kostenbeschluss|Ergänzungsbeschluss|Senatsbeschluss|Normenkontrollbeschluss|Prozesskostenhilfebeschluss|Entscheidung|Entscheidungen|Vorabentscheidung|Rechtsentscheid|Antrag auf Vorabentscheidung|Urteil|Urteile|Teilurteil|Teilurteile|Versäumnisurteil|Urteil und Versäumnisurteil|Teilversäumnisurteil|Schlussurteil|Anerkenntnisurteil|Ergänzungsurteil|Zwischenurteil|Endurteil|Grundurteil|Einzelrichterurteil|Normenkontrollurteil|Senatsurteil|Senatszwischenurteil|Verzichtsurteil|Vorbehaltsurteil|(Grund- und End-) Urteil|(Grund- und Teil-) Urteil|(Teilversäumnis- und Schluss-) Urteil|(Versäumnisteil-) Urteil|(Adhäsions-) Urteil|Erlass|gleichlautender Erlass|gleichlautende Erlasse|Verfügung|Allgemeinverfügung|Rundverfügung|Hinweisverfügung|Schlussantrag|Schlussanträge|Information|Schreiben|Vergleich|Hinweis|Teil-Schiedsspruch|Bescheid|Bescheide|Gerichtsbescheid|Gerichtsbescheide|Gutachten|Rechtsgutachten|Anhängiges Verfahren|Senatssitzung|Stellungnahme|EuGH-Vorlage|Grüner Brief)')">Dieser instdoctype "<value-of select="."/>" ist nicht erlaubt</assert>

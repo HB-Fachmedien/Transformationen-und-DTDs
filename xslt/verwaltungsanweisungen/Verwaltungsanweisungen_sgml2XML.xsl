@@ -21,9 +21,9 @@
             </xsl:call-template>
         </xsl:variable>
         <vav rawid="{@SIRIUS-ID}">
-            <!--<xsl:attribute name="docid">
+            <xsl:attribute name="docid">
                 <xsl:value-of select="concat('VA', $sevenDigitID)"/>
-            </xsl:attribute>-->
+            </xsl:attribute>
             <xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('DB', $sevenDigitID)"/>
             </xsl:attribute>
