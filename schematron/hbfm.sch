@@ -69,4 +69,10 @@
             <assert test="not(string(number(.)) = 'NaN')">Das @rawid Attribut darf nur aus Ziffern bestehen!</assert>
         </rule>
     </pattern>
+    <pattern>
+        <!-- Wenn das last-page Element gefüllt ist, dann muss das start_page Element ebenfalls einen Zahlenwert haben, sonst schlägt die Transformation fehl -->
+        <rule context="last_page[string(number(text())) != 'NaN']">
+            <assert test="number(./../start_page/text()) = ./../start_page/text()">Wenn das last-page Element gefüllt ist, dann muss das start_page Element ebenfalls einen Inhalt haben!</assert>
+        </rule>
+    </pattern>
 </schema>
