@@ -305,7 +305,7 @@
 === create toc and local toc
 =========================================================== -->
 <xsl:template name="createToc">
-	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or (descendant::pubabbr/text()='SU') or ( descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav'))">
+	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or (descendant::pubabbr/text()='SU') or ( descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
@@ -353,15 +353,8 @@
 							<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
 								<xsl:choose>
 									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
-										<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
-											<!-- calculate sequenceNr from first page and article's position on page -->
-											<leaf
-												sequenceNr="{
-												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-												+
-												((number(descendant::article_order/text()) - 1) * 10)
-												}"
-											/>
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+											<leaf/>
 									</xsl:when>
 									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
