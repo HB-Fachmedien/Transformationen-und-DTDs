@@ -33,6 +33,13 @@
         </rule>
     </pattern>
     
+    <pattern>
+        <!-- Instdocnr muss in VA immer gefüllt sein -->
+        <rule context="vav/metadata/all_source[@level='2'][text()='vwa_collection']">
+            <assert test="./../instdoc/instdocnrs/instdocnr/text() != ''">Instdocnr darf nicht leer sein in Verwaltungsanweisungen!</assert>
+        </rule>
+    </pattern>
+    
     <!-- Bei den Zeitschriften Der Betrieb und Der Konzern werden die Rubriken auf gültige Werte getestet -->
     <pattern>        
         <rule context="rubrik[ancestor::metadata/pub/pubtitle/text()='Der Betrieb' or ancestor::metadata/pub/pubtitle/text()='Der Konzern']">
