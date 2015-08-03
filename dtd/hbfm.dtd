@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.11
+1.14
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -75,6 +75,19 @@ Version 1.11 (18.06.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Keywords können mehrere Ebenen (<a href="#keyword">keyword</a> und eine ID haben</li>
 							<li>Attribut <i>lang</i> zur Sprachkennzeichnung für <a href="#p">p</a></li>
+						</ul>
+Version 1.12 (30.06.15): Änderungen (SG):&#x0013;						
+						<ul>
+							<li>neue Werte für Attribut class im Inhaltsverzeihnis: toc.inhrubr</li>
+							<li>Definition des Attributs id von <a href="#keyword">keyword</a> auf CDATA geändert</li>
+						</ul>
+Version 1.13 (16.07.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>"BMJV" in Liste der möglichen Werte von inst/&#x0040;code</li>
+						</ul>
+Version 1.14 (29.07.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
 
 <h2>Aufbau der DTD</h2>
@@ -632,7 +645,7 @@ _img keywords.png
 _img keyword.png-->
 <!ELEMENT keyword      (#PCDATA | keyword)* >
 <!ATTLIST keyword
-	%attrId;
+	id CDATA #IMPLIED
 >
 
 
@@ -709,8 +722,10 @@ _img inst.png
 		| BAG
 		| BFH
 		| BGH
+		| BPatG
 		| BSG
 		| BVerwG
+		| BayVerfGH
 		| FGBadenWuerttemberg
 		| FGBerlinBrandenburg
 		| FGBremen
@@ -820,6 +835,7 @@ _img inst.png
 		| LGUlm
 		| LGAschaffenburg
 		| LGBamberg
+		| LGBayreuth
 		| LGCoburg
 		| LGHofSaale
 		| LGSchweinfurt
@@ -973,6 +989,7 @@ _img inst.png
 		| SGLeipzig
 		| SGDessauRosslau
 		| SGHalle
+		| SGHamburg
 		| SGMagdeburg
 		| SGItzehoe
 		| SGKiel
@@ -982,6 +999,7 @@ _img inst.png
 		| SGGotha
 		| SGMeiningen
 		| SGNordhausen
+		| SGStendal
 		| VGFreiburg
 		| VGKarlsruhe
 		| VGSigmaringen
@@ -999,6 +1017,7 @@ _img inst.png
 		| VGBremen
 		| VGHamburg
 		| VGDarmstadt
+		| VGDessau
 		| VGFrankfurtMain
 		| VGGiessen
 		| VGKassel
@@ -1033,9 +1052,6 @@ _img inst.png
 		| VGGera
 		| VGMeiningen
 		| VGWeimar
-		| BezirksGMagdeburg
-		| BezirksGPotsdam
-		| BezirksGErfurt
 		| AGAchern
 		| AGBadenBaden
 		| AGBuehl
@@ -1083,6 +1099,7 @@ _img inst.png
 		| AGOberkirch
 		| AGOffenburg
 		| AGWolfach
+		| AGBadArolsen
 		| AGBadSaeckingen
 		| AGStBlasien
 		| AGSchoenau
@@ -1376,6 +1393,7 @@ _img inst.png
 		| AGZeven
 		| AGAchim
 		| AGDiepholz
+		| AGNidda
 		| AGNienburg
 		| AGOsterholzScharmbeck
 		| AGRotenburgWuemme
@@ -1444,6 +1462,7 @@ _img inst.png
 		| AGMendenSauerland
 		| AGMeschede
 		| AGSchmallenberg
+		| AGSchmalkalden
 		| AGSoest
 		| AGWarstein
 		| AGWerl
@@ -1641,6 +1660,7 @@ _img inst.png
 		| AGBurg
 		| AGGardelegen
 		| AGSalzwedel
+		| AGSteinfurt
 		| AGStendal
 		| AGFlensburg
 		| AGHusum
@@ -1695,6 +1715,7 @@ _img inst.png
 		| ArbGMannheim
 		| ArbGPforzheim
 		| ArbGReutlingen
+		| ArbGSenfenberg
 		| ArbGStuttgart
 		| ArbGUlm
 		| ArbGAugsburg
@@ -1766,6 +1787,7 @@ _img inst.png
 		| ArbGDortmund
 		| ArbGGelsenkirchen
 		| ArbGHagen
+		| ArbGHalberstadt
 		| ArbGHamm
 		| ArbGHerford
 		| ArbGHerne
@@ -1808,17 +1830,70 @@ _img inst.png
 		| ArbGJena
 		| ArbGSuhl
 		| ArbGNordhausen
+		| AGHBadenWuerttemberg
+		| AGHBayern
+		| AGHBerlin
+		| AGHBrandenburg
+		| AGHFrankfurt
+		| AGHHamburg
+		| AGHHessen
+		| AGHNiedersachsen
+		| AGHNordrheinWestfalen
+		| AGHRheinlandPfalz
+		| AGHSachsenAnhalt
+		| AGHSchleswigHolstein
+		| AGHThueringen
+		| GStAKarlsruhe
+		| GStAHamm
+		| GStAKoblenz
+		| GStAMuenchen
+		| StABerlin
+		| StABonn
+		| StADuisburg
+		| StADuesseldorf
+		| StAFrankenthalPfalz
+		| StAKoblenz
+		| StAKoeln
+		| StALandauinderPfalz
+		| StALeipzig
+		| StAMainz
+		| StAMoenchengladbach
+		| StAMuenchenI
+		| StANuernbergFuerth
+		| StAStuttgart
+		| StATrier
+		| StATuebingen
+		| StAWuppertal
+		| BezirksGCottbus
 		| BezirksGDresden
+		| BezirksGErfurt
+		| BezirksGFrankfurtOder
 		| BezirksGGera
+		| BezirksGHalle
+		| BezirksGKarlMarxStadt
+		| BezirksGChemnitz
+		| BezirksGLeipzig
+		| BezirksGMagdeburg
+		| BezirksGNeubrandenburg
+		| BezirksGPotsdam
+		| BezirksGRostock
+		| BezirksGSchwerin
+		| BezirksGSuhl
 		| KreisGRostockLand
 		| KreisGSchwerinStadt
 		| KreisGChemnitzStadt
 		| KreisGLeipzigStadt
 		| KreisGSaalfeld
+		| DGHBerlin
+		| DGHHamm
+		| DGHNiedersachsen
+		| DGHStuttgart
+		| TDiGNord
+		| TDiGSüd
 		| HandelskammerHamburg
 		| ATVfGH
 		| NLAGAmsterdam
-		| rsother
+
 
 		| DeutscherBundestag
 		| DeutscherBundesrat
@@ -1849,6 +1924,7 @@ _img inst.png
 		| VKBrandenburg
 		| VKBremen
 		| VKHamburg
+		| VKMecklenburgVorpommern
 		| VKBadenWuerttemberg
 		| VKDuesseldorf
 		| VKDetmold
@@ -1857,6 +1933,7 @@ _img inst.png
 		| VKNiedersachsen
 		| VKHessen
 		| VKRheinlandPfalz
+		| VKSchleswigHolstein
 		| VKSaarland
 		| VKSachsen
 		| VKSachsenAnhalt
@@ -1907,6 +1984,7 @@ _img inst.png
 		| BZSt
 		| BMiB
 		| BMI
+		| BMJV
 		| EUKommission
 		| IFSt
 			) #IMPLIED
@@ -2194,7 +2272,7 @@ Die Befüllung des Attributes ist nicht zwingend erforderlich.
 	       | entscheidung
 	       | konsequenz
 	       | streitjahre
-	       | toc.inhbw | toc.inhsr | toc.inhwr | toc.inhar | toc.inhmantel | toc.article
+	       | toc.inhbw | toc.inhsr | toc.inhwr | toc.inhar | toc.inhmantel | toc.article | toc.inhrubr
 	       ) #IMPLIED
 	%attrNumber;
 >
