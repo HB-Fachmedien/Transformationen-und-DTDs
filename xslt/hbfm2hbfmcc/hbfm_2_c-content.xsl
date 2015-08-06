@@ -324,18 +324,8 @@
 									<xsl:when test="descendant::pubabbr/text() = 'DB'">
 										<xsl:text>Der Betrieb</xsl:text>
 									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'CF'">
+									<xsl:when test="(descendant::pubabbr/text() = 'CF') or (descendant::pubabbr/text() = 'CFL') or (descendant::pubabbr/text() = 'CFB')">
 										<xsl:text>Corporate Finance</xsl:text>
-									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'CFL'">
-										<xsl:text>Corporate Finance Heft </xsl:text>
-										<xsl:value-of select="descendant::pubedition/text()"/>
-										<xsl:text> CFL</xsl:text>
-									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'CFB'">
-										<xsl:text>Corporate Finance Heft </xsl:text>
-										<xsl:value-of select="descendant::pubedition/text()"/>
-										<xsl:text> CFB</xsl:text>
 									</xsl:when>
 									<xsl:when test="descendant::pubabbr/text() = 'FB'">
 										<xsl:text>Finanz Betrieb</xsl:text>
@@ -392,10 +382,24 @@
 												<xsl:when test="$monat=12">Dezember</xsl:when>
 											</xsl:choose>
 										</xsl:variable>
-										<!--xsl:comment>MONAT <xsl:value-of select="$monatAusgeschrieben"/></xsl:comment-->
+										<!-- Dezember soll oben stehen, daher nachfolgende Absolutfunktion-->
 										<node title="{$monatAusgeschrieben}"
-											childOrder="ByTitleReverseAlphanumeric" sequenceNr="{$monat}">
+											childOrder="ByTitleReverseAlphanumeric" sequenceNr="{abs($monat - 13)}">
 											<leaf sequenceNr="100" />
+										</node>
+									</xsl:when>
+									<xsl:when test="(descendant::pubabbr/text() = 'CF') or (descendant::pubabbr/text() = 'CFL') or (descendant::pubabbr/text() = 'CFB')">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										<node title="Heft {descendant::pubabbr/text()} {descendant::pubedition}"
+											childOrder="BySequenceNr">
+											<!-- calculate sequenceNr from first page and article's position on page -->
+											<leaf
+												sequenceNr="{
+												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+												+
+												((number(descendant::article_order/text()) - 1) * 10)
+												}"
+											/>
 										</node>
 									</xsl:when>
 									<xsl:otherwise>
