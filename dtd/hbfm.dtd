@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.14
+1.15
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -88,6 +88,11 @@ Version 1.13 (16.07.15): Änderungen (SG):&#x0013;
 Version 1.14 (29.07.15): Änderungen (SG):&#x0013;	
 						<ul>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
+						</ul>
+Version 1.15 (06.08.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>Wert "other" für andere als in inst/&#x0040;code vorhandene Gerichte/Behörden aufgenommen</li>
+							<li>inst/&#x0040;code muss nun angegeben werden</li>
 						</ul>
 
 <h2>Aufbau der DTD</h2>
@@ -714,7 +719,8 @@ _img inst.png
 <!ATTLIST inst
 	type (court | authority) #REQUIRED
 	code (
-		EuGH
+		other
+		| EuGH
 		| EuG
 		| EGMR
 		| BVerfG
@@ -1987,7 +1993,7 @@ _img inst.png
 		| BMJV
 		| EUKommission
 		| IFSt
-			) #IMPLIED
+			) #REQUIRED
 >
 
 

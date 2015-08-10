@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.14
+1.15
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -71,6 +71,14 @@ Version 1.14 (29.07.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (instcode/&#x0040;court und instcode/&#x0040;authority)</li>
 							<li>neue Werte für section/&#x0040;class: "ausblick" und "aktuell"</li>
+						</ul>
+Version 1.15 (06.08.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>Wert "other" für andere als in instcode/&#x0040;court bzw. instcode/&#x0040;authority vorhandene Gerichte/Behörden aufgenommen</li>
+						</ul>
+Version 1.15 (10.08.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>neues Attribut <i>expanded</i> für Element <a href="#node">node</a></li>
 						</ul>
 
 
@@ -652,6 +660,7 @@ _img node.png
 	title      CDATA #REQUIRED
 	childOrder (BySequenceNr | ByTitleAlphanumeric | ByTitleReverseAlphanumeric) #REQUIRED
 	sequenceNr CDATA #IMPLIED
+	expanded (true)  #IMPLIED
 >
 
 <!-- siehe Dokumentation zu <a href="#toc">toc</a> 
@@ -816,7 +825,8 @@ _img instcode.png
 <!ELEMENT instcode    (#PCDATA) >
 <!ATTLIST instcode
 	court (
-		EuGH
+		other
+		| EuGH
 		| EuG
 		| EGMR
 		| BVerfG
@@ -1997,7 +2007,8 @@ _img instcode.png
 		| NLAGAmsterdam) #IMPLIED
 		
 	authority (
-		DeutscherBundestag
+		other
+		| DeutscherBundestag
 		| DeutscherBundesrat
 		| BMF
 		| FinMinDerLaender
