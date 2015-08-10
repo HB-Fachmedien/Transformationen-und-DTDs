@@ -82,4 +82,9 @@
             <assert test="number(./../start_page/text()) = ./../start_page/text()">Wenn das last-page Element gefüllt ist, dann muss das start_page Element ebenfalls einen Inhalt haben!</assert>
         </rule>
     </pattern>
+    <pattern>
+        <rule context="metadata/ressort">
+            <assert test="text()= 'bw' or text() ='sr' or text() ='wr' or text() ='ar' or text() ='br' or text() ='kr'" >Das Ressort besitzt einen ungültigen Inhalt!</assert>
+        </rule>
+    </pattern>
 </schema>
