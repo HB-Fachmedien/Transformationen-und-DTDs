@@ -344,7 +344,7 @@
 								<xsl:choose>
 									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-											<leaf/>
+										<leaf sequenceNr="0"/>
 									</xsl:when>
 									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
@@ -384,7 +384,7 @@
 										</xsl:variable>
 										<!-- Dezember soll oben stehen, daher nachfolgende Absolutfunktion-->
 										<node title="{$monatAusgeschrieben}"
-											childOrder="ByTitleReverseAlphanumeric" sequenceNr="{abs($monat - 13)}">
+											childOrder="ByTitleAlphanumeric" sequenceNr="{abs($monat - 13)}">
 											<leaf sequenceNr="100" />
 										</node>
 									</xsl:when>
@@ -400,6 +400,49 @@
 												((number(descendant::article_order/text()) - 1) * 10)
 												}"
 											/>
+										</node>
+									</xsl:when>
+									<xsl:when test="descendant::pubtitle/text() = 'Der Betrieb'">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										
+										<node title="Heft {descendant::pubedition}"
+											childOrder="BySequenceNr">
+											
+											<!-- Hier jetzt Ressorts Unterscheidung -->
+											<xsl:variable name="ressortNameAndSeqN">
+												<xsl:choose>
+													<xsl:when test="ressort/text()='bw'">Betriebswirtschaft#100</xsl:when>
+													<xsl:when test="ressort/text()='sr'">Steuerrecht#200</xsl:when>
+													<xsl:when test="ressort/text()='wr'">Wirtschaftsrecht#300</xsl:when>
+													<xsl:when test="ressort/text()='ar'">Arbeitsrecht#400</xsl:when>
+													<xsl:otherwise>Weitere Inhalte#500</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
+
+											<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">
+												<xsl:variable name="docTypeAndSeqN">
+													<xsl:choose>
+														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+														<xsl:when test="../name()='kk'">Kurz kommentiert#200</xsl:when>
+														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
+													</xsl:choose>
+												</xsl:variable>
+												<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
+													<leaf
+														sequenceNr="{
+														(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+														+
+														((number(descendant::article_order/text()) - 1) * 10)
+														}"
+													/>
+												</node>
+											</node> 
 										</node>
 									</xsl:when>
 									<xsl:otherwise>
