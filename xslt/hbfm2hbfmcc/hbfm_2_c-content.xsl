@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- HBFM to HBFMCC Transformation Version 1.01 -->
+
 <xsl:transform 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -341,11 +344,24 @@
 
 							<!-- get year from element date -->
 							<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
+								<xsl:variable name="beilagennummer" select="descendant::pub/pub_suppl/text()"/>
 								<xsl:choose>
+									<!-- Wenn es sich um eine Heftbeilage handelt, dann ist das pub_suppl Element gefüllt und wird gesondert behandelt: -->
+									<xsl:when test="number($beilagennummer) > 0">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										<node childOrder="ByTitleAlphanumeric">
+											<xsl:attribute name="title">Beilage <xsl:value-of select="$beilagennummer"/> (zu Heft <xsl:value-of select="descendant::pub/pubedition"/>)</xsl:attribute>
+											<leaf sequenceNr="0"/>
+										</node>
+									</xsl:when>
+									
+									<!-- Bewertungspraktiker -->
 									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										<leaf sequenceNr="0"/>
 									</xsl:when>
+									
+									<!-- IFST SCHRIFT -->
 									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										
@@ -361,6 +377,8 @@
 											/>
 										</node>
 									</xsl:when>
+									
+									<!-- StR Kompakt -->
 									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
 										<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
 										
@@ -388,6 +406,8 @@
 											<leaf sequenceNr="100" />
 										</node>
 									</xsl:when>
+									
+									<!-- Corporate Finance -->
 									<xsl:when test="(descendant::pubabbr/text() = 'CF') or (descendant::pubabbr/text() = 'CFL') or (descendant::pubabbr/text() = 'CFB')">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										<node title="Heft {descendant::pubabbr/text()} {descendant::pubedition}"
@@ -402,6 +422,8 @@
 											/>
 										</node>
 									</xsl:when>
+									
+									<!-- Der Betrieb -->
 									<xsl:when test="descendant::pubtitle/text() = 'Der Betrieb'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										
