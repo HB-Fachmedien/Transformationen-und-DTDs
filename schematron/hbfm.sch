@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- HBFM Schematron Version 1.01 -->
+
+
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
     
     <!-- TODO:
@@ -83,8 +87,11 @@
         </rule>
     </pattern>
     <pattern>
-        <rule context="metadata/ressort">
+        <rule context="metadata/ressort[ancestor::metadata/pub/pubtitle/text()='Der Betrieb']">
             <assert test="text()= 'bw' or text() ='sr' or text() ='wr' or text() ='ar' or text() ='br' or text() ='kr'" >Das Ressort besitzt einen ungültigen Inhalt!</assert>
+        </rule>
+        <rule context="metadata/ressort[ancestor::metadata/pub/pubtitle/text()='Corporate Finance']">
+            <assert test="text()= 'Finanzierung' or text() ='Kapitalmarkt' or text() ='Bewertung' or text() ='Mergers &amp; Acquisitions' or text() ='Agenda' or text() ='Bildung' or text() ='Corporate Governance' or text() ='Existenzgründung' or text() ='Finanzmanagement' or text() ='Finanzmarkt' or text() ='Gründung' or text() ='Unternehmen' or text() ='Märkte' or text() ='Outlook' or text() ='Private Equity' or text() ='Scope' or text() ='Statements' or text() ='Tools' or text() ='Venture Capital' or text() ='Transaktionen'" >Das Ressort besitzt einen ungültigen Inhalt!</assert>
         </rule>
     </pattern>
 </schema>
