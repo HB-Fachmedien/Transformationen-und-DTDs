@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM to HBFMCC Transformation Version 1.01 -->
+<!-- HBFM to HBFMCC Transformation Version 1.02 -->
 
 <xsl:transform 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -308,32 +308,33 @@
 === create toc and local toc
 =========================================================== -->
 <xsl:template name="createToc">
-	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or (descendant::pubabbr/text()='SU') or ( descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
+	<xsl:variable name="pub-abbr" select="descendant::pubabbr/text()"/>
+	<xsl:if test="not(($pub-abbr = 'Steuerboard-Blog') or ($pub-abbr='SU') or ($pub-abbr = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
 						<node sequenceNr="100" childOrder="ByTitleReverseAlphanumeric">
 							<xsl:attribute name="title">
 								<xsl:choose>
-									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
+									<xsl:when test="$pub-abbr = 'StR kompakt'">
 										<xsl:text>StR kompakt</xsl:text>
 									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
+									<xsl:when test="$pub-abbr = 'BWP'">
 										<xsl:text>Bewertungspraktiker</xsl:text>
 									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
+									<xsl:when test="$pub-abbr = 'IFST'">
 										<xsl:text>ifst-Schriften</xsl:text>
 									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'DB'">
+									<xsl:when test="$pub-abbr = 'DB'">
 										<xsl:text>Der Betrieb</xsl:text>
 									</xsl:when>
-									<xsl:when test="(descendant::pubabbr/text() = 'CF') or (descendant::pubabbr/text() = 'CFL') or (descendant::pubabbr/text() = 'CFB')">
+									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB')">
 										<xsl:text>Corporate Finance</xsl:text>
 									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'FB'">
+									<xsl:when test="$pub-abbr = 'FB'">
 										<xsl:text>Finanz Betrieb</xsl:text>
 									</xsl:when>
-									<xsl:when test="descendant::pubabbr/text() = 'KOR'">
+									<xsl:when test="$pub-abbr = 'KOR'">
 										<xsl:text>Zeitschrift für internationale und kapitalmarktorientierte Rechnungslegung</xsl:text>
 									</xsl:when>
 									<xsl:otherwise>
@@ -345,6 +346,7 @@
 							<!-- get year from element date -->
 							<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
 								<xsl:variable name="beilagennummer" select="descendant::pub/pub_suppl/text()"/>
+								<xsl:variable name="ressortname" select="ressort/text()"/>
 								<xsl:choose>
 									<!-- Wenn es sich um eine Heftbeilage handelt, dann ist das pub_suppl Element gefüllt und wird gesondert behandelt: -->
 									<xsl:when test="number($beilagennummer) > 0">
@@ -356,13 +358,13 @@
 									</xsl:when>
 									
 									<!-- Bewertungspraktiker -->
-									<xsl:when test="descendant::pubabbr/text() = 'BWP'">
+									<xsl:when test="$pub-abbr = 'BWP'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										<leaf sequenceNr="0"/>
 									</xsl:when>
 									
 									<!-- IFST SCHRIFT -->
-									<xsl:when test="descendant::pubabbr/text() = 'IFST'">
+									<xsl:when test="$pub-abbr = 'IFST'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										
 										<node title="Schrift {descendant::pubedition}"
@@ -408,18 +410,65 @@
 									</xsl:when>
 									
 									<!-- Corporate Finance -->
-									<xsl:when test="(descendant::pubabbr/text() = 'CF') or (descendant::pubabbr/text() = 'CFL') or (descendant::pubabbr/text() = 'CFB')">
+									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB')">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node title="Heft {descendant::pubabbr/text()} {descendant::pubedition}"
-											childOrder="BySequenceNr">
-											<!-- calculate sequenceNr from first page and article's position on page -->
-											<leaf
-												sequenceNr="{
-												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-												+
-												((number(descendant::article_order/text()) - 1) * 10)
-												}"
-											/>
+										<xsl:variable name="cf-title">
+											<xsl:choose>
+												<xsl:when test="$pub-abbr = 'CFL'">Heft CFL <xsl:value-of select="descendant::pubedition"/></xsl:when>
+												<xsl:when test="$pub-abbr = 'CFB'">Heft CFB <xsl:value-of select="descendant::pubedition"/></xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$cf-title}" childOrder="BySequenceNr">
+											<xsl:variable name="cf-ressort-seq-nr" >
+												<xsl:choose>
+													<xsl:when test="$ressortname='Finanzierung'">100</xsl:when>
+													<xsl:when test="$ressortname='Kapitalmarkt'">200</xsl:when>
+													<xsl:when test="$ressortname='Bewertung'">300</xsl:when>
+													<xsl:when test="$ressortname='Mergers &amp; Acquisitions'">400</xsl:when>
+													<xsl:when test="$ressortname='Agenda'">500</xsl:when>
+													<xsl:when test="$ressortname='Bildung'">600</xsl:when>
+													<xsl:when test="$ressortname='Corporate Governance'">700</xsl:when>
+													<xsl:when test="$ressortname='Existenzgründung'">800</xsl:when>
+													<xsl:when test="$ressortname='Finanzmanagement'">900</xsl:when>
+													<xsl:when test="$ressortname='Finanzmarkt'">1000</xsl:when>
+													<xsl:when test="$ressortname='Gründung'">1100</xsl:when>
+													<xsl:when test="$ressortname='Märkte'">1200</xsl:when>
+													<xsl:when test="$ressortname='Outlook'">1300</xsl:when>
+													<xsl:when test="$ressortname='Private Equity'">1400</xsl:when>
+													<xsl:when test="$ressortname='Scope'">1500</xsl:when>
+													<xsl:when test="$ressortname='Statements'">1600</xsl:when>
+													<xsl:when test="$ressortname='Tools'">1700</xsl:when>
+													<xsl:when test="$ressortname='Transaktionen'">1800</xsl:when>
+													<xsl:when test="$ressortname='Unternehmen'">1900</xsl:when>
+													<xsl:when test="$ressortname='Venture Capital'">2000</xsl:when>
+													<xsl:otherwise>2100</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
+											<node title="{$ressortname}" sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
+												<xsl:variable name="docType-SeqN">
+													<xsl:choose>
+														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+														<xsl:when test="../name()='kk'">Kurz kommentiert#200</xsl:when>
+														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
+													</xsl:choose>
+												</xsl:variable>
+												<node title="{tokenize($docType-SeqN, '#')[1]}" sequenceNr="{tokenize($docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+													<leaf
+														sequenceNr="{
+														(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+														+
+														((number(descendant::article_order/text()) - 1) * 10)
+														}"
+													/>
+												</node>
+											</node>
 										</node>
 									</xsl:when>
 									
@@ -433,10 +482,10 @@
 											<!-- Hier jetzt Ressorts Unterscheidung -->
 											<xsl:variable name="ressortNameAndSeqN">
 												<xsl:choose>
-													<xsl:when test="ressort/text()='bw'">Betriebswirtschaft#100</xsl:when>
-													<xsl:when test="ressort/text()='sr'">Steuerrecht#200</xsl:when>
-													<xsl:when test="ressort/text()='wr'">Wirtschaftsrecht#300</xsl:when>
-													<xsl:when test="ressort/text()='ar'">Arbeitsrecht#400</xsl:when>
+													<xsl:when test="$ressortname='bw'">Betriebswirtschaft#100</xsl:when>
+													<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
+													<xsl:when test="$ressortname='wr'">Wirtschaftsrecht#300</xsl:when>
+													<xsl:when test="$ressortname='ar'">Arbeitsrecht#400</xsl:when>
 													<xsl:otherwise>Weitere Inhalte#500</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>
