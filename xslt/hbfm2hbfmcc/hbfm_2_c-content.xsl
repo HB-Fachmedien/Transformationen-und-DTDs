@@ -407,7 +407,7 @@
 									</xsl:when>
 									
 									<!-- Corporate Finance -->
-									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB')">
+									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB') or ($pub-abbr = 'FB')">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										<xsl:variable name="cf-title">
 											<xsl:choose>
