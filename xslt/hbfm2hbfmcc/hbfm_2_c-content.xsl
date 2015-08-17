@@ -328,11 +328,8 @@
 									<xsl:when test="$pub-abbr = 'DB'">
 										<xsl:text>Der Betrieb</xsl:text>
 									</xsl:when>
-									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB')">
+									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB') or ($pub-abbr = 'FB')">
 										<xsl:text>Corporate Finance</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'FB'">
-										<xsl:text>Finanz Betrieb</xsl:text>
 									</xsl:when>
 									<xsl:when test="$pub-abbr = 'KOR'">
 										<xsl:text>Zeitschrift für internationale und kapitalmarktorientierte Rechnungslegung</xsl:text>
