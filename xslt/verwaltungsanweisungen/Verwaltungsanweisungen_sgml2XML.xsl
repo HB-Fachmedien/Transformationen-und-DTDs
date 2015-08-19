@@ -41,7 +41,7 @@
                     </summary>
                 </xsl:if>
                 <pub>
-                    <pubtitle>Verwaltungsanweisung</pubtitle>
+                    <pubtitle/>
                     <pubabbr>VA</pubabbr>
                     <pubyear>
                         <xsl:value-of select="PUB/DATUM/JAHR"/>
