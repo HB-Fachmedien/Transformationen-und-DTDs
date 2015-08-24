@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.01 -->
+<!-- HBFM Schematron Version 1.02 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -9,7 +9,6 @@
     
     1. matches durch = Vergleiche wie in Regel 1 ersetzen
     2. Regel für all_source Elemente
-    3. pub/date und pubyear Überprüfung bei den Entscheidungen auslassen
     
     -->
     <pattern>  
@@ -53,7 +52,7 @@
         </rule>
     </pattern>
     <pattern>
-        <rule context="pub/date |instdoc/instdocdate">
+        <rule context="instdoc/instdocdate | pub/date[ancestor::metadata/all_source[@level='1']/text()='zsa'] | pub/date[text() != '']">
             <assert test="string-length(text()) = 10  and (translate(text(), '0123456789-', '') = '')">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD</assert>    
             <assert test="number(substring(text(), 1, 4)) &gt;= 1900">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD (rule2)</assert>
         </rule>
@@ -71,8 +70,14 @@
         </rule>
     </pattern>
     <pattern>
-        <rule context="pub/pubyear">
+        <rule context="pub/pubyear[ancestor::metadata/all_source[@level='1']/text()='zsa'] | pub/pubyear[text() != '']">
             <assert test="string-length(.) = 4">Das Pubyear muss vierstellig sein!</assert>
+            <assert test="not(string(number(.)) = 'NaN')">Das pubyear darf nur aus Zahlen bestehen!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and  ancestor::metadata/all_source[@level='2' and not(text()='str')]]">
+            <assert test="not(string(number(.)) = 'NaN')">Die Pubedition darf nur aus Zahlen bestehen!</assert>
         </rule>
     </pattern>
     <pattern>
