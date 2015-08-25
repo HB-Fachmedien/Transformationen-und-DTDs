@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM to HBFMCC Transformation Version 1.02 -->
+<!-- HBFM to HBFMCC Transformation Version 1.03 -->
+<!-- 
+
+Version 1.03:
+TOC für KOR und DK
+
+-->
 
 <xsl:transform 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -332,7 +338,10 @@
 										<xsl:text>Corporate Finance</xsl:text>
 									</xsl:when>
 									<xsl:when test="$pub-abbr = 'KOR'">
-										<xsl:text>Zeitschrift für internationale und kapitalmarktorientierte Rechnungslegung</xsl:text>
+										<xsl:text>KoR</xsl:text>
+									</xsl:when>
+									<xsl:when test="$pub-abbr = 'DK'">
+										<xsl:text>Der Konzern</xsl:text>
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:text>Unbekannte Zeitschrift</xsl:text>
@@ -403,6 +412,66 @@
 										<node title="{$monatAusgeschrieben}"
 											childOrder="ByTitleAlphanumeric" sequenceNr="{abs($monat - 13)}">
 											<leaf sequenceNr="100" />
+										</node>
+									</xsl:when>
+									
+									<xsl:when test="$pub-abbr = 'DK'">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										
+										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr">
+											<xsl:variable name="dk-ressorts" >
+												<xsl:choose>
+													<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
+													<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
+													<xsl:when test="$ressortname='br'">Bilanzrecht/Rechnungslegung#300</xsl:when>
+													<xsl:otherwise>2100</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
+											<node title="{tokenize($dk-ressorts, '#')[1]}" sequenceNr="{tokenize($dk-ressorts, '#')[2]}" childOrder="BySequenceNr" expanded="true">
+												<xsl:variable name="dk-dokt">
+													<xsl:choose>
+														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+														<xsl:when test="../name()='ent'">Entscheidungen#200</xsl:when>
+														<xsl:when test="../name()='entk'">Entscheidungen#200</xsl:when>
+														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+														<xsl:when test="../name()='nr'">Nachrichten#400</xsl:when>
+													</xsl:choose>
+												</xsl:variable>
+												<node title="{tokenize($dk-dokt, '#')[1]}" sequenceNr="{tokenize($dk-dokt, '#')[2]}" childOrder="BySequenceNr">
+													<leaf
+														sequenceNr="{
+														(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+														+
+														((number(descendant::article_order/text()) - 1) * 10)
+														}"
+													/>
+												</node>
+											</node>
+										</node>
+									</xsl:when>
+									
+									<!-- KOR -->
+									<xsl:when test="$pub-abbr = 'KOR'">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr" expanded="true">
+											<xsl:variable name="kor-docType-SeqN">
+												<xsl:choose>
+													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
+													<xsl:when test="../name()='nr'">Reports#500</xsl:when>
+													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
+												</xsl:choose>
+											</xsl:variable>
+											
+											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+												<leaf
+													sequenceNr="{
+													(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)
+													}"
+												/>
+											</node>
 										</node>
 									</xsl:when>
 									
