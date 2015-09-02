@@ -315,14 +315,14 @@ TOC für KOR und DK
 =========================================================== -->
 <xsl:template name="createToc">
 	<xsl:variable name="pub-abbr" select="descendant::pubabbr/text()"/>
-	<xsl:if test="not(($pub-abbr = 'Steuerboard-Blog') or ($pub-abbr='SU') or ($pub-abbr = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
+	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
 						<node sequenceNr="100" childOrder="ByTitleReverseAlphanumeric">
 							<xsl:attribute name="title">
 								<xsl:choose>
-									<xsl:when test="$pub-abbr = 'StR kompakt'">
+									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
 										<xsl:text>StR kompakt</xsl:text>
 									</xsl:when>
 									<xsl:when test="$pub-abbr = 'BWP'">
