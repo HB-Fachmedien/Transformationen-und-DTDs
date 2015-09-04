@@ -54,7 +54,7 @@
     <pattern>
         <rule context="instdoc/instdocdate | pub/date[ancestor::metadata/all_source[@level='1']/text()='zsa'] | pub/date[text() != '']">
             <assert test="string-length(text()) = 10  and (translate(text(), '0123456789-', '') = '')">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD</assert>    
-            <assert test="number(substring(text(), 1, 4)) &gt;= 1900">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD (rule2)</assert>
+            <assert test="number(substring(text(), 1, 4)) &gt;= 1900 or number(substring(text(), 1, 4)) = 0000">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD (rule2)</assert>
         </rule>
     </pattern>
     <pattern>
