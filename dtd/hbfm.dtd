@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.15
+1.16
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -67,7 +67,7 @@ Version 1.09 (29.04.15): Änderungen (SG):&#x0013;
 						</ul>
 Version 1.10 (13.05.15): Änderungen (SG):&#x0013;						
 						<ul>
-							<li>Attribute docid und rawid der Root-Elemente auf implied setzen </li>
+							<li>Attribute docid und rawid der Root-Elemente auf implied setzen</li>
 							<li>Neue Elemente <a href="#version">version</a> und <a href="#ref">ref</a> hinzugefügt</li>
 							<li>Elemente <i>instcode</i> und <i>insttype</i> in <a href="#inst">inst</a> zusammengefasst</li>
 						</ul>
@@ -93,6 +93,10 @@ Version 1.15 (06.08.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Wert "other" für andere als in inst/&#x0040;code vorhandene Gerichte/Behörden aufgenommen</li>
 							<li>inst/&#x0040;code muss nun angegeben werden</li>
+						</ul>
+Version 1.16 (04.09.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
 
 <h2>Aufbau der DTD</h2>
@@ -732,6 +736,10 @@ _img inst.png
 		| BSG
 		| BVerwG
 		| BayVerfGH
+		| HbGVerfG
+		| SaechsVerfGH
+		| VerfGHSachsenAnhalt
+		| VerfGHThueringen
 		| FGBadenWuerttemberg
 		| FGBerlinBrandenburg
 		| FGBremen
@@ -762,7 +770,7 @@ _img inst.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen	
+		| OLGThueringen
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -841,6 +849,7 @@ _img inst.png
 		| LGUlm
 		| LGAschaffenburg
 		| LGBamberg
+		| LGBautzen
 		| LGBayreuth
 		| LGCoburg
 		| LGHofSaale
@@ -1059,6 +1068,7 @@ _img inst.png
 		| VGMeiningen
 		| VGWeimar
 		| AGAchern
+		| AGAnnaberg
 		| AGBadenBaden
 		| AGBuehl
 		| AGGernsbach
@@ -1076,7 +1086,7 @@ _img inst.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten		
+		| AGBretten
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1112,7 +1122,7 @@ _img inst.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim		
+		| AGBadMergentheim
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -1402,6 +1412,7 @@ _img inst.png
 		| AGNidda
 		| AGNienburg
 		| AGOsterholzScharmbeck
+		| AGRotenburgFulda
 		| AGRotenburgWuemme
 		| AGStolzenau
 		| AGSulingen
@@ -1521,18 +1532,26 @@ _img inst.png
 		| AGBeckum
 		| AGBocholt
 		| AGBorken
+		| AGBuchen
 		| AGCoesfeld
 		| AGDuelmen
 		| AGGronauWestfalen
+		| AGHadamar
+		| AGHainichen
+		| AGHerborn
+		| AGHofgeismar
 		| AGIbbenbueren
 		| AGLuedinghausen
 		| AGMuensterWestfalen
+		| AGOschatz
 		| AGRheine
+		| AGStollberg
 		| AGTecklenburg
 		| AGWarendorf
 		| AGBrakel
 		| AGDelbrueck
 		| AGHoexter
+		| AGHohenschönhausen
 		| AGLippstadt
 		| AGPaderborn
 		| AGWarburg
@@ -1813,6 +1832,7 @@ _img inst.png
 		| ArbGMainz
 		| ArbGTrier
 		| ArbGNeunkirchen
+		| ArbGNeustrelitz
 		| ArbGSaarbruecken
 		| ArbGSaarlouis
 		| ArbGBautzen
@@ -1843,6 +1863,7 @@ _img inst.png
 		| AGHFrankfurt
 		| AGHHamburg
 		| AGHHessen
+		| AGHMecklenburgVorpommern
 		| AGHNiedersachsen
 		| AGHNordrheinWestfalen
 		| AGHRheinlandPfalz
@@ -1880,16 +1901,40 @@ _img inst.png
 		| BezirksGChemnitz
 		| BezirksGLeipzig
 		| BezirksGMagdeburg
+		| BezirksGMeiningen
 		| BezirksGNeubrandenburg
 		| BezirksGPotsdam
 		| BezirksGRostock
 		| BezirksGSchwerin
 		| BezirksGSuhl
+		| KreisGAnnaberg
+		| KreisGCottbus
+		| KreisGDoebeln
+		| KreisGDresden
+		| KreisGEisenhuettenstadt
+		| KreisGErfurt
+		| KreisGFrankfurtOder
+		| KreisGFreiberg
+		| KreisGGrimma
+		| KreisGGoerlitz
+		| KreisGHalle
+		| KreisGHalleStadt
+		| KreisGKamenz
+		| KreisGKoenigsWusterhausen
+		| KreisGLoebau
+		| KreisGMagdeburg
+		| KreisGNeustrelitz
+		| KreisGOschatz
+		| KreisGPirna
+		| KreisGPotsdamStadt
 		| KreisGRostockLand
 		| KreisGSchwerinStadt
+		| KreisGSömmerda
+		| KreisGSuhl
 		| KreisGChemnitzStadt
 		| KreisGLeipzigStadt
 		| KreisGSaalfeld
+		| KreisGZerbst
 		| DGHBerlin
 		| DGHHamm
 		| DGHNiedersachsen
@@ -1899,7 +1944,7 @@ _img inst.png
 		| HandelskammerHamburg
 		| ATVfGH
 		| NLAGAmsterdam
-
+		| RG
 
 		| DeutscherBundestag
 		| DeutscherBundesrat

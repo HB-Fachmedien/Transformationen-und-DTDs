@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.15
+1.16
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -79,6 +79,10 @@ Version 1.15 (06.08.15): Änderungen (SG):&#x0013;
 Version 1.15 (10.08.15): Änderungen (SG):&#x0013;	
 						<ul>
 							<li>neues Attribut <i>expanded</i> für Element <a href="#node">node</a></li>
+						</ul>
+Version 1.16 (04.09.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
 
 
@@ -838,6 +842,10 @@ _img instcode.png
 		| BSG
 		| BVerwG
 		| BayVerfGH
+		| HbGVerfG
+		| SaechsVerfGH
+		| VerfGHSachsenAnhalt
+		| VerfGHThueringen
 		| FGBadenWuerttemberg
 		| FGBerlinBrandenburg
 		| FGBremen
@@ -868,7 +876,7 @@ _img instcode.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen	
+		| OLGThueringen
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -947,6 +955,7 @@ _img instcode.png
 		| LGUlm
 		| LGAschaffenburg
 		| LGBamberg
+		| LGBautzen
 		| LGBayreuth
 		| LGCoburg
 		| LGHofSaale
@@ -1165,6 +1174,7 @@ _img instcode.png
 		| VGMeiningen
 		| VGWeimar
 		| AGAchern
+		| AGAnnaberg
 		| AGBadenBaden
 		| AGBuehl
 		| AGGernsbach
@@ -1182,7 +1192,7 @@ _img instcode.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten		
+		| AGBretten
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1218,7 +1228,7 @@ _img instcode.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim		
+		| AGBadMergentheim
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -1508,6 +1518,7 @@ _img instcode.png
 		| AGNidda
 		| AGNienburg
 		| AGOsterholzScharmbeck
+		| AGRotenburgFulda
 		| AGRotenburgWuemme
 		| AGStolzenau
 		| AGSulingen
@@ -1627,18 +1638,26 @@ _img instcode.png
 		| AGBeckum
 		| AGBocholt
 		| AGBorken
+		| AGBuchen
 		| AGCoesfeld
 		| AGDuelmen
 		| AGGronauWestfalen
+		| AGHadamar
+		| AGHainichen
+		| AGHerborn
+		| AGHofgeismar
 		| AGIbbenbueren
 		| AGLuedinghausen
 		| AGMuensterWestfalen
+		| AGOschatz
 		| AGRheine
+		| AGStollberg
 		| AGTecklenburg
 		| AGWarendorf
 		| AGBrakel
 		| AGDelbrueck
 		| AGHoexter
+		| AGHohenschönhausen
 		| AGLippstadt
 		| AGPaderborn
 		| AGWarburg
@@ -1919,6 +1938,7 @@ _img instcode.png
 		| ArbGMainz
 		| ArbGTrier
 		| ArbGNeunkirchen
+		| ArbGNeustrelitz
 		| ArbGSaarbruecken
 		| ArbGSaarlouis
 		| ArbGBautzen
@@ -1949,6 +1969,7 @@ _img instcode.png
 		| AGHFrankfurt
 		| AGHHamburg
 		| AGHHessen
+		| AGHMecklenburgVorpommern
 		| AGHNiedersachsen
 		| AGHNordrheinWestfalen
 		| AGHRheinlandPfalz
@@ -1986,16 +2007,40 @@ _img instcode.png
 		| BezirksGChemnitz
 		| BezirksGLeipzig
 		| BezirksGMagdeburg
+		| BezirksGMeiningen
 		| BezirksGNeubrandenburg
 		| BezirksGPotsdam
 		| BezirksGRostock
 		| BezirksGSchwerin
 		| BezirksGSuhl
+		| KreisGAnnaberg
+		| KreisGCottbus
+		| KreisGDoebeln
+		| KreisGDresden
+		| KreisGEisenhuettenstadt
+		| KreisGErfurt
+		| KreisGFrankfurtOder
+		| KreisGFreiberg
+		| KreisGGrimma
+		| KreisGGoerlitz
+		| KreisGHalle
+		| KreisGHalleStadt
+		| KreisGKamenz
+		| KreisGKoenigsWusterhausen
+		| KreisGLoebau
+		| KreisGMagdeburg
+		| KreisGNeustrelitz
+		| KreisGOschatz
+		| KreisGPirna
+		| KreisGPotsdamStadt
 		| KreisGRostockLand
 		| KreisGSchwerinStadt
+		| KreisGSömmerda
+		| KreisGSuhl
 		| KreisGChemnitzStadt
 		| KreisGLeipzigStadt
 		| KreisGSaalfeld
+		| KreisGZerbst
 		| DGHBerlin
 		| DGHHamm
 		| DGHNiedersachsen
@@ -2004,7 +2049,9 @@ _img instcode.png
 		| TDiGSüd
 		| HandelskammerHamburg
 		| ATVfGH
-		| NLAGAmsterdam) #IMPLIED
+		| NLAGAmsterdam
+		| RG
+			) #IMPLIED
 		
 	authority (
 		other
