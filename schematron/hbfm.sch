@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.04 -->
+<!-- HBFM Schematron Version 1.05 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -13,7 +13,7 @@
     -->
     <pattern>  
         <rule context="all_doc_type[@level='1']">
-            <assert test="text()= 'nb' or text() ='zs' or text() ='ko' or text() ='zt' or text() ='gt' or text() ='ent' or text() ='va' or text() ='divso'">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>
+            <assert test="text()= 'nb' or text() ='zs' or text() ='ko' or text() ='zt' or text() ='gt' or text() ='ent' or text() ='va' or text() ='div'">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>
         </rule>
     </pattern>
     
