@@ -4,7 +4,7 @@
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
     <xsl:template match="/">
             <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN -->
-            <xsl:variable name="ausgabennummer" select="40"/>  
+            <xsl:variable name="ausgabennummer" select="42"/>  
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             
             <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
@@ -152,7 +152,8 @@
                     <SUCHDATUM><xsl:value-of select="$docum/*/metadata/pub/date"/>T00:00:00</SUCHDATUM>
 
                     <SELBST-ID>OBJ_DB_ID_<xsl:value-of select="$dok-nr"/></SELBST-ID>
-                    <SELBST-ID>OBJ_DB_ID_DB<xsl:value-of select="$siriusID"/></SELBST-ID>
+                    <SELBST-ID>OBJ_DB_ID_<xsl:value-of select="replace(document-uri(.),concat('file:/C:/webexport/export/DB_3/XML/', string($ausgabennummer),'/') ,'' )"/></SELBST-ID>
+                    <!-- SELBST-ID>OBJ_DB_ID_DB_2015_42_M12_A_1160951</SELBST-ID-->
                     
                     <xsl:variable name="pagetemp" select="$docum/*/metadata/pub/pages/start_page"/>
                     
@@ -333,6 +334,16 @@
         <LI>
             <xsl:apply-templates/>
         </LI>
+    </xsl:template>
+    <xsl:template match="sup">
+        <SUP>
+            <xsl:apply-templates/>
+        </SUP>
+    </xsl:template>
+    <xsl:template match="sub">
+        <SUB>
+            <xsl:apply-templates/>
+        </SUB>
     </xsl:template>
     <xsl:template match="p">
         <P>
