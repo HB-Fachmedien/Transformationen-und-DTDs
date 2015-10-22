@@ -66,8 +66,11 @@
                                     <!-- Editorial -->
                                     <xsl:variable name="editorial-dokument"
                                         select="output/DOKUMENT[DOCTYPGROUPBEZ='Editorial']"/>
-                                    <xsl:variable name="editorial-dbnummer"
-                                        select="$editorial-dokument/SIRIUS-ID"/>
+                                    <xsl:variable name="editorial-dbnummer">
+                                        <xsl:call-template name="calculateDocId">
+                                            <xsl:with-param name="id" select="$editorial-dokument/SIRIUS-ID"/>
+                                        </xsl:call-template>
+                                    </xsl:variable>
                                     
                                     <div class="ihv_level2">
                                         <div class="ihv_headline ressort">Editorial</div>
@@ -86,8 +89,7 @@
                                                 <!-- TODO: Aus Autoren Feld ziehen -->
                                                 <div class="ihv_dbnummer">
                                                     <a
-                                                        href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
-                                                        <xsl:value-of select="$editorial-dbnummer"/>
+                                                        href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}"><xsl:value-of select="$editorial-dbnummer"/>
                                                     </a>
                                                 </div>
                                             </div>
@@ -101,7 +103,11 @@
                                     <!-- Gastkommentar -->
                                     <xsl:variable name="gk-dokument"
                                         select="output/DOKUMENT[DOCTYPGROUPBEZ='Gastkommentar']"/>
-                                    <xsl:variable name="gk-dbnummer" select="$gk-dokument/SIRIUS-ID"/>
+                                    <xsl:variable name="gk-dbnummer">
+                                        <xsl:call-template name="calculateDocId">
+                                            <xsl:with-param name="id" select="$gk-dokument/SIRIUS-ID"/>
+                                        </xsl:call-template>
+                                    </xsl:variable>
                                     
                                     <div class="ihv_level2">
                                         <div class="ihv_headline ressort">Gastkommentar</div>
@@ -112,7 +118,8 @@
                                                     <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}"><xsl:value-of select="$gk-dokument/TITEL"/></a>
                                                 </div>
                                                 <div class="ihv_autor">
-                                                    <xsl:value-of select="$gk-dokument/AUTOR"/>
+                                                    <!--<xsl:value-of select="$gk-dokument/AUTOR"/>-->
+                                                    <xsl:value-of select="replace(replace($gk-dokument/AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
                                                 </div>
                                                 <div class="ihv_autornormiert">
                                                     <div class="ihv_autor">
@@ -267,44 +274,55 @@
         <xsl:param name="ueberschrift" as="xs:string"/>
         <xsl:param name="art-nr" as="xs:integer"/>
         
+        <xsl:variable name="dokumente" select="$self/DOKUMENT[ihv-prio-number=$art-nr]"/>
+        <xsl:if test="not(empty($dokumente))">
+            <div class="ihv_level3">
+                <div class="ihv_headline doktyp"><xsl:value-of select="$ueberschrift"/></div>
+                <xsl:for-each select="$dokumente"> 
+                    <xsl:variable name="temp-sid">
+                        <xsl:call-template name="calculateDocId">
+                            <xsl:with-param name="id" select="SIRIUS-ID"/>
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <div class="ihv_level4">
+                        <div class="ihv_rubriken">
+                            <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
+                        </div>
+                        
+                        <div class="ihv_headline titel">
+                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
+                                <xsl:value-of select="TITEL"/>
+                            </a>
+                        </div>
+                        <div class="ihv_autor">
+                            <xsl:value-of select="replace(replace(AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
+                        </div>
+                        <div class="ihv_autornormiert">
+                            <xsl:for-each select="AUTOR">
+                                <div class="ihv_autor">
+                                    <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
+                                </div>
+                            </xsl:for-each>
+                        </div>
+                        <div class="ihv_abstract">
+                            <xsl:value-of select="VORSPANN"/>
+                        </div>
+                        <div class="ihv_seite">
+                            <xsl:value-of select="SEITEVON"/>
+                        </div>
+                        <div class="ihv_dbnummer">
+                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}"><xsl:value-of select="$temp-sid"/></a>
+                        </div>
+                    </div><xsl:comment>Ende Level 4</xsl:comment>
+                </xsl:for-each>
+            </div><xsl:comment>Ende Level 3</xsl:comment>
+        </xsl:if>
         
-        <div class="ihv_level3">
-            <xsl:for-each select="$self/DOKUMENT[ihv-prio-number=$art-nr]"> 
-            <div class="ihv_headline doktyp"><xsl:value-of select="$ueberschrift"/></div>
-                <xsl:variable name="temp-sid" select="SIRIUS-ID"/>
-                <div class="ihv_level4">
-                    <div class="ihv_rubriken">
-                        <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
-                    </div>
-                    
-                    <div class="ihv_headline titel">
-                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
-                            <xsl:value-of select="TITEL"/>
-                        </a>
-                    </div>
-                    <div class="ihv_autor">
-                        <xsl:value-of select="replace(replace(AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
-                    </div>
-                    <div class="ihv_autornormiert">
-                        <xsl:for-each select="AUTOR">
-                            <div class="ihv_autor">
-                                <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
-                            </div>
-                        </xsl:for-each>
-                    </div>
-                    <div class="ihv_abstract">
-                        <xsl:value-of select="VORSPANN"/>
-                    </div>
-                    <div class="ihv_seite">
-                        <xsl:value-of select="SEITEVON"/>
-                    </div>
-                    <div class="ihv_dbnummer">
-                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}"><xsl:value-of select="$temp-sid"/></a>
-                    </div>
-                </div><xsl:comment>Ende Level 4</xsl:comment>
-            </xsl:for-each>
-        </div><xsl:comment>Ende Level 3</xsl:comment>
-        
+    </xsl:template>
+    
+    <xsl:template name="calculateDocId">
+        <xsl:param name="id"/>
+        <xsl:value-of select="format-number($id, '0000000')"/>
     </xsl:template>
     
     
