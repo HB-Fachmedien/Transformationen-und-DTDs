@@ -249,4 +249,6 @@
 <!ENTITY Zeta "&#918;">
 <!ENTITY zeta "&#950;">
 <!ENTITY zwj "&#8205;">
+<!ENTITY ldquor "&#8222;">
+<!ENTITY rdquor "&#8221;">
 ]>
