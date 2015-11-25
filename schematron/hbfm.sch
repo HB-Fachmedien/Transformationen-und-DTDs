@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.05 -->
+<!-- HBFM Schematron Version 1.06 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
     
     <!-- TODO:
     
-    1. matches durch = Vergleiche wie in Regel 1 ersetzen
-    2. Regel für all_source Elemente
+    1. Regel für all_source Elemente
     
     -->
     <pattern>  
         <rule context="all_doc_type[@level='1']">
-            <assert test="text()= 'nb' or text() ='zs' or text() ='ko' or text() ='zt' or text() ='gt' or text() ='ent' or text() ='va' or text() ='div'">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>
+            <!--<assert test="text()= 'nb' or text() ='zs' or text() ='ko' or text() ='zt' or text() ='gt' or text() ='ent' or text() ='va' or text() ='div'">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>-->
+            <assert test="text()= ('nb','zs','ko','zt','gt','ent','va','div')">Das all-doc-type @level=1 Element besitzt unbekannten Content!</assert>
         </rule>
     </pattern>
     
@@ -30,9 +30,11 @@
             <assert test="text() = ancestor::metadata/all_source[@level='2']/text()">Das add_target Element muss dem all-source @level=2 Element gleichen! Hier wäre das: "<value-of select="ancestor::metadata/all_source[@level='2']/text()"/>"</assert>
         </rule>
     </pattern>-->
+    
     <pattern>
         <rule context="instdoctype">
-            <assert test="matches( text(), '(Kurzinformation|Beschluss|Beschlüsse|Beschluss (Teilentscheidung)|Beschluss (Zwischenentscheidung)|Entwurf|Vorlagebeschluss|Hinweisbeschluss|Nichtannahmebeschluss|Zwischenbeschluss|Teilbeschluss|Kammerbeschluss|Kostenbeschluss|Ergänzungsbeschluss|Senatsbeschluss|Normenkontrollbeschluss|Prozesskostenhilfebeschluss|Entscheidung|Entscheidungen|Vorabentscheidung|Rechtsentscheid|Antrag auf Vorabentscheidung|Urteil|Urteile|Teilurteil|Teilurteile|Versäumnisurteil|Urteil und Versäumnisurteil|Teilversäumnisurteil|Schlussurteil|Anerkenntnisurteil|Ergänzungsurteil|Zwischenurteil|Endurteil|Grundurteil|Einzelrichterurteil|Normenkontrollurteil|Senatsurteil|Senatszwischenurteil|Verzichtsurteil|Vorbehaltsurteil|(Grund- und End-) Urteil|(Grund- und Teil-) Urteil|(Teilversäumnis- und Schluss-) Urteil|(Versäumnisteil-) Urteil|(Adhäsions-) Urteil|Erlass|gleichlautender Erlass|gleichlautende Erlasse|Verfügung|Allgemeinverfügung|Rundverfügung|Hinweisverfügung|Schlussantrag|Schlussanträge|Information|Schreiben|Vergleich|Hinweis|Teil-Schiedsspruch|Bescheid|Bescheide|Gerichtsbescheid|Gerichtsbescheide|Gutachten|Rechtsgutachten|Anhängiges Verfahren|Senatssitzung|Stellungnahme|EuGH-Vorlage|Grüner Brief)')">Dieser instdoctype "<value-of select="."/>" ist nicht erlaubt</assert>
+            <!--<assert test="matches( text(), '(Kurzinformation|Beschluss|Beschlüsse|Beschluss (Teilentscheidung)|Beschluss (Zwischenentscheidung)|Entwurf|Vorlagebeschluss|Hinweisbeschluss|Nichtannahmebeschluss|Zwischenbeschluss|Teilbeschluss|Kammerbeschluss|Kostenbeschluss|Ergänzungsbeschluss|Senatsbeschluss|Normenkontrollbeschluss|Prozesskostenhilfebeschluss|Entscheidung|Entscheidungen|Vorabentscheidung|Rechtsentscheid|Antrag auf Vorabentscheidung|Urteil|Urteile|Teilurteil|Teilurteile|Versäumnisurteil|Urteil und Versäumnisurteil|Teilversäumnisurteil|Schlussurteil|Anerkenntnisurteil|Ergänzungsurteil|Zwischenurteil|Endurteil|Grundurteil|Einzelrichterurteil|Normenkontrollurteil|Senatsurteil|Senatszwischenurteil|Verzichtsurteil|Vorbehaltsurteil|(Grund- und End-) Urteil|(Grund- und Teil-) Urteil|(Teilversäumnis- und Schluss-) Urteil|(Versäumnisteil-) Urteil|(Adhäsions-) Urteil|Erlass|gleichlautender Erlass|gleichlautende Erlasse|Verfügung|Allgemeinverfügung|Rundverfügung|Hinweisverfügung|Schlussantrag|Schlussanträge|Information|Schreiben|Vergleich|Hinweis|Teil-Schiedsspruch|Bescheid|Bescheide|Gerichtsbescheid|Gerichtsbescheide|Gutachten|Rechtsgutachten|Anhängiges Verfahren|Senatssitzung|Stellungnahme|EuGH-Vorlage|Grüner Brief)')">Dieser instdoctype "<value-of select="."/>" ist nicht erlaubt</assert>-->
+            <assert test="text()=('Kurzinformation','Beschluss','Beschlüsse','Beschluss (Teilentscheidung)','Beschluss (Zwischenentscheidung)','Entwurf','Vorlagebeschluss','Hinweisbeschluss','Nichtannahmebeschluss','Zwischenbeschluss','Teilbeschluss','Kammerbeschluss','Kostenbeschluss','Ergänzungsbeschluss','Senatsbeschluss','Normenkontrollbeschluss','Prozesskostenhilfebeschluss','Entscheidung','Entscheidungen','Vorabentscheidung','Rechtsentscheid','Antrag auf Vorabentscheidung','Urteil','Urteile','Teilurteil','Teilurteile','Versäumnisurteil','Urteil und Versäumnisurteil','Teilversäumnisurteil','Schlussurteil','Anerkenntnisurteil','Ergänzungsurteil','Zwischenurteil','Endurteil','Grundurteil','Einzelrichterurteil','Normenkontrollurteil','Senatsurteil','Senatszwischenurteil','Verzichtsurteil','Vorbehaltsurteil','(Grund- und End-) Urteil','(Grund- und Teil-) Urteil','(Teilversäumnis- und Schluss-) Urteil','(Versäumnisteil-) Urteil','(Adhäsions-) Urteil','Erlass','gleichlautender Erlass','gleichlautende Erlasse','Verfügung','Allgemeinverfügung','Rundverfügung','Hinweisverfügung','Schlussantrag','Schlussanträge','Information','Schreiben','Vergleich','Hinweis','Teil-Schiedsspruch','Bescheid','Bescheide','Gerichtsbescheid','Gerichtsbescheide','Gutachten','Rechtsgutachten','Anhängiges Verfahren','Senatssitzung','Stellungnahme','EuGH-Vorlage','Grüner Brief')">Dieser instdoctype "<value-of select="."/>" ist nicht erlaubt!</assert>
         </rule>
     </pattern>
     
@@ -46,7 +48,10 @@
     <!-- Bei den Zeitschriften Der Betrieb und Der Konzern werden die Rubriken auf gültige Werte getestet -->
     <pattern>        
         <rule context="rubrik[ancestor::metadata/pub/pubtitle/text()='Der Betrieb' or ancestor::metadata/pub/pubtitle/text()='Der Konzern']">
-            <assert test="matches( text(), '(Abgabenordnung|Abschlussprüfung|Aktienrecht|Allgemeine BWL|Allgemeine Geschäftsbedingungen|Arbeitnehmerüberlassung|Arbeitsförderung|Arbeitskampfrecht|Arbeitsschutzrecht|Arbeitsvertragsrecht|Arbeitszeitrecht|Bankrecht|Befristungsrecht|Behindertenrecht|Berufsbildungsrecht|Betriebliche Altersversorgung|Betriebsübergang|Betriebsverfassungsrecht|Bewertungsgesetz|Bilanzanalyse|Bilanzsteuerrecht|Controlling|Corporate Governance|Datenschutz|Eigenheimzulage|Einkommensteuer|Elternrecht|Entgeltrecht|Erbschaft-/Schenkungsteuer|Europarecht|Factoring|Finanzgerichtsordnung|Finanzierung|Franchising|Genossenschaftsrecht|Gewerbesteuer|Gewinnermittlung|Gleichbehandlung|GmbH-Recht|Grunderwerbsteuer|Grundgesetz|Grundsteuer|Haftungsrecht|Handelsbilanzrecht|Handelsrecht|Handelsvertreterrecht|IFRS|Insolvenzrecht|Internationales Privatrecht|Internationales Steuerrecht|Investitionszulage|Investmentsteuergesetz|Investor Relations|Kapitalanlage|Kapitalertragsteuer|Kapitalmarktrecht|Kartellrecht|Kirchensteuer|Koalitionsrecht|Körperschaftsteuer|Kreditsicherungsrecht|Kündigungsrecht|Leasing|Limited|Lohnsteuer|Mitbestimmungsrecht|Notarrecht|Öffentlicher Dienst|Personengesellschaftsrecht|Produkthaftung|Rechnungslegung|Rechtsanwaltsrecht|Schuldrecht|Solidaritätszuschlag|Sonstige BWL|Sonstige Steuerarten|Sonstiges Recht|Sozialversicherung|Steuerberaterrecht|Steuerstrafrecht|Strafrecht|Tarifvertragsrecht|Teilzeitrecht|Umsatzsteuer|Umwandlungsrecht|Umwandlungssteuerrecht|Unfallversicherung|Unternehmensbewertung|Unternehmenskauf|Unternehmensorganisation|Urlaubsrecht|Verbraucherrecht|Verfahrensrecht|Versicherungsrecht|Wettbewerbsrecht|Wettbewerbsverbot|Wirtschaftsprüferrecht|Zollrecht|Zwangsvollstreckung)')">
+            <!--<assert test="matches( text(), '(Abgabenordnung|Abschlussprüfung|Aktienrecht|Allgemeine BWL|Allgemeine Geschäftsbedingungen|Arbeitnehmerüberlassung|Arbeitsförderung|Arbeitskampfrecht|Arbeitsschutzrecht|Arbeitsvertragsrecht|Arbeitszeitrecht|Bankrecht|Befristungsrecht|Behindertenrecht|Berufsbildungsrecht|Betriebliche Altersversorgung|Betriebsübergang|Betriebsverfassungsrecht|Bewertungsgesetz|Bilanzanalyse|Bilanzsteuerrecht|Controlling|Corporate Governance|Datenschutz|Eigenheimzulage|Einkommensteuer|Elternrecht|Entgeltrecht|Erbschaft-/Schenkungsteuer|Europarecht|Factoring|Finanzgerichtsordnung|Finanzierung|Franchising|Genossenschaftsrecht|Gewerbesteuer|Gewinnermittlung|Gleichbehandlung|GmbH-Recht|Grunderwerbsteuer|Grundgesetz|Grundsteuer|Haftungsrecht|Handelsbilanzrecht|Handelsrecht|Handelsvertreterrecht|IFRS|Insolvenzrecht|Internationales Privatrecht|Internationales Steuerrecht|Investitionszulage|Investmentsteuergesetz|Investor Relations|Kapitalanlage|Kapitalertragsteuer|Kapitalmarktrecht|Kartellrecht|Kirchensteuer|Koalitionsrecht|Körperschaftsteuer|Kreditsicherungsrecht|Kündigungsrecht|Leasing|Limited|Lohnsteuer|Mitbestimmungsrecht|Notarrecht|Öffentlicher Dienst|Personengesellschaftsrecht|Produkthaftung|Rechnungslegung|Rechtsanwaltsrecht|Schuldrecht|Solidaritätszuschlag|Sonstige BWL|Sonstige Steuerarten|Sonstiges Recht|Sozialversicherung|Steuerberaterrecht|Steuerstrafrecht|Strafrecht|Tarifvertragsrecht|Teilzeitrecht|Umsatzsteuer|Umwandlungsrecht|Umwandlungssteuerrecht|Unfallversicherung|Unternehmensbewertung|Unternehmenskauf|Unternehmensorganisation|Urlaubsrecht|Verbraucherrecht|Verfahrensrecht|Versicherungsrecht|Wettbewerbsrecht|Wettbewerbsverbot|Wirtschaftsprüferrecht|Zollrecht|Zwangsvollstreckung)')">
+                Die Rubrik "<value-of select="."/>" ist nicht erlaubt!
+            </assert>-->
+            <assert test="text()=('Abgabenordnung','Abschlussprüfung','Aktienrecht','Allgemeine BWL','Allgemeine Geschäftsbedingungen','Arbeitnehmerüberlassung','Arbeitsförderung','Arbeitskampfrecht','Arbeitsschutzrecht','Arbeitsvertragsrecht','Arbeitszeitrecht','Bankrecht','Befristungsrecht','Behindertenrecht','Berufsbildungsrecht','Betriebliche Altersversorgung','Betriebsübergang','Betriebsverfassungsrecht','Bewertungsgesetz','Bilanzanalyse','Bilanzsteuerrecht','Controlling','Corporate Governance','Datenschutz','Eigenheimzulage','Einkommensteuer','Elternrecht','Entgeltrecht','Erbschaft-/Schenkungsteuer','Europarecht','Factoring','Finanzgerichtsordnung','Finanzierung','Franchising','Genossenschaftsrecht','Gewerbesteuer','Gewinnermittlung','Gleichbehandlung','GmbH-Recht','Grunderwerbsteuer','Grundgesetz','Grundsteuer','Haftungsrecht','Handelsbilanzrecht','Handelsrecht','Handelsvertreterrecht','IFRS','Insolvenzrecht','Internationales Privatrecht','Internationales Steuerrecht','Investitionszulage','Investmentsteuergesetz','Investor Relations','Kapitalanlage','Kapitalertragsteuer','Kapitalmarktrecht','Kartellrecht','Kirchensteuer','Koalitionsrecht','Körperschaftsteuer','Kreditsicherungsrecht','Kündigungsrecht','Leasing','Limited','Lohnsteuer','Mitbestimmungsrecht','Notarrecht','Öffentlicher Dienst','Personengesellschaftsrecht','Produkthaftung','Rechnungslegung','Rechtsanwaltsrecht','Schuldrecht','Solidaritätszuschlag','Sonstige BWL','Sonstige Steuerarten','Sonstiges Recht','Sozialversicherung','Steuerberaterrecht','Steuerstrafrecht','Strafrecht','Tarifvertragsrecht','Teilzeitrecht','Umsatzsteuer','Umwandlungsrecht','Umwandlungssteuerrecht','Unfallversicherung','Unternehmensbewertung','Unternehmenskauf','Unternehmensorganisation','Urlaubsrecht','Verbraucherrecht','Verfahrensrecht','Versicherungsrecht','Wettbewerbsrecht','Wettbewerbsverbot','Wirtschaftsprüferrecht','Zollrecht','Zwangsvollstreckung')">
                 Die Rubrik "<value-of select="."/>" ist nicht erlaubt!
             </assert>
         </rule>
@@ -97,6 +102,21 @@
         </rule>
         <rule context="metadata/ressort[ancestor::metadata/pub/pubtitle/text()='Corporate Finance']">
             <assert test="text()= 'Finanzierung' or text() ='Kapitalmarkt' or text() ='Bewertung' or text() ='Mergers &amp; Acquisitions' or text() ='Agenda' or text() ='Bildung' or text() ='Corporate Governance' or text() ='Existenzgründung' or text() ='Finanzmanagement' or text() ='Finanzmarkt' or text() ='Gründung' or text() ='Unternehmen' or text() ='Märkte' or text() ='Outlook' or text() ='Private Equity' or text() ='Scope' or text() ='Statements' or text() ='Tools' or text() ='Venture Capital' or text() ='Transaktionen'" >Das Ressort besitzt einen ungültigen Inhalt!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="metadata/summary//footnote">
+            <assert test="false()">Im Abstract/Summary dürfen keine Fußnoten vorkommen!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="file/@width | file/@height">
+            <assert test="number(.)>0">Die @width / @height Attribute müssen gefüllt sein!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="metadata/authors/author/surname">
+            <assert test="not(contains(text(),','))">Autoren Nachnamen dürfen keine Zusatzinformationen getrennt durch Kommata enthalten!</assert>
         </rule>
     </pattern>
 </schema>
