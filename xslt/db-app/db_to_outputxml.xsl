@@ -4,7 +4,7 @@
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
 
     <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN -->
-    <xsl:variable name="ausgabennummer" select="42"/>
+    <xsl:variable name="ausgabennummer" select="46"/>
     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
     <xsl:template match="/">
@@ -37,6 +37,30 @@
 
                 <TEXT>
                     <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+                    <DOKID ID="{$docum/*/@rawid}"/>
+                    <xsl:if test="$docum/*/name() = 'ent' or $docum/*/name() = 'entk'">
+                        <P>
+                            <xsl:for-each select="$docum/*/metadata/law_refs/law_ref">
+                                <xsl:apply-templates/><br/>
+                            </xsl:for-each>
+                        </P>
+                        
+                        <xsl:for-each select="$docum/*/metadata/leitsaetze/leitsatz">
+                            <P CLASS="ls">
+                                <xsl:value-of select="*/text()"/>
+                            </P>
+                        </xsl:for-each>
+                        
+                        <xsl:variable name="datum-tokenized" select="tokenize($docum/*/metadata/instdoc/instdocdate/text(), '-')"/>
+                        <xsl:variable name="all-instdoc-nrs">
+                            <xsl:for-each select="$docum/*/metadata/instdoc/instdocnrs/instdocnr">
+                                <xsl:value-of select="text()"/><xsl:text> </xsl:text>
+                            </xsl:for-each>
+                        </xsl:variable>
+                        
+                        <P><STRONG>(<xsl:value-of select="$docum/*/metadata/instdoc/inst"/>, <xsl:value-of select="$docum/*/metadata/instdoc/instdoctype"/> vom <xsl:value-of
+                            select="concat($datum-tokenized[3],'.',$datum-tokenized[2],'.',$datum-tokenized[1])"/> - <xsl:value-of select="$all-instdoc-nrs"/>)</STRONG></P>
+                    </xsl:if>
                     <xsl:apply-templates select="$docum/*/body"/>
                     <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
                 </TEXT>
@@ -159,7 +183,7 @@
 
                 <SELBST-ID>OBJ_DB_ID_<xsl:value-of select="$dok-nr"/></SELBST-ID>
                 <SELBST-ID>OBJ_DB_ID_<xsl:value-of
-                        select="replace(document-uri(.),concat('file:/C:/webexport/export/DB_3/XML/', string($ausgabennummer),'/') ,'' )"
+                        select="replace(replace(document-uri(.),concat('file:/C:/webexport/export/DB_3/XML/', string($ausgabennummer),'/') ,'' ),'[Mantel/|\.xml]','')"
                     /></SELBST-ID>
                 <!-- SELBST-ID>OBJ_DB_ID_DB_2015_42_M12_A_1160951</SELBST-ID-->
 
@@ -281,7 +305,6 @@
     </xsl:template>
 
     <xsl:template match="body">
-        <DOKID ID="{../@rawid}"/>
         <xsl:if test="../name() = 'au'">
             <H2>Gliederung</H2>
             <TABLE>
@@ -335,8 +358,9 @@
                 </xsl:for-each>
             </TABLE>
         </xsl:if>
-        <xsl:apply-templates select="p|section|footnote|list|listitem|note"/>
+        <xsl:apply-templates select="p|section|footnote|list|listitem|note|newpage"/>
         <!-- Autoren Informationen: -->
+        <xsl:if test="../name() = 'au'">
         <H3>
             <A NAME="autor" CLASS="text">Informationen zu den Autoren</A>
         </H3>
@@ -359,6 +383,7 @@
                 </TR>
             </xsl:for-each>
         </TABLE>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="list">
         <UL>
@@ -406,14 +431,15 @@
         </P>
 
         <xsl:apply-templates
-            select="p|subhead|figure|table|list|rzblock|example|block|newpage|section|newpage"/>
+            select="p|subhead|figure|table|list|rzblock|example|block|newpage|section"/>
     </xsl:template>
 
     <xsl:template match="newpage">
-        <A CLASS="ns" NAME="{@pagenumber}">[DB&#160;<xsl:value-of
-                select="ancestor::body/../metadata/pub/pubyear"/>&#160;S.&#160;<xsl:value-of
+        <A CLASS="ns" NAME="{@pagenumber}"><xsl:text disable-output-escaping="yes">[DB&amp;#160;</xsl:text><xsl:value-of
+                select="ancestor::body/../metadata/pub/pubyear"/><xsl:text disable-output-escaping="yes">&amp;#160;S.&amp;#160;</xsl:text><xsl:value-of
                 select="@pagenumber"/>]</A>
     </xsl:template>
+    
     <xsl:template match="section">
         <!-- SECTION <xsl:value-of select="count(ancestor::*)"/> -->
         <xsl:variable name="ebene" select="count(ancestor::*)"/>
@@ -427,9 +453,9 @@
             <xsl:value-of select="title"/>
         </xsl:element>
 
-        <xsl:apply-templates
-            select="block|example|figure|list|newpage|p|rzblock|section|subhead|table"/>
+        <xsl:apply-templates select="block|example|figure|list|newpage|p|rzblock|section|subhead|table"/>
     </xsl:template>
+    
     <xsl:template match="footnote">
         <xsl:variable name="fn-number" select="substring(@id,2)"/>
         <A HREF="#fn{$fn-number}" NAME="fn_back{$fn-number}" TITLE="Fussnote ansehen"
@@ -437,6 +463,14 @@
             <SUP><xsl:value-of select="$fn-number"/>)</SUP>
         </A>
         <!-- Der Inhalt der Fußnoten wird dann später aufgelistet -->
+    </xsl:template>
+    
+    <xsl:template match=
+        "text()[not(string-length(normalize-space()))]"/>
+    
+    <xsl:template match=
+        "text()[string-length(normalize-space()) > 0]">
+        <xsl:value-of select="translate(.,'&#xA;&#xD;', '  ')"/>
     </xsl:template>
 
 </xsl:stylesheet>
