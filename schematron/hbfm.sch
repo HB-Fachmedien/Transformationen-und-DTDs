@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.06 -->
+<!-- HBFM Schematron Version 1.07 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -111,7 +111,7 @@
     </pattern>
     <pattern>
         <rule context="file/@width | file/@height">
-            <assert test="number(.)>0">Die @width / @height Attribute müssen gefüllt sein!</assert>
+            <assert test="number(.)>0 or (number(replace(/*/metadata/pub/date, '-',''))&lt; 20151201)">Die @width / @height Attribute müssen gefüllt sein!</assert>
         </rule>
     </pattern>
     <pattern>
