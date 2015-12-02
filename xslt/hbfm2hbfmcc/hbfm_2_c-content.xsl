@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM to HBFMCC Transformation Version 1.03 -->
+<!-- HBFM to HBFMCC Transformation Version 1.04 -->
 <!-- 
+Version 1.04:
+Fix für TOC Erstellung von CF und Sonstigen Dokumenten
 
 Version 1.03:
 TOC für KOR und DK
@@ -315,7 +317,7 @@ TOC für KOR und DK
 =========================================================== -->
 <xsl:template name="createToc">
 	<xsl:variable name="pub-abbr" select="descendant::pubabbr/text()"/>
-	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
+	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
@@ -352,6 +354,10 @@ TOC für KOR und DK
 							<!-- get year from element date -->
 							<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
 								<xsl:variable name="beilagennummer" select="descendant::pub/pub_suppl/text()"/>
+								
+								<!-- Gibt womöglich ein Problem, wenn z.B. wie beim GK von CF kein Ressort vorhanden ist.
+								Habe das weiter unten im CF TOC Bereich abgefangen.
+								-->
 								<xsl:variable name="ressortname" select="ressort/text()"/>
 								<xsl:choose>
 									<!-- Wenn es sich um eine Heftbeilage handelt, dann ist das pub_suppl Element gefüllt und wird gesondert behandelt: -->
@@ -511,7 +517,14 @@ TOC für KOR und DK
 													<xsl:otherwise>2100</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>
-											<node title="{$ressortname}" sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
+											<node sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
+												<xsl:attribute name="title">
+													<!-- title="{$ressortname}" -->
+													<xsl:choose>
+														<xsl:when test="string($ressortname)=''">Weitere Inhalte</xsl:when>
+														<xsl:otherwise><xsl:value-of select="$ressortname"/></xsl:otherwise>
+													</xsl:choose>
+												</xsl:attribute>
 												<xsl:variable name="docType-SeqN">
 													<xsl:choose>
 														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
