@@ -3,7 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     
-    <xsl:output method="xhtml" encoding="UTF-8"/>
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     <xsl:template match="/">
         
@@ -34,10 +34,6 @@
                     @font-face{
                     font-family:"Unit Pro";
                     src:url("fonts/unitpro.woff") format("woff");
-                    }
-                    
-                    .ihv_abstract{
-                    display:none
                     }
                     .ihv_seite,
                     .ihv_dbnummer{
@@ -142,8 +138,6 @@
                                         
                                     </div>
                                     <!-- Ende Level2 - Gastkommentar -->
-                                    
-                                    <!-- Ende: Gastkommentar -->
                                     
                                     <div class="ihv_level2">
                                         <div class="ihv_headline ressort">Betriebswirtschaft</div>
@@ -253,6 +247,63 @@
                                         </xsl:call-template>
                                     </div><xsl:comment>Ende Level 2</xsl:comment>
                                     
+                                    <!-- Standpunkte -->
+                                    <xsl:variable name="anzahl-standpunkte" select="count(output/DOKUMENT[DOCTYPGROUPBEZ='Standpunkt'])"/>
+                                    <xsl:if test="$anzahl-standpunkte&gt;0">
+                                                                              
+                                        <div class="ihv_level2">
+                                            <div class="ihv_headline ressort">Standpunkt<xsl:if test="$anzahl-standpunkte&gt;1">e</xsl:if></div>
+                                            
+                                            <xsl:for-each select="output/DOKUMENT[DOCTYPGROUPBEZ='Standpunkt']">
+                                                
+                                                
+                                                <xsl:variable name="sp-dokument"
+                                                    select="."/>
+                                                <xsl:variable name="sp-dbnummer">
+                                                    <xsl:call-template name="calculateDocId">
+                                                        <xsl:with-param name="id" select="$sp-dokument/SIRIUS-ID"/>
+                                                    </xsl:call-template>
+                                                </xsl:variable>
+                                                                                              
+                                                <!-- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
+                                                <div class="ihv_level3">
+                                                    <div class="ihv_level4">
+                                                        <div class="ihv_headline titel">
+                                                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}"><xsl:value-of select="$sp-dokument/TITEL"/></a>
+                                                        </div>
+                                                                                                             
+                                                        <div class="ihv_autor">
+                                                            <!--<xsl:value-of select="$gk-dokument/AUTOR"/>-->
+                                                            <xsl:value-of select="replace(replace(AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
+                                                        </div>
+                                                        <xsl:for-each select="AUTOR">
+                                                            <div class="ihv_autornormiert">
+                                                                <div class="ihv_autor">
+                                                                    <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
+                                                                </div>
+                                                                <!-- Überprüfen, ob das so passt -->
+                                                            </div>
+                                                        </xsl:for-each>
+                                                        <div class="ihv_dbnummer">
+                                                            <a
+                                                                href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}">
+                                                                <xsl:value-of select="$sp-dbnummer"/>
+                                                            </a>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <!-- Ende Level4 -->
+                                                    
+                                                </div>
+                                                <!-- Ende Level3 -->
+                                                
+                                                <br/>
+                                            </xsl:for-each>
+                                            
+                                        </div>
+                                    </xsl:if>
+                                    <!-- Ende: Standpunkte -->
+                                    
                                 </div><xsl:comment>Ende Level 1</xsl:comment>
                                 
                             </div>
@@ -304,9 +355,7 @@
                                 </div>
                             </xsl:for-each>
                         </div>
-                        <div class="ihv_abstract">
-                            <xsl:value-of select="VORSPANN"/>
-                        </div>
+                        <div class="ihv_abstract"><xsl:value-of select="VORSPANN"/></div>
                         <div class="ihv_seite">
                             <xsl:value-of select="SEITEVON"/>
                         </div>
