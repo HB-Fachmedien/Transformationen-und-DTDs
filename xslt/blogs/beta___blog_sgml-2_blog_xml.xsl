@@ -23,6 +23,8 @@ AUSSERDEM:
 
 ### KEIN INTEND AUF QUELLDOKUMENT VOR KONVERTIERUNG!
 
+### RUBRIKEN neuerdings in Attributen?
+
 -->
 
 
@@ -102,12 +104,16 @@ AUSSERDEM:
             </metadata>
             
             <!-- was kommt hier alles? ABS/ZWI/HV/VERWEIS-GS -->
-            <body><xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS"/></body>
+            <body><xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS|VERWEIS-S|VERWEIS-RS"/></body>
         </nbb>
     </xsl:template>
     
     <xsl:template match="HV">
-        <i><xsl:apply-templates/></i>
+        <xsl:choose>
+            <xsl:when test="@TYP='KURSIV'"><i><xsl:apply-templates/></i></xsl:when>
+            <xsl:when test="@TYP='FETT'"><b><xsl:apply-templates/></b></xsl:when>
+            <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="ZWI">
@@ -128,6 +134,12 @@ AUSSERDEM:
     <xsl:template match=
         "text()[string-length(normalize-space()) > 0]">
         <xsl:value-of select="translate(.,'&#xA;&#xD;', '  ')"/>
+    </xsl:template>-->
+    
+    <!--<xsl:template match="node()">
+        <xsl:copy>
+            <xsl:apply-templates select="node()"/>
+        </xsl:copy>
     </xsl:template>-->
     
 </xsl:stylesheet>
