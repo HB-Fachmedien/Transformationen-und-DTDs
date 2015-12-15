@@ -31,13 +31,14 @@
                 <xsl:when test="$ru-attr='PERSONALIA' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='BUCHBESPRECHUNG'">rez</xsl:when>
                 <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='LITERATURHINWEIS'">nr</xsl:when>
-                <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='NACHRICHT'">nr</xsl:when>
+                <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='NACHRICHT'">rez</xsl:when>
                 <xsl:when test="$ru-attr='GASTKOMMENTAR' and $typ-attr='KOMMENTAR'">gk</xsl:when>
                 <xsl:when test="$ru-attr='GASTKOMMENTAR' and $typ-attr='EDITORIAL'">ed</xsl:when>
                 <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='NACHRICHTEN' and $typ-attr='NACHRICHT'">nr</xsl:when>
-                <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='BEITRAG'">sp</xsl:when>
-                <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='INTERVIEW'">sp</xsl:when>
+                <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='BEITRAG'">iv</xsl:when>
+                <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='INTERVIEW'">iv</xsl:when>
+                <xsl:when test="$ru-attr='NEUES AUS DER DATENBANK'">nr</xsl:when>
                 <xsl:otherwise>ELEMENT-ZUTEILUNG-FEHLGESCHLAGEN</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -84,9 +85,22 @@
                         </p>
                     </summary>
                 </xsl:if>
-                <xsl:if test="$ru-attr='DAS AKTUELLE STICHWORT' and $typ-attr='BEITRAG'">
-                    <ressort>stichwort</ressort>    
-                </xsl:if>
+
+                <!-- In bestimmten Rubrik/Typ Kombinationen  kommt es zur Zuteilung von Ressorts-->                
+                <xsl:choose>
+                    <xsl:when test="$ru-attr='DAS AKTUELLE STICHWORT' and $typ-attr='BEITRAG'">
+                        <ressort>Das aktuelle Stichwort</ressort>  
+                    </xsl:when>
+                    <xsl:when test="$ru-attr='PERSONALIA' and $typ-attr='NACHRICHT'">
+                        <ressort>Personalie</ressort>
+                    </xsl:when>
+                    <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='LITERATURHINWEIS'">
+                        <ressort>Aktueller Fachbeitrag</ressort>
+                    </xsl:when>
+                    <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='NACHRICHT'">
+                        <ressort>Aktueller Fachbeitrag</ressort>
+                    </xsl:when>
+                </xsl:choose>
                 
                 <pub>
                     <pubtitle>Aufsichtsrat</pubtitle>
