@@ -13,9 +13,13 @@
     />
 
 <!-- WICHITG ZU BEACHTEN BEI DER TRANSFORMATION:
+        
+        Leere Rubriken? Steht manchmal im Attribut. Könnte man noch anpassen.. ;)
+        
+        distinct-values(//*[matches(name(),'VERWEIS')]/name())
 
 
-### GUCKEN, OB BEIM BODY ALLE ELEMENTE ABGEARBEITET HABEN, BEARBEITE BISHER FOLGENDE ELEMENTE:  <xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS"/>
+### GUCKEN, OB BEIM BODY ALLE ELEMENTE ABGEARBEITET HABEN, BEARBEITE BISHER FOLGENDE ELEMENTE:  <xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS|VERWEIS-ID|VERWEIS-ES"/>
 
 AUSSERDEM:
 
@@ -104,7 +108,7 @@ AUSSERDEM:
             </metadata>
             
             <!-- was kommt hier alles? ABS/ZWI/HV/VERWEIS-GS -->
-            <body><xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS|VERWEIS-S|VERWEIS-RS"/></body>
+            <body><xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS|VERWEIS-S|VERWEIS-RS|VERWEIS-ID|VERWEIS-ES"/></body>
         </nbb>
     </xsl:template>
     
