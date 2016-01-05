@@ -108,7 +108,7 @@ AUSSERDEM:
             </metadata>
             
             <!-- was kommt hier alles? ABS/ZWI/HV/VERWEIS-GS -->
-            <body><xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS|VERWEIS-S|VERWEIS-RS|VERWEIS-ID|VERWEIS-ES"/></body>
+            <body><xsl:apply-templates select="ABS|ZWI|HV|VERWEIS-GS|VERWEIS-S|VERWEIS-RS|VERWEIS-ID|VERWEIS-ES|LISTE"/></body>
         </nbb>
     </xsl:template>
     
@@ -122,6 +122,14 @@ AUSSERDEM:
     
     <xsl:template match="ZWI">
         <subhead><xsl:apply-templates/></subhead>
+    </xsl:template>
+    
+    <xsl:template match="LISTE">
+        <list type="dash"><xsl:apply-templates/></list>
+    </xsl:template>
+    
+    <xsl:template match="LE">
+        <listitem><p><xsl:apply-templates/></p></listitem>
     </xsl:template>
     
     <xsl:template match="ABS">
