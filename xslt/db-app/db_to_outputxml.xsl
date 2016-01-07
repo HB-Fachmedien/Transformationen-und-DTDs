@@ -3,8 +3,8 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
 
-    <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN -->
-    <xsl:variable name="ausgabennummer" select="46"/>
+    <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN, bei Doppelausgaben: concat('51','-52') -->
+    <xsl:variable name="ausgabennummer" as="xs:string" select="'01'"/>
     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
     <xsl:template match="/">
@@ -358,7 +358,7 @@
                 </xsl:for-each>
             </TABLE>
         </xsl:if>
-        <xsl:apply-templates select="p|section|footnote|list|listitem|note|newpage"/>
+        <xsl:apply-templates select="p|section|footnote|list|listitem|note|newpage|example"/>
         <!-- Autoren Informationen: -->
         <xsl:if test="../name() = 'au'">
         <H3>
@@ -419,6 +419,10 @@
         <STRONG>
             <xsl:apply-templates/>
         </STRONG>
+    </xsl:template>
+    
+    <xsl:template match="example">
+            <xsl:apply-templates/>    
     </xsl:template>
 
     <xsl:template match="note">
