@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.08 -->
+<!-- HBFM Schematron Version 1.09 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -60,6 +60,15 @@
         <rule context="instdoc/instdocdate | pub/date[ancestor::metadata/all_source[@level='1']/text()='zsa'] | pub/date[text() != '']">
             <assert test="string-length(text()) = 10  and (translate(text(), '0123456789-', '') = '')">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD</assert>    
             <assert test="number(substring(text(), 1, 4)) &gt;= 1900 or number(substring(text(), 1, 4)) = 0000">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD (rule2)</assert>
+            <assert test="number(substring(text(), 6, 2)) &gt;= 0 and number(substring(text(), 6, 2)) &lt;= 12">Die Monatsangabe (hier <value-of select="substring(text(), 6, 2)"/>) muss im Interval 0-12 liegen.</assert>
+            <assert test="number(substring(text(), 9, 2)) &gt;= 0 and number(substring(text(), 9, 2)) &lt;= 31">Die Angabe des Tags (hier <value-of select="substring(text(), 9, 2)"/>) muss im Interval 0-31 liegen.</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="/*/metadata/pub/date[text() != '']">
+            <assert test="number(substring(text(), 1, 4)) &gt;= 1900">Das <value-of select="name()"/> Format entspricht nicht YYYY-MM-DD (rule2)</assert>
+            <assert test="number(substring(text(), 6, 2)) &gt;= 1 and number(substring(text(), 6, 2)) &lt;= 12">Die Monatsangabe (hier <value-of select="substring(text(), 6, 2)"/>) muss im Interval 1-12 liegen.</assert>
+            <assert test="number(substring(text(), 9, 2)) &gt;= 1 and number(substring(text(), 9, 2)) &lt;= 31">Die Angabe des Tags (hier <value-of select="substring(text(), 9, 2)"/>) muss im Interval 1-31 liegen.</assert>
         </rule>
     </pattern>
     <pattern>
@@ -117,6 +126,11 @@
     <pattern>
         <rule context="metadata/authors/author/surname">
             <assert test="not(contains(text(),','))">Autoren Nachnamen dürfen keine Zusatzinformationen getrennt durch Kommata enthalten!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="/*/body//section">
+            <assert test=".[count(child::*)&gt;1] or .[not(count(child::*)=1 and child::*[name()='title'])]">Es darf keine leeren Section Elemente geben und es darf keine Section Elemente geben, die nur einen title erhalten!</assert>
         </rule>
     </pattern>
 </schema>
