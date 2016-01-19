@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register>
+<ebene1>Aktien</ebene1>
+<ebene2>Aktienhandel<fundstelle>	58</fundstelle></ebene2>
+<ebene2>Aktienrückkauf<fundstelle>	68</fundstelle></ebene2>
+<ebene2>Anlagestrategie<fundstelle>	58, 83</fundstelle></ebene2>
+<ebene2>Bewertung<fundstelle>	83</fundstelle></ebene2>
+<ebene3>Aktien<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Capital Asset Pricing Model (CAPM)<fundstelle>	58</fundstelle></ebene3>
+<ebene3>Multi-Faktormodelle<fundstelle>	58</fundstelle></ebene3>
+<ebene3>Squeeze-out<fundstelle>	68</fundstelle></ebene3>
+<ebene2>Delisting</ebene2>
+<ebene3>Squeeze-out<fundstelle>	68</fundstelle></ebene3>
+<ebene2>Portfolio</ebene2>
+<ebene3>Portfolioanalyse<fundstelle>	58 ,83</fundstelle></ebene3>
+<ebene3>Portfoliosteuerung<fundstelle>	83</fundstelle></ebene3>
+<ebene3>Portfoliotheorie<fundstelle>	83</fundstelle></ebene3>
+<ebene2>Rendite<fundstelle>	58</fundstelle></ebene2>
+<ebene3>Fundamentalrisiken<fundstelle>	83</fundstelle></ebene3>
+<ebene3>Renditemodelle<fundstelle>	83</fundstelle></ebene3>
+<ebene2>Squeeze-out</ebene2>
+<ebene3>Börsenkurs<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Minderheitsaktionäre<fundstelle>	68</fundstelle></ebene3>
+<ebene1>Aktiengesellschaften<fundstelle>	58</fundstelle></ebene1>
+<ebene1>Asset Management</ebene1>
+<ebene2>Anlageklassen</ebene2>
+<ebene3>Aktien<fundstelle>	83</fundstelle></ebene3>
+<ebene2>Anlagestrategie<fundstelle>	83</fundstelle></ebene2>
+<ebene2>Asset Allocation<fundstelle>	83</fundstelle></ebene2>
+<ebene1>Betafaktor</ebene1>
+<ebene2>Smart Beta<fundstelle>	58</fundstelle></ebene2>
+<ebene1>Bewertung<fundstelle>	58</fundstelle></ebene1>
+<ebene2>Aktien<fundstelle>	68</fundstelle></ebene2>
+<ebene3>Squeeze-out<fundstelle>	68</fundstelle></ebene3>
+<ebene2>Erwartungstreue Planwerte<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Impairment Test<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Kapitalisierungszinssätze<fundstelle>	92</fundstelle></ebene2>
+<ebene3>Kapitalkosten<fundstelle>	92</fundstelle></ebene3>
+<ebene2>Risikogerechte Kapitalkosten<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Squeeze-out</ebene2>
+<ebene3>Ankündigungseffekte<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Börsenkurs<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Gesellschaftsrechtliche Abfindungsbemessung<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Minderheitsaktionäre<fundstelle>	68</fundstelle></ebene3>
+<ebene1>Bilanzierung</ebene1>
+<ebene2>Bilanzierung nach IFRS<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Goodwill</ebene2>
+<ebene3>Kapitalisierungszinssätze<fundstelle>	92</fundstelle></ebene3>
+<ebene3>Kapitalisierungszinssätze in der IFRS-Rechnungslegung<fundstelle>	92</fundstelle></ebene3>
+<ebene1>Börsensegmente</ebene1>
+<ebene2>Aktienindizes</ebene2>
+<ebene3>Alternative Indizes<fundstelle>	58</fundstelle></ebene3>
+<ebene2>Börsenplatz Deutschland<fundstelle>	58, 68</fundstelle></ebene2>
+<ebene2>Deutsche Börse</ebene2>
+<ebene3>DAX<fundstelle>	58</fundstelle></ebene3>
+<ebene3>MDAX<fundstelle>	58</fundstelle></ebene3>
+<ebene1>Controlling</ebene1>
+<ebene2>Risikomanagement<fundstelle>	47</fundstelle></ebene2>
+<ebene3>Fremdwährungsrisiken<fundstelle>	47</fundstelle></ebene3>
+<ebene3>Währungsrisikomanagement<fundstelle>	47</fundstelle></ebene3>
+<ebene1>Delisting</ebene1>
+<ebene2>Squeeze-out</ebene2>
+<ebene3>Ankündigungseffekte<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Börsenkurs<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Durchschnittskurs<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Gesellschaftsrechtliche Abfindungsbemessung<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Minderheitsaktionäre<fundstelle>	68</fundstelle></ebene3>
+<ebene1>Devisenmanagement</ebene1>
+<ebene2>Devisenkursrisiken<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Paritätenrisiko<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Währungsrisikomanagement<fundstelle>	47</fundstelle></ebene2>
+<ebene1>Finanzanalyse<fundstelle>	58, 83</fundstelle></ebene1>
+<ebene1>Finanzierung<fundstelle>	47</fundstelle></ebene1>
+<ebene1>Impairment</ebene1>
+<ebene2>Abschreibungen<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Bilanzpolitik</ebene2>
+<ebene3>Bilanzierungsverhalten<fundstelle>	92</fundstelle></ebene3>
+<ebene3>IAS 36<fundstelle>	92</fundstelle></ebene3>
+<ebene3>Impairment<fundstelle>	92</fundstelle></ebene3>
+<ebene1>Kapitalanlage</ebene1>
+<ebene2>Aktien<fundstelle>	83</fundstelle></ebene2>
+<ebene3>Anlagestrategie<fundstelle>	58</fundstelle></ebene3>
+<ebene1>Kapitalkosten</ebene1>
+<ebene2>Implizite Kapitalkosten<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Kapitalisierungszinssätze in der IFRS-Rechnungslegung<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Risikogerechte Kapitalkosten<fundstelle>	92</fundstelle></ebene2>
+<ebene1>Kapitalmarktforschung<fundstelle>	75</fundstelle></ebene1>
+<ebene1>Kapitalmärkte<fundstelle>	47, 58, 83</fundstelle></ebene1>
+<ebene2>Finanzmarkttheoreme<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Kapitalmarktreaktionen<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Schweiz</ebene2>
+<ebene3>Währungsrisiken<fundstelle>	75</fundstelle></ebene3>
+<ebene1>Portfoliomanagement</ebene1>
+<ebene2>Aktien<fundstelle>	83</fundstelle></ebene2>
+<ebene3>Aktienhandel<fundstelle>	58</fundstelle></ebene3>
+<ebene3>Bewertung<fundstelle>	58</fundstelle></ebene3>
+<ebene3>Portfolio<fundstelle>	58</fundstelle></ebene3>
+<ebene3>Rendite<fundstelle>	58</fundstelle></ebene3>
+<ebene2>Portfolioanalyse</ebene2>
+<ebene3>Investmentstrategie<fundstelle>	83</fundstelle></ebene3>
+<ebene3>Rendite<fundstelle>	83</fundstelle></ebene3>
+<ebene3>Renditemodelle<fundstelle>	83</fundstelle></ebene3>
+<ebene3>Risikoaversion<fundstelle>	83</fundstelle></ebene3>
+<ebene1>Rechnungslegung</ebene1>
+<ebene2>IFRS</ebene2>
+<ebene3>Kapitalisierungszinssätze<fundstelle>	92</fundstelle></ebene3>
+<ebene2>Rechnungslegungsinformationen<fundstelle>	92</fundstelle></ebene2>
+<ebene1>Recht</ebene1>
+<ebene2>AktG<fundstelle>	68</fundstelle></ebene2>
+<ebene1>Rendite</ebene1>
+<ebene2>Rendite/Risiko-Paradigma<fundstelle>	83</fundstelle></ebene2>
+<ebene1>Risikomanagement</ebene1>
+<ebene2>Länderrisiken<fundstelle>	47</fundstelle></ebene2>
+<ebene2>Marktrisiko<fundstelle>	83</fundstelle></ebene2>
+<ebene2>Systematisches Risiko<fundstelle>	83</fundstelle></ebene2>
+<ebene2>Währungsrisiken<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Währungsrisikomanagement<fundstelle>	47</fundstelle></ebene2>
+<ebene3>Absicherungsschwellen<fundstelle>	47</fundstelle></ebene3>
+<ebene3>Absicherungsstrategien<fundstelle>	47</fundstelle></ebene3>
+<ebene3>Fremdwährungsrisiken<fundstelle>	47</fundstelle></ebene3>
+<ebene1>Unternehmensbewertung</ebene1>
+<ebene2>Bewertungsobjekt<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Bewertungspraxis<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Bewertungsverfahren<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Eigenkapitalkosten<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Kapitalisierungszinssätze<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Kapitalkosten<fundstelle>	92</fundstelle></ebene2>
+<ebene3>Kapitalmarktzinsen<fundstelle>	92</fundstelle></ebene3>
+<ebene3>Kapitalstrukturoptimierung<fundstelle>	92</fundstelle></ebene3>
+<ebene3>WACC<fundstelle>	92</fundstelle></ebene3>
+<ebene2>Kapitalstrukturgestaltung<fundstelle>	92</fundstelle></ebene2>
+<ebene2>Squeeze-out</ebene2>
+<ebene3>Abfindung<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Ankündigungseffekte<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Börsenkurs<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Durchschnittskurs<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Gesellschaftsrechtliche Abfindungsbemessung<fundstelle>	68</fundstelle></ebene3>
+<ebene3>Minderheitsaktionäre<fundstelle>	68</fundstelle></ebene3>
+<ebene2>Strategie<fundstelle>	92</fundstelle></ebene2>
+<ebene1>Unternehmensfinanzierung</ebene1>
+<ebene2>Währungsmanagement<fundstelle>	47</fundstelle></ebene2>
+<ebene3>Fremdwährungsrisiken<fundstelle>	47</fundstelle></ebene3>
+<ebene1>Unternehmensführung<fundstelle>	92</fundstelle></ebene1>
+<ebene2>Risikomanagement<fundstelle>	47</fundstelle></ebene2>
+<ebene3>Länderrisiken<fundstelle>	75</fundstelle></ebene3>
+<ebene3>Risikomanagementprozess<fundstelle>	75</fundstelle></ebene3>
+<ebene3>Währungsrisiken<fundstelle>	75</fundstelle></ebene3>
+<ebene1>Währungsmanagement</ebene1>
+<ebene2>Devisenkursrisiken<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Finanzmarkttheoreme<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Fremdwährungsspekulation<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Paritätenrisiko<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Währungsrisikomanagement<fundstelle>	75</fundstelle></ebene2>
+<ebene2>Währungssysteme<fundstelle>	75</fundstelle></ebene2>
+</register>
