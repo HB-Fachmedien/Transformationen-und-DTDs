@@ -4,7 +4,7 @@
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
 
     <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN, bei Doppelausgaben: concat('51','-52') -->
-    <xsl:variable name="ausgabennummer" as="xs:string" select="'01'"/>
+    <xsl:variable name="ausgabennummer" as="xs:string" select="'02'"/>
     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
     <xsl:template match="/">
