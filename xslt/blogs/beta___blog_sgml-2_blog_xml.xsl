@@ -58,9 +58,9 @@ AUSSERDEM:
                 </authors>
                 <ressort><xsl:value-of select="lower-case($rubrikenwert)"/></ressort>
                 
-                <xsl:if test="not(RUBRIK-NORMIERT/text()='')">
+                <xsl:if test="not(RUBRIK-NORMIERT/@RU='')">
                     <rubriken>
-                        <rubrik><xsl:value-of select="RUBRIK-NORMIERT"/></rubrik>
+                        <rubrik><xsl:value-of select="concat(upper-case(substring(RUBRIK-NORMIERT/@RU,1,1)),lower-case(substring(RUBRIK-NORMIERT/@RU,2)))"/></rubrik>
                     </rubriken>
                 </xsl:if>
                 
