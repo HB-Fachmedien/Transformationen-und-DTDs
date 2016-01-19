@@ -3,7 +3,8 @@
     xmlns:saxon="http://saxon.sf.net/"
     xmlns:fn="http://www.w3.org/2005/xpath-functions"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs saxon fn"
+    xmlns:hbfm="http://www.fachmedien.de/"
+    exclude-result-prefixes="xs saxon fn hbfm"
     version="2.0">
     
     <xsl:output indent="yes"
@@ -11,6 +12,9 @@
         doctype-system="hbfm.dtd"
         encoding="UTF-8" 
     />
+    
+    <!-- Girichtsddatei liegt im Verwaltungsanweisungen Ordner -->
+    <xsl:variable name="gerichteDatei" select="document('../verwaltungsanweisungen/gerichte.xml')"/>
     
     <xsl:template match="ZEITSCHRIFT-BEITRAG">
         <xsl:variable name="sevenDigitID">
@@ -209,6 +213,28 @@
                         <xsl:value-of select="DATEI-REF/DATEI/@NAME"/>
                     </extfile>
                 </xsl:if>
+                
+                <xsl:if test="URTZEILE/BEHOERDE and not(string(URTZEILE/BEHOERDE/text())='')">
+                    <instdoc>
+                        <inst>
+                            <xsl:variable name="gerichtsabfrage" select="hbfm:getGericht(URTZEILE/BEHOERDE)"/>
+                            <xsl:attribute name="type">
+                                <xsl:choose>
+                                    <xsl:when test="$gerichtsabfrage[3]='authority'">authority</xsl:when>
+                                    <xsl:otherwise>court</xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:attribute>
+                            <xsl:attribute name="code">
+                                <xsl:value-of select="$gerichtsabfrage[1]"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$gerichtsabfrage[2]"/>
+                        </inst>
+                        <instdoctype>Schreiben</instdoctype>
+                        <instdocdate><xsl:value-of select="concat(URTZEILE/DATUM/JAHR,'-',URTZEILE/DATUM/MONAT,'-',URTZEILE/DATUM/TAG)"/></instdocdate>
+                        <instdocnrs><instdocnr><xsl:value-of select="URTZEILE/AZ"/></instdocnr></instdocnrs>
+                    </instdoc>
+                </xsl:if>
+                
                 <all_doc_type level="1">zs</all_doc_type>
                 <all_source level="1">zsa</all_source>
                 <all_source level="2">dsb</all_source>
@@ -237,4 +263,10 @@
         <!--xsl:value-of select="$id"/-->
         <xsl:value-of select="format-number($id, '0000000')"/>
     </xsl:template>
+    
+    <xsl:function name="hbfm:getGericht">
+        <xsl:param name="gerichtsBezeichnung"/>    
+        <xsl:variable name="option" select="$gerichteDatei/*/option[*[text() = $gerichtsBezeichnung/text()]]"/>
+        <xsl:sequence select="($option/main, $option/*[@diction='true'],$option/@type)"></xsl:sequence>
+    </xsl:function>
 </xsl:stylesheet>
