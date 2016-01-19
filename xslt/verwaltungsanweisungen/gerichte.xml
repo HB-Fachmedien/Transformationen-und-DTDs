@@ -538,6 +538,7 @@
 		<pos>Oberlandesgerichtes Frankfurt/Main</pos>
 		<pos>Oberlandesgericht Frankfurt/ Main</pos>
 		<pos>Oberlandesgerichts Frankfurt/ Main</pos>
+		<pos>Oberlandesgericht Frankfurt am Main</pos>
 		<pos>OLG Frankfurt/M.,</pos>
 	</option>
 
@@ -956,6 +957,7 @@
 		<pos>Landesarbeitsgericht Schleswig-Holstein</pos>
 		<pos>Landesarbeitsgerichts Schleswig-Holstein</pos>
 		<pos>Landesarbeitsgerichtes Schleswig-Holstein</pos>
+		<pos>LandesarbeitsgerichtSchleswig-Holstein</pos>
 	</option>
 
 	<option>
@@ -11806,9 +11808,7 @@
 
 	<type>authority</type>
 
-	<!-- Regierungsorgane -->
-	<!--Oberste Bundesbehörde -->
-	<option>
+<option type="authority">
 		<main>DeutscherBundestag</main>
 		<pos diction="true">Deutscher Bundestag</pos>
 		<pos>Der Deutsche Bundestag</pos>
@@ -11817,7 +11817,7 @@
 		<pos>Des Deutschen Bundestages</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>DeutscherBundesrat</main>
 		<pos diction="true">Deutscher Bundesrat</pos>
 		<pos>Der Deutsche Bundesrat</pos>
@@ -11828,13 +11828,13 @@
 
 	<!-- Finanzministerien -->
 	<!--Oberste Bundesbehörden -->
-	<option>
+	<option type="authority">
 		<main diction="true">BMF</main>
 		<pos>Bundesfinanzministerium</pos>
 		<pos>Bundesfinanzministeriums</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinDerLaender</main>
 		<pos diction="true">Oberste Finanzbehörden der Länder</pos>
 		<pos>Obersten Finanzbehörden der Länder</pos>
@@ -11846,7 +11846,7 @@
 		<pos>Finanzministerien der Bundesländer</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinDerNeuenBundeslaender</main>
 		<pos diction="true">Oberste Finanzbehörden der neuen Bundesländer</pos>
 		<pos>Obersten Finanzbehörden der neuen Bundesländer</pos>
@@ -11859,7 +11859,7 @@
 		<pos>FinMin Berlin, Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt und Thüringen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinBadenWuerttemberg</main>
 		<pos diction="true">FinMin. Baden-Württemberg</pos>
 		<pos>FinMin. Baden-Württ.</pos>
@@ -11871,7 +11871,7 @@
 		<pos>Ministeriums der Finanzen Baden-Württemberg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinBayern</main>
 		<pos>FinMin. Bayern</pos>
 		<pos diction="true">Bayer. Staatsmin. d. Fin.</pos>
@@ -11886,7 +11886,7 @@
 		<pos>Ministeriums der Finanzen Bayern</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinBerlin</main>
 		<pos>FinMin. Berlin</pos>
 		<pos>Finanzministerium Berlin</pos>
@@ -11901,7 +11901,7 @@
 		<pos>Ministeriums der Finanzen Berlin</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinBrandenburg</main>
 		<pos diction="true">FinMin. Brandenburg</pos>
 		<pos>Finanzministerium Brandenburg</pos>
@@ -11913,7 +11913,7 @@
 		<pos>Ministeriums der Finanzen des Landes Brandenburg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinBremen</main>
 		<pos>Finanzministerium Bremen</pos>
 		<pos>FinMin. Bremen</pos>
@@ -11932,7 +11932,7 @@
 		<pos>FinSen. Bremen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinHamburg</main>
 		<pos>FinMin. Hamburg</pos>
 		<pos>FinBeh. Hamburg</pos>
@@ -11946,7 +11946,7 @@
 		<pos>SenFin. Hamburg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinHessen</main>
 		<pos diction="true">FinMin. Hessen</pos>
 		<pos>Finanzministerium Hessen</pos>
@@ -11958,7 +11958,7 @@
 		<pos>Hessischen Ministeriums der Finanzen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinMecklenburgVorpommern</main>
 		<pos diction="true">FinMin. Mecklenburg-Vorpommern</pos>
 		<pos>Finanzministerium Mecklenburg-Vorpommern</pos>
@@ -11970,7 +11970,7 @@
 		<pos>Ministeriums der Finanzen Mecklenburg-Vorpommern</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinNiedersachsen</main>
 		<pos diction="true">FinMin. Niedersachsen</pos>
 		<pos>FinMin. Nieders.</pos>
@@ -11984,7 +11984,7 @@
 		<pos>Niedersächsischen Finanzministeriums</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinNordrheinWestfalen</main>
 		<pos>FinMin. Nordrhein-Westfalen</pos>
 		<pos diction="true">FinMin. NRW</pos>
@@ -12004,7 +12004,7 @@
 		<pos>Ministeriums der Finanzen NRW</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinRheinlandPfalz</main>
 		<pos diction="true">FinMin. Rheinland-Pfalz</pos>
 		<pos>FinMin. Rheinland/Pfalz</pos>
@@ -12015,7 +12015,7 @@
 		<pos>Ministeriums der Finanzen Rheinland-Pfalz</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinSaarland</main>
 		<pos diction="true">FinMin. Saarland</pos>
 		<pos>Finanzministerium Saarland</pos>
@@ -12027,7 +12027,7 @@
 		<pos>Ministeriums der Finanzen Saarland</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinSachsenAnhalt</main>
 		<pos diction="true">FinMin. Sachsen-Anhalt</pos>
 		<pos>Finanzministerium Sachsen-Anhalt</pos>
@@ -12037,7 +12037,7 @@
 		<pos>Ministeriums der Finanzen Sachsen-Anhalt</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinSachsen</main>
 		<pos diction="true">Sächs. FinMin.</pos>
 		<pos>Sächs. FinMin</pos>
@@ -12053,7 +12053,7 @@
 		<pos>Sächsischen Staatsministeriums der Finanzen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinSchleswigHolstein</main>
 		<pos diction="true">FinMin. Schleswig-Holstein</pos>
 		<pos>Finanzministerium Schleswig-Holstein</pos>
@@ -12069,7 +12069,7 @@
 		<pos>Ministeriums der Finanzen Schleswig Holstein</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>FinMinThueringen</main>
 		<pos diction="true">FinMin. Thüringen</pos>
 		<pos>Finanzministerium Thüringen</pos>
@@ -12081,7 +12081,7 @@
 
 	<!-- Kartellbehörden -->
 	<!-- Obere Bundesbehörde -->
-	<option>
+	<option type="authority">
 		<main>BKartA</main>
 		<pos diction="true">Bundeskartellamt</pos>
 		<pos>Bundeskartellamts</pos>
@@ -12089,158 +12089,158 @@
 	</option>
 
 	<!-- Organe/Gremien der Oberen Bundesbehörden -->
-	<option>
+	<option type="authority">
 		<main>VergabekammerBund</main>
 		<pos>Vergabekammer des Bundes</pos>
 		<pos diction="true">VK-Bund</pos>
 		<pos>VK Bund</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>VergabeueberwachungsausschussBund</main>
 		<pos diction="true">Vergabeüberwachungsausschuss des Bundes</pos>
 		<pos>Vergabeüberwachungsausschusses des Bundes</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>VKArnsberg</main>
 		<pos diction="true">VK Arnsberg</pos>
 		<pos>Vergabekammer Arnsberg</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKBerlin</main>
 		<pos diction="true">VK Berlin</pos>
 		<pos>Vergabekammer Berlin</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKBrandenburg</main>
 		<pos diction="true">VK Brandenburg</pos>
 		<pos>Vergabekammer Brandenburg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>VKBremen</main>
 		<pos diction="true">VK Bremen</pos>
 		<pos>Vergabekammer Bremen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKHamburg</main>
 		<pos diction="true">VK Hamburg</pos>
 		<pos>Vergabekammer Hamburg</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKBadenWuerttemberg</main>
 		<pos diction="true">VK Baden-Württemberg</pos>
 		<pos>Vergabekammer Baden-Württemberg</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKDuesseldorf</main>
 		<pos diction="true">VK Düsseldorf</pos>
 		<pos>Vergabekammer Düsseldorf</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKDetmold</main>
 		<pos diction="true">VK Detmold</pos>
 		<pos>Vergabekammer Detmold</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKKoeln</main>
 		<pos diction="true">VK Köln</pos>
 		<pos>Vergabekammer Köln</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKMuenster</main>
 		<pos diction="true">VK Münster</pos>
 		<pos>Vergabekammer Münster</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKNiedersachsen</main>
 		<pos diction="true">VK Niedersachsen</pos>
 		<pos>Vergabekammer Niedersachsen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKHessen</main>
 		<pos diction="true">VK Hessen</pos>
 		<pos>Vergabekammer Hessen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKRheinlandPfalz</main>
 		<pos diction="true">VK Rheinland-Pfalz</pos>
 		<pos>Vergabekammer Rheinland-Pfalz</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKSaarland</main>
 		<pos diction="true">VK Saarland</pos>
 		<pos>Vergabekammer Saarland</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKSachsen</main>
 		<pos diction="true">VK Sachsen</pos>
 		<pos>Vergabekammer Sachsen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKSachsenAnhalt</main>
 		<pos diction="true">VK Sachsen-Anhalt</pos>
 		<pos>Vergabekammer Sachsen-Anhalt</pos>
 		<pos>Vergabekammer Halle</pos>
 		<pos>VK Halle</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKSuedbayern</main>
 		<pos diction="true">VK Südbayern</pos>
 		<pos>Vergabekammer Südbayern</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKNordbayern</main>
 		<pos diction="true">VK Nordbayern</pos>
 		<pos>Vergabekammer Nordbayern</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKThueringen</main>
 		<pos diction="true">VK Thüringen</pos>
 		<pos>Vergabekammer Thüringen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKWestfalen</main>
 		<pos diction="true">VK Westfalen</pos>
 		<pos>Vergabekammer Westfalen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VKRheinland</main>
 		<pos diction="true">VK Rheinland</pos>
 		<pos>Vergabekammer Rheinland</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>VOBStelleNiedersachsen</main>
 		<pos diction="true">VOB-Stelle Niedersachsen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>VOBStelleSachsenAnhalt</main>
 		<pos diction="true">VOB-Stelle Sachsen-Anhalt</pos>
 	</option>
 
 	<!-- Oberfinanzdirektionen -->
 	<!-- Mittlere Bundesbehörde -->
-	<option>
+	<option type="authority">
 		<main>OFDRheinland</main>
 		<pos diction="true">OFD Rheinland</pos>
 		<pos>Oberfinanzdirektion Rheinland</pos>
 		<pos>OFD-Rheinland</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDMuenster</main>
 		<pos diction="true">OFD Münster</pos>
 		<pos>Oberfinanzdirektion Münster</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDNRW</main>
 		<pos diction="true">OFD NRW</pos>
 		<pos>OFD Nordrhein-Westfalen</pos>
 		<pos>Oberfinanzdirektion NRW</pos>
 		<pos>Oberfinanzdirektion Nordrhein-Westfalen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDFrankfurtMain</main>
 		<pos diction="true">OFD Frankfurt/M.</pos>
 		<pos>OFD Hessen</pos>
@@ -12281,7 +12281,7 @@
 		<pos>OFD Frankfurt/a. M.</pos>
 		<pos>OFD Frankfurt/a. M</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDNiedersachsen</main>
 		<pos>OFD Hannover</pos>
 		<pos diction="true">OFD Niedersachsen</pos>
@@ -12290,7 +12290,7 @@
 		<pos>OFD Hann.</pos>
 		<pos>OFD Hann</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDThueringen</main>
 		<pos>OFD Thüringen</pos>
 		<pos>Oberfinanzdirektion Thüringen</pos>
@@ -12298,7 +12298,7 @@
 		<pos>Landesfinanzdirektion Thüringen</pos>
 		<pos>LFD Thüringen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDChemnitz</main>
 		<pos diction="true">OFD Chemnitz</pos>
 		<pos>OFD Sachsen</pos>
@@ -12306,12 +12306,12 @@
 		<pos>Oberfinanzdirektion Sachsen</pos>
 	</option>
 	<!-- OFD Chemnitz wurde zum 1.1.2011 mit Landesamt für Steuern zusammengelegt -->
-	<option>
+	<option type="authority">
 		<main>LSFSachsen</main>
 		<pos>Landesamt für Steuern und Finanzen Sachsen</pos>
 		<pos diction="true">LSF Sachsen</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDKoblenz</main>
 		<pos diction="true">OFD Koblenz</pos>
 		<pos>OFD Rheinland-Pfalz</pos>
@@ -12319,14 +12319,14 @@
 		<pos>Oberfinanzdirektion Koblenz</pos>
 	</option>
 	<!-- OFD Koblenz wurde zum 1.9.2014 aufgelöst, Nachfolge: Landesamt für Steuern -->
-	<option>
+	<option type="authority">
 		<main>LfStKoblenz</main>
 		<pos>Landesamt für Steuern Koblenz</pos>
 		<pos>LfSt Koblenz</pos>
 		<pos>Landesamt für Steuern Rheinland-Pfalz</pos>
 		<pos diction="true">LfSt Rheinland-Pfalz</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDBayern</main>
 		<pos>OFD Bayern</pos>
 		<pos>Oberfinanzdirektion Bayern</pos>
@@ -12336,14 +12336,14 @@
 		<pos>Bayer. Landesamt für Steuern</pos>
 		<pos>Bay. Landesamt für Steuern</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDKarlsruhe</main>
 		<pos diction="true">OFD Karlsruhe</pos>
 		<pos>Oberfinanzdirektion Karlsruhe</pos>
 		<pos>Oberfinanzdirektion Baden-Württemberg</pos>
 		<pos>OFD Baden-Württemberg</pos>
 	</option>
-	<option>
+	<option type="authority">
 		<main>OFDMagdeburg</main>
 		<!-- wurde Ende 2014 aufgelöst, zuständig ist nun das FinMin. Sachsen-Anhalt -->
 		<pos diction="true">OFD Magdeburg</pos>
@@ -12352,14 +12352,14 @@
 		<pos>Oberfinanzdirektion Sachsen-Anhalt</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDBerlin</main>
 		<!-- wurde zum 1.1.2005 aufgelöst - zuständig ist das FinMin. Berlin (Senatsverwaltung) -->
 		<pos diction="true">OFD Berlin</pos>
 		<pos>Oberfinanzdirektion Berlin</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDBrandenburg</main>
 		<!-- wurde zum 1.7.2004 aufgelöst bzw. Umstrukturiert - zuständig ist das FinMin. Brandenburg -->
 		<pos diction="true">OFD Cottbus</pos>
@@ -12368,21 +12368,21 @@
 		<pos>Oberfinanzdirektion Cottbus</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDBremen</main>
 		<!-- wurde 1998 aufgelöst - zuständig ist der FinSen. Bremen -->
 		<pos diction="true">OFD Bremen</pos>
 		<pos>Oberfinanzdirektion Bremen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDHamburg</main>
 		<!-- wurde 2009 aufgelöst - zuständig ist das FinMin. Hamburg / Finanzbehörde -->
 		<pos diction="true">OFD Hamburg</pos>
 		<pos>Oberfinanzdirektion Hamburg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDRostock</main>
 		<!-- wurde 2004 (?) aufgelöst, zuständig ist das FinMin. Mecklenburg-Vorpommern -->
 		<pos diction="true">OFD Rostock</pos>
@@ -12391,7 +12391,7 @@
 		<pos>Oberfinanzdirektion Mecklenburg-Vorpommern</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDSaarbruecken</main>
 		<!-- wurde 2002 aufgelöst, zuständig ist das Ministerium für Finanzen und Europa -->
 		<pos diction="true">OFD Saarbrücken</pos>
@@ -12400,21 +12400,21 @@
 		<pos>Oberfinanzdirektion Saarland</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDStuttgart</main>
 		<!-- wurde 2004/5 (?) aufgelöst, für BW gibt es nur noch OFD Karlsruhe -->
 		<pos diction="true">OFD Stuttgart</pos>
 		<pos>Oberfinanzdirektion Stuttgart</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDFreiburg</main>
 		<!-- wurde 2000 aufgelöst, für BW gibt es nur noch OFD Karlsruhe -->
 		<pos diction="true">OFD Freiburg</pos>
 		<pos>Oberfinanzdirektion Freiburg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDKiel</main>
 		<!-- wurde 2003 aufgelöst, zuständig ist das FinMin. Schleswig-Holstein -->
 		<pos diction="true">OFD Kiel</pos>
@@ -12423,14 +12423,14 @@
 		<pos>Oberfinanzdirektion Schleswig-Holstein</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDKoeln</main>
 		<!-- wurde 2006 aufgelöst, zuständig ist nun OFD NRW -->
 		<pos diction="true">OFD Köln</pos>
 		<pos>Oberfinanzdirektion Köln</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDDuesseldorf</main>
 		<!-- wurde 2005 aufgelöst, zuständig ist nun OFD NRW -->
 		<pos diction="true">OFD Düsseldorf</pos>
@@ -12438,14 +12438,14 @@
 		<pos>OFD Düsseldorf Abt. Köln</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDMuenchen</main>
 		<!-- wurde 2005 aufgelöst, zuständig ist nun BayLfSt -->
 		<pos diction="true">OFD München</pos>
 		<pos>Oberfinanzdirektion München</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDNuernberg</main>
 		<!-- wurde Ende 2007 aufgelöst, zuständig ist nun BayLfSt bzw. BFD Südwest -->
 		<pos diction="true">OFD Nürnberg</pos>
@@ -12454,7 +12454,7 @@
 
 
 
-	<option>
+	<option type="authority">
 		<main>OFDErfurt</main>
 		<!-- wurde 2006 aufgelöst, zuständig ist nun die Thüringer LFD -->
 		<pos diction="true">OFD Erfurt</pos>
@@ -12463,7 +12463,7 @@
 
 	<!-- Sonderfälle gemeinsame Erlasse / Verfügungen / Informationen mehrerer OFD -->
 
-	<option>
+	<option type="authority">
 		<main>OFDsMuenchenNuernberg</main>
 		<!--  z.B. 21.1.1999 - in DB 08/1999 S. 408 - ID: 3700 -->
 		<pos diction="true">OFD München / OFD Nürnberg</pos>
@@ -12471,7 +12471,7 @@
 		<pos>OFD München/Nürnberg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDsDuesseldorfMuenster</main>
 		<!--  z.B. Kurzinformation Umsatzsteuer Nr. 01/2005 vom 10.1.2005 - in DB 08/2005 S. 421 - ID: 100827 -->
 		<pos diction="true">OFD Düsseldorf / OFD Münster</pos>
@@ -12479,7 +12479,7 @@
 		<pos>OFD Düsseldorf/Münster</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDsRheinlandMuenster</main>
 		<!--  z.B. Kurzinformation Bewertung Nr. 2/2006 vom 26.1.2006 - in DB 06/2006 S. 304 - ID: 131347 -->
 		<pos diction="true">OFD Rheinland / OFD Münster</pos>
@@ -12487,7 +12487,7 @@
 		<pos>OFD Rheinland/Münster</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>OFDsKarlsruheStuttgart</main>
 		<!--  z.B. Verfügung vom 9.12.2002 - S 7360, Karte 1 zu § 19 Abs. 1 - in DB 03/2003 S. 121 - ID: 22904 -->
 		<pos diction="true">OFD Karlsruhe / OFD Stuttgart</pos>
@@ -12499,7 +12499,7 @@
 	<!-- Quelle: http://de.wikipedia.org/wiki/Bundesfinanzdirektion
 	Die Bundesfinanzdirektionen (BFD) haben nach der Änderung des Finanzverwaltungsgesetzes zum 1. Januar 2008 die Bundesabteilungen der bisherigen Oberfinanzdirektionen ersetzt. Grundlage dieser Organisationsänderung waren die Ergebnisse des Projekts Strukturentwicklung Zoll.
 	-->
-	<option>
+	<option type="authority">
 		<main>BFDMitte</main>
 		<pos diction="true">BFD Mitte</pos>
 		<pos>Bundesfinanzdirektion Mitte</pos>
@@ -12507,7 +12507,7 @@
 		<pos>Bundesfinanzdirektion Potsdam</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>BFDNord</main>
 		<pos diction="true">BFD Nord</pos>
 		<pos>Bundesfinanzdirektion Nord</pos>
@@ -12515,7 +12515,7 @@
 		<pos>Bundesfinanzdirektion Hamburg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>BFDSuedost</main>
 		<pos diction="true">BFD Südost</pos>
 		<pos>Bundesfinanzdirektion Südost</pos>
@@ -12523,7 +12523,7 @@
 		<pos>Bundesfinanzdirektion Nürnberg</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>BFDSuedwest</main>
 		<pos diction="true">BFD Südwest</pos>
 		<pos>Bundesfinanzdirektion Südwest</pos>
@@ -12531,7 +12531,7 @@
 		<pos>Bundesfinanzdirektion Neustadt an der Weinstraße</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>BFDWest</main>
 		<pos diction="true">BFD West</pos>
 		<pos>Bundesfinanzdirektion West</pos>
@@ -12545,12 +12545,12 @@
     - Bundesamt für zentrale Dienste und offene Vermögensfragen (BADV), unter Zusammenlegung mit dem Bundesamt zur Regelung offener Vermögensfragen (BARoV)
     - Bundeszentralamt für Steuern (BZSt)
 	-->
-	<option>
+	<option type="authority">
 		<main>BfF</main>
 		<pos diction="true">Bundesamt für Finanzen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>BZSt</main>
 		<pos diction="true">Bundeszentralamt für Steuern</pos>
 	</option>
@@ -12558,14 +12558,14 @@
 	<!-- Quelle: http://de.wikipedia.org/wiki/Bundesministerium_für_innerdeutsche_Beziehungen
 	Das Bundesministerium für innerdeutsche Beziehungen, kurz BMiB, wurde 1949 unter der Bezeichnung Bundesministerium für gesamtdeutsche Fragen, kurz BMG, errichtet. 1969 erhielt es die neue Bezeichnung „innerdeutsche Beziehungen“, eine programmatische Änderung, mit der die neue Ostpolitik zum Ausdruck kam.
 	-->
-	<option>
+	<option type="authority">
 		<main>BMiB</main>
 		<pos diction="true">Bundesministerium für innerdeutsche Beziehungen</pos>
 		<pos>BMG</pos>
 		<pos>Bundesministerium für gesamtdeutsche Fragen</pos>
 	</option>
 
-	<option>
+	<option type="authority">
 		<main>BMI</main>
 		<pos diction="true">Bundesministerium des Innern</pos>
 		<pos>Bundesministeriums des Innern</pos>
@@ -12574,14 +12574,14 @@
 	</option>
 
 
-	<option>
+	<option type="authority">
 		<main>EUKommission</main>
 		<pos diction="true">EU-Kommission</pos>
 	</option>
 
 	<!-- Sonderfall, keine Behörde im engeren Sinn -->
 
-	<option>
+	<option type="authority">
 		<main>IFSt</main>
 		<pos diction="true">Institut Finanzen und Steuern</pos>
 		<pos>Institut "Finanzen und Steuern"</pos>
@@ -12589,3 +12589,5 @@
 	</option>
 
 </link-recognition-list>
+	<!-- Regierungsorgane -->
+	<!--Oberste Bundesbehörde -->
