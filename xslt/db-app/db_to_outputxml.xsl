@@ -4,8 +4,12 @@
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
 
     <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN, bei Doppelausgaben: concat('51','-52') -->
-    <xsl:variable name="ausgabennummer" as="xs:string" select="'02'"/>
+    <!--<xsl:variable name="ausgabennummer" as="xs:string" select="'02'"/>-->
     <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    
+    <xsl:variable name="ausgabennummer" as="xs:string">
+        <xsl:value-of select="tokenize(document-uri(collection('../../../../../webexport/export/DB_3/XML/?recurse=yes;select=*.xml')[1]),'/')[last()-1]"/>
+    </xsl:variable>
 
     <xsl:template match="/">
 

@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="ihv_datum">
                                         <xsl:value-of
-                                            select="format-date(current-date(), '[D].[M].[Y]')"/>
+                                            select="format-date(current-date()+xs:dayTimeDuration('P1DT1H'), '[D].[M].[Y]')"/>
                                     </div>
                                     <!--<div class="ihv_datum"> <xsl:value-of select="format-dateTime(current-dateTime(), '[D]. [M]. [Y]')"/></div>-->
                                     
