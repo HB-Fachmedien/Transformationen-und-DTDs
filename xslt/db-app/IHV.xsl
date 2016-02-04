@@ -117,12 +117,14 @@
                                                     <!--<xsl:value-of select="$gk-dokument/AUTOR"/>-->
                                                     <xsl:value-of select="replace(replace($gk-dokument/AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
                                                 </div>
-                                                <div class="ihv_autornormiert">
-                                                    <div class="ihv_autor">
-                                                        <xsl:value-of select="hbfm:autorenkuerzel($gk-dokument/AUTOR)"/>
+                                                <xsl:for-each select="$gk-dokument/AUTOR">
+                                                    <div class="ihv_autornormiert">
+                                                        <div class="ihv_autor">
+                                                            <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
+                                                        </div>
+                                                        <!-- Überprüfen, ob das so passt -->
                                                     </div>
-                                                    <!-- Überprüfen, ob das so passt -->
-                                                </div>
+                                                </xsl:for-each>
                                                 <div class="ihv_dbnummer">
                                                     <a
                                                         href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}">
