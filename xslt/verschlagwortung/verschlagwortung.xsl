@@ -21,10 +21,28 @@
             <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword">
                 <xsl:sort/>
             </xsl:apply-templates>
+            <xsl:apply-templates select="$file-collection/*/metadata/authors/author"><!-- Autorenverzeichnis -->
+                <xsl:sort/>
+            </xsl:apply-templates>
         </Register>
     </xsl:template>
     
+    <xsl:template match="author">
+        <autoren-zeile>
+            <autor><xsl:value-of select="surname"/><xsl:text>, </xsl:text><xsl:value-of select="firstname"/></autor>
+            <title><xsl:value-of select="../../title"/></title>
+            <xsl:comment><xsl:value-of select="../../pub/pages/start_page"/></xsl:comment>
+        </autoren-zeile>
+    </xsl:template>
+    
     <xsl:template match="keywords/keyword">
+        <!--<xsl:variable name="kuerzel">
+            <xsl:choose>
+                <xsl:when test="./../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                <xsl:otherwise></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>-->
+        
         <xsl:variable name="seitenzahl" select="./../../pub/pages/start_page"/>
         
         <xsl:choose>

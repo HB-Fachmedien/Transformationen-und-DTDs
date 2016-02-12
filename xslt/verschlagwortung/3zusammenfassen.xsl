@@ -39,6 +39,33 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
+            <xsl:for-each select="autoren-zeile">
+                <!-- Hier Autorenregister -->
+                <!--<xsl:choose>
+                    <xsl:when test=".[some $sibling in preceding-sibling::autoren-zeile satisfies deep-equal(. ,$sibling)]">
+                        <xsl:if test="not(.[some $sibling in following-sibling::autoren-zeile satisfies deep-equal(. ,$sibling)])">
+                            <autoren-zeile>
+                                <xsl:copy-of select="autor"/>
+                                <xsl:copy-of select="title"/>
+                                
+                                <fundstellen>
+                                    
+                                    <xsl:call-template name="autorenfundstellensuche">
+                                        <xsl:with-param name="this" select="."/>
+                                    </xsl:call-template>
+                                </fundstellen>
+                            </autoren-zeile>
+                            
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:when test=".[some $sibling in following-sibling::autoren-zeile satisfies deep-equal(. ,$sibling)]"></xsl:when>
+                    <xsl:otherwise>
+                        <!-\- Unikat -\->
+                        <xsl:apply-templates select="." mode="ident"/>
+                    </xsl:otherwise>
+                </xsl:choose>-->
+                <xsl:apply-templates select="." mode="ident"/>
+            </xsl:for-each>
         </raw-reg>
     </xsl:template>
     
@@ -54,12 +81,31 @@
         <xsl:value-of select="$result"/>
     </xsl:template>
     
+    <xsl:template name="autorenfundstellensuche"><!-- brauche ich, glaube ich, gar nicht -->
+        <xsl:param name="this"/><!-- <autoren-zeile/> -->
+        <xsl:variable name="result">
+            <xsl:for-each select="/sortiertes-register/autoren-zeile[deep-equal(.,$this)]">
+                <xsl:sort select="comment()" data-type="number"/>
+                <xsl:if test="not(position()=1)">,</xsl:if><xsl:value-of select="comment()"/>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:value-of select="$result"/>
+    </xsl:template>
+    
     <xsl:template match="reg-zeile" mode="ident">
         <!--<xsl:copy-of select="."/>-->
         <reg-zeile>
             <xsl:copy-of select="hauptebene"/>
             <xsl:copy-of select="zweite-ebene"/>
             <xsl:copy-of select="dritte-ebene"/>
+            <fundstellen><xsl:value-of select="comment()"/></fundstellen>
+        </reg-zeile>
+    </xsl:template>
+    
+    <xsl:template match="autoren-zeile" mode="ident">
+        <reg-zeile>
+            <xsl:copy-of select="autor"/>
+            <xsl:copy-of select="title"/>
             <fundstellen><xsl:value-of select="comment()"/></fundstellen>
         </reg-zeile>
     </xsl:template>
