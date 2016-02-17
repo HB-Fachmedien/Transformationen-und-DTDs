@@ -179,7 +179,9 @@
                         </xsl:choose>
                     </BEZ>
                     <UNTERRUBRIK>
-                        <xsl:value-of select="$docum/*/metadata/rubriken/rubrik"/>
+                        <xsl:for-each select="$docum/*/metadata/rubriken/rubrik">
+                            <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if><xsl:value-of select="."/>
+                        </xsl:for-each>
                     </UNTERRUBRIK>
                 </HAUPTRUBRIK>
 
