@@ -30,11 +30,11 @@
                 <xsl:when test="$ru-attr='MELDUNGEN' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='PERSONALIA' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='BUCHBESPRECHUNG'">rez</xsl:when>
-                <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='LITERATURHINWEIS'">nr</xsl:when>
+                <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='LITERATURHINWEIS'">rez</xsl:when>
                 <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='NACHRICHT'">rez</xsl:when>
                 <xsl:when test="$ru-attr='GASTKOMMENTAR' and $typ-attr='KOMMENTAR'">gk</xsl:when>
                 <xsl:when test="$ru-attr='GASTKOMMENTAR' and $typ-attr='EDITORIAL'">ed</xsl:when>
-                <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='NACHRICHT'">nr</xsl:when>
+                <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='NACHRICHT'">rez</xsl:when>
                 <xsl:when test="$ru-attr='NACHRICHTEN' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='BEITRAG'">iv</xsl:when>
                 <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='INTERVIEW'">iv</xsl:when>

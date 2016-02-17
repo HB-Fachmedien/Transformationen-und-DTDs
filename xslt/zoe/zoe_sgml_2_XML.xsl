@@ -110,9 +110,7 @@
                 
                 <xsl:if test="RUBRIK">
                     <xsl:choose>
-                        <xsl:when test="RUBRIK/text()='Editoral'">
-                            <ressort></ressort>
-                        </xsl:when>
+                        <xsl:when test="RUBRIK/text()='Editorial'"></xsl:when>
                         <xsl:otherwise>
                             <ressort><xsl:value-of select="RUBRIK/text()"/></ressort>
                         </xsl:otherwise>
