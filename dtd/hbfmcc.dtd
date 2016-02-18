@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.16
+1.19
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -82,6 +82,19 @@ Version 1.15 (10.08.15): Änderungen (SG):&#x0013;
 						</ul>
 Version 1.16 (04.09.15): Änderungen (SG):&#x0013;	
 						<ul>
+							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
+						</ul>
+Version 1.18 (14.12.15): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>neuer Attribut-Wert für "hinweis" für Element <a href="#block">block</a></li>
+							<li>neues Inline-Element für URLs <a href="#url">url</a></li>
+							<li>Element article_order aus <a href="#pages_alt">pages_alt</a> entfernt</li>
+							<li>neues Attribut <i>pagenumber_alt</i> für Element <a href="#newpage">newpage</a></li>
+						</ul>
+Version 1.19 (22.01.16): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>neue Elemente <a href="#questionAndAnswer">questionAndAnswer</a>, <a href="#question">question</a>, <a href="#answer">answer</a>. <a href="#questionAndAnswer">questionAndAnswer</a> ist nur innherhalb von <a href="#body">body</a> und <a href="#section">section</a> erlaubg</li>
+							<li>neues Element für Marginalien <a href="#sidenote">sidenote</a>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
 
@@ -174,9 +187,10 @@ EMPTY - kein Inhalt
 -->
 
 <!ENTITY % block_simple "p | subhead | figure | table | list | rzblock | example | block" >
-<!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | newpage)*" >
+<!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
+<!ENTITY % block_with_questionAndAnswer "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 
-<!ENTITY % inline "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | ref)*" >
+<!ENTITY % inline "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | ref | url)*" >
 
 <!ENTITY % attrId     " id     ID    #IMPLIED" >
 <!ENTITY % attrLang   " lang   (de | en | fr | es) #IMPLIED" >
@@ -223,7 +237,7 @@ _img pages.png-->
 
 <!--Element <i>pages_alt</i>: only used when we have a secondary (alternative) page count, e.g. for "Entscheidungen" in WuW
 _img pages_alt.png-->
-<!ELEMENT pages_alt (start_page, intermed_page?, last_page?, article_order, dept) >
+<!ELEMENT pages_alt (start_page, intermed_page?, last_page?, dept) >
 
 
 
@@ -833,6 +847,7 @@ _img instcode.png
 		| EuGH
 		| EuG
 		| EGMR
+		| EFTAGH
 		| BVerfG
 		| GmSOGB
 		| BAG
@@ -876,7 +891,7 @@ _img instcode.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen
+		| OLGThueringen	
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -1192,7 +1207,7 @@ _img instcode.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten
+		| AGBretten		
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1228,7 +1243,7 @@ _img instcode.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim
+		| AGBadMergentheim		
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -2052,9 +2067,8 @@ _img instcode.png
 		| NLAGAmsterdam
 		| RG
 			) #IMPLIED
-		
 	authority (
-		other
+		  other		
 		| DeutscherBundestag
 		| DeutscherBundesrat
 		| BMF
@@ -2077,8 +2091,17 @@ _img instcode.png
 		| FinMinSchleswigHolstein
 		| FinMinThueringen
 		| BKartA
+		| LKartBHessen
+		| LKartBBayern
 		| VergabekammerBund
 		| VergabeueberwachungsausschussBund
+		| VUEASachsenAnhalt
+		| VUEASaarland
+		| VUEAHessen
+		| VUEANiedersachsen
+		| VUEANordrheinWestfalen
+		| VUEABrandenburg
+		| VUEABayern
 		| VKArnsberg
 		| VKBerlin
 		| VKBrandenburg
@@ -2145,8 +2168,12 @@ _img instcode.png
 		| BMiB
 		| BMI
 		| BMJV
+		| BMWi
 		| EUKommission
+		| BNetzA
+		| Bundesregierung
 		| IFSt
+		| Monopolkommission
 			) #IMPLIED
 >
 
@@ -2337,7 +2364,7 @@ genannten Textelemente zu verwenden. Dies wird nur für kurze Texte ohne ersicht
 
 _img xml_body.png
 -->
-<!ELEMENT xml_body (%block;, (section, (section | newpage)*)?, (note, newpage?)*) >
+<!ELEMENT xml_body (%block_with_questionAndAnswer;, (section, (section | newpage)*)?, (note, newpage?)*) >
 
 
 
@@ -2355,7 +2382,7 @@ Das optionale Attribut <i>class</i> beschreibt den Inhalt des Abschnitts näher.
 
 _img section.png
 -->
-<!ELEMENT section (title?, %block;, (section, (section | newpage)*)?) >
+<!ELEMENT section (title?, %block_with_questionAndAnswer;, (section, (section | newpage)*)?) >
 
 <!--@attr id Im Attribut <i>id</i> kann eine ID-Nummer für die jeweilige <i>section</i> vergeben werden, u.a. damit auf diese als
 Verweisziel verlinkt werden kann. Diese ID wird in der Regel nicht vom Benutzer vergeben. 
@@ -2575,8 +2602,55 @@ Diese ID wird in der Regel nicht vom Benutzer vergeben. Die Befüllung des Attri
 -->
 <!ATTLIST block
 	%attrId;
-	class (quote | maxime | example | anmerkung | frame) #REQUIRED
+	class (quote | maxime | example | anmerkung | frame | hinweis) #REQUIRED
 >
+
+
+
+
+<!--Das Element questionAndAnswer bildet ein Frage/Antwort-Paar innerhalb eines Interviews ab. Die Elemente question und answer müssen immer jeweils genau einmal vorhanden sein:
+
+%
+<questionAndAnswer>
+	<question>
+		<p>Text der Frage</p>
+	</question>
+	<answer>
+		<p>Text der Antwort</p>
+		<p>Text der Antwort</p>
+	</answer>
+</questionAndAnswer>
+%
+
+_img questionAndAnswer.png
+-->
+<!ELEMENT questionAndAnswer (question, answer) >
+
+<!-- Beinhaltet den Text der Frage innerhalb eines Frage/Antwort-Paars (questionAndAnswer).
+
+_img question.png
+-->
+<!ELEMENT question (%block;) >
+
+<!-- Beinhaltet den Text der Antwort innerhalb eines Frage/Antwort-Paars (questionAndAnswer).
+
+_img answer.png
+-->
+<!ELEMENT answer   (%block;) >
+
+
+
+<!--Dieses Element nimmt Marginalien auf:
+
+%
+	<sidenote>
+		<p>Text der Marginalie</p>
+	</sidenote
+%
+
+_img sidenote.png
+-->
+<!ELEMENT sidenote (%block;) >
 
 
 <!--Über das Element <i>figure</i> werden Grafiken als semantische Einheiten im Text stukturiert. 
@@ -2789,7 +2863,8 @@ _img newpage.png
 
 <!--Über <i>pagenumber</i> wird die Seitenzahl der neu beginnenden Seite angegeben, eine Schreibweise ist nicht vorgegeben. Die Angabe von <i>pagenumber</i> innerhalb von <i>newpage</i> ist zwingend erforderlich.-->
 <!ATTLIST newpage
-	pagenumber CDATA #REQUIRED
+	pagenumber     CDATA #REQUIRED
+	pagenumber_alt CDATA #IMPLIED
 >
 
 
@@ -2898,6 +2973,15 @@ _img ref.png
 	idref  CDATA #IMPLIED
 >
 
+<!-- Element, um Internetadressen auszuzeichnen. Die URL wird im Attribut <i>src</i> eingetragen, der dargestellte Text, der von der
+URL abweichen kann, bildet den Elementinhalt
+_img url.png
+--> 
+<!ELEMENT url %inline; >
+
+<!ATTLIST url 
+	src CDATA #REQUIRED
+>
 
 
 
