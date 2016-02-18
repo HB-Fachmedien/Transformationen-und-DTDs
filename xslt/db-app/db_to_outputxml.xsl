@@ -295,7 +295,7 @@
                         <xsl:when test="$doctype = 'va'">50</xsl:when>
                         <xsl:when test="$doctype = 'ent'">60</xsl:when>
                         <xsl:when test="$doctype = 'entk'">60</xsl:when>
-                        <!--<xsl:when test="$doctype = 'nr'">Nachricht</xsl:when>-->
+                        <xsl:when test="$doctype = 'nr'">70</xsl:when>
                         <xsl:when test="$doctype = 'ed'">10</xsl:when>
                         <!--<xsl:when test="$doctype = 'toc'">0</xsl:when>-->
                         <xsl:when test="$doctype = 'gk'">20</xsl:when>
