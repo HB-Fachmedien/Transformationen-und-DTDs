@@ -85,7 +85,7 @@
         <xsl:param name="this"/><!-- <autoren-zeile/> -->
         <xsl:variable name="result">
             <xsl:for-each select="/sortiertes-register/autoren-zeile[deep-equal(.,$this)]">
-                <xsl:sort select="comment()" data-type="number"/>
+                <xsl:sort select="substring-before(comment(),' (')" data-type="number"/>
                 <xsl:if test="not(position()=1)">,</xsl:if><xsl:value-of select="comment()"/>
             </xsl:for-each>
         </xsl:variable>

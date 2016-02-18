@@ -28,35 +28,40 @@
     </xsl:template>
     
     <xsl:template match="author">
-        <autoren-zeile>
-            <autor><xsl:value-of select="surname"/><xsl:text>, </xsl:text><xsl:value-of select="firstname"/></autor>
-            <title><xsl:value-of select="../../title"/></title>
-            <xsl:comment><xsl:value-of select="../../pub/pages/start_page"/></xsl:comment>
-        </autoren-zeile>
+        <xsl:if test="ancestor::metadata/keywords/keyword">
+            <autoren-zeile>
+                <autor><xsl:value-of select="surname"/><xsl:text>, </xsl:text><xsl:value-of select="firstname"/></autor>
+                <title><xsl:value-of select="../../title"/></title>
+                <xsl:comment><xsl:value-of select="../../pub/pages/start_page"/></xsl:comment>
+            </autoren-zeile>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="keywords/keyword">
-        <!--<xsl:variable name="kuerzel">
-            <xsl:choose>
-                <xsl:when test="./../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
-                <xsl:otherwise></xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>-->
-        
-        <xsl:variable name="seitenzahl" select="./../../pub/pages/start_page"/>
-        
+        <xsl:variable name="isDB" select="ancestor::metadata/pub/pubtitle = 'Der Betrieb'"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
+                
+                <xsl:variable name="kuerzel">
+                    <xsl:choose>
+                        <xsl:when test="$isDB and ./../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:otherwise></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
+                <xsl:variable name="seitenzahl" select="./../../pub/pages/start_page"/>
+                
                 <reg-zeile>
                     <hauptebene><xsl:value-of select="replace(text(),'\n','')"/></hauptebene>
                     <!--<fundstelle><xsl:value-of select="$seitenzahl"/></fundstelle>-->
-                    <xsl:comment><xsl:value-of select="$seitenzahl"/></xsl:comment>
+                    <xsl:comment><xsl:value-of select="concat($seitenzahl, $kuerzel)"/></xsl:comment>
                 </reg-zeile>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates select="keyword">
                     <xsl:sort/>
                     <xsl:with-param name="ersteEbene" select="replace(text()[1],'\n','')"/>
+                    <xsl:with-param name="isDB" select="$isDB"/>
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
@@ -65,14 +70,24 @@
 
     <xsl:template match="keywords/keyword/keyword">
         <xsl:param name="ersteEbene"/>
-        <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page"/>
+        <xsl:param name="isDB"/>
+        <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page/text()"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
+                <xsl:variable name="kuerzel">
+                    <xsl:choose>
+                        <xsl:when test="$isDB and ./../../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:otherwise></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
+                <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page/text()"/>
+                
                 <reg-zeile>
                     <hauptebene><xsl:value-of select="$ersteEbene"/></hauptebene>
                     <zweite-ebene><xsl:value-of select="replace(text(),'\n','')"/></zweite-ebene>
                     <!--<fundstelle><xsl:value-of select="$seitenzahl"/></fundstelle>-->
-                    <xsl:comment><xsl:value-of select="$seitenzahl"/></xsl:comment>
+                    <xsl:comment><xsl:value-of select="concat($seitenzahl, $kuerzel)"/></xsl:comment>
                 </reg-zeile>
             </xsl:when>
             <xsl:otherwise>
@@ -80,6 +95,7 @@
                     <xsl:sort/>
                     <xsl:with-param name="ersteEbene" select="$ersteEbene"/>
                     <xsl:with-param name="zweiteEbene" select="replace(text()[1],'\n','')"/>
+                    <xsl:with-param name="isDB" select="$isDB"/>
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
@@ -88,13 +104,20 @@
     <xsl:template match="keywords/keyword/keyword/keyword">
         <xsl:param name="ersteEbene"/>
         <xsl:param name="zweiteEbene"/>
-        <xsl:variable name="seitenzahl" select="./../../../../pub/pages/start_page"/>
+        <xsl:param name="isDB"/>
+        <xsl:variable name="seitenzahl" select="./../../../../pub/pages/start_page/text()"/>
+        <xsl:variable name="kuerzel">
+            <xsl:choose>
+                <xsl:when test="$isDB and ./../../../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                <xsl:otherwise></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
             <reg-zeile>
                 <hauptebene><xsl:value-of select="$ersteEbene"/></hauptebene>
                 <zweite-ebene><xsl:value-of select="$zweiteEbene"/></zweite-ebene>
                 <dritte-ebene><xsl:value-of select="replace(text(),'\n','')"/></dritte-ebene>
                 <!--<fundstelle><xsl:value-of select="$seitenzahl"/></fundstelle>-->
-                <xsl:comment><xsl:value-of select="$seitenzahl"/></xsl:comment>
+                <xsl:comment><xsl:value-of select="concat($seitenzahl, $kuerzel)"/></xsl:comment>
             </reg-zeile>
     </xsl:template>
 
