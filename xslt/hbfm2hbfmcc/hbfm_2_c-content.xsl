@@ -270,6 +270,7 @@ TOC für KOR und DK
 		<xsl:for-each select="author | organisation">
 			<xsl:choose>
 				<xsl:when test="self::author">
+					<xsl:value-of select="fullname/node()"/>
 					<xsl:value-of select="firstname/node()"/>
 					<xsl:text> </xsl:text>
 					<xsl:value-of select="surname/node()"/>
