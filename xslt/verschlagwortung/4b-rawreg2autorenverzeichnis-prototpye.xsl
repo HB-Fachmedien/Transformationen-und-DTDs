@@ -11,6 +11,7 @@
             <xsl:for-each-group select="reg-zeile" group-by="autor">
                 <ebene1><xsl:value-of select="current-grouping-key()"/></ebene1>
                 <xsl:for-each select="current-group()">
+                    <xsl:sort select="fundstellen/text()" data-type="number"/>
                     <ebene2><xsl:value-of select="title"/><fundstelle><xsl:value-of select="fundstellen"/></fundstelle></ebene2>
                     <!--<xsl:for-each select="current-group()">
                         <xsl:if test="dritte-ebene"><ebene3><xsl:value-of select="dritte-ebene"/><fundstelle><xsl:value-of select="replace(fundstellen/text(),',',', ')"/></fundstelle></ebene3></xsl:if>
@@ -19,11 +20,5 @@
             </xsl:for-each-group>
         </register>
     </xsl:template>
-    
-    
-    <!--<xsl:template name="isLeaf">
-        <xsl:param name="cgk"/><xsl:param name="contxt"/><xsl:param name="el"/>
-        <xsl:if test="//*[text()=$cgk]/..[count(child::* ) = $el]"><fundstelle><xsl:value-of select="replace($contxt/fundstellen/text(),',',', ')"/></fundstelle></xsl:if>
-    </xsl:template>-->
     
 </xsl:stylesheet>

@@ -41,29 +41,6 @@
             </xsl:for-each>
             <xsl:for-each select="autoren-zeile">
                 <!-- Hier Autorenregister -->
-                <!--<xsl:choose>
-                    <xsl:when test=".[some $sibling in preceding-sibling::autoren-zeile satisfies deep-equal(. ,$sibling)]">
-                        <xsl:if test="not(.[some $sibling in following-sibling::autoren-zeile satisfies deep-equal(. ,$sibling)])">
-                            <autoren-zeile>
-                                <xsl:copy-of select="autor"/>
-                                <xsl:copy-of select="title"/>
-                                
-                                <fundstellen>
-                                    
-                                    <xsl:call-template name="autorenfundstellensuche">
-                                        <xsl:with-param name="this" select="."/>
-                                    </xsl:call-template>
-                                </fundstellen>
-                            </autoren-zeile>
-                            
-                        </xsl:if>
-                    </xsl:when>
-                    <xsl:when test=".[some $sibling in following-sibling::autoren-zeile satisfies deep-equal(. ,$sibling)]"></xsl:when>
-                    <xsl:otherwise>
-                        <!-\- Unikat -\->
-                        <xsl:apply-templates select="." mode="ident"/>
-                    </xsl:otherwise>
-                </xsl:choose>-->
                 <xsl:apply-templates select="." mode="ident"/>
             </xsl:for-each>
         </raw-reg>
