@@ -14,6 +14,7 @@
 
 		<pos>EuGH [Erste Kammer]</pos>
 		<pos>EuGH, Erste Kammer</pos>
+		<pos>Gericht erster Instanz der Europäischen Gemeinschaften</pos>
 				 
 		<pos>EuGH, 2. Kammer</pos>
 		<pos>EuGH, Zweite Kammer</pos>
@@ -47,6 +48,7 @@
 		<pos>EuGH, Große Kammer</pos>
 		<pos>EuGH (Große Kammer)</pos>
 		<pos>EuGH [Große Kammer]</pos>
+		<pos>EuGH (Sechste Kammer</pos>
 	</option>
 
 	<option type="court">
@@ -1060,6 +1062,7 @@
 		<pos>Oberverwaltungsgerichtes Berlin-Brandenburg</pos> 
 		<pos>OVG Brandenburg</pos>
 		<pos>OVG Berlin</pos>
+		<pos>Oberverwaltungsgerichts Berlin</pos>
 	</option>
 
 	<option type="court">
@@ -12856,6 +12859,7 @@
 		<main>VergabeueberwachungsausschussBund</main>
 		<pos diction="true">Vergabeüberwachungsausschuss des Bundes</pos>
 		<pos>Vergabeüberwachungsausschusses des Bundes</pos>
+		<pos>Vergabeüberwachungsausschuß des Bundes</pos>
 	</option>
 	
 	<option type="authority">
@@ -12893,12 +12897,14 @@
 		<main>VUEABrandenburg</main>
 		<pos diction="true">Vergabeüberwachungsausschuss Brandenburg</pos>
 		<pos>Vergabeüberwachungsausschuss des Landes Brandenburg</pos>
+		<pos>Vergabeüberwachungsausschuß des Landes Brandenburg</pos>
 	</option>
 	
 	<option type="authority">
 		<main>VUEABayern</main>
 		<pos diction="true">Vergabeüberwachungsausschuss Bayern</pos>
 		<pos>Vergabeüberwachungsausschuss des Freistaates Bayern</pos>
+		<pos>Vergabeüberwachungsausschuß des Freistaates Bayern</pos>
 	</option>
 
 	<option type="authority">
@@ -13391,6 +13397,7 @@
 	<option type="authority">
 		<main>BMWi</main>
 		<pos diction="true">Bundesministerium für Wirtschaft und Energie</pos>
+		<pos>Bundesminister für Wirtschaft</pos>
 	</option>	
 	
 	
@@ -13399,6 +13406,9 @@
 		<pos diction="true">EU-Kommission</pos>
 		<pos>EU Kommission</pos>
 		<pos>Europäische Kommission</pos>
+		<pos>EG-Kommission</pos>
+		<pos>EG-Kommisson</pos>
+		<pos>EG-Kommissio</pos>
 	</option>
 	
 	<option type="authority">
@@ -13424,6 +13434,21 @@
 	<option type="authority">
 		<main diction="true">Monopolkommission</main>
 		<pos>Monopol-Kommission</pos>
+	</option>
+	
+	<option type="authority">
+		<main>EuropaeischerRat</main>
+		<pos diction="true">Europäischer Rat</pos>
+	</option>
+	
+	<option type="authority">
+		<main diction="true">Europarat</main>
+	</option>
+	
+	<option type="authority">
+		<main>RatderEuropaeischenUnion</main>
+		<pos diction="true">Rat der Europäischen Union</pos>
+		<pos>EU-Ministerrat</pos>
 	</option>
 
 </link-recognition-list>
