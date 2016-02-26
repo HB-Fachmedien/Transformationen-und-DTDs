@@ -532,12 +532,12 @@ TOC für KOR und DK
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+													<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
 													<xsl:when test="../name()='au'">Abhandlungen#100</xsl:when>
 													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 													<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
-													<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
+													<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
 													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
-													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
 											
