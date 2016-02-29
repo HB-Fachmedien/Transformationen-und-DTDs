@@ -12549,6 +12549,21 @@
 
 	<type>authority</type>
 	
+	<option type="authority">
+		<main>EuropaeischerRat</main>
+		<pos diction="true">Europäischer Rat</pos>
+	</option>
+	
+	<option type="authority">
+		<main diction="true">Europarat</main>
+	</option>
+	
+	<option type="authority">
+		<main>RatderEuropaeischenUnion</main>
+		<pos diction="true">Rat der Europäischen Union</pos>
+		<pos>EU-Ministerrat</pos>
+	</option>
+		
 	<!-- Regierungsorgane -->
 	<!--Oberste Bundesbehörde -->
 	<option type="authority">
@@ -12832,10 +12847,15 @@
 	</option>
 	
 	<option type="authority">
-		<main>LKartBHessen</main>
-		<pos diction="true">LKartB Hessen</pos>
-		<pos>Landeskartellbehörde Hessen</pos>
-		<pos>Landeskartellbehörde Wiesbaden</pos>
+		<main>LKartBBadenWuerttemberg</main>
+		<pos diction="true">LKartB Baden-Württemberg</pos>
+		<pos>Baden-Württembergische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Baden-Württemberg</pos>
+		<pos>Landeskartellbehörde Stuttgart</pos>
+		<pos>Ministerium für Finanzen und Wirtschaft Baden-Württemberg</pos>
+		<pos>Ministerium für Finanzen und Wirtschaft Baden-Württemberg Referat 55</pos>
+		<pos>Ministerium für Umwelt, Klima und Energiewirtschaft Baden-Württemberg</pos>
+		<pos>Ministerium für Umwelt, Klima und Energiewirtschaft Baden-Württemberg Landesregulierungsbehörde, Energiekartellbehörde</pos>
 	</option>
 	
 	<option type="authority">
@@ -12845,6 +12865,161 @@
 		<pos>Bayerische Landeskartellbehörde</pos>
 		<pos>Landeskartellbehörde Bayern</pos>
 		<pos>Landeskartellbehörde München</pos>
+		<pos>Bayerisches Staatsministerium für Wirtschaft, Medien, Energie und Technologie Bayern</pos>
+		<pos>Bayerisches Staatsministerium für Wirtschaft, Medien, Energie und Technologie als Landeskartellbehörde Bayern</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBBerlin</main>
+		<pos diction="true">LKartB Berlin</pos>
+		<pos>Landeskartellbehörde Berlin</pos>
+		<pos>Senatsverwaltung für Wirtschaft, Technologie und Forschung Landeskartellbehörde, Preisprüfungen, Öffentliches Auftragswesen Berlin</pos>
+		<pos>Senatsverwaltung für Wirtschaft, Technologie und Forschung Landeskartellbehörde, Preisprüfungen, Öffentliches Auftragswesen Ref. II G Berlin</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBBrandenburg</main>
+		<pos diction="true">LKartB Brandenburg</pos>
+		<pos>Brandenburgische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Brandenburg</pos>
+		<pos>Landeskartellbehörde Potsdam</pos>
+		<pos>Ministerium für Wirtschaft und Energie des Landes Brandenburg</pos>
+		<pos>Ministerium für Wirtschaft und Energie des Landes Brandenburg Landeskartellbehörde</pos>
+		<pos>Ministerium für Wirtschaft und Energie des Landes Brandenburg Landeskartellbehörde Ref. 16</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBBremen</main>
+		<pos diction="true">LKartB Bremen</pos>
+		<pos>Landeskartellbehörde Bremen</pos>
+		<pos>Senat für Wirtschaft, Arbeit und Häfen Ref. 02 Bremen</pos>
+		<pos>Senat für Wirtschaft, Arbeit und Häfen Ref. 02 Landeskartellbehörde Bremen</pos>
+		<pos>Senat für Umwelt, Bau, Verkehr und Europa Bremen</pos>
+		<pos>Senat für Umwelt, Bau, Verkehr und Europa Landeskartellbehörde Energie Bremen</pos>
+		<pos>Senat für für Umwelt und Verkehr Bremen</pos>
+		<pos>Senat für für Umwelt und Verkehr Landeskartellbehörde Wasser Bremen</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBHamburg</main>
+		<pos diction="true">LKartB Hamburg</pos>
+		<pos>Behörde für Wirtschaft, Verkehr und Innovation Hamburg</pos>
+		<pos>Behörde für Wirtschaft, Verkehr und Innovation Landeskartellbehörde Hamburg</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBHessen</main>
+		<pos diction="true">LKartB Hessen</pos>
+		<pos>Landeskartellbehörde Hessen</pos>
+		<pos>Landeskartellbehörde Wiesbaden</pos>
+		<pos>Hessisches Ministerium für Wirtschaft, Energie, Verkehr und Landesentwicklung</pos>
+		<pos>Hessisches Ministerium für Wirtschaft, Energie, Verkehr und Landesentwicklung Landeskartellbehörde</pos>
+		<pos>Hessisches Ministerium für Wirtschaft, Energie, Verkehr und Landesentwicklung Landeskartellbehörde Referat III 1</pos>
+		<pos>Landeskartellbehörde Energie und Wasser Hessen</pos>
+		<pos>Landeskartellbehörde Energie und Wasser Ref. III 2 Hessen</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBMecklenburgVorpommern</main>
+		<pos diction="true">LKartB Mecklenburg-Vorpommern</pos>
+		<pos>Landeskartellbehörde Mecklenburg-Vorpommern</pos>
+		<pos>Landeskartellbehörde Schwerin</pos>
+		<pos>Ministerium für Wirtschaft, Bau und Tourismus Mecklenburg-Vorpommern</pos>
+		<pos>Ministerium für Wirtschaft, Bau und Tourismus Referat 140: Wettbewerbsrecht, öffentliches Auftragswesen Mecklenburg-Vorpommern</pos>
+		<pos>Ministerium für Wirtschaft, Bau und Tourismus Referat 140: Wettbewerbsrecht, öffentliches Auftragswesen (einschl. Landeskartellbehörde) Mecklenburg-Vorpommern</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBNiedersachsen</main>
+		<pos diction="true">LKartB Niedersachsen</pos>
+		<pos>Niedersächsische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Niedersachsen</pos>
+		<pos>Landeskartellbehörde Hannover</pos>
+		<pos>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr</pos>
+		<pos>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr - Referat 15-</pos>
+		<pos>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr - Referat 15- Wettbewerbs- und Energiekartellrecht, Landeskartellbehörde</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBNordrheinWestfalen</main>
+		<pos diction="true">LKartB Nordrhein-Westfalen</pos>
+		<pos>LKartB NRW</pos>
+		<pos>Nordrhein-Westfälische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Nordrhein-Westfalen</pos>
+		<pos>Landeskartellbehörde NRW</pos>
+		<pos>Landeskartellbehörde Düsseldorf</pos>
+		<pos>Ministerium für Wirtschaft, Energie, Industrie, Mittelstand und Handwerk des Landes NRW</pos>
+		<pos>Ministerium für Wirtschaft, Energie, Industrie, Mittelstand und Handwerk des Landes NRW Handwerks- und Gewerberecht Marken- und Urheberrecht Ref. I A 4</pos>
+		<pos>Ministerium für Wirtschaft, Energie, Industrie, Mittelstand und Handwerk des Landes NRW Handwerks- und Gewerberecht Marken- und Urheberrecht Ref. I A 4 Landeskartellbehörde</pos>
+		<pos>Ministerium für Wirtschaft, Energie, Industrie, Mittelstand und Handwerk des Landes NRW Handwerks- und Gewerberecht Marken- und Urheberrecht Ref. V A 3</pos>
+		<pos>Ministerium für Wirtschaft, Energie, Industrie, Mittelstand und Handwerk des Landes NRW Handwerks- und Gewerberecht Marken- und Urheberrecht Ref. V A 3 Kartellrecht, Energiehandel, Vertriebsprodukte</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBRheinlandPfalz</main>
+		<pos diction="true">LKartB Rheinland-Pfalz</pos>
+		<pos>Rheinland-Pfälzische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Rheinland-Pfalz</pos>
+		<pos>Landeskartellbehörde Mainz</pos>
+		<pos>Ministerium für Wirtschaft, Klimaschutz, Energie und Landesplanung Rheinland-Pfalz</pos>
+		<pos>Ministerium für Wirtschaft, Klimaschutz, Energie und Landesplanung Landeskartellbehörde Rheinland-Pfalz</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBSaarland</main>
+		<pos diction="true">LKartB Saarland</pos>
+		<pos>Saarländische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Saarland</pos>
+		<pos>Landeskartellbehörde Saarbrücken</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Energie und Verkehr Saarland</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Energie und Verkehr Ref. A/3 Saarland</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Energie und Verkehr Ref. A/3 Landeskartellbehörde Saarland</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Energie und Verkehr Ref. D/7 Saarland</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Energie und Verkehr Ref. D/7 -Energiekartellbehörde-</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBSachsen</main>
+		<pos diction="true">LKartB Sachsen</pos>
+		<pos>Sächsische Landeskartellbehörde</pos>
+		<pos>Landeskartellbehörde Sachsen</pos>
+		<pos>Landeskartellbehörde Dresden</pos>
+		<pos>Sächsisches Staatsministerium für Wirtschaft, Arbeit und Verkehr</pos>
+		<pos>Sächsisches Staatsministerium für Wirtschaft, Arbeit und Verkehr Referat 44</pos>
+		<pos>Sächsisches Staatsministerium für Wirtschaft, Arbeit und Verkehr Referat 44 Marktordnung (Kartell, Regulierung, Börsen, Finanzmarktfragen)</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBSachsenAnhalt</main>
+		<pos diction="true">LKartB Sachsen-Anhalt</pos>
+		<pos>Landeskartellbehörde Sachsen-Anhalt</pos>
+		<pos>Landeskartellbehörde Magdeburg</pos>
+		<pos>Ministerium für Wissenschaft und Wirtschaft des Landes Sachsen-Anhalt</pos>
+		<pos>Ministerium für Wissenschaft und Wirtschaft des Landes Sachsen-Anhalt Ref. 14</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBSchleswigHolstein</main>
+		<pos diction="true">LKartB Schleswig-Holstein</pos>
+		<pos>Landeskartellbehörde Schleswig-Holstein</pos>
+		<pos>Landeskartellbehörde Kiel</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Verkehr und Technologie des Landes Schleswig-Holstein</pos>
+		<pos>Ministerium für Wirtschaft, Arbeit, Verkehr und Technologie des Landes Schleswig-Holstein Landeskartellbehörde</pos>
+		<pos>Ministerium für Energiewende, Landwirtschaft, Umwelt und ländliche Räume des Landes Schleswig-Holstein</pos>
+		<pos>Ministerium für Energiewende, Landwirtschaft, Umwelt und ländliche Räume des Landes Schleswig-Holstein Landeskartellbehörde für Energie</pos>
+	</option>
+	
+	<option type="authority">
+		<main>LKartBThueringen</main>
+		<pos diction="true">LKartB Thüringen</pos>
+		<pos>Landeskartellbehörde Thüringen</pos>
+		<pos>Landeskartellbehörde Erfurt</pos>
+		<pos>Ministerium für Wirtschaft, Wissenschaft und Digitale Gesellschaft Thüringen</pos>
+		<pos>Ministerium für Wirtschaft, Wissenschaft und Digitale Gesellschaft als Landeskartellbehörde Thüringen</pos>
+		<pos>Ministerium für Wirtschaft, Wissenschaft und Digitale Gesellschaft als Landeskartellbehörde Referat 32 Thüringen</pos>
+		<pos>Ministerium für Umwelt, Energie und Naturschutz Thüringen</pos>
+		<pos>Ministerium für Umwelt, Energie und Naturschutz als Landeskartellbehörde für Energie Thüringen</pos>
+		<pos>Ministerium für Umwelt, Energie und Naturschutz als Landeskartellbehörde für Energie Referat 32 Thüringen</pos>
 	</option>
 	
 	<!-- Organe/Gremien der Oberen Bundesbehörden -->
@@ -12859,7 +13034,6 @@
 		<main>VergabeueberwachungsausschussBund</main>
 		<pos diction="true">Vergabeüberwachungsausschuss des Bundes</pos>
 		<pos>Vergabeüberwachungsausschusses des Bundes</pos>
-		<pos>Vergabeüberwachungsausschuß des Bundes</pos>
 	</option>
 	
 	<option type="authority">
@@ -12897,14 +13071,12 @@
 		<main>VUEABrandenburg</main>
 		<pos diction="true">Vergabeüberwachungsausschuss Brandenburg</pos>
 		<pos>Vergabeüberwachungsausschuss des Landes Brandenburg</pos>
-		<pos>Vergabeüberwachungsausschuß des Landes Brandenburg</pos>
 	</option>
 	
 	<option type="authority">
 		<main>VUEABayern</main>
 		<pos diction="true">Vergabeüberwachungsausschuss Bayern</pos>
 		<pos>Vergabeüberwachungsausschuss des Freistaates Bayern</pos>
-		<pos>Vergabeüberwachungsausschuß des Freistaates Bayern</pos>
 	</option>
 
 	<option type="authority">
@@ -13397,7 +13569,6 @@
 	<option type="authority">
 		<main>BMWi</main>
 		<pos diction="true">Bundesministerium für Wirtschaft und Energie</pos>
-		<pos>Bundesminister für Wirtschaft</pos>
 	</option>	
 	
 	
@@ -13406,9 +13577,6 @@
 		<pos diction="true">EU-Kommission</pos>
 		<pos>EU Kommission</pos>
 		<pos>Europäische Kommission</pos>
-		<pos>EG-Kommission</pos>
-		<pos>EG-Kommisson</pos>
-		<pos>EG-Kommissio</pos>
 	</option>
 	
 	<option type="authority">
@@ -13434,21 +13602,6 @@
 	<option type="authority">
 		<main diction="true">Monopolkommission</main>
 		<pos>Monopol-Kommission</pos>
-	</option>
-	
-	<option type="authority">
-		<main>EuropaeischerRat</main>
-		<pos diction="true">Europäischer Rat</pos>
-	</option>
-	
-	<option type="authority">
-		<main diction="true">Europarat</main>
-	</option>
-	
-	<option type="authority">
-		<main>RatderEuropaeischenUnion</main>
-		<pos diction="true">Rat der Europäischen Union</pos>
-		<pos>EU-Ministerrat</pos>
 	</option>
 
 </link-recognition-list>
