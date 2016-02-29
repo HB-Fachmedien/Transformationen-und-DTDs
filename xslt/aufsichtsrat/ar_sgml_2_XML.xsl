@@ -49,9 +49,9 @@
             <xsl:attribute name="docid">
                 <xsl:value-of select="concat('AR', $sevenDigitID)"/>
             </xsl:attribute>
-            <xsl:attribute name="altdocid">
+            <!--<xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('AR', $sevenDigitID)"/>
-            </xsl:attribute>
+            </xsl:attribute>-->
 
             <metadata>
                 <title>
@@ -99,6 +99,9 @@
                     </xsl:when>
                     <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='NACHRICHT'">
                         <ressort>Aktueller Fachbeitrag</ressort>
+                    </xsl:when>
+                    <xsl:when test="$ru-attr='BÜCHER'">
+                        <ressort>Buchbesprechung</ressort>
                     </xsl:when>
                 </xsl:choose>
                 
