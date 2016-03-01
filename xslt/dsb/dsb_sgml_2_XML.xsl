@@ -142,7 +142,7 @@
                     <xsl:when test="$ru-attr='DATENSICHERHEIT: CEBIT 2001' and $typ-attr='NACHRICHT'"><ressort>Datensicherheit</ressort></xsl:when>
                     <xsl:when test="$ru-attr='UNDEFINED' and $typ-attr='BEITRAG'"><ressort>Datenschutzpraxis</ressort><noch-bearbeiten>siehe Excel</noch-bearbeiten></xsl:when>
                     <!--<xsl:when test="$ru-attr='SERVICE' and $typ-attr='BEITRAG'">au</xsl:when>-->
-                    <!--<xsl:when test="$ru-attr='RECHTSPRECHUNG' and $typ-attr='BEITRAG'">nr</xsl:when>-->
+                    <xsl:when test="$ru-attr='RECHTSPRECHUNG' and $typ-attr='BEITRAG'"><ressort>Rechtsprechung</ressort></xsl:when>
                     <xsl:when test="$ru-attr='DATENSCHUTZPRAXIS' and $typ-attr='URTEILSBERICHT'"><ressort>Datenschutzpraxis</ressort></xsl:when>
                     <xsl:when test="$ru-attr='RECHTSPRECHUNG' and $typ-attr='LITERATURHINWEIS'"><ressort>Literaturhinweis</ressort></xsl:when>
                     <!--<xsl:when test="$ru-attr='VERBRAUCHERBEFRAGUNG, TELEFONANRUFE, WETTBEWERBSRECHT,UNZUMUTBARE BELÄSTIGUNG' and $typ-attr='URTEILSBERICHT'">ent</xsl:when>-->
