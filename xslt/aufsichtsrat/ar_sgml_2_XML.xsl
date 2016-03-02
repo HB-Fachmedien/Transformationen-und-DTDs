@@ -3,7 +3,8 @@
     xmlns:saxon="http://saxon.sf.net/"
     xmlns:fn="http://www.w3.org/2005/xpath-functions"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs saxon fn"
+    xmlns:hbfm="http://www.fachmedien.de/"
+    exclude-result-prefixes="xs saxon fn hbfm"
     version="2.0">
     
     <xsl:output indent="yes"
@@ -11,6 +12,10 @@
         doctype-system="hbfm.dtd"
         encoding="UTF-8" 
     />
+    
+    <!-- Girichtsddatei liegt im Verwaltungsanweisungen Ordner -->
+    <xsl:variable name="gerichteDatei" select="document('../verwaltungsanweisungen/gerichte.xml')"/>
+    <xsl:variable name="idMappingDatei" select="document('id-mapping.xml')"/>
     
     <xsl:template match="ZEITSCHRIFT-BEITRAG">
         <xsl:variable name="sevenDigitID">
@@ -30,7 +35,9 @@
                 <xsl:when test="$ru-attr='MELDUNGEN' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='PERSONALIA' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='BUCHBESPRECHUNG'">rez</xsl:when>
+                <xsl:when test="$ru-attr='NACHRICHTEN' and $typ-attr='BUCHBESPRECHUNG'">rez</xsl:when>
                 <xsl:when test="$ru-attr='AKTUELLE FACHBEITRÄGE' and $typ-attr='LITERATURHINWEIS'">rez</xsl:when>
+                <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='LITERATURHINWEIS'">rez</xsl:when>
                 <xsl:when test="$ru-attr='BÜCHER' and $typ-attr='NACHRICHT'">rez</xsl:when>
                 <xsl:when test="$ru-attr='GASTKOMMENTAR' and $typ-attr='KOMMENTAR'">gk</xsl:when>
                 <xsl:when test="$ru-attr='GASTKOMMENTAR' and $typ-attr='EDITORIAL'">ed</xsl:when>
@@ -42,13 +49,24 @@
                 <xsl:otherwise>ELEMENT-ZUTEILUNG-FEHLGESCHLAGEN</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:variable name="id-mapping-wert">
+            <xsl:choose>
+                <xsl:when test="$idMappingDatei//docID[text()=concat('AR',$sevenDigitID)]">
+                    <xsl:choose>
+                        <xsl:when test="count($idMappingDatei//docID[text()=concat('AR',$sevenDigitID)])>1">
+                            MEHRERE TREFFER?! --> Fehler?
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$idMappingDatei//docID[text()=concat('AR',$sevenDigitID)]/../abgedruckt/text()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise><xsl:value-of select="concat('AR', $sevenDigitID)"/></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:element name="{$dtyp}">
-            <xsl:attribute name="rawid">
-                <xsl:value-of select="@SIRIUS-ID"/>
-            </xsl:attribute>
-            <xsl:attribute name="docid">
-                <xsl:value-of select="concat('AR', $sevenDigitID)"/>
-            </xsl:attribute>
+            <xsl:attribute name="rawid" select="tokenize($id-mapping-wert, 'AR0{0,4}')[2]"/>
+            <xsl:attribute name="docid" select="$id-mapping-wert"/>
             <!--<xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('AR', $sevenDigitID)"/>
             </xsl:attribute>-->
@@ -68,7 +86,7 @@
                                 <suffix></suffix><!-- TODO -->
                             </author>
                         </xsl:for-each>
-                        <xsl:if test="AUTOR/PERSON/BIOGR">
+                        <xsl:if test="AUTOR/PERSON/BIOGR[child::node()]">
                             <biography>
                                 <xsl:for-each select="AUTOR/PERSON/BIOGR">
                                     <p><xsl:value-of select="replace(replace(ABS,'\n',' '),'\s{2,}',' ')"/></p>
@@ -78,7 +96,7 @@
                     </authors>
                 </xsl:if>
                 
-                <xsl:if test="ABSTRACT">
+                <xsl:if test="ABSTRACT[child::node()]">
                     <summary>
                         <p>
                             <xsl:value-of select="replace(replace(ABSTRACT,'\n',' '),'\s{2,}',' ')"/>
@@ -157,6 +175,29 @@
                         <xsl:value-of select="DATEI-REF/DATEI/@NAME"/>
                     </extfile>
                 </xsl:if>
+                
+                <xsl:if test="URTZEILE/BEHOERDE and not(string(URTZEILE/BEHOERDE/text())='')">
+                    <instdoc>
+                        <inst>
+                            <xsl:variable name="gerichtsabfrage" select="hbfm:getGericht(URTZEILE/BEHOERDE)"/>
+                            <xsl:attribute name="type">
+                                <xsl:choose>
+                                    <xsl:when test="$gerichtsabfrage[3]='authority'">authority</xsl:when>
+                                    <xsl:otherwise>court</xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:attribute>
+                            <xsl:attribute name="code">
+                                <xsl:value-of select="$gerichtsabfrage[1]"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$gerichtsabfrage[2]"/>
+                        </inst>
+                        <!--<instdoctype><xsl:value-of select="concat(upper-case(substring(@TYP,1,1)),lower-case(substring(@TYP,2)))"/></instdoctype>-->
+                        <instdoctype>Schreiben</instdoctype>
+                        <instdocdate><xsl:value-of select="concat(URTZEILE/DATUM/JAHR,'-',URTZEILE/DATUM/MONAT,'-',URTZEILE/DATUM/TAG)"/></instdocdate>
+                        <instdocnrs><instdocnr><xsl:value-of select="URTZEILE/AZ"/></instdocnr></instdocnrs>
+                    </instdoc>
+                </xsl:if>
+                
                 <all_doc_type level="1">zs</all_doc_type>
                 <all_source level="1">zsa</all_source>
                 <all_source level="2">ar</all_source>
@@ -178,6 +219,12 @@
     <xsl:template match="VOLLTEXT">
         <xsl:value-of select="saxon:parse-html(text())"/>
     </xsl:template>
+    
+    <xsl:function name="hbfm:getGericht">
+        <xsl:param name="gerichtsBezeichnung"/>    
+        <xsl:variable name="option" select="$gerichteDatei/*/option[*[text() = $gerichtsBezeichnung/text()]]"/>
+        <xsl:sequence select="($option/main, $option/*[@diction='true'],$option/@type)"></xsl:sequence>
+    </xsl:function>
     
     <!-- Unsere IDs müssen 7-stellig sein, dieses Template füllt kürzere IDs vorne mit Nullen auf-->
     <xsl:template name="calculateDocId">
