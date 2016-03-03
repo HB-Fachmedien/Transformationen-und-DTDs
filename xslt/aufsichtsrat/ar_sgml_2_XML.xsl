@@ -25,6 +25,12 @@
         </xsl:variable>
         
         <xsl:variable name="ru-attr" select="upper-case(fn:normalize-space(saxon:parse-html(@RU)))"/>
+        <xsl:variable name="neues_aus_der_datenbank" as="xs:boolean">
+            <xsl:choose>
+                <xsl:when test="$ru-attr='NEUES AUS DER DATENBANK'">true</xsl:when>
+                <xsl:otherwise>false</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="typ-attr" select="upper-case(fn:normalize-space(saxon:parse-html(@TYP)))"/>
         <xsl:variable name="dtyp">
             <xsl:choose>
@@ -45,13 +51,13 @@
                 <xsl:when test="$ru-attr='NACHRICHTEN' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='BEITRAG'">iv</xsl:when>
                 <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='INTERVIEW'">iv</xsl:when>
-                <xsl:when test="$ru-attr='NEUES AUS DER DATENBANK'">nr</xsl:when>
+                <xsl:when test="$ru-attr='NEUES AUS DER DATENBANK'">divso</xsl:when>
                 <xsl:otherwise>ELEMENT-ZUTEILUNG-FEHLGESCHLAGEN</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="id-mapping-wert">
             <xsl:choose>
-                <xsl:when test="$idMappingDatei//docID[text()=concat('AR',$sevenDigitID)]">
+                <xsl:when test="$neues_aus_der_datenbank and $idMappingDatei//docID[text()=concat('AR',$sevenDigitID)]">
                     <xsl:choose>
                         <xsl:when test="count($idMappingDatei//docID[text()=concat('AR',$sevenDigitID)])>1">
                             MEHRERE TREFFER?! --> Fehler?
@@ -65,25 +71,35 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:element name="{$dtyp}">
-            <xsl:attribute name="rawid" select="tokenize($id-mapping-wert, 'AR0{0,4}')[2]"/>
-            <xsl:attribute name="docid" select="$id-mapping-wert"/>
-            <!--<xsl:attribute name="altdocid">
-                <xsl:value-of select="concat('AR', $sevenDigitID)"/>
-            </xsl:attribute>-->
+            <xsl:choose>
+                <xsl:when test="$neues_aus_der_datenbank">
+                    <xsl:attribute name="rawid" select="@SIRIUS-ID"/>
+                    <xsl:attribute name="docid" select="$sevenDigitID"/> 
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="rawid" select="replace($id-mapping-wert, 'AR0{0,7}', '')"/>
+                    <xsl:attribute name="docid" select="$id-mapping-wert"/>        
+                </xsl:otherwise>
+            </xsl:choose>
+            
 
             <metadata>
                 <title>
                     <xsl:value-of select="TITEL"/>
                 </title>
                 
+                <xsl:if test="not($neues_aus_der_datenbank) and UTITEL[child::node()]">
+                    <subtitle><xsl:value-of select="UTITEL"/></subtitle>
+                </xsl:if>
+                
                 <xsl:if test="AUTOR">
                     <authors>
                         <xsl:for-each select="AUTOR/PERSON">
                             <author>
-                                <prefix><xsl:value-of select="text()"/></prefix><!-- TODO: passt das?-->
+                                <xsl:if test="child::text()"><prefix><xsl:value-of select="text()"/></prefix></xsl:if>
                                 <firstname><xsl:value-of select="VORNAME"/></firstname>
                                 <surname><xsl:value-of select="NACHNAME"/></surname>
-                                <suffix></suffix><!-- TODO -->
+                                <!--<suffix></suffix><!-\- TODO -\->-->
                             </author>
                         </xsl:for-each>
                         <xsl:if test="AUTOR/PERSON/BIOGR[child::node()]">
@@ -123,53 +139,83 @@
                     </xsl:when>
                 </xsl:choose>
                 
-                <pub>
-                    <pubtitle>Aufsichtsrat</pubtitle>
-                    <pubabbr>AR</pubabbr>
-                    <pubyear>
-                        <xsl:value-of select="PUB/DATUM/JAHR"/>
-                    </pubyear>
-
-                    <!-- Bezieht den Inhalt vom pubedition Element aus dem ID Element des Zeitschrift Beitrags -->
-                    <pubedition>
-                        <xsl:value-of select="tokenize(@ID,'_')[3]"/>
-                    </pubedition>
-                    <date>
-                        <xsl:value-of
-                            select="concat(PUB/DATUM/JAHR,'-',PUB/DATUM/MONAT,'-',PUB/DATUM/TAG)"/>
-                    </date>
-                    <pages>
-                        <start_page>
-                            <xsl:value-of select="PUB/SEITEVON"/>
-                        </start_page>
-                        <last_page>
-                            <xsl:value-of select="PUB/SEITEBIS"/>
-                        </last_page>
-                        <xsl:variable name="s-length" select="string-length(tokenize(base-uri(),'\.')[1])"/>
-                        <xsl:variable name="article-order-character" select="substring(tokenize(base-uri(),'\.')[1],$s-length,1)"/>
-                        <!--<xsl:variable name="alphabet" select="ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>-->
-                        <article_order>
-                            <xsl:choose>
-                                <xsl:when test="$article-order-character='A'">1</xsl:when>
-                                <xsl:when test="$article-order-character='B'">2</xsl:when>
-                                <xsl:when test="$article-order-character='C'">3</xsl:when>
-                                <xsl:when test="$article-order-character='D'">4</xsl:when>
-                                <xsl:when test="$article-order-character='E'">5</xsl:when>
-                                <xsl:when test="$article-order-character='F'">6</xsl:when>
-                                <xsl:when test="$article-order-character='G'">7</xsl:when>
-                                <xsl:when test="$article-order-character='H'">8</xsl:when>
-                                <xsl:when test="$article-order-character='I'">9</xsl:when>
-                                <xsl:when test="$article-order-character='J'">10</xsl:when>
-                                <xsl:when test="$article-order-character='K'">11</xsl:when>
-                                <xsl:when test="$article-order-character='L'">12</xsl:when>
-                                <xsl:when test="$article-order-character='M'">13</xsl:when>
-                                <xsl:when test="$article-order-character='N'">14</xsl:when>
-                                <xsl:otherwise>1</xsl:otherwise>
-                            </xsl:choose>
-                            <!--<xsl:value-of select="index-of($alphabet,$article-order-character)"/>-->
-                        </article_order>
-                    </pages>
-                </pub>
+                <xsl:choose>
+                    <xsl:when test="$neues_aus_der_datenbank">
+                        <pub>
+                            <pubtitle><xsl:value-of select="tokenize(UTITEL/text(),' ')[1]"/></pubtitle>
+                            <pubabbr>XQ</pubabbr>
+                            <pubyear>
+                                <xsl:comment>VON HAND EINTRAGEN</xsl:comment>
+                            </pubyear>
+                            
+                            <pubedition>
+                                <xsl:comment>VON HAND EINTRAGEN</xsl:comment>
+                            </pubedition>
+                            <date>
+                                <xsl:comment>VON HAND EINTRAGEN</xsl:comment>
+                            </date>
+                            <pages>
+                                <start_page>
+                                    <xsl:comment>VON HAND EINTRAGEN</xsl:comment>
+                                </start_page>
+                                <last_page>
+                                    <xsl:comment>VON HAND EINTRAGEN -  BEI SEITE XY ff. DIESES ELEMENT WEGLASSEN</xsl:comment>
+                                </last_page>
+                                <article_order>1</article_order>
+                            </pages>
+                        </pub>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <pub>
+                            <pubtitle>Aufsichtsrat</pubtitle><!-- Der Ausichtsrat -->
+                            <pubabbr>AR</pubabbr>
+                            <pubyear>
+                                <xsl:value-of select="PUB/DATUM/JAHR"/>
+                            </pubyear>
+                            
+                            <!-- Bezieht den Inhalt vom pubedition Element aus dem ID Element des Zeitschrift Beitrags -->
+                            <pubedition>
+                                <xsl:value-of select="PUB/HEFTNR"/>
+                            </pubedition>
+                            <date>
+                                <xsl:value-of
+                                    select="concat(PUB/DATUM/JAHR,'-',PUB/DATUM/MONAT,'-',PUB/DATUM/TAG)"/>
+                            </date>
+                            <pages>
+                                <start_page>
+                                    <xsl:value-of select="PUB/SEITEVON"/>
+                                </start_page>
+                                <last_page>
+                                    <xsl:value-of select="PUB/SEITEBIS"/>
+                                </last_page>
+                                <xsl:variable name="s-length" select="string-length(tokenize(base-uri(),'\.')[1])"/>
+                                <xsl:variable name="article-order-character" select="substring(tokenize(base-uri(),'\.')[1],$s-length,1)"/>
+                                <!--<xsl:variable name="alphabet" select="ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>-->
+                                <article_order>
+                                    <xsl:choose>
+                                        <xsl:when test="$article-order-character='A'">1</xsl:when>
+                                        <xsl:when test="$article-order-character='B'">2</xsl:when>
+                                        <xsl:when test="$article-order-character='C'">3</xsl:when>
+                                        <xsl:when test="$article-order-character='D'">4</xsl:when>
+                                        <xsl:when test="$article-order-character='E'">5</xsl:when>
+                                        <xsl:when test="$article-order-character='F'">6</xsl:when>
+                                        <xsl:when test="$article-order-character='G'">7</xsl:when>
+                                        <xsl:when test="$article-order-character='H'">8</xsl:when>
+                                        <xsl:when test="$article-order-character='I'">9</xsl:when>
+                                        <xsl:when test="$article-order-character='J'">10</xsl:when>
+                                        <xsl:when test="$article-order-character='K'">11</xsl:when>
+                                        <xsl:when test="$article-order-character='L'">12</xsl:when>
+                                        <xsl:when test="$article-order-character='M'">13</xsl:when>
+                                        <xsl:when test="$article-order-character='N'">14</xsl:when>
+                                        <xsl:otherwise>1</xsl:otherwise>
+                                    </xsl:choose>
+                                    <!--<xsl:value-of select="index-of($alphabet,$article-order-character)"/>-->
+                                </article_order>
+                            </pages>
+                        </pub>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
                 <xsl:if test="DATEI-REF/DATEI/@NAME">
                     <extfile display="true" type="pdf">
                         <xsl:value-of select="DATEI-REF/DATEI/@NAME"/>
@@ -198,9 +244,19 @@
                     </instdoc>
                 </xsl:if>
                 
-                <all_doc_type level="1">zs</all_doc_type>
-                <all_source level="1">zsa</all_source>
-                <all_source level="2">ar</all_source>
+                <xsl:choose>
+                    <xsl:when test="$neues_aus_der_datenbank">
+                        <all_doc_type level="1">div</all_doc_type>
+                        <all_source level="1">divq</all_source>
+                        <all_source level="2">sonst</all_source>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <all_doc_type level="1">zs</all_doc_type>
+                        <all_source level="1">zsa</all_source>
+                        <all_source level="2">ar</all_source>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
                 <sgml_root_element doctype="{name()}">
                     <xsl:value-of
                         select="concat(name(), ' SIRIUS-ID=', @SIRIUS-ID, ' TYP=', @TYP, ' ID=', @ID, ' RU=', @RU)"
