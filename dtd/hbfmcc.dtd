@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.19
+1.21
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -96,6 +96,15 @@ Version 1.19 (22.01.16): Änderungen (SG):&#x0013;
 							<li>neue Elemente <a href="#questionAndAnswer">questionAndAnswer</a>, <a href="#question">question</a>, <a href="#answer">answer</a>. <a href="#questionAndAnswer">questionAndAnswer</a> ist nur innherhalb von <a href="#body">body</a> und <a href="#section">section</a> erlaubg</li>
 							<li>neues Element für Marginalien <a href="#sidenote">sidenote</a>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
+						</ul>
+Version 1.20 (11.02.16): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>neues Attribut unknown für Element <a href="#instcode">instcode</a></li>
+						</ul>
+Version 1.21 (02.03.16): Änderungen (SG):&#x0013;	
+						<ul>
+							<li>Behördenliste aktualisiert, <a href="#instcode">instcode</a></li>
+							<li>neues Attribut uid für Element <a href="#footnote">footnote</a></li>
 						</ul>
 
 
@@ -842,6 +851,7 @@ _img instcode.png
 -->
 <!ELEMENT instcode    (#PCDATA) >
 <!ATTLIST instcode
+	unknown (other) #IMPLIED
 	court (
 		other
 		| EuGH
@@ -2069,6 +2079,9 @@ _img instcode.png
 			) #IMPLIED
 	authority (
 		  other		
+		| EuropaeischerRat
+		| Europarat
+		| RatderEuropaeischenUnion
 		| DeutscherBundestag
 		| DeutscherBundesrat
 		| BMF
@@ -2091,8 +2104,22 @@ _img instcode.png
 		| FinMinSchleswigHolstein
 		| FinMinThueringen
 		| BKartA
-		| LKartBHessen
+		| LKartBBadenWuerttemberg
 		| LKartBBayern
+		| LKartBBerlin
+		| LKartBBrandenburg
+		| LKartBBremen
+		| LKartBHamburg
+		| LKartBHessen
+		| LKartBMecklenburgVorpommern
+		| LKartBNiedersachsen
+		| LKartBNordrheinWestfalen
+		| LKartBRheinlandPfalz
+		| LKartBSaarland
+		| LKartBSachsen
+		| LKartBSachsenAnhalt
+		| LKartBSchleswigHolstein
+		| LKartBThueringen
 		| VergabekammerBund
 		| VergabeueberwachungsausschussBund
 		| VUEASachsenAnhalt
@@ -2183,7 +2210,7 @@ _img insttype.png
 -->
 <!ELEMENT insttype (#PCDATA) >
 <!ATTLIST insttype
-	value (court | authority) #REQUIRED
+	value (court | authority | unknown) #REQUIRED
 >
 
 
@@ -2836,10 +2863,12 @@ _img footnote.png
 -->
 <!ELEMENT footnote (%block;) >
 
-<!--@attr id Im Attribut <i>id</i> kann eine ID-Nummer für die jeweilige Fußnote vergeben werden, u.a. damit auf diese als Verweisziel verlinkt werden kann.
-Diese ID wird in der Regel nicht vom Benutzer vergeben. Die ID ist nicht eindeutig.   -->
+<!--@attr id Im Attribut <i>id</i> kann eine Nummer für die jeweilige Fußnote vergeben werden, u.a. damit auf diese als Verweisziel verlinkt werden kann. Üblicherweise gibt diese Nummer aber die im Printwerk für diese Fußnote dargestellte Nummer an. Diese ID wird in der Regel nicht vom Benutzer vergeben. Die ID ist nicht eindeutig.
+
+@attr uid Eine eindeutige Id, die für die Verlinkung verwendet werden sollte. Dieses Attribute ist nötig, da der im Attribut id angegebene Wert nicht eindeutig ist und häufig die im Printwerk für diese Fußnote vergebene Nummer angibt. -->
 <!ATTLIST footnote
-	id     CDATA    #IMPLIED
+	uid     CDATA    #IMPLIED
+	id      CDATA    #IMPLIED
 >
 
 
