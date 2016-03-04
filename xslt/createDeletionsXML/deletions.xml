@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deletions>
+   <deletion>
+      <docid/>
+      <all_source level="1">divq</all_source>
+      <all_source level="2">sem</all_source>
+   </deletion>
+   <deletion>
+      <docid>XQ0470037</docid>
+      <all_source level="1">draft</all_source>
+      <all_source level="2">draftges</all_source>
+   </deletion>
+   <deletion>
+      <docid>VA0344340</docid>
+      <all_source level="1">vwa</all_source>
+      <all_source level="2">vwa_collection</all_source>
+   </deletion>
+   <deletion>
+      <docid>AR0333937</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">ar</all_source>
+   </deletion>
+   <deletion>
+      <docid/>
+      <all_source level="1">rsv</all_source>
+      <all_source level="2">rsv_collection</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB0695773</docid>
+      <all_source level="1">news</all_source>
+      <all_source level="2">sb</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB0702860</docid>
+      <all_source level="1">news</all_source>
+      <all_source level="2">rb</all_source>
+   </deletion>
+   <deletion>
+      <docid>VA1190223</docid>
+      <all_source level="1">draft</all_source>
+      <all_source level="2">draftvwa</all_source>
+   </deletion>
+   <deletion>
+      <docid/>
+      <all_source level="1">vwa</all_source>
+      <all_source level="2">vwa_collection</all_source>
+   </deletion>
+   <deletion>
+      <docid>BWP0651454</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">bwp</all_source>
+   </deletion>
+   <deletion>
+      <docid/>
+      <all_source level="1"/>
+      <all_source level="2"/>
+   </deletion>
+   <deletion>
+      <docid>CF0693443</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">cf</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB0345548</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">db</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB0343432</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">db</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB0991630</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">db</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB1050205</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">db</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB1075583</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">db</all_source>
+   </deletion>
+   <deletion>
+      <docid>DK0694406</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">dk</all_source>
+   </deletion>
+   <deletion>
+      <docid>IFST0581174</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">ifst</all_source>
+   </deletion>
+   <deletion>
+      <docid>KOR0695236</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">kor</all_source>
+   </deletion>
+   <deletion>
+      <docid>KOR0702818</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">kor</all_source>
+   </deletion>
+   <deletion>
+      <docid>XQ0392275</docid>
+      <all_source level="1">divq</all_source>
+      <all_source level="2">sonst</all_source>
+   </deletion>
+   <deletion>
+      <docid>DB0695990</docid>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">str</all_source>
+   </deletion>
+</deletions>
