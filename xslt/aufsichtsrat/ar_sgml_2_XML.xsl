@@ -57,7 +57,7 @@
         </xsl:variable>
         <xsl:variable name="id-mapping-wert">
             <xsl:choose>
-                <xsl:when test="$neues_aus_der_datenbank and $idMappingDatei//docID[text()=concat('AR',$sevenDigitID)]">
+                <xsl:when test="not($neues_aus_der_datenbank) and $idMappingDatei//docID[text()=concat('AR',$sevenDigitID)]">
                     <xsl:choose>
                         <xsl:when test="count($idMappingDatei//docID[text()=concat('AR',$sevenDigitID)])>1">
                             MEHRERE TREFFER?! --> Fehler?
@@ -163,6 +163,7 @@
                                 </last_page>
                                 <article_order>1</article_order>
                             </pages>
+                            <add_target>ar</add_target>
                         </pub>
                     </xsl:when>
                     <xsl:otherwise>
