@@ -6,10 +6,10 @@
     <xsl:output indent="yes" encoding="UTF-8"  method="xml"/>
     
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('../../../../../tempKOR/verschlagwortung/?recurse=yes;select=*.xml')"/>
-        <R_AUTOR><TITEL>Verzeichnis der Verfasser</TITEL>
+        <xsl:variable name="file-collection" select="collection('../../../../../tempKOR/verschlagwortung/2015/?recurse=yes;select=*.xml')"/>
+        <R-AUTOR><TITEL>Verzeichnis der Verfasser</TITEL>
             <xsl:for-each select="$file-collection/*">
-                <xsl:if test="metadata/authors[child::node()]">
+                <xsl:if test="metadata/authors[child::node()] and not(starts-with(metadata/pub/pages/start_page/text(),'M'))">
                     <xsl:for-each select="metadata/authors/author">
                         <R-AU-EINTR>
                             <xsl:attribute name="RU">
@@ -23,7 +23,7 @@
                                 </xsl:choose>
                             </xsl:attribute>
                             <NACHNAME><xsl:value-of select="surname"/></NACHNAME><VORNAME><xsl:value-of select="firstname"/></VORNAME>
-                            <TITEL><xsl:value-of select="ancestor::metadata/title"/></TITEL>
+                            <TITEL><xsl:value-of select="ancestor::metadata/title"/><xsl:if test="ancestor::metadata/subtitle[child::node()]"><xsl:text> – </xsl:text><xsl:value-of select="ancestor::metadata/subtitle"/></xsl:if></TITEL>
                             <KORFUND>
                                 <xsl:attribute name="ZIEL"><xsl:value-of select="replace(ancestor::metadata/sgml_root_element,'.*\sID=(.*?)\s.*','$1')"/></xsl:attribute>
                                 <xsl:value-of select="ancestor::metadata/pub/pages/start_page"/>
@@ -32,6 +32,6 @@
                     </xsl:for-each>
                 </xsl:if>
             </xsl:for-each>
-        </R_AUTOR>
+        </R-AUTOR>
     </xsl:template>
 </xsl:stylesheet>
