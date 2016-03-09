@@ -7,10 +7,10 @@
     <xsl:template match="/Register">
         <sortiertes-register>
             <xsl:apply-templates select="reg-zeile">
-                <xsl:sort select="concat(hauptebene/text(), zweite-ebene/text(), dritte-ebene/text())"/>
+                <xsl:sort lang="de" select="concat(hauptebene/text(), zweite-ebene/text(), dritte-ebene/text())"/>
             </xsl:apply-templates>
             <xsl:apply-templates select="autoren-zeile">
-                <xsl:sort select="concat(lower-case(autor/text()),comment())"/>
+                <xsl:sort lang="de" select="concat(lower-case(autor/text()),comment())"/>
             </xsl:apply-templates>
         </sortiertes-register>
     </xsl:template>
