@@ -56,7 +56,7 @@
                 <xsl:when test="$ru-attr='DATENSCHUTZKONGRESS' and $typ-attr='BEITRAG'">au</xsl:when>
                 <xsl:when test="$ru-attr='BEHÖRDLICHER DATENSCHUTZ' and $typ-attr='BEITRAG'">au</xsl:when>
                 <xsl:when test="$ru-attr='DATENSCHUTZKONGRESS - VORBERICHTERSTATTUNG' and $typ-attr='BEITRAG'">au</xsl:when>
-                <xsl:when test="$ru-attr='EDITORIAL' and $typ-attr='NACHRICHT'">ed</xsl:when>
+                <xsl:when test="$ru-attr='EDITORIAL' or $ru-attr='GASTKOMMENTAR'">ed</xsl:when>
                 <xsl:when test="$ru-attr='DATENSCHUTZ IM FOKUS' and $typ-attr='BEITRAG'">au</xsl:when>
                 <xsl:when test="$ru-attr='AKTUELLES AUS DEN AUFSICHTSBEHÖRDEN' and $typ-attr='BEITRAG'">au</xsl:when>
                 <xsl:when test="$ru-attr='GESETZGEBUNG AKTUELL' and $typ-attr='BEITRAG'">au</xsl:when>
@@ -86,7 +86,8 @@
                     <authors>
                         <xsl:for-each select="AUTOR/PERSON">
                             <author>
-                                <prefix><xsl:value-of select="text()"/></prefix>
+                                <!--<prefix><xsl:value-of select="replace(text()[1],'\s{3,}','')"/></prefix>-->
+                                <prefix><xsl:value-of select="normalize-space(text()[1])"/></prefix>
                                 <firstname><xsl:value-of select="VORNAME"/></firstname>
                                 <surname><xsl:value-of select="NACHNAME"/></surname>
                                 <!--<xsl:if test="BIOGR/descendant-or-self::*[not(text()='')]">
@@ -94,7 +95,7 @@
                                 </xsl:if>-->
                             </author>
                         </xsl:for-each>
-                        <xsl:if test="AUTOR/PERSON/BIOGR">
+                        <xsl:if test="AUTOR/PERSON/BIOGR/ABS[child::node()]">
                             <biography>
                                 <xsl:for-each select="AUTOR/PERSON/BIOGR">
                                     <p><xsl:value-of select="replace(replace(ABS,'\n',' '),'\s{2,}',' ')"/></p>
@@ -104,7 +105,7 @@
                     </authors>
                 </xsl:if>
                 
-                <xsl:if test="ABSTRACT">
+                <xsl:if test="ABSTRACT[child::node()]">
                     <summary>
                         <p>
                             <xsl:value-of select="replace(replace(ABSTRACT,'\n',' '),'\s{2,}',' ')"/>
