@@ -125,6 +125,9 @@
                     <xsl:when test="$ru-attr='DAS AKTUELLE STICHWORT' and $typ-attr='BEITRAG'">
                         <ressort>Das aktuelle Stichwort</ressort>  
                     </xsl:when>
+                    <xsl:when test="$ru-attr='BEITRAG' and $typ-attr='BEITRAG'">
+                        <ressort>Beitrag</ressort>  
+                    </xsl:when>
                     <xsl:when test="$ru-attr='PERSONALIA' and $typ-attr='NACHRICHT'">
                         <ressort>Personalie</ressort>
                     </xsl:when>
