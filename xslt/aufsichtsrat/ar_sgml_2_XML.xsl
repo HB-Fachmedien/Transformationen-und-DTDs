@@ -74,7 +74,7 @@
             <xsl:choose>
                 <xsl:when test="$neues_aus_der_datenbank">
                     <xsl:attribute name="rawid" select="@SIRIUS-ID"/>
-                    <xsl:attribute name="docid" select="$sevenDigitID"/> 
+                    <xsl:attribute name="docid" select="concat('XQ', $sevenDigitID)"/> 
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="rawid" select="replace($id-mapping-wert, 'AR0{0,7}', '')"/>
@@ -90,6 +90,10 @@
                 
                 <xsl:if test="not($neues_aus_der_datenbank) and UTITEL[child::node()]">
                     <subtitle><xsl:value-of select="UTITEL"/></subtitle>
+                </xsl:if>
+                
+                <xsl:if test="$neues_aus_der_datenbank">
+                    <xsl:comment><subtitle><xsl:value-of select="UTITEL"/></subtitle></xsl:comment>
                 </xsl:if>
                 
                 <xsl:if test="AUTOR">
