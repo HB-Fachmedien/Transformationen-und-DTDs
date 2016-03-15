@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.13 -->
+<!-- HBFM Schematron Version 1.14 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -139,6 +139,18 @@
             <assert test="p">Randzifferblöcke müssen ein p Element besitzen!</assert>
             <assert test="p[child::node()]">Das p Element darf nicht leer sein!</assert>
             <assert test="rz[child::node()]">Das rz Element darf nicht leer sein!</assert>
+        </rule>
+    </pattern>
+    
+    <!-- Regeln, die Sonderzeichen in Dateinamen und External Files überprüfen: -->
+    <pattern>
+        <rule context="/*">
+            <assert test="not(contains(tokenize(document-uri(./..),'/')[last()], '+'))">Der Dateiname: <value-of select="tokenize(document-uri(./..),'/')[last()]"/> darf kein '+' Zeichen enthalten!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="/*/metadata/extfile">
+            <assert test="not(contains(text(), '+'))">Der PDF Name: darf kein '+' Zeichen enthalten!</assert>
         </rule>
     </pattern>
 </schema>
