@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM to HBFMCC Transformation Version 1.05 -->
+<!-- HBFM to HBFMCC Transformation Version 1.06 -->
 <!--
+Version 1.06:
+maindate bekommt nur noch bei all_doc_type[@level='1'] = ent oder va Dokumenten das Instdocdate zugewiesen, bei allen anderen das Pubdate.
+	
 Version 1.05:
 TOC für WuW, DSB, ZOE, AR
 	
@@ -80,13 +83,11 @@ TOC für KOR und DK
 			<!-- create element maindate -->
 			<maindate>
 				<xsl:choose>
-					<xsl:when test="not(descendant::instdoc[1]/instdocdate)">
-						<!-- create maindate from pub/date -->
-						<xsl:apply-templates select="descendant::pub/date/node()"/>
+					<xsl:when test="all_doc_type[@level='1'][text()=('ent','va')] and descendant::instdoc[1]/instdocdate">
+						<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
 					</xsl:when>
 					<xsl:otherwise>
-						<!-- in entscheidungen: use date of entscheidung -->
-						<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
+						<xsl:apply-templates select="descendant::pub/date/node()"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</maindate>
