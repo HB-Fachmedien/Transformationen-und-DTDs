@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.14 -->
+<!-- HBFM Schematron Version 1.15 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -136,8 +136,8 @@
     </pattern>
     <pattern>
         <rule context="rzblock">
-            <assert test="p">Randzifferblöcke müssen ein p Element besitzen!</assert>
-            <assert test="p[child::node()]">Das p Element darf nicht leer sein!</assert>
+            <assert test="p or table or block or example or figure or list or newpage or rzblock or sidenote or subhead">Randzifferblöcke müssen ein p (oder block oder example oder figure oder list oder newpage oder rzblock oder sidenote oder subhead oder table)  Element besitzen!</assert>
+            <assert test="not(p) or p[child::node()]">Das p Element darf nicht leer sein!</assert>
             <assert test="rz[child::node()]">Das rz Element darf nicht leer sein!</assert>
         </rule>
     </pattern>
