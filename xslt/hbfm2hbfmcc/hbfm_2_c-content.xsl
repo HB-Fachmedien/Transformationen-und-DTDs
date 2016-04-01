@@ -322,7 +322,7 @@ TOC für KOR und DK
 =========================================================== -->
 <xsl:template name="createToc">
 	<xsl:variable name="pub-abbr" select="descendant::pubabbr/text()"/>
-	<xsl:if test="not((descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
+	<xsl:if test="not( (/gh and all_source[@level='2']='ar') or (descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft'))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
