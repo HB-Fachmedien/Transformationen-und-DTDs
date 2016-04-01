@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.15 -->
+<!-- HBFM Schematron Version 1.16 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -92,7 +92,7 @@
     </pattern>
     <pattern>
         <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and  ancestor::metadata/all_source[@level='2' and not(text()='str')]]">
-            <assert test="not(string(number(replace(.,'-',''))) = 'NaN')">Die Pubedition darf nur aus Zahlen bestehen!</assert>
+            <assert test="/gh or not(string(number(replace(.,'-',''))) = 'NaN')">Die Pubedition darf nur aus Zahlen bestehen!</assert>
         </rule>
     </pattern>
     <pattern>
