@@ -73,9 +73,9 @@
             <xsl:attribute name="docid">
                 <xsl:value-of select="concat('DSB', $sevenDigitID)"/>
             </xsl:attribute>
-            <xsl:attribute name="altdocid">
+            <!--<xsl:attribute name="altdocid">
                 <xsl:value-of select="concat('DSB', $sevenDigitID)"/>
-            </xsl:attribute>
+            </xsl:attribute>-->
 
             <metadata>
                 <title>
