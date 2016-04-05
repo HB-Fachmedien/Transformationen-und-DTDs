@@ -13,7 +13,7 @@
         encoding="UTF-8" 
     />
     
-    <!-- Girichtsddatei liegt im Verwaltungsanweisungen Ordner -->
+    <!-- Gerichtsddatei liegt im Verwaltungsanweisungen Ordner -->
     <xsl:variable name="gerichteDatei" select="document('../verwaltungsanweisungen/gerichte.xml')"/>
     <xsl:variable name="idMappingDatei" select="document('id-mapping.xml')"/>
     
@@ -94,6 +94,7 @@
                 
                 <xsl:if test="$neues_aus_der_datenbank">
                     <xsl:comment><subtitle><xsl:value-of select="UTITEL"/></subtitle></xsl:comment>
+                    <xsl:comment>NADB über Sirius publizieren!</xsl:comment>
                 </xsl:if>
                 
                 <xsl:if test="AUTOR">
