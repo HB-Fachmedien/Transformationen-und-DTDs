@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.16 -->
+<!-- HBFM Schematron Version 1.17 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -151,6 +151,12 @@
     <pattern>
         <rule context="/*/metadata/extfile">
             <assert test="not(contains(text(), '+'))">Der PDF Name: darf kein '+' Zeichen enthalten!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="//file/@class">
+            <assert test=". = ('pdf','rtf','doc','docx','xls','xlsx','ppt','pptx')">Der Wert "<value-of select="."/>" ist für das class Atribute von file Elementen nicht erlaubt!</assert>
+            <assert test=". =  tokenize(../text(),'\.')[last()]">Die Dateiendung des Filenamens "<value-of select="tokenize(../text(),'\.')[last()]"/>" muss mit dem @class Attribut "<value-of select="."/>" übereinstimmen!</assert>
         </rule>
     </pattern>
 </schema>
