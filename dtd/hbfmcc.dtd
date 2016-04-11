@@ -2738,11 +2738,14 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 @attr width Zielt das Element <i>file</i> auf eine Grafik oder ein Logo, so kann es sinnvoll sein, über das Attribut <i>width</i> die gewünschte Breite anzugeben, mit der die Grafik ausgegeben werden soll. Korrespondierend dazu sollte auch das Attribut <i>height</i> befüllt werden.
 
 Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
+
+@attr class dient dazu, das entsprechende Download-Icon anzeigen zu können
 -->
 <!ATTLIST file
 	src    CDATA #REQUIRED
 	title  CDATA #IMPLIED
 	type   CDATA #IMPLIED
+	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx) #IMPLIED
 	alt    CDATA #IMPLIED
 	height CDATA #IMPLIED
 	width  CDATA #IMPLIED
