@@ -9,6 +9,7 @@
         
         <html>
             <head>
+                <meta charset="UTF-8"/>
                 <link media="screen" type="text/css"
                     href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
                     rel="stylesheet"/>

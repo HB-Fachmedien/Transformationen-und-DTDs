@@ -4,6 +4,9 @@
         <xsl:output method="html"/>
         <xsl:template match="/">
             <html>
+                <head>
+                    <meta charset="UTF-8"/>
+                </head>
                 <body>
                     <div>
                         <p>
