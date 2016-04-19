@@ -74,19 +74,24 @@
                                         <div class="ihv_level3">
                                             <div class="ihv_level4">
                                                 <div class="ihv_headline titel">
-                                                    <a
-                                                        href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
+                                                    <a  href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
                                                         <xsl:value-of select="$editorial-dokument/TITEL"/>
                                                     </a>
                                                 </div>
-                                                <div class="ihv_autor">Marko Wieczorek </div>
-                                                <div class="ihv_autornormiert">
-                                                    <div class="ihv_autor">marko_wieczorek</div>
+                                                <div class="ihv_autor">
+                                                    <xsl:value-of select="$editorial-dokument/AUTOR"/>
                                                 </div>
+                                                <xsl:for-each select="$editorial-dokument/AUTOR">
+                                                    <div class="ihv_autornormiert">
+                                                        <div class="ihv_autor">
+                                                            <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
+                                                        </div>
+                                                        <!-- Überprüfen, ob das so passt -->
+                                                    </div>
+                                                </xsl:for-each>
                                                 <!-- TODO: Aus Autoren Feld ziehen -->
                                                 <div class="ihv_dbnummer">
-                                                    <a
-                                                        href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}"><xsl:value-of select="$editorial-dbnummer"/>
+                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}"><xsl:value-of select="$editorial-dbnummer"/>
                                                     </a>
                                                 </div>
                                             </div>

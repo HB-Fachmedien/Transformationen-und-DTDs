@@ -51,6 +51,7 @@
                 <xsl:when test="$ru-attr='NACHRICHTEN' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='BEITRAG'">iv</xsl:when>
                 <xsl:when test="$ru-attr='INTERVIEW' and $typ-attr='INTERVIEW'">iv</xsl:when>
+                <xsl:when test="$ru-attr='RECHTSPRECHUNG' and $typ-attr='NACHRICHT'">nr</xsl:when>
                 <xsl:when test="$ru-attr='NEUES AUS DER DATENBANK'">divso</xsl:when>
                 <xsl:otherwise>ELEMENT-ZUTEILUNG-FEHLGESCHLAGEN</xsl:otherwise>
             </xsl:choose>
