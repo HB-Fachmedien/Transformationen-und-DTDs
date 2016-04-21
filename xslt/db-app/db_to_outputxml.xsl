@@ -364,7 +364,7 @@
                 </xsl:for-each>
             </TABLE>
         </xsl:if>
-        <xsl:apply-templates select="p|section|footnote|list|listitem|note|newpage|example"/>
+        <xsl:apply-templates select="p|section|footnote|list|listitem|note|newpage|example|rzblock"/>
         <!-- Autoren Informationen: -->
         <xsl:if test="../name() = 'au'">
         <H3>
@@ -390,6 +390,9 @@
             </xsl:for-each>
         </TABLE>
         </xsl:if>
+    </xsl:template>
+    <xsl:template match="rzblock">
+        <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="list">
         <UL>
