@@ -108,7 +108,7 @@
                                                             </div>
                                                             
                                                             <!-- verlinkter Titel -->                                                        
-                                                            <div class="ihv_headline titel"><a href="https://recherche.der-betrieb.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/title"/></a></div>
+                                                            <div class="ihv_headline titel"><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/title"/></a></div>
                                                             
                                                             <!-- Autoren- bzw. Behördenauszeichnung -->
                                                             <div class="ihv_autor">
@@ -135,7 +135,7 @@
                                                                 </div>
                                                             </xsl:if>
                                                             <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div>
-                                                            <p><a href="https://recherche.der-betrieb.de/document.aspx?docid={$dokid}"><xsl:value-of select="$dokid"/></a></p>
+                                                            <p><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="$dokid"/></a></p>
                                                         </div>
                                                     </div>
                                                 </xsl:for-each>
