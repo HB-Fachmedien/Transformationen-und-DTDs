@@ -8,6 +8,7 @@
     <xsl:template match="/">
         <html>
             <head>
+                <meta charset="UTF-8"/>
                 <link media="screen" type="text/css"
                     href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
                     rel="stylesheet"/>
@@ -76,7 +77,7 @@
                                                 <xsl:otherwise></xsl:otherwise>
                                             </xsl:choose>
                                             
-                                            <!-- For-each-group, die alle Doctypen in die drei Ressorts gruppert: kr, br und sr: -->
+                                            <!-- For-each-group, die alle Doctypen in die drei Ressorts gruppiert: kr, br und sr: -->
                                             <xsl:for-each-group select="current-group()" group-by="/*/metadata/ressort">
                                                 <xsl:sort select="/*/metadata/pub/pages/start_page"/>
                                                 
