@@ -50,9 +50,10 @@
                         </P>
                         
                         <xsl:for-each select="$docum/*/metadata/leitsaetze/leitsatz">
-                            <P CLASS="ls">
-                                <xsl:value-of select="*/text()"/>
-                            </P>
+                            
+                                <!--<xsl:value-of select="*/text()"/>-->
+                                <xsl:apply-templates/>
+                            
                         </xsl:for-each>
                         
                         <xsl:variable name="datum-tokenized" select="tokenize($docum/*/metadata/instdoc/instdocdate/text(), '-')"/>
@@ -413,6 +414,11 @@
         <SUB>
             <xsl:apply-templates/>
         </SUB>
+    </xsl:template>
+    <xsl:template match="leitsatz/p">
+        <P CLASS="ls">
+            <xsl:apply-templates/>
+        </P>
     </xsl:template>
     <xsl:template match="p">
         <P>
