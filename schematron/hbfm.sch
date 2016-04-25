@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.17 -->
+<!-- HBFM Schematron Version 1.18 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -91,8 +91,14 @@
         </rule>
     </pattern>
     <pattern>
-        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and  ancestor::metadata/all_source[@level='2' and not(text()='str')]]">
+        <!-- Regel für alle Werke außer Str Kompakt und ifst Schriften: -->
+        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and  ancestor::metadata/all_source[@level='2' and not(text()=('str','ifst'))]]">
             <assert test="/gh or not(string(number(replace(.,'-',''))) = 'NaN')">Die Pubedition darf nur aus Zahlen bestehen!</assert>
+        </rule>
+        
+        <!-- Regel für ifst Schriften -->
+        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='2' and text()='ifst']]">
+            <assert test="not(string(number(replace(replace(.,'ifst',''),'-',''))) = 'NaN')">Die Pubedition von ifst-Schriften darf nur aus dem Kürzel 'ifst' + Zahlen bestehen!</assert>
         </rule>
     </pattern>
     <pattern>
