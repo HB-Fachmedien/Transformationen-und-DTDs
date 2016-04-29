@@ -562,6 +562,7 @@ TOC für KOR und DK
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 													<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
+													<xsl:when test="../name()='kk'">Kurz kommentiert#560</xsl:when>
 													<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
 													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
 													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
