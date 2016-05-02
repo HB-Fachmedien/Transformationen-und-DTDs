@@ -124,6 +124,7 @@
                                                         
                                                         <!-- Autoren-->
                                                         <div class="ihv_autor">
+                                                            <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}">
                                                             <xsl:for-each select="*/metadata/authors/author">
                                                                 <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
                                                                 <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
@@ -142,13 +143,16 @@
                                                                         , format-date(*/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', */metadata/instdoc/instdocnrs/instdocnr[1])"/>
                                                                 </xsl:otherwise>
                                                             </xsl:choose>-->
+                                                            </a>
                                                         </div>
                                                         
                                                         <div class="ihv_abstract">
+                                                            <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}">
                                                             <xsl:value-of select="*/metadata/summary/*[not(@lang='en')]"/>
+                                                            </a>
                                                         </div>
                                                         
-                                                        <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div>
+                                                        <div class="ihv_seite"><a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/pub/pages/start_page"/></a></div>
                                                         <p><a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}"><xsl:value-of select="$dokid"/></a></p>
                                                     </div>
                                                 </div>
