@@ -112,6 +112,7 @@
                                                             
                                                             <!-- Autoren- bzw. Behördenauszeichnung -->
                                                             <div class="ihv_autor">
+                                                                <a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}">
                                                                 <xsl:choose>
                                                                     <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
                                                                     <xsl:when test="/*/name() = 'au'">
@@ -126,15 +127,18 @@
                                                                             , format-date(*/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', */metadata/instdoc/instdocnrs/instdocnr[1])"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
+                                                                </a>
                                                             </div>
                                                             
                                                             <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
                                                             <xsl:if test="/*/name() = 'au'">
                                                                 <div class="ihv_abstract">
+                                                                    <a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}">
                                                                     <xsl:value-of select="*/metadata/summary/*"/>
+                                                                    </a>
                                                                 </div>
                                                             </xsl:if>
-                                                            <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div>
+                                                            <div class="ihv_seite"><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/pub/pages/start_page"/></a></div>
                                                             <p><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="$dokid"/></a></p>
                                                         </div>
                                                     </div>
