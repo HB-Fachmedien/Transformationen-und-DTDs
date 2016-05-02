@@ -363,7 +363,7 @@
                                 </div>
                             </xsl:for-each>
                         </div>
-                        <div class="ihv_abstract"><xsl:value-of select="VORSPANN"/></div>
+                        <div class="ihv_abstract"><a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}"><xsl:value-of select="VORSPANN"/></a></div>
                         <div class="ihv_seite">
                             <xsl:value-of select="SEITEVON"/>
                         </div>
