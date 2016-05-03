@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/Users/rehberger/Desktop/DSB_2016_03/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDSB/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <output>
             <html>
-                <head>
-                    <meta charset="UTF-8"/>
-                </head>
+    <head>
+        <meta charset="UTF-8"/>
+        <link media="screen" type="text/css" href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css" rel="stylesheet"/>
+        <style>
+            @charset "UTF-8";
+            @font-face{
+            font-family:"Unit Slab Pro Bold";
+            font-weight:bold;
+            src:url("fonts/unitslabpro-bold.woff") format("woff");
+            }
+            @font-face{
+            font-family:"Unit Slab Pro Medium";
+            src:url("fonts/unitslabpro-medium.woff") format("woff");
+            }
+            @font-face{
+            font-family:"Unit Slab Pro";
+            src:url("fonts/unitslabpro.woff") format("woff");
+            }
+            @font-face{
+            font-family:"Unit Pro Medium";
+            src:url("fonts/unitpro-medium.woff") format("woff");
+            }
+            @font-face{
+            font-family:"Unit Pro";
+            src:url("fonts/unitpro.woff") format("woff");
+            }
+            .ihv_seite,
+            .ihv_dbnummer{
+            text-align:right;
+            padding:0px;
+            }</style>
+    </head>
                 <body>
                     <div class="content-wrapper">
                         <h1 class="pagehead small">Inhaltsverzeichnis</h1>
@@ -21,226 +50,117 @@
                                 <div class="content-text">
                                     <div class="ihv_level1">
                                         <div class="ihv_headline">Inhaltsverzeichnis</div>
-                                        <div class="ihv_datum">Heft 
+                                        <div class="ihv_heftnr">
                                             <xsl:for-each select="$aktuelles-Heft[position()=1]">
                                                 <xsl:value-of select="/*/metadata/pub/pubedition"/>
-                                                <xsl:text> vom </xsl:text>
-                                                <xsl:value-of select="/*/metadata/pub/date" />
+                                            </xsl:for-each>
+                                        </div>
+                                        <div class="ihv_datum">
+                                            <xsl:for-each select="$aktuelles-Heft[position()=1]">
+                                                <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" />
                                             </xsl:for-each>
                                         </div>
                                         
-                                        <xsl:if test="$aktuelles-Heft//ressort[text()='Datenschutz im Fokus']">
-                                            <h3>DATENSCHUTZ IM FOKUS</h3>
-                                        </xsl:if>
-                                        
-                                        <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
-                                        
-                                        <xsl:for-each select="$aktuelles-Heft">
+                                        <div class="ihv_level2">
+                                            <!-- FOR EACH GROUP ÜBER ALLE DOKUMENTE, GRUPPIERT NACH DOCTYPE-->
+                                            <xsl:for-each-group select="$aktuelles-Heft" group-by="/*/metadata/ressort">
+                                                
+                                                <!-- <xsl:sort select="*/metadata/pub/pages/start_page[1]" data-type="number" order="ascending"/> 
+                                                
+                                                <xsl:perform-sort select="*/metadata/pub/pages/start_page">
+                                                    <xsl:sort select="start_page" data-type="number" order="ascending"/>
+                                                </xsl:perform-sort>-->
+                                                
+                                                <xsl:choose>
+                                                    <xsl:when test="current-grouping-key() = 'Datenschutz im Fokus'">
+                                                        <div class="ihv_headline ressort">Datenschutz im Fokus</div>
+                                                    </xsl:when>
+                                                    <xsl:when test="current-grouping-key() = 'Aktuelles aus den Aufsichtsbehörden'">
+                                                        <div class="ihv_headline ressort">Aktuelles aus den Aufsichtsbehörden</div>
+                                                    </xsl:when>
+                                                    <xsl:when test="current-grouping-key() = 'Stichwort des Monats'">
+                                                        <div class="ihv_headline ressort">Stichwort des Monats</div>
+                                                    </xsl:when>
+                                                    <xsl:when test="current-grouping-key() = 'Service'">
+                                                        <div class="ihv_headline ressort">Service</div>
+                                                    </xsl:when>
+                                                    <xsl:when test="current-grouping-key() = 'Rechtsprechung'">
+                                                        <div class="ihv_headline ressort">Rechtsprechung</div>
+                                                    </xsl:when>
+                                                     <xsl:otherwise>
+                                                         [<div class="ihv_headline ressort">UNBEKANNTES RESSORT</div>]
+                                                     </xsl:otherwise>
+                                                        
+                                                </xsl:choose>
+                                                
+                                                <div class="ihv_level3">
+                                                    <div class="ihv_level4">
+                                                        <xsl:for-each select="current-group()">
+                                                            <xsl:sort select="*/metadata/pub/pages/start_page" data-type="number"/>
+                                                            <xsl:variable name="docum" select="document(document-uri(.))"/>
+                                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
+                                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
+                                                            <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
+                                                            <a href="https://recherche.datenschutz-berater.org/document.aspx?docid=DSB{$siriusID}">
+                                                                <div class="ihv_headline titel">
+                                                                    <xsl:value-of select="/*/metadata/title"/>
+                                                                </div>
+                                                                
+                                                                    <xsl:for-each select="./*/metadata/authors/author">
+                                                                        <div class="ihv_autor">
+                                                                        <xsl:choose>
+                                                                            <xsl:when test="position()=1">
+                                                                                <xsl:value-of select="prefix"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                                <xsl:value-of select="firstname"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
+                                                                            </xsl:when>
+                                                                            <xsl:when test="position()=last()">
+                                                                                <xsl:text>, </xsl:text>
+                                                                                <xsl:value-of select="prefix"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                                <xsl:value-of select="firstname"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
+                                                                            </xsl:when>
+                                                                            <xsl:otherwise>
+                                                                                <xsl:text>, </xsl:text>
+                                                                                <xsl:value-of select="prefix"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                                <xsl:value-of select="firstname"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
+                                                                            </xsl:otherwise>
+                                                                        </xsl:choose>
+                                                                        </div>
+                                                                    </xsl:for-each>
+                                                                
+                                                                <p>
+                                                                    <xsl:value-of select="/*/metadata/summary"/>
+                                                                </p>
+                                                                <div class="ihv_seite">S. 
+                                                                    
+                                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                                </div>
+                                                                <p>
+                                                                    <a href="https://recherche.datenschutz-berater.de/document.aspx?docid=DSB{$siriusID}" >DSB
+                                                                        
+                                                                        <xsl:value-of select="$siriusID"/>
+                                                                    </a>
+                                                                </p>
+                                                            </a>
+                                                        </xsl:for-each>
+                                                    </div>
+                                                </div>
+                                                
+                                            </xsl:for-each-group>
                                             
-                                            <xsl:variable name="docum" select="document(document-uri(.))"/>
-                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                            <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                            
-                                            <!-- DATENSCHUTZ IM FOKUS -->
-                                            
-                                            <xsl:if test="$ressortbez='Datenschutz im Fokus'">
-                                                <h4>
-                                                    <xsl:value-of select="/*/metadata/title"/>
-                                                </h4>
-                                                <h5>
-                                                    <xsl:for-each select="/*/metadata/authors/author">
-                                                        <xsl:choose>
-                                                            <xsl:when test="position()=1">
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:when test="position()=last()">
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:otherwise>
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:otherwise>
-                                                        </xsl:choose>
-                                                    </xsl:for-each>
-                                                </h5>
-                                                <p>
-                                                    <xsl:value-of select="/*/metadata/summary"/>
-                                                </p>
-                                                <p>S. 
-                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                </p>
-                                            </xsl:if>
-                                        </xsl:for-each>
-                                        
-                                        <xsl:if test="$aktuelles-Heft//ressort[text()='Gesetzgebung aktuell']">
-                                            <h3>GESETZGEBUNG AKTUELL</h3>
-                                        </xsl:if>
-                                        
-                                        <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
-                                        
-                                        <xsl:for-each select="$aktuelles-Heft">
-                                            
-                                            <xsl:variable name="docum" select="document(document-uri(.))"/>
-                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                            <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                            
-                                            <!-- GESETZGEBUNG AKTUELL -->
-                                            
-                                            <xsl:if test="$ressortbez='Gesetzgebung aktuell'">
-                                                <h4>
-                                                    <xsl:value-of select="/*/metadata/title"/>
-                                                </h4>
-                                                <h5>
-                                                    <xsl:for-each select="/*/metadata/authors/author">
-                                                        <xsl:choose>
-                                                            <xsl:when test="position()=1">
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:when test="position()=last()">
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:otherwise>
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:otherwise>
-                                                        </xsl:choose>
-                                                    </xsl:for-each>
-                                                </h5>
-                                                <p>
-                                                    <xsl:value-of select="/*/metadata/summary"/>
-                                                </p>
-                                                <p>S. 
-                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                </p>
-                                            </xsl:if>
-                                        </xsl:for-each>
-                                        
-                                        <xsl:if test="$aktuelles-Heft//ressort[text()='Aktuelles aus den Aufsichtsbehörden']">
-                                            <h3>AKTUELLES AUS DEN AUFSICHTSBEHÖRDEN</h3>
-                                        </xsl:if>
-                                        
-                                        <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
-                                        
-                                        <xsl:for-each select="$aktuelles-Heft">
-                                  
-                                            <xsl:variable name="docum" select="document(document-uri(.))"/>
-                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                            <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                            
-                                            <!-- AKTUELLES AUS DEN AUFSICHTSBEHÖRDEN -->
-                                            
-                                            <xsl:if test="$ressortbez='Aktuelles aus den Aufsichtsbehörden'">
-                                                <h4>
-                                                    <xsl:value-of select="/*/metadata/title"/>
-                                                </h4>
-                                                <h5>
-                                                    <xsl:for-each select="/*/metadata/authors/author">
-                                                        <xsl:choose>
-                                                            <xsl:when test="position()=1">
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:when test="position()=last()">
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:otherwise>
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:otherwise>
-                                                        </xsl:choose>
-                                                    </xsl:for-each>
-                                                </h5>
-                                                <p>
-                                                    <xsl:value-of select="/*/metadata/summary"/>
-                                                </p>
-                                                <p>S. 
-                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                </p>
-                                            </xsl:if>
-                                        </xsl:for-each>
-                                        
-                                        <xsl:if test="$aktuelles-Heft//au/metadata/ressort='Rechtsprechung'">
-                                            <h3>RECHTSPRECHUNG</h3>
-                                        </xsl:if>
-                                        
-                                        <xsl:for-each select="$aktuelles-Heft">
-                                            
-                                            <xsl:variable name="docum" select="document(document-uri(.))"/>
-                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                            <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                            <!-- RECHTSPRECHUNG -->
-                                            <xsl:if test="au and $ressortbez='Rechtsprechung'">
-                                                <h5>
-                                                    <xsl:value-of select="/*/metadata/title"/>
-                                                </h5>
-                                                <p>S. 
-                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                </p>
-                                            </xsl:if>
-                                        </xsl:for-each>
-                                        
-                                        <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
-                                        
-                                        <xsl:for-each select="$aktuelles-Heft">
-                                           
-                                            <xsl:variable name="docum" select="document(document-uri(.))"/>
-                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                            <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                            <!-- RECHTSPRECHUNG -->
-                                            <xsl:if test="ent">
-                                                <h5>
-                                                    <xsl:value-of select="/*/metadata/title"/>
-                                                </h5>
-                                                <p>S. 
-                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                </p>
-                                            </xsl:if>
-                                        </xsl:for-each>
-                                    </div>
+                                            <div class="ihv_headline ressort">Nachrichten</div>
+                                                <div class="ihv_seite"><xsl:value-of select="min($aktuelles-Heft/nr/metadata/pub/pages/start_page)"/></div>
+                                        </div>
                                 </div>
+                            </div>
                             </div>
                         </section>
                     </div>
