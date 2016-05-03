@@ -4,7 +4,7 @@
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
-    <xsl:variable name="aktuelles-Heft" select="collection('file:///c:/Users/rehberger/Desktop/KoR_05/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempKoR/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <html>
             <head>
