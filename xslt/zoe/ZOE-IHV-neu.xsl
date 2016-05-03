@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
-    <xsl:variable name="aktuelles-Heft" select="collection(iri-to-uri('file:///c:/Users/rehberger/Desktop/ZOE_2016_02/?recurse=yes;select=*_[A-Z].xml'))"/>
+    <xsl:variable name="aktuelles-Heft" select="collection(iri-to-uri('file:/c:/tempZOE/?recurse=yes;select=*_[A-Z].xml'))"/>
     <xsl:template match="/">
         <output>
             <html>
@@ -170,10 +170,7 @@
                                                                 <p>
                                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                                 </p>
-                                                                <p>S. 
-                                                                    
-                                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                                </p>
+                                                                <div class="ihv_seite"><xsl:value-of select="/*/metadata/pub/pages/start_page"/></div>
                                                                 <p>
                                                                     <a href="https://recherche.zoe-online.org/document.aspx?docid=ZOE{$siriusID}" >ZOE
                                                                         
