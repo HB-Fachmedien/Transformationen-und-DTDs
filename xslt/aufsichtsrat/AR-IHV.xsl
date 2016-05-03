@@ -2,13 +2,44 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/Users/rehberger/Desktop/AR_2016_04/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempAR/?recurse=yes;select=*.xml')"/>
 
     <xsl:template match="/">
         <output>
             <html>
                 <head>
                     <meta charset="UTF-8"/>
+                    <link media="screen" type="text/css"
+                        href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
+                        rel="stylesheet"/>
+                    <style>
+                        @charset "UTF-8";
+                        @font-face{
+                        font-family:"Unit Slab Pro Bold";
+                        font-weight:bold;
+                        src:url("fonts/unitslabpro-bold.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Slab Pro Medium";
+                        src:url("fonts/unitslabpro-medium.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Slab Pro";
+                        src:url("fonts/unitslabpro.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Pro Medium";
+                        src:url("fonts/unitpro-medium.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Pro";
+                        src:url("fonts/unitpro.woff") format("woff");
+                        }
+                        .ihv_seite,
+                        .ihv_dbnummer{
+                        text-align:right;
+                        padding:0px;
+                        }</style>
                 </head>
 
 
@@ -96,8 +127,8 @@
                                                         <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
                                                         <xsl:value-of select="/*/metadata/summary"/>
                                                     </a></p>
-                                                    <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of
-                                                        select="/*/metadata/pub/pages/start_page"/></a></p>
+                                                    <div class="ihv_seite"><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of
+                                                        select="/*/metadata/pub/pages/start_page"/></a></div>
                                                     <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                                 </xsl:if>
                                             </xsl:for-each>
@@ -167,7 +198,7 @@
                                                         <xsl:value-of select="/*/metadata/summary"/>
                                                     </a>
                                                 </p>
-                                                <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></p>
+                                                <div class="ihv_seite"><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
                                                 <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
@@ -214,10 +245,10 @@
                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                     </a>
                                                 </p>
-                                                <p>
+                                                <div class="ihv_seite">
                                                     <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
                                                     S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                </a></p>
+                                                </a></div>
                                                 <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
@@ -249,9 +280,9 @@
                                                 <div class="ihv_headline titel">
                                                     <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                 </div>
-                                                <p>
+                                                <div class="ihv_seite">
                                                     <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
-                                                    S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></p>
+                                                    S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
                                                 <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
@@ -284,7 +315,7 @@
                                                 <div class="ihv_headline titel">
                                                     <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                 </div>
-                                                <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></p>
+                                                <div class="ihv_seite"><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
                                                 <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
