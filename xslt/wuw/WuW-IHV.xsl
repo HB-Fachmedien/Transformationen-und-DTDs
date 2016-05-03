@@ -2,15 +2,45 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/Users/rehberger/Desktop/WuW_04/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempWuW/?recurse=yes;select=*.xml')"/>
 
     <xsl:template match="/">
         <output>
             <html>
                 <head>
                     <meta charset="UTF-8"/>
+                    <link media="screen" type="text/css"
+                        href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
+                        rel="stylesheet"/>
+                    <style>
+                        @charset "UTF-8";
+                        @font-face{
+                        font-family:"Unit Slab Pro Bold";
+                        font-weight:bold;
+                        src:url("fonts/unitslabpro-bold.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Slab Pro Medium";
+                        src:url("fonts/unitslabpro-medium.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Slab Pro";
+                        src:url("fonts/unitslabpro.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Pro Medium";
+                        src:url("fonts/unitpro-medium.woff") format("woff");
+                        }
+                        @font-face{
+                        font-family:"Unit Pro";
+                        src:url("fonts/unitpro.woff") format("woff");
+                        }
+                        .ihv_seite,
+                        .ihv_dbnummer{
+                        text-align:right;
+                        padding:0px;
+                        }</style>
                 </head>
-
 
                 <body>
                     <div class="content-wrapper">
@@ -22,16 +52,14 @@
                                 <div class="content-text">
                                     <div class="ihv_level1">
                                         <div class="ihv_headline">Inhaltsverzeichnis</div>
-                                        <div class="ihv_nr">
-                                            <xsl:for-each
-                                                select="$aktuelles-Heft[position()=1]">
+                                        <div class="ihv_heftnr">
+                                            <xsl:for-each select="$aktuelles-Heft[position()=1]">
                                                 <xsl:value-of select="/*/metadata/pub/pubedition"/>
                                             </xsl:for-each>
                                         </div>
-                                        <div class="ihv_heft_datum">
-                                            <xsl:for-each
-                                                select="$aktuelles-Heft[position()=1]">
-                                                <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')"/>
+                                        <div class="ihv_datum">
+                                            <xsl:for-each select="$aktuelles-Heft[position()=1]">
+                                                <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" />
                                             </xsl:for-each>
                                         </div>
                                         <!--  style="border-bottom:#ee7000" -->
@@ -58,6 +86,7 @@
                                             <!-- KOMMENTAR -->
                                             
                                             <xsl:if test="gk">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -93,7 +122,7 @@
                                                 <p>S. <xsl:value-of
                                                     select="/*/metadata/pub/pages/start_page"
                                                 /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -121,6 +150,7 @@
                                             <!-- ABHANDLUNGEN -->
                                             
                                             <xsl:if test="$ressortbez='Abhandlung'">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -159,7 +189,7 @@
                                                 <p>S. <xsl:value-of
                                                     select="/*/metadata/pub/pages/start_page"
                                                 /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -187,6 +217,7 @@
                                             <!-- TAGUNGSBERICHT -->
                                             
                                             <xsl:if test="$ressortbez='Tagungsbericht'">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -194,7 +225,7 @@
                                                     select="/*/metadata/pub/pages/start_page"
                                                 />-<xsl:value-of
                                                     select="/*/metadata/pub/pages/last_page"/></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -223,13 +254,14 @@
                                             <!-- INTERNATIONAL DEVELOPMENTS -->
                                             
                                             <xsl:if test="$ressortbez='International Developments'">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
                                                 <p>S. <xsl:value-of
                                                     select="/*/metadata/pub/pages/start_page"
                                                 /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -258,6 +290,7 @@
                                             <!-- ENTSCHEIDUNGEN -->
                                             
                                             <xsl:if test="ent">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
                                                 <div class="ihv_headline titel">
                                                     <i><xsl:value-of select="/*/metadata/instdoc/inst"/><xsl:text>: </xsl:text></i>
                                                     <xsl:value-of select="/*/metadata/title"/>
@@ -265,7 +298,7 @@
                                                 <p>S. <xsl:value-of
                                                     select="/*/metadata/pub/pages/start_page"
                                                 /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -294,13 +327,14 @@
                                             <!-- INTERVIEW -->
                                             
                                             <xsl:if test="iv">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
                                                 <p>S. <xsl:value-of
                                                     select="/*/metadata/pub/pages/start_page"
                                                 /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
