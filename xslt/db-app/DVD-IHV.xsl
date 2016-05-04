@@ -76,11 +76,13 @@
                                             <xsl:with-param name="art-nr" select="140"/>
                                         </xsl:call-template>
                                         
-                                        <xsl:call-template name="listArticles">
-                                            <xsl:with-param name="self" select="./node()"/>
-                                            <xsl:with-param name="ueberschrift" select="'Betriebswirtschaftliche Hinweise'"/>
-                                            <xsl:with-param name="art-nr" select="170"/>
-                                        </xsl:call-template>
+                                        <xsl:if test="output/DOKUMENT/ihv-prio-number[text()='170']/../SEITEVON[not(starts-with(text(),'M'))]">
+                                            <xsl:call-template name="listArticles">
+                                                <xsl:with-param name="self" select="./node()"/>
+                                                <xsl:with-param name="ueberschrift" select="'Betriebswirtschaftliche Hinweise'"/>
+                                                <xsl:with-param name="art-nr" select="170"/>
+                                            </xsl:call-template>
+                                        </xsl:if>
                                         
                                     </div><xsl:comment>Ende Level 2</xsl:comment>
                                     
