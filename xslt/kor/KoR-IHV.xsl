@@ -6,9 +6,11 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempKoR/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
+        <xsl:result-document href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/KoR-IHV.html" method="xhtml" omit-xml-declaration="yes">
         <html>
             <head>
                 <meta charset="UTF-8"/>
+                <xsl:comment>
                 <link media="screen" type="text/css"
                     href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
                     rel="stylesheet"/>
@@ -40,6 +42,7 @@
                     text-align:right;
                     padding:0px;
                     }</style>
+                    </xsl:comment>
             </head>
             <body>
                 <div class="content-wrapper">
@@ -66,7 +69,7 @@
                                                     <div class="ihv_headline ressort">Aufsätze</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'nr'">
-                                                    <a href="https://www.kor-ifrs.de/rubriken/reports/" target="_blank"><div class="ihv_headline ressort">Reports</div></a>
+                                                    <div class="ihv_headline ressort">Reports</div>
                                                 </xsl:when>
                                                 <xsl:otherwise></xsl:otherwise>
                                             </xsl:choose>
@@ -84,6 +87,12 @@
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Rechnungslegung und Investor Relations'">
                                                         <div class="ihv_headline doktyp">Rechnungslegung &amp; Investor Relations</div>
+                                                    </xsl:when>
+                                                    <xsl:when test="current-grouping-key() = 'Report international'">
+                                                        <div class="ihv_headline doktyp">Report international</div>
+                                                    </xsl:when>
+                                                    <xsl:when test="current-grouping-key() = 'Report national'">
+                                                        <div class="ihv_headline doktyp">Report national</div>
                                                     </xsl:when>
                                                 </xsl:choose>
                                                 
@@ -137,23 +146,23 @@
                                                 </xsl:for-each>
                                             </xsl:for-each-group>
                                             
-                                            <xsl:for-each-group select="current-group()" group-by="/nr/metadata/rubriken/rubrik">
+                                            <!--  <xsl:for-each-group select="current-group()" group-by="/nr/metadata/ressort">
                                                 <xsl:sort select="/*/metadata/pub/pages/start_page"/>
                                                 
                                                 <xsl:choose>
-                                                    <xsl:when test="current-grouping-key() = 'IASB'">
-                                                        <!-- gibt aber auch noch IAASB, EU, DRSC -->
+                                                    <xsl:when test="current-grouping-key() = 'Report international'">
+                                                         gibt aber auch noch IAASB, EU, DRSC 
                                                         <a href="https://www.kor-ifrs.de/rubriken/reports/" target="_blank"><div class="ihv_headline doktyp">International</div>
                                                         <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div></a>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Sonstige Meldung'">
-                                                        <!-- gibt aber auch noch Rechtsprechung, Gesetzgebung -->
+                                                         gibt aber auch noch Rechtsprechung, Gesetzgebung 
                                                         <a href="https://www.kor-ifrs.de/rubriken/reports/" target="_blank"><div class="ihv_headline doktyp">National</div>
                                                         <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div></a>
                                                     </xsl:when>
                                                 </xsl:choose>
                                                 
-                                                <!--   <xsl:for-each select="current-group()">
+                                                  <xsl:for-each select="current-group()">
                                                        <xsl:choose><xsl:when test="position()=1">
                                                            <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div>
                                                        </xsl:when>
@@ -161,11 +170,7 @@
                                                </xsl:choose>
                                                    </xsl:for-each> -->
                                                 
-                                                
-                                                
-                                            </xsl:for-each-group>
-                                            
-                                        </xsl:for-each-group> 
+                                        </xsl:for-each-group>
                                     </div>
                                 </div>
                             </div>
@@ -174,5 +179,9 @@
                 </div>
             </body>
         </html>
+        </xsl:result-document>
     </xsl:template>
 </xsl:stylesheet>
+
+                                                
+                                            
