@@ -67,6 +67,9 @@
                             select="concat($datum-tokenized[3],'.',$datum-tokenized[2],'.',$datum-tokenized[1])"/> - <xsl:value-of select="$all-instdoc-nrs"/>)</STRONG></P>
                     </xsl:if>
                     <xsl:apply-templates select="$docum/*/body"/>
+                    <xsl:if test="$docum/ed/metadata/authors/author/surname/text() = 'Wieczorek'">
+                        <p><xsl:text>Marko Wieczorek, Chefredakteur</xsl:text></p>
+                    </xsl:if>
                     <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
                 </TEXT>
 
@@ -368,28 +371,30 @@
         <xsl:apply-templates select="p|section|footnote|list|listitem|note|newpage|example|rzblock"/>
         <!-- Autoren Informationen: -->
         <xsl:if test="../name() = 'au'">
-        <H3>
-            <A NAME="autor" CLASS="text">Informationen zu den Autoren</A>
-        </H3>
-        <!--<xsl:value-of select="../metadata/authors/biography"/>-->
-        <xsl:apply-templates select="../metadata/authors/biography"/>
-        <!-- Fußnoten-Inhalte: -->
-        <H3>Fußnoten:</H3>
-        <TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
-            <xsl:for-each select="descendant::footnote">
-                <xsl:variable name="fn-nr" select="substring(@id,2)"/>
-                <TR VALIGN="TOP">
-                    <TD CLASS="footnote_nr" ALIGN="RIGHT">
-                        <A NAME="fn{$fn-nr}" HREF="#fn_back{$fn-nr}"><xsl:value-of select="$fn-nr"
-                            />)</A>
-                    </TD>
-                    <TD CLASS="footnote">
-                        <xsl:value-of select="descendant::*"/>
-                    </TD>
-                    <!-- TODO: VERLINKUNGEN FEHLEN NOCH -->
-                </TR>
-            </xsl:for-each>
-        </TABLE>
+            <H3>
+                <A NAME="autor" CLASS="text">Informationen zu den Autoren</A>
+            </H3>
+            <!--<xsl:value-of select="../metadata/authors/biography"/>-->
+            <xsl:apply-templates select="../metadata/authors/biography"/>
+            <!-- Fußnoten-Inhalte: -->
+        </xsl:if>
+        <xsl:if test="../name() = ('au', 'ent', 'entk')">
+            <H3>Fußnoten:</H3>
+            <TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                <xsl:for-each select="descendant::footnote">
+                    <xsl:variable name="fn-nr" select="substring(@id,2)"/>
+                    <TR VALIGN="TOP">
+                        <TD CLASS="footnote_nr" ALIGN="RIGHT">
+                            <A NAME="fn{$fn-nr}" HREF="#fn_back{$fn-nr}"><xsl:value-of select="$fn-nr"
+                                />)</A>
+                        </TD>
+                        <TD CLASS="footnote">
+                            <xsl:value-of select="descendant::*"/>
+                        </TD>
+                        <!-- TODO: VERLINKUNGEN FEHLEN NOCH -->
+                    </TR>
+                </xsl:for-each>
+            </TABLE>
         </xsl:if>
     </xsl:template>
     <xsl:template match="rzblock">
