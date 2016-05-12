@@ -101,53 +101,22 @@
                                                             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
                                                             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                                            <a href="https://recherche.datenschutz-berater.org/document.aspx?docid=DSB{$siriusID}">
+                                                            <a href="https://recherche.datenschutz-berater.de/document.aspx?docid=DSB{$siriusID}">
                                                                 <div class="ihv_headline titel">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </div>
                                                                 
-                                                                    <xsl:for-each select="./*/metadata/authors/author">
-                                                                        <div class="ihv_autor">
-                                                                        <xsl:choose>
-                                                                            <xsl:when test="position()=1">
-                                                                                <xsl:value-of select="prefix"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="firstname"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                            </xsl:when>
-                                                                            <xsl:when test="position()=last()">
-                                                                                <xsl:text>, </xsl:text>
-                                                                                <xsl:value-of select="prefix"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="firstname"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                            </xsl:when>
-                                                                            <xsl:otherwise>
-                                                                                <xsl:text>, </xsl:text>
-                                                                                <xsl:value-of select="prefix"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="firstname"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                            </xsl:otherwise>
-                                                                        </xsl:choose>
-                                                                        </div>
-                                                                    </xsl:for-each>
+                                                                <xsl:for-each select="*/metadata/authors/author">
+                                                                    <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
+                                                                    <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                                                </xsl:for-each>
                                                                 
                                                                 <p>
                                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                                 </p>
-                                                                <div class="ihv_seite">S. 
-                                                                    
-                                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                                </div>
                                                                 <p>
-                                                                    <a href="https://recherche.datenschutz-berater.de/document.aspx?docid=DSB{$siriusID}" >DSB
-                                                                        
-                                                                        <xsl:value-of select="$siriusID"/>
-                                                                    </a>
+                                                                    <div class="ihv_seite"><xsl:value-of select="/*/metadata/pub/pages/start_page"/></div>
+                                                                    <xsl:text>DSB</xsl:text><xsl:value-of select="$siriusID"/>
                                                                 </p>
                                                             </a>
                                                         </xsl:for-each>

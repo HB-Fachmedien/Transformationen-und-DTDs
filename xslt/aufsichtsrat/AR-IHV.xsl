@@ -90,46 +90,23 @@
                                                 
                                                 <xsl:if test="gk">
                                                     <div class="ihv_headline titel">
-                                                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
+                                                        <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                     </div>
                                                     <div class="ihv_autor">
-                                                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
-                                                        <xsl:for-each select="/*/metadata/authors/author">
-                                                            <xsl:choose>
-                                                                <xsl:when test="position()=1">
-                                                                    <xsl:value-of select="prefix"/>
-                                                                    <xsl:text> </xsl:text>
-                                                                    <xsl:value-of select="firstname"/>
-                                                                    <xsl:text> </xsl:text>
-                                                                    <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                </xsl:when>
-                                                                <xsl:when test="position()=last()">
-                                                                    <xsl:text>, </xsl:text>
-                                                                    <xsl:value-of select="prefix"/>
-                                                                    <xsl:text> </xsl:text>
-                                                                    <xsl:value-of select="firstname"/>
-                                                                    <xsl:text> </xsl:text>
-                                                                    <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                </xsl:when>
-                                                                <xsl:otherwise>
-                                                                    <xsl:text>, </xsl:text>
-                                                                    <xsl:value-of select="prefix"/>
-                                                                    <xsl:text> </xsl:text>
-                                                                    <xsl:value-of select="firstname"/>
-                                                                    <xsl:text> </xsl:text>
-                                                                    <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                </xsl:otherwise>
-                                                            </xsl:choose>
-                                                        </xsl:for-each>
+                                                        <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                            <xsl:for-each select="*/metadata/authors/author">
+                                                                <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
+                                                                <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                                            </xsl:for-each>
                                                         </a>
                                                     </div>
                                                     <p>
-                                                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
+                                                        <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
                                                         <xsl:value-of select="/*/metadata/summary"/>
                                                     </a></p>
-                                                    <div class="ihv_seite"><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of
+                                                    <div class="ihv_seite"><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of
                                                         select="/*/metadata/pub/pages/start_page"/></a></div>
-                                                    <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
+                                                    <p><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                                 </xsl:if>
                                             </xsl:for-each>
                                                 </div>
@@ -160,46 +137,23 @@
                                             
                                             <xsl:if test="au[not(/*/metadata/ressort='Das aktuelle Stichwort')]">
                                                 <div class="ihv_headline titel">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                 </div>
                                                 <div class="ihv_autor">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
-                                                    <xsl:for-each select="/*/metadata/authors/author">
-                                                        <xsl:choose>
-                                                            <xsl:when test="position()=1">
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:when test="position()=last()">
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:when>
-                                                            <xsl:otherwise>
-                                                                <xsl:text>, </xsl:text>
-                                                                <xsl:value-of select="prefix"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="firstname"/>
-                                                                <xsl:text> </xsl:text>
-                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                            </xsl:otherwise>
-                                                        </xsl:choose>
-                                                    </xsl:for-each>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                        <xsl:for-each select="*/metadata/authors/author">
+                                                            <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
+                                                            <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                                        </xsl:for-each>
                                                     </a>
                                                 </div>
                                                 <p>
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
                                                         <xsl:value-of select="/*/metadata/summary"/>
                                                     </a>
                                                 </p>
-                                                <div class="ihv_seite"><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
-                                                <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
+                                                <div class="ihv_seite"><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
+                                                <p><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -229,27 +183,27 @@
                                             
                                             <xsl:if test="iv">
                                                 <div class="ihv_headline titel">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                 </div>
                                                 <div class="ihv_autor">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
                                                     Interview mit <xsl:value-of select="/*/metadata/authors/author/prefix"/>
                                                     <xsl:text> </xsl:text>
                                                     <xsl:value-of select="/*/metadata/authors/author/firstname"/>
                                                     <xsl:text> </xsl:text>
-                                                    <xsl:value-of select="replace(/*/metadata/authors/author/surname, ' ', '')"/>
+                                                    <xsl:value-of select="/*/metadata/authors/author/surname"/>
                                                     </a>
                                                 </div>
                                                 <p>
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                     </a>
                                                 </p>
                                                 <div class="ihv_seite">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
-                                                    S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                 </a></div>
-                                                <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
+                                                <p><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
                                                             </div>
@@ -278,12 +232,12 @@
                                             
                                             <xsl:if test="$ressortbez='Das aktuelle Stichwort'">
                                                 <div class="ihv_headline titel">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                 </div>
                                                 <div class="ihv_seite">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">
-                                                    S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
-                                                <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
+                                                <p><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -313,10 +267,10 @@
                                             
                                             <xsl:if test="ent">
                                                 <div class="ihv_headline titel">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
+                                                    <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/title"/></a>
                                                 </div>
-                                                <div class="ihv_seite"><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">S. <xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
-                                                <p><a href="https://recherche.der-betrieb.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
+                                                <div class="ihv_seite"><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}"><xsl:value-of select="/*/metadata/pub/pages/start_page"/></a></div>
+                                                <p><a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a></p>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
