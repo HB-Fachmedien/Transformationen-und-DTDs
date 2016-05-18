@@ -60,7 +60,9 @@ AUSSERDEM:
                 
                 <xsl:if test="not(RUBRIK-NORMIERT/@RU='')">
                     <rubriken>
-                        <rubrik><xsl:value-of select="concat(upper-case(substring(RUBRIK-NORMIERT/@RU,1,1)),lower-case(substring(RUBRIK-NORMIERT/@RU,2)))"/></rubrik>
+                        <xsl:for-each select="RUBRIK-NORMIERT">
+                            <rubrik><xsl:value-of select="concat(upper-case(substring(./@RU,1,1)),lower-case(substring(./@RU,2)))"/></rubrik>
+                        </xsl:for-each>
                     </rubriken>
                 </xsl:if>
                 
