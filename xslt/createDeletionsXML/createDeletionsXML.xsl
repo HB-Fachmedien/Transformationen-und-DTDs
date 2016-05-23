@@ -6,8 +6,7 @@
     <xsl:output indent="yes" encoding="UTF-8"  method="xml"/>
     
     <xsl:template match="/">
-        <!--<xsl:variable name="file-collection" select="collection('../../../../../tempKOR/verschlagwortung/?recurse=yes;select=*.xml')"/>-->
-        <xsl:variable name="file-collection" select="collection('file:/c:/beispiel-xml-dateien/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/beispiel-xml-dateien/create-deletions-xml/?recurse=yes;select=*.xml')"/>
         <deletions>
             <xsl:for-each select="$file-collection/*">
                 <deletion>
