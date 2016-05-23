@@ -60,7 +60,7 @@
                                     <div class="ihv_level2">
                                         <!-- FOR EACH GROUP ÜBER ALLE DOKUMENTE, GRUPPIERT NACH DOCTYPE-->
                                         <xsl:for-each-group select="$aktuelles-Heft" group-by="*[1]/name()" >
-                                            
+                                            <xsl:sort select="*/name()"/>
                                             <xsl:choose>
                                                 <xsl:when test="current-grouping-key() = 'au'">
                                                     <div class="ihv_headline ressort">Aufsätze</div>
