@@ -27,7 +27,7 @@ AUSSERDEM:
 
 ### KEIN INTEND AUF QUELLDOKUMENT VOR KONVERTIERUNG!
 
-### RUBRIKEN neuerdings in Attributen?
+Blog Transformation -> suffix oder biography
 
 -->
 
@@ -45,6 +45,7 @@ AUSSERDEM:
         
         <nbb rawid="{@DOKID}" docid="{concat('DB',$sevenDigitID)}">
             <metadata>
+                <xsl:comment>Überprüfen, ob der Author Suffix nicht besser ins biography Element passt! Von Fall zu Fall verschieben!</xsl:comment>
                 <title><xsl:value-of select="TITEL"/></title>
                 <authors>
                     <xsl:for-each select="AUTOR/PERSON">
