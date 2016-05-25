@@ -50,12 +50,20 @@ Blog Transformation -> suffix oder biography
                 <authors>
                     <xsl:for-each select="AUTOR/PERSON">
                         <author>
-                            <prefix><xsl:value-of select="text()[1]"/></prefix>
+                            <prefix><xsl:value-of select="replace(text()[1],'^\s','')"/></prefix>
                             <firstname><xsl:value-of select="VORNAME"/></firstname>
                             <surname><xsl:value-of select="NACHNAME"/></surname>
-                            <suffix><xsl:value-of select="text()[2]"/></suffix>
+                            <!--<suffix><xsl:value-of select="text()[2]"/></suffix>-->
+                            <xsl:comment>Hier kommt das suffix Element bei Bedarf hin.</xsl:comment>
                         </author>
                     </xsl:for-each>
+                    <xsl:if test="AUTOR/PERSON/text()[2]">
+                        <biography>
+                            <xsl:for-each select="AUTOR/PERSON/text()[2]">
+                                <p><xsl:value-of select="."/></p>
+                            </xsl:for-each>
+                        </biography>
+                    </xsl:if>
                 </authors>
                 <ressort><xsl:value-of select="lower-case($rubrikenwert)"/></ressort>
                 
