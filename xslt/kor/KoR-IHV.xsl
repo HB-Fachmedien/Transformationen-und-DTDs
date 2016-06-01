@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
-    xmlns:hbfm="http:www.fachmedien.de/hbfm">
-    
-    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="yes" exclude-result-prefixes="#all"/>
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempKoR/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
-        <xsl:result-document href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/KoR-IHV.html" method="xhtml" omit-xml-declaration="yes">
+        <!--<xsl:result-document href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/KoR-IHV.html" method="xhtml" omit-xml-declaration="yes">-->
         <html>
             <head>
                 <meta charset="UTF-8"/>
-                <xsl:comment>
-                <link media="screen" type="text/css"
-                    href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
-                    rel="stylesheet"/>
+                <link media="screen" type="text/css" href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css" rel="stylesheet"/>
                 <style>
                     @charset "UTF-8";
                     @font-face{
@@ -42,13 +36,11 @@
                     text-align:right;
                     padding:0px;
                     }</style>
-                    </xsl:comment>
             </head>
             <body>
                 <div class="content-wrapper">
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
-                    <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von KoR? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der 
-                        
+                    <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von KoR? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der  
                         <a href="https://recherche.kor-ifrs.de/Browse.aspx?level=roex%3abron.Zeitschriften.0c0f5d6e415044179263a16c0d68e83e&amp;title=KoR" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
@@ -58,118 +50,62 @@
                                     <div class="ihv_headline">Inhaltsverzeichnis</div>
                                     <div class="ihv_heftnr">
                                         <xsl:value-of select="$aktuelles-Heft[1]/*/metadata/pub/pubedition"/>
-                                        <div class="ihv_datum"><xsl:value-of select="format-date($aktuelles-Heft[1]/*/metadata/pub/date, '[D].[M].[Y]')"/></div>
+                                        <div class="ihv_datum">
+                                            <xsl:value-of select="format-date($aktuelles-Heft[1]/*/metadata/pub/date, '[D].[M].[Y]')"/>
+                                        </div>
                                     </div>
                                     <div class="ihv_level2">
-                                        <!-- FOR EACH GROUP ÜBER ALLE DOKUMENTE, GRUPPIERT NACH DOCTYPE-->
-                                        <xsl:for-each-group select="$aktuelles-Heft" group-by="*[1]/name()" >
-                                            
+                                        <div class="ihv_headline ressort">Aufsätze</div>
+                                        <xsl:for-each select="$aktuelles-Heft/*[name()='au' and metadata[not(ressort)]]" >
+                                            <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number"/>
+                                            <xsl:call-template name="ihv-eintrag">
+                                                <xsl:with-param name="dokumentknoten" select="."/>
+                                            </xsl:call-template>
+                                        </xsl:for-each>
+                                        <xsl:for-each select="$aktuelles-Heft/*[name()='au' and metadata[ressort]]" >
+                                            <xsl:variable name="ressort" select="/*/metadata/ressort"/>
                                             <xsl:choose>
-                                                <xsl:when test="current-grouping-key() = 'au'">
-                                                    <div class="ihv_headline ressort">Aufsätze</div>
+                                                <xsl:when test="$ressort = 'Fallstudie'">
+                                                    <div class="ihv_headline doktyp">Fallstudie</div>
+                                                    <xsl:call-template name="ihv-eintrag">
+                                                        <xsl:with-param name="dokumentknoten" select="."/>
+                                                    </xsl:call-template>
                                                 </xsl:when>
-                                                <xsl:when test="current-grouping-key() = 'nr'">
-                                                    <div class="ihv_headline ressort">Reports</div>
+                                                <xsl:when test="$ressort = 'Tagungsbericht'">
+                                                    <div class="ihv_headline doktyp">Tagungsbericht</div>
+                                                    <xsl:call-template name="ihv-eintrag">
+                                                        <xsl:with-param name="dokumentknoten" select="."/>
+                                                    </xsl:call-template>
                                                 </xsl:when>
-                                                <xsl:otherwise></xsl:otherwise>
+                                                <xsl:when test="$ressort = 'Rechnungslegung und Investor Relations'">
+                                                    <div class="ihv_headline doktyp">Rechnungslegung &amp; Investor Relations</div>
+                                                    <xsl:call-template name="ihv-eintrag">
+                                                        <xsl:with-param name="dokumentknoten" select="."/>
+                                                    </xsl:call-template>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <div class="ihv_headline doktyp">unbekannt</div>
+                                                </xsl:otherwise>
                                             </xsl:choose>
-                                            
-                                            <!-- For-each-group, die alle Doctypen in die drei Ressorts gruppiert: Fallstudie, Tagungsbericht, Rechnungslegung & Investor Relations: -->
-                                            <xsl:for-each-group select="current-group()" group-by="/*/metadata/ressort">
-                                                <xsl:sort select="/*/metadata/pub/pages/start_page"/>
-                                                
-                                                <xsl:choose>
-                                                    <xsl:when test="current-grouping-key() = 'Fallstudie'">
-                                                        <div class="ihv_headline doktyp">Fallstudie</div>
-                                                    </xsl:when>
-                                                    <xsl:when test="current-grouping-key() = 'Tagungsbericht'">
-                                                        <div class="ihv_headline doktyp">Tagungsbericht</div>
-                                                    </xsl:when>
-                                                    <xsl:when test="current-grouping-key() = 'Rechnungslegung und Investor Relations'">
-                                                        <div class="ihv_headline doktyp">Rechnungslegung &amp; Investor Relations</div>
-                                                    </xsl:when>
-                                                    <xsl:when test="current-grouping-key() = 'Report international'">
-                                                        <div class="ihv_headline doktyp">Report international</div>
-                                                    </xsl:when>
-                                                    <xsl:when test="current-grouping-key() = 'Report national'">
-                                                        <div class="ihv_headline doktyp">Report national</div>
-                                                    </xsl:when>
-                                                </xsl:choose>
-                                                
-                                                <!-- Schleife durch die einzelnen Ressorts: -->
-                                                <xsl:for-each select="current-group()">
-                                                    <xsl:variable name="dokid" select="/*/@docid"/>
-                                                    <div class="ihv_level3">
-                                                        <div class="ihv_level4">
-                                                            
-                                                            <!-- Rubriken: -->
-                                                            <div class="ihv_rubriken">
-                                                                <xsl:for-each select="*/metadata/keywords/keyword">
-                                                                    <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
-                                                                    <xsl:value-of select="."/>
-                                                                </xsl:for-each>
-                                                            </div>
-                                                            
-                                                            <!-- verlinkter Titel -->                                                        
-                                                            <div class="ihv_headline titel"><a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/title"/></a></div>
-                                                            
-                                                            <!-- Autoren- bzw. Behördenauszeichnung -->
-                                                            <div class="ihv_autor">
-                                                                <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
-                                                                <xsl:choose>
-                                                                    <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
-                                                                    <xsl:when test="/*/name() = 'au'">
-                                                                        <xsl:for-each select="*/metadata/authors/author">
-                                                                            <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
-                                                                            <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
-                                                                        </xsl:for-each>
-                                                                    </xsl:when>
-                                                                    <!-- Ansonsten die Gerichte/Behörden und Urteilsdaten -->
-                                                                    <xsl:otherwise>
-                                                                        <xsl:value-of select="concat(*/metadata/instdoc/inst, ', ', */metadata/instdoc/instdoctype, ' vom '
-                                                                            , format-date(*/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', */metadata/instdoc/instdocnrs/instdocnr[1])"/>
-                                                                    </xsl:otherwise>
-                                                                </xsl:choose>
-                                                                </a>
-                                                            </div>
-                                                            
-                                                            <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
-                                                            <xsl:if test="/*/name() = 'au'">
-                                                                <div class="ihv_abstract">
-                                                                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/summary/*"/></a>
-                                                                </div>
-                                                            </xsl:if>
-                                                            <div class="ihv_seite"><a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/pub/pages/start_page"/></a></div>
-                                                            <p><a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}"><xsl:value-of select="$dokid"/></a></p>
-                                                        </div>
-                                                    </div>
-                                                </xsl:for-each>
-                                            </xsl:for-each-group>
-                                            
-                                            <!--  <xsl:for-each-group select="current-group()" group-by="/nr/metadata/ressort">
-                                                <xsl:sort select="/*/metadata/pub/pages/start_page"/>
-                                                
-                                                <xsl:choose>
-                                                    <xsl:when test="current-grouping-key() = 'Report international'">
-                                                         gibt aber auch noch IAASB, EU, DRSC 
-                                                        <a href="https://www.kor-ifrs.de/rubriken/reports/" target="_blank"><div class="ihv_headline doktyp">International</div>
-                                                        <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div></a>
-                                                    </xsl:when>
-                                                    <xsl:when test="current-grouping-key() = 'Sonstige Meldung'">
-                                                         gibt aber auch noch Rechtsprechung, Gesetzgebung 
-                                                        <a href="https://www.kor-ifrs.de/rubriken/reports/" target="_blank"><div class="ihv_headline doktyp">National</div>
-                                                        <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div></a>
-                                                    </xsl:when>
-                                                </xsl:choose>
-                                                
-                                                  <xsl:for-each select="current-group()">
-                                                       <xsl:choose><xsl:when test="position()=1">
-                                                           <div class="ihv_seite"><xsl:value-of select="*/metadata/pub/pages/start_page"/></div>
-                                                       </xsl:when>
-                                                       <xsl:otherwise/>
-                                               </xsl:choose>
-                                                   </xsl:for-each> -->
-                                                
+                                        </xsl:for-each>
+                                        <div class="ihv_headline ressort">Reports</div>
+                                        <xsl:for-each-group select="$aktuelles-Heft/*[name()='nr']" group-by="/nr/metadata/ressort">
+                                            <xsl:sort select="/nr/metadata/ressort"></xsl:sort>
+                                            <xsl:variable name="ressort" select="/*/metadata/ressort"/>
+                                            <xsl:choose>
+                                                <xsl:when test="$ressort = 'Report international'">
+                                                    <div class="ihv_headline doktyp">Reports international</div>
+                                                </xsl:when>
+                                                <xsl:when test="$ressort = 'Report national'">
+                                                    <div class="ihv_headline doktyp">Reports national</div>
+                                                </xsl:when>
+                                            </xsl:choose>
+                                            <xsl:for-each select="current-group()">
+                                                <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number"/>
+                                                <xsl:call-template name="ihv-eintrag">
+                                                    <xsl:with-param name="dokumentknoten" select="."/>
+                                                </xsl:call-template>
+                                            </xsl:for-each>
                                         </xsl:for-each-group>
                                     </div>
                                 </div>
@@ -179,9 +115,69 @@
                 </div>
             </body>
         </html>
-        </xsl:result-document>
+        <!--</xsl:result-document>-->
+    </xsl:template>
+    <xsl:template name="ihv-eintrag">
+        <xsl:param name="dokumentknoten"/>
+        <xsl:variable name="dokid" select="$dokumentknoten/@docid"/>
+        <div class="ihv_level3">
+            <div class="ihv_level4">
+                <!-- Rubriken: -->
+                <div class="ihv_rubriken">
+                    <xsl:for-each select="$dokumentknoten//metadata/keywords/keyword">
+                        <xsl:if test="not(position()=1)">
+                            <xsl:text> / </xsl:text>
+                        </xsl:if>
+                        <xsl:value-of select="."/>
+                    </xsl:for-each>
+                </div>
+                <!-- verlinkter Titel -->
+                <div class="ihv_headline titel">
+                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
+                        <xsl:value-of select="$dokumentknoten/metadata/title"/>
+                    </a>
+                </div>
+                <!-- Autoren- bzw. Behördenauszeichnung -->
+                <div class="ihv_autor">
+                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
+                        <xsl:choose>
+                            <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
+                            <xsl:when test="$dokumentknoten/name() = 'au'">
+                                <xsl:for-each select="$dokumentknoten/metadata/authors/author">
+                                    <xsl:if test="not(position()=1)">
+                                        <xsl:text> / </xsl:text>
+                                    </xsl:if>
+                                    <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                </xsl:for-each>
+                            </xsl:when>
+                            <!-- Ansonsten die Gerichte/Behörden und Urteilsdaten, falls vorhanden -->
+                            <xsl:when test="$dokumentknoten/metadata[instdoc]">
+                                <xsl:value-of select="concat($dokumentknoten/metadata/instdoc/inst, ', ', $dokumentknoten/metadata/instdoc/instdoctype, ' vom ' , format-date($dokumentknoten/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', $dokumentknoten/metadata/instdoc/instdocnrs/instdocnr[1])"/>
+                            </xsl:when>
+                        </xsl:choose>
+                    </a>
+                </div>
+                <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
+                <xsl:if test="$dokumentknoten/name() = 'au'">
+                    <div class="ihv_abstract">
+                        <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
+                            <xsl:value-of select="$dokumentknoten/metadata/summary/*"/>
+                        </a>
+                    </div>
+                </xsl:if>
+                <div class="ihv_seite">
+                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
+                        <xsl:value-of select="$dokumentknoten/metadata/pub/pages/start_page"/>
+                    </a>
+                </div>
+                <p>
+                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
+                        <xsl:value-of select="$dokid"/>
+                    </a>
+                </p>
+            </div>
+        </div>
     </xsl:template>
 </xsl:stylesheet>
 
-                                                
-                                            
+
