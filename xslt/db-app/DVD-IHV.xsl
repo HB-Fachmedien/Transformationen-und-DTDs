@@ -56,10 +56,8 @@
                                     </div>
                                     <div class="ihv_datum">
                                         <xsl:value-of
-                                            select="format-date(current-date()+xs:dayTimeDuration('P1DT1H'), '[D].[M].[Y]')"/>
+                                            select="format-date(output/@pubdatum, '[D].[M].[Y]')"/>
                                     </div>
-                                    <!--<div class="ihv_datum"> <xsl:value-of select="format-dateTime(current-dateTime(), '[D]. [M]. [Y]')"/></div>-->
-                                    
                                  
                                  <!-- BW -->   
                                     <div class="ihv_level2">
@@ -201,7 +199,7 @@
                         
                         <div class="ihv_headline titel">
                             <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
-                                <xsl:value-of select="TITEL"/>
+                                <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
                             </a>
                         </div>
                         <div class="ihv_autor">

@@ -2,19 +2,19 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
-
-    <!-- VARIABLE ANPASSEN IMMER ODER PER KONSOLE EINGEBEN, bei Doppelausgaben: concat('51','-52') -->
-    <!--<xsl:variable name="ausgabennummer" as="xs:string" select="'02'"/>-->
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     
     <xsl:variable name="ausgabennummer" as="xs:string">
         <xsl:value-of select="tokenize(document-uri(collection('../../../../../webexport/export/DB_3/XML/?recurse=yes;select=*.xml')[1]),'/')[last()-1]"/>
+    </xsl:variable>
+    
+    <xsl:variable name="pubdatum">
+        <xsl:value-of select="document(document-uri(collection(concat('../../../../../webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))[1]))/*/metadata/pub/date"/>    
     </xsl:variable>
 
     <xsl:template match="/">
 
         <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
-        <output nr="{$ausgabennummer}">
+        <output nr="{$ausgabennummer}" pubdatum="{$pubdatum}">
         <xsl:for-each
             select="collection(concat('../../../../../webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))">
 
