@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
+    
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
 
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempWuW/?recurse=yes;select=*.xml')"/>
 
     <xsl:template match="/">
-        <output>
             <html>
                 <head>
                     <meta charset="UTF-8"/>
                     <link media="screen" type="text/css"
                         href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
                         rel="stylesheet"/>
-                    <style>
-                        @charset "UTF-8";
-                        @font-face{
-                        font-family:"Unit Slab Pro Bold";
-                        font-weight:bold;
-                        src:url("fonts/unitslabpro-bold.woff") format("woff");
-                        }
-                        @font-face{
-                        font-family:"Unit Slab Pro Medium";
-                        src:url("fonts/unitslabpro-medium.woff") format("woff");
-                        }
-                        @font-face{
-                        font-family:"Unit Slab Pro";
-                        src:url("fonts/unitslabpro.woff") format("woff");
-                        }
-                        @font-face{
-                        font-family:"Unit Pro Medium";
-                        src:url("fonts/unitpro-medium.woff") format("woff");
-                        }
-                        @font-face{
-                        font-family:"Unit Pro";
-                        src:url("fonts/unitpro.woff") format("woff");
-                        }
-                        .ihv_seite,
-                        .ihv_dbnummer{
-                        text-align:right;
-                        padding:0px;
-                        }</style>
+                    <xsl:comment>
+                        <style>
+                            @charset "UTF-8";
+                            @font-face{
+                            font-family:"Unit Slab Pro Bold";
+                            font-weight:bold;
+                            src:url("fonts/unitslabpro-bold.woff") format("woff");
+                            }
+                            @font-face{
+                            font-family:"Unit Slab Pro Medium";
+                            src:url("fonts/unitslabpro-medium.woff") format("woff");
+                            }
+                            @font-face{
+                            font-family:"Unit Slab Pro";
+                            src:url("fonts/unitslabpro.woff") format("woff");
+                            }
+                            @font-face{
+                            font-family:"Unit Pro Medium";
+                            src:url("fonts/unitpro-medium.woff") format("woff");
+                            }
+                            @font-face{
+                            font-family:"Unit Pro";
+                            src:url("fonts/unitpro.woff") format("woff");
+                            }
+                            .ihv_seite,
+                            .ihv_dbnummer{
+                            text-align:right;
+                            padding:0px;
+                            }</style>
+                    </xsl:comment>
                 </head>
 
                 <body>
@@ -347,6 +350,6 @@
                     </div>
                 </body>
             </html>
-        </output>
+        
     </xsl:template>
 </xsl:stylesheet>
