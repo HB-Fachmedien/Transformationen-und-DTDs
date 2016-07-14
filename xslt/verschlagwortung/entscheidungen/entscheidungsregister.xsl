@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/work/verschlagwortung/2015/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/work/verschlagwortung/2016/?recurse=yes;select=*.xml')"/>
     <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
+    
+    
+    <!-- hilfreiche XPATH Ausdrücke
+    
+    /*[not(name()=('kk','entk'))]/metadata/instdoc/inst[not(starts-with(ancestor::metadata/pub/pages/start_page/text(),'M') or starts-with(ancestor::metadata/pub/pages/start_page/text(),'S'))]
+    
+    
+    
+    -->
     
     <!-- HIER WEITER -->
     <!-- $alle-Hefte mal filtern, Kurz kommentiert kommt z.B. nicht rein! Welche doctypes noch? -->
     
+    
+    <!-- ALLE ENTSCHEIDUNGEN AUßER KOMMENTIERTE UND AUS DEM MANTELTEIL -->
     
     <!-- 
     
@@ -25,12 +36,140 @@
 
     <xsl:template match="/">
         <entscheidungsregister>
-
-            <xsl:call-template name="entscheidungsdaten">
+            
+            <!-- SR -->
+            <!--<xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'EuGH'"/>
                 <xsl:with-param name="ressort" select="'all'"/>
             </xsl:call-template>
-
+            
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BVerfG'"/>
+                <xsl:with-param name="ressort" select="'all'"/>
+            </xsl:call-template>-->
+            
+            <!-- FG gibt es bisher nicht -->
+            
+            <!--<xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BMF'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. Niedersachsen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. Sachsen-Anhalt'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. Schleswig-Holstein'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'SenFin. Berlin'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OFD Frankfurt/M.'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OFD Karlsruhe'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OFD Niedersachsen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OFD NRW'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'Oberste Finanzbehörden der Länder'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BayLfSt'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>-->
+            
+            <!-- WR -->
+            <!--<xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BGH'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'EuGH'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'KG Berlin'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Düsseldorf'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Frankfurt/M.'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Hamm'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Thüringen'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>-->
+            
+            <!-- AR -->
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BAG'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BVerwG'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Düsseldorf'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Hamm'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Hessen'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Köln'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Mecklenburg-Vorpommern'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG München'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Nürnberg'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Rheinland-Pfalz'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LSG Hessen'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
         </entscheidungsregister>
     </xsl:template>
     
@@ -47,8 +186,8 @@
         </h2>
         <xsl:choose>
             <!--<xsl:when test="$ressort='all'">-->
-            <xsl:when test="true()">
-                <xsl:for-each select="$alle-Hefte/*[metadata/instdoc/inst/text()=$gerichtsBezeichnung and not(starts-with(metadata/pub/pages/start_page, 'M'))]">
+            <xsl:when test="$ressort=('sr','ar','wr')">
+                <xsl:for-each select="$alle-Hefte/*[not(name()=('kk','entk'))][metadata/ressort/text()= $ressort][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
                     <xsl:sort select="replace(metadata/instdoc/instdocdate,'-','')" data-type="number"/>
                     <xsl:variable name="datum-tokenized" select="tokenize(metadata/instdoc/instdocdate/text(), '-')"/>
                     <zeile>
@@ -106,7 +245,31 @@
                 </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
-                <!-- hier noch nach Ressorts filtern in der for-each Schleife --> </xsl:otherwise>
+                <!-- Ressort = ALL -->
+                <xsl:for-each select="$alle-Hefte/*[not(name()=('kk','entk'))][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
+                    <xsl:sort select="replace(metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                    <xsl:variable name="datum-tokenized" select="tokenize(metadata/instdoc/instdocdate/text(), '-')"/>
+                    <zeile>
+                        <datum><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
+                            <xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum>
+                        
+                        <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
+                        
+                        <az>
+                            <xsl:for-each select="metadata/instdoc/instdocnrs/instdocnr">
+                                <xsl:if test="not(position()=1)">
+                                    <xsl:text>, </xsl:text>
+                                </xsl:if>
+                                <xsl:value-of select="."/>
+                            </xsl:for-each>
+                        </az>
+                        <seite>
+                            <xsl:comment>Tabulator</xsl:comment>
+                            <xsl:value-of select="metadata/pub/pages/start_page"/>
+                        </seite>
+                    </zeile>
+                </xsl:for-each>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
