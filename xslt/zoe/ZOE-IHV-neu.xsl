@@ -167,16 +167,19 @@
                                                                         </xsl:choose>
                                                                     </xsl:for-each>
                                                                 </div>
-                                                                <p>
-                                                                    <xsl:value-of select="/*/metadata/summary"/>
-                                                                </p>
-                                                                <div class="ihv_seite"><xsl:value-of select="/*/metadata/pub/pages/start_page"/></div>
-                                                                <p>
-                                                                    <a href="https://recherche.zoe-online.org/document.aspx?docid=ZOE{$siriusID}" >ZOE
-                                                                        
-                                                                        <xsl:value-of select="$siriusID"/>
-                                                                    </a>
-                                                                </p>
+                                                                <div class="ihv_abstract"><xsl:value-of select="/*/metadata/summary"/></div>
+                                                                <div class="ihv_seite">
+                                                                    <xsl:choose>
+                                                                        <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>ZOE</xsl:text>
+                                                                            <xsl:value-of select="$siriusID"/>
+                                                                        </xsl:when>
+                                                                        <xsl:otherwise>
+                                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>ZOE</xsl:text>
+                                                                            <xsl:value-of select="$siriusID"/>
+                                                                        </xsl:otherwise>
+                                                                    </xsl:choose>
+                                                                </div>
                                                             </a>
                                                         </xsl:for-each>
                                                     </div>

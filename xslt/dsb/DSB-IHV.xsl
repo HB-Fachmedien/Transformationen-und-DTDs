@@ -30,11 +30,7 @@
                     font-family:"Unit Pro";
                     src:url("fonts/unitpro.woff") format("woff");
                     }
-                    .ihv_seite,
-                    .ihv_dbnummer{
-                    text-align:right;
-                    padding:0px;
-                    }</style>
+                    </style>
             </head>
             <body>
                 <div class="content-wrapper">
@@ -62,6 +58,10 @@
                                         </xsl:for-each>
                                     </div>
                                     <div class="ihv_level2">
+                                        <div class="ihv_headline ressort">Nachrichten</div>
+                                        <div class="ihv_seite">
+                                            <xsl:value-of select="min($aktuelles-Heft/nr/metadata/pub/pages/start_page)"/>
+                                        </div>
                                         <!-- FOR EACH GROUP ÜBER ALLE DOKUMENTE, GRUPPIERT NACH DOCTYPE-->
                                         <xsl:for-each-group select="$aktuelles-Heft" group-by="/*/metadata/ressort">
                                             <!-- <xsl:sort select="*/metadata/pub/pages/start_page[1]" data-type="number" order="ascending"/><xsl:perform-sort select="*/metadata/pub/pages/start_page"><xsl:sort select="start_page" data-type="number" order="ascending"/></xsl:perform-sort>-->
@@ -100,30 +100,36 @@
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of select="/*/metadata/title"/>
                                                             </div>
-                                                            <div class="ihv_autor">
-                                                                <xsl:for-each select="*/metadata/authors/author">
-                                                                    <xsl:if test="not(position()=1)">
-                                                                        <xsl:text> / </xsl:text>
-                                                                    </xsl:if>
-                                                                    <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
-                                                                </xsl:for-each>
-                                                            </div>
-                                                            <xsl:value-of select="/*/metadata/summary"/>
+                                                                <xsl:choose>
+                                                                    <xsl:when test="/*/metadata/authors">
+                                                                        <xsl:for-each select="*/metadata/authors/author">
+                                                                            <xsl:if test="not(position()=1)">
+                                                                                <xsl:text> / </xsl:text>
+                                                                            </xsl:if>
+                                                                            <div class="ihv_autor"><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/></div>
+                                                                        </xsl:for-each>
+                                                                    </xsl:when>
+                                                                    <xsl:otherwise/>
+                                                                </xsl:choose>
+                                                            
+                                                           <div class="ihv_abstract"><xsl:value-of select="/*/metadata/summary"/></div>
                                                             <div class="ihv_seite">
-                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                                <xsl:choose>
+                                                                    <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>DSB</xsl:text>
+                                                                        <xsl:value-of select="$siriusID"/>
+                                                                    </xsl:when>
+                                                                    <xsl:otherwise>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>DSB</xsl:text>
+                                                                        <xsl:value-of select="$siriusID"/>
+                                                                    </xsl:otherwise>
+                                                                </xsl:choose>
                                                             </div>
-                                                            <xsl:text>DSB</xsl:text>
-                                                            <xsl:value-of select="$siriusID"/>
                                                         </a>
-                                                        
                                                     </xsl:for-each>
                                                 </div>
                                             </div>
                                         </xsl:for-each-group>
-                                        <div class="ihv_headline ressort">Nachrichten</div>
-                                        <div class="ihv_seite">
-                                            <xsl:value-of select="min($aktuelles-Heft/nr/metadata/pub/pages/start_page)"/>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

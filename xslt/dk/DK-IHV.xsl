@@ -63,16 +63,16 @@
                                             <xsl:sort select="*/name()"/>
                                             <xsl:choose>
                                                 <xsl:when test="current-grouping-key() = 'au'">
-                                                    <div class="ihv_headline ressort">Aufsätze</div>
+                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Aufsätze</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'ent'">
-                                                    <div class="ihv_headline ressort">Entscheidungen</div>
+                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'entk'">
-                                                    <div class="ihv_headline ressort">Entscheidungen</div>
+                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'va'">
-                                                    <div class="ihv_headline ressort">Verwaltungsanweisungen</div>
+                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Verwaltungsanweisungen</div>
                                                 </xsl:when>
                                                 <xsl:otherwise></xsl:otherwise>
                                             </xsl:choose>
@@ -98,7 +98,7 @@
                                                     <xsl:variable name="dokid" select="/*/@docid"/>
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
-                                                            
+                                                            <a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}">
                                                             <!-- Rubriken: -->
                                                             <div class="ihv_rubriken">
                                                                 <xsl:for-each select="*/metadata/rubriken/rubrik">
@@ -108,11 +108,10 @@
                                                             </div>
                                                             
                                                             <!-- verlinkter Titel -->                                                        
-                                                            <div class="ihv_headline titel"><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/title"/></a></div>
+                                                            <div class="ihv_headline titel"><xsl:value-of select="*/metadata/title"/></div>
                                                             
                                                             <!-- Autoren- bzw. Behördenauszeichnung -->
                                                             <div class="ihv_autor">
-                                                                <a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}">
                                                                 <xsl:choose>
                                                                     <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
                                                                     <xsl:when test="/*/name() = 'au'">
@@ -127,19 +126,25 @@
                                                                             , format-date(*/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', */metadata/instdoc/instdocnrs/instdocnr[1])"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
-                                                                </a>
                                                             </div>
                                                             
                                                             <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
                                                             <xsl:if test="/*/name() = 'au'">
                                                                 <div class="ihv_abstract">
-                                                                    <a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}">
                                                                     <xsl:value-of select="*/metadata/summary/*"/>
-                                                                    </a>
                                                                 </div>
                                                             </xsl:if>
-                                                            <div class="ihv_seite"><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="*/metadata/pub/pages/start_page"/></a></div>
-                                                            <p><a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}"><xsl:value-of select="$dokid"/></a></p>
+                                                            <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                                                                <xsl:choose>
+                                                                    <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
+                                                                    </xsl:when>
+                                                                    <xsl:otherwise>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
+                                                                    </xsl:otherwise>
+                                                                </xsl:choose>
+                                                            </div>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </xsl:for-each>

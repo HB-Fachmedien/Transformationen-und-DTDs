@@ -40,7 +40,8 @@
                         .ihv_dbnummer{
                         text-align:right;
                         padding:0px;
-                        }</style>
+                        }
+                    </style>
                 </head>
                 <body>
                     <div class="content-wrapper">
@@ -70,13 +71,12 @@
                                         </xsl:variable>
                                         
                                         <div class="ihv_level2">
-                                            <div class="ihv_headline ressort">Editorial</div>
+                                            <div class="ihv_headline ressort" style="margin-bottom: 5px;">Editorial</div>
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
+                                                    <a  href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
                                                     <div class="ihv_headline titel">
-                                                        <a  href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
                                                             <xsl:value-of disable-output-escaping="yes" select="$editorial-dokument/TITEL"/>
-                                                        </a>
                                                     </div>
                                                     <div class="ihv_autor">
                                                         <xsl:value-of select="$editorial-dokument/AUTOR"/>
@@ -90,10 +90,9 @@
                                                         </div>
                                                     </xsl:for-each>
                                                     <!-- TODO: Aus Autoren Feld ziehen -->
-                                                    <div class="ihv_dbnummer">
-                                                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}"><xsl:value-of select="$editorial-dbnummer"/>
-                                                        </a>
+                                                        <div class="ihv_dbnummer" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;"><xsl:value-of select="$editorial-dbnummer"/>
                                                     </div>
+                                                    </a>
                                                 </div>
                                                 <!-- Ende Level4 -->
                                             </div>
@@ -112,12 +111,13 @@
                                         </xsl:variable>
                                         
                                         <div class="ihv_level2">
-                                            <div class="ihv_headline ressort">Gastkommentar</div>
+                                            <div class="ihv_headline ressort" style="margin-bottom: 5px;">Gastkommentar</div>
                                             <!-- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
+                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}">
                                                     <div class="ihv_headline titel">
-                                                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}"><xsl:value-of select="$gk-dokument/TITEL"/></a>
+                                                        <xsl:value-of select="$gk-dokument/TITEL"/>
                                                     </div>
                                                     <div class="ihv_autor">
                                                         <!--<xsl:value-of select="$gk-dokument/AUTOR"/>-->
@@ -131,13 +131,10 @@
                                                             <!-- Überprüfen, ob das so passt -->
                                                         </div>
                                                     </xsl:for-each>
-                                                    <div class="ihv_dbnummer">
-                                                        <a
-                                                            href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}">
+                                                        <div class="ihv_dbnummer" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                                             <xsl:value-of select="$gk-dbnummer"/>
-                                                        </a>
                                                     </div>
-                                                    
+                                                    </a>
                                                 </div>
                                                 <!-- Ende Level4 -->
                                                 
@@ -148,7 +145,7 @@
                                         <!-- Ende Level2 - Gastkommentar -->
                                         
                                         <div class="ihv_level2">
-                                            <div class="ihv_headline ressort">Betriebswirtschaft</div>
+                                            <div class="ihv_headline ressort" style="margin-bottom: 5px;">Betriebswirtschaft</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -175,7 +172,7 @@
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
-                                            <div class="ihv_headline ressort">Steuerrecht</div>
+                                            <div class="ihv_headline ressort" style="margin-bottom: 5px;">Steuerrecht</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -202,7 +199,7 @@
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
-                                            <div class="ihv_headline ressort">Wirtschaftsrecht</div>
+                                            <div class="ihv_headline ressort" style="margin-bottom: 5px;">Wirtschaftsrecht</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -229,7 +226,7 @@
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
-                                            <div class="ihv_headline ressort">Arbeitsrecht</div>
+                                            <div class="ihv_headline ressort" style="margin-bottom: 5px;">Arbeitsrecht</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -260,7 +257,7 @@
                                         <xsl:if test="$anzahl-standpunkte&gt;0">
                                                                                   
                                             <div class="ihv_level2">
-                                                <div class="ihv_headline ressort">Standpunkt<xsl:if test="$anzahl-standpunkte&gt;1">e</xsl:if></div>
+                                                <div class="ihv_headline ressort" style="margin-bottom: 5px;">Standpunkt<xsl:if test="$anzahl-standpunkte&gt;1">e</xsl:if></div>
                                                 
                                                 <xsl:for-each select="output/DOKUMENT[DOCTYPGROUPBEZ='Standpunkt']">
                                                     
@@ -276,8 +273,9 @@
                                                     <!-- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
+                                                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}"><xsl:value-of select="$sp-dokument/TITEL"/></a>
+                                                                <xsl:value-of select="$sp-dokument/TITEL"/>
                                                             </div>
                                                                                                                  
                                                             <div class="ihv_autor">
@@ -292,13 +290,10 @@
                                                                     <!-- Überprüfen, ob das so passt -->
                                                                 </div>
                                                             </xsl:for-each>
-                                                            <div class="ihv_dbnummer">
-                                                                <a
-                                                                    href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}">
+                                                                <div class="ihv_dbnummer" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 5px; text-align: left;">
                                                                     <xsl:value-of select="$sp-dbnummer"/>
-                                                                </a>
                                                             </div>
-                                                            
+                                                            </a>
                                                         </div>
                                                         <!-- Ende Level4 -->
                                                         
@@ -349,28 +344,46 @@
                             <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
                         </div>
                         
+                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
                         <div class="ihv_headline titel">
-                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
                                 <xsl:value-of select="TITEL"/>
-                            </a>
                         </div>
-                        <div class="ihv_autor">
+                            <xsl:choose>
+                                <xsl:when test="AUTOR">
+                                    <div class="ihv_autor">
+                                        <xsl:value-of select="replace(replace(AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
+                                    </div>
+                                    <div class="ihv_autornormiert">
+                                        <xsl:for-each select="AUTOR">
+                                            <div class="ihv_autor">
+                                                <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
+                                            </div>
+                                        </xsl:for-each>
+                                    </div>
+                                </xsl:when>
+                                <xsl:otherwise/>
+                            </xsl:choose>
+                            <!-- <div class="ihv_autor">
                             <xsl:value-of select="replace(replace(AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
+                        </div> -->
+                        
+                        <xsl:choose>
+                            <xsl:when test="VORSPANN">
+                                <div class="ihv_abstract"><xsl:value-of select="VORSPANN"/></div>
+                            </xsl:when>
+                            <xsl:otherwise/>
+                        </xsl:choose>
+                            <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                                <xsl:choose>
+                                    <xsl:when test="SEITEVON = SEITEBIS">
+                                        <xsl:value-of select="SEITEVON"/>, DB<xsl:value-of select="$temp-sid"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="SEITEVON"/> &#x2011; <xsl:value-of select="SEITEBIS"/>, DB<xsl:value-of select="$temp-sid"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                         </div>
-                        <div class="ihv_autornormiert">
-                            <xsl:for-each select="AUTOR">
-                                <div class="ihv_autor">
-                                    <xsl:value-of select="hbfm:autorenkuerzel(.)"/>
-                                </div>
-                            </xsl:for-each>
-                        </div>
-                        <div class="ihv_abstract"><a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}"><xsl:value-of select="VORSPANN"/></a></div>
-                        <div class="ihv_seite">
-                            <xsl:value-of select="SEITEVON"/>
-                        </div>
-                        <div class="ihv_dbnummer">
-                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}"><xsl:value-of select="$temp-sid"/></a>
-                        </div>
+                        </a>
                     </div><xsl:comment>Ende Level 4</xsl:comment>
                 </xsl:for-each>
             </div><xsl:comment>Ende Level 3</xsl:comment>

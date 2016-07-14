@@ -197,10 +197,10 @@
                             <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
                         </div>
                         
+                        
+                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
                         <div class="ihv_headline titel">
-                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
                                 <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
-                            </a>
                         </div>
                         <div class="ihv_autor">
                             <xsl:value-of select="replace(replace(AUTORENZEILE,'&lt;A.*?&gt;',''),'&lt;/A&gt;','')" disable-output-escaping="yes"/>
@@ -213,12 +213,17 @@
                             </xsl:for-each>
                         </div>
                         <div class="ihv_abstract"><xsl:value-of select="VORSPANN"/></div>
-                        <div class="ihv_seite">
-                            <xsl:value-of select="SEITEVON"/>
+                        <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                            <xsl:choose>
+                                <xsl:when test="SEITEVON = SEITEBIS">
+                                    <xsl:value-of select="SEITEVON"/>, DB<xsl:value-of select="$temp-sid"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="SEITEVON"/> - <xsl:value-of select="SEITEBIS"/>, DB<xsl:value-of select="$temp-sid"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </div>
-                        <div class="ihv_dbnummer">
-                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}"><xsl:value-of select="$temp-sid"/></a>
-                        </div>
+                        </a>
                     </div><xsl:comment>Ende Level 4</xsl:comment>
                         </xsl:otherwise>
                     </xsl:choose>

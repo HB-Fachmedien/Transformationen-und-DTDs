@@ -122,10 +122,19 @@
                                                         </xsl:choose>
                                                     </xsl:for-each>
                                                 </div>
-                                                <p>S. <xsl:value-of
-                                                    select="/*/metadata/pub/pages/start_page"
-                                                /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
+                                              <div class="ihv_seite">
+                                                  <xsl:choose>
+                                                      <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                          <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                          <xsl:value-of select="$siriusID"/>
+                                                      </xsl:when>
+                                                      <xsl:otherwise>
+                                                          <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                          <xsl:value-of select="$siriusID"/>
+                                                      </xsl:otherwise>
+                                                  </xsl:choose>
+                                              </div>
+                                              </a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -186,13 +195,22 @@
                                                         </xsl:choose>
                                                     </xsl:for-each>
                                                 </div>
-                                                <p>
+                                                    <div class="ihv_abstract">
                                                         <xsl:value-of select="/*/metadata/summary/p[not(@lang='en')]"/>
-                                                </p>
-                                                <p>S. <xsl:value-of
-                                                    select="/*/metadata/pub/pages/start_page"
-                                                /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
+                                                    </div>
+                                                    <div class="ihv_seite" >
+                                                        <xsl:choose>
+                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
+                                                    </div>
+                                               </a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -224,11 +242,19 @@
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
-                                                <p>S. <xsl:value-of
-                                                    select="/*/metadata/pub/pages/start_page"
-                                                />-<xsl:value-of
-                                                    select="/*/metadata/pub/pages/last_page"/></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
+                                                    <div class="ihv_seite" >
+                                                        <xsl:choose>
+                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
+                                                    </div>
+                                                </a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -261,10 +287,19 @@
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
-                                                <p>S. <xsl:value-of
-                                                    select="/*/metadata/pub/pages/start_page"
-                                                /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
+                                                    <div class="ihv_seite" >
+                                                        <xsl:choose>
+                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
+                                                    </div>
+                                                </a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -298,10 +333,19 @@
                                                     <i><xsl:value-of select="/*/metadata/instdoc/inst"/><xsl:text>: </xsl:text></i>
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
-                                                <p>S. <xsl:value-of
-                                                    select="/*/metadata/pub/pages/start_page"
-                                                /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
+                                                    <div class="ihv_seite" >
+                                                        <xsl:choose>
+                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
+                                                    </div>
+                                                </a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>
@@ -334,10 +378,19 @@
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
-                                                <p>S. <xsl:value-of
-                                                    select="/*/metadata/pub/pages/start_page"
-                                                /></p>
-                                                <p><a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">WUW<xsl:value-of select="$siriusID"/></a></p></a>
+                                                    <div class="ihv_seite"> 
+                                                        <xsl:choose>
+                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
+                                                    </div>
+                                                </a>
                                             </xsl:if>
                                         </xsl:for-each>
                                                 </div>

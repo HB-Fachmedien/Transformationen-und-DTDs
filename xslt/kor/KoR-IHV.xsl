@@ -131,15 +131,12 @@
                         <xsl:value-of select="."/>
                     </xsl:for-each>
                 </div>
-                <!-- verlinkter Titel -->
+                <!-- verlinkter Artikel -->
+                <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
                 <div class="ihv_headline titel">
-                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
                         <xsl:value-of select="$dokumentknoten/metadata/title"/>
-                    </a>
-                </div>
                 <!-- Autoren- bzw. Behördenauszeichnung -->
                 <div class="ihv_autor">
-                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
                         <xsl:choose>
                             <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
                             <xsl:when test="$dokumentknoten/name() = 'au'">
@@ -155,26 +152,25 @@
                                 <xsl:value-of select="concat($dokumentknoten/metadata/instdoc/inst, ', ', $dokumentknoten/metadata/instdoc/instdoctype, ' vom ' , format-date($dokumentknoten/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', $dokumentknoten/metadata/instdoc/instdocnrs/instdocnr[1])"/>
                             </xsl:when>
                         </xsl:choose>
-                    </a>
+                    
                 </div>
                 <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
                 <xsl:if test="$dokumentknoten/name() = 'au'">
                     <div class="ihv_abstract">
-                        <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
                             <xsl:value-of select="$dokumentknoten/metadata/summary/*"/>
-                        </a>
                     </div>
                 </xsl:if>
-                <div class="ihv_seite">
-                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
-                        <xsl:value-of select="$dokumentknoten/metadata/pub/pages/start_page"/>
-                    </a>
+                    <div class="ihv_seite"><xsl:choose>
+                        <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </div>
-                <p>
-                    <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
-                        <xsl:value-of select="$dokid"/>
-                    </a>
-                </p>
+                </div>
+                </a>
             </div>
         </div>
     </xsl:template>
