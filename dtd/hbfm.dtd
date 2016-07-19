@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.21
+1.22
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -124,6 +124,11 @@ Version 1.21 (02.03.16): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Behördenliste aktualisiert Element <a href="#inst">inst</a>, Attribute code</li>
 							<li>neues Attribut uid für Element <a href="#footnote">footnote</a></li>
+						</ul>
+Version 1.22 (18.07.16): Änderungen (SG):&#x0013;	
+						<ul>
+							<li><a href="#newpage">newpage</a> zwischen <a href="#question">question</a> und <a href="#answer">answer</a> zugelassen</li>
+							<li>Behördenliste aktualisiert Element <a href="#inst">inst</a>, Attribute code</li>
 						</ul>
 
 
@@ -2116,6 +2121,7 @@ _img inst.png
 		| BMI
 		| BMJV
 		| BMWi
+		| BLK
 		| EUKommission
 		| BNetzA
 		| Bundesregierung
@@ -2571,7 +2577,7 @@ Diese ID wird in der Regel nicht vom Benutzer vergeben. Die Befüllung des Attri
 
 _img questionAndAnswer.png
 -->
-<!ELEMENT questionAndAnswer (question, answer) >
+<!ELEMENT questionAndAnswer (question, newpage?, answer) >
 
 <!-- Beinhaltet den Text der Frage innerhalb eines Frage/Antwort-Paars (questionAndAnswer).
 
