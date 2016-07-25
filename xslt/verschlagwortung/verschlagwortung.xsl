@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
+    <!-- TO-DO: Autorennamen aus Stanpunkten sollen  ebenfalls ins Autorenverzeichnis-->
 
     <xsl:output indent="yes" encoding="UTF-8"  method="xml"/>
     
