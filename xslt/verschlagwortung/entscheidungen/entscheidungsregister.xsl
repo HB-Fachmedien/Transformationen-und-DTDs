@@ -13,22 +13,19 @@
     
     -->
     
-    <!-- HIER WEITER -->
-    <!-- $alle-Hefte mal filtern, Kurz kommentiert kommt z.B. nicht rein! Welche doctypes noch? -->
-    
-    
-    <!-- ALLE ENTSCHEIDUNGEN AUßER KOMMENTIERTE UND AUS DEM MANTELTEIL -->
-    
     <!-- 
     
     ToDo:
     
     ********************************************************************************************************
     
-    Gerichte, die kein Title bekommen, brauchen folgende Elemtentnamen:
     
-    <zeile-gericht><datum-gericht>23. 04. 2015</datum-gericht><trennzeichen> - </trennzeichen><az-gericht>Rs. C-111/14</az-gericht><seite-gericht>	1263</seite-gericht></zeile-gericht>    
+    Entscheidungen vom selben Tag nach Römischen Zahlen sortieren! -->
     
+    
+    <!-- ALLE ENTSCHEIDUNGEN AUßER KOMMENTIERTE UND AUS DEM MANTELTEIL
+    
+        
     
     ********************************************************************************************************
     
