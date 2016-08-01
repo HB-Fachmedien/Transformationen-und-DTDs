@@ -2,6 +2,10 @@
 
 <!-- HBFM to HBFMCC Transformation Version 1.07 -->
 <!--
+	
+Version 1.08:
+Doktypen erweitert bei Maindate Verarbeitung
+	
 Version 1.07:
 ZOE Spezialhefte bekommen keinen TOC Eintrag
 	
@@ -86,7 +90,7 @@ TOC für KOR und DK
 			<!-- create element maindate -->
 			<maindate>
 				<xsl:choose>
-					<xsl:when test="all_doc_type[@level='1'][text()=('ent','va', 'entk', 'nr', 'kk' )] and descendant::instdoc[1]/instdocdate">
+					<xsl:when test="/*[name()=('ent', 'va', 'entk', 'nr', 'kk' )] and instdoc[1]/instdocdate">
 						<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
 					</xsl:when>
 					<xsl:otherwise>
@@ -170,6 +174,8 @@ TOC für KOR und DK
 </xsl:template>
 
 <xsl:template match="pub/date"/>
+	
+<xsl:template match="instdocdate"/>
 
 
 <!-- =========================================================
