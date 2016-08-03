@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM Schematron Version 1.19 -->
+<!-- HBFM Schematron Version 1.20 -->
 
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -41,8 +41,8 @@
     
     <pattern>
         <!-- Instdocnr muss in VA immer gefüllt sein -->
-        <rule context="vav/metadata/all_source[@level='2'][text()='vwa_collection']">
-            <assert test="./../instdoc/instdocnrs/instdocnr/text() != ''">Instdocnr darf nicht leer sein in Verwaltungsanweisungen!</assert>
+        <rule context="/*[name()=('vav', 'entv')]">
+            <assert test="metadata/instdoc/instdocnrs/instdocnr/text() != ''">Instdocnr darf nicht leer sein in Verwaltungsanweisungen!</assert>
         </rule>
     </pattern>
     
