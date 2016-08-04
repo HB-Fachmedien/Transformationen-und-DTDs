@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM to HBFMCC Transformation Version 1.07 -->
+<!-- HBFM to HBFMCC Transformation Version 1.09 -->
 <!--
-	
+
+Version 1.09:
+Bugfix von Vorversion
+
 Version 1.08:
 Doktypen erweitert bei Maindate Verarbeitung
 	
@@ -174,8 +177,6 @@ TOC für KOR und DK
 </xsl:template>
 
 <xsl:template match="pub/date"/>
-	
-<xsl:template match="instdocdate"/>
 
 
 <!-- =========================================================
