@@ -93,7 +93,7 @@ TOC für KOR und DK
 			<!-- create element maindate -->
 			<maindate>
 				<xsl:choose>
-					<xsl:when test="/*[name()=('ent', 'va', 'entk', 'nr', 'kk' )] and instdoc[1]/instdocdate">
+					<xsl:when test="/*[name()=('ent', 'va', 'entk', 'nr', 'kk' ,'entv', 'vav', 'vadraft')] and instdoc[1]/instdocdate">
 						<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
 					</xsl:when>
 					<xsl:otherwise>
@@ -322,7 +322,7 @@ TOC für KOR und DK
 <xsl:template match="public">
 	<public>
 		<xsl:copy-of select="@*"/>
-		<xsl:value-of select="@value"/>
+		<!--<xsl:value-of select="@value"/>-->
 	</public>
 </xsl:template>
 
