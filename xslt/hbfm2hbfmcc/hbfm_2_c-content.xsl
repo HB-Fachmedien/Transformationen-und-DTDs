@@ -2,6 +2,9 @@
 
 <!-- HBFM to HBFMCC Transformation Version 1.09 -->
 <!--
+	
+Version 1.10:
+Maindate Änderungen teilweise rückgängig gemacht, da Sortierung im Portal nicht abschliessend geklärt ist	
 
 Version 1.09:
 Bugfix von Vorversion
@@ -93,7 +96,7 @@ TOC für KOR und DK
 			<!-- create element maindate -->
 			<maindate>
 				<xsl:choose>
-					<xsl:when test="/*[name()=('ent', 'va', 'entk', 'nr', 'kk' ,'entv', 'vav', 'vadraft')] and instdoc[1]/instdocdate">
+					<xsl:when test="/*[name()=('entv', 'vav', 'vadraft')] and instdoc[1]/instdocdate">
 						<xsl:apply-templates select="descendant::instdoc[1]/instdocdate/node()"/>
 					</xsl:when>
 					<xsl:otherwise>
