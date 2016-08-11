@@ -160,7 +160,7 @@
                             <xsl:value-of select="$dokumentknoten/metadata/summary/*"/>
                     </div>
                 </xsl:if>
-                    <div class="ihv_seite"><xsl:choose>
+                    <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;"><xsl:choose>
                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
                             <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
                         </xsl:when>

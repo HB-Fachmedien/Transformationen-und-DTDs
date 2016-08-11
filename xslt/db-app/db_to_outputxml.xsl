@@ -123,7 +123,7 @@
                         <xsl:text> </xsl:text>
                         <xsl:value-of select="surname"/>
                         <xsl:if test="suffix">
-                            <xsl:text> </xsl:text>
+                            <!-- <xsl:text> </xsl:text> -->
                             <xsl:value-of select="suffix"/>
                         </xsl:if>
                     </xsl:for-each>

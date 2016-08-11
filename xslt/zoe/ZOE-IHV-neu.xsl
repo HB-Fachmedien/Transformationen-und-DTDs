@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     <xsl:variable name="aktuelles-Heft" select="collection(iri-to-uri('file:/c:/tempZOE/?recurse=yes;select=*_[A-Z].xml'))"/>
     <xsl:template match="/">
+        <!--  <xsl:result-document exclude-result-prefixes="#all" indent="no" href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/ZOE-IHV.html" method="xhtml" omit-xml-declaration="yes"> -->
         <output>
             <html>
                 <head>
@@ -70,50 +71,50 @@
                                                 
                                                 <!-- <xsl:sort select="*/metadata/pub/pages/start_page[1]" data-type="number" order="ascending"/> -->
                                                 
-                                                  <xsl:perform-sort select="*/metadata/pub/pages/start_page">
+                                                  <!--<xsl:perform-sort select="*/metadata/pub/pages/start_page">-->
                                                       <xsl:sort select="start_page" data-type="number" order="ascending"/>
-                                                </xsl:perform-sort>
+                                                <!--</xsl:perform-sort>-->
                                                 
                                                 <xsl:choose>
                                                     <xsl:when test="current-grouping-key() = 'Reflexion'">
-                                                        <div class="ihv_headline ressort">Reflexion</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Reflexion</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Gespräch'">
-                                                        <div class="ihv_headline ressort">Gespräch</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Gespräch</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Erfahrung'">
-                                                        <div class="ihv_headline ressort">Erfahrung</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Erfahrung</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Einblick'">
-                                                        <div class="ihv_headline ressort">Einblick</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Einblick</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Fallklinik'">
-                                                        <div class="ihv_headline ressort">Fallklinik</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Fallklinik</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Werkzeugkiste'">
-                                                        <div class="ihv_headline ressort" >Werkzeugkiste</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Werkzeugkiste</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Klassiker'">
-                                                        <div class="ihv_headline ressort">Klassiker</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Klassiker</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Recht'">
-                                                        <div class="ihv_headline ressort">Recht</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Recht</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Basiswissen'">
-                                                        <div class="ihv_headline ressort" >Basiswissen</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Basiswissen</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Perspektiven'">
-                                                        <div class="ihv_headline ressort" >Perspektiven</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Perspektiven</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Bücher'">
-                                                        <div class="ihv_headline ressort">Bücher</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Ortmanns Ordnung'">
-                                                        <div class="ihv_headline ressort">Ortmanns
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Ortmanns
                                                             Ordnung</div>
                                                     </xsl:when>
                                                     <xsl:otherwise>
-                                                        <div class="ihv_headline ressort">[ 
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">[ 
                                                             
                                                             <xsl:value-of select="/*/metadata/ressort/text()"/> ]
                                                             
@@ -137,38 +138,26 @@
                                                                         </xsl:if>
                                                                     </xsl:attribute>
                                                                     <xsl:value-of select="/*/metadata/title"/>
+                                                                        <xsl:if test="/*/metadata/ressort/text()=('Ortmanns Ordnung' , 'Klassiker' , 'Werkzeugkiste')">
+                                                                            <xsl:text>: </xsl:text><xsl:value-of select="/*/metadata/subtitle"/>
+                                                                        </xsl:if>
+                                                                       
+                                                                    
                                                                 </div>
+                                                                
+                                                                <xsl:if test="/*/metadata/authors">
                                                                 <div class="ihv_autor">
                                                                     <xsl:for-each select="/*/metadata/authors/author">
-                                                                        <xsl:choose>
-                                                                            <xsl:when test="position()=1">
-                                                                                <xsl:value-of select="prefix"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="firstname"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                            </xsl:when>
-                                                                            <xsl:when test="position()=last()">
-                                                                                <xsl:text>, </xsl:text>
-                                                                                <xsl:value-of select="prefix"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="firstname"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                            </xsl:when>
-                                                                            <xsl:otherwise>
-                                                                                <xsl:text>, </xsl:text>
-                                                                                <xsl:value-of select="prefix"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="firstname"/>
-                                                                                <xsl:text> </xsl:text>
-                                                                                <xsl:value-of select="replace(surname, ' ', '')"/>
-                                                                            </xsl:otherwise>
-                                                                        </xsl:choose>
+                                                                        
+                                                                           
+                                                                                <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
+                                                                                <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>        
                                                                     </xsl:for-each>
                                                                 </div>
+                                                                </xsl:if>
+                                                                
                                                                 <div class="ihv_abstract"><xsl:value-of select="/*/metadata/summary"/></div>
-                                                                <div class="ihv_seite">
+                                                                <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                                                     <xsl:choose>
                                                                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
                                                                             <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>ZOE</xsl:text>
@@ -194,5 +183,6 @@
                 </body>
             </html>
         </output>
+            <!--   </xsl:result-document> -->
     </xsl:template>
 </xsl:stylesheet>
