@@ -581,7 +581,7 @@ _img marginnr.png
 <!--Element <i>public</i>: value 'true' for subscribed content which becomes free content when this flag is set (The <i>public</i> element should initially not be provided for subscribed content - the value 'false' is not handled by the research portal.)
 _img public.png
 -->
-<!ELEMENT public  EMPTY >
+<!ELEMENT public (#PCDATA) >
 <!ATTLIST public
 	value (true | false) "false"
 >

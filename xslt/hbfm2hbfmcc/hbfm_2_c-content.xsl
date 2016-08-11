@@ -325,7 +325,7 @@ TOC für KOR und DK
 <xsl:template match="public">
 	<public>
 		<xsl:copy-of select="@*"/>
-		<!--<xsl:value-of select="@value"/>-->
+		<xsl:value-of select="@value"/>
 	</public>
 </xsl:template>
 
