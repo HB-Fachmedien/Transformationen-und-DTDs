@@ -117,7 +117,7 @@
                                                 <div class="ihv_level4">
                                                     <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}">
                                                     <div class="ihv_headline titel">
-                                                        <xsl:value-of select="$gk-dokument/TITEL"/>
+                                                        <xsl:value-of disable-output-escaping="yes" select="$gk-dokument/TITEL"/>
                                                     </div>
                                                     <div class="ihv_autor">
                                                         <!--<xsl:value-of select="$gk-dokument/AUTOR"/>-->
@@ -275,7 +275,7 @@
                                                         <div class="ihv_level4">
                                                             <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}">
                                                             <div class="ihv_headline titel">
-                                                                <xsl:value-of select="$sp-dokument/TITEL"/>
+                                                                <xsl:value-of disable-output-escaping="yes" select="$sp-dokument/TITEL"/>
                                                             </div>
                                                                                                                  
                                                             <div class="ihv_autor">
@@ -346,7 +346,7 @@
                         
                         <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
                         <div class="ihv_headline titel">
-                                <xsl:value-of select="TITEL"/>
+                            <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
                         </div>
                             <xsl:choose>
                                 <xsl:when test="AUTOR">
