@@ -75,6 +75,12 @@
                                                 <xsl:when test="current-grouping-key() = 'Stichwort des Monats'">
                                                     <div class="ihv_headline ressort">Stichwort des Monats</div>
                                                 </xsl:when>
+                                                <xsl:when test="current-grouping-key() = 'Gesetzgebung Aktuell'">
+                                                    <div class="ihv_headline ressort">Gesetzgebung Aktuell</div>
+                                                </xsl:when>
+                                                <xsl:when test="current-grouping-key() = 'Fragen aus der Praxis'">
+                                                    <div class="ihv_headline ressort">Fragen aus der Praxis</div>
+                                                </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'Service'">
                                                     <div class="ihv_headline ressort">Service</div>
                                                 </xsl:when>
@@ -82,9 +88,7 @@
                                                     <div class="ihv_headline ressort">Rechtsprechung</div>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    [
-                                                    <div class="ihv_headline ressort">UNBEKANNTES RESSORT</div>]
-                                                    
+                                                    [<div class="ihv_headline ressort">UNBEKANNTES RESSORT</div>]
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             <div class="ihv_level3">
