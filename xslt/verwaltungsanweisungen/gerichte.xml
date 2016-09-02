@@ -1212,6 +1212,7 @@
 		<pos>Oberverwaltungsgericht Schleswig-Holstein</pos>
 		<pos>Schleswig-Holsteinisches Oberverwaltungsgericht</pos> 
 		<pos>Schleswig-Holsteinisches OVG</pos>
+		<pos>OVG Schleswig</pos>
 		<pos>Oberverwaltungsgerichts des Landes Schleswig-Holstein</pos>
 		<pos>Oberverwaltungsgerichtes Schleswig-Holstein</pos> 
 		<pos>Oberverwaltungsgerichts Schleswig-Holstein</pos>
@@ -1243,6 +1244,7 @@
 	<option type="court">
 		<main>LSGBadenWuerttemberg</main>
 		<pos diction="true">LSG Baden-Württemberg</pos>
+		<pos>LSG Stuttgart</pos>
 		<pos>Landessozialgericht Baden-Württemberg</pos> 
 		<pos>Landessozialgerichts Baden-Württemberg</pos> 
 		<pos>Landessozialgerichtes Baden-Württemberg</pos>
