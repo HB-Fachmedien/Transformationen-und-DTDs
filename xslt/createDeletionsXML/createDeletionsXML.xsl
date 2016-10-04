@@ -10,7 +10,12 @@
         <deletions>
             <xsl:for-each select="$file-collection/*">
                 <deletion>
-                    <docid><xsl:value-of select="@docid"/></docid>
+                    <docid>
+                        <xsl:choose>
+                            <xsl:when test="@docid"><xsl:value-of select="@docid"/></xsl:when>
+                            <xsl:otherwise><xsl:value-of select="//docid"/></xsl:otherwise>
+                        </xsl:choose>
+                    </docid>
                     <all_source level="1"><xsl:value-of select="metadata/all_source[@level='1']"/></all_source>
                     <all_source level="2"><xsl:value-of select="metadata/all_source[@level='2']"/></all_source>
                 </deletion>
