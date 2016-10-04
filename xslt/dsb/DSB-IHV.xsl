@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
-    <xsl:output method="html" omit-xml-declaration="yes"></xsl:output>
+    <xsl:output method="html" omit-xml-declaration="yes" indent="no"></xsl:output>
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDSB/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <html>
