@@ -74,7 +74,7 @@
                                             <div class="ihv_headline ressort" style="margin-bottom: 5px;">Editorial</div>
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
-                                                    <a  href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
+                                                    <a target="_blank"  href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$editorial-dbnummer}">
                                                     <div class="ihv_headline titel">
                                                             <xsl:value-of disable-output-escaping="yes" select="$editorial-dokument/TITEL"/>
                                                     </div>
@@ -90,7 +90,7 @@
                                                         </div>
                                                     </xsl:for-each>
                                                     <!-- TODO: Aus Autoren Feld ziehen -->
-                                                        <div class="ihv_dbnummer" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;"><xsl:value-of select="$editorial-dbnummer"/>
+                                                        <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">M1, DB<xsl:value-of select="$editorial-dbnummer"/>
                                                     </div>
                                                     </a>
                                                 </div>
@@ -115,7 +115,7 @@
                                             <!-- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
-                                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}">
+                                                    <a target="_blank" href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$gk-dbnummer}">
                                                     <div class="ihv_headline titel">
                                                         <xsl:value-of disable-output-escaping="yes" select="$gk-dokument/TITEL"/>
                                                     </div>
@@ -131,8 +131,8 @@
                                                             <!-- Überprüfen, ob das so passt -->
                                                         </div>
                                                     </xsl:for-each>
-                                                        <div class="ihv_dbnummer" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
-                                                            <xsl:value-of select="$gk-dbnummer"/>
+                                                        <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                                                            M5, DB<xsl:value-of select="$gk-dbnummer"/>
                                                     </div>
                                                     </a>
                                                 </div>
@@ -273,7 +273,7 @@
                                                     <!-- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
-                                                            <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}">
+                                                            <a target="_blank" href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$sp-dbnummer}">
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of disable-output-escaping="yes" select="$sp-dokument/TITEL"/>
                                                             </div>
@@ -344,7 +344,7 @@
                             <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
                         </div>
                         
-                        <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
+                        <a target="_blank" href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
                         <div class="ihv_headline titel">
                             <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
                         </div>
