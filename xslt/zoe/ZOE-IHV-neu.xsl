@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     <xsl:variable name="aktuelles-Heft" select="collection(iri-to-uri('file:/c:/tempZOE/?recurse=yes;select=*_[A-Z].xml'))"/>
+    <xsl:output method="xhtml" indent="no" encoding="UTF-8" omit-xml-declaration="yes"/>
     <xsl:template match="/">
         <!--  <xsl:result-document exclude-result-prefixes="#all" indent="no" href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/ZOE-IHV.html" method="xhtml" omit-xml-declaration="yes"> -->
-        <output>
             <html>
                 <head>
                     <meta charset="UTF-8"/>
@@ -110,8 +110,7 @@
                                                         <div class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Ortmanns Ordnung'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Ortmanns
-                                                            Ordnung</div>
+                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Ortmanns Ordnung</div>
                                                     </xsl:when>
                                                     <xsl:otherwise>
                                                         <div class="ihv_headline ressort" style="margin-bottom: 5px;">[ 
@@ -129,7 +128,7 @@
                                                             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
                                                             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                                            <a href="https://recherche.zoe-online.org/document.aspx?docid=ZOE{$siriusID}">
+                                                            <a target="_blank" href="https://recherche.zoe-online.org/document.aspx?docid=ZOE{$siriusID}">
                                                                 <div>
                                                                     <xsl:attribute name="class">
                                                                         <xsl:text>ihv_headline titel </xsl:text>
@@ -182,7 +181,7 @@
                     </div>
                 </body>
             </html>
-        </output>
+        
             <!--   </xsl:result-document> -->
     </xsl:template>
 </xsl:stylesheet>
