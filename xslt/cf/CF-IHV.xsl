@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0"
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     
-    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="yes"/>
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempCF/IHV/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <!--  <xsl:result-document exclude-result-prefixes="#all" indent="no" href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/CF-IHV.html" method="xhtml" omit-xml-declaration="yes"> -->
@@ -70,7 +70,7 @@
                                         </xsl:choose>
                                         <div class="ihv_level3">
                                             <div class="ihv_level4">
-                                                <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$editorial-oder-gastkommentar/@docid}">
+                                                <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$editorial-oder-gastkommentar/@docid}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                         <xsl:value-of select="$editorial-oder-gastkommentar/metadata/title"/>
                                                 </div>
@@ -119,7 +119,7 @@
                                                         </div>
                                                         
                                                         <!-- verlinkter Artikel -->
-                                                        <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}">                                                        
+                                                        <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}" target="_blank">                                                        
                                                         <div class="ihv_headline titel"><xsl:value-of select="*/metadata/title"/></div>
                                                         
                                                         <!-- Autoren-->

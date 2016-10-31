@@ -132,7 +132,7 @@
                     </xsl:for-each>
                 </div>
                 <!-- verlinkter Artikel -->
-                <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}">
+                <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}" target="_blank">
                 <div class="ihv_headline titel">
                         <xsl:value-of select="$dokumentknoten/metadata/title"/>
                 <!-- Autoren- bzw. Behördenauszeichnung -->
