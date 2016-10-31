@@ -69,7 +69,7 @@
                                     <xsl:value-of select="TITEL"/>
                                     <br/>
                                 </xsl:if>
-                                <xsl:if test="DOCTYPBEZ[text()='Kurz Kommentiert'][1]">
+                                <xsl:if test="DOCTYPBEZ[text()='Kompakt'][1]">
                                     <xsl:for-each select="AUTOR">
                                         <i>
                                             <xsl:variable name="autorenname" select="."/>
@@ -106,7 +106,7 @@
                                     <xsl:value-of select="TITEL"/>
                                     <br/>
                                 </xsl:if>
-                                <xsl:if test="DOCTYPBEZ[text()='Kurz Kommentiert'][1]">
+                                <xsl:if test="DOCTYPBEZ[text()='Kompakt'][1]">
                                     <xsl:for-each select="AUTOR">
                                         <i>
                                             <xsl:variable name="autorenname" select="."/>
@@ -143,7 +143,7 @@
                                     <xsl:value-of select="TITEL"/>
                                     <br/>
                                 </xsl:if>
-                                <xsl:if test="DOCTYPBEZ[text()='Kurz Kommentiert'][1]">
+                                <xsl:if test="DOCTYPBEZ[text()='Kompakt'][1]">
                                     <xsl:for-each select="AUTOR">
                                         <i>
                                             <xsl:variable name="autorenname" select="."/>

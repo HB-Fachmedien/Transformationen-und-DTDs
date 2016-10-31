@@ -150,7 +150,7 @@
                 <xsl:variable name="dtgb">
                     <xsl:choose>
                         <xsl:when test="$doctype = 'au'">Aufsatz</xsl:when>
-                        <xsl:when test="$doctype = 'kk'">Kurz Kommentiert</xsl:when>
+                        <xsl:when test="$doctype = 'kk'">Kompakt</xsl:when>
                         <xsl:when test="$doctype = 'va'">Verwaltungsanweisung</xsl:when>
                         <xsl:when test="$doctype = 'ent'">Entscheidung</xsl:when>
                         <xsl:when test="$doctype = 'entk'">Entscheidung</xsl:when>

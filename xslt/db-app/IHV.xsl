@@ -154,7 +154,7 @@
                                             
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
-                                                <xsl:with-param name="ueberschrift" select="'Kurz kommentiert'"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kompakt'"/>
                                                 <xsl:with-param name="art-nr" select="140"/>
                                             </xsl:call-template>
                                             
@@ -181,7 +181,7 @@
                                             
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
-                                                <xsl:with-param name="ueberschrift" select="'Kurz kommentiert'"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kompakt'"/>
                                                 <xsl:with-param name="art-nr" select="240"/>
                                             </xsl:call-template>
                                             
@@ -208,7 +208,7 @@
                                             
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
-                                                <xsl:with-param name="ueberschrift" select="'Kurz kommentiert'"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kompakt'"/>
                                                 <xsl:with-param name="art-nr" select="340"/>
                                             </xsl:call-template>
                                             
@@ -235,7 +235,7 @@
                                             
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
-                                                <xsl:with-param name="ueberschrift" select="'Kurz kommentiert'"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kompakt'"/>
                                                 <xsl:with-param name="art-nr" select="440"/>
                                             </xsl:call-template>
                                             
