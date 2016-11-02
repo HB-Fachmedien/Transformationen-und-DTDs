@@ -127,7 +127,7 @@
     </pattern>
     <pattern>
         <rule context="file/@width | file/@height">
-            <assert test="number(.)>0 or (number(replace(/*/metadata/pub/date, '-',''))&lt; 20151201)">Die @width / @height Attribute müssen gefüllt sein!</assert>
+            <assert test="number(.)&gt;0 or (number(replace(/*/metadata/pub/date, '-',''))&lt; 20151201)">Die @width / @height Attribute müssen gefüllt sein!</assert>
         </rule>
     </pattern>
     <pattern>
