@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
-    <xsl:output method="html" omit-xml-declaration="yes" indent="no"></xsl:output>
+    <xsl:output method="xhtml" omit-xml-declaration="yes" indent="no"></xsl:output>
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDSB/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <html>
@@ -100,18 +100,20 @@
                                                         <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                         <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
                                                         
-                                                        <a href="https://recherche.datenschutz-berater.de/document.aspx?docid=DSB{$siriusID}">
+                                                        <a href="https://recherche.datenschutz-berater.de/document.aspx?docid=DSB{$siriusID}" target="_blank">
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of select="/*/metadata/title"/>
                                                             </div>
                                                                 <xsl:choose>
                                                                     <xsl:when test="/*/metadata/authors">
-                                                                        <xsl:for-each select="*/metadata/authors/author">
-                                                                            <xsl:if test="not(position()=1)">
-                                                                                <xsl:text> / </xsl:text>
-                                                                            </xsl:if>
-                                                                            <div class="ihv_autor"><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/></div>
-                                                                        </xsl:for-each>
+                                                                        <div class="ihv_autor">
+                                                                            <xsl:for-each select="*/metadata/authors/author">
+                                                                                <xsl:if test="not(position()=1)">
+                                                                                    <xsl:text> / </xsl:text>
+                                                                                </xsl:if>
+                                                                                <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                                                            </xsl:for-each>
+                                                                        </div>
                                                                     </xsl:when>
                                                                     <xsl:otherwise/>
                                                                 </xsl:choose>
