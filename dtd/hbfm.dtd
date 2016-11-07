@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.22
+1.24
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -41,9 +41,9 @@ Version 1.06 (20.03.15): Änderungen (SG):&#x0013;
 							<li>alle Link-Elemente entfernt</li>
 							<li><<a href="#extfile">extfile</a> &#x0040;type &#x0040;display>DATEINAME</extfile> ersetzt <type> und <origfile></li>
 						</ul>
-Version 1.07 (14.04.15): inhaltliche Korrekturen (CM)&#x0013;						
+Version 1.07 (14.04.15): inhaltliche Korrekturen (CM)&#x0013;
 						 section/&#x0040;class: Werte für Inhaltsverzeichnis hinzugefügt
-Version 1.08 (27.04.15): Änderungen (SG):&#x0013;						
+Version 1.08 (27.04.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li><a href="#instdoc">instdoc</a> darf auch nur aus <a href="#instdocnote">instdocnote</a> bestehen</li>
 							<li><a href="#exportblocker">exportblocker</a> darf nun 0, 1 oder mehrmals vorkommen</li>
@@ -59,50 +59,50 @@ Version 1.08 (27.04.15): Änderungen (SG):&#x0013;
 								<li>neu: <a href="#divsu">divsu</a>, <a href="#divso">divso</a>, <a href="#gh">gh</a></li>
 							</ul>
 						</ul>
-Version 1.09 (29.04.15): Änderungen (SG):&#x0013;						
+Version 1.09 (29.04.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Attributwert "type" in "class" umbenannt für Element <a href="#block">block</a></li>
 							<li>Attributwert "anmerkung" und "frame" für Attribute class in <a href="#block">block</a> aufgenommen</li>
-							<li>Inhaltsmodell von <a href="#coll_title">coll_title</a> geändert</li> 
+							<li>Inhaltsmodell von <a href="#coll_title">coll_title</a> geändert</li>
 						</ul>
-Version 1.10 (13.05.15): Änderungen (SG):&#x0013;						
+Version 1.10 (13.05.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Attribute docid und rawid der Root-Elemente auf implied setzen</li>
 							<li>Neue Elemente <a href="#version">version</a> und <a href="#ref">ref</a> hinzugefügt</li>
 							<li>Elemente <i>instcode</i> und <i>insttype</i> in <a href="#inst">inst</a> zusammengefasst</li>
 						</ul>
-Version 1.11 (18.06.15): Änderungen (SG):&#x0013;						
+Version 1.11 (18.06.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Keywords können mehrere Ebenen (<a href="#keyword">keyword</a> und eine ID haben</li>
 							<li>Attribut <i>lang</i> zur Sprachkennzeichnung für <a href="#p">p</a></li>
 						</ul>
-Version 1.12 (30.06.15): Änderungen (SG):&#x0013;						
+Version 1.12 (30.06.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>neue Werte für Attribut class im Inhaltsverzeihnis: toc.inhrubr</li>
 							<li>Definition des Attributs id von <a href="#keyword">keyword</a> auf CDATA geändert</li>
 						</ul>
-Version 1.13 (16.07.15): Änderungen (SG):&#x0013;	
+Version 1.13 (16.07.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>"BMJV" in Liste der möglichen Werte von inst/&#x0040;code</li>
 						</ul>
-Version 1.14 (29.07.15): Änderungen (SG):&#x0013;	
+Version 1.14 (29.07.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
-Version 1.15 (06.08.15): Änderungen (SG):&#x0013;	
+Version 1.15 (06.08.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Wert "other" für andere als in inst/&#x0040;code vorhandene Gerichte/Behörden aufgenommen</li>
 							<li>inst/&#x0040;code muss nun angegeben werden</li>
 						</ul>
-Version 1.16 (04.09.15): Änderungen (SG):&#x0013;	
+Version 1.16 (04.09.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
-Version 1.17 (02.11.15): Änderungen (SG):&#x0013;	
+Version 1.17 (02.11.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Root-Element <a href="#rez">rez</a> hinzugefügt</li>
 						</ul>
-Version 1.18 (14.12.15): Änderungen (SG):&#x0013;	
+Version 1.18 (14.12.15): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Root-Elemente <a href="#iv">iv</a> und <a href="#rez">rez</a> hinzugefügt</li>
 							<li>neuer Attribut-Wert für "hinweis" für Element <a href="#block">block</a></li>
@@ -110,25 +110,35 @@ Version 1.18 (14.12.15): Änderungen (SG):&#x0013;
 							<li>Element article_order aus <a href="#pages_alt">pages_alt</a> entfernt</li>
 							<li>neues Attribut <i>pagenumber_alt</i> für Element <a href="#newpage">newpage</a></li>
 						</ul>
-Version 1.19 (22.01.16): Änderungen (SG):&#x0013;	
+Version 1.19 (22.01.16): Änderungen (SG):&#x0013;
 						<ul>
 							<li>neue Elemente <a href="#questionAndAnswer">questionAndAnswer</a>, <a href="#question">question</a>, <a href="#answer">answer</a>. <a href="#questionAndAnswer">questionAndAnswer</a> ist nur innherhalb von <a href="#body">body</a> und <a href="#section">section</a> erlaubg</li>
 							<li>neues Element für Marginalien <a href="#sidenote">sidenote</a>
 							<li>Liste der Gerichts- und Behördenkürzel aktualisiert (inst/&#x0040;code)</li>
 						</ul>
-Version 1.20 (11.02.16): Änderungen (SG):&#x0013;	
+Version 1.20 (11.02.16): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Neuer Wert für Attribut type des Elements <a href="#inst">inst</a></li>
 						</ul>
-Version 1.21 (02.03.16): Änderungen (SG):&#x0013;	
+Version 1.21 (02.03.16): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Behördenliste aktualisiert Element <a href="#inst">inst</a>, Attribute code</li>
 							<li>neues Attribut uid für Element <a href="#footnote">footnote</a></li>
 						</ul>
-Version 1.22 (18.07.16): Änderungen (SG):&#x0013;	
+Version 1.22 (18.07.16): Änderungen (SG):&#x0013;
 						<ul>
 							<li><a href="#newpage">newpage</a> zwischen <a href="#question">question</a> und <a href="#answer">answer</a> zugelassen</li>
 							<li>Behördenliste aktualisiert Element <a href="#inst">inst</a>, Attribute code</li>
+						</ul>
+Version 1.23 (28.07.16): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Behördenliste aktualisiert: neuer Eintrag "Bund-Länder-Kommission"</li>
+							<li>instdoctypes aktualisiert: neue Einträge "Referentenentwurf", "Pressemitteilung"</li>
+						</ul>
+Version 1.24 (07.11.16): Änderungen (SG):&#x0013;
+						<ul>
+							<li><a href="#lawname">lawname</a> und <a href="#lawyear">lawyear</a> werden optional</li>
+							<li><a href="#block">block</a> soll <a href="#questionAndAnswer">questionAndAnswer</a> zulassen</li>
 						</ul>
 
 
@@ -175,7 +185,7 @@ EMPTY - kein Inhalt
 -->
 
 <!ENTITY % block_simple "p | subhead | figure | table | list | rzblock | example | block" >
-<!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | sidenote | newpage)*" >
+<!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | sidenote | questionAndAnswer | newpage)*" >
 <!ENTITY % block_with_questionAndAnswer "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 
 <!ENTITY % inline "(#PCDATA | b | i | u | sub | sup | span | br | footnote | newpage | file | ref | url)*" >
@@ -193,13 +203,13 @@ EMPTY - kein Inhalt
 		sidword  CDATA #IMPLIED
 " >
 
-<!--Das Element <i>hbfmdoc</i> ist das root-Element für alle Arten von Dokumenten - dabei kann es sich sowohl um redaktionelle Beiträge (z.B. Aufsätze, bearbeitete Entscheidungen oder Nachrichten) handeln als auch um Volltext-Entscheidungen, Verwaltungsanweisungen, Gesetzestexte usw. 
+<!--Das Element <i>hbfmdoc</i> ist das root-Element für alle Arten von Dokumenten - dabei kann es sich sowohl um redaktionelle Beiträge (z.B. Aufsätze, bearbeitete Entscheidungen oder Nachrichten) handeln als auch um Volltext-Entscheidungen, Verwaltungsanweisungen, Gesetzestexte usw.
 _img hbfmdoc.png
 -->
 <!ELEMENT hbfmdoc (au | divah | divsu | divso | ed | ent | entk | entv | gh | gk | gtdraft | iv | toc | kk | nbb | nr | rez | sp | va | vadraft | vav) >
 
 
-<!--Das Element <i>au</i> ist das root-Element für Aufsätze 
+<!--Das Element <i>au</i> ist das root-Element für Aufsätze
 _img au.png
 -->
 <!ELEMENT au   (metadata, body) >
@@ -210,11 +220,11 @@ _img au.png
 %DB0578219%
 
 @attr altdocid unique (alternativer pubcode + rawid) Alternative DocIDs are mainly for searching or linking purposes.
-@attr rawid non-unique; Umbenennung der bisherigen <id>, jetzt als Attribut; wird bei Altdatenkonvertierung gezogen aus (in dieser Reihenfolge, ohne führende Nullen): 
+@attr rawid non-unique; Umbenennung der bisherigen <id>, jetzt als Attribut; wird bei Altdatenkonvertierung gezogen aus (in dieser Reihenfolge, ohne führende Nullen):
 	&#x0040;ORIGID, &#x0040;SIRIUS-ID, &#x0040;WEBID, &#x0040;DOKID. Entspricht bei Zeitschrift-Neuproduktion der Word-ID (Sirius-ID bzw. Volltext-ID).
-	This is the technical ID of the base-Document from which the delivered document stems from. 
+	This is the technical ID of the base-Document from which the delivered document stems from.
 	It is possible that different documents are delivered in the database with identical rawid but different docid. This may happen for instance, when a document is published in DER BETRIEB and in DER KONZERN as well. A search for the docid (with prefix) should deliver only one exact hit. A search for the rawid should result in a list of all documents with this rawid.
-@attr extid unique; ID beim externen Content-Lieferanten (z.B. Deubner-Verlag) mit Lieferantenpräfix + Publikationscode 
+@attr extid unique; ID beim externen Content-Lieferanten (z.B. Deubner-Verlag) mit Lieferantenpräfix + Publikationscode
 	(z.B. "Deubner_DRSP_externe DokID")
 @attr sid unique; interne ID des Sirius CMS; wird beim Sirius-Import automatisch eingetragen
 @attr sidword Sirius-ID des ursprünglichen Word-Dokuments
@@ -223,7 +233,7 @@ _img au.png
 
 
 
-<!--Das Element <i>divah</i> ist das root-Element für Arbeitshilfe 
+<!--Das Element <i>divah</i> ist das root-Element für Arbeitshilfe
 _img divah.png
 -->
 <!ELEMENT divah   (metadata, body) >
@@ -233,7 +243,7 @@ _img divah.png
 
 
 
-<!--Das Element <i>divsu</i> ist das root-Element für „Seminarunterlage“ 
+<!--Das Element <i>divsu</i> ist das root-Element für „Seminarunterlage“
 _img divsu.png
 -->
 <!ELEMENT divsu   (metadata, body) >
@@ -243,7 +253,7 @@ _img divsu.png
 
 
 
-<!--Das Element <i>divso</i> ist das root-Element für „Sonstiges“ 
+<!--Das Element <i>divso</i> ist das root-Element für „Sonstiges“
 _img divso.png
 -->
 <!ELEMENT divso   (metadata, body) >
@@ -252,7 +262,7 @@ _img divso.png
 <!ATTLIST divso   %rootAttributes; >
 
 
-<!--Das Element <i>ed</i> ist das root-Element für Editorial 
+<!--Das Element <i>ed</i> ist das root-Element für Editorial
 _img ed.png
 -->
 <!ELEMENT ed   (metadata, body) >
@@ -261,7 +271,7 @@ _img ed.png
 <!ATTLIST ed   %rootAttributes; >
 
 
-<!--Das Element <i>ent</i> ist das root-Element für Entscheidung (bearbeitet) 
+<!--Das Element <i>ent</i> ist das root-Element für Entscheidung (bearbeitet)
 _img ent.png
 -->
 <!ELEMENT ent   (metadata, body) >
@@ -270,7 +280,7 @@ _img ent.png
 <!ATTLIST ent   %rootAttributes; >
 
 
-<!--Das Element <i>entk</i> ist das root-Element für Entscheidung kommentiert 
+<!--Das Element <i>entk</i> ist das root-Element für Entscheidung kommentiert
 _img entk.png
 -->
 <!ELEMENT entk   (metadata, body) >
@@ -279,7 +289,7 @@ _img entk.png
 <!ATTLIST entk   %rootAttributes; >
 
 
-<!--Das Element <i>entv</i> ist das root-Element für Entscheidung (Volltext) 
+<!--Das Element <i>entv</i> ist das root-Element für Entscheidung (Volltext)
 _img entv.png
 -->
 <!ELEMENT entv   (metadata, body) >
@@ -288,7 +298,7 @@ _img entv.png
 <!ATTLIST entv   %rootAttributes; >
 
 
-<!--Das Element <i>gh</i> ist das root-Element für „Ganzes Heft“ 
+<!--Das Element <i>gh</i> ist das root-Element für „Ganzes Heft“
 _img gh.png
 -->
 <!ELEMENT gh   (metadata, body) >
@@ -297,7 +307,7 @@ _img gh.png
 <!ATTLIST gh   %rootAttributes; >
 
 
-<!--Das Element <i>gk</i> ist das root-Element für Gastkommentar 
+<!--Das Element <i>gk</i> ist das root-Element für Gastkommentar
 _img gk.png
 -->
 <!ELEMENT gk   (metadata, body) >
@@ -306,7 +316,7 @@ _img gk.png
 <!ATTLIST gk   %rootAttributes; >
 
 
-<!--Das Element <i>gtdraft</i> ist das root-Element für Gesetzgebung 
+<!--Das Element <i>gtdraft</i> ist das root-Element für Gesetzgebung
 _img gtdraft.png
 -->
 <!ELEMENT gtdraft   (metadata, body) >
@@ -406,11 +416,11 @@ _img vav.png
 
 
 
-<!--Das Element <i>metadata</i> umschließt die Metadaten eines beliebigen Dokumenttyps. 
+<!--Das Element <i>metadata</i> umschließt die Metadaten eines beliebigen Dokumenttyps.
 _img metadata.png
 -->
-<!ELEMENT metadata (title, subtitle?, coll_title?, 
-                    authors?, 
+<!ELEMENT metadata (title, subtitle?, coll_title?,
+                    authors?,
                     summary?, leitsaetze?, keywords?,
                     ressort?, rubriken?,
                     pub,
@@ -443,11 +453,11 @@ _img pages_alt.png-->
 %
 <metadata>
 	<title>...</title>
-	
+
 </metadata>
 %
 
-Zudem kann über das Element <i>title</i> der Titel eines bestimmten Textbereiches festgelegt werden. Dieser Bereich kann eine <i>section</i> 
+Zudem kann über das Element <i>title</i> der Titel eines bestimmten Textbereiches festgelegt werden. Dieser Bereich kann eine <i>section</i>
 sein; <i>title</i> kann aber auch für die Elemente <i>figure</i>, <i>table</i>, <i>example</i>, <i>block</i> und <i>note</i>
 vergeben werden.
 
@@ -456,7 +466,7 @@ vergeben werden.
 %
 <section>
 	<title>...</title>
-	
+
 	<example>
 		<title>...</title>
 	</example>
@@ -468,8 +478,8 @@ _img title.png
 <!ELEMENT title      %inline; >
 
 
-<!--Enthält das Dokument einen Untertitel, so wird dieser über das Element <i>subtitle</i> angegeben. Dieser kommt nur innerhalb der Metadaten eines Dokuments vor und ist nicht mit <i>subhead</i> im Fließtext zu verwechseln. 
-_img subtitle.png 
+<!--Enthält das Dokument einen Untertitel, so wird dieser über das Element <i>subtitle</i> angegeben. Dieser kommt nur innerhalb der Metadaten eines Dokuments vor und ist nicht mit <i>subhead</i> im Fließtext zu verwechseln.
+_img subtitle.png
 -->
 <!ELEMENT subtitle   %inline; >
 
@@ -609,8 +619,8 @@ _img extfile.png
 -->
 <!ELEMENT extfile  (#PCDATA) >
 
-<!--@attr display Kann true oder false sein: 
-true: binary file is to be displayed directly in the document view. 
+<!--@attr display Kann true oder false sein:
+true: binary file is to be displayed directly in the document view.
 false: binary document is for download only
 @type gibt den Typ der darzustellenden Datei: html, pdf oder andere -->
 <!ATTLIST extfile
@@ -619,19 +629,19 @@ false: binary document is for download only
 >
 
 
-<!--Das Element <i>coll_title</i>: collection title (optional for multiple articles published as a "Dossier") 
+<!--Das Element <i>coll_title</i>: collection title (optional for multiple articles published as a "Dossier")
 _img coll_title.png
 -->
 <!ELEMENT coll_title   %inline; >
 
 
-<!--Im Element <i>pubtitle</i> wird angegeben, zu welcher Publikation das Dokument gehört, z.B. "Der Betrieb". 
+<!--Im Element <i>pubtitle</i> wird angegeben, zu welcher Publikation das Dokument gehört, z.B. "Der Betrieb".
 _img pubtitle.png
 -->
 <!ELEMENT pubtitle   (#PCDATA) >
 
 
-<!--Im Element <i>pubabbr</i> ist die Abkürzung der Publikation eingetragen, zu der das Dokument gehört; z.B. "DB", "KoR", "WuW" oder "CF". 
+<!--Im Element <i>pubabbr</i> ist die Abkürzung der Publikation eingetragen, zu der das Dokument gehört; z.B. "DB", "KoR", "WuW" oder "CF".
 _img pubabbr.png
 -->
 <!ELEMENT pubabbr    (#PCDATA) >
@@ -716,60 +726,60 @@ _img keyword.png-->
 
 
 
-<!--Das Element <i>law</i> umschließt die Informationen zu dem entsprechenden Gesetzestext. 
+<!--Das Element <i>law</i> umschließt die Informationen zu dem entsprechenden Gesetzestext.
 _img law.png
 -->
-<!ELEMENT law (lawname, lawabbr, lawyear, artnum) >
+<!ELEMENT law (lawname?, lawabbr, lawyear?, artnum) >
 
 
 
 <!--Das Element <i>lawname</i> beinhaltet den vollen Namen der jeweiligen Norm (z.B. "Abgabenordnung").
-_img lawname.png 
+_img lawname.png
 -->
 <!ELEMENT lawname      (#PCDATA) >
 
 
 <!--Das Element <i>lawabbr</i> gibt die Abbkürzung der jeweiligen Norm an (z.B. "AO").
-_img lawabbr.png 
+_img lawabbr.png
 -->
 <!ELEMENT lawabbr      (#PCDATA) >
 
 
 <!--Element <i>lawyear</i>: Regulations often have the same name, although they are updated by the Behörde on a yearly basis. With this feature we are able to search by year nonetheless, in order to obtain the correct regulation. (If the lawname already contains a year, which will rarely be the case, this should be part of <i>lawname</i> and <i>lawabbr</i>.)
-_img lawyear.png 
+_img lawyear.png
 -->
 <!ELEMENT lawyear      (#PCDATA) >
 
 
 <!--Im Element <i>artnum</i> wird die Paragraphennummer angegeben.
-_img artnum.png 
+_img artnum.png
 -->
 <!ELEMENT artnum       (#PCDATA) >
 
 
 <!--Element <i>instdoc</i>: institutional document (for Rechtsprechung, Verwaltungsanweisungen and other institutional documents)
-_img instdoc.png 
+_img instdoc.png
 -->
-<!ELEMENT instdoc (instdocnote | (inst, 
-                   instdoctype?, 
-                   instdocdate?, 
-                   instdocnrs?, 
+<!ELEMENT instdoc (instdocnote | (inst,
+                   instdoctype?,
+                   instdocdate?,
+                   instdocnrs?,
                    instdocaddnr?,
                    instdocnote?,
                    judges?,
                    citations?)) >
 
 <!--Element <i>preinstdocs</i>: Container für ein oder mehrere <a href="#instdoc">instdoc</a>
-_img preinstdocs.png 
+_img preinstdocs.png
 -->
 <!ELEMENT preinstdocs (instdoc+) >
 
 
-<!--Element <i>inst</i>: mandatory for Rechtsprechung and Verwaltungsanweisung: name of the institution (e.g. of the court or the Behörde) 
+<!--Element <i>inst</i>: mandatory for Rechtsprechung and Verwaltungsanweisung: name of the institution (e.g. of the court or the Behörde)
 
 Hier steht der volle Name der Behörde/des Gerichts. Der Kurzname wird das Attribut <i>code</i> geschrieben.
 
-_img inst.png 
+_img inst.png
 -->
 <!ELEMENT inst    (#PCDATA) >
 
@@ -828,7 +838,7 @@ _img inst.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen	
+		| OLGThueringen
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -1144,7 +1154,7 @@ _img inst.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten		
+		| AGBretten
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1180,7 +1190,7 @@ _img inst.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim		
+		| AGBadMergentheim
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -2127,6 +2137,7 @@ _img inst.png
 		| Bundesregierung
 		| IFSt
 		| Monopolkommission
+		| BundLaenderKommission
 	) #REQUIRED
 >
 
@@ -2160,7 +2171,7 @@ _img instdocaddnr.png
 -->
 <!ELEMENT instdocaddnr     (#PCDATA) >
 
-<!--Element <i>instdocnote</i>: 
+<!--Element <i>instdocnote</i>:
 _img instdocnote.png
 -->
 <!ELEMENT instdocnote     (#PCDATA) >
@@ -2254,9 +2265,9 @@ _img sgml_root_element.png -->
 ================================================================================================================================================= -->
 
 
-<!-- Innerhalb des Body-Elements befindet sich der eigentliche Textkörper. 
+<!-- Innerhalb des Body-Elements befindet sich der eigentliche Textkörper.
 
-Die im Text vorkommenden Gliederungshierarchien werden über das Element <i>section</i> abgebildet. 
+Die im Text vorkommenden Gliederungshierarchien werden über das Element <i>section</i> abgebildet.
 Noch bevor eine solche Gliederung erfolgt, kann ein einleitender Text gemäß einer Art Vorspann über die Elemente <i>p</i>, <i>subhead</i>, <i>figure</i>, <i>table</i>,
 <i>list</i>, <i>rzblock</i>, <i>example</i>, <i>block</i> dargestellt werden. Eine innerhalb dieses Vorspanntextes beginnende neue Textseite wird durch das Element <i>newpage</i> gekennzeichnet.
 
@@ -2267,11 +2278,11 @@ Noch bevor eine solche Gliederung erfolgt, kann ein einleitender Text gemäß ei
 	<subhead>...</subhead>
 	<p>...</p>
 	<example>...</example>
-	
+
 	<section>
 		...
 	</section>
-	
+
 	<section>
 		...
 	</section>
@@ -2304,15 +2315,15 @@ genannten Textelementen zu verwenden. Dies wird nur für kurze Texte ohne ersich
 <body>
 	<subhead>...</subhead>
 	<p>...</p>
-	
+
 	<section>
 		...
 	</section>
-	
+
 	<section>
 		...
 	</section>
-	
+
 	<note>
 	...
 	</note>
@@ -2332,7 +2343,7 @@ _img body.png
 =================================================================================================================================================
 ================================================================================================================================================= -->
 
-<!--Das Element <i>section</i> gliedert den Text in einzelne hierarchische Abschnitte. Eine Schachtelung von <i>section</i> kann 
+<!--Das Element <i>section</i> gliedert den Text in einzelne hierarchische Abschnitte. Eine Schachtelung von <i>section</i> kann
 beliebig tief erfolgen.
 
 Das optionale Attribut <i>class</i> beschreibt den Inhalt des Abschnitts näher.
@@ -2342,12 +2353,12 @@ _img section.png
 <!ELEMENT section (title?, %block_with_questionAndAnswer;, (section, (section | newpage)*)?) >
 
 <!--@attr id Im Attribut <i>id</i> kann eine ID-Nummer für die jeweilige <i>section</i> vergeben werden, u.a. damit auf diese als
-Verweisziel verlinkt werden kann. Diese ID wird in der Regel nicht vom Benutzer vergeben. 
+Verweisziel verlinkt werden kann. Diese ID wird in der Regel nicht vom Benutzer vergeben.
 Die Befüllung des Attributes ist nicht zwingend erforderlich.
 
-@attr class Beschreibt den Inhalt des Abschnitts und wird benutzt, um in Urteilen den Sachverhalt und die Gründe zu kennzeichnen:  
+@attr class Beschreibt den Inhalt des Abschnitts und wird benutzt, um in Urteilen den Sachverhalt und die Gründe zu kennzeichnen:
 
-% 
+%
 	<section class="sachverhalt">
 	</section>
 
@@ -2357,7 +2368,7 @@ Die Befüllung des Attributes ist nicht zwingend erforderlich.
 	</section>
 %
 	U.a. sind diese Werte möglich:
-	
+
 	<dl>
 		<dt>tenor</dt>
 			<dd>Tenor der Entscheidung</dd>
@@ -2379,13 +2390,13 @@ Die Befüllung des Attributes ist nicht zwingend erforderlich.
 			<dd>Veröffentlichungshinweis</dd>
 	</dl>
 
-	@attr number 
+	@attr number
 		Über das Attribut <i>number</i> kann die Angabe einer Gliederungsnummerierung erfolgen. Die Nummerierung erfolgt
 		exakt wie im Attributfeld angegeben; hierzu gibt es keine Vorgabe der Schreibweise. Die Befüllung des Attributs ist freiwillig.
-		
+
 <b>Beispiele:</b>
 
-% 
+%
 	<section number="II.">
 	</section>
 
@@ -2420,7 +2431,7 @@ Die Befüllung des Attributes ist nicht zwingend erforderlich.
 
 <!--Im Element <i>note</i> werden redaktionelle Notizen am Ende des Textes strukturiert. Dabei handelt es sich um Anmerkungen des Autors bzw. der Redaktion an den Leser; diese Notizen sind sichtbar. Sie stehen grundsätzlich am Fuße des Textes nach der letzten <i>section</i> bzw. nach dem letzten Textabschnitt. Die Notizen können aus normalen Textabsätzen bestehen, können aber auch semantische Blockelemente wie Beispiele, Tabellen usw. enthalten.
 
-Die Notizen können im Attribut <i>id</i> mit einer ID versehen werden, z.B. wenn auf sie als Verweisziel verlinkt werden soll. 
+Die Notizen können im Attribut <i>id</i> mit einer ID versehen werden, z.B. wenn auf sie als Verweisziel verlinkt werden soll.
 
 _img note.png
 -->
@@ -2444,13 +2455,13 @@ _img leitsatz.png
 
 
 
-<!--Im Element <i>p</i> stehen die eigentlichen Textabsätze. <i>p</i> kann an vielen Stellen vorkommen, überall wo einzelne Textabsätze erlaubt sind. 
+<!--Im Element <i>p</i> stehen die eigentlichen Textabsätze. <i>p</i> kann an vielen Stellen vorkommen, überall wo einzelne Textabsätze erlaubt sind.
 _img p.png
 -->
 <!ELEMENT p %inline; >
 
 
-<!-- 
+<!--
 @attr class Hierüber kann die Bedeutung oder die Formatierung des Absatzes genauer festgelegt werden:
 
 %
@@ -2460,7 +2471,7 @@ _img p.png
 %
 
 
-@attr align Über das Attribut <i>align</i> kann die Ausrichtung des Textes, der innerhalb von <i>p</i> steht, angegeben werden. Möglich sind die Attributwerte <i>left</i>, <i>center</i>, <i>right</i> und <i>justified</i>. Hilfreich können diese Angaben z.B. für Auswertungen von Satzprogrammen sein, gerade innerhalb von Absätzen in Tabellenzellen. Die Befüllung des Attributes ist freiwillig. 
+@attr align Über das Attribut <i>align</i> kann die Ausrichtung des Textes, der innerhalb von <i>p</i> steht, angegeben werden. Möglich sind die Attributwerte <i>left</i>, <i>center</i>, <i>right</i> und <i>justified</i>. Hilfreich können diese Angaben z.B. für Auswertungen von Satzprogrammen sein, gerade innerhalb von Absätzen in Tabellenzellen. Die Befüllung des Attributes ist freiwillig.
 
 <b>Beispiel für zentriert ausgerichteten Text:</b>
 
@@ -2606,7 +2617,7 @@ _img sidenote.png
 <!ELEMENT sidenote (%block;) >
 
 
-<!--Über das Element <i>figure</i> werden Grafiken als semantische Einheiten im Text stukturiert. 
+<!--Über das Element <i>figure</i> werden Grafiken als semantische Einheiten im Text stukturiert.
 
 Das Element <i>figure</i> muss ein oder mehrere Elemente <i>file</i> enthalten, die die exakten Verweise auf die Dateinamen der Grafik(en) enthalten.
 
@@ -2680,7 +2691,7 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 
 <!--Über das Element <i>list</i> werden Listen im Text strukturiert.
 
-Zwingend erforderlich sind ein oder mehrere Elemente <i>listitem</i> innerhalb von <i>list</i>, in denen die einzelnen Listenpunkte strukturiert werden. 
+Zwingend erforderlich sind ein oder mehrere Elemente <i>listitem</i> innerhalb von <i>list</i>, in denen die einzelnen Listenpunkte strukturiert werden.
 
 Eine Liste kann beliebig tief geschachtelt werden.
 
@@ -2705,7 +2716,7 @@ _img list.png
 -->
 <!ELEMENT list      ((listitem | newpage)+) >
 <!--@attr id Im Attribut <i>id</i> kann eine ID-Nummer für die jeweilige Liste  vergeben werden, u.a. damit auf diese als Verweisziel verlinkt werden kann.
-Diese ID wird in der Regel nicht vom Benutzer vergeben. Die Befüllung des Attributes ist nicht zwingend erforderlich. 
+Diese ID wird in der Regel nicht vom Benutzer vergeben. Die Befüllung des Attributes ist nicht zwingend erforderlich.
 
 @attr type Über das Attribut <i>type</i>, dessen Befüllung erforderlich ist, kann die Listenart bzw. das Aufzählungszeichen festgelegt werden.
 Der Wert <i>alpha</i> löst eine alphabetische Nummerierung (a,b,c) aus, <i>number</i> eine numerische (1, 2, 3), <i>dash</i> eine Liste mit Gedankenstrichen als Aufzählungszeichen. Der Wert <i>bullet</i> bewirkt eine Liste mit Punkten, <i>roman</i> eine Liste mit römischen Zahlen als Aufzählungszeichen. Über <i>other</i> bleibt die Möglichkeit, weitere Listentypen zu definieren.
@@ -2717,7 +2728,7 @@ Der Wert <i>alpha</i> löst eine alphabetische Nummerierung (a,b,c) aus, <i>numb
 >
 
 
-<!--Das Element <i>listitem</i> enthält Listenpunkteden Inhalt eines einzelnen Listenpunkts einer Liste. <i>listitem</i> kann daher nur innerhalb von <i>list</i> vorkommen. 
+<!--Das Element <i>listitem</i> enthält Listenpunkteden Inhalt eines einzelnen Listenpunkts einer Liste. <i>listitem</i> kann daher nur innerhalb von <i>list</i> vorkommen.
 
 Über das Attribut <i>number</i> kann bei Bedarf eine manuelle Nummerierung der einzelnen Listenpunkte vorgenommen werden.
 
@@ -2758,7 +2769,7 @@ Diese ID wird in der Regel nicht vom Benutzer vergeben. Die Befüllung des Attri
 >
 
 
-<!--Das Element <i>rz</i> kommt ausschließlich innerhalb und zu Beginn von <i>rzblock</i> vor. In diesem Element wird die Nummerierung bzw. Bezeichnung der Randziffer festgelegt. Existiert ein Randziffernblock, so muss das Element <i>rz</i> verpflichtend gesetzt werden. 
+<!--Das Element <i>rz</i> kommt ausschließlich innerhalb und zu Beginn von <i>rzblock</i> vor. In diesem Element wird die Nummerierung bzw. Bezeichnung der Randziffer festgelegt. Existiert ein Randziffernblock, so muss das Element <i>rz</i> verpflichtend gesetzt werden.
 
 Zu der Schreibweise der Randziffern gibt es keine Vorgaben, hier ist Freitext möglich.
 
@@ -2801,7 +2812,7 @@ _img footnote.png
 >
 
 
-<!--Mit dem Element <i>newpage</i> kann ein Text mit Seitenzahlen versehen werden. Hierbei markiert das empty-Element <i>newpage</i> mitten im Text jeweils den Beginn einer neuen Seite. 
+<!--Mit dem Element <i>newpage</i> kann ein Text mit Seitenzahlen versehen werden. Hierbei markiert das empty-Element <i>newpage</i> mitten im Text jeweils den Beginn einer neuen Seite.
 
 Wird das Element <i>newpage</i> gesetzt, so muss das Attribut <i>pagenumber</i> befüllt werden. Hierüber wird die Seitenzahl der neu beginnenden Seite angegeben, eine Schreibweise ist nicht vorgegeben.
 
@@ -2826,7 +2837,7 @@ _img newpage.png
 >
 
 
-<!--Über das Element <i>b</i> können Textstellen gefettet werden; "b" steht für <b>bold</b>. 
+<!--Über das Element <i>b</i> können Textstellen gefettet werden; "b" steht für <b>bold</b>.
 
 <b>Beispiel:</b>
 
@@ -2842,65 +2853,65 @@ _img b.png
 <!ELEMENT b    %inline; >
 
 
-<!--Über das Element <i>i</i> können Textstellen kursiv gesetzt werden; "i" steht für <i>italic</i>. 
+<!--Über das Element <i>i</i> können Textstellen kursiv gesetzt werden; "i" steht für <i>italic</i>.
 
 <b>Beispiel:</b>
 
 %
 <p>Diese Textstelle soll <i>kursiv</i> erscheinen.
 </p>
-% 
+%
 
 _img i.png
 -->
 <!ELEMENT i    %inline; >
 
 
-<!--Über das Element <i>u</i> können Textstellen unterstrichen werden; "u" steht für <u>underline</u>. 
+<!--Über das Element <i>u</i> können Textstellen unterstrichen werden; "u" steht für <u>underline</u>.
 
 <b>Beispiel:</b>
 
 %
 <p>Diese Textstelle soll <u>unterstrichen</u> werden.
 </p>
-%  
+%
 
 _img u.png
 -->
 <!ELEMENT u    %inline; >
 
 
-<!--Über das Element <i>sub</i> können Textstellen tiefgestellt werden, z.B. für mathematische oder chemische Formeln. 
+<!--Über das Element <i>sub</i> können Textstellen tiefgestellt werden, z.B. für mathematische oder chemische Formeln.
 
 <b>Beispiel:</b>
 
 %
 <p>H<sub>2</sub>O
 </p>
-%  
+%
 
 _img sub.png
 -->
 <!ELEMENT sub  %inline; >
 
 
-<!--Über das Element <i>sup</i> können Textstellen hochgestellt werden, z.B. für mathematische oder chemische Formeln. 
+<!--Über das Element <i>sup</i> können Textstellen hochgestellt werden, z.B. für mathematische oder chemische Formeln.
 
 <b>Beispiel:</b>
 
 %
 <p>20m<sup>2</sup>
 </p>
-%   
+%
 
 _img sup.png
 -->
 <!ELEMENT sup  %inline; >
 
 
-<!--Das Element <i>span</i> ist ein Joker-Element, das eingesetzt werden kann, falls es Bedarf an weiteren Inline-Auszeichnungen gibt, die bislang so nicht in der DTD angelegt sind. Setzt man dieses Element, muss über das Attribut <i>type</i> definiert werden, welche zusätzliche Auszeichnung an dieser Stelle erfolgen soll, damit z.B. das Satzprogramm im Folgenden darauf reagieren kann. 
+<!--Das Element <i>span</i> ist ein Joker-Element, das eingesetzt werden kann, falls es Bedarf an weiteren Inline-Auszeichnungen gibt, die bislang so nicht in der DTD angelegt sind. Setzt man dieses Element, muss über das Attribut <i>type</i> definiert werden, welche zusätzliche Auszeichnung an dieser Stelle erfolgen soll, damit z.B. das Satzprogramm im Folgenden darauf reagieren kann.
 _img span.png
---> 
+-->
 <!ELEMENT span %inline; >
 
 <!--@attr class Über das Attribut <i>class</i> wird definiert, welche Art von Inline-Auszeichnung erfolgen und wie der Text ausgegeben werden soll. Der eingegebene Wert sollte mit den Ausgabeprogrammen/Satzprogrammen abgestimmt sein.
@@ -2912,12 +2923,12 @@ _img span.png
 >
 
 
-<!--Element, um Quer- und Kapitelverweise innerhalb von Werken umzusetzen 
+<!--Element, um Quer- und Kapitelverweise innerhalb von Werken umzusetzen
 _img ref.png
---> 
+-->
 <!ELEMENT ref %inline; >
 
-<!ATTLIST ref 
+<!ATTLIST ref
 	docref CDATA #REQUIRED
 	idref  CDATA #IMPLIED
 >
@@ -2927,16 +2938,16 @@ _img ref.png
 <!-- Element, um Internetadressen auszuzeichnen. Die URL wird im Attribut <i>src</i> eingetragen, der dargestellte Text, der von der
 URL abweichen kann, bildet den Elementinhalt
 _img url.png
---> 
+-->
 <!ELEMENT url %inline; >
 
-<!ATTLIST url 
+<!ATTLIST url
 	src CDATA #REQUIRED
 >
 
 
 
-<!--Über das Element <i>br</i> kann ein manueller Zeilenumbruch im Text gesetzt werden. 
+<!--Über das Element <i>br</i> kann ein manueller Zeilenumbruch im Text gesetzt werden.
 
 Das Setzen von manuellen Zeilenumbrüchen sollte mit Bedacht geschehen. Es ist v.a. innerhalb von Tabellenzellen sinnvoll und zulässig, wo weder eine neue Zeile noch ein neuer Absatz eröffnet werden soll. Das Setzen von <i>br</i> wird dagegen nicht empfohlen, um im Fließtext oder in Überschriften Zeilenumbrüche zu erreichen. Umbrüche sollten außer in Einzelfällen erst bei der späteren Ausgabe erfolgen, z.B. im Satzprogramm.
 
@@ -3079,7 +3090,7 @@ _img thead.png
 
 @attr valign Über das Attribut <i>valign</i> wird die vertikale Textausrichtung in den Zellen des Tabellenkopfes festgelegt.
 
-@attr width Über das Attribut <i>width</i> wird eine Zellenbreite im Tabellenkopf festgelegt. 
+@attr width Über das Attribut <i>width</i> wird eine Zellenbreite im Tabellenkopf festgelegt.
 -->
 <!ATTLIST thead
 	%tableAlign;
@@ -3107,7 +3118,7 @@ _img tbody.png
 
 @attr valign Über das Attribut <i>valign</i> wird die vertikale Textausrichtung in den Zellen dieses Tabellenbereiches festgelegt.
 
-@attr width Über das Attribut <i>width</i> wird eine Zellenbreite für den ganzen Textkörper festgelegt. 
+@attr width Über das Attribut <i>width</i> wird eine Zellenbreite für den ganzen Textkörper festgelegt.
 -->
 <!ATTLIST tbody
 	%tableAlign;
@@ -3135,7 +3146,7 @@ _img tfoot.png
 
 @attr valign Über das Attribut <i>valign</i> wird die vertikale Textausrichtung in den Zellen dieses Tabellenbereiches festgelegt.
 
-@attr width Über das Attribut <i>width</i> wird eine Zellenbreite festgelegt. 
+@attr width Über das Attribut <i>width</i> wird eine Zellenbreite festgelegt.
 -->
 <!ATTLIST tfoot
 	%tableAlign;
@@ -3163,7 +3174,7 @@ _img tr.png
 
 @attr valign Über das Attribut <i>valign</i> wird die vertikale Textausrichtung in den Zellen dieser Reihe festgelegt.
 
-@attr width Über das Attribut <i>width</i> wird eine Zellenbreite festgelegt. 
+@attr width Über das Attribut <i>width</i> wird eine Zellenbreite festgelegt.
 -->
 <!ATTLIST tr
 	%tableAlign;
@@ -3171,14 +3182,14 @@ _img tr.png
 >
 
 
-<!--Das Element <i>td</i> ist ein Blockelement, das die einzelne Tabellenzelle im Tabellenhead abbildet. In <i>th</i> können dann wiederum normale Textabsätze, Listen, Beispiele etc. enthalten sein. 
+<!--Das Element <i>td</i> ist ein Blockelement, das die einzelne Tabellenzelle im Tabellenhead abbildet. In <i>th</i> können dann wiederum normale Textabsätze, Listen, Beispiele etc. enthalten sein.
 _img th.png
 -->
 <!ELEMENT th %block; >
 
 
-<!--@attr rowspan Mit dem Attribut <i>rowspan</i> kann eine Zellenüberspannung innerhalb einer Tabellenreihe vorgenommen werden. 
-@attr colspan Mit dem Attribut <i>colspan</i> wird eine spaltenweise Zellenüberspannung definiert. 
+<!--@attr rowspan Mit dem Attribut <i>rowspan</i> kann eine Zellenüberspannung innerhalb einer Tabellenreihe vorgenommen werden.
+@attr colspan Mit dem Attribut <i>colspan</i> wird eine spaltenweise Zellenüberspannung definiert.
 @attr width Über das Attribut <i>width</i> kann eine Spaltenbreite festgelegt werden.
 @attr align Über das Attribut <i>align</i> wird die Textausrichtung innerhalb der Zellen angegeben, z.B. rechtsbündig, zentriert, etc.
 @attr bgcolor Sollen die Zellen eine Hintergrundfarbe erhalten, so kann dies im Attribut <i>bgcolor</i> angegeben werden.
@@ -3203,8 +3214,8 @@ _img td.png
 <!ELEMENT td %block; >
 
 
-<!--@attr rowspan Mit dem Attribut <i>rowspan</i> kann eine Zellenüberspannung innerhalb einer Tabellenreihe vorgenommen werden. 
-@attr colspan Mit dem Attribut <i>colspan</i> wird eine spaltenweise Zellenüberspannung definiert. 
+<!--@attr rowspan Mit dem Attribut <i>rowspan</i> kann eine Zellenüberspannung innerhalb einer Tabellenreihe vorgenommen werden.
+@attr colspan Mit dem Attribut <i>colspan</i> wird eine spaltenweise Zellenüberspannung definiert.
 @attr width Über das Attribut <i>width</i> kann eine Spaltenbreite festgelegt werden.
 @attr width Über das Attribut <i>width</i> kann eine Spaltenbreite festgelegt werden.
 @attr align Über das Attribut <i>align</i> wird die Textausrichtung innerhalb der Zellen angegeben, z.B. rechtsbündig, zentriert, etc.
@@ -3221,5 +3232,3 @@ _img td.png
 	%tableAlign;
 	%tableRulesAndBackground;
 >
-
-
