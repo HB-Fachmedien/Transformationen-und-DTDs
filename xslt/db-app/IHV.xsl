@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0"
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     
-    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    <xsl:output encoding="UTF-8" indent="no" method="xhtml" omit-xml-declaration="yes"/>
     
     <xsl:template match="/">
         <!--<xsl:result-document exclude-result-prefixes="#all" indent="no" href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/DB-IHV.html" method="xhtml" omit-xml-declaration="yes">-->
