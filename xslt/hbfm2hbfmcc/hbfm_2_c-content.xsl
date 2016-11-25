@@ -1,34 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- HBFM to HBFMCC Transformation Version 1.09 -->
-<!--
-	
-Version 1.10:
-Maindate Änderungen teilweise rückgängig gemacht, da Sortierung im Portal nicht abschliessend geklärt ist	
-
-Version 1.09:
-Bugfix von Vorversion
-
-Version 1.08:
-Doktypen erweitert bei Maindate Verarbeitung
-	
-Version 1.07:
-ZOE Spezialhefte bekommen keinen TOC Eintrag
-	
-Version 1.06:
-maindate bekommt nur noch bei all_doc_type[@level='1'] = ent oder va Dokumenten das Instdocdate zugewiesen, bei allen anderen das Pubdate.
-	
-Version 1.05:
-TOC für WuW, DSB, ZOE, AR
-	
-Version 1.04:
-Fix für TOC Erstellung von CF und Sonstigen Dokumenten
-
-Version 1.03:
-TOC für KOR und DK
-
--->
-
 <xsl:transform 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -575,7 +546,7 @@ TOC für KOR und DK
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 													<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
-													<xsl:when test="../name()='kk'">Kurz kommentiert#560</xsl:when>
+													<xsl:when test="../name()='kk'">Kompakt#560</xsl:when>
 													<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
 													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
 													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
@@ -668,7 +639,7 @@ TOC für KOR und DK
 												<xsl:variable name="docType-SeqN">
 													<xsl:choose>
 														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-														<xsl:when test="../name()='kk'">Kurz kommentiert#200</xsl:when>
+														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
 														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
 														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
 														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
@@ -713,7 +684,7 @@ TOC für KOR und DK
 												<xsl:variable name="docTypeAndSeqN">
 													<xsl:choose>
 														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-														<xsl:when test="../name()='kk'">Kurz kommentiert#200</xsl:when>
+														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
 														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
 														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
 														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
