@@ -103,7 +103,7 @@
                                         
                                         <!-- Gastkommentar -->
                                         <xsl:variable name="gk-dokument"
-                                            select="output/DOKUMENT[DOCTYPGROUPBEZ='Gastkommentar']"/>
+                                            select="output/DOKUMENT[DOCTYPGROUPBEZ='Gastkommentar' and starts-with(SEITEVON/text(), 'M')]"/>
                                         <xsl:variable name="gk-dbnummer">
                                             <xsl:call-template name="calculateDocId">
                                                 <xsl:with-param name="id" select="$gk-dokument/SIRIUS-ID"/>

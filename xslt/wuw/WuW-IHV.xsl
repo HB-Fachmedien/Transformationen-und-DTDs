@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     
-    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="yes"/>
 
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempWuW/?recurse=yes;select=*.xml')"/>
 
@@ -10,39 +10,6 @@
             <html>
                 <head>
                     <meta charset="UTF-8"/>
-                    <link media="screen" type="text/css"
-                        href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
-                        rel="stylesheet"/>
-                    <xsl:comment>
-                        <style>
-                            @charset "UTF-8";
-                            @font-face{
-                            font-family:"Unit Slab Pro Bold";
-                            font-weight:bold;
-                            src:url("fonts/unitslabpro-bold.woff") format("woff");
-                            }
-                            @font-face{
-                            font-family:"Unit Slab Pro Medium";
-                            src:url("fonts/unitslabpro-medium.woff") format("woff");
-                            }
-                            @font-face{
-                            font-family:"Unit Slab Pro";
-                            src:url("fonts/unitslabpro.woff") format("woff");
-                            }
-                            @font-face{
-                            font-family:"Unit Pro Medium";
-                            src:url("fonts/unitpro-medium.woff") format("woff");
-                            }
-                            @font-face{
-                            font-family:"Unit Pro";
-                            src:url("fonts/unitpro.woff") format("woff");
-                            }
-                            .ihv_seite,
-                            .ihv_dbnummer{
-                            text-align:right;
-                            padding:0px;
-                            }</style>
-                    </xsl:comment>
                 </head>
 
                 <body>
@@ -89,7 +56,7 @@
                                             <!-- KOMMENTAR -->
                                             
                                             <xsl:if test="gk">
-                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -162,7 +129,7 @@
                                             <!-- ABHANDLUNGEN -->
                                             
                                             <xsl:if test="$ressortbez='Abhandlung'">
-                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -238,7 +205,7 @@
                                             <!-- TAGUNGSBERICHT -->
                                             
                                             <xsl:if test="$ressortbez='Tagungsbericht'">
-                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -283,7 +250,7 @@
                                             <!-- INTERNATIONAL DEVELOPMENTS -->
                                             
                                             <xsl:if test="$ressortbez='International Developments'">
-                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -328,7 +295,7 @@
                                             <!-- ENTSCHEIDUNGEN -->
                                             
                                             <xsl:if test="ent">
-                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <i><xsl:value-of select="/*/metadata/instdoc/inst"/><xsl:text>: </xsl:text></i>
                                                     <xsl:value-of select="/*/metadata/title"/>
@@ -374,7 +341,7 @@
                                             <!-- INTERVIEW -->
                                             
                                             <xsl:if test="iv">
-                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}">
+                                                <a href="https://recherche.wuw-online.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
