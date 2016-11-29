@@ -4,7 +4,7 @@
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="yes"/>
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempCF/IHV/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempCF/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <!--  <xsl:result-document exclude-result-prefixes="#all" indent="no" href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/CF-IHV.html" method="xhtml" omit-xml-declaration="yes"> -->
         <html>
