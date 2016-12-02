@@ -191,9 +191,7 @@
                                                 </div>
                                             </xsl:for-each>
                                         </div>
-                                        <div class="ihv_abstract">
-                                            <xsl:value-of select="VORSPANN"/>
-                                        </div>
+                                        <div class="ihv_abstract"><xsl:value-of select="VORSPANN"/></div>
                                         <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                             <xsl:choose>
                                                 <xsl:when test="SEITEVON = SEITEBIS">
