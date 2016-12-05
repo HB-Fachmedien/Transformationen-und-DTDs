@@ -88,7 +88,7 @@
                                                     <div class="ihv_headline ressort">Rechtsprechung</div>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    [<div class="ihv_headline ressort">UNBEKANNTES RESSORT</div>]
+                                                    <div class="ihv_headline ressort"><xsl:value-of select="/*/metadata/ressort"/></div>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             <div class="ihv_level3">
