@@ -41,6 +41,7 @@
                 <div class="content-wrapper">
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von KoR? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der  
+                        
                         <a href="https://recherche.kor-ifrs.de/Browse.aspx?level=roex%3abron.Zeitschriften.0c0f5d6e415044179263a16c0d68e83e&amp;title=KoR" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
@@ -133,43 +134,43 @@
                 </div>
                 <!-- verlinkter Artikel -->
                 <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}" target="_blank">
-                <div class="ihv_headline titel">
+                    <div class="ihv_headline titel">
                         <xsl:value-of select="$dokumentknoten/metadata/title"/>
-                <!-- Autoren- bzw. Behördenauszeichnung -->
-                <div class="ihv_autor">
-                        <xsl:choose>
-                            <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
-                            <xsl:when test="$dokumentknoten/name() = 'au'">
-                                <xsl:for-each select="$dokumentknoten/metadata/authors/author">
-                                    <xsl:if test="not(position()=1)">
-                                        <xsl:text> / </xsl:text>
-                                    </xsl:if>
-                                    <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
-                                </xsl:for-each>
-                            </xsl:when>
-                            <!-- Ansonsten die Gerichte/Behörden und Urteilsdaten, falls vorhanden -->
-                            <xsl:when test="$dokumentknoten/metadata[instdoc]">
-                                <xsl:value-of select="concat($dokumentknoten/metadata/instdoc/inst, ', ', $dokumentknoten/metadata/instdoc/instdoctype, ' vom ' , format-date($dokumentknoten/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', $dokumentknoten/metadata/instdoc/instdocnrs/instdocnr[1])"/>
-                            </xsl:when>
-                        </xsl:choose>
-                    
-                </div>
-                <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
-                <xsl:if test="$dokumentknoten/name() = 'au'">
-                    <div class="ihv_abstract">
-                            <xsl:value-of select="$dokumentknoten/metadata/summary/*"/>
+                        <!-- Autoren- bzw. Behördenauszeichnung -->
+                        <div class="ihv_autor">
+                            <xsl:choose>
+                                <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
+                                <xsl:when test="$dokumentknoten/name() = 'au'">
+                                    <xsl:for-each select="$dokumentknoten/metadata/authors/author">
+                                        <xsl:if test="not(position()=1)">
+                                            <xsl:text> / </xsl:text>
+                                        </xsl:if>
+                                        <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                    </xsl:for-each>
+                                </xsl:when>
+                                <!-- Ansonsten die Gerichte/Behörden und Urteilsdaten, falls vorhanden -->
+                                <xsl:when test="$dokumentknoten/metadata[instdoc]">
+                                    <xsl:value-of select="concat($dokumentknoten/metadata/instdoc/inst, ', ', $dokumentknoten/metadata/instdoc/instdoctype, ' vom ' , format-date($dokumentknoten/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', $dokumentknoten/metadata/instdoc/instdocnrs/instdocnr[1])"/>
+                                </xsl:when>
+                            </xsl:choose>
+                        </div>
+                        <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
+                        <xsl:if test="$dokumentknoten/name() = 'au'">
+                            <div class="ihv_abstract">
+                                <xsl:value-of select="$dokumentknoten/metadata/summary/*"/>
+                            </div>
+                        </xsl:if>
                     </div>
-                </xsl:if>
-                    <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;"><xsl:choose>
-                        <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </div>
-                </div>
+                    <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                        <xsl:choose>
+                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </div>
                 </a>
             </div>
         </div>
