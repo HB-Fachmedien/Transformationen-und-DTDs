@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.24
+1.25
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -122,6 +122,13 @@ Version 1.24 (07.11.16): Änderungen (SG):&#x0013;
 							<li><a href="#lawname">lawname</a> und <a href="#lawyear">lawyear</a> werden optional</li>
 							<li><a href="#block">block</a> soll <a href="#questionAndAnswer">questionAndAnswer</a> zulassen</li>
 						</ul>
+Version 1.25 (12.12.16): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Behördenliste aktualisiert Element <a href="#inst">inst</a>, Attribute code</li>
+							<li>Neues Element <a href="#latex">latex</a> zur Aufnahme von LaTeX-Code</li>
+							<li>Element <a href="#list">list</a>, Attribut type: Wert "none" hinzugefügt</li>
+							<li>Neues Dokumentelement <a href="#kb">kb</a> für Kurzbeträge hinzugefügt</li>
+						</ul>
 
 
 
@@ -215,7 +222,7 @@ EMPTY - kein Inhalt
 <!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 <!ENTITY % block_with_questionAndAnswer "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 
-<!ENTITY % inline "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | ref | url)*" >
+<!ENTITY % inline "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | latex | ref | url)*" >
 
 <!ENTITY % attrId     " id     ID    #IMPLIED" >
 <!ENTITY % attrLang   " lang   (de | en | fr | es) #IMPLIED" >
@@ -1233,7 +1240,7 @@ _img instcode.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten
+		| AGBretten		
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -2092,6 +2099,7 @@ _img instcode.png
 		| ATVfGH
 		| NLAGAmsterdam
 		| RG
+
 			) #IMPLIED
 	authority (
 		  other
@@ -2218,7 +2226,6 @@ _img instcode.png
 		| Bundesregierung
 		| IFSt
 		| Monopolkommission
-		| BundLaenderKommission
 			) #IMPLIED
 >
 
@@ -2717,7 +2724,7 @@ Erläuternde Texte zu der oder den Grafiken oder Bildunterschriften können durc
 
 _img figure.png
 -->
-<!ELEMENT figure (title?, file+, (p | list | block | newpage)*) >
+<!ELEMENT figure (title?, (file | latex)+, (p | list | block | newpage)*) >
 
 
 <!--@attr id Im Attribut <i>id</i> kann eine ID-Nummer für die jeweilige Grafik vergeben werden, u.a. damit auf diese als Verweisziel verlinkt werden kann.
@@ -2770,6 +2777,13 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 >
 
 
+<!--Element für das Einbinden von mathematischen Formeln im LaTeX Format. Block Formeln haben das figure Element als Elternelement. Inline Formeln stehen im normalen Textfluss. 
+
+_img latex.png
+-->
+<!ELEMENT latex (#PCDATA) >
+
+
 <!--Über das Element <i>list</i> werden Listen im Text strukturiert.
 
 Zwingend erforderlich sind ein oder mehrere Elemente <i>listitem</i> innerhalb von <i>list</i>, in denen die einzelnen Listenpunkte strukturiert werden.
@@ -2804,7 +2818,7 @@ Der Wert <i>alpha</i> löst eine alphabetische Nummerierung (a,b,c) aus, <i>numb
 -->
 <!ATTLIST list
 	%attrId;
-	type (alpha | number | dash | bullet | roman | other) #REQUIRED
+	type (alpha | number | dash | bullet | roman | none | other) #REQUIRED
 	formatting (bold | italic) #IMPLIED
 >
 

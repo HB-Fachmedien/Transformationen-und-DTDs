@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.24
+1.25
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -140,6 +140,13 @@ Version 1.24 (07.11.16): Änderungen (SG):&#x0013;
 							<li><a href="#lawname">lawname</a> und <a href="#lawyear">lawyear</a> werden optional</li>
 							<li><a href="#block">block</a> soll <a href="#questionAndAnswer">questionAndAnswer</a> zulassen</li>
 						</ul>
+Version 1.25 (12.12.16): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Behördenliste aktualisiert Element <a href="#inst">inst</a>, Attribute code</li>
+							<li>Neues Element <a href="#latex">latex</a> zur Aufnahme von LaTeX-Code</li>
+							<li>Element <a href="#list">list</a>, Attribut type: Wert "none" hinzugefügt</li>
+							<li>Neues Dokumentelement <a href="#kb">kb</a> für Kurzbeträge hinzugefügt</li>
+						</ul>
 
 
 <h2>Aufbau der DTD</h2>
@@ -188,7 +195,7 @@ EMPTY - kein Inhalt
 <!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | sidenote | questionAndAnswer | newpage)*" >
 <!ENTITY % block_with_questionAndAnswer "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 
-<!ENTITY % inline "(#PCDATA | b | i | u | sub | sup | span | br | footnote | newpage | file | ref | url)*" >
+<!ENTITY % inline "(#PCDATA | b | i | u | sub | sup | span | br | footnote | newpage | file | latex | ref | url)*" >
 
 <!ENTITY % attrId     " id       ID    #IMPLIED" >
 <!ENTITY % attrLang   " lang     (de | en | fr | es) #IMPLIED" >
@@ -206,7 +213,7 @@ EMPTY - kein Inhalt
 <!--Das Element <i>hbfmdoc</i> ist das root-Element für alle Arten von Dokumenten - dabei kann es sich sowohl um redaktionelle Beiträge (z.B. Aufsätze, bearbeitete Entscheidungen oder Nachrichten) handeln als auch um Volltext-Entscheidungen, Verwaltungsanweisungen, Gesetzestexte usw.
 _img hbfmdoc.png
 -->
-<!ELEMENT hbfmdoc (au | divah | divsu | divso | ed | ent | entk | entv | gh | gk | gtdraft | iv | toc | kk | nbb | nr | rez | sp | va | vadraft | vav) >
+<!ELEMENT hbfmdoc (au | divah | divsu | divso | ed | ent | entk | entv | gh | gk | gtdraft | iv | kb | toc | kk | nbb | nr | rez | sp | va | vadraft | vav) >
 
 
 <!--Das Element <i>au</i> ist das root-Element für Aufsätze
@@ -323,6 +330,15 @@ _img gtdraft.png
 
 <!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
 <!ATTLIST gtdraft   %rootAttributes; >
+
+
+<!--Das Element <i>kb</i> ist das root-Element für Kurzbeiträge
+_img kb.png
+-->
+<!ELEMENT kb   (metadata, body) >
+
+<!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
+<!ATTLIST kb   %rootAttributes; >
 
 
 <!--Das Element <i>iv</i> ist das root-Element für Interviews
@@ -785,7 +801,7 @@ _img inst.png
 
 
 <!--@attr type mandatory for Rechtsprechung and Verwaltungsanweisung: respective values 'court' or 'authority'; extendable value list for other institutions (Je nachdem, ob es sich bei <i>instcode</i> um eine Gerichtsinstanz oder eine Behörde handelt, wird hier "court" oder "authority" eingetragen.)
-@attr code Das Attribut <i>code</i> des Element <i>instcode</i> enthält den normalisierten Kurznamen des Gerichts oder der Behörde (verpflichtend für Rechtsprechungs-Dokumente und Verwaltungsanweisungen).
+@attr code Das Attribut <i>code</i> des Element <i>inst</i> enthält den normalisierten Kurznamen des Gerichts oder der Behörde (verpflichtend für Rechtsprechungs-Dokumente und Verwaltungsanweisungen).
 -->
 <!ATTLIST inst
 	type (court | authority | unknown) #REQUIRED
@@ -838,7 +854,7 @@ _img inst.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen
+		| OLGThueringen	
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -1154,7 +1170,7 @@ _img inst.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten
+		| AGBretten		
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1190,7 +1206,7 @@ _img inst.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim
+		| AGBadMergentheim		
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -2137,7 +2153,6 @@ _img inst.png
 		| Bundesregierung
 		| IFSt
 		| Monopolkommission
-		| BundLaenderKommission
 	) #REQUIRED
 >
 
@@ -2636,7 +2651,7 @@ Erläuternde Texte zu der oder den Grafiken oder Bildunterschriften können durc
 
 _img figure.png
 -->
-<!ELEMENT figure (title?, file+, (p | list | block | newpage)*) >
+<!ELEMENT figure (title?, (file | latex)+, (p | list | block | newpage)*) >
 
 
 <!--@attr id Im Attribut <i>id</i> kann eine ID-Nummer für die jeweilige Grafik vergeben werden, u.a. damit auf diese als Verweisziel verlinkt werden kann.
@@ -2689,6 +2704,13 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 >
 
 
+<!--Element für das Einbinden von mathematischen Formeln im LaTeX Format. Block Formeln haben das figure Element als Elternelement. Inline Formeln stehen im normalen Textfluss.
+
+_img latex.png
+-->
+<!ELEMENT latex (#PCDATA) >
+
+
 <!--Über das Element <i>list</i> werden Listen im Text strukturiert.
 
 Zwingend erforderlich sind ein oder mehrere Elemente <i>listitem</i> innerhalb von <i>list</i>, in denen die einzelnen Listenpunkte strukturiert werden.
@@ -2723,7 +2745,7 @@ Der Wert <i>alpha</i> löst eine alphabetische Nummerierung (a,b,c) aus, <i>numb
 -->
 <!ATTLIST list
 	%attrId;
-	type (alpha | number | dash | bullet | roman | other) #REQUIRED
+	type (alpha | number | dash | bullet | roman | none | other) #REQUIRED
 	formatting (bold | italic) #IMPLIED
 >
 
