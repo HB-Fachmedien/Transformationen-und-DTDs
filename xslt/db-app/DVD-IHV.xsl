@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0"
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="yes"/>
+    <xsl:strip-space elements="*"/>
     <xsl:template match="/">
         <html>
             <head>
@@ -194,15 +195,8 @@
                                         <div class="ihv_abstract"><xsl:value-of select="VORSPANN"/></div>
                                         <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                             <xsl:choose>
-                                                <xsl:when test="SEITEVON = SEITEBIS">
-                                                    <xsl:value-of select="SEITEVON"/>, DB
-                                                    <xsl:value-of select="$temp-sid"/>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <xsl:value-of select="SEITEVON"/> - 
-                                                    <xsl:value-of select="SEITEBIS"/>, DB
-                                                    <xsl:value-of select="$temp-sid"/>
-                                                </xsl:otherwise>
+                                                <xsl:when test="SEITEVON = SEITEBIS"><xsl:value-of select="SEITEVON"/>, DB<xsl:value-of select="$temp-sid"/></xsl:when>
+                                                <xsl:otherwise><xsl:value-of select="SEITEVON"/> - <xsl:value-of select="SEITEBIS"/>, DB<xsl:value-of select="$temp-sid"/></xsl:otherwise>
                                             </xsl:choose>
                                         </div>
                                     </a>
