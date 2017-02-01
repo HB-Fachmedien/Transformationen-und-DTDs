@@ -424,8 +424,13 @@
 									
 									<xsl:when test="$pub-abbr = 'DK'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										
-										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr">
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}" childOrder="BySequenceNr">
 											<xsl:variable name="dk-ressorts" >
 												<xsl:choose>
 													<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
@@ -462,7 +467,13 @@
 									<!-- KOR -->
 									<xsl:when test="$pub-abbr = 'KOR'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
@@ -486,7 +497,13 @@
 									
 									<xsl:when test="$pub-abbr = 'ZOE'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
@@ -513,7 +530,13 @@
 									
 									<xsl:when test="$pub-abbr = 'WUW'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
@@ -540,7 +563,13 @@
 									
 									<xsl:when test="$pub-abbr = 'DSB'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
@@ -567,7 +596,13 @@
 									
 									<xsl:when test="$pub-abbr = 'AR'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node title="Heft {descendant::pubedition}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
@@ -599,6 +634,7 @@
 											<xsl:choose>
 												<xsl:when test="$pub-abbr = 'CFL'">Heft CFL <xsl:value-of select="descendant::pubedition"/></xsl:when>
 												<xsl:when test="$pub-abbr = 'CFB'">Heft CFB <xsl:value-of select="descendant::pubedition"/></xsl:when>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
 												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 											</xsl:choose>
 										</xsl:variable>
@@ -666,7 +702,14 @@
 									<xsl:when test="descendant::pubtitle/text() = 'Der Betrieb'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 										
-										<node title="Heft {descendant::pubedition}"
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										
+										<node title="{$get-pubedition}"
 											childOrder="BySequenceNr">
 											
 											<!-- Hier jetzt Ressorts Unterscheidung -->
@@ -694,14 +737,19 @@
 														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
 													</xsl:choose>
 												</xsl:variable>
+												<xsl:variable name="leafseqnr">
+													<xsl:choose>
+														<xsl:when test="/kk and descendant::start_page[not(node())]">100</xsl:when>
+														<xsl:otherwise>
+															<xsl:value-of select="
+																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+																+
+																((number(descendant::article_order/text()) - 1) * 10)"/>
+														</xsl:otherwise>
+													</xsl:choose>
+												</xsl:variable>
 												<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
-													<leaf
-														sequenceNr="{
-														(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-														+
-														((number(descendant::article_order/text()) - 1) * 10)
-														}"
-													/>
+													<leaf sequenceNr="{$leafseqnr}"/>
 												</node>
 											</node> 
 										</node>
@@ -709,8 +757,13 @@
 									<xsl:otherwise>
 										<!-- Default Verarbeitung -->
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										
-										<node title="Heft {descendant::pubedition}"
+										<xsl:variable name="get-pubedition">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{$get-pubedition}"
 											childOrder="BySequenceNr">
 											
 											<!-- calculate sequenceNr from first page and article's position on page -->
