@@ -133,20 +133,13 @@
             <a target="_blank" href="https://recherche.aufsichtsrat.de/document.aspx?docid=XQ{$siriusID}">
                 <xsl:choose>
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
-                    <xsl:otherwise>
-                        <div class="ihv_headline titel">
-                            <xsl:value-of select="/*/metadata/title"/>
-                        </div>
-                    </xsl:otherwise>
+                    <xsl:otherwise><div class="ihv_headline titel"><xsl:value-of select="/*/metadata/title"/></div></xsl:otherwise>
                 </xsl:choose>
-                <xsl:for-each select="/*/metadata/authors/author">
-                    <div class="ihv_autor"  style="display: inline;">
-                        <xsl:if test="not(position()=1)">
-                            <xsl:text> / </xsl:text>
-                        </xsl:if>
-                        <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
-                    </div>
-                </xsl:for-each>
+                <div class="ihv_autor"  style="display: inline;">
+                    <xsl:for-each select="/*/metadata/authors/author">
+                        <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                    </xsl:for-each>
+                </div>
                 <xsl:if test="/*/metadata/summary">
                     <div class="ihv_abstract">
                         <xsl:value-of select="/*/metadata/summary"/>
@@ -155,15 +148,10 @@
                 <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                     <xsl:choose>
                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  
-                            <xsl:text>XQ</xsl:text>
-                            <xsl:value-of select="$siriusID"/>
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/>, <xsl:text>XQ</xsl:text><xsl:value-of select="$siriusID"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; 
-                            <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  
-                            <xsl:text>XQ</xsl:text>
-                            <xsl:value-of select="$siriusID"/>
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:text>XQ</xsl:text><xsl:value-of select="$siriusID"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </div>
@@ -181,19 +169,14 @@
                 <xsl:choose>
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
                     <xsl:otherwise>
-                        <div class="ihv_headline titel">
-                            <xsl:value-of select="/*/metadata/title"/>
-                        </div>
+                        <div class="ihv_headline titel"><xsl:value-of select="/*/metadata/title"/></div>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:for-each select="/*/metadata/authors/author">
-                    <div class="ihv_autor"  style="display: inline;">
-                        <xsl:if test="not(position()=1)">
-                            <xsl:text> / </xsl:text>
-                        </xsl:if>
-                        <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
-                    </div>
-                </xsl:for-each>
+                <div class="ihv_autor"  style="display: inline;">
+                    <xsl:for-each select="/*/metadata/authors/author">
+                            <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>    
+                    </xsl:for-each>
+                </div>
                 <xsl:if test="/*/metadata/summary">
                     <div class="ihv_abstract">
                         <xsl:value-of select="/*/metadata/summary"/>
@@ -201,16 +184,9 @@
                 </xsl:if>
                 <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                     <xsl:choose>
-                        <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  
-                            <xsl:text>AR</xsl:text>
-                            <xsl:value-of select="$siriusID"/>
-                        </xsl:when>
+                        <xsl:when test="/*/metadata/pub/pages[start_page = last_page]"><xsl:value-of select="/*/metadata/pub/pages/start_page"/>, <xsl:text>AR</xsl:text><xsl:value-of select="$siriusID"/></xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; 
-                            <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  
-                            <xsl:text>AR</xsl:text>
-                            <xsl:value-of select="$siriusID"/>
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:text>AR</xsl:text><xsl:value-of select="$siriusID"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </div>
