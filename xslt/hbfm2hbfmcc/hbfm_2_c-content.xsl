@@ -451,14 +451,19 @@
 														<xsl:when test="../name()='nr'">Nachrichten#400</xsl:when>
 													</xsl:choose>
 												</xsl:variable>
+												<xsl:variable name="leafseqnr">
+													<xsl:choose>
+														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+														<xsl:otherwise>
+															<xsl:value-of select="
+																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+																+
+																((number(descendant::article_order/text()) - 1) * 10)"/>
+														</xsl:otherwise>
+													</xsl:choose>
+												</xsl:variable>
 												<node title="{tokenize($dk-dokt, '#')[1]}" sequenceNr="{tokenize($dk-dokt, '#')[2]}" childOrder="BySequenceNr">
-													<leaf
-														sequenceNr="{
-														(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-														+
-														((number(descendant::article_order/text()) - 1) * 10)
-														}"
-													/>
+													<leaf sequenceNr="{$leafseqnr}"/>
 												</node>
 											</node>
 										</node>
@@ -482,15 +487,19 @@
 													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
-											
+											<xsl:variable name="leafseqnr">
+												<xsl:choose>
+													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:otherwise>
+														<xsl:value-of select="
+															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															+
+															((number(descendant::article_order/text()) - 1) * 10)"/>
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
 											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf
-													sequenceNr="{
-													(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-													+
-													((number(descendant::article_order/text()) - 1) * 10)
-													}"
-												/>
+												<leaf sequenceNr="{$leafseqnr}"/>
 											</node>
 										</node>
 									</xsl:when>
@@ -515,15 +524,19 @@
 													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
-											
+											<xsl:variable name="leafseqnr">
+												<xsl:choose>
+													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:otherwise>
+														<xsl:value-of select="
+															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															+
+															((number(descendant::article_order/text()) - 1) * 10)"/>
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
 											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf
-													sequenceNr="{
-													(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-													+
-													((number(descendant::article_order/text()) - 1) * 10)
-													}"
-												/>
+												<leaf sequenceNr="{$leafseqnr}"/>
 											</node>
 										</node>
 									</xsl:when>
@@ -548,15 +561,19 @@
 													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
-											
+											<xsl:variable name="leafseqnr">
+												<xsl:choose>
+													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:otherwise>
+														<xsl:value-of select="
+															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															+
+															((number(descendant::article_order/text()) - 1) * 10)"/>
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
 											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf
-													sequenceNr="{
-													(number(replace(descendant::start_page[1]/text(), '[^\d]', '')) * 100)
-													+
-													((number(descendant::article_order/text()) - 1) * 10)
-													}"
-												/>
+												<leaf sequenceNr="{$leafseqnr}"/>
 											</node>
 										</node>
 									</xsl:when>
@@ -581,15 +598,19 @@
 													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
-											
+											<xsl:variable name="leafseqnr">
+												<xsl:choose>
+													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:otherwise>
+														<xsl:value-of select="
+															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															+
+															((number(descendant::article_order/text()) - 1) * 10)"/>
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
 											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf
-													sequenceNr="{
-													(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-													+
-													((number(descendant::article_order/text()) - 1) * 10)
-													}"
-												/>
+												<leaf sequenceNr="{$leafseqnr}"/>
 											</node>
 										</node>
 									</xsl:when>
@@ -614,15 +635,19 @@
 													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
-											
+											<xsl:variable name="leafseqnr">
+												<xsl:choose>
+													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:otherwise>
+														<xsl:value-of select="
+															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															+
+															((number(descendant::article_order/text()) - 1) * 10)"/>
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
 											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf
-													sequenceNr="{
-													(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-													+
-													((number(descendant::article_order/text()) - 1) * 10)
-													}"
-												/>
+												<leaf sequenceNr="{$leafseqnr}"/>
 											</node>
 										</node>
 									</xsl:when>
@@ -685,14 +710,19 @@
 														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
 													</xsl:choose>
 												</xsl:variable>
+												<xsl:variable name="leafseqnr">
+													<xsl:choose>
+														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+														<xsl:otherwise>
+															<xsl:value-of select="
+																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+																+
+																((number(descendant::article_order/text()) - 1) * 10)"/>
+														</xsl:otherwise>
+													</xsl:choose>
+												</xsl:variable>
 												<node title="{tokenize($docType-SeqN, '#')[1]}" sequenceNr="{tokenize($docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-													<leaf
-														sequenceNr="{
-														(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
-														+
-														((number(descendant::article_order/text()) - 1) * 10)
-														}"
-													/>
+													<leaf sequenceNr="{$leafseqnr}"/>
 												</node>
 											</node>
 										</node>
@@ -739,7 +769,7 @@
 												</xsl:variable>
 												<xsl:variable name="leafseqnr">
 													<xsl:choose>
-														<xsl:when test="/kk and descendant::start_page[not(node())]">100</xsl:when>
+														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 														<xsl:otherwise>
 															<xsl:value-of select="
 																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
