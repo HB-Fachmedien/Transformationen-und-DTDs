@@ -107,6 +107,7 @@
         <!-- Wenn das last-page Element gefüllt ist, dann muss das start_page Element ebenfalls einen Zahlenwert haben, sonst schlägt die Transformation fehl -->
         <rule context="last_page[string(number(text())) != 'NaN']">
             <assert test="number(./../start_page/text()) = ./../start_page/text()">Wenn das last-page Element gefüllt ist, dann muss das start_page Element ebenfalls einen Inhalt haben!</assert>
+            <assert test="number(.) - number(./../start_page/text()) &gt;= 0">Die last_page Seitenzahl [<value-of select="number(.)"/>] muss größer oder gleich der start_page Seitenzahl [<value-of select="number(./../start_page/text())"/>] sein.</assert>
         </rule>
     </pattern>
     <pattern>
