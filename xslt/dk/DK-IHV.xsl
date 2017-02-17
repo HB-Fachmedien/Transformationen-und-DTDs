@@ -91,8 +91,10 @@
                                                                     </xsl:when>
                                                                     <!-- Ansonsten die Gerichte/Behörden und Urteilsdaten -->
                                                                     <xsl:otherwise>
-                                                                        <xsl:value-of select="concat(*/metadata/instdoc/inst, ', ', */metadata/instdoc/instdoctype, ' vom '
+                                                                        <xsl:if test="*/metadata/instdoc">
+                                                                            <xsl:value-of select="concat(*/metadata/instdoc/inst, ', ', */metadata/instdoc/instdoctype, ' vom '
                                                                             , format-date(*/metadata/instdoc/instdocdate, '[D].[M].[Y]'), ' - ', */metadata/instdoc/instdocnrs/instdocnr[1])"/>
+                                                                        </xsl:if>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
                                                             </div>
