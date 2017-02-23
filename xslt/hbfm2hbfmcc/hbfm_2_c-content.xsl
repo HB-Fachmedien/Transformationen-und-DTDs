@@ -373,7 +373,23 @@
 									<!-- Bewertungspraktiker -->
 									<xsl:when test="$pub-abbr = 'BWP'">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<leaf sequenceNr="0"/>
+										<xsl:choose>
+											<!-- SM: BWP wird seit 2017 auch als XML produziert, daher hier Differenzierung: -->
+											<xsl:when test="number(substring(pub/date/text(), 1, 4)) &gt; 2016">
+												<xsl:variable name="get-pubedition">
+													<xsl:choose>
+														<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+														<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+													</xsl:choose>
+												</xsl:variable>
+												<node title="{$get-pubedition}" childOrder="BySequenceNr">
+													<leaf sequenceNr="{(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100) + ((number(descendant::article_order/text()) - 1) * 10)}"/>
+												</node>
+											</xsl:when>
+											<xsl:otherwise>
+												<leaf sequenceNr="0"/>		
+											</xsl:otherwise>
+										</xsl:choose>
 									</xsl:when>
 									
 									<!-- IFST SCHRIFT -->
@@ -449,6 +465,7 @@
 														<xsl:when test="../name()='entk'">Entscheidungen#200</xsl:when>
 														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
 														<xsl:when test="../name()='nr'">Nachrichten#400</xsl:when>
+														<xsl:when test="../name()='kk'">Kompakt#500</xsl:when>
 													</xsl:choose>
 												</xsl:variable>
 												<xsl:variable name="leafseqnr">
