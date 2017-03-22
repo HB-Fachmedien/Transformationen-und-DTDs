@@ -20,7 +20,7 @@
 	<xsl:apply-templates/>
 </xsl:template>
 
-<xsl:template match="au | divah | divso | divsu | ed | ent | entk | entv | gh | gk | gtdraft | toc | kk | nbb | nr | sp | va | vadraft | vav | iv | rez">
+<xsl:template match="au | divah | divso | divsu | ed | ent | entk | entv | gh | gk | gtdraft | toc | kk | nbb | nr | sp | va | vadraft | vav | iv | rez | kb">
 	<rodoc>
 		<xsl:apply-templates/>
 	</rodoc>
@@ -322,7 +322,7 @@
 									<xsl:when test="$pub-abbr = 'IFST'">
 										<xsl:text>ifst-Schriften</xsl:text>
 									</xsl:when>
-									<xsl:when test="$pub-abbr = 'DB'">
+									<xsl:when test="$pub-abbr = ('DB','DBL')">
 										<xsl:text>Der Betrieb</xsl:text>
 									</xsl:when>
 									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB') or ($pub-abbr = 'FB')">
@@ -383,7 +383,7 @@
 													</xsl:choose>
 												</xsl:variable>
 												<node title="{$get-pubedition}" childOrder="BySequenceNr">
-													<leaf sequenceNr="{(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100) + ((number(descendant::article_order/text()) - 1) * 10)}"/>
+													<leaf sequenceNr="{(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100) + ((number(descendant::article_order/text()) - 1) * 10)}"/>
 												</node>
 											</xsl:when>
 											<xsl:otherwise>
@@ -401,7 +401,7 @@
 											<!-- calculate sequenceNr from first page and article's position on page -->
 											<leaf
 												sequenceNr="{
-												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+												(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 												+
 												((number(descendant::article_order/text()) - 1) * 10)
 												}"
@@ -473,7 +473,7 @@
 														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 														<xsl:otherwise>
 															<xsl:value-of select="
-																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 																+
 																((number(descendant::article_order/text()) - 1) * 10)"/>
 														</xsl:otherwise>
@@ -509,7 +509,7 @@
 													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
-															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 															+
 															((number(descendant::article_order/text()) - 1) * 10)"/>
 													</xsl:otherwise>
@@ -546,7 +546,7 @@
 													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
-															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 															+
 															((number(descendant::article_order/text()) - 1) * 10)"/>
 													</xsl:otherwise>
@@ -583,7 +583,7 @@
 													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
-															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 															+
 															((number(descendant::article_order/text()) - 1) * 10)"/>
 													</xsl:otherwise>
@@ -620,7 +620,7 @@
 													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
-															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 															+
 															((number(descendant::article_order/text()) - 1) * 10)"/>
 													</xsl:otherwise>
@@ -657,7 +657,7 @@
 													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
-															(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 															+
 															((number(descendant::article_order/text()) - 1) * 10)"/>
 													</xsl:otherwise>
@@ -732,7 +732,7 @@
 														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 														<xsl:otherwise>
 															<xsl:value-of select="
-																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 																+
 																((number(descendant::article_order/text()) - 1) * 10)"/>
 														</xsl:otherwise>
@@ -779,6 +779,7 @@
 														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
 														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
 														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+														<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
 														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
 														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
 														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
@@ -789,7 +790,7 @@
 														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 														<xsl:otherwise>
 															<xsl:value-of select="
-																(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 																+
 																((number(descendant::article_order/text()) - 1) * 10)"/>
 														</xsl:otherwise>
@@ -816,7 +817,7 @@
 											<!-- calculate sequenceNr from first page and article's position on page -->
 											<leaf
 												sequenceNr="{
-												(number(replace(descendant::start_page/text(), '[^\d]', '')) * 100)
+												(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 												+
 												((number(descendant::article_order/text()) - 1) * 10)
 												}"
