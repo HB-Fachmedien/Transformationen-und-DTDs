@@ -51,7 +51,6 @@
     </xsl:function>
     
     
-    <!-- zweiter Versuch über die Eltern: Klappt nicht, da nachfolgende Geschwister doppelt verarbeitet werden -->
     <xsl:variable name="alle-rz" select="(//span[@class='randziffer'])"/>
     <xsl:template match="*[span[@class='randziffer']]" priority="100">
         
