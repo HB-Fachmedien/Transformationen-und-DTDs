@@ -382,7 +382,7 @@
 														<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 													</xsl:choose>
 												</xsl:variable>
-												<node title="{$get-pubedition}" childOrder="BySequenceNr">
+												<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 													<leaf sequenceNr="{(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100) + ((number(descendant::article_order/text()) - 1) * 10)}"/>
 												</node>
 											</xsl:when>
