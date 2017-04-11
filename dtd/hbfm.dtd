@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.25
+1.26
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -146,6 +146,11 @@ Version 1.25 (12.12.16): Änderungen (SG):&#x0013;
 							<li>Neues Element <a href="#latex">latex</a> zur Aufnahme von LaTeX-Code</li>
 							<li>Element <a href="#list">list</a>, Attribut type: Wert "none" hinzugefügt</li>
 							<li>Neues Dokumentelement <a href="#kb">kb</a> für Kurzbeträge hinzugefügt</li>
+							</ul>
+Version 1.26 (07.04.17): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Neues Attribut <i>tmid</i> für Element <a href="#keyword">keyword</a> hinzugefügt</li>
+							<li>Element <a href="#file">file</a>, Attribut type: Werte "portrait", "signature", "teaserpic" und "download" eingegerenzt</li>
 						</ul>
 
 
@@ -736,8 +741,13 @@ _img keywords.png
 <!--Das Element <i>keyword</i> beinhaltet redaktionelles Schlagwort, das Unterschlagwörter haben kann.
 _img keyword.png-->
 <!ELEMENT keyword      (#PCDATA | keyword)* >
+
+<!--@attr id eindeutige ID des Schlagworts
+@attr tmid Topic Map ID: wird zur eindeutigen Referenzierung von Schlagwörtern durch das neue Verschlagwortungs-Tool zugeteilt
+-->
 <!ATTLIST keyword
 	id CDATA #IMPLIED
+	tmid  CDATA #IMPLIED
 >
 
 
@@ -854,7 +864,7 @@ _img inst.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen	
+		| OLGThueringen
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -1170,7 +1180,7 @@ _img inst.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten		
+		| AGBretten
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1206,7 +1216,7 @@ _img inst.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim		
+		| AGBadMergentheim
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -2696,7 +2706,7 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 <!ATTLIST file
 	src    CDATA #REQUIRED
 	title  CDATA #IMPLIED
-	type   CDATA #IMPLIED
+	type   (portrait | signature | teaserpic | download) #IMPLIED
 	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx) #IMPLIED
 	alt    CDATA #IMPLIED
 	height CDATA #IMPLIED

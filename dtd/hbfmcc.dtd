@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.25
+1.26
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -129,6 +129,12 @@ Version 1.25 (12.12.16): Änderungen (SG):&#x0013;
 							<li>Element <a href="#list">list</a>, Attribut type: Wert "none" hinzugefügt</li>
 							<li>Neues Dokumentelement <a href="#kb">kb</a> für Kurzbeträge hinzugefügt</li>
 						</ul>
+Version 1.26 (07.04.17): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Neues Element <a href="#toc_title">toc_title</a> hinzugefügt</li>
+							<li>Element <a href="#file">file</a>, Attribut type: Werte "portrait", "signature", "teaserpic" und "download" eingegerenzt</li>
+							<li>Neues Element <a href="#docsetid">docsetid</a> hinzugefügt</li>
+						</ul>
 
 
 
@@ -243,14 +249,14 @@ _img metadata.png
                     rawid?,
                     extid?,
                     maindate,
-                    title, subtitle?, coll_title?,
+                    title, subtitle?, coll_title?, toc_title?,
                     author_info?, authors?,
                     summary?, leitsaetze?, keywords*,
                     ressort?, rubriken?,
                     area?,
                     date, pub,
                     type?,
-                    origfile?,
+                    origfile?, docsetid?,
                     law*,
                     (instdoc, preinstdocs?)?,
                     law_refs?,
@@ -498,11 +504,24 @@ _img origfile.png
 	display (true | false) "false"
 >
 
+<!--Uniquely identifies a document set, like a single law or regulation. May only contain characters a..z, 0..9 and _ (case-insensitive).
+
+_img docsetid.png
+-->
+<!ELEMENT docsetid   (#PCDATA) >
+
+
 
 <!--Das Element <i>coll_title</i>: collection title (optional for multiple articles published as a "Dossier")
 _img coll_title.png
 -->
 <!ELEMENT coll_title   %inline; >
+
+
+<!--If this element occurs, this title will be listed in Bibliothek instead of the value of <i>title</i>, else the value of <i>title</i> will be used as
+_img toc_title.png
+-->
+<!ELEMENT toc_title   %inline; >
 
 
 <!--Das Element <i>area</i> beinhaltet in einem oder mehreren Kind-Elementen <i>code</i> das oder die Rechtsgebiet(e), dem/denen das Dokument zugeordnet werden kann (bisher nur für Zeitschriften, Nachschlagewerke und Gesetzestexte verpflichtend). Ist das Element nicht vorhanden, werden bei einigen der übrigen Dokumenttypen (z.B. Volltext-Entscheidungen) automatisch alle Rechtsgebiete zugeordnet.
@@ -1240,7 +1259,7 @@ _img instcode.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten		
+		| AGBretten
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -2769,7 +2788,7 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 <!ATTLIST file
 	src    CDATA #REQUIRED
 	title  CDATA #IMPLIED
-	type   CDATA #IMPLIED
+	type   (portrait | signature | teaserpic | download) #IMPLIED
 	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx) #IMPLIED
 	alt    CDATA #IMPLIED
 	height CDATA #IMPLIED
@@ -2777,7 +2796,7 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 >
 
 
-<!--Element für das Einbinden von mathematischen Formeln im LaTeX Format. Block Formeln haben das figure Element als Elternelement. Inline Formeln stehen im normalen Textfluss. 
+<!--Element für das Einbinden von mathematischen Formeln im LaTeX Format. Block Formeln haben das figure Element als Elternelement. Inline Formeln stehen im normalen Textfluss.
 
 _img latex.png
 -->
