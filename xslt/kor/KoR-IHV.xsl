@@ -42,7 +42,7 @@
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von KoR? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der  
                         
-                        <a href="https://recherche.kor-ifrs.de/Browse.aspx?level=roex%3abron.Zeitschriften.0c0f5d6e415044179263a16c0d68e83e&amp;title=KoR" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                        <a href="https://kor-ifrs.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.0c0f5d6e415044179263a16c0d68e83e&amp;title=KoR" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
                         <div class="content-list inhaltsverzeichnis">
@@ -133,7 +133,7 @@
                     </xsl:for-each>
                 </div>
                 <!-- verlinkter Artikel -->
-                <a href="https://recherche.kor-ifrs.de/document.aspx?docid={$dokid}" target="_blank">
+                <a href="https://kor-ifrs.owlit.de/document.aspx?docid={$dokid}" target="_blank">
                     <div class="ihv_headline titel">
                         <xsl:value-of select="$dokumentknoten/metadata/title"/>
                         <!-- Autoren- bzw. Behördenauszeichnung -->

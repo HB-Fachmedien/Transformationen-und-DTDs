@@ -46,7 +46,7 @@
                 <div class="content-wrapper">
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von Corporate Finance? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der 
-                        <a href="https://recherche.cf-fachportal.de/Browse.aspx?level=roex%3abron.Zeitschriften.90774213900f4dc48b9e933031aa0f67&amp;title=Corporate%2bFinance" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                        <a href="https://cf-fachportal.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.90774213900f4dc48b9e933031aa0f67&amp;title=Corporate%2bFinance" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
                         <div class="content-list inhaltsverzeichnis">
@@ -70,7 +70,7 @@
                                         </xsl:choose>
                                         <div class="ihv_level3">
                                             <div class="ihv_level4">
-                                                <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$editorial-oder-gastkommentar/@docid}" target="_blank">
+                                                <a href="https://cf-fachportal.owlit.de/document.aspx?docid={$editorial-oder-gastkommentar/@docid}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                         <xsl:value-of select="$editorial-oder-gastkommentar/metadata/title"/>
                                                 </div>
@@ -119,7 +119,7 @@
                                                         </div>
                                                         
                                                         <!-- verlinkter Artikel -->
-                                                        <a href="https://recherche.cf-fachportal.de/document.aspx?docid={$dokid}" target="_blank">                                                        
+                                                        <a href="https://cf-fachportal.owlit.de/document.aspx?docid={$dokid}" target="_blank">                                                        
                                                         <div class="ihv_headline titel"><xsl:value-of select="*/metadata/title"/></div>
                                                         
                                                         <!-- Autoren-->

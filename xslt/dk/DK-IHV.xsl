@@ -15,7 +15,7 @@
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von Der Konzern? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der 
                         
-                        <a href="https://recherche.der-konzern.de/Browse.aspx?level=roex%3abron.Zeitschriften.5812b0ada8c9454182ed43bf03f938ef&amp;title=Der+Konzern&amp;trailpos=2" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                        <a href="https://der-konzern.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.5812b0ada8c9454182ed43bf03f938ef&amp;title=Der+Konzern&amp;trailpos=2" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
                         <div class="content-list inhaltsverzeichnis">
@@ -67,7 +67,7 @@
                                                     <xsl:variable name="dokid" select="/*/@docid"/>
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
-                                                            <a href="https://recherche.der-konzern.de/document.aspx?docid={$dokid}" target="_blank">
+                                                            <a href="https://der-konzern.owlit.de/document.aspx?docid={$dokid}" target="_blank">
                                                             <!-- Rubriken: -->
                                                             <div class="ihv_rubriken">
                                                                 <xsl:for-each select="*/metadata/rubriken/rubrik">

@@ -45,7 +45,7 @@
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von Der Aufsichtsrat? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der 
                         
-                        <a href="https://recherche.aufsichtsrat.de/Browse.aspx?level=roex%3abron.Zeitschriften.166da8952f2d4dd69db07d45271dd3df&amp;title=Aufsichtsrat" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                        <a href="https://aufsichtsrat.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.166da8952f2d4dd69db07d45271dd3df&amp;title=Aufsichtsrat" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
                         <div class="content-list inhaltsverzeichnis">
@@ -130,7 +130,7 @@
             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-            <a target="_blank" href="https://recherche.aufsichtsrat.de/document.aspx?docid=XQ{$siriusID}">
+            <a target="_blank" href="https://aufsichtsrat.owlit.de/document.aspx?docid=XQ{$siriusID}">
                 <xsl:choose>
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
                     <xsl:otherwise><div class="ihv_headline titel"><xsl:value-of select="/*/metadata/title"/></div></xsl:otherwise>
@@ -165,7 +165,7 @@
             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-            <a target="_blank" href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+            <a target="_blank" href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                 <xsl:choose>
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
                     <xsl:otherwise>

@@ -39,7 +39,7 @@
                         Datenschutz-Berater? Die Übersicht aller in der Datenbank verfügbaren
                         Ausgaben finden Sie in der 
                         
-                        <a href="https://recherche.datenschutz-berater.de/Browse.aspx?level=roex%3abron.Zeitschriften.d4d739c3943348e7b3da8a2bc3907319&amp;title=Datenschutz-Berater" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                        <a href="https://datenschutz-berater.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.d4d739c3943348e7b3da8a2bc3907319&amp;title=Datenschutz-Berater" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <!-- Linke Spalte -->
                     <section class="left" id="content" style="width:630px">
@@ -100,7 +100,7 @@
                                                         <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                         <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
                                                         
-                                                        <a href="https://recherche.datenschutz-berater.de/document.aspx?docid=DSB{$siriusID}" target="_blank">
+                                                        <a href="https://datenschutz-berater.owlit.de/document.aspx?docid=DSB{$siriusID}" target="_blank">
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of select="/*/metadata/title"/>
                                                             </div>

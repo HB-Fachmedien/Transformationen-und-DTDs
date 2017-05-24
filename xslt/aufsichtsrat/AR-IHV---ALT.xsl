@@ -43,7 +43,7 @@
                 <div class="content-wrapper">
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von Der Aufsichtsrat? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der 
-                        <a href="https://recherche.aufsichtsrat.de/Browse.aspx?level=roex%3abron.Zeitschriften.166da8952f2d4dd69db07d45271dd3df&amp;title=Aufsichtsrat" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                        <a href="https://aufsichtsrat.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.166da8952f2d4dd69db07d45271dd3df&amp;title=Aufsichtsrat" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <!-- Linke Spalte -->
                     <section class="left" id="content" style="width:630px">
@@ -80,12 +80,12 @@
                                                         <!-- GASTKOMMENTAR -->
                                                         <xsl:if test="gk">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_autor">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:for-each select="*/metadata/authors/author">
                                                                         <xsl:if test="not(position()=1)">
                                                                             <xsl:text> / </xsl:text>
@@ -95,18 +95,18 @@
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                                 </a>
                                                             </p>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of
                                                     select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
@@ -130,12 +130,12 @@
                                                         <!-- BEITRÄGE -->
                                                         <xsl:if test="au[not(/*/metadata/ressort='Das aktuelle Stichwort')]">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_autor">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:for-each select="*/metadata/authors/author">
                                                                         <xsl:if test="not(position()=1)">
                                                                             <xsl:text> / </xsl:text>
@@ -145,17 +145,17 @@
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                                 </a>
                                                             </p>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
@@ -179,12 +179,12 @@
                                                         <!-- INTERVIEW -->
                                                         <xsl:if test="iv">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_autor">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                 Interview mit 
                                                                     <xsl:value-of select="/*/metadata/authors/author/prefix"/>
                                                                     <xsl:text></xsl:text>
@@ -194,17 +194,17 @@
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/summary"/>
                                                                 </a>
                                                             </p>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
@@ -228,17 +228,17 @@
                                                         <!-- DAS AKTUELLE STICHWORT -->
                                                         <xsl:if test="$ressortbez='Das aktuelle Stichwort'">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
@@ -260,17 +260,17 @@
                                                         <!-- RECHTSPRECHUNG -->
                                                         <xsl:if test="ent">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
@@ -292,17 +292,17 @@
                                                         <!-- RECHTSPRECHUNG -->
                                                         <xsl:if test="rez[not(metadata/title/text() = 'Aktuelle Fachbeiträge')]">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
@@ -324,17 +324,17 @@
                                                         <!-- RECHTSPRECHUNG -->
                                                         <xsl:if test="rez[metadata/title/text() = 'Aktuelle Fachbeiträge']">
                                                             <div class="ihv_headline titel">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </a>
                                                             </div>
                                                             <div class="ihv_seite">
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                                                                 </a>
                                                             </div>
                                                             <p>
-                                                                <a href="https://recherche.aufsichtsrat.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
+                                                                <a href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">AR<xsl:value-of select="$siriusID"/></a>
                                                             </p>
                                                         </xsl:if>
                                                     </xsl:for-each>
