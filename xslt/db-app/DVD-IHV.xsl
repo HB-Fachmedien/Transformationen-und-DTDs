@@ -178,7 +178,7 @@
                                     <div class="ihv_rubriken">
                                         <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
                                     </div>
-                                    <a href="https://recherche.der-betrieb.de/document.aspx?docid=DB{$temp-sid}">
+                                    <a href="https://der-betrieb.owlit.de/document.aspx?docid=DB{$temp-sid}">
                                         <div class="ihv_headline titel">
                                             <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
                                         </div>
