@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.26
+1.27
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -134,6 +134,10 @@ Version 1.26 (07.04.17): Änderungen (SG):&#x0013;
 							<li>Neues Element <a href="#toc_title">toc_title</a> hinzugefügt</li>
 							<li>Element <a href="#file">file</a>, Attribut type: Werte "portrait", "signature", "teaserpic" und "download" eingegerenzt</li>
 							<li>Neues Element <a href="#docsetid">docsetid</a> hinzugefügt</li>
+						</ul>
+Version 1.27 (26.05.17): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Neuer Wert für <a href="#inst">inst/@authority</a> hinzugefügt: "BA"</li>
 						</ul>
 
 
@@ -2127,6 +2131,7 @@ _img instcode.png
 		| RatderEuropaeischenUnion
 		| DeutscherBundestag
 		| DeutscherBundesrat
+		| BA
 		| BMF
 		| FinMinDerLaender
 		| FinMinDerNeuenBundeslaender
