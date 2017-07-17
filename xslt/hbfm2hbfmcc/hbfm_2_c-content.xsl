@@ -364,9 +364,37 @@
 									<!-- Wenn es sich um eine Heftbeilage handelt, dann ist das pub_suppl Element gefüllt und wird gesondert behandelt: -->
 									<xsl:when test="number($beilagennummer) > 0">
 										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<node childOrder="ByTitleAlphanumeric">
+											<node childOrder="BySequenceNr" expanded="true">
 											<xsl:attribute name="title">Beilage <xsl:value-of select="$beilagennummer"/> (zu Heft <xsl:value-of select="descendant::pub/pubedition"/>)</xsl:attribute>
-											<leaf sequenceNr="0"/>
+											
+												<xsl:variable name="docTypeAndSeqN">
+													<xsl:choose>
+														<xsl:when test="../name()='gh'">Ganzes Heft#50</xsl:when>
+														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
+														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+														<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
+														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
+													</xsl:choose>
+												</xsl:variable>
+												
+											<!-- Gesamtbeilagen werden auch produziert, so dass es zwei Dokumente mit Start Seitenzahl 1 gibt. Für diesem Fall wird bei der Sequenznummer noch die letzte Seite mitberechnet -->
+											<xsl:variable name="var_last_page">
+												<xsl:choose>
+													<xsl:when test="descendant::pages/last_page">
+														<xsl:value-of select="descendant::pages/last_page/text()"/>
+													</xsl:when>
+													<xsl:otherwise>0</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
+											<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
+												<leaf sequenceNr="{(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100) - $var_last_page + ((number(descendant::article_order/text()) - 1) * 10)}"/>
+											</node>
 										</node>
 									</xsl:when>
 									
