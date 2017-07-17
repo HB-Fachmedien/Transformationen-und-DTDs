@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
-
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/work/verschlagwortung/2016/?recurse=yes;select=*.xml')"/>
+    
+    <xsl:strip-space elements="*"/>
+    <xsl:preserve-space elements="seite-gericht"/>
+    
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempDB/2017/?recurse=yes;select=*.xml')"/>
     <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
     
     
     <!-- hilfreiche XPATH Ausdrücke
     
+    /* hier alle zu verarbeitenden Gerichte: */
     /*[not(name()=('kk','entk'))]/metadata/instdoc/inst[not(starts-with(ancestor::metadata/pub/pages/start_page/text(),'M') or starts-with(ancestor::metadata/pub/pages/start_page/text(),'S'))]
     
     
+    /* findet im Ergbnis Dokument alle Zeilen, die dem entsprechendem Gericht zuzuordnen sind: */    
+    /*/h2[text()='Oberste Finanzbehörden der Länder']/following-sibling::zeile-gericht[count(.|/*/h2[text()='Oberste Finanzbehörden der Länder']/following-sibling::h2[1]/preceding-sibling::zeile-gericht)=count(/*/h2[text()='Oberste Finanzbehörden der Länder']/following-sibling::h2[1]/preceding-sibling::zeile-gericht)]
     
     -->
     
@@ -35,7 +41,7 @@
         <entscheidungsregister>
             
             <!-- SR -->
-            <!--<xsl:call-template name="entscheidungsdaten">
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'EuGH'"/>
                 <xsl:with-param name="ressort" select="'all'"/>
             </xsl:call-template>
@@ -43,16 +49,28 @@
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BVerfG'"/>
                 <xsl:with-param name="ressort" select="'all'"/>
-            </xsl:call-template>-->
+            </xsl:call-template>
             
             <!-- FG gibt es bisher nicht -->
             
-            <!--<xsl:call-template name="entscheidungsdaten">
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BMF'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'Oberste Finanzbehörden der Länder'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'SenFin. Berlin'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. Niedersachsen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. NRW'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
@@ -64,7 +82,11 @@
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
-                <xsl:with-param name="gerichtsBezeichnung" select="'SenFin. Berlin'"/>
+                <xsl:with-param name="gerichtsBezeichnung" select="'BayLfSt'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LSF Sachsen'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
@@ -84,16 +106,17 @@
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
-                <xsl:with-param name="gerichtsBezeichnung" select="'Oberste Finanzbehörden der Länder'"/>
+                <xsl:with-param name="gerichtsBezeichnung" select="'Rheinland-Pfälzisches Landesamt für Steuern'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
-                <xsl:with-param name="gerichtsBezeichnung" select="'BayLfSt'"/>
+                <xsl:with-param name="gerichtsBezeichnung" select="'LfSt Rheinland-Pfalz'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
-            </xsl:call-template>-->
+            </xsl:call-template>
+            
             
             <!-- WR -->
-            <!--<xsl:call-template name="entscheidungsdaten">
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BGH'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
@@ -106,6 +129,14 @@
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Celle'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Dresden'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG Düsseldorf'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
@@ -114,13 +145,43 @@
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Hamburg'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG Hamm'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Karlsruhe'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG München'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Rostock'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Stuttgart'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG Thüringen'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
-            </xsl:call-template>-->
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LSG Rheinland-Pfalz'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'SchlHOLG'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            
+            
             
             <!-- AR -->
             <xsl:call-template name="entscheidungsdaten">
@@ -167,6 +228,10 @@
                 <xsl:with-param name="gerichtsBezeichnung" select="'LSG Hessen'"/>
                 <xsl:with-param name="ressort" select="'ar'"/>
             </xsl:call-template>
+            
+            
+            <!-- Register für Der Konzern: -->
+            
         </entscheidungsregister>
     </xsl:template>
     
@@ -233,10 +298,7 @@
                             <break>***</break>
                             <title><xsl:value-of select="$rubik-gekuerzt"/><xsl:text>, </xsl:text><xsl:value-of select="metadata/title"/></title>
                         </xsl:if>-->
-                        <seite-gericht>
-                            <xsl:comment>Tabulator</xsl:comment>
-                            <xsl:value-of select="metadata/pub/pages/start_page"/>
-                        </seite-gericht>
+                        <seite-gericht><xsl:text>&#x9;</xsl:text><xsl:value-of select="metadata/pub/pages/start_page"/></seite-gericht>
                     </zeile-gericht>
                 </xsl:for-each>
             </xsl:when>
@@ -244,7 +306,7 @@
                 <xsl:for-each select="$alle-Hefte/*[not(name()=('kk','entk'))][metadata/ressort/text()= $ressort][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
                     <xsl:sort select="replace(metadata/instdoc/instdocdate,'-','')" data-type="number"/>
                     <xsl:variable name="datum-tokenized" select="tokenize(metadata/instdoc/instdocdate/text(), '-')"/>
-                    <zeile>
+                    <zeile-gericht>
                         <datum><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
                             <xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum>
                         <xsl:choose>
@@ -291,11 +353,8 @@
                         <break>***</break>
                         <title><xsl:value-of select="$rubik-gekuerzt"/><xsl:text>, </xsl:text><xsl:value-of select="metadata/title"/></title>
                         
-                        <seite>
-                            <xsl:comment>Tabulator</xsl:comment>
-                            <xsl:value-of select="metadata/pub/pages/start_page"/>
-                        </seite>
-                    </zeile>
+                        <seite-gericht><xsl:text>&#x9;</xsl:text><xsl:value-of select="metadata/pub/pages/start_page"/></seite-gericht>
+                    </zeile-gericht>
                 </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
@@ -303,7 +362,7 @@
                 <xsl:for-each select="$alle-Hefte/*[not(name()=('kk','entk'))][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
                     <xsl:sort select="replace(metadata/instdoc/instdocdate,'-','')" data-type="number"/>
                     <xsl:variable name="datum-tokenized" select="tokenize(metadata/instdoc/instdocdate/text(), '-')"/>
-                    <zeile>
+                    <zeile-gericht>
                         <datum><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
                             <xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum>
                         
@@ -317,11 +376,8 @@
                                 <xsl:value-of select="."/>
                             </xsl:for-each>
                         </az>
-                        <seite>
-                            <xsl:comment>Tabulator</xsl:comment>
-                            <xsl:value-of select="metadata/pub/pages/start_page"/>
-                        </seite>
-                    </zeile>
+                        <seite-gericht><xsl:text>&#x9;</xsl:text><xsl:value-of select="metadata/pub/pages/start_page"/></seite-gericht>
+                    </zeile-gericht>
                 </xsl:for-each>
             </xsl:otherwise>
         </xsl:choose>

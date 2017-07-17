@@ -17,7 +17,7 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/work/verschlagwortung/2016/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/2017/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword">
                 <xsl:sort/>
@@ -30,12 +30,14 @@
     
     <xsl:template match="author">
         <!--<xsl:if test="ancestor::metadata/keywords/keyword">--> <!-- hier weiter: habe das auskommentiert... weil DB keine keywords hat  -->
+        <!-- Keine Mantelseiten -->
+        <xsl:if test="not(string(number(normalize-space(ancestor::metadata/pub/pages/start_page))) = 'NaN')">
             <autoren-zeile>
                 <autor><xsl:value-of select="surname"/><xsl:text>, </xsl:text><xsl:value-of select="firstname"/></autor>
                 <title><xsl:value-of select="../../title"/></title>
-                <xsl:comment><xsl:value-of select="../../pub/pages/start_page"/></xsl:comment>
+                <xsl:comment><xsl:if test="ancestor::metadata/pub/pub_suppl"><xsl:text>Beilage |</xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><xsl:text>|</xsl:text></xsl:if><xsl:if test="not(ancestor::metadata/pub/pub_suppl)"></xsl:if><xsl:value-of select="../../pub/pages/start_page"/></xsl:comment>
             </autoren-zeile>
-        <!--</xsl:if>-->
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="keywords/keyword">
