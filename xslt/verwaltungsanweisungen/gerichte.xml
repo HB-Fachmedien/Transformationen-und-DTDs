@@ -14,7 +14,6 @@
 
 		<pos>EuGH [Erste Kammer]</pos>
 		<pos>EuGH, Erste Kammer</pos>
-		<pos>Gericht erster Instanz der Europäischen Gemeinschaften</pos>
 				 
 		<pos>EuGH, 2. Kammer</pos>
 		<pos>EuGH, Zweite Kammer</pos>
@@ -48,7 +47,6 @@
 		<pos>EuGH, Große Kammer</pos>
 		<pos>EuGH (Große Kammer)</pos>
 		<pos>EuGH [Große Kammer]</pos>
-		<pos>EuGH (Sechste Kammer</pos>
 	</option>
 
 	<option type="court">
@@ -1062,7 +1060,6 @@
 		<pos>Oberverwaltungsgerichtes Berlin-Brandenburg</pos> 
 		<pos>OVG Brandenburg</pos>
 		<pos>OVG Berlin</pos>
-		<pos>Oberverwaltungsgerichts Berlin</pos>
 	</option>
 
 	<option type="court">
@@ -1209,10 +1206,10 @@
 	<option type="court">
 		<main>OVGSchleswigHolstein</main>
 		<pos diction="true">OVG Schleswig-Holstein</pos>
+		<pos>OVG Schleswig</pos>
 		<pos>Oberverwaltungsgericht Schleswig-Holstein</pos>
 		<pos>Schleswig-Holsteinisches Oberverwaltungsgericht</pos> 
 		<pos>Schleswig-Holsteinisches OVG</pos>
-		<pos>OVG Schleswig</pos>
 		<pos>Oberverwaltungsgerichts des Landes Schleswig-Holstein</pos>
 		<pos>Oberverwaltungsgerichtes Schleswig-Holstein</pos> 
 		<pos>Oberverwaltungsgerichts Schleswig-Holstein</pos>
@@ -1244,10 +1241,13 @@
 	<option type="court">
 		<main>LSGBadenWuerttemberg</main>
 		<pos diction="true">LSG Baden-Württemberg</pos>
-		<pos>LSG Stuttgart</pos>
 		<pos>Landessozialgericht Baden-Württemberg</pos> 
 		<pos>Landessozialgerichts Baden-Württemberg</pos> 
 		<pos>Landessozialgerichtes Baden-Württemberg</pos>
+		<pos>Landessozialgericht Stuttgart</pos> 
+		<pos>Landessozialgerichts Stuttgart</pos> 
+		<pos>Landessozialgerichtes Stuttgart</pos>
+		<pos>LSG Stuttgart</pos>
 	</option>
 
 	<option type="court">
@@ -12853,6 +12853,7 @@
 		<pos diction="true">LKartB Baden-Württemberg</pos>
 		<pos>Baden-Württembergische Landeskartellbehörde</pos>
 		<pos>Landeskartellbehörde Baden-Württemberg</pos>
+		<pos>LKartB Baden-Württemberg</pos>
 		<pos>Landeskartellbehörde Stuttgart</pos>
 		<pos>Ministerium für Finanzen und Wirtschaft Baden-Württemberg</pos>
 		<pos>Ministerium für Finanzen und Wirtschaft Baden-Württemberg Referat 55</pos>
@@ -12867,6 +12868,7 @@
 		<pos>Bayerische Landeskartellbehörde</pos>
 		<pos>Landeskartellbehörde Bayern</pos>
 		<pos>Landeskartellbehörde München</pos>
+		<pos>Bayerisches Staatsministerium für Wirtschaft und Verkehr</pos>
 		<pos>Bayerisches Staatsministerium für Wirtschaft, Medien, Energie und Technologie Bayern</pos>
 		<pos>Bayerisches Staatsministerium für Wirtschaft, Medien, Energie und Technologie als Landeskartellbehörde Bayern</pos>
 	</option>
@@ -12937,6 +12939,7 @@
 		<pos>Niedersächsische Landeskartellbehörde</pos>
 		<pos>Landeskartellbehörde Niedersachsen</pos>
 		<pos>Landeskartellbehörde Hannover</pos>
+		<pos>Niedersächsisches Ministerium für Wirtschaft</pos>
 		<pos>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr</pos>
 		<pos>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr - Referat 15-</pos>
 		<pos>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr - Referat 15- Wettbewerbs- und Energiekartellrecht, Landeskartellbehörde</pos>
@@ -13036,6 +13039,7 @@
 		<main>VergabeueberwachungsausschussBund</main>
 		<pos diction="true">Vergabeüberwachungsausschuss des Bundes</pos>
 		<pos>Vergabeüberwachungsausschusses des Bundes</pos>
+		<pos>VergAB</pos>
 	</option>
 	
 	<option type="authority">
@@ -13571,9 +13575,14 @@
 	<option type="authority">
 		<main>BMWi</main>
 		<pos diction="true">Bundesministerium für Wirtschaft und Energie</pos>
+		<pos>Bundesministerium für Wirtschaft und Energie (BMWi)</pos>
+	</option>
+
+    <option type="authority">
+		<main>BLK</main>
+		<pos diction="true">Bund-Länder-Kommission</pos>
 	</option>	
-	
-	
+		
 	<option type="authority">
 		<main>EUKommission</main>
 		<pos diction="true">EU-Kommission</pos>
@@ -13605,5 +13614,6 @@
 		<main diction="true">Monopolkommission</main>
 		<pos>Monopol-Kommission</pos>
 	</option>
+
 
 </link-recognition-list>
