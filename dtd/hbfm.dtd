@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.27
+1.28
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -154,7 +154,12 @@ Version 1.26 (07.04.17): Änderungen (SG):&#x0013;
 						</ul>
 Version 1.27 (26.05.17): Änderungen (SG):&#x0013;
 						<ul>
-							<li>Neuer Wert für <a href="#inst">inst/@code</a> hinzugefügt: "BA"</li>
+							<li>Neuer Wert für <a href="#inst">inst, Attribut code</a> hinzugefügt: "BA"</li>
+						</ul>
+Version 1.28 (11.08.17): Änderungen (SG):&#x0013;
+						<ul>
+							<li><a href="#file">file</a>, Attribut class zulässige Werte erweitert um "exe"</li>
+							<li>Behörden-Mapping aktualisiert</li>
 						</ul>
 
 
@@ -2044,13 +2049,14 @@ _img inst.png
 		| NLAGAmsterdam
 		| RG
 
+
+
 		| EuropaeischerRat
 		| Europarat
 		| RatderEuropaeischenUnion
 		| DeutscherBundestag
 		| DeutscherBundesrat
 		| BMF
-		| BA
 		| FinMinDerLaender
 		| FinMinDerNeuenBundeslaender
 		| FinMinBadenWuerttemberg
@@ -2166,6 +2172,7 @@ _img inst.png
 		| EUKommission
 		| BNetzA
 		| Bundesregierung
+		| BA
 		| IFSt
 		| Monopolkommission
 	) #REQUIRED
@@ -2712,7 +2719,7 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 	src    CDATA #REQUIRED
 	title  CDATA #IMPLIED
 	type   (portrait | signature | teaserpic | download) #IMPLIED
-	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx) #IMPLIED
+	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx | exe) #IMPLIED
 	alt    CDATA #IMPLIED
 	height CDATA #IMPLIED
 	width  CDATA #IMPLIED

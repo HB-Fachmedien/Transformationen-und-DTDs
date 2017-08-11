@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.27
+1.28
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -137,7 +137,15 @@ Version 1.26 (07.04.17): Änderungen (SG):&#x0013;
 						</ul>
 Version 1.27 (26.05.17): Änderungen (SG):&#x0013;
 						<ul>
-							<li>Neuer Wert für <a href="#inst">inst/@authority</a> hinzugefügt: "BA"</li>
+							<li>Neuer Wert für <a href="#inst">inst, Attribut authority</a> hinzugefügt: "BA"</li>
+						</ul>
+Version 1.28 (11.08.17): Änderungen (SG):&#x0013;
+						<ul>
+							<li><a href="#file">file</a>, Attribut class zulässige Werte erweitert um "exe"</li>
+							<li>Behörden-Mapping aktualisiert</li>
+							<li>Attribut <a href="#toc">toc</a> > <a href="#node">node</a> > <a href="#leaf">leaf</a> Attribute sequenceNr ist jetzt optional</li>
+							<li>Neues Element <a href="#add_all_source">add_all_source</a> hinzugefügt</li>
+							<li>Element <a href="#toc_title">toc_title</a>: Inhaltsmodell nur noch #PCDATA und Dokutext zu diesem Element verändert</li>
 						</ul>
 
 
@@ -266,7 +274,7 @@ _img metadata.png
                     law_refs?,
                     paragraph?,
                     toc?, inner_toc?,
-                    all_doc_type, all_doc_type, all_source, all_source) >
+                    all_doc_type, all_doc_type, all_source, all_source, add_all_source?) >
 
 <!--Das Element <i>pub</i> enthält Informationen über das Werk, die Ausgabe des Werks (bei Zeitschriften) und die Seitenspanne des Artikels.
 _img pub.png-->
@@ -522,10 +530,10 @@ _img coll_title.png
 <!ELEMENT coll_title   %inline; >
 
 
-<!--If this element occurs, this title will be listed in Bibliothek instead of the value of <i>title</i>, else the value of <i>title</i> will be used as
+<!--If this element occurs, this title will be listed in Bibliothek instead of the value of <a href="#title">&lt;title>,</a> else the value of <a href="#title">&lt;title>,</a> will be used as usual.
 _img toc_title.png
 -->
-<!ELEMENT toc_title   %inline; >
+<!ELEMENT toc_title   (#PCDATA) >
 
 
 <!--Das Element <i>area</i> beinhaltet in einem oder mehreren Kind-Elementen <i>code</i> das oder die Rechtsgebiet(e), dem/denen das Dokument zugeordnet werden kann (bisher nur für Zeitschriften, Nachschlagewerke und Gesetzestexte verpflichtend). Ist das Element nicht vorhanden, werden bei einigen der übrigen Dokumenttypen (z.B. Volltext-Entscheidungen) automatisch alle Rechtsgebiete zugeordnet.
@@ -741,7 +749,7 @@ _img leaf.png
 -->
 <!ELEMENT leaf EMPTY >
 <!ATTLIST leaf
-	sequenceNr CDATA #REQUIRED
+	sequenceNr CDATA #IMPLIED
 >
 
 
@@ -2131,7 +2139,6 @@ _img instcode.png
 		| RatderEuropaeischenUnion
 		| DeutscherBundestag
 		| DeutscherBundesrat
-		| BA
 		| BMF
 		| FinMinDerLaender
 		| FinMinDerNeuenBundeslaender
@@ -2248,9 +2255,10 @@ _img instcode.png
 		| EUKommission
 		| BNetzA
 		| Bundesregierung
+		| BA
 		| IFSt
 		| Monopolkommission
-			) #IMPLIED
+	) #IMPLIED
 >
 
 
@@ -2360,7 +2368,9 @@ _img all_source.png-->
 >
 
 
-
+<!-- Element <i>add_all_source</i>: Additional source code of a further publication to be added to the index definition of the search entry 'all_source' 
+_img add_all_source.png-->
+<!ELEMENT add_all_source (#PCDATA) >
 
 
 
@@ -2794,7 +2804,7 @@ Die Befüllung von <i>height</i> und <i>width</i> ist freiwillig.
 	src    CDATA #REQUIRED
 	title  CDATA #IMPLIED
 	type   (portrait | signature | teaserpic | download) #IMPLIED
-	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx) #IMPLIED
+	class  (pdf | rtf | doc | docx | xls | xlsx | ppt | pptx | exe) #IMPLIED
 	alt    CDATA #IMPLIED
 	height CDATA #IMPLIED
 	width  CDATA #IMPLIED
