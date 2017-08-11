@@ -1,6 +1,8 @@
 Zu aller erst:
 
-Entscheidungen vom selben Tag nach Römischen Zahlen sortieren!
+Entscheidungen vom selben Tag nach Römischen Zahlen sortieren! (kaum möglich, da Vregleich von Römischen mit Arabischen Zahlen notwendig)
+
+Abgleich von Gesetzen, siehe abgleich.png!
 
 mit der Umstellung sind nur noch Schlagwörter mit dem Attribut tm_id gültig!
 
