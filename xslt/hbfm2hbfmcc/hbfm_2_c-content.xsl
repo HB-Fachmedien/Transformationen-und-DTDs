@@ -85,12 +85,13 @@
 			<xsl:call-template name="createLocalToc"/>
 
 			<xsl:apply-templates select="all_doc_type | all_source"/>
+			<xsl:call-template name="add_add_all_source"/>
 		</metadata>
 	</xsl:template>
-
-
-
-<!-- =========================================================
+	
+	
+	
+	<!-- =========================================================
 === create all_doc_type level 2
 ========================================================= -->
 <xsl:template match="all_doc_type">
@@ -99,6 +100,16 @@
 	<all_doc_type level="2">
 		<xsl:value-of select="name(../..)"/>
 	</all_doc_type>
+</xsl:template>
+	
+	
+	
+<!-- Create  add_all_source element if needed -->
+	
+<xsl:template name="add_add_all_source">
+	<xsl:if test="/*/metadata/all_source[@level='2']/text()='db' and (/gk or /*/metadata/ressort/text()='ar')">
+		<add_all_source>dbarbr</add_all_source>
+	</xsl:if>
 </xsl:template>
 
 
