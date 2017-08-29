@@ -1,0 +1,946 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Created by ONIX Export Engine V3.2.1.0, November 2016, Infos: www.onixtools.de -->
+<!-- Copyright (c) 2016, Organisationsdienst Herbert Barkmann - All rights reserved -->
+<ONIXmessage xmlns='http://www.editeur.org/onix/2.1/short' release='2.1'>
+<header>
+   <senderidentifier>
+      <m379>04</m379>
+      <b244>15686</b244>
+   </senderidentifier>
+   <m174>Erich Schmidt Verlag GmbH &amp; Co</m174>
+   <m175>Claudia Zeeb</m175>
+   <m283>c.zeeb@esvmedien.de</m283>
+   <addresseeidentifier>
+      <m380>04</m380>
+      <b244>15686</b244>
+   </addresseeidentifier>
+   <m178>Erich Schmidt Verlag GmbH &amp; Co</m178>
+   <m179>Claudia Zeeb</m179>
+   <m182>201702130816</m182>
+</header>
+<product>
+   <a001>978-3-503-07846-2</a001>
+   <a002>03</a002>
+   <a195>04</a195>
+   <a196>15686</a196>
+   <a197>Erich Schmidt Verlag GmbH &amp; Co</a197>
+   <productidentifier><b221>02</b221><b244>3503078460</b244></productidentifier>
+   <productidentifier><b221>15</b221><b244>9783503078462</b244></productidentifier>
+   <productidentifier><b221>03</b221><b244>9783503078462</b244></productidentifier>
+   <productidentifier><b221>01</b221><b233>ISSN</b233><b244>16137116</b244></productidentifier>
+   <b246>00</b246>
+   <b012>BD</b012>
+   <b333>B301</b333>
+   <b210>2</b210>
+   <title>
+      <b202>01</b202>
+      <b203 language='ger'>Handbuch der Unternehmensberatung - Abonnement</b203>
+      <b029>Organisationen führen und entwickeln</b029>
+   </title>
+   <contributor>
+      <b034>1</b034>
+      <b035>B01</b035>
+      <b340>1</b340>
+      <b036>Thomas Deelmann</b036>
+      <b037>Deelmann, Thomas</b037>
+      <b038>Prof. Dr.</b038>
+      <b039>Thomas</b039>
+      <b040>Deelmann</b040>
+   </contributor>
+   <contributor>
+      <b034>2</b034>
+      <b035>B01</b035>
+      <b340>2</b340>
+      <b036>Dirk Michael Ockel</b036>
+      <b037>Ockel, Dirk Michael</b037>
+      <b039>Dirk Michael</b039>
+      <b040>Ockel</b040>
+   </contributor>
+   <b049>Herausgegeben von Thomas Deelmann und Dirk Michael Ockel, in Zusammenarbeit mit dem Bundesverband Deutscher Unternehmensberater BDU e.V.</b049>
+   <b058>Stand 2016</b058>
+   <language><b253>01</b253><b252>ger</b252></language>
+   <b255>2250</b255>
+   <mainsubject>
+      <b191>26</b191>
+      <b068>2.0</b068>
+      <b069>3784</b069>
+   </mainsubject>
+   <mainsubject>
+      <b191>93</b191>
+      <b068>1.1</b068>
+      <b069>KJL</b069>
+   </mainsubject>
+   <subject>
+      <b067>23</b067>
+      <b069>19</b069>
+      <b070>Management und Wirtschaft</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Unternehmungsberater</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Management</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Unternehmung</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Verwaltung</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Dienstleistung</b070>
+   </subject>
+   <b207>Unternehmen, Verwaltungen, Unternehmensberater, beratungsintensive Dienstleister, Management, Mittel- und Großunternehmen</b207>
+   <othertext>
+      <d102>99</d102>
+      <d103>06</d103>
+      <d104 textformat='06'>DE</d104>
+   </othertext>
+   <othertext>
+      <d102>01</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Für Unternehmen besteht heute ein großer Beratungsbedarf auf den Gebieten Strategieentwicklung, Organisationsentwicklung, Operationsmanagement, Systementwicklung, Technologie und Innovationsmanagement, bei Akquisitionen und Fusionen, im Controlling, bei Restrukturierung und Sanierung sowie bei der Human-Ressourcen-Entwicklung. Gerade hier leistet die Unternehmensberatung mehr denn je wertvolle Hilfe. Sie wird in dynamischen, komplexen und hochkompetitiven Umfeldern zu einer immer wichtigeren Dienstleistung, die sich auch selbst einer hohen Veränderungsdynamik stellen muss.
+Im "Handbuch der Unternehmensberatung" legen ausgewiesene Experten dar, welche Leistungen in der Unternehmensberatung geboten werden und welches die Erfolgsfaktoren der Nutzung von externen und internen Beratern sind. Das Handbuch zeigt auf, welche Managementanforderungen an kundenorientierte, flexible, hochqualitative und ethisch einwandfreie Beratung gestellt werden.
+Mit praktischen Beispielen –  basierend auf eigener eingehender Erfahrung –  gehen die namhaften Autoren in ihren Beiträgen problem-, entscheidungs- und lösungsbezogen vor. Das Herausgeberteam bürgt für Professionalität und Relevanz.
+Schwerpunkte
+- Warum, wann und wie ist Beratung von Nutzen?
+- Welche Beratungssprodukte und –prozesse gibt es?
+- Welches sind die Erfolgsfaktoren von Beratungsprojekten?
+- Wie wird heute ein erfolgreiches Beratungsunternehmen geführt?</d104>
+      <d109>20041116</d109>
+   </othertext>
+   <othertext>
+      <d102>02</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Im "Handbuch der Unternehmensberatung" legen ausgewiesene Experten dar, welche Leistungen in der Unternehmensberatung geboten werden und welches die Erfolgsfaktoren der Nutzung von externen und internen Beratern sind. Das Handbuch zeigt auf, welche Managementanforderungen an kundenorientierte, flexible, hochqualitative und ethisch einwandfreie Beratung gestellt werden. Mit praktischen Beispielen –  basierend auf eigener eingehender Erfahrung –  gehen die namhaften Autoren in ihren Beiträgen problem-, entscheidungs- und lösungsbezogen vor.</d104>
+      <d109>20140415</d109>
+   </othertext>
+   <othertext>
+      <d102>04</d102>
+      <d103>08</d103>
+      <d105>01</d105>
+      <d106>http://onix.esv.info/inhvzch/9783503078462.pdf</d106>
+   </othertext>
+   <mediafile>
+      <f114>04</f114>
+      <f115>09</f115>
+      <f259>72</f259>
+      <f116>01</f116>
+      <f117>http://media.esv.info/thumbnail/cover/9783503078462/2d3d/original.png</f117>
+   </mediafile>
+   <productwebsite>
+      <b367>02</b367>
+      <f123>http://www.ConsultingBay.de/HdU</f123>
+   </productwebsite>
+   <publisher>
+      <b291>01</b291>
+      <b241>04</b241>
+      <b243>15686</b243>
+      <b081>Erich Schmidt Verlag GmbH &amp; Co</b081>
+      <website><b367>01</b367><b295>http://www.esv.info</b295></website>
+   </publisher>
+   <b209>Berlin</b209>
+   <b083>DE</b083>
+   <b394>04</b394>
+   <b003>20040405</b003>
+   <measure><c093>01</c093><c094>230</c094><c095>mm</c095></measure>
+   <measure><c093>02</c093><c094>170</c094><c095>mm</c095></measure>
+   <measure><c093>08</c093><c094>1292</c094><c095>gr</c095></measure>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ConsultingBay</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>27</h208>
+      <productidentifier><b221>03</b221><b244>9783503116683</b244></productidentifier>
+      <productidentifier><b221>15</b221><b244>9783503116683</b244></productidentifier>
+      <b012>DH</b012>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>27</h208>
+      <productidentifier><b221>03</b221><b244>9783503116690</b244></productidentifier>
+      <productidentifier><b221>15</b221><b244>9783503116690</b244></productidentifier>
+      <b012>DH</b012>
+   </relatedproduct>
+   <supplydetail>
+      <supplieridentifier>
+         <j345>04</j345>
+         <b244>15686</b244>
+      </supplieridentifier>
+      <j137>Erich Schmidt Verlag GmbH &amp; Co</j137>
+      <j270>030 250085260</j270>
+      <j272>c.zeeb@esvmedien.de</j272>
+      <website>
+         <b367>33</b367>
+         <b295>http://www.esv.info</b295>
+      </website>
+      <j292>01</j292>
+      <j396>20</j396>
+      <price>
+         <j148>14</j148>
+         <j262>BDU-Mitgliederpreis (MTPR) im Abonnement</j262>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>L</j364></discountcoded>
+         <j266>02</j266>
+         <j151>85.80</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>R</j153>
+      </price>
+      <price>
+         <j148>03</j148>
+         <j266>02</j266>
+         <j151>93.27</j151>
+         <j152>EUR</j152>
+         <j153>Z</j153>
+      </price>
+      <price>
+         <j148>04</j148>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>L</j364></discountcoded>
+         <j266>02</j266>
+         <j151>99.80</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>R</j153>
+      </price>
+   </supplydetail>
+</product>
+<product>
+   <a001>978-3-503-11626-3</a001>
+   <a002>03</a002>
+   <a195>04</a195>
+   <a196>15686</a196>
+   <a197>Erich Schmidt Verlag GmbH &amp; Co</a197>
+   <productidentifier><b221>02</b221><b244>3503116265</b244></productidentifier>
+   <productidentifier><b221>15</b221><b244>9783503116263</b244></productidentifier>
+   <productidentifier><b221>03</b221><b244>9783503116263</b244></productidentifier>
+   <b246>00</b246>
+   <b012>DH</b012>
+   <title>
+      <b202>01</b202>
+      <b203 language='ger'>COMPLIANCEdigital - Jahresabonnement</b203>
+   </title>
+   <language><b253>01</b253><b252>ger</b252></language>
+   <language><b253>02</b253><b252>ger</b252></language>
+   <mainsubject>
+      <b191>26</b191>
+      <b068>2.0</b068>
+      <b069>6783</b069>
+   </mainsubject>
+   <mainsubject>
+      <b191>93</b191>
+      <b068>1.1</b068>
+      <b069>KJR</b069>
+   </mainsubject>
+   <subject>
+      <b067>23</b067>
+      <b069>19</b069>
+      <b070>Management und Wirtschaft</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Compliance</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Compliance-Management</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Corporate Governance</b070>
+   </subject>
+   <b207>Chief Compliance Officer (CCO); Compliance-Manager; Corporate-Governance-Organe (Vorstände/Geschäftsführer, Aufsichts- und Beiräte, Interne Revisoren, Prüfungsausschüsse); Verwaltungsräte; Wirtschaftsprüfer</b207>
+   <othertext>
+      <d102>99</d102>
+      <d103>06</d103>
+      <d104 textformat='06'>DE</d104>
+   </othertext>
+   <othertext>
+      <d102>01</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Komplexe gesetzliche und regulatorische Anforderungen erschweren die Arbeit im Compliance-Management. Für die Führung und Überwachung von Unternehmen oder Verwaltungen sind aktuelle Informationen sowie rechtssicheres Handeln unerlässlich. COMPLIANCEdigital bietet hierfür online das zentrale Expertenwissen und wichtige Entscheidungshilfen.
+Die leistungsfähige Suchfunktion der Datenbank ermöglicht den schnellen Zugang zu allen Inhalten. Die Nutzer finden auf COMPLIANCEdigital
+- Artikel und Fallstudien aus sechs führenden Fachzeitschriften: Risk, Fraud &amp; Compliance (ZRFC), PinG Privacy in Germany, Zeitschrift für Corporate Governance (ZCG), WiJ Journal der Wirtschaft strafrechtlichen Vereinigung e.V., Zeitschrift Interne Revision (ZIR), Zeitschrift für Compliance (ZfC)
+- über 230 eBooks zu zentralen Compliance-Themen wie z. B. Anti-Fraud-Management, Prüfung und ordnungsgemäße Berichterstattung
+- nützliche Checklisten, Leitfäden, Mustervorlagen und andere Arbeitsdokumente zu aktuellen compliance-relevanten Themen in der Rubrik „Arbeitshilfen“
+- Nachrichten der ESV-Redaktion und weitere Service-Rubriken wie Veranstaltungskalender, Stellenmarkt und Literatur-Empfehlungen
+Die Inhalte werden von namhaften Verfassern und Redaktionen ständig aktualisiert und erweitert.
+COMPLIANCEdigital erleichtert es Fach- und Führungskräften wesentlich, Regeln, Standards und Verhaltensnormen für die Führung und Überwachung von Unternehmen und Verwaltungen im Blick zu haben. Die Datenbank bietet auch die Möglichkeit, sich unkompliziert zu Fachfragen auszutauschen.</d104>
+      <d109>20161201</d109>
+   </othertext>
+   <othertext>
+      <d102>02</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Systemvoraussetzungen: Internetzugang, Web-Browser, mobil: iOS und Android
+COMPLIANCEdigital bietet Ihnen online Expertenwissen und Entscheidungshilfen für das Compliance-Management: Artikel aus führenden Fachzeitschriften wie der Risk, Fraud &amp; Compliance (ZRFC) und eBooks zu zentralen Compliance-Themen – inkl. Checklisten und Muster für die Praxis, unterstützt durch eine treffsichere Suche. Und noch viel mehr: News, Rechtsprechung, Literaturempfehlungen, Links, Stellenanzeigen und einen Veranstaltungskalender.</d104>
+      <d109>20161201</d109>
+   </othertext>
+   <othertext>
+      <d102>25</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Monatspreis: 22,95 EUR netto.</d104>
+   </othertext>
+   <mediafile>
+      <f114>04</f114>
+      <f115>09</f115>
+      <f259>72</f259>
+      <f116>01</f116>
+      <f117>http://media.esv.info/thumbnail/cover/9783503116263/2d3d/original.png</f117>
+   </mediafile>
+   <productwebsite>
+      <b367>02</b367>
+      <f123>http://www.COMPLIANCEdigital.de</f123>
+   </productwebsite>
+   <publisher>
+      <b291>01</b291>
+      <b241>04</b241>
+      <b243>15686</b243>
+      <b081>Erich Schmidt Verlag GmbH &amp; Co</b081>
+      <website><b367>01</b367><b295>http://www.esv.info</b295></website>
+   </publisher>
+   <b209>Berlin</b209>
+   <b083>DE</b083>
+   <b394>04</b394>
+   <b003>20090908</b003>
+   <supplydetail>
+      <supplieridentifier>
+         <j345>04</j345>
+         <b244>15686</b244>
+      </supplieridentifier>
+      <j137>Erich Schmidt Verlag GmbH &amp; Co</j137>
+      <j270>030 250085260</j270>
+      <j272>c.zeeb@esvmedien.de</j272>
+      <website>
+         <b367>33</b367>
+         <b295>http://www.esv.info</b295>
+      </website>
+      <j292>01</j292>
+      <j396>20</j396>
+      <price>
+         <j148>01</j148>
+         <j266>02</j266>
+         <j151>275.39</j151>
+         <j152>EUR</j152>
+         <j153>Z</j153>
+      </price>
+      <price>
+         <j148>02</j148>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>O</j364></discountcoded>
+         <j266>02</j266>
+         <j151>327.72</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>S</j153>
+      </price>
+   </supplydetail>
+</product>
+<product>
+   <a001>978-3-503-13653-7</a001>
+   <a002>03</a002>
+   <a195>04</a195>
+   <a196>15686</a196>
+   <a197>Erich Schmidt Verlag GmbH &amp; Co</a197>
+   <productidentifier><b221>02</b221><b244>3503136533</b244></productidentifier>
+   <productidentifier><b221>15</b221><b244>9783503136537</b244></productidentifier>
+   <productidentifier><b221>03</b221><b244>9783503136537</b244></productidentifier>
+   <productidentifier><b221>01</b221><b233>ISSN</b233><b244>16137116</b244></productidentifier>
+   <b246>00</b246>
+   <b012>BD</b012>
+   <b333>B301</b333>
+   <b210>2</b210>
+   <title>
+      <b202>01</b202>
+      <b203 language='ger'>Handbuch der Unternehmensberatung - Einzelbezug</b203>
+      <b029>Organisationen führen und entwickeln</b029>
+   </title>
+   <contributor>
+      <b034>1</b034>
+      <b035>B01</b035>
+      <b340>1</b340>
+      <b036>Thomas Deelmann</b036>
+      <b037>Deelmann, Thomas</b037>
+      <b038>Prof. Dr.</b038>
+      <b039>Thomas</b039>
+      <b040>Deelmann</b040>
+   </contributor>
+   <contributor>
+      <b034>2</b034>
+      <b035>B01</b035>
+      <b340>2</b340>
+      <b036>Dirk Michael Ockel</b036>
+      <b037>Ockel, Dirk Michael</b037>
+      <b039>Dirk Michael</b039>
+      <b040>Ockel</b040>
+   </contributor>
+   <b049>Herausgegeben von Thomas Deelmann und Dirk Michael Ockel, in Zusammenarbeit mit dem Bundesverband Deutscher Unternehmensberater BDU e.V.</b049>
+   <b058>Stand 2016</b058>
+   <language><b253>01</b253><b252>ger</b252></language>
+   <b255>2250</b255>
+   <mainsubject>
+      <b191>26</b191>
+      <b068>2.0</b068>
+      <b069>3784</b069>
+   </mainsubject>
+   <mainsubject>
+      <b191>93</b191>
+      <b068>1.1</b068>
+      <b069>KJL</b069>
+   </mainsubject>
+   <subject>
+      <b067>23</b067>
+      <b069>19</b069>
+      <b070>Management und Wirtschaft</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Unternehmungsberater</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Management</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Unternehmung</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Verwaltung</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Dienstleistung</b070>
+   </subject>
+   <b207>Unternehmen, Verwaltungen, Unternehmensberater, beratungsintensive Dienstleister, Management, Mittel- und Großunternehmen</b207>
+   <othertext>
+      <d102>99</d102>
+      <d103>06</d103>
+      <d104 textformat='06'>DE</d104>
+   </othertext>
+   <othertext>
+      <d102>01</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Für Unternehmen besteht heute ein großer Beratungsbedarf auf den Gebieten Strategieentwicklung, Organisationsentwicklung, Operationsmanagement, Systementwicklung, Technologie und Innovationsmanagement, bei Akquisitionen und Fusionen, im Controlling, bei Restrukturierung und Sanierung sowie bei der Human-Ressourcen-Entwicklung. Gerade hier leistet die Unternehmensberatung mehr denn je wertvolle Hilfe. Sie wird in dynamischen, komplexen und hochkompetitiven Umfeldern zu einer immer wichtigeren Dienstleistung, die sich auch selbst einer hohen Veränderungsdynamik stellen muss.
+Im "Handbuch der Unternehmensberatung" legen ausgewiesene Experten dar, welche Leistungen in der Unternehmensberatung geboten werden und welches die Erfolgsfaktoren der Nutzung von externen und internen Beratern sind. Das Handbuch zeigt auf, welche Managementanforderungen an kundenorientierte, flexible, hochqualitative und ethisch einwandfreie Beratung gestellt werden.
+Mit praktischen Beispielen –  basierend auf eigener eingehender Erfahrung –  gehen die namhaften Autoren in ihren Beiträgen problem-, entscheidungs- und lösungsbezogen vor. Das Herausgeberteam bürgt für Professionalität und Relevanz.
+Schwerpunkte
+- Warum, wann und wie ist Beratung von Nutzen?
+- Welche Beratungssprodukte und –prozesse gibt es?
+- Welches sind die Erfolgsfaktoren von Beratungsprojekten?
+- Wie wird heute ein erfolgreiches Beratungsunternehmen geführt?</d104>
+      <d109>20041116</d109>
+   </othertext>
+   <othertext>
+      <d102>02</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Im "Handbuch der Unternehmensberatung" legen ausgewiesene Experten dar, welche Leistungen in der Unternehmensberatung geboten werden und welches die Erfolgsfaktoren der Nutzung von externen und internen Beratern sind. Das Handbuch zeigt auf, welche Managementanforderungen an kundenorientierte, flexible, hochqualitative und ethisch einwandfreie Beratung gestellt werden. Mit praktischen Beispielen –  basierend auf eigener eingehender Erfahrung –  gehen die namhaften Autoren in ihren Beiträgen problem-, entscheidungs- und lösungsbezogen vor.</d104>
+      <d109>20140415</d109>
+   </othertext>
+   <othertext>
+      <d102>04</d102>
+      <d103>08</d103>
+      <d105>01</d105>
+      <d106>http://onix.esv.info/inhvzch/9783503136537.pdf</d106>
+   </othertext>
+   <mediafile>
+      <f114>04</f114>
+      <f115>09</f115>
+      <f259>72</f259>
+      <f116>01</f116>
+      <f117>http://media.esv.info/thumbnail/cover/9783503136537/2d3d/original.png</f117>
+   </mediafile>
+   <productwebsite>
+      <b367>02</b367>
+      <f123>http://www.ConsultingBay.de/HdU</f123>
+   </productwebsite>
+   <publisher>
+      <b291>01</b291>
+      <b241>04</b241>
+      <b243>15686</b243>
+      <b081>Erich Schmidt Verlag GmbH &amp; Co</b081>
+      <website><b367>01</b367><b295>http://www.esv.info</b295></website>
+   </publisher>
+   <b209>Berlin</b209>
+   <b083>DE</b083>
+   <b394>04</b394>
+   <b003>20040405</b003>
+   <measure><c093>01</c093><c094>230</c094><c095>mm</c095></measure>
+   <measure><c093>02</c093><c094>170</c094><c095>mm</c095></measure>
+   <measure><c093>08</c093><c094>1292</c094><c095>gr</c095></measure>
+   <supplydetail>
+      <supplieridentifier>
+         <j345>04</j345>
+         <b244>15686</b244>
+      </supplieridentifier>
+      <j137>Erich Schmidt Verlag GmbH &amp; Co</j137>
+      <j270>030 250085260</j270>
+      <j272>c.zeeb@esvmedien.de</j272>
+      <website>
+         <b367>33</b367>
+         <b295>http://www.esv.info</b295>
+      </website>
+      <j292>01</j292>
+      <j396>20</j396>
+      <price>
+         <j148>14</j148>
+         <j262>BDU-Mitgliederpreis (MTPR) im Einzelbezug</j262>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>L</j364></discountcoded>
+         <j266>02</j266>
+         <j151>126.00</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>R</j153>
+      </price>
+      <price>
+         <j148>03</j148>
+         <j266>02</j266>
+         <j151>138.32</j151>
+         <j152>EUR</j152>
+         <j153>Z</j153>
+      </price>
+      <price>
+         <j148>04</j148>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>L</j364></discountcoded>
+         <j266>02</j266>
+         <j151>148.00</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>R</j153>
+      </price>
+   </supplydetail>
+</product>
+<product>
+   <a001>978-3-503-17113-2</a001>
+   <a002>03</a002>
+   <a195>04</a195>
+   <a196>15686</a196>
+   <a197>Erich Schmidt Verlag GmbH &amp; Co</a197>
+   <productidentifier><b221>02</b221><b244>3503171134</b244></productidentifier>
+   <productidentifier><b221>15</b221><b244>9783503171132</b244></productidentifier>
+   <productidentifier><b221>03</b221><b244>9783503171132</b244></productidentifier>
+   <b246>00</b246>
+   <b012>DG</b012>
+   <b211>002</b211>
+   <b214>02</b214>
+   <title>
+      <b202>01</b202>
+      <b203 language='ger'>Bilanzskandale</b203>
+      <b029>Delikte und Gegenmaßnahmen</b029>
+   </title>
+   <contributor>
+      <b034>1</b034>
+      <b035>A01</b035>
+      <b340>1</b340>
+      <b036>Volker H. Peemöller</b036>
+      <b037>Peemöller, Volker H.</b037>
+      <b038>Univ.-Prof. Dr.</b038>
+      <b039>Volker H.</b039>
+      <b040>Peemöller</b040>
+   </contributor>
+   <contributor>
+      <b034>3</b034>
+      <b035>A01</b035>
+      <b340>3</b340>
+      <b036>Stefan Hofmann</b036>
+      <b037>Hofmann, Stefan</b037>
+      <b038>Dr.</b038>
+      <b039>Stefan</b039>
+      <b040>Hofmann</b040>
+   </contributor>
+   <contributor>
+      <b034>2</b034>
+      <b035>A01</b035>
+      <b340>2</b340>
+      <b036>Harald Krehl</b036>
+      <b037>Krehl, Harald</b037>
+      <b038>Dr.</b038>
+      <b039>Harald</b039>
+      <b040>Krehl</b040>
+   </contributor>
+   <contributor>
+      <b034>4</b034>
+      <b035>B99</b035>
+      <b340>1</b340>
+      <b036>Jana Lack</b036>
+      <b037>Lack, Jana</b037>
+      <b039>Jana</b039>
+      <b040>Lack</b040>
+   </contributor>
+   <b049>Von Professor Dr. Volker H. Peemöller, Dr. Harald Krehl und Dr. Stefan Hofmann</b049>
+   <b057>2</b057>
+   <b058>neu bearbeitete und wesentlich erweiterte Auflage</b058>
+   <language><b253>01</b253><b252>ger</b252></language>
+   <language><b253>02</b253><b252>ger</b252></language>
+   <b255>393</b255>
+   <mainsubject>
+      <b191>26</b191>
+      <b068>2.0</b068>
+      <b069>6783</b069>
+   </mainsubject>
+   <mainsubject>
+      <b191>93</b191>
+      <b068>1.1</b068>
+      <b069>K</b069>
+   </mainsubject>
+   <subject>
+      <b067>23</b067>
+      <b069>19</b069>
+      <b070>Management und Wirtschaft</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Bilanzmanipulationen</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Wirtschaftskriminalität</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Überwachung</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Compliance</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Corporate Governance</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Aufsichtsrat</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Beirat</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Revison</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Prüfungsausschuss</b070>
+   </subject>
+   <b207>Vorstand; Geschäftsführung; Aufsichts-/Beirat; Prüfungsausschuss; Aktionäre/Gesellschafter</b207>
+   <othertext>
+      <d102>99</d102>
+      <d103>06</d103>
+      <d104 textformat='06'>DE</d104>
+   </othertext>
+   <othertext>
+      <d102>01</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Bilanzbetrug gibt es, seit es Bilanzen gibt. Zwar haben Gesetzgeber, Standardsetter und Regulierungsbehörden durch weitreichende Initiativen und Verordnungen vielseitig auf wirtschaftskriminelle Verwerfungen reagiert doch wächst die Liste spektakulärer Bilanzskandale weiter ungebremst.
+Wie man Methoden und Tricks von Bilanzbetrügern erkennt und Manipulationen rechtzeitig vorbeugt, zeigen Volker Peemöller, Harald Krehl und Stefan Hofmann anhand von 33 konkreten Einzelfallstudien.
+- Welche Umstände und Ursachen befördern kriminelles Handeln, wie effektiv ist der aktuelle Rechtsrahmen?
+- Wie sind typische Tatabläufe, wann wird ein Bilanzbetrug offensichtlich?
+- Welche Indikatoren und „Red Flags“ weisen auf Bilanzfälschungen hin, welche Warnsignale werden oft übersehen?
+- Wie entwickelt man bestehende Analyseinstrumente, welche Ratingmethoden haben sich zudem bewährt?
+- Welche Verantwortlichkeiten ergeben sich im Sinne der Grundsätze guter Corporate Governance?
+Erweitert um neun aktuelle Fälle, die jeweils strukturiert und besonders ausführlich vorgestellt werden, bietet die Neuauflage dieses Klassikers auch die Chance, bereits unternommene Gegenmaßnahmen neu zu bewerten.</d104>
+   </othertext>
+   <othertext>
+      <d102>02</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Bilanzbetrug gibt es, seit es Bilanzen gibt. Zwar haben Gesetzgeber, Standardsetter und Regulierungsbehörden durch weitreichende Initiativen und Verordnungen vielseitig auf wirtschaftskriminelle Verwerfungen reagiert - doch wächst die Liste spektakulärer Bilanzskandale weiter ungebremst. Wie Sie Methoden und Tricks von Bilanzbetrügern erkennen und Manipulationen rechtzeitig vorbeugen, zeigen Volker Peemöller, Harald Krehl und Stefan Hofmann anhand von 33 konkreten Einzelfallstudien. Erweitert um neun aktuelle Fälle, die jeweils strukturiert und noch ausführlicher vorgestellt werden, bietet die Neuauflage dieses Klassikers auch die Chance, bereits unternommene Gegenmaßnahmen neu zu bewerten.</d104>
+   </othertext>
+   <mediafile>
+      <f114>04</f114>
+      <f115>09</f115>
+      <f259>72</f259>
+      <f116>01</f116>
+      <f117>http://media.esv.info/thumbnail/cover/9783503171132/2d3d/original.png</f117>
+   </mediafile>
+   <productwebsite>
+      <b367>02</b367>
+      <f123>http://www.esv.info/978-3-503-17113-2</f123>
+   </productwebsite>
+   <publisher>
+      <b291>01</b291>
+      <b241>04</b241>
+      <b243>15686</b243>
+      <b081>Erich Schmidt Verlag GmbH &amp; Co</b081>
+      <website><b367>01</b367><b295>http://www.esv.info</b295></website>
+   </publisher>
+   <b209>Berlin</b209>
+   <b083>DE</b083>
+   <b394>04</b394>
+   <b003>20161208</b003>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>COMPLIANCEdigital</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks alle Fachbereiche</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks Fachbereich Wirtschaftswissenschaften</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks Fachbereiche RWS</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks und eJournal alle Fachbereiche</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>INTERNE REVISIONdigital</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>KNV pool name</b233><b244>KNVdigital</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>Schweitzer pool name</b233><b244>EBL-Schweitzer</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>13</h208>
+      <productidentifier><b221>03</b221><b244>9783503112081</b244></productidentifier>
+      <productidentifier><b221>15</b221><b244>9783503112081</b244></productidentifier>
+      <b012>BB</b012>
+   </relatedproduct>
+   <supplydetail>
+      <supplieridentifier>
+         <j345>04</j345>
+         <b244>15686</b244>
+      </supplieridentifier>
+      <j137>Erich Schmidt Verlag GmbH &amp; Co</j137>
+      <j270>030 250085260</j270>
+      <j272>c.zeeb@esvmedien.de</j272>
+      <website>
+         <b367>33</b367>
+         <b295>http://www.esv.info</b295>
+      </website>
+      <j292>01</j292>
+      <j396>20</j396>
+      <price>
+         <j148>03</j148>
+         <j266>02</j266>
+         <j151>50.40</j151>
+         <j152>EUR</j152>
+         <j153>Z</j153>
+      </price>
+      <price>
+         <j148>04</j148>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>E</j364></discountcoded>
+         <j266>02</j266>
+         <j151>59.98</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>S</j153>
+      </price>
+   </supplydetail>
+</product>
+<product>
+   <a001>978-3-503-17122-4</a001>
+   <a002>03</a002>
+   <a195>04</a195>
+   <a196>15686</a196>
+   <a197>Erich Schmidt Verlag GmbH &amp; Co</a197>
+   <productidentifier><b221>02</b221><b244>3503171223</b244></productidentifier>
+   <productidentifier><b221>15</b221><b244>9783503171224</b244></productidentifier>
+   <productidentifier><b221>03</b221><b244>9783503171224</b244></productidentifier>
+   <b246>00</b246>
+   <b012>BB</b012>
+   <series>
+      <seriesidentifier>
+         <b273>01</b273>
+         <b233>ESV Haupteintrag</b233>
+         <b244>EDG01</b244>
+      </seriesidentifier>
+      <title><b202>01</b202><b203>Edition Governance</b203></title>
+   </series>
+   <title>
+      <b202>01</b202>
+      <b203 language='ger'>Interne Kontrollsysteme (IKS)</b203>
+      <b029>Basiswissen für den Aufsichtsrat</b029>
+   </title>
+   <contributor>
+      <b034>1</b034>
+      <b035>A01</b035>
+      <b340>1</b340>
+      <b036>Oliver Bungartz</b036>
+      <b037>Bungartz, Oliver</b037>
+      <b038>Dr.</b038>
+      <b039>Oliver</b039>
+      <b040>Bungartz</b040>
+   </contributor>
+   <b049>Von Dr. Oliver Bungartz</b049>
+   <language><b253>01</b253><b252>ger</b252></language>
+   <language><b253>02</b253><b252>ger</b252></language>
+   <b255>129</b255>
+   <b062>mit 7 Abbildungen und 14 Tabellen</b062>
+   <mainsubject>
+      <b191>26</b191>
+      <b068>2.0</b068>
+      <b069>1783</b069>
+   </mainsubject>
+   <mainsubject>
+      <b191>93</b191>
+      <b068>1.1</b068>
+      <b069>KJR</b069>
+   </mainsubject>
+   <subject>
+      <b067>23</b067>
+      <b069>19</b069>
+      <b070>Management und Wirtschaft</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>IKS</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Internes Kontrollsystem</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Risikomanagement</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>COSO</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>ERM</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Compliance-Management-System</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Interne Revision</b070>
+   </subject>
+   <subject>
+      <b067>20</b067>
+      <b070>Corporate Governance</b070>
+   </subject>
+   <b207>Aufsichtsräte; Prüfungsausschüsse; Beiräte; Vorstände/Geschäftsleiter</b207>
+   <othertext>
+      <d102>99</d102>
+      <d103>06</d103>
+      <d104 textformat='06'>DE</d104>
+   </othertext>
+   <othertext>
+      <d102>01</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Die Beurteilung der Wirksamkeit des Internen Kontrollsystems (IKS) durch den Aufsichtsrat wird nicht nur vom Deutschen Corporate Governance Kodex (DCGK) eingefordert. Auch das Aktiengesetz verpflichtet durch das BilMoG inzwischen explizit zu adäquater Aufsicht u.a. im Bereich IKS. Mangelnde Kenntnisse über das IKS können verantwortliche Mandatsträger in erhebliche Erklärungsnot bringen.
+Wie sich Existenz, Aufbau und Funktionsfähigkeit eines IKS angemessen überwachen lassen, beschreibt Oliver Bungartz mit Fokus auf die professionelle Mandatsausübung.
+- Grundprinzipien interner Kontrollverfahren auf Basis des anerkannten COSO-Rahmenwerks
+- Zentrale IKS-Komponenten wie Kontrollumfeld, Risikobeurteilung, Kontrollaktivitäten, Information und Kommunikation sowie Überwachungsaktivitäten
+- Abgrenzung zu anderen Funktionsbereichen wie Risikomanagementsytem (RMS), Internes Revisionssystem (IRS) und Compliance-Management-System (CMS)
+- Beurteilungsmethoden und -modelle, von der Informationsbeschaffung über die Entscheidungsfindung bis zur Berichterstattung
+Ein praxisorientierter Leitfaden mit vielen Arbeitshilfen, Übersichten und Checklisten, um die mit dem IKS verbundenen Aufsichtspflichten zuverlässig zu erfassen und souverän zu erfüllen.</d104>
+      <d109>20160829</d109>
+   </othertext>
+   <othertext>
+      <d102>02</d102>
+      <d103>06</d103>
+      <d104 textformat='06' language='ger'>Die Beurteilung der Wirksamkeit des Internen Kontrollsystems (IKS) durch den Aufsichtsrat wird nicht nur vom Deutschen Corporate Governance Kodex (DCGK) eingefordert. Auch das Aktiengesetz verpflichtet durch das BilMoG inzwischen explizit zu adäquater Aufsicht u.a. im Bereich IKS. Wie sich Existenz, Aufbau und Funktionsfähigkeit eines IKS angemessen überwachen lassen, beschreibt Oliver Bungartz mit Fokus auf die professionelle Mandatsausübung: von Grundprinzipien interner Kontrollverfahren zu zentralen IKS-Komponenten, von der Informationsbeschaffung über die Entscheidungsfindung bis zur Berichterstattung – mit vielen Arbeitshilfen, Übersichten und Checklisten.</d104>
+      <d109>20160829</d109>
+   </othertext>
+   <othertext>
+      <d102>04</d102>
+      <d103>08</d103>
+      <d105>01</d105>
+      <d106>http://onix.esv.info/inhvzch/9783503171224.pdf</d106>
+   </othertext>
+   <mediafile>
+      <f114>04</f114>
+      <f115>09</f115>
+      <f259>72</f259>
+      <f116>01</f116>
+      <f117>http://media.esv.info/thumbnail/cover/9783503171224/2d3d/original.png</f117>
+   </mediafile>
+   <productwebsite>
+      <b367>02</b367>
+      <f123>http://www.esv.info/978-3-503-17122-4</f123>
+   </productwebsite>
+   <publisher>
+      <b291>01</b291>
+      <b241>04</b241>
+      <b243>15686</b243>
+      <b081>Erich Schmidt Verlag GmbH &amp; Co</b081>
+      <website><b367>01</b367><b295>http://www.esv.info</b295></website>
+   </publisher>
+   <b209>Berlin</b209>
+   <b083>DE</b083>
+   <b394>04</b394>
+   <b003>20161206</b003>
+   <measure><c093>01</c093><c094>195</c094><c095>mm</c095></measure>
+   <measure><c093>02</c093><c094>130</c094><c095>mm</c095></measure>
+   <measure><c093>03</c093><c094>14</c094><c095>mm</c095></measure>
+   <measure><c093>08</c093><c094>253</c094><c095>gr</c095></measure>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>COMPLIANCEdigital</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks alle Fachbereiche</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks Fachbereich Wirtschaftswissenschaften</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks Fachbereiche RWS</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>ESVcampus-eBooks und eJournal alle Fachbereiche</b244></productidentifier>
+   </relatedproduct>
+   <relatedproduct>
+      <h208>02</h208>
+      <productidentifier><b221>01</b221><b233>ESV pool name</b233><b244>INTERNE REVISIONdigital</b244></productidentifier>
+   </relatedproduct>
+      <productidentifier><b221>03</b221><b244>9783503171231</b244></productidentifier>
+      <productidentifier><b221>15</b221><b244>9783503171231</b244></productidentifier>
+      <b012>DG</b012>
+      <supplydetail>
+      <supplieridentifier>
+         <j345>04</j345>
+         <b244>15686</b244>
+      </supplieridentifier>
+      <j137>Erich Schmidt Verlag GmbH &amp; Co</j137>
+      <j270>030 250085260</j270>
+      <j272>c.zeeb@esvmedien.de</j272>
+      <website>
+         <b367>33</b367>
+         <b295>http://www.esv.info</b295>
+      </website>
+      <j292>01</j292>
+      <j396>20</j396>
+      <price>
+         <j148>03</j148>
+         <j266>02</j266>
+         <j151>27.99</j151>
+         <j152>EUR</j152>
+         <j153>Z</j153>
+      </price>
+      <price>
+         <j148>04</j148>
+         <discountcoded><j363>02</j363><j378>ESV Discountgroup</j378><j364>B</j364></discountcoded>
+         <j266>02</j266>
+         <j151>29.95</j151>
+         <j152>EUR</j152>
+         <b251>DE</b251>
+         <j153>R</j153>
+      </price>
+   </supplydetail>
+</product>
+</ONIXmessage>
