@@ -75,11 +75,15 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</maindate>
+			
+			<xsl:apply-templates select="title|subtitle|coll_title|toc_title|author_info|authors"/>
+			
+			<!-- SM: Für Gastkommentare und Editorials, die kein summary haben soll hier eins ertellt werden: -->
+			<xsl:if test="not(summary) and /*[name()=('ed','gk')]">
+				<xsl:call-template name="generate-summary"/>
+			</xsl:if>
 
-
-			<xsl:apply-templates
-				select="*[name() != 'all_doc_type' 
-		                               and name() != 'all_source']"/>
+			<xsl:apply-templates select="*[not(name() = ('all_doc_type' ,'all_source', 'title','subtitle','coll_title','toc_title','author_info','authors'))]"/>
 
 			<xsl:call-template name="createToc"/>
 			<xsl:call-template name="createLocalToc"/>
@@ -87,6 +91,15 @@
 			<xsl:apply-templates select="all_doc_type | all_source"/>
 			<xsl:call-template name="add_add_all_source"/>
 		</metadata>
+	</xsl:template>
+	
+	
+	
+	<xsl:template name="generate-summary">
+		<xsl:variable name="generated_text">
+			<xsl:value-of select="/*/body//text()[not(ancestor-or-self::figure)]"/>
+		</xsl:variable>
+		<summary generated="true"><p><xsl:value-of select="substring(normalize-space($generated_text),1,500)"/></p></summary>
 	</xsl:template>
 	
 	
@@ -317,7 +330,7 @@
 =========================================================== -->
 <xsl:template name="createToc">
 	<xsl:variable name="pub-abbr" select="descendant::pubabbr/text()"/>
-	<xsl:if test="not( (/gh and all_source[@level='2']='ar') or (descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah')or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft') or ( pub/pubtitle='OrganisationsEntwicklung' and starts-with(coll_title/text(), 'ZOE Spezial')))">
+	<xsl:if test="not( (/gh and all_source[@level='2']='ar') or (descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah' and not($pub-abbr='BWP'))or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft') or ( pub/pubtitle='OrganisationsEntwicklung' and starts-with(coll_title/text(), 'ZOE Spezial')))">
 			<toc>
 				<node title="root" childOrder="BySequenceNr">
 					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
