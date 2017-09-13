@@ -130,16 +130,17 @@
                     </xsl:choose>
                 </xsl:variable>
                 
-                    <xsl:value-of select="$c-role"/><xsl:text> </xsl:text>
-                    <xsl:for-each select="current-group()">
-                        
+                <xsl:value-of select="$c-role"/><xsl:text> </xsl:text>
+                <xsl:for-each select="current-group()">
                     
+                
                     <xsl:sort select="b034" data-type="number"/>
                     <xsl:if test="not(position()=1)"><xsl:text>, </xsl:text></xsl:if>
-                    <xsl:value-of select="b038"/><xsl:if test="b038"><xsl:text> </xsl:text></xsl:if>
+                    <xsl:if test="b038"><xsl:value-of select="b038"/><xsl:text> </xsl:text></xsl:if>
                     <xsl:value-of select="b036"/>
-                    </xsl:for-each>
-                    <br/>
+                </xsl:for-each>
+                
+                <xsl:if test="not(position() = last())" ><br/></xsl:if>
                 
             </xsl:for-each-group>
         </Contributer>
@@ -403,5 +404,99 @@
     <xsl:template match="title/b029">
         <Subtitle><xsl:value-of select="text()"/></Subtitle>
     </xsl:template>
+    
+    <xsl:template match="b057">
+        <EditionNumber><xsl:value-of select="text()"/></EditionNumber>
+    </xsl:template>
+    
+    <xsl:template match="b058">
+        <EditionStatement><xsl:value-of select="text()"/></EditionStatement>
+    </xsl:template>
+    
+    <xsl:template match="language">
+        <xsl:apply-templates select="b252|b253"/>
+    </xsl:template>
+    
+    <xsl:template match="language/b252">
+        <LanguageCode>
+            <xsl:choose>
+                <xsl:when test="text()='07'">Masterarbeit</xsl:when>
+                <xsl:when test="text()='ger'">Deutsch</xsl:when>
+                <xsl:when test="text()='gsw'">Schweizerdeutsch</xsl:when>
+                <xsl:when test="text()='eng'">Englisch</xsl:when>
+                <xsl:when test="text()='fre'">Französisch</xsl:when>
+                <xsl:when test="text()='ita'">Italienisch</xsl:when>
+                <xsl:when test="text()='spa'">Spanisch</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </LanguageCode>
+    </xsl:template>
+    
+    <xsl:template match="language/b253">
+        <LanguageRole>
+            <xsl:choose>
+                <xsl:when test="text()='01'">Produktsprache</xsl:when>
+                <xsl:when test="text()='02'">Originalsprache</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </LanguageRole>
+    </xsl:template>
+    
+    <xsl:template match="b255">
+        <PagesArabic><xsl:value-of select="text()"/></PagesArabic>
+    </xsl:template>
+    
+    <xsl:template match="b062">
+        <IllustrationsNote><xsl:value-of select="text()"/></IllustrationsNote>
+    </xsl:template>
+    
+    <xsl:template match="mainsubject">
+        <xsl:apply-templates select="b191|b068|b069"/>
+    </xsl:template>
+    
+    <xsl:template match="mainsubject/b191">
+        <MainSubjectSchemeIdentifier><xsl:value-of select="text()"/></MainSubjectSchemeIdentifier>
+    </xsl:template>
+    
+    <xsl:template match="mainsubject/b068">
+        <SubjectSchemeVersion><xsl:value-of select="text()"/></SubjectSchemeVersion>
+    </xsl:template>
+    
+    <xsl:template match="mainsubject/b069">
+        <SubjectCode><xsl:value-of select="text()"/></SubjectCode>
+    </xsl:template>
+    
+    <xsl:template match="subject">
+        <xsl:apply-templates select="b070|b067|b069"/>
+    </xsl:template>
+    
+    <xsl:template match="subject/b070">
+        <SubjectHeadingText><xsl:value-of select="text()"/></SubjectHeadingText>
+    </xsl:template>
+    
+    <xsl:template match="subject/b067">
+        <SubjectSchemeIdentifier>
+            <xsl:choose>
+                <xsl:when test="text()='20'">Stichwort</xsl:when>
+                <xsl:when test="text()='23'">Verlagseigener Kategorie</xsl:when>
+                <xsl:when test="text()='24'">Proprietäres Schlagwortschema</xsl:when>
+                <xsl:when test="text()='27'">Schlagwort-Normdatei der DNB</xsl:when>
+                <xsl:when test="text()='30'">DNB-Sachgruppen (alt)</xsl:when>
+                <xsl:when test="text()='36'">DDC Deutsch</xsl:when>
+                <xsl:when test="text()='59'">VdS Bildungsmedien Fächer</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </SubjectSchemeIdentifier>
+    </xsl:template>
+    
+    <xsl:template match="subject/b069">
+        <SubjectCode><xsl:value-of select="text()"/></SubjectCode>
+    </xsl:template>
+    
+    <xsl:template match="b207">
+        <AudienceDescription><xsl:value-of select="text()"/></AudienceDescription>
+    </xsl:template>
+    
+    <!-- weiter mit othertext: Zeile 239 -->
     
 </xsl:stylesheet>
