@@ -497,6 +497,149 @@
         <AudienceDescription><xsl:value-of select="text()"/></AudienceDescription>
     </xsl:template>
     
-    <!-- weiter mit othertext: Zeile 239 -->
+    <xsl:template match="othertext">
+        <xsl:apply-templates select="d102|d103|d104|d105|d106|d109"/>
+    </xsl:template>
+    
+    <xsl:template match="othertext/d102">
+        <TextTypeCode>
+            <xsl:choose>
+                <xsl:when test="text()='01'">Hauptbeschreibung</xsl:when>
+                <xsl:when test="text()='02'">Kurzbeschreibung</xsl:when>
+                <xsl:when test="text()='03'">Ausführliche Beschreibung</xsl:when>
+                <xsl:when test="text()='04'">Inhaltsverzeichnis</xsl:when>
+                <xsl:when test="text()='07'">Rezension</xsl:when>
+                <xsl:when test="text()='08'">Rezensionszitat</xsl:when>
+                <xsl:when test="text()='13'">Biografische Anmerkung</xsl:when>
+                <xsl:when test="text()='18'">Text der Buchrückseite</xsl:when>
+                <xsl:when test="text()='23'">Textauszug</xsl:when>
+                <xsl:when test="text()='24'">Erstes Kapitel</xsl:when>
+                <xsl:when test="text()='25'">Verkaufshinweise</xsl:when>
+                <xsl:when test="text()='33'">Einführung oder Vorwort</xsl:when>
+                <xsl:when test="text()='99'">99</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </TextTypeCode>
+    </xsl:template>
+    
+    <xsl:template match="othertext/d103">
+        <TextFormat>
+            <xsl:choose>
+                <xsl:when test="text()='02'">HTML</xsl:when>
+                <xsl:when test="text()='05'">XHTML</xsl:when>
+                <xsl:when test="text()='06'">Textformat (Voreinstellung)</xsl:when>
+                <xsl:when test="text()='07'">Basic ASCII text</xsl:when>
+                <xsl:when test="text()='08'">PDF</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </TextFormat>
+    </xsl:template>
+    
+    <xsl:template match="othertext/d104">
+        <Text><xsl:value-of select="text()"/></Text>
+    </xsl:template>
+    
+    <xsl:template match="othertext/d105">
+        <TextLinkType>
+            <xsl:choose>
+                <xsl:when test="text()='01'">URL</xsl:when>
+                <xsl:when test="text()='02'">DOI</xsl:when>
+                <xsl:when test="text()='05'">FTP-Addresse</xsl:when>
+                <xsl:when test="text()='06'">Dateiname</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </TextLinkType>
+    </xsl:template>
+    
+    <xsl:template match="othertext/d106">
+        <TextLink><xsl:value-of select="text()"/></TextLink>
+    </xsl:template>
+    
+    <xsl:template match="othertext/d109">
+        <TextPublicationDate><xsl:value-of select="concat(substring(text(),7,2),'.',substring(text(),5,2),'.',substring(text(),1,4))"/></TextPublicationDate>
+    </xsl:template>
+    
+    <xsl:template match="mediafile">
+        <xsl:apply-templates select="f114|f115|f116|f117|f259"/>
+    </xsl:template>
+    
+    <xsl:template match="mediafile/f114">
+        <MediaFileTypeCode>
+            <xsl:choose>
+                <xsl:when test="text()='01'">Whole product</xsl:when>
+                <xsl:when test="text()='03'">Image: whole cover</xsl:when>
+                <xsl:when test="text()='04'">Image: front cover</xsl:when>
+                <xsl:when test="text()='05'">Image: whole cover, high quality</xsl:when>
+                <xsl:when test="text()='06'">Image: front cover, high quality</xsl:when>
+                <xsl:when test="text()='07'">Image: front cover thumbnail</xsl:when>
+                <xsl:when test="text()='08'">Image: contributor(s)</xsl:when>
+                <xsl:when test="text()='10'">Image: for series</xsl:when>
+                <xsl:when test="text()='11'">Image: series logo</xsl:when>
+                <xsl:when test="text()='12'">Image: product logo</xsl:when>
+                <xsl:when test="text()='16'">Image: Master brand logo</xsl:when>
+                <xsl:when test="text()='17'">Image: publisher logo</xsl:when>
+                <xsl:when test="text()='18'">Image: imprint logo</xsl:when>
+                <xsl:when test="text()='22'">Image: table of contents</xsl:when>
+                <xsl:when test="text()='23'">Image: sample content</xsl:when>
+                <xsl:when test="text()='24'">Image: back cover</xsl:when>
+                <xsl:when test="text()='25'">Image: back cover, high quality</xsl:when>
+                <xsl:when test="text()='26'">Image: back cover thumbnail</xsl:when>
+                <xsl:when test="text()='27'">Image: other cover material</xsl:when>
+                <xsl:when test="text()='28'">Image: promotional material</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </MediaFileTypeCode>
+    </xsl:template>
+    
+    <xsl:template match="mediafile/f115">
+        <MediaFileFormatCode>
+            <xsl:choose>
+                <xsl:when test="text()='02'">GIF</xsl:when>
+                <xsl:when test="text()='03'">JPEG</xsl:when>
+                <xsl:when test="text()='04'">PDF</xsl:when>
+                <xsl:when test="text()='05'">TIF</xsl:when>
+                <xsl:when test="text()='06'">RealAudio 28.8</xsl:when>
+                <xsl:when test="text()='07'">MP3</xsl:when>
+                <xsl:when test="text()='08'">MPEG-4</xsl:when>
+                <xsl:when test="text()='09'">PNG</xsl:when>
+                <xsl:when test="text()='10'">WMA</xsl:when>
+                <xsl:when test="text()='11'">AAC</xsl:when>
+                <xsl:when test="text()='12'">WAV</xsl:when>
+                <xsl:when test="text()='13'">AIFF</xsl:when>
+                <xsl:when test="text()='14'">WMV</xsl:when>
+                <xsl:when test="text()='15'">OGG</xsl:when>
+                <xsl:when test="text()='16'">AVI</xsl:when>
+                <xsl:when test="text()='17'">MOV</xsl:when>
+                <xsl:when test="text()='18'">Flash</xsl:when>
+                <xsl:when test="text()='19'">3GP</xsl:when>
+                <xsl:when test="text()='20'">WebM</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </MediaFileFormatCode>
+    </xsl:template>
+    
+    <xsl:template match="mediafile/f259">
+        <ImageResolution><xsl:value-of select="text()"/></ImageResolution>
+    </xsl:template>
+    
+    <xsl:template match="mediafile/f116">
+        <MediaFileLinkTypeCode>
+            <xsl:choose>
+                <xsl:when test="text()='01'">URL</xsl:when>
+                <xsl:when test="text()='02'">DOI</xsl:when>
+                <xsl:when test="text()='03'">PURL</xsl:when>
+                <xsl:when test="text()='04'">URN</xsl:when>
+                <xsl:when test="text()='05'">FTP Addresse</xsl:when>
+                <xsl:when test="text()='06'">Dateiname</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </MediaFileLinkTypeCode>
+    </xsl:template>
+    
+    <xsl:template match="mediafile/f117">
+        <MediaFileLink><xsl:value-of select="text()"/></MediaFileLink>
+    </xsl:template>
+    
+    <!-- weiter mit productwebsite: Zeile 311 -->
     
 </xsl:stylesheet>
