@@ -640,6 +640,59 @@
         <MediaFileLink><xsl:value-of select="text()"/></MediaFileLink>
     </xsl:template>
     
-    <!-- weiter mit productwebsite: Zeile 311 -->
+    <xsl:template match="productwebsite">
+        <xsl:apply-templates select="b367|f123"/>
+    </xsl:template>
+    
+    <xsl:template match="productwebsite/b367">
+        
+    </xsl:template>
+    
+    <xsl:template match="productwebsite/f123">
+        <productUrl><xsl:value-of select="text()"/></productUrl> <!-- eigenen Elementnamen genommen hier -->
+    </xsl:template>
+    
+    <xsl:template match="publisher">
+        <xsl:apply-templates select="b291|b241|b243|b081|website"/>
+    </xsl:template>
+    
+    <xsl:template match="publisher/b081">
+        <PublisherName><xsl:value-of select="text()"/></PublisherName>
+    </xsl:template>
+    
+    <xsl:template match="publisher/website/b295">
+        <VerlagsUrl><xsl:value-of select="text()"/></VerlagsUrl>
+    </xsl:template>
+    
+    <xsl:template match="b209">
+        <CityOfPublication><xsl:value-of select="text()"/></CityOfPublication>
+    </xsl:template>
+    
+    <xsl:template match="b394">
+        <PublishingStatus>
+            <xsl:choose>
+                <xsl:when test="text()='00'">nicht spezifiziert</xsl:when>
+                <xsl:when test="text()='01'">erscheint nicht</xsl:when>
+                <xsl:when test="text()='02'">noch nicht erschienen</xsl:when>
+                <xsl:when test="text()='03'">Erscheinen unbestimmt verschoben</xsl:when>
+                <xsl:when test="text()='04'">lieferbar</xsl:when>
+                <xsl:when test="text()='05'">neuer Verlag</xsl:when>
+                <xsl:when test="text()='06'">nicht mehr lieferbar</xsl:when>
+                <xsl:when test="text()='07'">vergriffen</xsl:when>
+                <xsl:when test="text()='08'">nicht mehr lieferbar</xsl:when>
+                <xsl:when test="text()='09'">Publikationsstatus unbekannt</xsl:when>
+                <xsl:when test="text()='10'">Restposten</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </PublishingStatus>
+    </xsl:template>
+    
+    <xsl:template match="b003">
+        <PublicationDate><xsl:value-of select="concat(substring(text(),7,2),'.',substring(text(),5,2),'.',substring(text(),1,4))"/></PublicationDate>
+    </xsl:template>
+    
+    <!-- weiter mit measure: Zeile 338 -->
+    
+    <!-- am Schluss nochmal Output mit Resultdocument abgleichen -->
     
 </xsl:stylesheet>
