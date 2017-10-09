@@ -23,8 +23,9 @@
     
     <xsl:template match="product">
         <product>
-            <xsl:apply-templates select="*[not(name()='contributor')]"/> <!-- Herausgeber werdern zusammengefasst und müssen daher seperat ermittelt werden -->
+            <xsl:apply-templates select="*[not(name()=('contributor', 'measure'))]"/> <!-- Herausgeber werdern zusammengefasst und müssen daher seperat ermittelt werden -->
             <xsl:call-template name="contributors"/>
+            <xsl:call-template name="measure"/>
         </product>
     </xsl:template>
     
@@ -232,7 +233,7 @@
         <Barcode><xsl:value-of select="text()"/></Barcode>
     </xsl:template>
     
-    <xsl:template match="b012">
+    <xsl:template match="product/b012">
         <ProductForm>
             <xsl:choose>
                 <xsl:when test="text()='BA'">Buch</xsl:when>
@@ -691,8 +692,68 @@
         <PublicationDate><xsl:value-of select="concat(substring(text(),7,2),'.',substring(text(),5,2),'.',substring(text(),1,4))"/></PublicationDate>
     </xsl:template>
     
-    <!-- weiter mit measure: Zeile 338 -->
+    <xsl:template name="measure">
+        <format>
+            <xsl:for-each select="measure[c093/text() = ('01', '02', '03')]">
+                <xsl:value-of select="c094"/><xsl:if test="not(position()= last())"> x </xsl:if>
+            </xsl:for-each>
+            <xsl:if test="measure[c093/text() = ('01', '02', '03')][1]/c095"><xsl:text> </xsl:text></xsl:if>
+            <xsl:apply-templates select="measure[c093/text() = ('01', '02', '03')][1]/c095"/><!-- Das ist nicht wirklich zuverlässig, falls die Elemente unterschiedliche Maßeinheiten haben und sollte noch abgefangen werden -->
+        </format>
+        <gewicht>
+            <xsl:value-of select="measure[c093/text() = '08']/c094"/>
+            <xsl:if test="measure[c093/text() = '08']/c095"><xsl:text> </xsl:text></xsl:if>
+            <xsl:apply-templates select="measure[c093/text() = '08']/c095"/>
+        </gewicht>
+    </xsl:template>
+    
+    <!-- Template für nicht abgefangene measure Werte: -->
+    <xsl:template match="measure[not(c093/text() = ('01', '02', '03', '08'))]">
+        <MEASURE-TYP-NICHT-ERFASST/>
+    </xsl:template>
+    
+    <xsl:template match="measure/c095">
+        <xsl:choose>
+            <xsl:when test="text()='cm'">Zentimeter</xsl:when>
+            <xsl:when test="text()='gr'">Gramm</xsl:when>
+            <xsl:when test="text()='in'">Zoll</xsl:when>
+            <xsl:when test="text()='kg'">Kilogramm</xsl:when>
+            <xsl:when test="text()='lb'">Pfund</xsl:when>
+            <xsl:when test="text()='mm'">Millimeter</xsl:when>
+            <xsl:when test="text()='oz'">Unzen</xsl:when>
+            <xsl:when test="text()='px'">Pixel</xsl:when>
+            <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="relatedproduct">
+        TODO
+        <!-- Das muss nochmal mit Steffi abgeklärt werden, hier wurde im Beispiel Result Dokument z.B. nur einmal Productform ausgegeben, obwohl es mehrere relatedproducts gab -->
+    </xsl:template>
+    
+    <xsl:template match="product/supplydetail">
+        <xsl:apply-templates select="j396 | price/j148"/>
+    </xsl:template>
+    
+    <xsl:template match="supplydetail/j396">
+        <ProductAvailability>
+            <xsl:choose>
+                <xsl:when test="text()='10'">noch nicht lieferbar</xsl:when>
+                <xsl:when test="text()='20'">lieferbar</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </ProductAvailability>
+    </xsl:template>
+    
+    <xsl:template match="supplydetail/price/j148">
+        TODO
+        <!-- hier gibt's auch wieder mehrere price Elemente pro product, das muss auch nochmal abgeklärt werden -->
+        <!--<PriceTypeCode></PriceTypeCode>-->
+    </xsl:template>
+    
     
     <!-- am Schluss nochmal Output mit Resultdocument abgleichen -->
+    
+    <!-- Kommentare checken -->
     
 </xsl:stylesheet>
