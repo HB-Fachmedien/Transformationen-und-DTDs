@@ -89,13 +89,18 @@
     </pattern>
     <pattern>
         <!-- Regel für alle Werke außer Str Kompakt und ifst Schriften: -->
-        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and  ancestor::metadata/all_source[@level='2' and not(text()=('str','ifst'))]]">
+        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and ancestor::metadata/all_source[@level='2' and not(text()=('str','ifst','zoe'))]]">
             <assert test="/gh or not(string(number(replace(.,'-',''))) = 'NaN')">Die Pubedition darf nur aus Zahlen bestehen!</assert>
         </rule>
         
         <!-- Regel für ifst Schriften -->
         <rule context="pub/pubedition[ancestor::metadata/all_source[@level='2' and text()='ifst']]">
             <assert test="not(string(number(replace(replace(.,'ifst',''),'-',''))) = 'NaN')">Die Pubedition von ifst-Schriften darf nur aus dem Kürzel 'ifst' + Zahlen bestehen!</assert>
+        </rule>
+        
+        <!-- Regel für zoe: Hier wird die pubedition gesondert abgefragt, weil es 3 Sonderausgaben gibt, die sich nicht von den normalen Heftartikeln unterscheiden -->
+        <rule context="pub/pubedition[ancestor::metadata/all_source[@level='2' and text()='zoe']]">
+            <assert test="not(string(number(replace(replace(.,'Spezial ',''),'-',''))) = 'NaN')">Die Pubedition von ifst-Schriften darf nur aus dem Kürzel 'ifst' + Zahlen bestehen!</assert>
         </rule>
     </pattern>
     <pattern>
