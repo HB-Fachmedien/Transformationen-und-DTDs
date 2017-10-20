@@ -410,7 +410,7 @@
 											<!-- Gesamtbeilagen werden auch produziert, so dass es zwei Dokumente mit Start Seitenzahl 1 gibt. Für diesem Fall wird bei der Sequenznummer noch die letzte Seite mitberechnet -->
 											<xsl:variable name="var_last_page">
 												<xsl:choose>
-													<xsl:when test="descendant::pages/last_page">
+													<xsl:when test="descendant::pages/last_page[text()]">
 														<xsl:value-of select="descendant::pages/last_page/text()"/>
 													</xsl:when>
 													<xsl:otherwise>0</xsl:otherwise>
@@ -435,7 +435,34 @@
 													</xsl:choose>
 												</xsl:variable>
 												<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
-													<leaf sequenceNr="{(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100) + ((number(descendant::article_order/text()) - 1) * 10)}"/>
+													<xsl:variable name="bwp-docType-SeqN">
+														<xsl:choose>
+															<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+															<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
+															<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+															<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
+															<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
+															<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
+															<xsl:when test="../name()='iv'">Interview#600</xsl:when>
+															<xsl:when test="../name()='divah'">Arbeitshilfen#700</xsl:when>
+														</xsl:choose>
+													</xsl:variable>
+													<xsl:variable name="leafseqnr">
+														<xsl:choose>
+															<xsl:when test="descendant::pubedition = '00'">
+																<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
+															</xsl:when>
+															<xsl:otherwise>
+																<xsl:value-of select="
+																	(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+																	+
+																	((number(descendant::article_order/text()) - 1) * 10)"/>
+															</xsl:otherwise>
+														</xsl:choose>
+													</xsl:variable>
+													<node title="{tokenize($bwp-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($bwp-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+														<leaf sequenceNr="{$leafseqnr}"/>
+													</node>
 												</node>
 											</xsl:when>
 											<xsl:otherwise>
@@ -578,10 +605,12 @@
 										<xsl:variable name="get-pubedition">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:when test="starts-with(descendant::pubedition, 'Spezial')"><xsl:value-of select="descendant::pubedition"/></xsl:when>
 												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 											</xsl:choose>
 										</xsl:variable>
-										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
+										<node title="{$get-pubedition}" childOrder="BySequenceNr">
+											<xsl:if test="not(starts-with(descendant::pubedition, 'Spezial'))"><xsl:attribute name="expanded">true</xsl:attribute></xsl:if>
 											<xsl:variable name="kor-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
@@ -596,6 +625,7 @@
 											<xsl:variable name="leafseqnr">
 												<xsl:choose>
 													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:when test="starts-with(descendant::pubedition, 'Spezial')">100</xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
 															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
