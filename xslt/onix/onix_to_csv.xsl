@@ -726,10 +726,8 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="relatedproduct">
-        TODO
-        <!-- Das muss nochmal mit Steffi abgeklärt werden, hier wurde im Beispiel Result Dokument z.B. nur einmal Productform ausgegeben, obwohl es mehrere relatedproducts gab -->
-    </xsl:template>
+    <!--<xsl:template match="relatedproduct"><!-/- wird laut Steffi vorerst nicht gebraucht. -/->        
+    </xsl:template>-->
     
     <xsl:template match="product/supplydetail">
         <xsl:apply-templates select="j396 | price/j148"/>
@@ -745,15 +743,11 @@
         </ProductAvailability>
     </xsl:template>
     
-    <xsl:template match="supplydetail/price/j148">
-        TODO
-        <!-- hier gibt's auch wieder mehrere price Elemente pro product, das muss auch nochmal abgeklärt werden -->
-        <!--<PriceTypeCode></PriceTypeCode>-->
+    <!-- bisher soll nur "gebundener Ladenpreis ohne Mehrwertsteuer" abgefangen werden. Falls mehr, muss dieses
+    Template überarbeitet werden. -->
+    <xsl:template match="supplydetail/price/j148[text()='03']">
+        <PriceTypeCode>gebundener Ladenpreis ohne Mehrwertsteuer</PriceTypeCode>
+        <PriceAmount><xsl:value-of select="../j151"/><xsl:text> </xsl:text><xsl:value-of select="../j152"/></PriceAmount>
     </xsl:template>
-    
-    
-    <!-- am Schluss nochmal Output mit Resultdocument abgleichen -->
-    
-    <!-- Kommentare checken -->
     
 </xsl:stylesheet>
