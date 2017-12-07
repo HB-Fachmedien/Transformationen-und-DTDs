@@ -23,10 +23,27 @@
     
     <xsl:template match="product">
         <product>
+            <xsl:if test="count(b012)&gt;1">
+                <VORSICHT>Mehr als ein b012 Element vorhanden!</VORSICHT>
+            </xsl:if>
             <xsl:apply-templates select="*[not(name()=('contributor', 'measure'))]"/> <!-- Herausgeber werdern zusammengefasst und müssen daher seperat ermittelt werden -->
             <xsl:call-template name="contributors"/>
             <xsl:call-template name="measure"/>
+            <xsl:call-template name="subjects"/>
         </product>
+    </xsl:template>
+    
+    
+    <xsl:template name="subjects">
+        <xsl:if test="subject[b067/text()='20']">
+            <SubjectSchemeIdentifier>
+                <xsl:text>Stichwort: </xsl:text>
+                <xsl:for-each select="subject[b067/text()='20']">
+                    <xsl:value-of select="b070/text()"/>
+                    <xsl:if test="not(position() = last())"><xsl:text>, </xsl:text></xsl:if>
+                </xsl:for-each>
+            </SubjectSchemeIdentifier>
+        </xsl:if>
     </xsl:template>
     
     
@@ -207,21 +224,30 @@
     </xsl:template>
     
     <xsl:template match="productidentifier/b221">
+        <xsl:variable name="pi-postfix">
+            <xsl:choose>
+                <xsl:when test="../following-sibling::b012 and count(ancestor::product/b012) &gt; 1">
+                    <xsl:text>-</xsl:text><xsl:value-of select="../following-sibling::b012[1]/text()"/>
+                </xsl:when>
+                <xsl:otherwise></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
         <xsl:choose>
             <xsl:when test="text() = '01'">
                 <xsl:element name="{../b233/text()}"><xsl:value-of select="../b244/text()"/></xsl:element>
             </xsl:when>
             <xsl:when test="text() = '02'">
-                <xsl:element name="ISBN-10"><xsl:value-of select="../b244/text()"/></xsl:element>
+                <xsl:element name="ISBN-10{$pi-postfix}"><xsl:value-of select="../b244/text()"/></xsl:element>
             </xsl:when>
             <xsl:when test="text() = '03'">
-                <xsl:element name="EAN"><xsl:value-of select="../b244/text()"/></xsl:element>
+                <xsl:element name="EAN{$pi-postfix}"><xsl:value-of select="../b244/text()"/></xsl:element>
             </xsl:when>
             <xsl:when test="text() = '06'">
-                <xsl:element name="DOI"><xsl:value-of select="../b244/text()"/></xsl:element>
+                <xsl:element name="DOI{$pi-postfix}"><xsl:value-of select="../b244/text()"/></xsl:element>
             </xsl:when>
             <xsl:when test="text() = '15'">
-                <xsl:element name="ISBN-13"><xsl:value-of select="../b244/text()"/></xsl:element>
+                <xsl:element name="ISBN-13{$pi-postfix}"><xsl:value-of select="../b244/text()"/></xsl:element>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>TYP NICHT ERFASST</xsl:text>
@@ -234,7 +260,16 @@
     </xsl:template>
     
     <xsl:template match="product/b012">
-        <ProductForm>
+        <xsl:variable name="el-postfix">
+            <xsl:choose>
+                <xsl:when test="count(ancestor::product/b012) &gt; 1">
+                    <xsl:text>-</xsl:text><xsl:value-of select="text()"/>
+                </xsl:when>
+                <xsl:otherwise></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:element name="ProductForm{$el-postfix}">
             <xsl:choose>
                 <xsl:when test="text()='BA'">Buch</xsl:when>
                 <xsl:when test="text()='BB'">Hardcover</xsl:when>
@@ -267,7 +302,8 @@
                 <xsl:when test="text()='DN'">CD/DVD (doppelseitig)</xsl:when>
                 <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
             </xsl:choose>
-        </ProductForm>
+        </xsl:element>
+        
     </xsl:template>
     
     <xsl:template match="b333">
@@ -418,7 +454,8 @@
         <xsl:apply-templates select="b252|b253"/>
     </xsl:template>
     
-    <xsl:template match="language/b252">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="language/b252">
         <LanguageCode>
             <xsl:choose>
                 <xsl:when test="text()='07'">Masterarbeit</xsl:when>
@@ -431,9 +468,10 @@
                 <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
             </xsl:choose>
         </LanguageCode>
-    </xsl:template>
+    </xsl:template>-->
     
-    <xsl:template match="language/b253">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="language/b253">
         <LanguageRole>
             <xsl:choose>
                 <xsl:when test="text()='01'">Produktsprache</xsl:when>
@@ -441,7 +479,7 @@
                 <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
             </xsl:choose>
         </LanguageRole>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="b255">
         <PagesArabic><xsl:value-of select="text()"/></PagesArabic>
@@ -455,28 +493,29 @@
         <xsl:apply-templates select="b191|b068|b069"/>
     </xsl:template>
     
-    <xsl:template match="mainsubject/b191">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="mainsubject/b191">
         <MainSubjectSchemeIdentifier><xsl:value-of select="text()"/></MainSubjectSchemeIdentifier>
-    </xsl:template>
+    </xsl:template>-->
     
-    <xsl:template match="mainsubject/b068">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="mainsubject/b068">
         <SubjectSchemeVersion><xsl:value-of select="text()"/></SubjectSchemeVersion>
-    </xsl:template>
+    </xsl:template>-->
     
-    <xsl:template match="mainsubject/b069">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="mainsubject/b069">
         <SubjectCode><xsl:value-of select="text()"/></SubjectCode>
-    </xsl:template>
+    </xsl:template>-->
     
-    <xsl:template match="subject">
-        <xsl:apply-templates select="b070|b067|b069"/>
-    </xsl:template>
+    <xsl:template match="subject"><!--<xsl:apply-templates select="b070|b067|b069"/>--></xsl:template>
     
-    <xsl:template match="subject/b070">
+    <!--<xsl:template match="subject/b070">
         <SubjectHeadingText><xsl:value-of select="text()"/></SubjectHeadingText>
     </xsl:template>
     
-    <xsl:template match="subject/b067">
-        <SubjectSchemeIdentifier>
+    <xsl:template match="subject/b067[text()='20']"><!-\- Stichwörter -\->
+        <!-\-<SubjectSchemeIdentifier>
             <xsl:choose>
                 <xsl:when test="text()='20'">Stichwort</xsl:when>
                 <xsl:when test="text()='23'">Verlagseigener Kategorie</xsl:when>
@@ -487,12 +526,13 @@
                 <xsl:when test="text()='59'">VdS Bildungsmedien Fächer</xsl:when>
                 <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
             </xsl:choose>
-        </SubjectSchemeIdentifier>
+        </SubjectSchemeIdentifier>-\->
+        <Stichwort></Stichwort>
     </xsl:template>
     
     <xsl:template match="subject/b069">
         <SubjectCode><xsl:value-of select="text()"/></SubjectCode>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="b207">
         <AudienceDescription><xsl:value-of select="text()"/></AudienceDescription>
@@ -503,27 +543,31 @@
     </xsl:template>
     
     <xsl:template match="othertext/d102">
-        <TextTypeCode>
+        <xsl:variable name="name-of-el">
             <xsl:choose>
                 <xsl:when test="text()='01'">Hauptbeschreibung</xsl:when>
                 <xsl:when test="text()='02'">Kurzbeschreibung</xsl:when>
-                <xsl:when test="text()='03'">Ausführliche Beschreibung</xsl:when>
+                <xsl:when test="text()='03'">Ausfuehrliche-Beschreibung</xsl:when>
                 <xsl:when test="text()='04'">Inhaltsverzeichnis</xsl:when>
                 <xsl:when test="text()='07'">Rezension</xsl:when>
                 <xsl:when test="text()='08'">Rezensionszitat</xsl:when>
-                <xsl:when test="text()='13'">Biografische Anmerkung</xsl:when>
-                <xsl:when test="text()='18'">Text der Buchrückseite</xsl:when>
+                <xsl:when test="text()='13'">Biografische-Anmerkung</xsl:when>
+                <xsl:when test="text()='18'">Text-der-Buchrueckseite</xsl:when>
                 <xsl:when test="text()='23'">Textauszug</xsl:when>
-                <xsl:when test="text()='24'">Erstes Kapitel</xsl:when>
+                <xsl:when test="text()='24'">Erstes-Kapitel</xsl:when>
                 <xsl:when test="text()='25'">Verkaufshinweise</xsl:when>
-                <xsl:when test="text()='33'">Einführung oder Vorwort</xsl:when>
-                <xsl:when test="text()='99'">99</xsl:when>
-                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+                <xsl:when test="text()='33'">Einfuehrung-oder-Vorwort</xsl:when>
+                <xsl:when test="text()='99'">_99</xsl:when>
+                <xsl:otherwise>TYP-NICHT-ERFASST</xsl:otherwise>
             </xsl:choose>
-        </TextTypeCode>
+        </xsl:variable>
+        <xsl:element name="{$name-of-el}">
+            <xsl:value-of select="../d104/text()"/>
+        </xsl:element>
     </xsl:template>
     
-    <xsl:template match="othertext/d103">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="othertext/d103">
         <TextFormat>
             <xsl:choose>
                 <xsl:when test="text()='02'">HTML</xsl:when>
@@ -534,11 +578,11 @@
                 <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
             </xsl:choose>
         </TextFormat>
-    </xsl:template>
+    </xsl:template>-->
     
-    <xsl:template match="othertext/d104">
+    <!--<xsl:template match="othertext/d104">
         <Text><xsl:value-of select="text()"/></Text>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="othertext/d105">
         <TextLinkType>
@@ -556,9 +600,10 @@
         <TextLink><xsl:value-of select="text()"/></TextLink>
     </xsl:template>
     
-    <xsl:template match="othertext/d109">
+    <!-- Soll raus laut Steffis Mail vom 4.12.2017: -->
+    <!--<xsl:template match="othertext/d109">
         <TextPublicationDate><xsl:value-of select="concat(substring(text(),7,2),'.',substring(text(),5,2),'.',substring(text(),1,4))"/></TextPublicationDate>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="mediafile">
         <xsl:apply-templates select="f114|f115|f116|f117|f259"/>
