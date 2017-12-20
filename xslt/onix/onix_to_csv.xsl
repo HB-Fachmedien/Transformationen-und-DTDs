@@ -27,146 +27,147 @@
                 <VORSICHT>Mehr als ein b012 Element vorhanden!</VORSICHT>
             </xsl:if>
             <xsl:apply-templates select="*[not(name()=('contributor', 'measure'))]"/> <!-- Herausgeber werdern zusammengefasst und müssen daher seperat ermittelt werden -->
-            <xsl:call-template name="contributors"/>
+            <xsl:if test="contributor">
+                <Contributer><xsl:call-template name="contributors"><xsl:with-param name="product" select="."/></xsl:call-template></Contributer>
+            </xsl:if>
             <xsl:call-template name="measure"/>
-            <xsl:call-template name="subjects"/>
+            <xsl:if test="subject[b067/text()='20']">
+                <SubjectSchemeIdentifier><xsl:call-template name="subjects"><xsl:with-param name="product" select="."/></xsl:call-template></SubjectSchemeIdentifier>
+            </xsl:if>
         </product>
     </xsl:template>
     
     
     <xsl:template name="subjects">
-        <xsl:if test="subject[b067/text()='20']">
-            <SubjectSchemeIdentifier>
-                <xsl:text>Stichwort: </xsl:text>
-                <xsl:for-each select="subject[b067/text()='20']">
-                    <xsl:value-of select="b070/text()"/>
-                    <xsl:if test="not(position() = last())"><xsl:text>, </xsl:text></xsl:if>
-                </xsl:for-each>
-            </SubjectSchemeIdentifier>
-        </xsl:if>
+        <xsl:param name="product"/>
+        <xsl:text>Stichwort: </xsl:text>
+        <xsl:for-each select="$product/subject[b067/text()='20']">
+            <xsl:value-of select="b070/text()"/>
+            <xsl:if test="not(position() = last())"><xsl:text>, </xsl:text></xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     
     <xsl:template name="contributors">
-        <Contributer>
-            <xsl:for-each-group group-by="b035" select="contributor">
-                <xsl:variable name="c-role">
-                    <xsl:choose>
-                        <xsl:when test="current-grouping-key()='A01'">Autor(en):</xsl:when>
-                        <xsl:when test="current-grouping-key()='A15'">Einleitung von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B01'">Herausgegeben von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A19'">Nachwort von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B06'">Übersetzt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A23'">Vorwort von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B05'">Bearbeitet von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A33'">Anhang von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A20'">Anmerkungen von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B25'">Arrangiert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E99'">Aufgeführt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='F99'">Aufgezeichnet von</xsl:when>
-                        <xsl:when test="current-grouping-key()='C02'">Ausgewählt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B13'">Bandherausgeber:</xsl:when>
-                        <xsl:when test="current-grouping-key()='C99'">Bearbeiter (sonst.):</xsl:when>
-                        <xsl:when test="current-grouping-key()='B99'">Bearbeitet von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B17'">Begründet von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A32'">Beiträge von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B20'">Beratender Herausgeber:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A31'">Buch und Lieder von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B11'">Chefredakteur:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A26'">Denkschrift</xsl:when>
-                        <xsl:when test="current-grouping-key()='D03'">Dirigent</xsl:when>
-                        <xsl:when test="current-grouping-key()='B22'">Dramatisiert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A03'">Drehbuch von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A29'">Einführung und Anmerkungen von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A24'">Einführung von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A09'">Entwurf von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A22'">Epilog von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A14'">Erläuternder Text von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A38'">Erstverfasser:</xsl:when>
-                        <xsl:when test="current-grouping-key()='E03'">Erzählt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A27'">Experimente von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A42'">fortgeführt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A13'">Foto(s) von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A08'">Fotograf:</xsl:when>
-                        <xsl:when test="current-grouping-key()='B18'">Für die Veröffentlichung vorbereitet von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A25'">Fussnoten von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B12'">Gastherausgeber:</xsl:when>
-                        <xsl:when test="current-grouping-key()='F01'">Gefilmt / Fotografiert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B04'">Gekürzt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E07'">Gelesen von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E08'">Gespielt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B21'">Hauptschriftleiter:</xsl:when>
-                        <xsl:when test="current-grouping-key()='B15'">Herausgeberische Koordinierung:</xsl:when>
-                        <xsl:when test="current-grouping-key()='B10'">Herausgegeben und übersetzt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A10'">Idee von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A12'">Illustriert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A34'">Index von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E06'">Instrumentalsolist:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A43'">Interviewer</xsl:when>
-                        <xsl:when test="current-grouping-key()='A44'">Interviewter</xsl:when>
-                        <xsl:when test="current-grouping-key()='A39'">Karten von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A40'">koloriert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E04'">Kommentator:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A21'">Kommentiert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B08'">Kommentierte Übersetzung von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A06'">Komponiert von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A11'">Konzeption von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B16'">Leitender Herausgeber:</xsl:when>
-                        <xsl:when test="current-grouping-key()='D99'">Leitung (sonst.):</xsl:when>
-                        <xsl:when test="current-grouping-key()='A04'">Libretto von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A05'">Liedtext von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B24'">literarischer Herausgeber:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A07'">Maler:</xsl:when>
-                        <xsl:when test="current-grouping-key()='B14'">Redaktion:</xsl:when>
-                        <xsl:when test="current-grouping-key()='B19'">Mitherausgeber:</xsl:when>
-                        <xsl:when test="current-grouping-key()='Z99'">Mitwirkung (sonst.):</xsl:when>
-                        <xsl:when test="current-grouping-key()='B07'">Nach einer Erzählung von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B03'">Nacherzählt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A41'">Pop-ups von</xsl:when>
-                        <xsl:when test="current-grouping-key()='D01'">Produzent:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A16'">Prolog von</xsl:when>
-                        <xsl:when test="current-grouping-key()='D02'">Regie von</xsl:when>
-                        <xsl:when test="current-grouping-key()='B09'">Reihe herausgegeben von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E05'">Sänger:</xsl:when>
-                        <xsl:when test="current-grouping-key()='E01'">Schauspieler:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A30'">Software von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A18'">Supplement von</xsl:when>
-                        <xsl:when test="current-grouping-key()='E02'">Tänzer:</xsl:when>
-                        <xsl:when test="current-grouping-key()='B02'">Überarbeitet von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A36'">Umschlaggestaltung von</xsl:when>
-                        <xsl:when test="current-grouping-key()='Z01'">Unterstützt von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A99'">Urheber (sonst.):</xsl:when>
-                        <xsl:when test="current-grouping-key()='B23'">Verantwortlicher Berichterstatter:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A02'">verfasst mit:</xsl:when>
-                        <xsl:when test="current-grouping-key()='A37'">Vorarbeiten von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A35'">Zeichnungen von</xsl:when>
-                        <xsl:when test="current-grouping-key()='A17'">Zusammenfassung von</xsl:when>
-                        <xsl:when test="current-grouping-key()='C01'">Zusammengestellt von</xsl:when>
-                        <xsl:otherwise>
-                            <xsl:text>TYP NICHT ERFASST</xsl:text>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
+        <xsl:param name="product"/>
+        <xsl:for-each-group group-by="b035" select="$product/contributor">
+            <xsl:variable name="c-role">
+                <xsl:choose>
+                    <xsl:when test="current-grouping-key()='A01'">Autor(en):</xsl:when>
+                    <xsl:when test="current-grouping-key()='A15'">Einleitung von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B01'">Herausgegeben von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A19'">Nachwort von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B06'">Übersetzt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A23'">Vorwort von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B05'">Bearbeitet von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A33'">Anhang von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A20'">Anmerkungen von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B25'">Arrangiert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E99'">Aufgeführt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='F99'">Aufgezeichnet von</xsl:when>
+                    <xsl:when test="current-grouping-key()='C02'">Ausgewählt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B13'">Bandherausgeber:</xsl:when>
+                    <xsl:when test="current-grouping-key()='C99'">Bearbeiter (sonst.):</xsl:when>
+                    <xsl:when test="current-grouping-key()='B99'">Bearbeitet von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B17'">Begründet von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A32'">Beiträge von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B20'">Beratender Herausgeber:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A31'">Buch und Lieder von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B11'">Chefredakteur:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A26'">Denkschrift</xsl:when>
+                    <xsl:when test="current-grouping-key()='D03'">Dirigent</xsl:when>
+                    <xsl:when test="current-grouping-key()='B22'">Dramatisiert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A03'">Drehbuch von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A29'">Einführung und Anmerkungen von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A24'">Einführung von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A09'">Entwurf von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A22'">Epilog von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A14'">Erläuternder Text von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A38'">Erstverfasser:</xsl:when>
+                    <xsl:when test="current-grouping-key()='E03'">Erzählt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A27'">Experimente von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A42'">fortgeführt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A13'">Foto(s) von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A08'">Fotograf:</xsl:when>
+                    <xsl:when test="current-grouping-key()='B18'">Für die Veröffentlichung vorbereitet von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A25'">Fussnoten von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B12'">Gastherausgeber:</xsl:when>
+                    <xsl:when test="current-grouping-key()='F01'">Gefilmt / Fotografiert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B04'">Gekürzt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E07'">Gelesen von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E08'">Gespielt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B21'">Hauptschriftleiter:</xsl:when>
+                    <xsl:when test="current-grouping-key()='B15'">Herausgeberische Koordinierung:</xsl:when>
+                    <xsl:when test="current-grouping-key()='B10'">Herausgegeben und übersetzt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A10'">Idee von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A12'">Illustriert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A34'">Index von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E06'">Instrumentalsolist:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A43'">Interviewer</xsl:when>
+                    <xsl:when test="current-grouping-key()='A44'">Interviewter</xsl:when>
+                    <xsl:when test="current-grouping-key()='A39'">Karten von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A40'">koloriert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E04'">Kommentator:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A21'">Kommentiert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B08'">Kommentierte Übersetzung von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A06'">Komponiert von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A11'">Konzeption von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B16'">Leitender Herausgeber:</xsl:when>
+                    <xsl:when test="current-grouping-key()='D99'">Leitung (sonst.):</xsl:when>
+                    <xsl:when test="current-grouping-key()='A04'">Libretto von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A05'">Liedtext von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B24'">literarischer Herausgeber:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A07'">Maler:</xsl:when>
+                    <xsl:when test="current-grouping-key()='B14'">Redaktion:</xsl:when>
+                    <xsl:when test="current-grouping-key()='B19'">Mitherausgeber:</xsl:when>
+                    <xsl:when test="current-grouping-key()='Z99'">Mitwirkung (sonst.):</xsl:when>
+                    <xsl:when test="current-grouping-key()='B07'">Nach einer Erzählung von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B03'">Nacherzählt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A41'">Pop-ups von</xsl:when>
+                    <xsl:when test="current-grouping-key()='D01'">Produzent:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A16'">Prolog von</xsl:when>
+                    <xsl:when test="current-grouping-key()='D02'">Regie von</xsl:when>
+                    <xsl:when test="current-grouping-key()='B09'">Reihe herausgegeben von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E05'">Sänger:</xsl:when>
+                    <xsl:when test="current-grouping-key()='E01'">Schauspieler:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A30'">Software von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A18'">Supplement von</xsl:when>
+                    <xsl:when test="current-grouping-key()='E02'">Tänzer:</xsl:when>
+                    <xsl:when test="current-grouping-key()='B02'">Überarbeitet von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A36'">Umschlaggestaltung von</xsl:when>
+                    <xsl:when test="current-grouping-key()='Z01'">Unterstützt von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A99'">Urheber (sonst.):</xsl:when>
+                    <xsl:when test="current-grouping-key()='B23'">Verantwortlicher Berichterstatter:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A02'">verfasst mit:</xsl:when>
+                    <xsl:when test="current-grouping-key()='A37'">Vorarbeiten von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A35'">Zeichnungen von</xsl:when>
+                    <xsl:when test="current-grouping-key()='A17'">Zusammenfassung von</xsl:when>
+                    <xsl:when test="current-grouping-key()='C01'">Zusammengestellt von</xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>TYP NICHT ERFASST</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            
+            <xsl:value-of select="$c-role"/><xsl:text> </xsl:text>
+            <xsl:for-each select="current-group()">
                 
-                <xsl:value-of select="$c-role"/><xsl:text> </xsl:text>
-                <xsl:for-each select="current-group()">
-                    
-                
-                    <xsl:sort select="b034" data-type="number"/>
-                    <xsl:if test="not(position()=1)"><xsl:text>, </xsl:text></xsl:if>
-                    <xsl:if test="b038"><xsl:value-of select="b038"/><xsl:text> </xsl:text></xsl:if>
-                    <xsl:value-of select="b036"/>
-                </xsl:for-each>
-                
-                <xsl:if test="not(position() = last())" ><br/></xsl:if>
-                
-            </xsl:for-each-group>
-        </Contributer>
+            
+                <xsl:sort select="b034" data-type="number"/>
+                <xsl:if test="not(position()=1)"><xsl:text>, </xsl:text></xsl:if>
+                <xsl:if test="b038"><xsl:value-of select="b038"/><xsl:text> </xsl:text></xsl:if>
+                <xsl:value-of select="b036"/>
+            </xsl:for-each>
+            
+            <xsl:if test="not(position() = last())" ><br/></xsl:if>
+            
+        </xsl:for-each-group>
+        
     </xsl:template>
 
     
     <xsl:template match="a001">
-        <RecordReference><xsl:value-of select="text()"/></RecordReference>
+        <RecordReference><xsl:text>ESV-</xsl:text><xsl:value-of select="text()"/></RecordReference>
     </xsl:template>
     
     <xsl:template match="a002">
@@ -247,12 +248,25 @@
                 <xsl:element name="DOI{$pi-postfix}"><xsl:value-of select="../b244/text()"/></xsl:element>
             </xsl:when>
             <xsl:when test="text() = '15'">
-                <xsl:element name="ISBN-13{$pi-postfix}"><xsl:value-of select="../b244/text()"/></xsl:element>
+                <xsl:element name="ISBN-13{$pi-postfix}">
+                    <xsl:call-template name="format-isbn-13-string">
+                        <xsl:with-param name="s" select="../b244/text()"/>
+                    </xsl:call-template>
+                </xsl:element>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>TYP NICHT ERFASST</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="format-isbn-13-string">
+        <xsl:param name="s"/>
+        <xsl:value-of select="substring($s, 1,3)"/><xsl:text>-</xsl:text>
+        <xsl:value-of select="substring($s, 4,1)"/><xsl:text>-</xsl:text>
+        <xsl:value-of select="substring($s, 5,3)"/><xsl:text>-</xsl:text>
+        <xsl:value-of select="substring($s, 8,5)"/><xsl:text>-</xsl:text>
+        <xsl:value-of select="substring($s, 13,1)"/>
     </xsl:template>
     
     <xsl:template match="b246">
@@ -292,7 +306,7 @@
                 <xsl:when test="text()='DC'">CD</xsl:when>
                 <xsl:when test="text()='DE'">Computerspiel</xsl:when>
                 <xsl:when test="text()='DF'">Diskette</xsl:when>
-                <xsl:when test="text()='DG'">E-Book</xsl:when>
+                <xsl:when test="text()='DG'">eBook</xsl:when>
                 <xsl:when test="text()='DH'">Datenbank</xsl:when>
                 <xsl:when test="text()='DI'">DVD</xsl:when>
                 <xsl:when test="text()='DJ'">Secure Digital (SD) Memory Card</xsl:when>
@@ -303,6 +317,18 @@
                 <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
             </xsl:choose>
         </xsl:element>
+        
+        <xsl:element name="tax-type{$el-postfix}">
+            <xsl:choose>
+                <xsl:when test="text()='DG' or text()='DH'">voller Satz (19%)</xsl:when>
+                <xsl:otherwise>reduzierter Satz (7%)</xsl:otherwise>
+            </xsl:choose>
+        </xsl:element>
+        
+        <!-- Falls das Produkt == Datenbank, dann soll noch ein Element für die Systemvoraussetzungen generiert werden: -->
+        <xsl:if test="text()='DH'">
+            <systemvoraussetzungen><xsl:value-of select="replace(ancestor::product/othertext[d102/text()='02']/d104/text(),'Systemvoraussetzungen: ','')"/></systemvoraussetzungen>
+        </xsl:if>
         
     </xsl:template>
     
@@ -561,8 +587,24 @@
                 <xsl:otherwise>TYP-NICHT-ERFASST</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        
+        <!-- Bei Hauptbeschreibungen soll der Text in CDATA Sektionen und leicht vorformatiert werden: -->
         <xsl:element name="{$name-of-el}">
-            <xsl:value-of select="../d104/text()"/>
+            <xsl:choose>
+                <xsl:when test="text()='01'">
+                    <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+                    <xsl:value-of disable-output-escaping="yes" select="replace(../d104/text(), '\n', '&lt;br/&gt;')"/>
+                    <xsl:if test="ancestor::product/b207">
+                        <br/><xsl:text>Zielgruppe: </xsl:text><xsl:value-of disable-output-escaping="yes" select="replace(ancestor::product/b207/text(), '\n', '&lt;br/&gt;')"/>
+                    </xsl:if>
+                    <br/><xsl:call-template name="contributors"><xsl:with-param name="product" select="ancestor::product"/></xsl:call-template>
+                    <br/><xsl:call-template name="subjects"><xsl:with-param name="product" select="ancestor::product"/></xsl:call-template>
+                    <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="../d104/text()"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:element>
     </xsl:template>
     
@@ -684,6 +726,33 @@
     
     <xsl:template match="mediafile/f117">
         <MediaFileLink><xsl:value-of select="text()"/></MediaFileLink>
+        
+        <xsl:variable name="file-ending">
+            <xsl:choose>
+                <xsl:when test="../f115/text()='02'">GIF</xsl:when>
+                <xsl:when test="../f115/text()='03'">JPEG</xsl:when>
+                <xsl:when test="../f115/text()='04'">PDF</xsl:when>
+                <xsl:when test="../f115/text()='05'">TIF</xsl:when>
+                <xsl:when test="../f115/text()='06'">RealAudio 28.8</xsl:when>
+                <xsl:when test="../f115/text()='07'">MP3</xsl:when>
+                <xsl:when test="../f115/text()='08'">MPEG-4</xsl:when>
+                <xsl:when test="../f115/text()='09'">PNG</xsl:when>
+                <xsl:when test="../f115/text()='10'">WMA</xsl:when>
+                <xsl:when test="../f115/text()='11'">AAC</xsl:when>
+                <xsl:when test="../f115/text()='12'">WAV</xsl:when>
+                <xsl:when test="../f115/text()='13'">AIFF</xsl:when>
+                <xsl:when test="../f115/text()='14'">WMV</xsl:when>
+                <xsl:when test="../f115/text()='15'">OGG</xsl:when>
+                <xsl:when test="../f115/text()='16'">AVI</xsl:when>
+                <xsl:when test="../f115/text()='17'">MOV</xsl:when>
+                <xsl:when test="../f115/text()='18'">Flash</xsl:when>
+                <xsl:when test="../f115/text()='19'">3GP</xsl:when>
+                <xsl:when test="../f115/text()='20'">WebM</xsl:when>
+                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- Dateiname besteht aus der ISBN-13 und der Endung -->
+        <MediaFile><xsl:value-of select="ancestor::product/productidentifier[b221/text()='15'][1]/b244/text()"/><xsl:text>.</xsl:text><xsl:value-of select="lower-case($file-ending)"/></MediaFile>
     </xsl:template>
     
     <xsl:template match="productwebsite">
@@ -738,18 +807,22 @@
     </xsl:template>
     
     <xsl:template name="measure">
-        <format>
-            <xsl:for-each select="measure[c093/text() = ('01', '02', '03')]">
-                <xsl:value-of select="c094"/><xsl:if test="not(position()= last())"> x </xsl:if>
-            </xsl:for-each>
-            <xsl:if test="measure[c093/text() = ('01', '02', '03')][1]/c095"><xsl:text> </xsl:text></xsl:if>
-            <xsl:apply-templates select="measure[c093/text() = ('01', '02', '03')][1]/c095"/><!-- Das ist nicht wirklich zuverlässig, falls die Elemente unterschiedliche Maßeinheiten haben und sollte noch abgefangen werden -->
-        </format>
-        <gewicht>
-            <xsl:value-of select="measure[c093/text() = '08']/c094"/>
-            <xsl:if test="measure[c093/text() = '08']/c095"><xsl:text> </xsl:text></xsl:if>
-            <xsl:apply-templates select="measure[c093/text() = '08']/c095"/>
-        </gewicht>
+        <xsl:if test="measure[c093/text() = ('01', '02', '03')]">
+            <format>
+                <xsl:for-each select="measure[c093/text() = ('01', '02', '03')]">
+                    <xsl:value-of select="c094"/><xsl:if test="not(position()= last())"> x </xsl:if>
+                </xsl:for-each>
+                <xsl:if test="measure[c093/text() = ('01', '02', '03')][1]/c095"><xsl:text> </xsl:text></xsl:if>
+                <xsl:apply-templates select="measure[c093/text() = ('01', '02', '03')][1]/c095"/><!-- Das ist nicht wirklich zuverlässig, falls die Elemente unterschiedliche Maßeinheiten haben und sollte noch abgefangen werden -->
+            </format>
+        </xsl:if>
+        <xsl:if test="measure[c093/text() = '08']">
+            <gewicht>
+                <xsl:value-of select="measure[c093/text() = '08']/c094"/>
+                <xsl:if test="measure[c093/text() = '08']/c095"><xsl:text> </xsl:text></xsl:if>
+                <xsl:apply-templates select="measure[c093/text() = '08']/c095"/>
+            </gewicht>
+        </xsl:if>
     </xsl:template>
     
     <!-- Template für nicht abgefangene measure Werte: -->
@@ -792,7 +865,7 @@
     Template überarbeitet werden. -->
     <xsl:template match="supplydetail/price/j148[text()='03']">
         <PriceTypeCode>gebundener Ladenpreis ohne Mehrwertsteuer</PriceTypeCode>
-        <PriceAmount><xsl:value-of select="../j151"/><xsl:text> </xsl:text><xsl:value-of select="../j152"/></PriceAmount>
+        <PriceAmount><xsl:value-of select="replace(../j151,'\.',',')"/></PriceAmount>
     </xsl:template>
     
 </xsl:stylesheet>
