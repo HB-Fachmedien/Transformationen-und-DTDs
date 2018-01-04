@@ -168,6 +168,7 @@
     
     <xsl:template match="a001">
         <RecordReference><xsl:text>ESV-</xsl:text><xsl:value-of select="text()"/></RecordReference>
+        <DistributorID>0003</DistributorID>
     </xsl:template>
     
     <xsl:template match="a002">
@@ -327,7 +328,7 @@
         
         <!-- Falls das Produkt == Datenbank, dann soll noch ein Element für die Systemvoraussetzungen generiert werden: -->
         <xsl:if test="text()='DH'">
-            <systemvoraussetzungen><xsl:value-of select="replace(ancestor::product/othertext[d102/text()='02']/d104/text(),'Systemvoraussetzungen: ','')"/></systemvoraussetzungen>
+            <SystemRequirements><xsl:value-of select="replace(ancestor::product/othertext[d102/text()='02']/d104/text(),'Systemvoraussetzungen: ','')"/></SystemRequirements>
         </xsl:if>
         
     </xsl:template>
@@ -568,10 +569,10 @@
         <xsl:apply-templates select="d102|d103|d104|d105|d106|d109"/>
     </xsl:template>
     
-    <xsl:template match="othertext/d102">
+    <xsl:template match="othertext/d102[not(text()='04')]">
         <xsl:variable name="name-of-el">
             <xsl:choose>
-                <xsl:when test="text()='01'">Hauptbeschreibung</xsl:when>
+                <xsl:when test="text()='01'">ProductLongDescription</xsl:when>
                 <xsl:when test="text()='02'">Kurzbeschreibung</xsl:when>
                 <xsl:when test="text()='03'">Ausfuehrliche-Beschreibung</xsl:when>
                 <xsl:when test="text()='04'">Inhaltsverzeichnis</xsl:when>
@@ -581,7 +582,7 @@
                 <xsl:when test="text()='18'">Text-der-Buchrueckseite</xsl:when>
                 <xsl:when test="text()='23'">Textauszug</xsl:when>
                 <xsl:when test="text()='24'">Erstes-Kapitel</xsl:when>
-                <xsl:when test="text()='25'">Verkaufshinweise</xsl:when>
+                <xsl:when test="text()='25'">SalesNote</xsl:when>
                 <xsl:when test="text()='33'">Einfuehrung-oder-Vorwort</xsl:when>
                 <xsl:when test="text()='99'">_99</xsl:when>
                 <xsl:otherwise>TYP-NICHT-ERFASST</xsl:otherwise>
@@ -589,6 +590,9 @@
         </xsl:variable>
         
         <!-- Bei Hauptbeschreibungen soll der Text in CDATA Sektionen und leicht vorformatiert werden: -->
+        <xsl:if test="text()='01'">
+            <MetaDescription><xsl:text> </xsl:text></MetaDescription>
+        </xsl:if>
         <xsl:element name="{$name-of-el}">
             <xsl:choose>
                 <xsl:when test="text()='01'">
@@ -854,9 +858,9 @@
     <xsl:template match="supplydetail/j396">
         <ProductAvailability>
             <xsl:choose>
-                <xsl:when test="text()='10'">noch nicht lieferbar</xsl:when>
-                <xsl:when test="text()='20'">lieferbar</xsl:when>
-                <xsl:otherwise>TYP NICHT ERFASST</xsl:otherwise>
+                <!--<xsl:when test="text()='10'">noch nicht lieferbar</xsl:when>-->
+                <xsl:when test="text()='20'">1</xsl:when>
+                <xsl:otherwise>0</xsl:otherwise>
             </xsl:choose>
         </ProductAvailability>
     </xsl:template>
