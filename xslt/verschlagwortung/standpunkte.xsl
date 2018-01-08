@@ -10,6 +10,7 @@
     <xsl:template match="/">
         <xsl:variable name="file-collection" select="collection('file:/c:/work/verschlagwortung/2017/?recurse=yes;select=*.xml')"/>
         <entscheidungsregister><xsl:text>&#xa;</xsl:text>
+            <h2>Standpunkte</h2><xsl:text>&#xa;</xsl:text>
             <xsl:for-each select="$file-collection/sp">
                 <!--<xsl:sort select=""/>-->
                 <zeile>

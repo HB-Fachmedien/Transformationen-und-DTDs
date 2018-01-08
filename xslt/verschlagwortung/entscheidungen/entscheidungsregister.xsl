@@ -4,7 +4,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempDB/2017/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/work/verschlagwortung/2017/?recurse=yes;select=*.xml')"/>
     <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
     
     
@@ -38,7 +38,7 @@
     -->
 
     <xsl:template match="/">
-        <entscheidungsregister>
+        <xsl:text>&#xa;</xsl:text><entscheidungsregister><xsl:text>&#xa;</xsl:text>
             
             <!-- SR -->
             <xsl:call-template name="entscheidungsdaten">
@@ -51,7 +51,10 @@
                 <xsl:with-param name="ressort" select="'all'"/>
             </xsl:call-template>
             
-            <!-- FG gibt es bisher nicht -->
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BGH'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
             
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BMF'"/>
@@ -129,6 +132,10 @@
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Bamberg'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG Celle'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
@@ -193,6 +200,10 @@
                 <xsl:with-param name="ressort" select="'ar'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BSG'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'LAG Düsseldorf'"/>
                 <xsl:with-param name="ressort" select="'ar'"/>
             </xsl:call-template>
@@ -245,7 +256,7 @@
         
         <h2>
             <xsl:value-of select="$gerichtsBezeichnung"/>
-        </h2>
+        </h2><xsl:text>&#xa;</xsl:text>
         <xsl:choose>
             <xsl:when test="$ressort=('ar','wr')">
                 <xsl:for-each select="$alle-Hefte/*[not(name()=('kk','entk'))][metadata/ressort/text()= $ressort][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
@@ -256,7 +267,7 @@
                             <xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum-gericht>
                         <xsl:choose>
                             <xsl:when test="$ressort = 'sr'">
-                                <xsl:comment>Tabulator</xsl:comment>    
+                                <xsl:text>&#x9;</xsl:text>   
                             </xsl:when>
                             <xsl:otherwise>
                                 <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
@@ -299,7 +310,7 @@
                             <title><xsl:value-of select="$rubik-gekuerzt"/><xsl:text>, </xsl:text><xsl:value-of select="metadata/title"/></title>
                         </xsl:if>-->
                         <seite-gericht><xsl:text>&#x9;</xsl:text><xsl:value-of select="metadata/pub/pages/start_page"/></seite-gericht>
-                    </zeile-gericht>
+                    </zeile-gericht><xsl:text>&#xa;</xsl:text>
                 </xsl:for-each>
             </xsl:when>
             <xsl:when test="$ressort='sr'">
@@ -311,7 +322,7 @@
                             <xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum>
                         <xsl:choose>
                             <xsl:when test="$ressort = 'sr'">
-                                <xsl:comment>Tabulator</xsl:comment>    
+                                <xsl:text>&#x9;</xsl:text>    
                             </xsl:when>
                             <xsl:otherwise>
                                 <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
@@ -354,7 +365,7 @@
                         <title><xsl:value-of select="$rubik-gekuerzt"/><xsl:text>, </xsl:text><xsl:value-of select="metadata/title"/></title>
                         
                         <seite-gericht><xsl:text>&#x9;</xsl:text><xsl:value-of select="metadata/pub/pages/start_page"/></seite-gericht>
-                    </zeile-gericht>
+                    </zeile-gericht><xsl:text>&#xa;</xsl:text>
                 </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
@@ -377,7 +388,7 @@
                             </xsl:for-each>
                         </az>
                         <seite-gericht><xsl:text>&#x9;</xsl:text><xsl:value-of select="metadata/pub/pages/start_page"/></seite-gericht>
-                    </zeile-gericht>
+                    </zeile-gericht><xsl:text>&#xa;</xsl:text>
                 </xsl:for-each>
             </xsl:otherwise>
         </xsl:choose>

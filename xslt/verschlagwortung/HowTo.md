@@ -1,6 +1,6 @@
 Zu aller erst:
 
-Entscheidungen vom selben Tag nach Römischen Zahlen sortieren! (kaum möglich, da Vregleich von Römischen mit Arabischen Zahlen notwendig)
+Entscheidungen vom selben Tag nach Römischen Zahlen sortieren! (kaum möglich, da Vergleich von Römischen mit Arabischen Zahlen notwendig)
 
 Abgleich von Gesetzen, siehe abgleich.png!
 

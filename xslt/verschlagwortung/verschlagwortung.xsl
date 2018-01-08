@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
-    <!-- TO-DO: Autorennamen aus Stanpunkten sollen  ebenfalls ins Autorenverzeichnis-->
+    <!-- TO-DO: Autorennamen aus Standpunkten sollen ebenfalls ins Autorenverzeichnis-->
 
     <xsl:output indent="yes" encoding="UTF-8"  method="xml"/>
     
@@ -17,7 +17,7 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/2017/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/work/verschlagwortung/2017/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword">
                 <xsl:sort/>
@@ -35,7 +35,7 @@
             <autoren-zeile>
                 <autor><xsl:value-of select="surname"/><xsl:text>, </xsl:text><xsl:value-of select="firstname"/></autor>
                 <title><xsl:value-of select="../../title"/></title>
-                <xsl:comment><xsl:if test="ancestor::metadata/pub/pub_suppl"><xsl:text>Beilage |</xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><xsl:text>|</xsl:text></xsl:if><xsl:if test="not(ancestor::metadata/pub/pub_suppl)"></xsl:if><xsl:value-of select="../../pub/pages/start_page"/></xsl:comment>
+                <xsl:comment><xsl:if test="ancestor::metadata/pub/pub_suppl"><xsl:text>Beilage </xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><!--<xsl:text>|</xsl:text>--></xsl:if><xsl:if test="not(ancestor::metadata/pub/pub_suppl)"><xsl:value-of select="../../pub/pages/start_page"/></xsl:if></xsl:comment>
             </autoren-zeile>
         </xsl:if>
     </xsl:template>
@@ -44,10 +44,15 @@
         <xsl:variable name="isDB" select="ancestor::metadata/pub/pubtitle = 'Der Betrieb'"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
-                
+                <xsl:variable name="isMantelseite" select="starts-with(./ancestor::metadata/pub/pages/start_page/text(), 'M')"/>
                 <xsl:variable name="kuerzel">
                     <xsl:choose>
-                        <xsl:when test="$isDB and ./../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:when test="$isMantelseite"><xsl:text> MANTELSEITE!</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
                         <xsl:otherwise></xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -77,9 +82,15 @@
         <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page/text()"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
+                <xsl:variable name="isMantelseite" select="starts-with(./ancestor::metadata/pub/pages/start_page/text(), 'M')"/>
                 <xsl:variable name="kuerzel">
                     <xsl:choose>
-                        <xsl:when test="$isDB and ./../../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:when test="$isMantelseite"><xsl:text> MANTELSEITE!</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
+                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
                         <xsl:otherwise></xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -109,9 +120,15 @@
         <xsl:param name="zweiteEbene"/>
         <xsl:param name="isDB"/>
         <xsl:variable name="seitenzahl" select="./../../../../pub/pages/start_page/text()"/>
+        <xsl:variable name="isMantelseite" select="starts-with(./ancestor::metadata/pub/pages/start_page/text(), 'M')"/>
         <xsl:variable name="kuerzel">
             <xsl:choose>
-                <xsl:when test="$isDB and ./../../../../../name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                <xsl:when test="$isMantelseite"><xsl:text> MANTELSEITE!</xsl:text></xsl:when>
+                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
+                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
+                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
+                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
                 <xsl:otherwise></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
