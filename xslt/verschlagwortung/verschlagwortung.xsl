@@ -17,7 +17,7 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/work/verschlagwortung/2017/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempkor/2017/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword">
                 <xsl:sort/>
@@ -41,18 +41,18 @@
     </xsl:template>
     
     <xsl:template match="keywords/keyword">
-        <xsl:variable name="isDB" select="ancestor::metadata/pub/pubtitle = 'Der Betrieb'"/>
+        <xsl:variable name="isDBorDK" select="ancestor::metadata/pub/pubtitle = ('Der Betrieb', 'Der Konzern')"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
                 <xsl:variable name="isMantelseite" select="starts-with(./ancestor::metadata/pub/pages/start_page/text(), 'M')"/>
                 <xsl:variable name="kuerzel">
                     <xsl:choose>
                         <xsl:when test="$isMantelseite"><xsl:text> MANTELSEITE!</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
                         <xsl:otherwise></xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -69,7 +69,7 @@
                 <xsl:apply-templates select="keyword">
                     <xsl:sort/>
                     <xsl:with-param name="ersteEbene" select="replace(text()[1],'\n','')"/>
-                    <xsl:with-param name="isDB" select="$isDB"/>
+                    <xsl:with-param name="isDBorDK" select="$isDBorDK"/>
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
@@ -78,7 +78,7 @@
 
     <xsl:template match="keywords/keyword/keyword">
         <xsl:param name="ersteEbene"/>
-        <xsl:param name="isDB"/>
+        <xsl:param name="isDBorDK"/>
         <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page/text()"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
@@ -86,11 +86,11 @@
                 <xsl:variable name="kuerzel">
                     <xsl:choose>
                         <xsl:when test="$isMantelseite"><xsl:text> MANTELSEITE!</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
-                        <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
+                        <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
                         <xsl:otherwise></xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -109,7 +109,7 @@
                     <xsl:sort/>
                     <xsl:with-param name="ersteEbene" select="$ersteEbene"/>
                     <xsl:with-param name="zweiteEbene" select="replace(text()[1],'\n','')"/>
-                    <xsl:with-param name="isDB" select="$isDB"/>
+                    <xsl:with-param name="isDBorDK" select="$isDBorDK"/>
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
@@ -118,17 +118,17 @@
     <xsl:template match="keywords/keyword/keyword/keyword">
         <xsl:param name="ersteEbene"/>
         <xsl:param name="zweiteEbene"/>
-        <xsl:param name="isDB"/>
+        <xsl:param name="isDBorDK"/>
         <xsl:variable name="seitenzahl" select="./../../../../pub/pages/start_page/text()"/>
         <xsl:variable name="isMantelseite" select="starts-with(./ancestor::metadata/pub/pages/start_page/text(), 'M')"/>
         <xsl:variable name="kuerzel">
             <xsl:choose>
                 <xsl:when test="$isMantelseite"><xsl:text> MANTELSEITE!</xsl:text></xsl:when>
-                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
-                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
-                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
-                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
-                <xsl:when test="$isDB and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
+                <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'au'"><xsl:text> (A)</xsl:text></xsl:when>
+                <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'kk'"><xsl:text> (K)</xsl:text></xsl:when>
+                <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'va'"><xsl:text> (V)</xsl:text></xsl:when>
+                <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = ('ent', 'entk')"><xsl:text> (E)</xsl:text></xsl:when>
+                <xsl:when test="$isDBorDK and ./ancestor::metadata/parent::*/name() = 'nr' and ancestor::metadata/ressort/text() = 'bw'"><xsl:text> (R)</xsl:text></xsl:when>
                 <xsl:otherwise></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>

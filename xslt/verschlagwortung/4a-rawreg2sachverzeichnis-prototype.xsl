@@ -8,14 +8,14 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="fundstelle"/>
     
-    <xsl:template match="raw-reg">
-        <register>
+    <xsl:template match="raw-reg"><xsl:text>&#xa;</xsl:text>
+        <register><xsl:text>&#xa;</xsl:text>
             <xsl:for-each-group select="reg-zeile" group-by="hauptebene">
-                <ebene1><xsl:value-of select="current-grouping-key()"/><xsl:call-template name="isLeaf"><xsl:with-param name="cgk" select="current-grouping-key()"/><xsl:with-param name="contxt" select="."/><xsl:with-param name="el" select="2"/></xsl:call-template></ebene1>
+                <ebene1><xsl:value-of select="current-grouping-key()"/><xsl:call-template name="isLeaf"><xsl:with-param name="cgk" select="current-grouping-key()"/><xsl:with-param name="contxt" select="."/><xsl:with-param name="el" select="2"/></xsl:call-template></ebene1><xsl:text>&#xa;</xsl:text>
                 <xsl:for-each-group select="current-group()" group-by="zweite-ebene">
-                    <ebene2><xsl:value-of select="current-grouping-key()"/><xsl:call-template name="isLeaf"><xsl:with-param name="cgk" select="current-grouping-key()"/><xsl:with-param name="contxt" select="."/><xsl:with-param name="el" select="3"/></xsl:call-template></ebene2>
+                    <ebene2><xsl:value-of select="current-grouping-key()"/><xsl:call-template name="isLeaf"><xsl:with-param name="cgk" select="current-grouping-key()"/><xsl:with-param name="contxt" select="."/><xsl:with-param name="el" select="3"/></xsl:call-template></ebene2><xsl:text>&#xa;</xsl:text>
                     <xsl:for-each select="current-group()">
-                        <xsl:if test="dritte-ebene"><ebene3><xsl:value-of select="dritte-ebene"/><fundstelle><xsl:text>&#x9;</xsl:text><xsl:value-of select="replace(fundstellen/text(),',',', ')"/></fundstelle></ebene3></xsl:if>
+                        <xsl:if test="dritte-ebene"><ebene3><xsl:value-of select="dritte-ebene"/><fundstelle><xsl:text>&#x9;</xsl:text><xsl:value-of select="replace(fundstellen/text(),',',', ')"/></fundstelle></ebene3><xsl:text>&#xa;</xsl:text></xsl:if>
                     </xsl:for-each>
                 </xsl:for-each-group> 
             </xsl:for-each-group>
