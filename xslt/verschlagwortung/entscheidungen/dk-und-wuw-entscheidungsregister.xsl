@@ -6,7 +6,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/work/verschlagwortung/2016/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempWuW/2017/?recurse=yes;select=*.xml')"/>
     
     <!--<xsl:variable name="gerichts-sortierung" select="'&lt; Freshman &lt; Sophomore &lt; Junior   &lt; Senior'" />-->
     <!-- Definition hier: http://docs.oracle.com/javase/6/docs/api/java/text/RuleBasedCollator.html

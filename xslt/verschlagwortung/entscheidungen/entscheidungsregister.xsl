@@ -4,7 +4,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/work/verschlagwortung/2017/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempWuW/2017/?recurse=yes;select=*.xml')"/>
     <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
     
     
@@ -38,6 +38,8 @@
     -->
 
     <xsl:template match="/">
+        <xsl:if test="$alle-Hefte[1]/descendant::metadata/pub/pubtitle = ('Der Konzern', 'Wirtschaft und Wettbewerb')">!!! FÜR WUW ODER DK ENTSCHEIDUNGSREGISTER DAS ANDERE SKRIPT NEHMEN!!!</xsl:if>
+        
         <xsl:text>&#xa;</xsl:text><entscheidungsregister><xsl:text>&#xa;</xsl:text>
             
             <!-- SR -->
@@ -252,7 +254,6 @@
     <xsl:template name="entscheidungsdaten">
         <xsl:param name="gerichtsBezeichnung"/>
         <xsl:param name="ressort"/>
-        
         
         <h2>
             <xsl:value-of select="$gerichtsBezeichnung"/>
