@@ -17,9 +17,9 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempkor/2017/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempCF/2017/?recurse=yes;select=*.xml')"/>
         <Register>
-            <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword">
+            <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword[@tmid]">
                 <xsl:sort/>
             </xsl:apply-templates>
             <xsl:apply-templates select="$file-collection/*/metadata/authors/author"><!-- Autorenverzeichnis -->
@@ -40,7 +40,7 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="keywords/keyword">
+    <xsl:template match="keywords/keyword[@tmid]">
         <xsl:variable name="isDBorDK" select="ancestor::metadata/pub/pubtitle = ('Der Betrieb', 'Der Konzern')"/>
         <xsl:choose>
             <xsl:when test=".[not(child::*)]"> <!-- wenn es sich um ein Blatt handelt -->
@@ -66,7 +66,7 @@
                 </reg-zeile>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates select="keyword">
+                <xsl:apply-templates select="keyword[@tmid]">
                     <xsl:sort/>
                     <xsl:with-param name="ersteEbene" select="replace(text()[1],'\n','')"/>
                     <xsl:with-param name="isDBorDK" select="$isDBorDK"/>
@@ -76,7 +76,7 @@
     
     </xsl:template>
 
-    <xsl:template match="keywords/keyword/keyword">
+    <xsl:template match="keywords/keyword/keyword[@tmid]">
         <xsl:param name="ersteEbene"/>
         <xsl:param name="isDBorDK"/>
         <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page/text()"/>
@@ -105,7 +105,7 @@
                 </reg-zeile>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates select="keyword">
+                <xsl:apply-templates select="keyword[@tmid]">
                     <xsl:sort/>
                     <xsl:with-param name="ersteEbene" select="$ersteEbene"/>
                     <xsl:with-param name="zweiteEbene" select="replace(text()[1],'\n','')"/>
@@ -115,7 +115,7 @@
         </xsl:choose>
     </xsl:template>
         
-    <xsl:template match="keywords/keyword/keyword/keyword">
+    <xsl:template match="keywords/keyword/keyword/keyword[@tmid]">
         <xsl:param name="ersteEbene"/>
         <xsl:param name="zweiteEbene"/>
         <xsl:param name="isDBorDK"/>
