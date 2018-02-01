@@ -16,72 +16,80 @@
     -->
     
     <xsl:variable name="inline-array">
-        <!-- WUW Gerichte Reihenfolge: -->
-        <!--<class sort="1">EuGH</class>
-        <class sort="2">GA Kokott</class>
-        <class sort="3">Generalanwalt beim EuGH Nils Wahl</class>
-        <class sort="4">EU-Kommission</class>
-        <class sort="5">EuG</class>
-        <class sort="6">BVerfG</class>
-        <class sort="7">BVGer (Schweiz)</class>
-        <class sort="8">BGH</class>
-        <class sort="9">OLG Celle</class>
-        <class sort="10">OLG Düsseldorf</class>
-        <class sort="11">OLG Frankfurt/M.</class>
-        <class sort="12">OLG Karlsruhe</class>
-        <class sort="13">OLG Nürnberg</class>
-        <class sort="14">OLG Stuttgart</class>
-        <class sort="15">LG Berlin</class>
-        <class sort="16">LG Düsseldorf</class>
-        <class sort="17">LG Hamburg</class>
-        <class sort="18">LG Hannover</class>
-        <class sort="19">LG Köln</class>
-        <class sort="20">LG Mannheim</class>
-        <class sort="21">LG Potsdam</class>
-        <class sort="22">AG Bonn</class>
-        <class sort="23">LAG Düsseldorf</class>
-        <class sort="24">VG Düsseldorf</class>
-        <class sort="25">VG München</class>
-        <class sort="26">Bundesministerium für Wirtschaft und Energie</class>
-        <class sort="27">BMWi</class>
-        <class sort="28">Bundeskartellamt</class>
-        <class sort="29">Monopolkommission</class>
-        <class sort="30">Belgische Mededingingsautoriteit</class>
-        <class sort="31">Schweizerische Wettbewerbskommission (WEKO)</class>
-        <class sort="32">England and Wales High Court of Justice Chancery Division (Mr Justice Roth)</class>
-        <class sort="33">Polnische Wettbewerbsbehörde (UOKiK)</class>
-        <class sort="34">VK Südbayern</class>
-        <class sort="35">Bund-Länder-Kommission</class>
-        <class sort="36">Europäischer Rat</class>
-        <class sort="37">Europäisches Hochschulinstitut</class>
-        <class sort="38">Prof. Dr. Daniel Zimmer</class>-->
-        <!-- End: WuW -->
         
-        <!-- DK Gerichte Reihenfolge: -->
-        <class sort="1">BGH</class>
-        <class sort="2">OLG Braunschweig</class>
-        <class sort="3">OLG Düsseldorf</class>
-        <class sort="4">OLG Frankfurt/M.</class>
-        <class sort="5">OLG Karlsruhe</class>
-        <class sort="6">OLG Koblenz</class>
-        <class sort="7">OLG Köln</class>
-        <class sort="8">OLG München</class>
-        <class sort="9">OLG Saarbrücken</class>
-        <class sort="10">KG Berlin</class>
-        <class sort="11">BFH</class>
-        <class sort="12">FG Düsseldorf</class>
-        <class sort="13">FG Hessen</class>
-        <class sort="14">FG Köln</class>
-        <class sort="15">FG Münster</class>
-        <class sort="16">FG Rheinland-Pfalz</class>
-        <class sort="17">VG Frankfurt/M.</class>
-        <class sort="18">ArbG Berlin</class>
-        <class sort="19">BAG</class>
-        <class sort="20">BMF</class>
-        <class sort="21">FinMin. Schleswig-Holstein</class>
-        <class sort="22">OFD Karlsruhe</class>
-        <class sort="23">OFD NRW</class>
-        <!-- End DK -->
+        <xsl:choose>
+            <xsl:when test="$alle-Hefte[1]/descendant::metadata/pub/pubtitle = ('Wirtschaft und Wettbewerb')">
+                <!-- WUW Gerichte Reihenfolge: -->
+                <class sort="1">EuGH</class>
+                <class sort="2">GA Kokott</class>
+                <class sort="3">Generalanwalt beim EuGH Nils Wahl</class>
+                <class sort="4">EU-Kommission</class>
+                <class sort="5">EuG</class>
+                <class sort="6">BVerfG</class>
+                <class sort="7">BVGer (Schweiz)</class>
+                <class sort="8">BGH</class>
+                <class sort="9">OLG Celle</class>
+                <class sort="10">OLG Düsseldorf</class>
+                <class sort="11">OLG Frankfurt/M.</class>
+                <class sort="12">OLG Karlsruhe</class>
+                <class sort="13">OLG Nürnberg</class>
+                <class sort="14">OLG Stuttgart</class>
+                <class sort="15">LG Berlin</class>
+                <class sort="16">LG Düsseldorf</class>
+                <class sort="17">LG Hamburg</class>
+                <class sort="18">LG Hannover</class>
+                <class sort="19">LG Köln</class>
+                <class sort="20">LG Mannheim</class>
+                <class sort="21">LG Potsdam</class>
+                <class sort="22">AG Bonn</class>
+                <class sort="23">LAG Düsseldorf</class>
+                <class sort="24">VG Düsseldorf</class>
+                <class sort="25">VG München</class>
+                <class sort="26">Bundesministerium für Wirtschaft und Energie</class>
+                <class sort="27">BMWi</class>
+                <class sort="28">Bundeskartellamt</class>
+                <class sort="29">Monopolkommission</class>
+                <class sort="30">Belgische Mededingingsautoriteit</class>
+                <class sort="31">Schweizerische Wettbewerbskommission (WEKO)</class>
+                <class sort="32">England and Wales High Court of Justice Chancery Division (Mr Justice Roth)</class>
+                <class sort="33">Polnische Wettbewerbsbehörde (UOKiK)</class>
+                <class sort="34">VK Südbayern</class>
+                <class sort="35">Bund-Länder-Kommission</class>
+                <class sort="36">Europäischer Rat</class>
+                <class sort="37">Europäisches Hochschulinstitut</class>
+                <class sort="38">Prof. Dr. Daniel Zimmer</class>
+                <!-- End: WuW -->
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- Der Konzern: -->
+                <!-- DK Gerichte Reihenfolge: -->
+                <class sort="1">BGH</class>
+                <class sort="2">OLG Braunschweig</class>
+                <class sort="3">OLG Düsseldorf</class>
+                <class sort="4">OLG Frankfurt/M.</class>
+                <class sort="5">OLG Karlsruhe</class>
+                <class sort="6">OLG Koblenz</class>
+                <class sort="7">OLG Köln</class>
+                <class sort="8">OLG München</class>
+                <class sort="9">OLG Saarbrücken</class>
+                <class sort="10">KG Berlin</class>
+                <class sort="11">BFH</class>
+                <class sort="12">FG Düsseldorf</class>
+                <class sort="13">FG Hessen</class>
+                <class sort="14">FG Köln</class>
+                <class sort="15">FG Münster</class>
+                <class sort="16">FG Rheinland-Pfalz</class>
+                <class sort="17">VG Frankfurt/M.</class>
+                <class sort="18">ArbG Berlin</class>
+                <class sort="19">BAG</class>
+                <class sort="20">BMF</class>
+                <class sort="21">FinMin. Schleswig-Holstein</class>
+                <class sort="22">OFD Karlsruhe</class>
+                <class sort="23">OFD NRW</class>
+                <!-- End DK -->
+            </xsl:otherwise>
+        </xsl:choose>
+
     </xsl:variable>
     
     <xsl:variable name="pubtitle">
@@ -96,20 +104,21 @@
     <xsl:variable name="array" select="document('')/*/xsl:variable[@name='inline-array']/*"/>
     
     <xsl:template match="/">
-        <entscheidungsregister>
+        <xsl:text>&#xa;</xsl:text>
+        <entscheidungsregister><xsl:text>&#xa;</xsl:text>
             <xsl:for-each-group select="$alle-Hefte/*[name() = ('ent','va')]" group-by="/*/name()">
                 <xsl:choose>
                     <xsl:when test="current-grouping-key() = 'ent'">
-                        <h1>Entscheidungen</h1>
+                        <h1>Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
                     </xsl:when>
                     <xsl:when test="current-grouping-key() = 'va'">
-                        <h1>Dokumentation</h1>
+                        <h1>Dokumentation</h1><xsl:text>&#xa;</xsl:text>
                     </xsl:when>
                 </xsl:choose>
                 <xsl:for-each-group select="current-group()" group-by="/*/metadata/instdoc/inst">
                     <xsl:sort select="$array[. = current()[1]/descendant::metadata/instdoc/inst]/@sort" data-type="number"/>
                     
-                    <h2><xsl:value-of select="current-grouping-key()"/></h2>
+                    <h2><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>
                         
                     <xsl:for-each select="current-group()">
                         <!-- hier nach Datum sortieren -->
@@ -137,10 +146,11 @@
                                 <xsl:text>&#x09;</xsl:text>
                                 <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
                             </seite-gericht>
-                        </zeile-gericht>
+                        </zeile-gericht><xsl:text>&#xa;</xsl:text>
                     </xsl:for-each>    
                 </xsl:for-each-group>
-            </xsl:for-each-group> 
+            </xsl:for-each-group>
+            <xsl:text>&#xa;</xsl:text>
         </entscheidungsregister>
     </xsl:template>
     
