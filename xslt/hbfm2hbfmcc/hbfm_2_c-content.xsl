@@ -370,6 +370,9 @@
 									<xsl:when test="$pub-abbr = 'WUW'">
 										<xsl:text>Wirtschaft und Wettbewerb</xsl:text>
 									</xsl:when>
+									<xsl:when test="$pub-abbr = 'CM'">
+										<xsl:text>changement!</xsl:text>
+									</xsl:when>
 									<xsl:otherwise>
 										<xsl:text>Unbekannte Zeitschrift</xsl:text>
 									</xsl:otherwise>
