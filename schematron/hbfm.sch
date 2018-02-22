@@ -92,6 +92,11 @@
         </rule>
     </pattern>
     <pattern>
+        <rule context="metadata/pub/pubabbr">
+            <assert test="string-length(text()) &gt; 0">Das Pubabbr Feld muss gefüllt werden!</assert>
+        </rule>
+    </pattern>
+    <pattern>
         <!-- Regel für alle Werke außer Str Kompakt und ifst Schriften: -->
         <rule context="pub/pubedition[ancestor::metadata/all_source[@level='1']/text()='zsa' and ancestor::metadata/all_source[@level='2' and not(text()=('str','ifst','zoe'))]]">
             <assert test="/gh or not(string(number(replace(.,'-',''))) = 'NaN')">Die Pubedition darf nur aus Zahlen bestehen!</assert>
