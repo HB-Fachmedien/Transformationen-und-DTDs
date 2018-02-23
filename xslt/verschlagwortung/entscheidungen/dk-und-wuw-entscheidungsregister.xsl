@@ -6,7 +6,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempWuW/2017/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempDK/2017/?recurse=yes;select=*.xml')"/>
     
     <!--<xsl:variable name="gerichts-sortierung" select="'&lt; Freshman &lt; Sophomore &lt; Junior   &lt; Senior'" />-->
     <!-- Definition hier: http://docs.oracle.com/javase/6/docs/api/java/text/RuleBasedCollator.html
@@ -78,29 +78,34 @@
     <xsl:variable name="inline-array-dk">
         <!-- Der Konzern: -->
         <!-- DK Gerichte Reihenfolge: -->
-        <class sort="1">BGH</class>
-        <class sort="2">OLG Braunschweig</class>
-        <class sort="3">OLG Düsseldorf</class>
-        <class sort="4">OLG Frankfurt/M.</class>
-        <class sort="5">OLG Karlsruhe</class>
-        <class sort="6">OLG Koblenz</class>
-        <class sort="7">OLG Köln</class>
-        <class sort="8">OLG München</class>
-        <class sort="9">OLG Saarbrücken</class>
-        <class sort="10">KG Berlin</class>
-        <class sort="11">BFH</class>
-        <class sort="12">FG Düsseldorf</class>
-        <class sort="13">FG Hessen</class>
-        <class sort="14">FG Köln</class>
-        <class sort="15">FG Münster</class>
-        <class sort="16">FG Rheinland-Pfalz</class>
-        <class sort="17">VG Frankfurt/M.</class>
-        <class sort="18">ArbG Berlin</class>
-        <class sort="19">BAG</class>
-        <class sort="20">BMF</class>
-        <class sort="21">FinMin. Schleswig-Holstein</class>
-        <class sort="22">OFD Karlsruhe</class>
-        <class sort="23">OFD NRW</class>
+        <class sort="10">BGH</class>
+        <class sort="20">OLG Braunschweig</class>
+        <class sort="30">OLG Düsseldorf</class>
+        <class sort="40">OLG Frankfurt/M.</class>
+        <class sort="50">OLG Karlsruhe</class>
+        <class sort="60">OLG Koblenz</class>
+        <class sort="70">OLG Köln</class>
+        <class sort="80">OLG München</class>
+        <class sort="90">OLG Saarbrücken</class>
+        <class sort="95">OLG Stuttgart</class>
+        <class sort="100">KG Berlin</class>
+        <class sort="105">LG Hamburg</class>
+        <class sort="106">LG Heidelberg</class>
+        <class sort="110">BFH</class>
+        <class sort="120">FG Düsseldorf</class>
+        <class sort="130">FG Hessen</class>
+        <class sort="140">FG Köln</class>
+        <class sort="145">FG München</class>
+        <class sort="150">FG Münster</class>
+        <class sort="160">FG Rheinland-Pfalz</class>
+        <class sort="165">EuGH</class>
+        <class sort="170">VG Frankfurt/M.</class>
+        <class sort="180">ArbG Berlin</class>
+        <class sort="190">BAG</class>
+        <class sort="200">BMF</class>
+        <class sort="210">FinMin. Schleswig-Holstein</class>
+        <class sort="220">OFD Karlsruhe</class>
+        <class sort="230">OFD NRW</class>
         <!-- End DK -->
     </xsl:variable>
     
@@ -129,6 +134,7 @@
     </xsl:variable>-->
     
     <xsl:template match="/">
+        <xsl:text>Gucken, ob man die richtige Sortiervariable benutzt!</xsl:text>
         <xsl:text>&#xa;</xsl:text>
         <entscheidungsregister><xsl:text>&#xa;</xsl:text>
             <xsl:for-each-group select="$alle-Hefte/*[name() = ('ent','va')]" group-by="/*/name()">
@@ -141,7 +147,7 @@
                     </xsl:when>
                 </xsl:choose>
                 <xsl:for-each-group select="current-group()" group-by="/*/metadata/instdoc/inst">
-                    <xsl:sort select="$inline-array-wuw/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
+                    <xsl:sort select="$inline-array-dk/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
                     
                     <!--<xsl:variable name="debug-v1" select="./attribute::*"/>
                     <xsl:variable name="debug-v2" select="current-grouping-key()"/>
