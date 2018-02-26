@@ -242,9 +242,6 @@
                 <xsl:with-param name="ressort" select="'ar'"/>
             </xsl:call-template>
             
-            
-            <!-- Register für Der Konzern: -->
-            
         </entscheidungsregister>
     </xsl:template>
     
