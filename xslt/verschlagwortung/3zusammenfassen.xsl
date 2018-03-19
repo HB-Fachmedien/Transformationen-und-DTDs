@@ -51,7 +51,7 @@
         <!--<xsl:value-of select="/sortiertes-register/reg-zeile[deep-equal(.,$this)]/comment()"/>-->
         <xsl:variable name="result">
             <xsl:for-each select="/sortiertes-register/reg-zeile[deep-equal(.,$this)]">
-                <xsl:sort select="comment()" data-type="number"/>
+                <xsl:sort select="translate(comment(), 'AKERV ()','')" data-type="number"/>
                 <xsl:if test="not(position()=1)">,</xsl:if><xsl:value-of select="comment()"/>
             </xsl:for-each>
         </xsl:variable>
