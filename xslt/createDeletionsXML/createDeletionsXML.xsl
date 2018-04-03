@@ -5,6 +5,7 @@
     version="2.0">
     <xsl:output indent="yes" encoding="UTF-8"  method="xml"/>
     
+    <!-- Erstellt eine deletions.xml Datei, die muss dann als [all_source/level2]___[datum].zip auf dem FTP Server mit Signaldatei abgelegt werden. ] -->    
     <xsl:template match="/">
         <xsl:variable name="file-collection" select="collection('file:/c:/beispiel-xml-dateien/create-deletions-xml/?recurse=yes;select=*.xml')"/>
         <deletions>
