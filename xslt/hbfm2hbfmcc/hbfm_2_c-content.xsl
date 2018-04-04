@@ -837,6 +837,7 @@
 										<node title="{$cm-title}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="cm-ressort-seq-nr" >
 												<xsl:choose>
+													<xsl:when test="../name()='ed'">50</xsl:when>
 													<xsl:when test="$ressortname='Corporate Culture'">100</xsl:when>
 													<xsl:when test="$ressortname='New Work'">200</xsl:when>
 													<xsl:when test="$ressortname='Leadership'">300</xsl:when>
