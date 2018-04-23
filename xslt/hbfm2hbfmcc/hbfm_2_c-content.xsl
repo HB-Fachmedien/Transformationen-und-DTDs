@@ -977,6 +977,14 @@
 	</xml_body>
 </xsl:template>
 
+<xsl:template match="body[../metadata/descendant::pubabbr/text() = 'CM']" priority="2">
+	<xml_body>
+		<xsl:apply-templates/>
+		<xsl:apply-templates select="note" mode="show"/>
+	</xml_body>
+</xsl:template>
+
+
 <xsl:template match="body">
 	<xml_body>
 		<xsl:apply-templates select="section[@class='rkvermerk']" mode="show"/>
