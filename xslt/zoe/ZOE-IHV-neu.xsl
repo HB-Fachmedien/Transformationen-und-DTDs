@@ -128,7 +128,7 @@
                                                             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
                                                             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                                            <a target="_blank" href="https://recherche.zoe-online.org/document.aspx?docid=ZOE{$siriusID}">
+                                                            <a target="_blank" href="https://zoe-online.owlit.de/document.aspx?docid=ZOE{$siriusID}">
                                                                 <div>
                                                                     <xsl:attribute name="class">
                                                                         <xsl:text>ihv_headline titel </xsl:text>
