@@ -17,9 +17,9 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempCF/2017/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/2018/?recurse=yes;select=*.xml')"/>
         <Register>
-            <xsl:apply-templates select="$file-collection/*/metadata/keywords/keyword[@tmid]">
+            <xsl:apply-templates select="$file-collection/*/metadata[not(starts-with(pub/pages/start_page/text(), 'M'))]/keywords/keyword[@tmid]">
                 <xsl:sort/>
             </xsl:apply-templates>
             <xsl:apply-templates select="$file-collection/*/metadata/authors/author"><!-- Autorenverzeichnis -->
