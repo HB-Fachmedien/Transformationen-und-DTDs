@@ -533,7 +533,7 @@
 												<xsl:choose>
 													<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
 													<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
-													<xsl:when test="$ressortname='br'">Bilanzrecht/Rechnungslegung#300</xsl:when>
+													<xsl:when test="$ressortname='br'">Rechnungslegung/Corporate Governance#300</xsl:when>
 													<xsl:otherwise>Weitere Inhalte#2100</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>

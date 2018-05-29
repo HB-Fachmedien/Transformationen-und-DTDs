@@ -55,7 +55,7 @@
                                                         <div class="ihv_headline doktyp">Konzernrecht</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'br'">
-                                                        <div class="ihv_headline doktyp">Bilanzrecht/Rechnungslegung</div>
+                                                        <div class="ihv_headline doktyp">Rechnungslegung/Corporate Governance</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'sr'">
                                                         <div class="ihv_headline doktyp">Steuerrecht</div>
