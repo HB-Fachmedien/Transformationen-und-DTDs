@@ -157,7 +157,7 @@
                         <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
                         <xsl:if test="$dokumentknoten/name() = 'au'">
                             <div class="ihv_abstract">
-                                <xsl:value-of select="$dokumentknoten/metadata/summary/*"/>
+                                <p><xsl:value-of select="$dokumentknoten/metadata/summary/*"/></p>
                             </div>
                         </xsl:if>
                     </div>

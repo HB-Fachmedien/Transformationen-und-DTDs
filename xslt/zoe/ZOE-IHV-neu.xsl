@@ -155,7 +155,7 @@
                                                                 </div>
                                                                 </xsl:if>
                                                                 
-                                                                <div class="ihv_abstract"><xsl:value-of select="/*/metadata/summary"/></div>
+                                                                <div class="ihv_abstract"><p><xsl:value-of select="/*/metadata/summary"/></p></div>
                                                                 <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                                                     <xsl:choose>
                                                                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">

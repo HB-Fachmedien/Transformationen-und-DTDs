@@ -179,7 +179,7 @@
                 </div>
                 <xsl:if test="/*/metadata/summary">
                     <div class="ihv_abstract">
-                        <xsl:value-of select="/*/metadata/summary"/>
+                        <p><xsl:value-of select="/*/metadata/summary"/></p>
                     </div>
                 </xsl:if>
                 <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">

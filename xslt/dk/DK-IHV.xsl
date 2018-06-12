@@ -102,7 +102,7 @@
                                                             <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
                                                             <xsl:if test="/*/name() = 'au'">
                                                                 <div class="ihv_abstract">
-                                                                    <xsl:value-of select="*/metadata/summary/*"/>
+                                                                    <p><xsl:value-of select="*/metadata/summary/*"/></p>
                                                                 </div>
                                                             </xsl:if>
                                                             <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">

@@ -144,9 +144,9 @@
                                                                     </xsl:choose>
                                                                 </xsl:for-each>
                                                             </div>
-                                                            <div class="ihv_abstract">
+                                                            <p><div class="ihv_abstract">
                                                                 <xsl:value-of select="/*/metadata/summary/p[not(@lang='en')]"/>
-                                                            </div>
+                                                            </div></p>
                                                             <div class="ihv_seite" >
                                                                 <xsl:choose>
                                                                     <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">

@@ -145,7 +145,7 @@
                                                         </div>
                                                         
                                                         <div class="ihv_abstract">
-                                                            <xsl:value-of select="*/metadata/summary/*[not(@lang='en')]"/>
+                                                            <p><xsl:value-of select="*/metadata/summary/*[not(@lang='en')]"/></p>
                                                         </div>
                                                         
                                                         <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;"><xsl:choose>

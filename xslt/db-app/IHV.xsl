@@ -369,7 +369,7 @@
                         
                         <xsl:choose>
                             <xsl:when test="VORSPANN">
-                                <div class="ihv_abstract"><xsl:value-of select="VORSPANN" disable-output-escaping="yes"/></div>
+                                <div class="ihv_abstract"><p><xsl:value-of select="VORSPANN" disable-output-escaping="yes"/></p></div>
                             </xsl:when>
                             <xsl:otherwise/>
                         </xsl:choose>
