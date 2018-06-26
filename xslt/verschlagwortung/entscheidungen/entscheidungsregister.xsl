@@ -4,7 +4,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempWuW/2017/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
     <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
     
     
@@ -51,6 +51,11 @@
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BVerfG'"/>
                 <xsl:with-param name="ressort" select="'all'"/>
+            </xsl:call-template>
+            
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BFH'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
             
             <xsl:call-template name="entscheidungsdaten">
@@ -118,7 +123,22 @@
                 <xsl:with-param name="gerichtsBezeichnung" select="'LfSt Rheinland-Pfalz'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
             </xsl:call-template>
-            
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FG Düsseldorf'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FG Hessen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FG Schleswig-Holstein'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'Finanzbehörde Hamburg'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+            </xsl:call-template>
             
             <!-- WR -->
             <xsl:call-template name="entscheidungsdaten">
@@ -167,6 +187,10 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG München'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Nürnberg'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
@@ -338,24 +362,29 @@
                         
                         <xsl:variable name="rubik-gekuerzt">
                             <xsl:choose>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Abgabenordnung'">AO</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Bewertungsgesetz'">BewG</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Eigenheimzulage'">EigZul</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Einkommensteuer'">ESt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Erbschaft-Schenkungsteuer'">ErbSt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Finanzgerichtsordnung'">FGO</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Gewerbesteuer'">GewSt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Grunderwerbsteuer'">GrESt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Grundsteuer'">GrSt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Investitionszulage'">InvZul</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Investmentsteuergesetz'">InvStG</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Kapitalertragsteuer'">KapESt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Kirchensteuer'">KiSt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Koerperschaftsteuer'">KSt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Lohnsteuer'">LSt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Solidaritaetszuschlag'">SolZ</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Umsatzsteuer'">USt</xsl:when>
-                                <xsl:when test="metadata/rubriken/rubrik[1]='Umwandlungsteuerrecht'">UmwSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Abgabenordnung'">AO</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Bewertungsgesetz'">BewG</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Bilanzsteuerrecht'">BiStR</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Eigenheimzulage'">EigZul</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Einkommensteuer'">ESt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Erbschaft-/Schenkungsteuer'">ErbSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Finanzgerichtsordnung'">FGO</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Gewerbesteuer'">GewSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Gewinnermittlung'">GE</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Grunderwerbsteuer'">GrESt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Grundsteuer'">GrSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Internationales Steuerrecht'">IStR</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Investitionszulage'">InvZul</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Investmentsteuergesetz'">InvStG</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Kapitalertragsteuer'">KapESt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Kirchensteuer'">KiSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Körperschaftsteuer'">KSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Lohnsteuer'">LSt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Solidaritätszuschalg'">SolZ</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Steuerstrafrecht'">StStrafR</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Umsatzsteuer'">USt</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Umwandlungssteuerrecht'">UmwStR</xsl:when>
+                                <xsl:when test="metadata/rubriken/rubrik='Zollrecht'">Zoll</xsl:when>
                                 <xsl:otherwise><xsl:value-of select="metadata/rubriken/rubrik[1]"/></xsl:otherwise>
                             </xsl:choose>
                         </xsl:variable>
