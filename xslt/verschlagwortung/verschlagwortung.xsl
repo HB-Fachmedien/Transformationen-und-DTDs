@@ -17,7 +17,7 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/2018/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata[not(starts-with(pub/pages/start_page/text(), 'M'))]/keywords/keyword[@tmid]">
                 <xsl:sort/>
@@ -31,10 +31,20 @@
     <xsl:template match="author">
         <!--<xsl:if test="ancestor::metadata/keywords/keyword">--> <!-- hier weiter: habe das auskommentiert... weil DB keine keywords hat  -->
         <!-- Keine Mantelseiten -->
+        <xsl:variable name="isDB" select="ancestor::metadata/pub/pubtitle = 'Der Betrieb'"/>
+        
         <xsl:if test="not(string(number(normalize-space(ancestor::metadata/pub/pages/start_page))) = 'NaN')">
             <autoren-zeile>
                 <autor><xsl:value-of select="surname"/><xsl:text>, </xsl:text><xsl:value-of select="firstname"/></autor>
                 <title><xsl:value-of select="../../title"/></title>
+                <abkuerzung>
+                    <xsl:choose>
+                        <xsl:when test="$isDB and /*/name()='kk'">(K)</xsl:when>
+                        <xsl:when test="$isDB and /*/name()='au'">(A)</xsl:when>
+                        <xsl:when test="$isDB and /*/name()='va'">(Anm.)</xsl:when>
+                        <xsl:otherwise></xsl:otherwise>
+                    </xsl:choose>
+                </abkuerzung>
                 <xsl:comment><xsl:if test="ancestor::metadata/pub/pub_suppl"><xsl:text>Beilage </xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><!--<xsl:text>|</xsl:text>--></xsl:if><xsl:if test="not(ancestor::metadata/pub/pub_suppl)"><xsl:value-of select="../../pub/pages/start_page"/></xsl:if></xsl:comment>
             </autoren-zeile>
         </xsl:if>
