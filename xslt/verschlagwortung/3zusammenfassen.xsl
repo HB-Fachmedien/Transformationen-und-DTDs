@@ -83,7 +83,7 @@
         <reg-zeile>
             <xsl:copy-of select="autor"/>
             <xsl:copy-of select="title"/>
-            <fundstellen><xsl:value-of select="abkuerzung"/><xsl:value-of select="comment()"/></fundstellen>
+            <fundstellen><xsl:value-of select="comment()"/><xsl:value-of select="abkuerzung"/></fundstellen>
         </reg-zeile>
     </xsl:template>
     

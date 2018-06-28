@@ -39,9 +39,9 @@
                 <title><xsl:value-of select="../../title"/></title>
                 <abkuerzung>
                     <xsl:choose>
-                        <xsl:when test="$isDB and /*/name()='kk'">(K)</xsl:when>
-                        <xsl:when test="$isDB and /*/name()='au'">(A)</xsl:when>
-                        <xsl:when test="$isDB and /*/name()='va'">(Anm.)</xsl:when>
+                        <xsl:when test="$isDB and /*/name()='kk'"> (K)</xsl:when>
+                        <xsl:when test="$isDB and /*/name()='au'"> (A)</xsl:when>
+                        <xsl:when test="$isDB and /*/name()='va'"> (Anm.)</xsl:when>
                         <xsl:otherwise></xsl:otherwise>
                     </xsl:choose>
                 </abkuerzung>
