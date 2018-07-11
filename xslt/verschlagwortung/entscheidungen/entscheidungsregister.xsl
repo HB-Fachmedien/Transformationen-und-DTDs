@@ -248,7 +248,7 @@
             </xsl:call-template>
             
             <!-- WR -->
-            <h1>Wirtschaftsliche Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
+            <h1>Wirtschaftliche Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BGH'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
