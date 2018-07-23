@@ -38,6 +38,9 @@
 					#content{
 					width: 100% !important;
 					}
+					#content_innen{
+					display: inline !important;
+					}
 					.ihv_datum{
 					font-weight: bold;
 					}
@@ -89,7 +92,7 @@
                         </xsl:for-each>  
                     </div>-->
                     <!-- Linke Spalte -->
-                    <section class="left" id="content">
+                    <section id="content_innen">
                         
                         <h2>Editorial</h2>
                         <xsl:for-each select="$aktuelles-Heft[position()=1]">
