@@ -373,6 +373,9 @@
 									<xsl:when test="$pub-abbr = 'CM'">
 										<xsl:text>changement!</xsl:text>
 									</xsl:when>
+									<xsl:when test="$pub-abbr = 'REL'">
+										<xsl:text>Rethinking Law</xsl:text>
+									</xsl:when>
 									<xsl:otherwise>
 										<xsl:text>Unbekannte Zeitschrift</xsl:text>
 									</xsl:otherwise>
