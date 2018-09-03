@@ -970,6 +970,13 @@
 </xsl:template>
 
 
+<xsl:template match="subtitle">
+	<xsl:copy>
+		<xsl:apply-templates select="@*|node()"/>
+	</xsl:copy>
+	<subtitle_rest><xsl:value-of select="string(/*/metadata/subtitle)"/></subtitle_rest>
+</xsl:template>
+	
 <!-- =========================================================
 === copy rich metadata to body
 =========================================================== -->
