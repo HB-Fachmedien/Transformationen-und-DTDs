@@ -172,6 +172,12 @@
                                                 <xsl:with-param name="ueberschrift" select="'Entscheidungen'"/>
                                                 <xsl:with-param name="art-nr" select="160"/>
                                             </xsl:call-template>
+                                            
+                                            <xsl:call-template name="listArticles">
+                                                <xsl:with-param name="self" select="./node()"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kurzbeiträge'"/>
+                                                <xsl:with-param name="art-nr" select="165"/>
+                                            </xsl:call-template>
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
@@ -198,6 +204,12 @@
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Entscheidungen'"/>
                                                 <xsl:with-param name="art-nr" select="260"/>
+                                            </xsl:call-template>
+                                            
+                                            <xsl:call-template name="listArticles">
+                                                <xsl:with-param name="self" select="./node()"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kurzbeiträge'"/>
+                                                <xsl:with-param name="art-nr" select="265"/>
                                             </xsl:call-template>
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
@@ -226,6 +238,12 @@
                                                 <xsl:with-param name="ueberschrift" select="'Entscheidungen'"/>
                                                 <xsl:with-param name="art-nr" select="360"/>
                                             </xsl:call-template>
+                                            
+                                            <xsl:call-template name="listArticles">
+                                                <xsl:with-param name="self" select="./node()"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kurzbeiträge'"/>
+                                                <xsl:with-param name="art-nr" select="365"/>
+                                            </xsl:call-template>
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
@@ -252,6 +270,12 @@
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Entscheidungen'"/>
                                                 <xsl:with-param name="art-nr" select="460"/>
+                                            </xsl:call-template>
+                                            
+                                            <xsl:call-template name="listArticles">
+                                                <xsl:with-param name="self" select="./node()"/>
+                                                <xsl:with-param name="ueberschrift" select="'Kurzbeiträge'"/>
+                                                <xsl:with-param name="art-nr" select="465"/>
                                             </xsl:call-template>
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         

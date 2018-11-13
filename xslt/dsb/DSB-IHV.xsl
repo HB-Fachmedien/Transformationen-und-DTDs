@@ -118,7 +118,7 @@
                                                                     <xsl:otherwise/>
                                                                 </xsl:choose>
                                                             
-                                                           <div class="ihv_abstract"><xsl:value-of select="/*/metadata/summary"/></div>
+                                                           <div class="ihv_abstract"><p><xsl:value-of select="/*/metadata/summary"/></p></div>
                                                             <div class="ihv_seite">
                                                                 <xsl:choose>
                                                                     <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
