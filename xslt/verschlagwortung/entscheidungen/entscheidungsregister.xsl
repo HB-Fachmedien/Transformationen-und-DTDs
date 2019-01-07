@@ -18,6 +18,13 @@
     /* findet im Ergbnis Dokument alle Zeilen, die dem entsprechendem Gericht zuzuordnen sind: */    
     /*/h2[text()='Oberste Finanzbehörden der Länder']/following-sibling::zeile-gericht[count(.|/*/h2[text()='Oberste Finanzbehörden der Länder']/following-sibling::h2[1]/preceding-sibling::zeile-gericht)=count(/*/h2[text()='Oberste Finanzbehörden der Länder']/following-sibling::h2[1]/preceding-sibling::zeile-gericht)]
     
+    
+    /* Anzahl Entscheidungen pro Gericht ausgeben: */
+    //h2/concat(text(), ';', abs(506-count(following-sibling::zeile-gericht)-count(following-sibling::h2[1]/preceding-sibling::zeile-gericht)))
+    
+    mit diesem Regex alle Gerichte entfernen, die nicht vorkommen:
+    .*?\;0$
+    
     -->
     
     <!-- 
@@ -182,6 +189,11 @@
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'Landesamt für Steuern Niedersachsen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. NRW'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
@@ -259,6 +271,11 @@
             <h1>Sonstige Gerichte</h1><xsl:text>&#xa;</xsl:text>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'EuGH'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BAG'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
@@ -417,7 +434,12 @@
                 <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
-            
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'KG Berlin'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <h2>ELEMENT FÜR DAS TESTEN. Anzahl Entscheidungen: </h2>
         </entscheidungsregister>
     </xsl:template>
 
