@@ -51,6 +51,7 @@
         <xsl:text>&#xa;</xsl:text><entscheidungsregister><xsl:text>&#xa;</xsl:text>
             
             <WICHTIG>REIHENFOLGE VON ENTSCHEIDUNGEN GLEICHEN DATUMS BEACHTEN! Siehe Mail von Eva 6.3.2018</WICHTIG>
+            <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2>
             
             <h1>Entscheidungen des europäischen Gerichtshofs</h1><xsl:text>&#xa;</xsl:text>
             <xsl:call-template name="entscheidungsdaten">

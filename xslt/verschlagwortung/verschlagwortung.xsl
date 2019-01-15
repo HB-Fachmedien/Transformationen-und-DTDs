@@ -17,7 +17,7 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempDK/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata[not(starts-with(pub/pages/start_page/text(), 'M'))]/keywords/keyword[@tmid]">
                 <xsl:sort/>
@@ -68,11 +68,21 @@
                 </xsl:variable>
                 
                 <xsl:variable name="seitenzahl" select="./../../pub/pages/start_page"/>
+                <xsl:variable name="beilagen_prefix">
+                    <xsl:choose>
+                        <xsl:when test="ancestor::metadata/pub/pub_suppl">
+                            <xsl:text>Beilage </xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><xsl:text> S.</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text></xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
                 
                 <reg-zeile>
                     <hauptebene><xsl:value-of select="replace(text(),'\n','')"/></hauptebene>
                     <!--<fundstelle><xsl:value-of select="$seitenzahl"/></fundstelle>-->
-                    <xsl:comment><xsl:value-of select="concat($seitenzahl, $kuerzel)"/></xsl:comment>
+                    <xsl:comment><xsl:value-of select="concat($beilagen_prefix, $seitenzahl, $kuerzel)"/></xsl:comment>
                 </reg-zeile>
             </xsl:when>
             <xsl:otherwise>
@@ -107,11 +117,22 @@
                 
                 <xsl:variable name="seitenzahl" select="./../../../pub/pages/start_page/text()"/>
                 
+                <xsl:variable name="beilagen_prefix">
+                    <xsl:choose>
+                        <xsl:when test="ancestor::metadata/pub/pub_suppl">
+                            <xsl:text>Beilage </xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><xsl:text> S.</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text></xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
                 <reg-zeile>
                     <hauptebene><xsl:value-of select="$ersteEbene"/></hauptebene>
                     <zweite-ebene><xsl:value-of select="replace(text(),'\n','')"/></zweite-ebene>
                     <!--<fundstelle><xsl:value-of select="$seitenzahl"/></fundstelle>-->
-                    <xsl:comment><xsl:value-of select="concat($seitenzahl, $kuerzel)"/></xsl:comment>
+                    <xsl:comment><xsl:value-of select="concat($beilagen_prefix, $seitenzahl, $kuerzel)"/></xsl:comment>
                 </reg-zeile>
             </xsl:when>
             <xsl:otherwise>
@@ -146,8 +167,18 @@
                 <hauptebene><xsl:value-of select="$ersteEbene"/></hauptebene>
                 <zweite-ebene><xsl:value-of select="$zweiteEbene"/></zweite-ebene>
                 <dritte-ebene><xsl:value-of select="replace(text(),'\n','')"/></dritte-ebene>
+                <xsl:variable name="beilagen_prefix">
+                    <xsl:choose>
+                        <xsl:when test="ancestor::metadata/pub/pub_suppl">
+                            <xsl:text>Beilage </xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><xsl:text> S.</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text></xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
                 <!--<fundstelle><xsl:value-of select="$seitenzahl"/></fundstelle>-->
-                <xsl:comment><xsl:value-of select="concat($seitenzahl, $kuerzel)"/></xsl:comment>
+                <xsl:comment><xsl:value-of select="concat($beilagen_prefix, $seitenzahl, $kuerzel)"/></xsl:comment>
             </reg-zeile>
     </xsl:template>
 
