@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rodoc
+  PUBLIC "-//Handelsblatt Fachmedien CContent//DTD V1.0//DE" "hbfmcc.dtd">
+<rodoc>
+   <metadata>
+      <docid>RS0709387</docid>
+      <altdocid>DB0682530</altdocid>
+      <altdocid>DB0688324</altdocid>
+      <altdocid>WUW0688324</altdocid>
+      <altdocid>DB0691207</altdocid>
+      <altdocid>WUW0691207</altdocid>
+      <rawid>709387</rawid>
+      <extid>Deubner_DRSP_2014/017032</extid>
+      <maindate>2014-09-23</maindate>
+      <title>Ausschließliche Vornahme einer Marktabgrenzung nach industrieweit ermittelten Eigenversorgungsquoten</title>
+      <date/>
+      <pub>
+         <pubtitle/>
+         <pubabbr>RS</pubabbr>
+         <pubyear/>
+         <pubedition/>
+
+         <pages>
+            <start_page/>
+            <article_order/>
+         </pages>
+      </pub>
+      <type>html</type>
+      <instdoc>
+         <inst>BGH</inst>
+         <instcode court="BGH">BGH</instcode>
+         <insttype value="court">court</insttype>
+         <instdoctype>Beschluss</instdoctype>
+         <instdocdate>2014-09-23</instdocdate>
+         <instdocnrs>
+            <instdocnr>KVZ 82/13</instdocnr>
+         </instdocnrs>
+
+      </instdoc>
+      <preinstdocs>
+         <instdoc>
+            <inst>OLG Düsseldorf</inst>
+            <instcode court="OLGDuesseldorf">OLGDuesseldorf</instcode>
+            <insttype value="court">court</insttype>
+            <instdoctype>Entscheidung</instdoctype>
+            <instdocdate>2013-09-25</instdocdate>
+            <instdocnrs>
+               <instdocnr>VI-Kart 4/12 (V)</instdocnr>
+            </instdocnrs>
+         </instdoc>
+      </preinstdocs>
+      <law_refs>
+         <law_ref>GWB § 36 Abs. 1 S. 1</law_ref>
+         <law_ref>GWB § 74 Abs. 2</law_ref>
+      </law_refs>
+      <inner_toc>
+         <item>
+            <content>
+               <name href="#sec_1">Tenor</name>
+            </content>
+         </item>
+         <item>
+            <content>
+               <name href="#sec_2">Gründe</name>
+            </content>
+         </item>
+      </inner_toc>
+      <all_doc_type level="1">ent</all_doc_type>
+      <all_doc_type level="2">entv</all_doc_type>
+      <all_source level="1">rsv</all_source>
+      <all_source level="2">rsv_collection</all_source>
+   </metadata>
+   <xml_body>
+      <section class="tenor" id="sec_1">
+         <title>Tenor</title> 
+         <p>Die Beschwerde der Betroffenen zu 1 und 2 gegen die Nichtzulassung der Rechtsbeschwerde in dem Beschluss des 1. Kartellsenats des Oberlandesgerichts Düsseldorf vom 25. September 2013 wird zurückgewiesen.</p> 
+         <p>Die Kosten der Nichtzulassungsbeschwerde einschließlich der außergerichtlichen Kosten des Bundeskartellamts werden den Betroffenen zu 1 und 2 auferlegt.</p> 
+         <p>Der Gegenstandswert für das Nichtzulassungsbeschwerdeverfahren wird auf 30 Millionen € festgesetzt.</p>
+      </section>
+      <section class="gruende" id="sec_2">
+         <title>Gründe</title>
+         <p>Die Nichtzulassungsbeschwerde ist unbegründet, weil die Betroffenen zu 1 1 und 2 keinen Zulassungsgrund im Sinne des § 74 Abs. 2 GWB dargelegt haben. Weder ist eine von der Beschwerde aufgeworfene Rechtsfrage von grundsätzlicher Bedeutung zu entscheiden, noch greift die auf die Verletzung von Verfahrensgrundrechten gestützte Rüge durch. Die Fortbildung des Rechts</p>
+         <p>oder die Sicherung einer einheitlichen Rechtsprechung erfordern auch im Übrigen keine Entscheidung des Bundesgerichtshofs.</p>
+         <p>1.</p>
+         <p>Das Beschwerdegericht hat entgegen der Auffassung der Nichtzu2 lassungsbeschwerde nicht den Obersatz aufgestellt, bei der Abgrenzung des räumlich relevanten Marktes sei das Liefergebiet des Zielunternehmens nicht zu berücksichtigen. Es ist bei der räumlichen Marktabgrenzung vielmehr in Übereinstimmung mit der höchstrichterlichen Rechtsprechung von dem Bedarfsmarktkonzept ausgegangen und hat deshalb vorrangig, aber nicht ausschließlich, auf die Ausweichmöglichkeiten der Nachfrager abgestellt.</p>
+         <p>Ebenso wenig ist klärungsbedürftig, ob die räumliche Marktabgrenzung 3 ausschließlich nach industrieweit ermittelten Eigenversorgungsquoten vorzunehmen ist. Denn das Beschwerdegericht hat den räumlich relevanten Markt nicht ausschließlich nach Eigenversorgungsquoten abgegrenzt, sondern diesem Gesichtspunkt lediglich wesentliche Bedeutung für die Bestimmung der relevanten Marktkräfte beigemessen und im Übrigen unter anderem berücksichtigt, dass die in dem vom Beschwerdegericht als maßgeblich angesehenen Regionalmarkt Nord gelegenen Produktionsstätten 83 % ihres Umsatzes in diesem Markt erzielen.</p>
+         <p>Die übrigen Rügen zur räumlichen Marktabgrenzung betreffen die dem 4 Tatrichter vorbehaltene Sachverhaltswürdigung. Soweit sie im Rechtsbeschwerdeverfahren überhaupt zu berücksichtigen wären, betreffen sie die Rechtsanwendung im Einzelfall und zeigen ebenfalls weder eine im Streitfall zu beantwortende grundsätzliche Rechtsfrage noch eine die Zulassung der Rechtsbeschwerde rechtfertigende Divergenz auf. Insbesondere sind allgemeine Aussagen über eine "Erweiterung" oder "Verkleinerung" des räumlich relevanten Markts im Vergleich zu einer bei einer denkbaren anderen sachlichen</p>
+         <p>Marktdefinition gebotenen räumlichen Abgrenzung weder erforderlich noch möglich.</p>
+         <p>2.</p>
+         <p>Die von der Nichtzulassungsbeschwerde als grundsätzlich angese5 hene Frage, welche Auswirkungen die Einführung des Untersagungstatbestands der erheblichen Behinderung wirksamen Wettbewerbs in § 36 Abs. 1 Satz 1 GWB in der Fassung der 8. GWB-Novelle auf die für die Feststellung der Begründung oder Verstärkung einer marktbeherrschenden Stellung relevanten Kriterien hat, stellt sich im Streitfall nicht. Insbesondere ist eine Zulassung der Rechtsbeschwerde nicht deshalb geboten, weil das Beschwerdegericht entscheidend auf den festgestellten Marktanteil der Betroffenen zu 1 und 2 von 50 % und den erheblichen Abstand zu den Wettbewerbern abgestellt hat. Denn eine marktbeherrschende Stellung der an einem Zusammenschlussvorhaben beteiligten Unternehmen stellt nach § 36 Abs. 1 Satz 1 GWB ein Regelbeispiel für die erhebliche Behinderung wirksamen Wettbewerbs dar. Es bedarf keiner Klärung in einem Rechtsbeschwerdeverfahren, dass hieraus eine drohende erhebliche Behinderung wirksamen Wettbewerbs jedenfalls dann abgeleitet werden kann, wenn - wie hier - keine Umstände festgestellt sind, aus denen sich gegenläufige Auswirkungen ergeben könnten.</p>
+         <p>Insoweit hat das Beschwerdegericht im Zusammenhang mit der Prüfung 6 der Begründung einer marktbeherrschenden Stellung eine Vielzahl von Gesichtspunkten erörtert, insbesondere die von der Nichtzulassungsbeschwerde adressierten Kapazitätsreserven, den Vortrag der Betroffenen zu den zu erwartenden Abschmelzungseffekten beim Marktanteil der Betroffenen und die Frage, ob die angebotenen Veräußerungszusagen der Betroffenen zu 1 und 2 geeignet sind, die wettbewerbsschädlichen Folgen des Zusammenschlusses auszugleichen. Der Stellenwert, der diesen und gegebenenfalls weiteren Gesichts</p>
+         <p>punkten zukommt, ist jeweils im Einzelfall zu bestimmen; allgemeine Grundsätze über das Gewicht eines einzelnen Kriteriums lassen sich nicht aufstellen.</p>
+         <p>Insoweit greift auch die Gehörsrüge nicht durch. Aus dem Umstand al7 lein, dass das Gericht sich in den Gründen seiner Entscheidung nicht mit jedem Aspekt des Vorbringens einer Prozesspartei ausdrücklich auseinandersetzt, kann nicht geschlossen werden, dass es das Vorbringen nicht zur Kenntnis genommen und erwogen hat.</p>
+         <p>3.</p>
+         <p>Der Anregung der Nichtzulassungsbeschwerde, den Gegenstands8 wert für das Beschwerdeverfahren auf 10 Mio. € herabzusetzen und den Wert für das Nichtzulassungsbeschwerdeverfahren entsprechend festzusetzen, folgt der Senat nicht. Auch wenn die Betroffene zu 3 ihren weltweiten Umsatz nur zu</p>
+         <p>etwa 27% in Deutschland erzielt, hängt das Schicksal des gesamten Zusammenschlussvorhabens - auch - von dem Ausgang des vorliegenden Verfahrens ab. Dass der Zugang zu Gericht für die Betroffenen durch die Wertfestsetzung unzumutbar erschwert würde, ist nicht ersichtlich.</p>
+      </section>
+
+
+
+   </xml_body>
+</rodoc>
