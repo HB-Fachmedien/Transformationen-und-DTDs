@@ -370,6 +370,11 @@
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BVerwG'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
             
             <!-- AR -->
             <h1>Arbeits- und sozialrechtliche Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
@@ -381,7 +386,7 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BVerwG'"/>
-                <xsl:with-param name="ressort" select="'all'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
