@@ -10,7 +10,6 @@
         encoding="UTF-8" 
     />
     
-    
     <!-- 
     offene Fragen:
     
@@ -33,6 +32,11 @@
     author_info
     area
     date
+    
+    
+    Beobachtungen:
+    
+    <section number="XIII."> wird zu <section number="XIII." id="sec_13"> , ich denke das sollte okay sein
     
     -->
     
@@ -62,7 +66,7 @@
                 <!--<title><xsl:apply-templates select="metadata/title/*"/></title>-->
                 <xsl:copy-of select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:copy-of>
                 <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/></authors></xsl:if>
-                <xsl:copy-of select="metadata/summary | metadata/leitsaetze | metadata/keywords | metadata/ressort | metadata/rubriken"></xsl:copy-of>
+                <xsl:copy-of select="metadata/summary[not(@generated)] | metadata/leitsaetze | metadata/keywords | metadata/ressort | metadata/rubriken"></xsl:copy-of>
                 <xsl:apply-templates select="metadata/pub"/>
                 <xsl:if test="metadata/origfile">
                     <extfile>
@@ -104,6 +108,8 @@
             <xsl:copy-of select="add_target | version"></xsl:copy-of>
         </pub>
     </xsl:template>
+    
+    <xsl:template match="intermed_page"></xsl:template>
     
     <!-- Das public Element muss bei hbfm.dtd validen Dokumenten leer sein: -->
     <xsl:template match="public/text()"></xsl:template>
