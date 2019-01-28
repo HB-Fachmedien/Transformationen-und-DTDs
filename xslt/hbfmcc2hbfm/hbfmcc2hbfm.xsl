@@ -38,6 +38,11 @@
     
     <section number="XIII."> wird zu <section number="XIII." id="sec_13"> , ich denke das sollte okay sein
     
+    
+    Noch beschreiben:
+    
+    metadata/paragraph wird umgenannt zu metadata/chapter  <-- noch testen
+    
     -->
     
     <!-- identity transform: -->
@@ -83,6 +88,8 @@
                 
                 <xsl:copy-of select="metadata/law_refs"/>
                 
+                
+                <xsl:apply-templates select="metadata/paragraph"/>
                 <!--<all_doc_type level="1"></all_doc_type>
                 <all_source level="1"></all_source>
                 <all_source level="2"></all_source>-->
@@ -107,6 +114,10 @@
             <xsl:apply-templates select="public"/>
             <xsl:copy-of select="add_target | version"></xsl:copy-of>
         </pub>
+    </xsl:template>
+    
+    <xsl:template match="metadata/paragraph">
+        <chapter><xsl:value-of select="text()"/></chapter>
     </xsl:template>
     
     <xsl:template match="intermed_page"></xsl:template>
