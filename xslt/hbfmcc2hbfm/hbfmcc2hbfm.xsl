@@ -41,7 +41,7 @@
     
     Noch beschreiben:
     
-    metadata/paragraph wird umgenannt zu metadata/chapter  <-- noch testen
+    metadata/paragraph wird umgenannt zu metadata/chapter  <- noch testen
     
     -->
     
@@ -142,5 +142,50 @@
             <xsl:value-of select="text()"/><xsl:if test="position() != last()"><xsl:text> </xsl:text></xsl:if>
         </xsl:for-each>
     </xsl:template>
+    
+    
+    <!-- Wir haben uns auf eine Umbenennung der Link Element Attribute geeinigt: -->
+    <xsl:template match="link">
+        <link>
+            <xsl:if test="@a">
+                <xsl:attribute name="anchor"><xsl:value-of select="@a"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_docid">
+                <xsl:attribute name="meta_docid"><xsl:value-of select="@all_docid"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_lawabbr">
+                <xsl:attribute name="meta_lawabbr"><xsl:value-of select="@all_lawabbr"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_artnum">
+                <xsl:attribute name="meta_artnum"><xsl:value-of select="@all_artnum"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_paragraph">
+                <xsl:attribute name="meta_chapter"><xsl:value-of select="@all_paragraph"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_source">
+                <xsl:attribute name="meta_source"><xsl:value-of select="@all_source"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_rubrik">
+                <xsl:attribute name="meta_rubrik"><xsl:value-of select="@all_rubrik"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@all_rz">
+                <xsl:attribute name="meta_marginnr"><xsl:value-of select="@all_rz"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@ts_page">
+                <xsl:attribute name="meta_page"><xsl:value-of select="@ts_page"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@ts_pubedition">
+                <xsl:attribute name="meta_pubedition"><xsl:value-of select="@ts_pubedition"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@ts_pubyear">
+                <xsl:attribute name="meta_pubyear"><xsl:value-of select="@ts_pubyear"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@generator">
+                <xsl:attribute name="generator"><xsl:value-of select="@generator"/></xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </link>
+    </xsl:template>
+    
     
 </xsl:stylesheet>
