@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0"
-    xmlns:hbfm="http:www.fachmedien.de/hbfm">
-    
-    <xsl:output encoding="UTF-8" indent="no" method="xhtml" omit-xml-declaration="yes"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0" xmlns:hbfm="http:www.fachmedien.de/hbfm">
+    <xsl:param name="databaseDomain" select="'der-betrieb.owlit.de'"/>
+    <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="yes"/>
     
     <xsl:template match="/">
         <!--<xsl:result-document exclude-result-prefixes="#all" indent="no" href="file:///z:/Duesseldorf/Fachverlag/Fachbereiche/Pool/eShop_innochange/EasyProduct/Daten/1000/Export/Inhaltsverzeichnis/DB-IHV.html" method="xhtml" omit-xml-declaration="yes">-->
             <html>
                 <head>
                     <meta charset="UTF-8"/>
-                    <link media="screen" type="text/css"
-                        href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css"
-                        rel="stylesheet"/>
+                    <link media="screen" type="text/css" href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css" rel="stylesheet"/>
                     <style>
                         @charset "UTF-8";
                         @font-face{
@@ -55,18 +51,16 @@
                                         <xsl:variable name="pubnr"><xsl:value-of select="/output/@nr"/></xsl:variable>
                                         <xsl:variable name="pubyear"><xsl:value-of select="/output/@pubdatum"/></xsl:variable>
                                         <div class="pdfdownload">
-   <a target="_blank" class="pdf" href="https://pdf.fachmedien.de/ihv/pdf/DB_{substring($pubyear, 1, 4)}_{$pubnr}_IHV.pdf" >PDF Download</a>
+   <a target="_blank" class="pdf" href="https://pdf.fachmedien.de/ihv/pdf/DB_{substring($pubyear, 1, 4)}_{$pubnr}_IHV.pdf">PDF Download</a>
                                         </div>
                                         <div class="ihv_heftnr"><xsl:value-of select="$pubnr"/></div>
                                         <div class="ihv_datum">
-                                            <xsl:value-of
-                                                select="format-date(output/@pubdatum, '[D].[M].[Y]')"/>
+                                            <xsl:value-of select="format-date(output/@pubdatum, '[D].[M].[Y]')"/>
                                         </div>
                                         <!--<div class="ihv_datum"> <xsl:value-of select="format-dateTime(current-dateTime(), '[D]. [M]. [Y]')"/></div>-->
                                         
                                         <!-- Editorial -->
-                                        <xsl:variable name="editorial-dokument"
-                                            select="output/DOKUMENT[DOCTYPGROUPBEZ='Editorial']"/>
+                                        <xsl:variable name="editorial-dokument" select="output/DOKUMENT[DOCTYPGROUPBEZ='Editorial']"/>
                                         <xsl:variable name="editorial-dbnummer">
                                             <xsl:call-template name="calculateDocId">
                                                 <xsl:with-param name="id" select="$editorial-dokument/SIRIUS-ID"/>
@@ -77,7 +71,7 @@
                                             <div class="ihv_headline ressort" style="margin-bottom: 5px;">Editorial</div>
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
-                                                    <a target="_blank"  href="https://der-betrieb.owlit.de/document.aspx?docid=DB{$editorial-dbnummer}">
+                                                    <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$editorial-dbnummer}">
                                                     <div class="ihv_headline titel">
                                                             <xsl:value-of disable-output-escaping="yes" select="$editorial-dokument/TITEL"/>
                                                     </div>
@@ -105,8 +99,7 @@
                                         <!-- Ende: Editorial -->
                                         
                                         <!-- Gastkommentar -->
-                                        <xsl:variable name="gk-dokument"
-                                            select="output/DOKUMENT[DOCTYPGROUPBEZ='Gastkommentar' and starts-with(SEITEVON/text(), 'M')]"/>
+                                        <xsl:variable name="gk-dokument" select="output/DOKUMENT[DOCTYPGROUPBEZ='Gastkommentar' and starts-with(SEITEVON/text(), 'M')]"/>
                                         <xsl:variable name="gk-dbnummer">
                                             <xsl:call-template name="calculateDocId">
                                                 <xsl:with-param name="id" select="$gk-dokument/SIRIUS-ID"/>
@@ -118,7 +111,7 @@
                                             <!-- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
-                                                    <a target="_blank" href="https://der-betrieb.owlit.de/document.aspx?docid=DB{$gk-dbnummer}">
+                                                    <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$gk-dbnummer}">
                                                     <div class="ihv_headline titel">
                                                         <xsl:value-of disable-output-escaping="yes" select="$gk-dokument/TITEL"/>
                                                     </div>
@@ -171,6 +164,12 @@
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Entscheidungen'"/>
                                                 <xsl:with-param name="art-nr" select="160"/>
+                                            </xsl:call-template>                                            
+                                            
+                                            <xsl:call-template name="listArticles">
+                                                <xsl:with-param name="self" select="./node()"/>
+                                                <xsl:with-param name="ueberschrift" select="'Nachrichten'"/>
+                                                <xsl:with-param name="art-nr" select="170"/>
                                             </xsl:call-template>
                                             
                                             <xsl:call-template name="listArticles">
@@ -289,8 +288,7 @@
                                                 <xsl:for-each select="output/DOKUMENT[DOCTYPGROUPBEZ='Standpunkt']">
                                                     
                                                     
-                                                    <xsl:variable name="sp-dokument"
-                                                        select="."/>
+                                                    <xsl:variable name="sp-dokument" select="."/>
                                                     <xsl:variable name="sp-dbnummer">
                                                         <xsl:call-template name="calculateDocId">
                                                             <xsl:with-param name="id" select="$sp-dokument/SIRIUS-ID"/>
@@ -300,7 +298,7 @@
                                                     <!-- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
-                                                            <a target="_blank" href="https://der-betrieb.owlit.de/document.aspx?docid=DB{$sp-dbnummer}">
+                                                            <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$sp-dbnummer}">
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of disable-output-escaping="yes" select="$sp-dokument/TITEL"/>
                                                             </div>
@@ -362,6 +360,10 @@
                 <div class="ihv_headline doktyp"><xsl:value-of select="$ueberschrift"/></div>
                 <xsl:for-each select="$dokumente"> 
                     <xsl:variable name="temp-sid">
+                        <xsl:choose>
+                            <xsl:when test="ends-with(string($art-nr), '65')">DBL</xsl:when>
+                            <xsl:otherwise>DB</xsl:otherwise>
+                        </xsl:choose>
                         <xsl:call-template name="calculateDocId">
                             <xsl:with-param name="id" select="SIRIUS-ID"/>
                         </xsl:call-template>
@@ -371,7 +373,7 @@
                             <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
                         </div>
                         
-                        <a target="_blank" href="https://der-betrieb.owlit.de/document.aspx?docid=DB{$temp-sid}">
+                        <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid={$temp-sid}">
                         <div class="ihv_headline titel">
                             <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
                         </div>
@@ -403,10 +405,10 @@
                             <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                 <xsl:choose>
                                     <xsl:when test="SEITEVON = SEITEBIS">
-                                        <xsl:value-of select="SEITEVON"/>, DB<xsl:value-of select="$temp-sid"/>
+                                        <xsl:value-of select="SEITEVON"/>, <xsl:value-of select="$temp-sid"/>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:value-of select="SEITEVON"/> &#x2011; <xsl:value-of select="SEITEBIS"/>, DB<xsl:value-of select="$temp-sid"/>
+                                        <xsl:value-of select="SEITEVON"/> &#x2011; <xsl:value-of select="SEITEBIS"/>, <xsl:value-of select="$temp-sid"/>
                                     </xsl:otherwise>
                                 </xsl:choose>
                         </div>
