@@ -10,40 +10,7 @@
         encoding="UTF-8" 
     />
     
-    <!-- 
-    offene Fragen:
-    
-    was ist bei hbfm.dtd mit den Elementen:
-    
-    sollten komplett uninteressant sein für diese Umwandlung:
-    ROOTELEMENT/@sid
-    ROOTELEMENT/@sidword
-    exportblocker
-    sgml_root_element
-    /pub/public
-        
-    
-    
-    was ist bei hbfmcc.dtd mit den Elementen:
-    
-    maindate
-    subtitle_rest
-    toc_title
-    author_info
-    area
-    date
-    
-    
-    Beobachtungen:
-    
-    <section number="XIII."> wird zu <section number="XIII." id="sec_13"> , ich denke das sollte okay sein
-    
-    
-    Noch beschreiben:
-    
-    metadata/paragraph wird umgenannt zu metadata/chapter  <- noch testen
-    
-    -->
+    <xsl:strip-space elements="*"/>
     
     <!-- identity transform: -->
     <xsl:template match="@*|*|processing-instruction()|comment()">
@@ -54,7 +21,16 @@
     
     
     <xsl:template match="/rodoc">
-        <xsl:variable name="doctype" select="metadata/all_doc_type[@level='2']"/>
+        <xsl:variable name="doctype">
+            <xsl:choose>
+                <xsl:when test="metadata/all_doc_type[@level='2'] = ('fb', 'hb', 'rg', 'abc')">
+                    <xsl:text>fb</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="metadata/all_doc_type[@level='2']"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:element name="{$doctype}">
             <xsl:attribute name="docid"><xsl:value-of select="metadata/docid"/></xsl:attribute>
             <xsl:if test="metadata/altdocid">
@@ -71,7 +47,7 @@
                 <!--<title><xsl:apply-templates select="metadata/title/*"/></title>-->
                 <xsl:copy-of select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:copy-of>
                 <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/></authors></xsl:if>
-                <xsl:copy-of select="metadata/summary[not(@generated)] | metadata/leitsaetze | metadata/keywords | metadata/ressort | metadata/rubriken"></xsl:copy-of>
+                <xsl:copy-of select="metadata/summary | metadata/leitsaetze | metadata/keywords | metadata/ressort | metadata/rubriken"></xsl:copy-of>
                 <xsl:apply-templates select="metadata/pub"/>
                 <xsl:if test="metadata/origfile">
                     <extfile>
@@ -90,6 +66,10 @@
                 
                 
                 <xsl:apply-templates select="metadata/paragraph"/>
+                
+                <xsl:apply-templates select="metadata/toc"/>
+                
+                <xsl:copy-of select="metadata/inner_toc"/>
                 <!--<all_doc_type level="1"></all_doc_type>
                 <all_source level="1"></all_source>
                 <all_source level="2"></all_source>-->
@@ -101,6 +81,12 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="metadata/toc">
+        <global_toc>
+            <xsl:apply-templates/>
+        </global_toc>
+    </xsl:template>
+    
     <xsl:template match="pub">
         <pub>
             <pubtitle><xsl:value-of select="pubtitle"/></pubtitle>
@@ -109,7 +95,9 @@
             <pubedition><xsl:value-of select="pubedition"/></pubedition>
             <date><xsl:value-of select="ancestor::metadata/date/text()"/></date>
             <xsl:copy-of select="pub_suppl"></xsl:copy-of>
-            <pages><xsl:apply-templates select="pages/node()"/></pages>
+            <xsl:if test="pages">
+                <pages><xsl:apply-templates select="pages/node()"/></pages>
+            </xsl:if>
             <xsl:copy-of select="pages_alt"></xsl:copy-of>
             <xsl:apply-templates select="public"/>
             <xsl:copy-of select="add_target | version"></xsl:copy-of>
@@ -120,7 +108,9 @@
         <chapter><xsl:value-of select="text()"/></chapter>
     </xsl:template>
     
-    <xsl:template match="intermed_page"></xsl:template>
+    <xsl:template match="intermed_page">
+        <intermed_pages><xsl:value-of select="text()"/></intermed_pages>
+    </xsl:template>
     
     <!-- Das public Element muss bei hbfm.dtd validen Dokumenten leer sein: -->
     <xsl:template match="public/text()"></xsl:template>
@@ -162,8 +152,11 @@
             <xsl:if test="@all_paragraph">
                 <xsl:attribute name="meta_chapter"><xsl:value-of select="@all_paragraph"/></xsl:attribute>
             </xsl:if>
+            <xsl:if test="@meta_context">
+                <xsl:attribute name="meta_context"><xsl:value-of select="@meta_context"/></xsl:attribute>
+            </xsl:if>
             <xsl:if test="@all_source">
-                <xsl:attribute name="meta_source"><xsl:value-of select="@all_source"/></xsl:attribute>
+                <xsl:attribute name="meta_target"><xsl:value-of select="@all_source"/></xsl:attribute>
             </xsl:if>
             <xsl:if test="@all_rubrik">
                 <xsl:attribute name="meta_rubrik"><xsl:value-of select="@all_rubrik"/></xsl:attribute>
