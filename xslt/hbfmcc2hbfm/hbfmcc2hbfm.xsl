@@ -4,11 +4,18 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    
     <xsl:output indent="yes"
         doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE"
         doctype-system="hbfm.dtd"
         encoding="UTF-8" 
     />
+    
+    <!-- To-Do: summary_plain und authors_plain noch implementieren
+    
+        für welche doktypen soll das Taxonomy Template nicht aufgerufen werden?
+    
+    -->
     
     <xsl:strip-space elements="*"/>
     
@@ -46,8 +53,15 @@
             <metadata>
                 <!--<title><xsl:apply-templates select="metadata/title/*"/></title>-->
                 <xsl:copy-of select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:copy-of>
-                <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/></authors></xsl:if>
-                <xsl:copy-of select="metadata/summary | metadata/leitsaetze | metadata/keywords | metadata/ressort | metadata/rubriken"></xsl:copy-of>
+                <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/><xsl:call-template name="build_authors_plain"/></authors></xsl:if>
+                <xsl:copy-of select="metadata/summary"></xsl:copy-of>
+                <xsl:call-template name="summary_plain"/>
+                <xsl:copy-of select="metadata/leitsaetze | metadata/keywords"></xsl:copy-of>
+                <xsl:call-template name="taxonomy">
+                    <xsl:with-param name="pubtitle" select="metadata/pub/pubtitle/text()"/>
+                </xsl:call-template>
+                <xsl:apply-templates select="metadata/ressort"/>
+                <xsl:copy-of select="metadata/rubriken"></xsl:copy-of>
                 <xsl:apply-templates select="metadata/pub"/>
                 <xsl:if test="metadata/origfile">
                     <extfile>
@@ -81,10 +95,74 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template name="taxonomy">
+        <xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
+        <xsl:param name="pubtitle" required="yes"></xsl:param>
+        
+        <xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@name)=lower-case($pubtitle)]/text(), ' ')"/>
+        <taxonomy>
+            <xsl:for-each select="$string-of-keys">
+                <key><xsl:value-of select="current()"/></key>
+            </xsl:for-each>
+        </taxonomy>
+    </xsl:template>
+    
+    <xsl:template name="build_authors_plain">
+        <xsl:choose>
+            <xsl:when test="metadata/authors">
+                <authors_plain><xsl:value-of select="metadata/authors"/></authors_plain>
+            </xsl:when>
+            <xsl:otherwise>
+                <To-Do>Kein authors Feld gefunden. MIT AUTOREN AUFFÜLLEN</To-Do>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="summary_plain">
+        <summary_plain>WIRD NOCH GEFÜLLT</summary_plain>
+    </xsl:template>
+    
     <xsl:template match="metadata/toc">
         <global_toc>
             <xsl:apply-templates/>
         </global_toc>
+    </xsl:template>
+    
+    <xsl:template match="metadata/ressort">
+        <ressort>
+            <xsl:variable name="is_DB_or_DK" select="ancestor::metadata/pub/pubabbr/text() = ('DB', 'DK')"/>
+            
+            <xsl:choose>
+                <xsl:when test="$is_DB_or_DK">
+                    <xsl:choose>
+                        <xsl:when test="text() = 'bw'">
+                            <xsl:text>Betriebswirtschaft</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="text() = 'sr'">
+                            <xsl:text>Steuerrecht</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="text() = 'wr'">
+                            <xsl:text>Wirtschaftsrecht</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="text() = 'ar'">
+                            <xsl:text>Arbeitsrecht</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="text() = 'kr'">
+                            <xsl:text>Konzernrecht</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="text() = 'br'">
+                            <xsl:text>Rechnungslegung/Corporate Governance</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <UNBEKANNTES-RESSORT-BEI-DB-ODER-DK/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="text()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </ressort>
     </xsl:template>
     
     <xsl:template match="pub">
@@ -101,6 +179,45 @@
             <xsl:copy-of select="pages_alt"></xsl:copy-of>
             <xsl:apply-templates select="public"/>
             <xsl:copy-of select="add_target | version"></xsl:copy-of>
+            
+            <xsl:if test="true()"> <!-- To-Do: Wer kriegt kein Publisher Element? -->
+                <xsl:variable name="all_source_l2_prefix">
+                    <xsl:choose>
+                        <xsl:when test="substring-before(ancestor::metadata/all_source[@level='2']/text(), '_') = ''">
+                            <xsl:value-of select="ancestor::metadata/all_source[@level='2']/text()"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="substring-before(ancestor::metadata/all_source[@level='2']/text(), '_')"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <publisher>
+                    <xsl:choose>
+                        <!-- Fremdverlage: -->
+                        <xsl:when test="$all_source_l2_prefix = 'cv'">Campus Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'dg'">De Gruyter</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'esv'">Erich Schmidt</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'ovs'">Otto Schmidt</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'rws'">RWS Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'sf'">Stollfuß</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'zap'">ZAP Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'spg'">Springer Gabler</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'ba'">Bundesanzeiger Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'dav'">Deutscher Anwaltverlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'cfm'">C.F. Müller</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'zv'">zerb Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'iww'">IWW Institut</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
+                        <!--  -->
+                        
+                        <!-- Handelsblatt Fachmedien: -->
+                        <xsl:when test="$all_source_l2_prefix = ('hbfm', 'vwa_collection','sonst','ar','rsv_collection','bwp','cm','db','dk','kor','rel','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
+                        <!--  -->
+                        
+                        <xsl:otherwise><FEHLER>Konnte all_source/@level='2' nicht auflösen: <xsl:value-of select="$all_source_l2_prefix"/></FEHLER></xsl:otherwise>
+                    </xsl:choose>
+                </publisher>
+            </xsl:if>
         </pub>
     </xsl:template>
     
