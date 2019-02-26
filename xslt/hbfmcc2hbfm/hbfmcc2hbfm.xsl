@@ -112,9 +112,14 @@
             <xsl:when test="metadata/authors">
                 <authors_plain><xsl:value-of select="metadata/authors"/></authors_plain>
             </xsl:when>
-            <xsl:otherwise>
-                <To-Do>Kein authors Feld gefunden. MIT AUTOREN AUFFÜLLEN</To-Do>
-            </xsl:otherwise>
+            <xsl:when test="metadata/author_info//string-length(normalize-space(text())) &gt; 0">
+                <authors_plain>
+                    <xsl:for-each select="metadata/author_info/author">
+                        <xsl:if test="not(position()=1)"><xsl:text>, </xsl:text></xsl:if>
+                        <xsl:value-of select="normalize-space(concat(firstname, ' ', surname))"/>
+                    </xsl:for-each>
+                </authors_plain>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
     
@@ -196,10 +201,10 @@
                         <!-- Fremdverlage: -->
                         <xsl:when test="$all_source_l2_prefix = 'cv'">Campus Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'dg'">De Gruyter</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'esv'">Erich Schmidt</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'ovs'">Otto Schmidt</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'esv'">Erich Schmidt Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'ovs'">Verlag Dr. Otto Schmidt</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'rws'">RWS Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'sf'">Stollfuß</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'sf'">Stollfuß Medien</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'zap'">ZAP Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'spg'">Springer Gabler</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'ba'">Bundesanzeiger Verlag</xsl:when>
@@ -208,10 +213,10 @@
                         <xsl:when test="$all_source_l2_prefix = 'zv'">zerb Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'iww'">IWW Institut</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
-                        <!--  -->
+                        <xsl:when test="$all_source_l2_prefix = 'ifst'">Institut Finanzen und Steuern</xsl:when>
                         
                         <!-- Handelsblatt Fachmedien: -->
-                        <xsl:when test="$all_source_l2_prefix = ('hbfm', 'vwa_collection','sonst','ar','rsv_collection','bwp','cm','db','dk','kor','rel','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
                         <!--  -->
                         
                         <xsl:otherwise><FEHLER>Konnte all_source/@level='2' nicht auflösen: <xsl:value-of select="$all_source_l2_prefix"/></FEHLER></xsl:otherwise>
