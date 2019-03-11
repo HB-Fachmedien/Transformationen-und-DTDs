@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xsl:transform 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -19,6 +18,34 @@
             <xsl:apply-templates select="*|@*|text()|processing-instruction()|comment()"/>
         </xsl:copy>
     </xsl:template>
+	
+	<!-- ******************************** -->
+	<xsl:variable name="section_order">	        
+		<class sort="10">rkvermerk</class>
+		<class sort="15">veroeffhinw</class>
+		<class sort="17">extnote</class>
+		<class sort="19">tenor</class>
+		<class sort="20">streitjahre</class>
+		<class sort="25">sachverhalt</class>
+		<class sort="27">tatbestand</class>
+		<class sort="30">gruende</class>
+		<class sort="40">entscheidung</class>
+		<class sort="50">konsequenz</class>
+		<class sort="60">replik</class>
+		<class sort="70">antrag</class>
+		<class sort="80">rubrum</class>		
+	</xsl:variable>
+	
+	<!-- Hier Lookup Table aufbauen -->
+	<!-- ******************************** -->
+	<xsl:variable name="section-lookup-table">
+		<xsl:for-each-group select="/*/body/section" group-by="@class">
+			<xsl:sort select="$section_order/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
+			<xsl:for-each select="current-group()">
+				<xsl:copy><xsl:value-of select="."/></xsl:copy>
+			</xsl:for-each>
+		</xsl:for-each-group>
+	</xsl:variable>
 	
     <xsl:template match="metadata">
         <metadata>
@@ -42,11 +69,15 @@
         	<xsl:apply-templates select="ressort | rubriken | pub | extfile | law | instdoc | preinstdoc | law_refs | chapter"/>
         	
             <xsl:call-template name="create_global_toc"/>
-            <xsl:call-template name="create_inner_toc"/>
         	
-        	<xsl:apply-templates select="date_sort | all_doc_type | all_source | exportblocker | sgml_root_element"/>
+        	<xsl:if test="/*/body/section">
+            	<xsl:call-template name="create_inner_toc"/>
+        	</xsl:if>
+        	
+        	<xsl:apply-templates select="date_sort | all_doc_type | all_source"/>
             
         </metadata>
+    	<xsl:comment><xsl:value-of select="$section-lookup-table"/></xsl:comment>
     </xsl:template>
 	
 	
@@ -215,10 +246,10 @@
 		</keywords>
 	</xsl:template>
 
-<!-- =========================================================
-=== metadata: 
-=== arab numbered pages
-=========================================================== -->
+	<!-- =========================================================
+	=== metadata: 
+	=== arab numbered pages
+	=========================================================== -->
 	<xsl:template name="createIntermedPageElemForArabNumbers">
 		<xsl:if test="../last_page/text() != ''">
 			<xsl:variable name="pagePrefix" select="replace(../start_page/text(), '\d+', '')"/>
@@ -242,9 +273,9 @@
 	</xsl:template>
 
 
-<!-- =========================================================
-=== return map as variable
-=========================================================== -->
+	<!-- =========================================================
+	=== return map as variable
+	=========================================================== -->
 	<xsl:template name="getRomanNumbersMap" as="element()*">
 		<map>
 			<romanMap arab="1" roman="I"/>
@@ -505,255 +536,65 @@
 
 
 
-<!-- =========================================================
-=== create toc and local toc
-=========================================================== -->
-<xsl:template name="create_global_toc">
-	<xsl:variable name="pub-abbr" select="descendant::pubabbr/text()"/>
-	<xsl:if test="not( (/gh and all_source[@level='2']='ar') or (descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah' and not($pub-abbr='BWP'))or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft') or ( pub/pubtitle='OrganisationsEntwicklung' and starts-with(coll_title/text(), 'ZOE Spezial')))">
-			<global_toc>
-				<node title="root" childOrder="BySequenceNr">
-					<node title="Zeitschriften" sequenceNr="200" childOrder="BySequenceNr">
-						<node sequenceNr="100" childOrder="ByTitleReverseAlphanumeric">
-							<xsl:attribute name="title">
-								<xsl:choose>
-									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
-										<xsl:text>StR kompakt</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'BWP'">
-										<xsl:text>Bewertungspraktiker</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'IFST'">
-										<xsl:text>ifst-Schriften</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = ('DB','DBL')">
-										<xsl:text>Der Betrieb</xsl:text>
-									</xsl:when>
-									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB') or ($pub-abbr = 'FB')">
-										<xsl:text>Corporate Finance</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'KOR'">
-										<xsl:text>KoR</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'DK'">
-										<xsl:text>Der Konzern</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'AR'">
-										<xsl:text>Aufsichtsrat</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'DSB'">
-										<xsl:text>Datenschutz-Berater</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'ZOE'">
-										<xsl:text>OrganisationsEntwicklung</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'WUW'">
-										<xsl:text>Wirtschaft und Wettbewerb</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'CM'">
-										<xsl:text>changement!</xsl:text>
-									</xsl:when>
-									<xsl:when test="$pub-abbr = 'REL'">
-										<xsl:text>Rethinking Law</xsl:text>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:text>Unbekannte Zeitschrift</xsl:text>
-									</xsl:otherwise>
-								</xsl:choose>
-							</xsl:attribute>
-
-							<!-- get year from element date -->
-							<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
-								<xsl:variable name="beilagennummer" select="descendant::pub/pub_suppl/text()"/>
-								
-								<!-- Gibt womöglich ein Problem, wenn z.B. wie beim GK von CF kein Ressort vorhanden ist.
-								Habe das weiter unten im CF TOC Bereich abgefangen.
-								-->
-								<xsl:variable name="ressortname" select="ressort/text()"/>
-								<xsl:choose>
-									<!-- Wenn es sich um eine Heftbeilage handelt, dann ist das pub_suppl Element gefüllt und wird gesondert behandelt: -->
-									<xsl:when test="number($beilagennummer) > 0">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-											<node childOrder="BySequenceNr" expanded="true">
-											<xsl:attribute name="title">Beilage <xsl:value-of select="$beilagennummer"/> (zu Heft <xsl:value-of select="descendant::pub/pubedition"/>)</xsl:attribute>
-											
-												<xsl:variable name="docTypeAndSeqN">
-													<xsl:choose>
-														<xsl:when test="../name()='gh'">Ganzes Heft#50</xsl:when>
-														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
-														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
-														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
-														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
-														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
-														<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
-														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
-														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
-													</xsl:choose>
-												</xsl:variable>
-												
-											<!-- Gesamtbeilagen werden auch produziert, so dass es zwei Dokumente mit Start Seitenzahl 1 gibt. Für diesem Fall wird bei der Sequenznummer noch die letzte Seite mitberechnet -->
-											<xsl:variable name="var_last_page">
-												<xsl:choose>
-													<xsl:when test="descendant::pages/last_page[text()]">
-														<xsl:value-of select="descendant::pages/last_page/text()"/>
-													</xsl:when>
-													<xsl:otherwise>0</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf sequenceNr="{(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100) - $var_last_page + ((number(descendant::article_order/text()) - 1) * 10)}"/>
-											</node>
-										</node>
-									</xsl:when>
+	<!-- =========================================================
+	=== create toc and local toc
+	=========================================================== -->
+	<xsl:template name="create_global_toc">
+		<xsl:variable name="pub-abbr" select="/*/metadata/pub/pubabbr/text()"/>
+		<xsl:if test="not( (/gh and all_source[@level='2']='ar') or (descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah' and not($pub-abbr='BWP'))or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft') or ( pub/pubtitle='OrganisationsEntwicklung' and starts-with(coll_title/text(), 'ZOE Spezial')))">
+				<global_toc>
+					<!-- get year from element date -->
+					<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
+						<xsl:variable name="beilagennummer" select="descendant::pub/pub_suppl/text()"/>
+						
+						<!-- Gibt womöglich ein Problem, wenn z.B. wie beim GK von CF kein Ressort vorhanden ist.
+						Habe das weiter unten im CF TOC Bereich abgefangen.
+						-->
+						<xsl:variable name="ressortname" select="ressort/text()"/>
+						<xsl:choose>
+							<!-- Wenn es sich um eine Heftbeilage handelt, dann ist das pub_suppl Element gefüllt und wird gesondert behandelt: -->
+							<xsl:when test="number($beilagennummer) > 0">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+									<node childOrder="BySequenceNr" expanded="true">
+									<xsl:attribute name="title">Beilage <xsl:value-of select="$beilagennummer"/> (zu Heft <xsl:value-of select="descendant::pub/pubedition"/>)</xsl:attribute>
 									
-									<!-- Bewertungspraktiker -->
-									<xsl:when test="$pub-abbr = 'BWP'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										<xsl:variable name="docTypeAndSeqN">
+											<xsl:choose>
+												<xsl:when test="../name()='gh'">Ganzes Heft#50</xsl:when>
+												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
+												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+												<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+												<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
+												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+												<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+												<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
+											</xsl:choose>
+										</xsl:variable>
+										
+									<!-- Gesamtbeilagen werden auch produziert, so dass es zwei Dokumente mit Start Seitenzahl 1 gibt. Für diesem Fall wird bei der Sequenznummer noch die letzte Seite mitberechnet -->
+									<xsl:variable name="var_last_page">
 										<xsl:choose>
-											<!-- SM: BWP wird seit 2017 auch als XML produziert, daher hier Differenzierung: -->
-											<xsl:when test="number(substring(pub/date/text(), 1, 4)) &gt; 2016">
-												<xsl:variable name="get-pubedition">
-													<xsl:choose>
-														<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-														<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-													</xsl:choose>
-												</xsl:variable>
-												<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
-													<xsl:variable name="bwp-docType-SeqN">
-														<xsl:choose>
-															<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
-															<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
-															<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-															<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
-															<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
-															<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
-															<xsl:when test="../name()='iv'">Interview#600</xsl:when>
-															<xsl:when test="../name()='divah'">Arbeitshilfen#700</xsl:when>
-														</xsl:choose>
-													</xsl:variable>
-													<xsl:variable name="leafseqnr">
-														<xsl:choose>
-															<xsl:when test="descendant::pubedition = '00'">
-																<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
-															</xsl:when>
-															<xsl:otherwise>
-																<xsl:value-of select="
-																	(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-																	+
-																	((number(descendant::article_order/text()) - 1) * 10)"/>
-															</xsl:otherwise>
-														</xsl:choose>
-													</xsl:variable>
-													<node title="{tokenize($bwp-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($bwp-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-														<leaf sequenceNr="{$leafseqnr}"/>
-													</node>
-												</node>
+											<xsl:when test="descendant::pages/last_page[text()]">
+												<xsl:value-of select="descendant::pages/last_page/text()"/>
 											</xsl:when>
-											<xsl:otherwise>
-												<leaf sequenceNr="0"/>		
-											</xsl:otherwise>
+											<xsl:otherwise>0</xsl:otherwise>
 										</xsl:choose>
-									</xsl:when>
-									
-									<!-- IFST SCHRIFT -->
-									<xsl:when test="$pub-abbr = 'IFST'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										
-										<node title="Schrift {descendant::pubedition}"
-											childOrder="BySequenceNr">
-											<!-- calculate sequenceNr from first page and article's position on page -->
-											<leaf
-												sequenceNr="{
-												(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-												+
-												((number(descendant::article_order/text()) - 1) * 10)
-												}"
-											/>
-										</node>
-									</xsl:when>
-									
-									<!-- StR Kompakt -->
-									<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
-										<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
-										
-										<xsl:variable name="monat" select="number(tokenize(descendant::date/text(), '-')[2])"/>
-										
-										<xsl:variable name="monatAusgeschrieben">
-											<xsl:choose>
-												<xsl:when test="$monat=1">Januar</xsl:when>
-												<xsl:when test="$monat=2">Februar</xsl:when>
-												<xsl:when test="$monat=3">März</xsl:when>
-												<xsl:when test="$monat=4">April</xsl:when>
-												<xsl:when test="$monat=5">Mai</xsl:when>
-												<xsl:when test="$monat=6">Juni</xsl:when>
-												<xsl:when test="$monat=7">Juli</xsl:when>
-												<xsl:when test="$monat=8">August</xsl:when>
-												<xsl:when test="$monat=9">September</xsl:when>
-												<xsl:when test="$monat=10">Oktober</xsl:when>
-												<xsl:when test="$monat=11">November</xsl:when>
-												<xsl:when test="$monat=12">Dezember</xsl:when>
-											</xsl:choose>
-										</xsl:variable>
-										<!-- Dezember soll oben stehen, daher nachfolgende Absolutfunktion-->
-										<node title="{$monatAusgeschrieben}"
-											childOrder="ByTitleAlphanumeric" sequenceNr="{abs($monat - 13)}">
-											<leaf sequenceNr="100" />
-										</node>
-									</xsl:when>
-									
-									<xsl:when test="$pub-abbr = 'DK'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="get-pubedition">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{$get-pubedition}" childOrder="BySequenceNr">
-											<xsl:variable name="dk-ressorts" >
-												<xsl:choose>
-													<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
-													<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
-													<xsl:when test="$ressortname='br'">Rechnungslegung/Corporate Governance#300</xsl:when>
-													<xsl:otherwise>Weitere Inhalte#2100</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node title="{tokenize($dk-ressorts, '#')[1]}" sequenceNr="{tokenize($dk-ressorts, '#')[2]}" childOrder="BySequenceNr" expanded="true">
-												<xsl:variable name="dk-dokt">
-													<xsl:choose>
-														<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
-														<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
-														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-														<xsl:when test="../name()='ent'">Entscheidungen#200</xsl:when>
-														<xsl:when test="../name()='entk'">Entscheidungen#200</xsl:when>
-														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
-														<xsl:when test="../name()='nr'">Nachrichten#400</xsl:when>
-														<xsl:when test="../name()='kk'">Kompakt#500</xsl:when>
-													</xsl:choose>
-												</xsl:variable>
-												<xsl:variable name="leafseqnr">
-													<xsl:choose>
-														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-														<xsl:otherwise>
-															<xsl:value-of select="
-																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-																+
-																((number(descendant::article_order/text()) - 1) * 10)"/>
-														</xsl:otherwise>
-													</xsl:choose>
-												</xsl:variable>
-												<node title="{tokenize($dk-dokt, '#')[1]}" sequenceNr="{tokenize($dk-dokt, '#')[2]}" childOrder="BySequenceNr">
-													<leaf sequenceNr="{$leafseqnr}"/>
-												</node>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<!-- KOR -->
-									<xsl:when test="$pub-abbr = 'KOR'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+									</xsl:variable>
+									<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
+										<leaf sequenceNr="{(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100) - $var_last_page + ((number(descendant::article_order/text()) - 1) * 10)}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<!-- Bewertungspraktiker -->
+							<xsl:when test="$pub-abbr = 'BWP'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:choose>
+									<!-- SM: BWP wird seit 2017 auch als XML produziert, daher hier Differenzierung: -->
+									<xsl:when test="number(substring(pub/date/text(), 1, 4)) &gt; 2016">
 										<xsl:variable name="get-pubedition">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
@@ -761,93 +602,23 @@
 											</xsl:choose>
 										</xsl:variable>
 										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
-											<xsl:variable name="kor-docType-SeqN">
-												<xsl:choose>
-													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
-													<xsl:when test="../name()='nr'">Reports#500</xsl:when>
-													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
-												</xsl:choose>
-											</xsl:variable>
-											<xsl:variable name="leafseqnr">
-												<xsl:choose>
-													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-													<xsl:otherwise>
-														<xsl:value-of select="
-															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-															+
-															((number(descendant::article_order/text()) - 1) * 10)"/>
-													</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf sequenceNr="{$leafseqnr}"/>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<xsl:when test="$pub-abbr = 'ZOE'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="get-pubedition">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:when test="starts-with(descendant::pubedition, 'Spezial')"><xsl:value-of select="descendant::pubedition"/></xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{$get-pubedition}" childOrder="BySequenceNr">
-											<xsl:if test="not(starts-with(descendant::pubedition, 'Spezial'))"><xsl:attribute name="expanded">true</xsl:attribute></xsl:if>
-											<xsl:variable name="kor-docType-SeqN">
-												<xsl:choose>
-													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
-													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
-													<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
-													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
-													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
-												</xsl:choose>
-											</xsl:variable>
-											<xsl:variable name="leafseqnr">
-												<xsl:choose>
-													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-													<xsl:when test="starts-with(descendant::pubedition, 'Spezial')">100</xsl:when>
-													<xsl:otherwise>
-														<xsl:value-of select="
-															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-															+
-															((number(descendant::article_order/text()) - 1) * 10)"/>
-													</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf sequenceNr="{$leafseqnr}"/>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<xsl:when test="$pub-abbr = 'WUW'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="get-pubedition">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
-											<xsl:variable name="kor-docType-SeqN">
+											<xsl:variable name="bwp-docType-SeqN">
 												<xsl:choose>
 													<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 													<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
-													<xsl:when test="../name()='au'">Abhandlungen#100</xsl:when>
+													<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
 													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 													<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
 													<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
 													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
+													<xsl:when test="../name()='divah'">Arbeitshilfen#700</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
 											<xsl:variable name="leafseqnr">
 												<xsl:choose>
-													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+													<xsl:when test="descendant::pubedition = '00'">
+														<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
+													</xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
 															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -856,463 +627,725 @@
 													</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>
-											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf sequenceNr="{$leafseqnr}"/>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<xsl:when test="$pub-abbr = 'DSB'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="get-pubedition">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
-											<xsl:variable name="kor-docType-SeqN">
-												<xsl:choose>
-													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
-													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
-													<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
-													<xsl:when test="../name()='kk'">Kompakt#560</xsl:when>
-													<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
-													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
-												</xsl:choose>
-											</xsl:variable>
-											<xsl:variable name="leafseqnr">
-												<xsl:choose>
-													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-													<xsl:otherwise>
-														<xsl:value-of select="
-															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-															+
-															((number(descendant::article_order/text()) - 1) * 10)"/>
-													</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf sequenceNr="{$leafseqnr}"/>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<xsl:when test="$pub-abbr = 'AR'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="get-pubedition">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
-											<xsl:variable name="kor-docType-SeqN">
-												<xsl:choose>
-													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
-													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
-													<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
-													<xsl:when test="../name()='rez'">Rezensionen#570</xsl:when>
-													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
-													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-													<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
-												</xsl:choose>
-											</xsl:variable>
-											<xsl:variable name="leafseqnr">
-												<xsl:choose>
-													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-													<xsl:otherwise>
-														<xsl:value-of select="
-															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-															+
-															((number(descendant::article_order/text()) - 1) * 10)"/>
-													</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-												<leaf sequenceNr="{$leafseqnr}"/>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<!-- Corporate Finance -->
-									<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB') or ($pub-abbr = 'FB')">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="cf-title">
-											<xsl:choose>
-												<xsl:when test="$pub-abbr = 'CFL'">Heft CFL <xsl:value-of select="descendant::pubedition"/></xsl:when>
-												<xsl:when test="$pub-abbr = 'CFB'">Heft CFB <xsl:value-of select="descendant::pubedition"/></xsl:when>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{$cf-title}" childOrder="BySequenceNr">
-											<xsl:variable name="cf-ressort-seq-nr" >
-												<xsl:choose>
-													<xsl:when test="$ressortname='Finanzierung'">100</xsl:when>
-													<xsl:when test="$ressortname='Kapitalmarkt'">200</xsl:when>
-													<xsl:when test="$ressortname='Bewertung'">300</xsl:when>
-													<xsl:when test="$ressortname='Mergers &amp; Acquisitions'">400</xsl:when>
-													<xsl:when test="$ressortname='Agenda'">500</xsl:when>
-													<xsl:when test="$ressortname='Bildung'">600</xsl:when>
-													<xsl:when test="$ressortname='Corporate Governance'">700</xsl:when>
-													<xsl:when test="$ressortname='Existenzgründung'">800</xsl:when>
-													<xsl:when test="$ressortname='Finanzmanagement'">900</xsl:when>
-													<xsl:when test="$ressortname='Finanzmarkt'">1000</xsl:when>
-													<xsl:when test="$ressortname='Gründung'">1100</xsl:when>
-													<xsl:when test="$ressortname='Märkte'">1200</xsl:when>
-													<xsl:when test="$ressortname='Outlook'">1300</xsl:when>
-													<xsl:when test="$ressortname='Private Equity'">1400</xsl:when>
-													<xsl:when test="$ressortname='Scope'">1500</xsl:when>
-													<xsl:when test="$ressortname='Statements'">1600</xsl:when>
-													<xsl:when test="$ressortname='Tools'">1700</xsl:when>
-													<xsl:when test="$ressortname='Transaktionen'">1800</xsl:when>
-													<xsl:when test="$ressortname='Unternehmen'">1900</xsl:when>
-													<xsl:when test="$ressortname='Venture Capital'">2000</xsl:when>
-													<xsl:otherwise>2100</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
-												<xsl:attribute name="title">
-													<!-- title="{$ressortname}" -->
-													<xsl:choose>
-														<xsl:when test="string($ressortname)=''">Weitere Inhalte</xsl:when>
-														<xsl:otherwise><xsl:value-of select="$ressortname"/></xsl:otherwise>
-													</xsl:choose>
-												</xsl:attribute>
-												<xsl:variable name="docType-SeqN">
-													<xsl:choose>
-														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
-														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
-														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
-														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
-														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
-														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
-														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
-													</xsl:choose>
-												</xsl:variable>
-												<xsl:variable name="leafseqnr">
-													<xsl:choose>
-														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-														<xsl:otherwise>
-															<xsl:value-of select="
-																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-																+
-																((number(descendant::article_order/text()) - 1) * 10)"/>
-														</xsl:otherwise>
-													</xsl:choose>
-												</xsl:variable>
-												<node title="{tokenize($docType-SeqN, '#')[1]}" sequenceNr="{tokenize($docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-													<leaf sequenceNr="{$leafseqnr}"/>
-												</node>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<!-- Changement -->
-									<xsl:when test="$pub-abbr = 'CM'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="cm-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
-										<node title="{$cm-title}" childOrder="BySequenceNr" expanded="true">
-											<xsl:variable name="cm-ressort-seq-nr" >
-												<xsl:choose>
-													<xsl:when test="../name()='ed'">50</xsl:when>
-													<xsl:when test="$ressortname='Corporate Culture'">100</xsl:when>
-													<xsl:when test="$ressortname='New Work'">200</xsl:when>
-													<xsl:when test="$ressortname='Leadership'">300</xsl:when>
-													<xsl:when test="$ressortname='Insights'">400</xsl:when>
-													<xsl:when test="$ressortname='Toolkit'">500</xsl:when>
-													<xsl:when test="$ressortname='Skills'">600</xsl:when>
-													<xsl:otherwise>700</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<xsl:variable name="leafseqnr">
-												<xsl:choose>
-													<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-													<xsl:otherwise>
-														<xsl:value-of select="
-															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-															+
-															((number(descendant::article_order/text()) - 1) * 10)"/>
-													</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
-												<xsl:attribute name="title">
-													<xsl:choose>
-														<xsl:when test="../name()='ed'">
-															<xsl:text>Editorial</xsl:text>
-														</xsl:when>
-														<xsl:otherwise>
-															<xsl:value-of select="$ressortname"/>
-														</xsl:otherwise>
-													</xsl:choose>
-												</xsl:attribute>
-												<leaf sequenceNr="{$leafseqnr}"/>
-											</node>
-										</node>
-									</xsl:when>
-									
-									<!-- Der Betrieb -->
-									<xsl:when test="descendant::pubtitle/text() = 'Der Betrieb'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										
-										<xsl:variable name="get-pubedition">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										
-										<node title="{$get-pubedition}"
-											childOrder="BySequenceNr">
-											
-											<!-- Hier jetzt Ressorts Unterscheidung -->
-											<xsl:variable name="ressortNameAndSeqN">
-												<xsl:choose>
-													<xsl:when test="$ressortname='bw'">Betriebswirtschaft#100</xsl:when>
-													<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
-													<xsl:when test="$ressortname='wr'">Wirtschaftsrecht#300</xsl:when>
-													<xsl:when test="$ressortname='ar'">Arbeitsrecht#400</xsl:when>
-													<xsl:otherwise>Weitere Inhalte#500</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-
-											<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">
-												<xsl:variable name="docTypeAndSeqN">
-													<xsl:choose>
-														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
-														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
-														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
-														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
-														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
-														<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
-														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
-														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-														<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
-													</xsl:choose>
-												</xsl:variable>
-												<xsl:variable name="leafseqnr">
-													<xsl:choose>
-														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-														<xsl:otherwise>
-															<xsl:value-of select="
-																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-																+
-																((number(descendant::article_order/text()) - 1) * 10)"/>
-														</xsl:otherwise>
-													</xsl:choose>
-												</xsl:variable>
-												<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
-													<leaf sequenceNr="{$leafseqnr}"/>
-												</node>
-											</node> 
-										</node>
-									</xsl:when>
-									<!-- Rethinking Law: -->
-									<xsl:when test="$pub-abbr = 'REL'">
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
-										<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
-											<xsl:variable name="cm-ressort-seq-nr" >
-												<xsl:choose>
-													<xsl:when test="../name()='ed'">50</xsl:when>
-													<xsl:when test="$ressortname='Legal Tech &amp; Innovation'">100</xsl:when>
-													<xsl:when test="$ressortname='Digital Economy &amp; Recht'">200</xsl:when>
-													<xsl:when test="$ressortname='Change Management &amp; New Work'">300</xsl:when>
-													<xsl:when test="$ressortname='Job Markt &amp; Gossip'">400</xsl:when>
-													<xsl:otherwise>500</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
-											<xsl:variable name="leafseqnr">
-												<xsl:value-of select="(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-															+
-															((number(descendant::article_order/text()) - 1) * 10)"/>
-											</xsl:variable>
-											<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
-												<xsl:attribute name="title">
-													<xsl:choose>
-														<xsl:when test="../name()='ed'">
-															<xsl:text>Editorial</xsl:text>
-														</xsl:when>
-														<xsl:otherwise>
-															<xsl:value-of select="$ressortname"/>
-														</xsl:otherwise>
-													</xsl:choose>
-												</xsl:attribute>
+											<node title="{tokenize($bwp-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($bwp-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
 												<leaf sequenceNr="{$leafseqnr}"/>
 											</node>
 										</node>
 									</xsl:when>
 									<xsl:otherwise>
-										<!-- Default Verarbeitung -->
-										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
-										<xsl:variable name="get-pubedition">
+										<leaf sequenceNr="0"/>		
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:when>
+							
+							<!-- IFST SCHRIFT -->
+							<xsl:when test="$pub-abbr = 'IFST'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								
+								<node title="Schrift {descendant::pubedition}"
+									childOrder="BySequenceNr">
+									<!-- calculate sequenceNr from first page and article's position on page -->
+									<leaf
+										sequenceNr="{
+										(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+										+
+										((number(descendant::article_order/text()) - 1) * 10)
+										}"
+									/>
+								</node>
+							</xsl:when>
+							
+							<!-- StR Kompakt -->
+							<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
+								<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
+								
+								<xsl:variable name="monat" select="number(tokenize(descendant::date/text(), '-')[2])"/>
+								
+								<xsl:variable name="monatAusgeschrieben">
+									<xsl:choose>
+										<xsl:when test="$monat=1">Januar</xsl:when>
+										<xsl:when test="$monat=2">Februar</xsl:when>
+										<xsl:when test="$monat=3">März</xsl:when>
+										<xsl:when test="$monat=4">April</xsl:when>
+										<xsl:when test="$monat=5">Mai</xsl:when>
+										<xsl:when test="$monat=6">Juni</xsl:when>
+										<xsl:when test="$monat=7">Juli</xsl:when>
+										<xsl:when test="$monat=8">August</xsl:when>
+										<xsl:when test="$monat=9">September</xsl:when>
+										<xsl:when test="$monat=10">Oktober</xsl:when>
+										<xsl:when test="$monat=11">November</xsl:when>
+										<xsl:when test="$monat=12">Dezember</xsl:when>
+									</xsl:choose>
+								</xsl:variable>
+								<!-- Dezember soll oben stehen, daher nachfolgende Absolutfunktion-->
+								<node title="{$monatAusgeschrieben}"
+									childOrder="ByTitleAlphanumeric" sequenceNr="{abs($monat - 13)}">
+									<leaf sequenceNr="100" />
+								</node>
+							</xsl:when>
+							
+							<xsl:when test="$pub-abbr = 'DK'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}" childOrder="BySequenceNr">
+									<xsl:variable name="dk-ressorts" >
+										<xsl:choose>
+											<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
+											<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
+											<xsl:when test="$ressortname='br'">Rechnungslegung/Corporate Governance#300</xsl:when>
+											<xsl:otherwise>Weitere Inhalte#2100</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node title="{tokenize($dk-ressorts, '#')[1]}" sequenceNr="{tokenize($dk-ressorts, '#')[2]}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="dk-dokt">
 											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+												<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
+												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+												<xsl:when test="../name()='ent'">Entscheidungen#200</xsl:when>
+												<xsl:when test="../name()='entk'">Entscheidungen#200</xsl:when>
+												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+												<xsl:when test="../name()='nr'">Nachrichten#400</xsl:when>
+												<xsl:when test="../name()='kk'">Kompakt#500</xsl:when>
 											</xsl:choose>
 										</xsl:variable>
-										<node title="{$get-pubedition}"
-											childOrder="BySequenceNr">
-											
-											<!-- calculate sequenceNr from first page and article's position on page -->
-											<leaf
-												sequenceNr="{
-												(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-												+
-												((number(descendant::article_order/text()) - 1) * 10)
-												}"
-											/>
+										<xsl:variable name="leafseqnr">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+												<xsl:otherwise>
+													<xsl:value-of select="
+														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+														+
+														((number(descendant::article_order/text()) - 1) * 10)"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{tokenize($dk-dokt, '#')[1]}" sequenceNr="{tokenize($dk-dokt, '#')[2]}" childOrder="BySequenceNr">
+											<leaf sequenceNr="{$leafseqnr}"/>
 										</node>
-									</xsl:otherwise>
-								</xsl:choose>							
-							</node>
-						</node>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<!-- KOR -->
+							<xsl:when test="$pub-abbr = 'KOR'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
+									<xsl:variable name="kor-docType-SeqN">
+										<xsl:choose>
+											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
+											<xsl:when test="../name()='nr'">Reports#500</xsl:when>
+											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:choose>
+											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="
+													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<xsl:when test="$pub-abbr = 'ZOE'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="starts-with(descendant::pubedition, 'Spezial')"><xsl:value-of select="descendant::pubedition"/></xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}" childOrder="BySequenceNr">
+									<xsl:if test="not(starts-with(descendant::pubedition, 'Spezial'))"><xsl:attribute name="expanded">true</xsl:attribute></xsl:if>
+									<xsl:variable name="kor-docType-SeqN">
+										<xsl:choose>
+											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
+											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
+											<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
+											<xsl:when test="../name()='iv'">Interview#600</xsl:when>
+											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:choose>
+											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:when test="starts-with(descendant::pubedition, 'Spezial')">100</xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="
+													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<xsl:when test="$pub-abbr = 'WUW'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
+									<xsl:variable name="kor-docType-SeqN">
+										<xsl:choose>
+											<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+											<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
+											<xsl:when test="../name()='au'">Abhandlungen#100</xsl:when>
+											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
+											<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
+											<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
+											<xsl:when test="../name()='iv'">Interview#600</xsl:when>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:choose>
+											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="
+													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<xsl:when test="$pub-abbr = 'DSB'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
+									<xsl:variable name="kor-docType-SeqN">
+										<xsl:choose>
+											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
+											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
+											<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
+											<xsl:when test="../name()='kk'">Kompakt#560</xsl:when>
+											<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
+											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:choose>
+											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="
+													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<xsl:when test="$pub-abbr = 'AR'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
+									<xsl:variable name="kor-docType-SeqN">
+										<xsl:choose>
+											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
+											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
+											<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
+											<xsl:when test="../name()='rez'">Rezensionen#570</xsl:when>
+											<xsl:when test="../name()='iv'">Interview#600</xsl:when>
+											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:choose>
+											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="
+													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node title="{tokenize($kor-docType-SeqN, '#')[1]}" sequenceNr="{tokenize($kor-docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<!-- Corporate Finance -->
+							<xsl:when test="($pub-abbr = 'CF') or ($pub-abbr = 'CFL') or ($pub-abbr = 'CFB') or ($pub-abbr = 'FB')">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="cf-title">
+									<xsl:choose>
+										<xsl:when test="$pub-abbr = 'CFL'">Heft CFL <xsl:value-of select="descendant::pubedition"/></xsl:when>
+										<xsl:when test="$pub-abbr = 'CFB'">Heft CFB <xsl:value-of select="descendant::pubedition"/></xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$cf-title}" childOrder="BySequenceNr">
+									<xsl:variable name="cf-ressort-seq-nr" >
+										<xsl:choose>
+											<xsl:when test="$ressortname='Finanzierung'">100</xsl:when>
+											<xsl:when test="$ressortname='Kapitalmarkt'">200</xsl:when>
+											<xsl:when test="$ressortname='Bewertung'">300</xsl:when>
+											<xsl:when test="$ressortname='Mergers &amp; Acquisitions'">400</xsl:when>
+											<xsl:when test="$ressortname='Agenda'">500</xsl:when>
+											<xsl:when test="$ressortname='Bildung'">600</xsl:when>
+											<xsl:when test="$ressortname='Corporate Governance'">700</xsl:when>
+											<xsl:when test="$ressortname='Existenzgründung'">800</xsl:when>
+											<xsl:when test="$ressortname='Finanzmanagement'">900</xsl:when>
+											<xsl:when test="$ressortname='Finanzmarkt'">1000</xsl:when>
+											<xsl:when test="$ressortname='Gründung'">1100</xsl:when>
+											<xsl:when test="$ressortname='Märkte'">1200</xsl:when>
+											<xsl:when test="$ressortname='Outlook'">1300</xsl:when>
+											<xsl:when test="$ressortname='Private Equity'">1400</xsl:when>
+											<xsl:when test="$ressortname='Scope'">1500</xsl:when>
+											<xsl:when test="$ressortname='Statements'">1600</xsl:when>
+											<xsl:when test="$ressortname='Tools'">1700</xsl:when>
+											<xsl:when test="$ressortname='Transaktionen'">1800</xsl:when>
+											<xsl:when test="$ressortname='Unternehmen'">1900</xsl:when>
+											<xsl:when test="$ressortname='Venture Capital'">2000</xsl:when>
+											<xsl:otherwise>2100</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
+										<xsl:attribute name="title">
+											<!-- title="{$ressortname}" -->
+											<xsl:choose>
+												<xsl:when test="string($ressortname)=''">Weitere Inhalte</xsl:when>
+												<xsl:otherwise><xsl:value-of select="$ressortname"/></xsl:otherwise>
+											</xsl:choose>
+										</xsl:attribute>
+										<xsl:variable name="docType-SeqN">
+											<xsl:choose>
+												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
+												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+												<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+												<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+												<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
+											</xsl:choose>
+										</xsl:variable>
+										<xsl:variable name="leafseqnr">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+												<xsl:otherwise>
+													<xsl:value-of select="
+														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+														+
+														((number(descendant::article_order/text()) - 1) * 10)"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{tokenize($docType-SeqN, '#')[1]}" sequenceNr="{tokenize($docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+											<leaf sequenceNr="{$leafseqnr}"/>
+										</node>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<!-- Changement -->
+							<xsl:when test="$pub-abbr = 'CM'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="cm-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
+								<node title="{$cm-title}" childOrder="BySequenceNr" expanded="true">
+									<xsl:variable name="cm-ressort-seq-nr" >
+										<xsl:choose>
+											<xsl:when test="../name()='ed'">50</xsl:when>
+											<xsl:when test="$ressortname='Corporate Culture'">100</xsl:when>
+											<xsl:when test="$ressortname='New Work'">200</xsl:when>
+											<xsl:when test="$ressortname='Leadership'">300</xsl:when>
+											<xsl:when test="$ressortname='Insights'">400</xsl:when>
+											<xsl:when test="$ressortname='Toolkit'">500</xsl:when>
+											<xsl:when test="$ressortname='Skills'">600</xsl:when>
+											<xsl:otherwise>700</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:choose>
+											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:otherwise>
+												<xsl:value-of select="
+													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
+										<xsl:attribute name="title">
+											<xsl:choose>
+												<xsl:when test="../name()='ed'">
+													<xsl:text>Editorial</xsl:text>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:value-of select="$ressortname"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:attribute>
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							
+							<!-- Der Betrieb -->
+							<xsl:when test="descendant::pubtitle/text() = 'Der Betrieb'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								
+								<node title="{$get-pubedition}"
+									childOrder="BySequenceNr">
+									
+									<!-- Hier jetzt Ressorts Unterscheidung -->
+									<xsl:variable name="ressortNameAndSeqN">
+										<xsl:choose>
+											<xsl:when test="$ressortname='bw'">Betriebswirtschaft#100</xsl:when>
+											<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
+											<xsl:when test="$ressortname='wr'">Wirtschaftsrecht#300</xsl:when>
+											<xsl:when test="$ressortname='ar'">Arbeitsrecht#400</xsl:when>
+											<xsl:otherwise>Weitere Inhalte#50</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+	
+									<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">
+										<xsl:variable name="docTypeAndSeqN">
+											<xsl:choose>
+												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+												<xsl:when test="../name()='gk'">Gastkommentar#70</xsl:when>
+												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
+												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+												<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+												<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
+												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+											</xsl:choose>
+										</xsl:variable>
+										<xsl:variable name="leafseqnr">
+											<xsl:choose>
+												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+												<xsl:otherwise>
+													<xsl:value-of select="
+														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+														+
+														((number(descendant::article_order/text()) - 1) * 10)"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
+											<leaf sequenceNr="{$leafseqnr}"/>
+										</node>
+									</node> 
+								</node>
+							</xsl:when>
+							<!-- Rethinking Law: -->
+							<xsl:when test="$pub-abbr = 'REL'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
+								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
+									<xsl:variable name="cm-ressort-seq-nr" >
+										<xsl:choose>
+											<xsl:when test="../name()='ed'">50</xsl:when>
+											<xsl:when test="$ressortname='Legal Tech &amp; Innovation'">100</xsl:when>
+											<xsl:when test="$ressortname='Digital Economy &amp; Recht'">200</xsl:when>
+											<xsl:when test="$ressortname='Change Management &amp; New Work'">300</xsl:when>
+											<xsl:when test="$ressortname='Job Markt &amp; Gossip'">400</xsl:when>
+											<xsl:otherwise>500</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<xsl:variable name="leafseqnr">
+										<xsl:value-of select="(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
+									</xsl:variable>
+									<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
+										<xsl:attribute name="title">
+											<xsl:choose>
+												<xsl:when test="../name()='ed'">
+													<xsl:text>Editorial</xsl:text>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:value-of select="$ressortname"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:attribute>
+										<leaf sequenceNr="{$leafseqnr}"/>
+									</node>
+								</node>
+							</xsl:when>
+							<xsl:otherwise>
+								<!-- Default Verarbeitung -->
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								<xsl:variable name="get-pubedition">
+									<xsl:choose>
+										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<node title="{$get-pubedition}"
+									childOrder="BySequenceNr">
+									
+									<!-- calculate sequenceNr from first page and article's position on page -->
+									<leaf
+										sequenceNr="{
+										(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+										+
+										((number(descendant::article_order/text()) - 1) * 10)
+										}"
+									/>
+								</node>
+							</xsl:otherwise>
+						</xsl:choose>							
 					</node>
-				</node>
-			</global_toc>
-		</xsl:if>
-</xsl:template>
+				</global_toc>
+			</xsl:if>
+	</xsl:template>
 
 
-<xsl:template name="create_inner_toc">
-	<inner_toc/>
-</xsl:template>
+	<xsl:template name="create_inner_toc">
+		<inner_toc>
+			<xsl:apply-templates select="/*/body/section" mode="localToc"/>
+		</inner_toc>
+	</xsl:template>
+	
+	
+	<!-- skip sections without number or title -->
+	<xsl:template match="section[not(@number) and not(title)]" mode="localToc" priority="9"/>
+	
+	<xsl:template match="section" mode="localToc">
+		<item>
+			<content>
+				<name>
+					<!-- build link target id -->
+					<xsl:attribute name="href">
+						<xsl:text>#</xsl:text>
+						<xsl:call-template name="buildIdForLocalToc"/>
+					</xsl:attribute>
+					
+					<xsl:if test="@number">
+						<xsl:value-of select="@number"/>
+						<xsl:text> </xsl:text>
+					</xsl:if>
+					<xsl:apply-templates select="title/descendant::text()[not(ancestor::footnote)]"/>
+				</name>
+			</content>
+			<xsl:apply-templates select="section" mode="localToc"/>
+		</item>
+	</xsl:template>
+	
+	<xsl:template match="section[ancestor::body]">
+		<section>
+			<xsl:copy-of select="@*"/>
+			
+			<!-- build link id for local toc -->
+			<xsl:attribute name="id">
+				<xsl:call-template name="buildIdForLocalToc"/>
+			</xsl:attribute>
+			
+			<xsl:apply-templates/>
+		</section>
+	</xsl:template>
 
 
-	<!--	
+	<!-- =========================================================
+	=== helper templates
+	=========================================================== -->
+	<!-- build ids for local toc: use section nesting -->
+	<xsl:template name="buildIdForLocalToc">
+		<xsl:text>sec</xsl:text>
+		<xsl:for-each select="ancestor-or-self::section">
+			<xsl:text>_</xsl:text>
+			<xsl:value-of select="count(preceding-sibling::section) + 1"/>
+		</xsl:for-each>
+	</xsl:template>
+	
+
+	<xsl:template match="body">
+		<body>
+			<xsl:apply-templates select="section[@class='rkvermerk']" mode="show"/>
+			<xsl:apply-templates select="section[@class='veroeffhinw']" mode="show"/>
+			<xsl:apply-templates select="section[@class='extnote']" mode="show"/>
+			<xsl:apply-templates select="section[@class='tenor']" mode="show"/>
+			<xsl:apply-templates select="section[@class='streitjahre']" mode="show"/>
+			<xsl:apply-templates select="section[@class='sachverhalt']" mode="show"/>
+			<xsl:apply-templates select="section[@class='tatbestand']" mode="show"/>
+			<xsl:apply-templates select="section[@class='gruende']" mode="show"/>
+			<xsl:apply-templates select="section[@class='entscheidung']" mode="show"/>
+			<xsl:apply-templates select="section[@class='konsequenz']" mode="show"/>
+	
+			<xsl:apply-templates/>
+			
+			<xsl:apply-templates select="section[@class='replik']" mode="show"/>
+			<xsl:apply-templates select="note" mode="show"/>
+		</body>
+	</xsl:template>
 
 
+	<!-- in non-DB. sections get rearranged, so use template with mode=show -->
+	<xsl:template match="section[ancestor::*[metadata]/descendant::pubabbr/text() != 'DB' 
+	                             and (@class='rkvermerk'
+									 or @class='veroeffhinw'
+									 or @class='extnote'
+									 or @class='tenor'
+									 or @class='streitjahre'
+									 or @class='sachverhalt'
+									 or @class='tatbestand'
+									 or @class='gruende'
+									 or @class='entscheidung'
+									 or @class='konsequenz'
+									 or @class='replik')
+	                            ]"/>
+	<xsl:template match="section[@class='rkvermerk'
+	                             or @class='veroeffhinw'
+	                             or @class='extnote'
+	                             or @class='tenor'
+	                             or @class='streitjahre'
+	                             or @class='tatbestand'
+	                             or @class='replik'
+	                            ]"
+	              mode="show">
+		<section>
+			<xsl:copy-of select="@*"/>
+			<xsl:apply-templates/>
+		</section>
+	</xsl:template>
 
-<xsl:template match="body">
-	<xml_body>
-		<xsl:apply-templates select="section[@class='rkvermerk']" mode="show"/>
-		<xsl:apply-templates select="section[@class='veroeffhinw']" mode="show"/>
-		<xsl:apply-templates select="section[@class='extnote']" mode="show"/>
-		<xsl:apply-templates select="section[@class='tenor']" mode="show"/>
-		<xsl:apply-templates select="section[@class='streitjahre']" mode="show"/>
-		<xsl:apply-templates select="section[@class='sachverhalt']" mode="show"/>
-		<xsl:apply-templates select="section[@class='tatbestand']" mode="show"/>
-		<xsl:apply-templates select="section[@class='gruende']" mode="show"/>
-		<xsl:apply-templates select="section[@class='entscheidung']" mode="show"/>
-		<xsl:apply-templates select="section[@class='konsequenz']" mode="show"/>
+	
+	<!-- create title for some sections -->
+	<xsl:template match="section[@class='sachverhalt'
+	                             or @class='gruende'
+	                             or @class='entscheidung'
+	                             or @class='konsequenz']" mode="show">
+		<xsl:call-template name="createSectionTitles"/>
+	</xsl:template>
+	
+	<!-- create title for some sections in DB -->
+	<xsl:template match="section[ancestor::*[metadata]/descendant::pubabbr/text() = 'DB' 
+	                             and (@class='sachverhalt'
+									 or @class='gruende'
+									 or @class='entscheidung'
+									 or @class='konsequenz')
+	                            ]">
+		<xsl:call-template name="createSectionTitles"/>
+	</xsl:template>
+	
+	
+	<xsl:template name="createSectionTitles">
+		<section>
+			<xsl:copy-of select="@*"/>
+			
+			<xsl:if test="not(title)">
+				<title>
+					<xsl:choose>
+						<xsl:when test="@class='sachverhalt'">
+							<xsl:text>Sachverhalt</xsl:text>
+						</xsl:when>
+						<xsl:when test="@class='gruende'">
+							<xsl:text>Entscheidungsgründe</xsl:text>
+						</xsl:when>
+						<xsl:when test="@class='entscheidung'">
+							<xsl:text>Entschiedene Rechtsfragen</xsl:text>
+						</xsl:when>
+						<xsl:when test="@class='konsequenz'">
+							<xsl:text>Bedeutung für die Praxis</xsl:text>
+						</xsl:when>
+						<xsl:otherwise>
+						</xsl:otherwise>
+					</xsl:choose>
+				</title>
+			</xsl:if>
+			
+			<xsl:apply-templates/>
+		</section>
+	</xsl:template>
 
-		<xsl:apply-templates/>
+	<!-- in DB don't rearrange sections -->
+	<xsl:template match="note[ancestor::*[metadata]/descendant::pubabbr/text() != 'DB']"/>
 		
-		<xsl:apply-templates select="section[@class='replik']" mode="show"/>
-		<xsl:apply-templates select="note" mode="show"/>
-	</xml_body>
-</xsl:template>
-
-
-<!-\- in non-DB. sections get rearranged, so use template with mode=show -\->
-<xsl:template match="section[ancestor::*[metadata]/descendant::pubabbr/text() != 'DB' 
-                             and (@class='rkvermerk'
-								 or @class='veroeffhinw'
-								 or @class='extnote'
-								 or @class='tenor'
-								 or @class='streitjahre'
-								 or @class='sachverhalt'
-								 or @class='tatbestand'
-								 or @class='gruende'
-								 or @class='entscheidung'
-								 or @class='konsequenz'
-								 or @class='replik')
-                            ]"/>
-<xsl:template match="section[@class='rkvermerk'
-                             or @class='veroeffhinw'
-                             or @class='extnote'
-                             or @class='tenor'
-                             or @class='streitjahre'
-                             or @class='tatbestand'
-                             or @class='replik'
-                            ]"
-              mode="show">
-	<section>
-		<xsl:copy-of select="@*"/>
-		<xsl:apply-templates/>
-	</section>
-</xsl:template>
-
-
-<!-\- create title for some sections -\->
-<xsl:template match="section[@class='sachverhalt'
-                             or @class='gruende'
-                             or @class='entscheidung'
-                             or @class='konsequenz']" mode="show">
-	<xsl:call-template name="createSectionTitles"/>
-</xsl:template>
-
-<!-\- create title for some sections in DB -\->
-<xsl:template match="section[ancestor::*[metadata]/descendant::pubabbr/text() = 'DB' 
-                             and (@class='sachverhalt'
-								 or @class='gruende'
-								 or @class='entscheidung'
-								 or @class='konsequenz')
-                            ]">
-	<xsl:call-template name="createSectionTitles"/>
-</xsl:template>
-
-
-<xsl:template name="createSectionTitles">
-	<section>
-		<xsl:copy-of select="@*"/>
-		
-		<xsl:if test="not(title)">
-			<title>
-				<xsl:choose>
-					<xsl:when test="@class='sachverhalt'">
-						<xsl:text>Sachverhalt</xsl:text>
-					</xsl:when>
-					<xsl:when test="@class='gruende'">
-						<xsl:text>Entscheidungsgründe</xsl:text>
-					</xsl:when>
-					<xsl:when test="@class='entscheidung'">
-						<xsl:text>Entschiedene Rechtsfragen</xsl:text>
-					</xsl:when>
-					<xsl:when test="@class='konsequenz'">
-						<xsl:text>Bedeutung für die Praxis</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-					</xsl:otherwise>
-				</xsl:choose>
-			</title>
-		</xsl:if>
-		
-		<xsl:apply-templates/>
-	</section>
-</xsl:template>
-
-
-
-
-
-
-<!-\- in DB don't rearrange sections -\->
-<xsl:template match="note[ancestor::*[metadata]/descendant::pubabbr/text() != 'DB']"/>
-<xsl:template match="note" mode="show">
-	<note>
-		<xsl:copy-of select="@*"/>
-		<xsl:apply-templates/>
-	</note>
-</xsl:template>
-
-<!-\- =========================================================
-=== remove some sections
-=========================================================== -\->
-<xsl:template match="section[@class='antrag' or @class='rubrum']" priority="2"/>
-
-
--->
-
-<!-- 
-noch das andere Skript
-
--->
+	<xsl:template match="note" mode="show">
+		<note>
+			<xsl:copy-of select="@*"/>
+			<xsl:apply-templates/>
+		</note>
+	</xsl:template>
+	
+	<!-- =========================================================
+	=== remove some sections
+	=========================================================== -->
+	<xsl:template match="section[@class='antrag' or @class='rubrum']" priority="2"/>
+	
+	
+	<!-- =========================================================
+	=== copy rich metadata to body
+	=========================================================== -->
+	<xsl:template match="body[../metadata/descendant::pubabbr/text() = 'DB']" priority="2">
+		<!-- in DB don't rearrange sections -->
+		<body>
+			<xsl:apply-templates/>
+		</body>
+	</xsl:template>
+	
+	<xsl:template match="body[../metadata/descendant::pubabbr/text() = 'CM']" priority="2">
+		<body>
+			<xsl:apply-templates/>
+			<xsl:apply-templates select="note" mode="show"/>
+		</body>
+	</xsl:template>
     
 </xsl:transform>
