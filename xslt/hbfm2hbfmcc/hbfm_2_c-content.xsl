@@ -376,6 +376,9 @@
 									<xsl:when test="$pub-abbr = 'REL'">
 										<xsl:text>Rethinking Law</xsl:text>
 									</xsl:when>
+									<xsl:when test="$pub-abbr = 'REF'">
+										<xsl:text>Rethinking Finance</xsl:text>
+									</xsl:when>
 									<xsl:otherwise>
 										<xsl:text>Unbekannte Zeitschrift</xsl:text>
 									</xsl:otherwise>
@@ -953,6 +956,41 @@
 												<xsl:value-of select="(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 															+
 															((number(descendant::article_order/text()) - 1) * 10)"/>
+											</xsl:variable>
+											<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
+												<xsl:attribute name="title">
+													<xsl:choose>
+														<xsl:when test="../name()='ed'">
+															<xsl:text>Editorial</xsl:text>
+														</xsl:when>
+														<xsl:otherwise>
+															<xsl:value-of select="$ressortname"/>
+														</xsl:otherwise>
+													</xsl:choose>
+												</xsl:attribute>
+												<leaf sequenceNr="{$leafseqnr}"/>
+											</node>
+										</node>
+									</xsl:when>
+									<!-- Rethinking Finance: -->
+									<xsl:when test="$pub-abbr = 'REF'">
+										<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+										<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
+										<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
+											<xsl:variable name="cm-ressort-seq-nr" >
+												<xsl:choose>
+													<xsl:when test="../name()='ed'">50</xsl:when>
+													<xsl:when test="$ressortname='Digital Finance'">100</xsl:when>
+													<xsl:when test="$ressortname='Finance Excellence'">200</xsl:when>
+													<xsl:when test="$ressortname='People &amp; Culture'">300</xsl:when>
+													<xsl:when test="$ressortname='Business Organization'">400</xsl:when>
+													<xsl:otherwise>500</xsl:otherwise>
+												</xsl:choose>
+											</xsl:variable>
+											<xsl:variable name="leafseqnr">
+												<xsl:value-of select="(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+													+
+													((number(descendant::article_order/text()) - 1) * 10)"/>
 											</xsl:variable>
 											<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
 												<xsl:attribute name="title">
