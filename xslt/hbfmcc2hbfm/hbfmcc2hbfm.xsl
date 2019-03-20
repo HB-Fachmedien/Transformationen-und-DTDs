@@ -11,12 +11,6 @@
         encoding="UTF-8" 
     />
     
-    <!-- To-Do: summary_plain und authors_plain noch implementieren
-    
-        für welche doktypen soll das Taxonomy Template nicht aufgerufen werden?
-    
-    -->
-    
     <xsl:strip-space elements="*"/>
     
     <!-- identity transform: -->
@@ -54,11 +48,11 @@
                 <!--<title><xsl:apply-templates select="metadata/title/*"/></title>-->
                 <xsl:copy-of select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:copy-of>
                 <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/><xsl:call-template name="build_authors_plain"/></authors></xsl:if>
-                <xsl:copy-of select="metadata/summary"></xsl:copy-of>
+                <xsl:call-template name="summary"/>
                 <xsl:call-template name="summary_plain"/>
                 <xsl:copy-of select="metadata/leitsaetze | metadata/keywords"></xsl:copy-of>
                 <xsl:call-template name="taxonomy">
-                    <xsl:with-param name="pubtitle" select="metadata/pub/pubtitle/text()"/>
+                    <xsl:with-param name="src-level-2" select="metadata/all_source[@level='2']/text()"/>
                 </xsl:call-template>
                 <xsl:apply-templates select="metadata/ressort"/>
                 <xsl:copy-of select="metadata/rubriken"></xsl:copy-of>
@@ -78,15 +72,12 @@
                 
                 <xsl:copy-of select="metadata/law_refs"/>
                 
-                
                 <xsl:apply-templates select="metadata/paragraph"/>
                 
                 <xsl:apply-templates select="metadata/toc"/>
                 
                 <xsl:copy-of select="metadata/inner_toc"/>
-                <!--<all_doc_type level="1"></all_doc_type>
-                <all_source level="1"></all_source>
-                <all_source level="2"></all_source>-->
+
                 <xsl:apply-templates select="metadata/all_doc_type[@level='1'] | metadata/all_source"/>
             </metadata>
             <body>
@@ -95,14 +86,30 @@
         </xsl:element>
     </xsl:template>
     
+    
+    <xsl:template name="summary">
+        <xsl:choose>
+            <xsl:when test="/*/metadata/summary">
+                <xsl:copy-of select="/*/metadata/summary"></xsl:copy-of>
+            </xsl:when>
+            <xsl:when test="/*/metadata/leitsaetze">
+                <summary>
+                    <xsl:for-each select="/*/metadata/leitsaetze/leitsatz">
+                        <xsl:apply-templates/>
+                    </xsl:for-each>
+                </summary>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
     <xsl:template name="taxonomy">
         <xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
-        <xsl:param name="pubtitle" required="yes"></xsl:param>
+        <xsl:param name="src-level-2" required="yes"></xsl:param>
         
-        <xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@name)=lower-case($pubtitle)]/text(), ' ')"/>
+        <xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
         <taxonomy>
             <xsl:for-each select="$string-of-keys">
-                <key><xsl:value-of select="current()"/></key>
+                <key><xsl:text>http://taxonomy.wolterskluwer.de/law/</xsl:text><xsl:value-of select="current()"/></key>
             </xsl:for-each>
         </taxonomy>
     </xsl:template>
@@ -114,17 +121,36 @@
             </xsl:when>
             <xsl:when test="metadata/author_info//string-length(normalize-space(text())) &gt; 0">
                 <authors_plain>
-                    <xsl:for-each select="metadata/author_info/author">
-                        <xsl:if test="not(position()=1)"><xsl:text>, </xsl:text></xsl:if>
-                        <xsl:value-of select="normalize-space(concat(firstname, ' ', surname))"/>
-                    </xsl:for-each>
+                    <xsl:variable name="authors_name_string">
+                        <xsl:for-each select="metadata/author_info/author">
+                            <xsl:if test="not(position()=1)"><xsl:text>, </xsl:text></xsl:if><xsl:value-of select="normalize-space(concat(firstname, ' ', surname, ' ', fullname))"/>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <xsl:variable name="orga_string">
+                        <xsl:value-of select="metadata/author_info/organisation/text()"/>
+                    </xsl:variable>
+                    <xsl:variable name="seperator-string"><!-- test if both fields are filled, so a seperator is needed: -->
+                        <xsl:if test="string-length($authors_name_string) * string-length($orga_string) &gt; 0"><xsl:text> / </xsl:text></xsl:if>
+                    </xsl:variable>
+                    <xsl:value-of select="concat($authors_name_string, $seperator-string, $orga_string)"/>
                 </authors_plain>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
     
     <xsl:template name="summary_plain">
-        <summary_plain>WIRD NOCH GEFÜLLT</summary_plain>
+        <xsl:if test="not(/*/name()= ('divah', 'divsu', 'divso', 'gtdraft', 'vadraft', 'vav', 'entv', 'gts', 'gh' ))">
+            <summary_plain>
+                <xsl:choose>
+                    <xsl:when test="/*/metadata/leitsaetze">
+                        <xsl:value-of select="substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="substring(string-join(/*/xml_body//text()[normalize-space()], ' '), 1, 500)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </summary_plain>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="metadata/toc">
