@@ -20,7 +20,7 @@
     </xsl:template>
 	
 	<!-- ******************************** -->
-	<xsl:variable name="section_order">	        
+	<!--<xsl:variable name="section_order">	        
 		<class sort="10">rkvermerk</class>
 		<class sort="15">veroeffhinw</class>
 		<class sort="17">extnote</class>
@@ -36,8 +36,8 @@
 		<class sort="80">rubrum</class>		
 	</xsl:variable>
 	
-	<!-- Hier Lookup Table aufbauen -->
-	<!-- ******************************** -->
+	<!-\- Hier Lookup Table aufbauen -\->
+	<!-\- ******************************** -\->
 	<xsl:variable name="section-lookup-table">
 		<xsl:for-each-group select="/*/body/section" group-by="@class">
 			<xsl:sort select="$section_order/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
@@ -45,7 +45,7 @@
 				<xsl:copy><xsl:value-of select="."/></xsl:copy>
 			</xsl:for-each>
 		</xsl:for-each-group>
-	</xsl:variable>
+	</xsl:variable>-->
 	
     <xsl:template match="metadata">
         <metadata>
@@ -63,21 +63,20 @@
         	<xsl:apply-templates select="leitsaetze | keywords"/>
         	
         	<xsl:call-template name="taxonomy">
-        		<xsl:with-param name="pubtitle" select="pub/pubtitle/text()"/>
+        		<xsl:with-param name="src-level-2" select="all_source[@level='2']/text()"/>
         	</xsl:call-template>
         	
         	<xsl:apply-templates select="ressort | rubriken | pub | extfile | law | instdoc | preinstdoc | law_refs | chapter"/>
         	
             <xsl:call-template name="create_global_toc"/>
         	
-        	<xsl:if test="/*/body/section">
-            	<xsl:call-template name="create_inner_toc"/>
+        	<xsl:if test="/*/body//section">
+        		<inner_toc/>
         	</xsl:if>
         	
         	<xsl:apply-templates select="date_sort | all_doc_type | all_source"/>
             
         </metadata>
-    	<xsl:comment><xsl:value-of select="$section-lookup-table"/></xsl:comment>
     </xsl:template>
 	
 	
@@ -92,16 +91,14 @@
 	
 	<xsl:template name="taxonomy">
 		<xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
-		<xsl:param name="pubtitle" required="yes"></xsl:param>
+		<xsl:param name="src-level-2" required="yes"></xsl:param>
 		
-		<xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@name)=lower-case($pubtitle)]/text(), ' ')"/>
-		<xsl:if test="not(empty($string-of-keys))">
-			<taxonomy>
-				<xsl:for-each select="$string-of-keys">
-					<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
-				</xsl:for-each>
-			</taxonomy>
-		</xsl:if>
+		<xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
+		<taxonomy>
+			<xsl:for-each select="$string-of-keys">
+				<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
+			</xsl:for-each>
+		</taxonomy>
 	</xsl:template>
 	
 	<xsl:template match="ressort">
@@ -145,11 +142,14 @@
 		<xsl:if test="not(/*/name()= ('divah', 'divsu', 'divso', 'gtdraft', 'vadraft', 'vav', 'entv', 'gts', 'gh' ))">
 			<summary_plain>
 				<xsl:choose>
+					<xsl:when test="/*/metadata/summary">
+						<xsl:value-of select="replace(substring(string-join(/*/metadata/summary//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
+					</xsl:when>
 					<xsl:when test="/*/metadata/leitsaetze">
-						<xsl:value-of select="substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500)"/>
+						<xsl:value-of select="replace(substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="substring(string-join(/*/body//text()[normalize-space()], ' '), 1, 500)"/>
+						<xsl:value-of select="replace(substring(string-join(/*/body//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</summary_plain>
@@ -1156,64 +1156,7 @@
 				</global_toc>
 			</xsl:if>
 	</xsl:template>
-
-
-	<xsl:template name="create_inner_toc">
-		<inner_toc>
-			<xsl:apply-templates select="/*/body/section" mode="localToc"/>
-		</inner_toc>
-	</xsl:template>
 	
-	
-	<!-- skip sections without number or title -->
-	<xsl:template match="section[not(@number) and not(title)]" mode="localToc" priority="9"/>
-	
-	<xsl:template match="section" mode="localToc">
-		<item>
-			<content>
-				<name>
-					<!-- build link target id -->
-					<xsl:attribute name="href">
-						<xsl:text>#</xsl:text>
-						<xsl:call-template name="buildIdForLocalToc"/>
-					</xsl:attribute>
-					
-					<xsl:if test="@number">
-						<xsl:value-of select="@number"/>
-						<xsl:text> </xsl:text>
-					</xsl:if>
-					<xsl:apply-templates select="title/descendant::text()[not(ancestor::footnote)]"/>
-				</name>
-			</content>
-			<xsl:apply-templates select="section" mode="localToc"/>
-		</item>
-	</xsl:template>
-	
-	<xsl:template match="section[ancestor::body]">
-		<section>
-			<xsl:copy-of select="@*"/>
-			
-			<!-- build link id for local toc -->
-			<xsl:attribute name="id">
-				<xsl:call-template name="buildIdForLocalToc"/>
-			</xsl:attribute>
-			
-			<xsl:apply-templates/>
-		</section>
-	</xsl:template>
-
-
-	<!-- =========================================================
-	=== helper templates
-	=========================================================== -->
-	<!-- build ids for local toc: use section nesting -->
-	<xsl:template name="buildIdForLocalToc">
-		<xsl:text>sec</xsl:text>
-		<xsl:for-each select="ancestor-or-self::section">
-			<xsl:text>_</xsl:text>
-			<xsl:value-of select="count(preceding-sibling::section) + 1"/>
-		</xsl:for-each>
-	</xsl:template>
 	
 
 	<xsl:template match="body">
