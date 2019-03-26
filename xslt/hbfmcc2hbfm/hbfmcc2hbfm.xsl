@@ -48,7 +48,7 @@
                 <!--<title><xsl:apply-templates select="metadata/title/*"/></title>-->
                 <xsl:copy-of select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:copy-of>
                 <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/><xsl:call-template name="build_authors_plain"/></authors></xsl:if>
-                <xsl:call-template name="summary"/>
+                <xsl:copy-of select="metadata/summary"></xsl:copy-of>
                 <xsl:call-template name="summary_plain"/>
                 <xsl:copy-of select="metadata/leitsaetze | metadata/keywords"></xsl:copy-of>
                 <xsl:call-template name="taxonomy">
@@ -86,22 +86,6 @@
         </xsl:element>
     </xsl:template>
     
-    
-    <xsl:template name="summary">
-        <xsl:choose>
-            <xsl:when test="/*/metadata/summary">
-                <xsl:copy-of select="/*/metadata/summary"></xsl:copy-of>
-            </xsl:when>
-            <xsl:when test="/*/metadata/leitsaetze">
-                <summary>
-                    <xsl:for-each select="/*/metadata/leitsaetze/leitsatz">
-                        <xsl:apply-templates/>
-                    </xsl:for-each>
-                </summary>
-            </xsl:when>
-        </xsl:choose>
-    </xsl:template>
-    
     <xsl:template name="taxonomy">
         <xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
         <xsl:param name="src-level-2" required="yes"></xsl:param>
@@ -109,7 +93,7 @@
         <xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
         <taxonomy>
             <xsl:for-each select="$string-of-keys">
-                <key><xsl:text>http://taxonomy.wolterskluwer.de/law/</xsl:text><xsl:value-of select="current()"/></key>
+                <key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
             </xsl:for-each>
         </taxonomy>
     </xsl:template>
@@ -142,11 +126,14 @@
         <xsl:if test="not(/*/name()= ('divah', 'divsu', 'divso', 'gtdraft', 'vadraft', 'vav', 'entv', 'gts', 'gh' ))">
             <summary_plain>
                 <xsl:choose>
+                    <xsl:when test="/*/metadata/summary">
+                        <xsl:value-of select="replace(substring(string-join(/*/metadata/summary//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
+                    </xsl:when>
                     <xsl:when test="/*/metadata/leitsaetze">
-                        <xsl:value-of select="substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500)"/>
+                        <xsl:value-of select="replace(substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="substring(string-join(/*/xml_body//text()[normalize-space()], ' '), 1, 500)"/>
+                        <xsl:value-of select="replace(substring(string-join(/*/xml_body//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </summary_plain>
