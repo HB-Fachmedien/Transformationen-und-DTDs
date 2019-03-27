@@ -19,6 +19,20 @@
 			<xsl:apply-templates/>
 		</metadata>
 	</xsl:template>
+	
+	
+	<xsl:template name="taxonomy">
+		<xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
+		<xsl:param name="src-level-2" required="yes"></xsl:param>
+		
+		<xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
+		<taxonomy>
+			<xsl:for-each select="$string-of-keys">
+				<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
+			</xsl:for-each>
+		</taxonomy>
+	</xsl:template>
+	
 
 	<xsl:template name="der-betrieb-arbeitsrecht">
 		<xsl:variable name="filename" select="concat(replace(substring-before(tokenize(base-uri(),'/')[last()], '.xml'), 'DB', 'DBAR'), '.xml')"/>
@@ -28,7 +42,13 @@
 			<xsl:element name="{/*/name()}">
 				<xsl:apply-templates select="/*/attribute::*"/>
 				<metadata>
-					<xsl:apply-templates select="/*/metadata/title | /*/metadata/subtitle | /*/metadata/coll_title | /*/metadata/authors | /*/metadata/summary | /*/metadata/summary_plain | /*/metadata/leitsaetze | /*/metadata/keywords | /*/metadata/taxonomy | /*/metadata/ressort | /*/metadata/rubriken"/> 
+					<xsl:apply-templates select="/*/metadata/title | /*/metadata/subtitle | /*/metadata/coll_title | /*/metadata/authors | /*/metadata/summary | /*/metadata/summary_plain | /*/metadata/leitsaetze | /*/metadata/keywords "/>
+					
+					<xsl:call-template name="taxonomy">
+						<xsl:with-param name="src-level-2" select="'dbar'"/>
+					</xsl:call-template>
+					
+					<xsl:apply-templates select="/*/metadata/ressort | /*/metadata/rubriken"/> 
 						
 					<xsl:apply-templates select="/*/metadata/pub" mode="pub_dbar"/> 
 						
