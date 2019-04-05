@@ -81,7 +81,10 @@
 	<werk name="Depré, ZVG" dpsi="rws_depre">12140</werk>
 	<werk name="Depré/Bachmann, 1x1 der Lohnpfändung" dpsi="dav_lohnpf">10001</werk>
 	<werk name="Der Aufsichtsrat" dpsi="ar">hbfm10001 hbfm10014</werk>
-	<werk name="DER BETRIEB" dpsi="db">10072 10065 10162 10177 10184 10206 10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12167 12260 12348 12141 12532 12458 hbfm10006 hbfm10009 hbfm10010 hbfm10014</werk>
+	<werk name="DER BETRIEB" dpsi="db-ar">10072 10065 10162 10177 10184 10206</werk>
+	<werk name="DER BETRIEB" dpsi="db-sr">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk name="DER BETRIEB" dpsi="db-wr">12167 12260 12348 12141 12532 12458</werk>
+	<werk name="DER BETRIEB" dpsi="db-bw">hbfm10006 hbfm10009 hbfm10010 hbfm10014</werk>
 	<werk name="DER BETRIEB Arbeitsrecht" dpsi="dbar">10002 10065 10072 10162 10177 10184 10206</werk>
 	<werk name="DER KONZERN" dpsi="dk">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12167 12260 hbfm10006 hbfm10014</werk>
 	<werk name="Deutinger, Kommunikation im Change" dpsi="spg_kommchange">hbfm10020 hbfm10023</werk>

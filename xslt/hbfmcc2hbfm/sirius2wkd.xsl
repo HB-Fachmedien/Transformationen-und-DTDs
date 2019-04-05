@@ -92,10 +92,21 @@
 	<xsl:template name="taxonomy">
 		<xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
 		<xsl:param name="src-level-2" required="yes"></xsl:param>
-		
-		<xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
+
+		<xsl:variable name="string-of-keys">
+			<xsl:choose>
+				<xsl:when test="$src-level-2 = 'db'">
+					<xsl:variable name="ressort" select="/*/metadata/ressort/text()"/>
+					<xsl:value-of select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=concat(lower-case($src-level-2), '-', lower-case($ressort))]/text(), '\s')"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:message>keys: <xsl:value-of select="$string-of-keys"/></xsl:message>
 		<taxonomy>
-			<xsl:for-each select="$string-of-keys">
+			<xsl:for-each select="tokenize($string-of-keys, ' ')">
 				<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
 			</xsl:for-each>
 		</taxonomy>
@@ -149,7 +160,7 @@
 						<xsl:value-of select="replace(substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="replace(substring(string-join(/*/body//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
+						<xsl:value-of select="replace(substring(string-join(/*/body//p//text()[normalize-space()], concat(' ', codepoints-to-string(10))), 1, 500), '(\s\w*)$', ' ')"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</summary_plain>
