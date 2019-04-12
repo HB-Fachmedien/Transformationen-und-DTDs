@@ -82,7 +82,19 @@
 	
 	<xsl:template match="pub">
 		<pub>
-			<xsl:apply-templates/>
+			<xsl:apply-templates select="pubtitle | pubabbr | pubyear | pubedition | date | pub_suppl | pages | pages_alt"/>
+			
+			<xsl:if test="following::rz">
+				<marginnr>
+					<xsl:for-each select="following::rz">
+						<xsl:value-of select="."/>
+						<xsl:text>|</xsl:text>
+					</xsl:for-each>
+				</marginnr>
+			</xsl:if>
+			
+			<xsl:apply-templates select="public | add_target | version | publisher"/>
+			
 			<xsl:if test="/*/metadata/all_source[@level='2']/text() = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe')">
 				<publisher>Handelsblatt Fachmedien</publisher>
 			</xsl:if>
@@ -755,10 +767,10 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Reports#500</xsl:when>
 											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 										</xsl:choose>
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
@@ -791,12 +803,12 @@
 									<xsl:if test="not(starts-with(descendant::pubedition, 'Spezial'))"><xsl:attribute name="expanded">true</xsl:attribute></xsl:if>
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='ed'">Editorial#80</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 											<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
 											<xsl:when test="../name()='iv'">Interview#600</xsl:when>
 											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 										</xsl:choose>
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
@@ -865,13 +877,13 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='ed'">Editorial#80</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 											<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
 											<xsl:when test="../name()='kk'">Kompakt#560</xsl:when>
 											<xsl:when test="../name()='rez'">Buchbesprechungen#570</xsl:when>
 											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 										</xsl:choose>
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
@@ -902,13 +914,13 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='ed'">Editorial#80</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 											<xsl:when test="../name()='ent'">Rechtsprechung#550</xsl:when>
 											<xsl:when test="../name()='rez'">Rezensionen#570</xsl:when>
 											<xsl:when test="../name()='iv'">Interview#600</xsl:when>
 											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-											<xsl:when test="../name()='ed'">Editorial#800</xsl:when>
 										</xsl:choose>
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
@@ -975,6 +987,7 @@
 										</xsl:attribute>
 										<xsl:variable name="docType-SeqN">
 											<xsl:choose>
+												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
 												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
 												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
@@ -983,7 +996,6 @@
 												<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
 												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
 												<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-												<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
 											</xsl:choose>
 										</xsl:variable>
 										<xsl:variable name="leafseqnr">
