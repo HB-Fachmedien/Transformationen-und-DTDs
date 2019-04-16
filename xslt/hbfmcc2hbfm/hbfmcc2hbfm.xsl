@@ -86,6 +86,11 @@
         </xsl:element>
     </xsl:template>
     
+    <!-- Sonderfall für den Datenschutzberater: -->
+    <xsl:template match="all_source[@level='2'][text()='dsb']">
+        <all_source level='2'>dfv_dsb</all_source>
+    </xsl:template>
+    
     <xsl:template name="taxonomy">
         <xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
         <xsl:param name="src-level-2" required="yes"></xsl:param>
@@ -103,7 +108,7 @@
             <xsl:when test="metadata/authors">
                 <authors_plain><xsl:value-of select="metadata/authors"/></authors_plain>
             </xsl:when>
-            <xsl:when test="metadata/author_info//string-length(normalize-space(text())) &gt; 0">
+            <xsl:when test="metadata/author_info//string-length(normalize-space(string-join(text(), ' '))) &gt; 0">
                 <authors_plain>
                     <xsl:variable name="authors_name_string">
                         <xsl:for-each select="metadata/author_info/author">
@@ -133,7 +138,7 @@
                         <xsl:value-of select="replace(substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="replace(substring(string-join(/*/xml_body//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
+                        <xsl:value-of select="replace(substring(string-join(/*/xml_body//p//text()[normalize-space()], concat(' ', codepoints-to-string(10))), 1, 500), '(\s\w*)$', ' ')"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </summary_plain>
@@ -191,10 +196,8 @@
             <pubedition><xsl:value-of select="pubedition"/></pubedition>
             <date><xsl:value-of select="ancestor::metadata/date/text()"/></date>
             <xsl:copy-of select="pub_suppl"></xsl:copy-of>
-            <xsl:if test="pages">
-                <pages><xsl:apply-templates select="pages/node()"/></pages>
-            </xsl:if>
-            <xsl:copy-of select="pages_alt"></xsl:copy-of>
+            <xsl:apply-templates select="pages | pages_alt"/>
+            <xsl:copy-of select="marginnr"></xsl:copy-of>
             <xsl:apply-templates select="public"/>
             <xsl:copy-of select="add_target | version"></xsl:copy-of>
             
@@ -247,13 +250,17 @@
         <intermed_pages><xsl:value-of select="text()"/></intermed_pages>
     </xsl:template>
     
+    <xsl:template match="start_page | last_page">
+        <xsl:copy><xsl:value-of select="replace(text(), '^0+', '')"/></xsl:copy>
+    </xsl:template>
+    
     <!-- Das public Element muss bei hbfm.dtd validen Dokumenten leer sein: -->
     <xsl:template match="public/text()"></xsl:template>
     
     <xsl:template match="inst">
         <inst>
-            <xsl:attribute name="type"><xsl:value-of select="following-sibling::insttype"/></xsl:attribute>
-            <xsl:attribute name="code"><xsl:value-of select="following-sibling::instcode"/></xsl:attribute>
+            <xsl:attribute name="type"><xsl:value-of select="following-sibling::insttype/@value"/></xsl:attribute>
+            <xsl:attribute name="code"><xsl:value-of select="following-sibling::instcode/@court"/></xsl:attribute>
             <xsl:value-of select="text()"/>
         </inst>
     </xsl:template>
