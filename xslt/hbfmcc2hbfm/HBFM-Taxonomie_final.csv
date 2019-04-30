@@ -1,0 +1,586 @@
+﻿Key;;;Arbeitsrecht ;;Steuerrecht & Finanzwesen;;Straf- & Ordnungswidrigkeitenrecht;;Wirtschaftsrecht;;Zivilrecht & Zivilprozessrecht;;Aufsichtsrat/Beirat;;Betriebswirtschaft;;Compliance;;Corporate Governance;;Datenschutz;;Management;
+;Verlag;Werk ;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2;Level 1;Level 2
+;Erich Schmidt;Heither, ArbGG;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002;;;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Ostrowicz/Künzl/Scholz, Handbuch des arbeitsgerichtlichen Verfahrens;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002;;;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Lepke, Kündigung bei Krankheit;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162;;;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Lwowski/Fischer/Langenbucher, Das Recht der Kreditsicherung;;;;;;;Wirtschaftsrecht12140;Bankrecht, Darlehens- & Bürgschaftsrecht12141;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Erich Schmidt;Ekkenga/Maas, Das Recht der Wertpapieremissionen;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Erich Schmidt;Bauer, Genossenschafts-Handbuch;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Mühl, Haftung für fehlerhafte Ratings;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Erich Schmidt;Brogl, Handbuch Banken-Restrukturierung;;;;;;;Wirtschaftsrecht12140;Bankrecht, Darlehens- & Bürgschaftsrecht12141, Insolvenzrecht12348;;;;;;;;;;;;;;
+;Erich Schmidt;Reischauer/Kleinhans, Kreditwesengesetz;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Keunecke, Prospekte im Kapitalmarkt;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Erich Schmidt;Striegel, REITG;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Preuße, SchVG;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;Erich Schmidt;Dreier/Fritzsche/Verfürth, SpruchG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;Unternehmensbewertunghbfm10010;;;;;;;;
+;Erich Schmidt;Santelmann/Hoppe/Suerbaum/Bukowski, Squeeze out;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009, Unternehmensbewertunghbfm10010;;;;;;;;
+;Erich Schmidt;Hölscher/Gesmann-Nuisll/Hornbach, Systeme zur Geldwäschebekämpfung in der EU;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Preuße/Zingel, WpDVerOV;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Holzborn, WpPG;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Erich Schmidt;Steinmeyer/Häger, WpÜG;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;Erich Schmidt;Wilhelmi/Achtelik/Kunschke/Sigmundt, Handbuch EMIR;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Beckmann/Scholtz/Vollmer, Investment;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Juchem, Angehörigengeschäfte im Steuer- und Steuerstrafrecht;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764, Einkommensteuer10648, Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Kaligin, Die Betriebsaufspaltung;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Schumacher, Die Organschaft im Steuerrecht;;;Steuerrecht & Finanzwesen10602;Gewerbesteuer10734, Körperschaftsteuer10764, Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;StBp – Die steuerliche Betriebsprüfung;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Weitere Steuern10859, Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Meyer/Goez/Schwamberger, Die Vergütung der steuerberatenden Berufe;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Hebig, Existenzgründungsberatung;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764, Umsatzsteuer10774, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Meyer/Ball, Übertragung von Immobilien im Steuerrecht;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Grunderwerbsteuer10744, Körperschaftsteuer10764, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Hartmann/Metzenmacher, UStG;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Haase/Hruschka, UmwStG;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Jost, Vergütungs- und Kostenrecht im FG- und BFH-Verfahren;;;Steuerrecht & Finanzwesen10602;Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Farr, Vollstreckungsschutz, Stundung und Erlass;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Pawlak/Ruge, Betriebsverfassungsrecht;Arbeitsrecht10001;Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Lakies, Das Arbeitsverhältnis in der Insolvenz;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;Erich Schmidt;Brinkmann, Schätzungen im Steuerrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Erich Schmidt;Siering/Izzo-Wagner, VermAnlG;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;Kunschke/Schaffelhuber, FinTech;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Otto Schmidt;Hübschmann/Hepp/Spitaler, AO/FGO;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Groll, Praxis-Handbuch Erbrechtsberatung;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Gürsching/Stenger, Bewertungsrecht - BewG/ErbStG;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;Betriebswirtschaft hbfm10005;Unternehmensbewertunghbfm10010;;;;;;;;
+;Otto Schmidt;erbstb – Erbschaft-Steuerberater;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Kapp/Ebeling, ErbStG;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;von Oertzen/Loose, ErbStG;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Ebeling/Geck, Handbuch der Erbengemeinschaft;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718, Einkommensteuer10648, Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Kirchhof, EStG;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;estb – Ertrag-Steuerberater;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;FR – Finanz-Rundschau Ertragsteuerrecht;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Lenski/Steinberg, GewStG;;;Steuerrecht & Finanzwesen10602;Gewerbesteuer10734;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Tipke/Lang, Steuerrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Körperschaftsteuer10764, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Herrmann/Heuer/Raupach, EStG/KStG;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Rödder/Herlinghaus/van Lishaut, UmwStG;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Flick/Wassermeyer/Baumhoff/Schönfeld, Außensteuerrecht;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Wassermeyer/Andresen/Ditz, Betriebsstätten-Handbuch;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Flick/Wassermeyer/Kempermann, DBA Deutschland - Schweiz;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schönfeld/Ditz, DBA;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schaumburg/Englisch, Europäisches Steuerrecht;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Kroppen, Handbuch Internationale Verrechnungspreise;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;ISR – Internationale Steuer-Rundschau;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schaumburg, Internationales Steuerrecht;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schaumburg/Peters, Internationales Steuerstrafrecht;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schaumburg/Hendricks, Steuerrechtsschutz;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Wassermeyer/Richter/Schnittker, Personengesellschaften im Internationalen Steuerrecht;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859, Gewerbesteuer10734;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Mössner u. a., Steuerrecht international tätiger Unternehmen;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Prinz, Umwandlungen im internationalen Steuerrecht;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Wassermeyer/Baumhoff, Verrechnungspreise international verbundener Unternehmen;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Rödder/Herlinghaus/Neumann, KStG;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Birkenfeld/Wäger, Das große Umsatzsteuer-Handbuch;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Rau/Dürrwächter, UStG;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;ustb – Umsatz-Steuerberater;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;EU-ustb – EU-Umsatz-Steuerberater;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;UR – Umsatzsteuer-Rundschau;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Stadie, UStG;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Tipke/Kruse, AO/FGO;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Ulmer/Brandner/Hensen, AGB-Recht;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Otto Schmidt;Schmidt/Lutter, AktG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Bauer/Lingemann/Diller/Haußmann, Anwalts-Formularbuch Arbeitsrecht;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;aostb – AO-Steuerberater;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;arbrb – Arbeits-Rechtsberater;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Arbeitsgerichtsbarkeit10002, Arbeitszeit & Arbeitsschutz10162, Personalwesen & Antidiskriminierung10184, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schwab/Weth, ARbGG;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Tschöpe, Arbeitsrecht Handbuch;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Henssler/Willemsen/Kalb, Arbeitsrecht;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002, Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Erman, BGB;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Otto Schmidt;Preis, Der Arbeitsvertrag;Arbeitsrecht10001;Arbeitsvertragsrecht10072;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;gmbhstb – GmbH-Steuerberater;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Otto Schmidt;Graf von Westphalen, Der Leasingvertrag;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764, Weitere Steuern10859;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Otto Schmidt;Streck/Kamps/Olgemöller, Der Steuerstreit;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;AG – Die Aktiengesellschaft;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Nacke, Die Haftung für Steuerschulden;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Müller, Die Selbstanzeige im Steuerstrafverfahren;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Verfahren vor den Finanzgerichten10797;Straf- & Ordnungswidrigkeitenrecht10869;Straftaten gegen Staat & Gemeinschaftswerte11122;;;;;;;;;;;;;;;;
+;Otto Schmidt;KPMG, E-Bilanz;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Einkommensteuer10648, Körperschaftsteuer10764;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzsteuerrechthbfm10006;;;;;;;;
+;Otto Schmidt;Fuhrmann/Wälzholz, Formularbuch Gesellschaftsrecht;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Hüttemann, Gemeinnützigkeits- und Spendenrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Centrale für GmbH, GmbH-Handbuch;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;GmbHR – GmbH-Rundschau;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Lutter/Hommelhoff, GmbHG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Scholz, GmbHG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Prinz/Witt, Steuerliche Organschaft;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Einkommensteuer10648, Gewerbesteuer10734, Grunderwerbsteuer10744, Körperschaftsteuer10764, Umsatzsteuer10774, Umwandlungsteuer10791;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Gosch/Schwedhelm/Spiegelberger, GmbH-Beratung;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764, Erbschaft- & Schenkungsteuer10718, Umsatzsteuer10774, Behördliches Verfahren & Finanzverwaltung10603, Weitere Steuern10859, Umwandlungsteuer10791;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Ziemons/Binnewies, Handbuch Aktiengesellschaft;;;steuerrecht & Finanzwesen10602;Körperschaftsteuer10764, Umsatzsteuer10774, Gewerbesteuer10734, Grunderwerbsteuer10744, Umwandlungsteuer10791, Weitere Steuern10859;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Hesselmann/Tillmann/Mueller-Thuns, Handbuch GmbH & Co. KG;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Körperschaftsteuer10764, Gewerbesteuer10734, Grunderwerbsteuer10744, Umwandlungsteuer10791, Behördliches Verfahren & Finanzverwaltung10603, Erbschaft- & Schenkungsteuer10718;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Westermann, Handbuch Personengesellschaften;;;steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Umsatzsteuer10774, Umwandlungsteuer10791;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Schulze-Osterloh/Hennrichs/Wüstemann, HdJ;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Otto Schmidt;Mues/Eisenbeis/Laber, Handbuch Kündigungsrecht;Arbeitsrecht10001;Arbeitsvertragsrecht10072;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Blaurock, Handbuch Stille Gesellschaft;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Einkommensteuer10648, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Umsatzsteuer10774, Umwandlungsteuer10791;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Röhricht/Graf von Westphalen/Haas, HGB;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;Corporate Governancehbfm10014;;;;;
+;Otto Schmidt;Lutter/Bayer, Holding-Handbuch;;;Steuerrecht & Finanzwesen10602;Grunderwerbsteuer10744, Umwandlungsteuer10791, Körperschaftsteuer10764, Behördliches Verfahren & Finanzverwaltung10603;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Heuser/Theile, IFRS-Handbuch;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;Corporate Governancehbfm10014;;;;;
+;Otto Schmidt;Hachmeister/Kahle/Mock/Schüppen, Bilanzrecht;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;Corporate Governancehbfm10014;;;;;
+;Otto Schmidt;Reithmann/Martiny, Internationales Vertragsrecht;;;;;;;Wirtschaftsrecht12140;;Zivilrecht & Zivilprozessrecht12597;Allgemeines Zivil- & Vertragsrecht12598;;;;;;;;;;;;
+;Otto Schmidt;Schmidt, Karsten/Uhlenbruck, Die GmbH in Krise, Sanierung und Insolvenz;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Insolvenzrecht12348, Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Gustavus, Handelsregister-Anmeldungen;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;;;;;;;;;;
+;Otto Schmidt;Tillmann/Mohr, GmbH-Geschäftsführer;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Langenfeld/Miras, GmbH-Vertragspraxis;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Tillmann/Schiffers/Wälzholz/Rupp, Die GmbH im Gesellschafts- und Steuerrecht;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Schwedhelm, Die Unternehmensumwandlung;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Behrens/Wachter, Grunderwerbsteuergesetz Kommentar;;;Steuerrecht & Finanzwesen10602;Grunderwerbsteuer10744;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Lutter/Krieger/Verse, Rechte und Pflichten des Aufsichtsrats;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;Corporate Governancehbfm10014;Aufsichtsrat/Beirathbfm10015;;;;
+;Otto Schmidt;Ihrig/Schäfer, Rechte und Pflichten des Vorstands;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;Corporate Governancehbfm10014;Aufsichtsrat/Beirathbfm10015;;;;
+;Otto Schmidt;Fleischer/Hüttemann, Rechtshandbuch Unternehmensbewertung;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;Unternehmensbewertunghbfm10010;;;;;;;;
+;Otto Schmidt;Lutter/Hommelhoff/Teichmann, SE;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Kohlmann, Steuerstrafrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;Straf- & Ordnungswidrigkeitenrecht10869;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Kallmeyer, UmwG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Lutter, UmwG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Lippross/Seibel, Basiskommentar Steuerrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Braun/Günther, Das Steuer-Handbuch;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Jaeger/Kokott/Pohlmann/Schroeder, Frankfurter Kommentar Kartellrecht;;;;;;;Wirtschaftsrecht12140;Wettbewerbs-, Kartell- & Vergaberecht12532;;;;;;;;;;;;;;
+;Otto Schmidt;StBW – Steuerberater-Woche;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;StEK – Steuererlasse in Karteiform;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Ahrend/Förster/Rößler, Steuerrecht der betrieblichen Altersversorgung;Arbeitsrecht10001;Betriebliche Altersversorgung10177;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Schlewing/Henssler/Schipp/Schnitker, Arbeitsrecht der betrieblichen Altersversorgung;Arbeitsrecht10001;Betriebliche Altersversorgung10177;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Hanau/Arteaga/Rieble/Veit, Entgeltumwandlung;Arbeitsrecht10001;Betriebliche Altersversorgung10177;;;;;;;;;;;;;;;;;;;;
+;Otto Schmidt;Marsch-Barner/Schäfer, Handbuch börsennotierte AG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Kümpel/Wittig, Bank- und Kapitalmarktrecht;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Otto Schmidt;Assmann/Schneider, WpHG;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Otto Schmidt;Assmann/Pötzsch/Schneider, WpÜG;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;Otto Schmidt;Assmann/Schlitt/von Kopp-Colomb, WpPG/VerkProspG;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Otto Schmidt;Habersack/Mülbert/Schlitt, Unternehmensfinanzierung am Kapitalmarkt;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Otto Schmidt;Obermüller, Insolvenzrecht in der Bankpraxis;;;;;;;Wirtschaftsrecht12140;Bankrecht, Darlehens- & Bürgschaftsrecht12141;;;;;;;;;;;;;;
+;Otto Schmidt;Zöller, ZPO;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;Zivilprozessrecht13566;;;;;;;;;;;;
+;Otto Schmidt;Vorwerk, Das Prozessformularbuch;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;Zivilprozessrecht13566;;;;;;;;;;;;
+;Otto Schmidt;Hölters, Handbuch Unternehmenskauf;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Grunderwerbsteuer10744, Erbschaft- & Schenkungsteuer10718, Körperschaftsteuer10764, Gewerbesteuer10734, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;Otto Schmidt;Krieger/Schneider, Handbuch Managerhaftung;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Otto Schmidt;Hopt/Seibt, Schuldverschreibungsrecht;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;Otto Schmidt;StuW – Steuer und Wirtschaft;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;RWS Verlag;Bork/Gehrlein, Aktuelle Probleme der Insolvenzanfechtung;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Wilken/Schaumann/Zenker, Anleihen in Restrukturierung und Insolvenz;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Mönning, Betriebsfortführung in Restrukturierung und Insolvenz;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Ahrens, Das neue Privatinsolvenzrecht;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Hofmann, Eigenverwaltung;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Thole, Gesellschaftsrechtliche Maßnahmen in der Insolvenz;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348, Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Schmittmann, Haftung von Organen in Krise und Insolvenz;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348, Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Göpfert, Handbuch Arbeitsrecht in Restrukturierung und Insolvenz;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Bork/Hölzle, Handbuch Insolvenzrecht;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Kübler, HRI – Handbuch Restrukturierung in der Insolvenz;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Graf-Schlicker, InsO;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Kübler/Prütting/Bork, InsO;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Zimmer, Insolvenzbuchhaltung;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;RWS Verlag;Rendels/Zabel, Insolvenzplan;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Gossak, Praxis des Insolvenzarbeitsrechts;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Hölzle, Praxisleitfaden ESUG;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Kolmann, Schutzschirmverfahren;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;Kahlert, Steuerliche Aspekte der GmbH-Sanierung;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260, Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;ZIP – Zeitschrift für Wirtschaftsrecht;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348, Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Depré, ZVG;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;RWS Verlag;ZVI – Zeitschrift für Verbraucher- und Privat-Insolvenzrecht;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;RWS Verlag;ZWeR – Zeitschrift für Wettbewerbsrecht;;;;;;;Wirtschaftsrecht12140;Wettbewerbs-, Kartell- & Vergaberecht12532;;;;;;;;;;;;;;
+;RWS Verlag;EWiR – Entscheidungen zum Wirtschaftsrecht;;;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348, Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Wachter, AktG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Henze/Born/Drescher, Aktienrecht - Höchstrichterliche Rechtsprechung;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Drescher, Die Haftung des GmbH-Geschäftsführers;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Henze/Born, GmbH-Recht - Höchstrichterliche Rechtsprechung;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Bork/Schäfer, GmbHG;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Göthel, Grenzüberschreitende M&A-Transaktionen;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;RWS Verlag;Sernetz/Kruis, Kapitalaufbringung und -erhaltung in der GmbH;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;RWS Verlag;Hirte, Kapitalgesellschaftsrecht;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;RWS Verlag;Wächter, M&A Litigation - M&A-Recht im Streit;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;RWS Verlag;Knott, Unternehmenskauf;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Grunderwerbsteuer10744, Erbschaft- & Schenkungsteuer10718, Körperschaftsteuer10764, Gewerbesteuer10734, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;RWS Verlag;Holzapfel/Pöllath, Unternehmenskauf in Recht und Praxis;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Grunderwerbsteuer10744, Erbschaft- & Schenkungsteuer10718, Körperschaftsteuer10764, Gewerbesteuer10734, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009;;;;;;;;
+;Stollfuß;Baum/Buse/Brandl/Szymczak/etc., 360° AO eKommentar;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Stollfuß;Mattern/Mohr/Schütz/Waldens/etc., 360° AStG eKommentar;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Kirsch, 360° BilR eKommentar;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Weitere Steuern10859;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;360° EnergieStG eKommentar;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Meßbacher-Hönsch/Götz, 360° ErbStG eKommentar;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Stollfuß;Fuhrmann/Kraeusel/Schiffers, 360° EStG eKommentar;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Henningfeld/Rosenke, 360° FGO eKommentar;;;Steuerrecht & Finanzwesen10602;Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Stollfuß;Bös/Schmieszek/etc, 360° GewStG eKommentar;;;Steuerrecht & Finanzwesen10602;Gewerbesteuer10734;;;;;;;;;;;;;;;;;;
+;Stollfuß;360° GrEStG eKommentar;;;Steuerrecht & Finanzwesen10602;Grunderwerbsteuer10744;;;;;;;;;;;;;;;;;;
+;Stollfuß;Roscher, 360° GrStG eKommentar;;;Steuerrecht & Finanzwesen10602;Grundsteuer10752;;;;;;;;;;;;;;;;;;
+;Stollfuß;von Keitz/Meyer, 360° Int. BilR eKommentar;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;360° KStG eKommentar;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Stollfuß;360° MwStSystRL eKommentar;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Feiter, 360° StBVV eKommentar;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;360° StromStG eKommentar;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Widmann/Bauschatz, 360° UmwStG eKommentar;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;;;;;;;;;;;;;;;;
+;Stollfuß;Fritsch/Huschens/Koisiak/Langer/etc., 360° UStG eKommentar;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;360° VersStG eKommentar;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Stotax Arbeitshilfen;Arbeitsrecht10001;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Rosarius/Geiermann, ABC der Bilanzierung;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Körperschaftsteuer10764, Behördliches Verfahren & Finanzverwaltung10603;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Masuch/Meyer, ABC des GmbH-Geschäftsführers;Arbeitsrecht10001;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Kirchensteuer10759, Körperschaftsteuer10764;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Stollfuß;Mader/Perach/Voss/Besgen, ABC des Lohnbüros 2016;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Kirchensteuer10759;;;;;;;;;;;;;;;;;;
+;Stollfuß;Mader/Perach/Voss/Besgen, ABC des Lohnbüros 2017;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Kirchensteuer10759;;;;;;;;;;;;;;;;;;
+;Stollfuß;Mader/Perach/Voss/Imping, ABC des Lohnbüros 2018;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Mader/Perach/Voss/Imping, ABC des Lohnbüros 2019;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Gosch, AO/FGO;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603;;;;;;;;;;;;;;;;;;
+;Stollfuß;Liebscher/Geiermann/L. Rosarius/R. Rosarius/Stuhrmann, AfA-Lexikon;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Ebner Stolz/BDI, Änderungen im Steuer- und Wirtschaftsrecht;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Baum, AO/FGO Handausgabe 2017;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Stollfuß;Baum, AO/FGO Handausgabe 2018;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Verfahren vor den Finanzgerichten10797;;;;;;;;;;;;;;;;;;
+;Stollfuß;Strunk/Kaminski/Köhler, AStG/DBA;;;Steuerrecht & Finanzwesen10602;Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;B+P – Zeitschrift für Betrieb und Personal;Arbeitsrecht10001;Personalwesen & Antidiskriminierung10184;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Baetge/Kirsch/Thiele, Bilanzrecht;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Fischer/Günkel/Neubeck/Pannen, Bilanzrechtsreform 2010/2011;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Flick Gocke Schaumburg/BDI, Der Umwandlungssteuer-Erlass 2011;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;;;;;;;;;;;;;;;;
+;Stollfuß;DStZ – Deutsche Steuer-Zeitung;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Deloitte, E-Bilanz;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;EFG – Entscheidungen der Finanzgerichte;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Schalburg/Franke, Einkommensteuer-Erklärung 2015;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Schalburg/Muser, Einkommensteuer-Erklärung 2016;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Schalburg/Muser, Einkommensteuer-Erklärung 2017;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Schalburg/Muser, Einkommensteuer-Erklärung 2018;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Dorn/Rosenbaum, ESt-Handausgabe 2016;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Dorn/Rosenbaum, ESt-Handausgabe 2017;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Korn, EStG;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Wilms/Jochum, ErbStG und SchenkStG;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Stollfuß;Karthaus/Sternkiker, GewSt-Handausgabe 2016;;;Steuerrecht & Finanzwesen10602;Gewerbesteuer10734;;;;;;;;;;;;;;;;;;
+;Stollfuß;Karthaus/Sternkiker, GewSt-Handausgabe 2017;;;Steuerrecht & Finanzwesen10602;Gewerbesteuer10734;;;;;;;;;;;;;;;;;;
+;Stollfuß;Handbuch Betrieb und Personal;Arbeitsrecht10001;Personalwesen & Antidiskriminierung10184;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Kraemer/Vallender/Vogelsang, Handbuch zur Insolvenz;Arbeitsrecht10001;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;Stollfuß;HFR – Höchstrichterliche Finanzrechtsprechung;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2015/2016;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2016/2017;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2017/2018;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Ebner Stolz, IFRS-Jahresabschluss - Erstellung und Prüfung 2014/15;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Ebner Stolz, IFRS-Jahresabschluss - Erstellung und Prüfung 2016/17;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Ebner Stolz, IFRS-Jahresabschluss - Erstellung und Prüfung 2017/18;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Thiele/von Keitz/Brücks, Internationales Bilanzrecht;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Sönsken/Rosarius, Investitionsförderung Handbuch;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;Stollfuß;BeSt – Beratersicht zur Steuerrechtsprechung;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Claudy/Henseler/Kümpel/Staats, KSt-/GewSt-/USt-Erklärung 2016;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764, Gewerbesteuer10734, Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Claudy/Henseler/Kümpel/Staats, KSt-/GewSt-/USt-Erklärung 2017;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764, Gewerbesteuer10734, Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Huhn/Karthaus/Wenzel, KSt-Handausgabe 2016;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Stollfuß;Huhn/Karthaus/Wenzel, KSt-Handausgabe 2017;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Stollfuß;Ernst & Young, KStG;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Stollfuß;Lexikon des Rechts;Arbeitsrecht10001;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Lexikon des Steuerrechts;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Hintzen, Lohnpfändung;Arbeitsrecht10001;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Nußbaum/Rosenbaum, LSt-Handausgabe 2017;;;Steuerrecht & Finanzwesen10602;Kirchensteuer10759, Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Nußbaum/Rosenbaum, LSt-Handausgabe 2018;;;Steuerrecht & Finanzwesen10602;Kirchensteuer10759, Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;Stollfuß;Abels/Besgen/Deck/Rausch, Mini-Jobs, Aushilfen, Teilzeit;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Deck, Reisekosten;Arbeitsrecht10001;Arbeitsvertragsrecht10072;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Halaczinsky/Wochner, Schenken, Erben, Steuern;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;Stollfuß;Geiken, Schnellübersicht Sozialversicherung 2019 Beitragsrecht;Arbeitsrecht10001;Personalwesen & Antidiskriminierung10184;;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Geiken, Schnellübersicht Sozialversicherung 2019 Melderecht;Arbeitsrecht10001;Personalwesen & Antidiskriminierung10184;;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Stbg – Die Steuerberatung;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;StEd – Steuer-Eildienst;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;kösdi – Kölner Steuerdialog;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;Pinkos/Püschner/Rosarius u.a., Steuer-Ratgeber;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;Stollfuß;DStI, Steuerberater Branchenhandbuch;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;DStI, Steuerberater Handbuch;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;DStI, Steuerberater Rechtshandbuch;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Goez, Steuerberatervergütungsverordnung;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Langer/Vellen, USt-Handausgabe 2016/17;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Langer/Vellen, USt-Handausgabe 2017/18;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Reiß/Kraeusel/Langer, UStG;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Widmann/Mayer, Umwandlungsrecht;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Stollfuß;UmwSt-Handausgabe 2011/12;;;Steuerrecht & Finanzwesen10602;Umwandlungsteuer10791;;;;;;;;;;;;;;;;;;
+;Stollfuß;UVR – Umsatzsteuer- und Verkehrsteuer-Recht;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;Stollfuß;Feldgen, Verdeckte Gewinnausschüttungen und verdeckte Einlagen;;;Steuerrecht & Finanzwesen10602;Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Stollfuß;Dorsch, Zollrecht;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;Papperitz/Keller, ABC Betriebsprüfung;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Deloitte, Der Lagebericht;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Stollfuß;Strahl, Problemfelder Ertragsteuern;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Gewerbesteuer10734, Körperschaftsteuer10764;;;;;;;;;;;;;;;;;;
+;Stollfuß;Helmke/Bauer, Familienleistungsausgleich;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Stollfuß;BDI/Ebner Stolz, Unternehmensnachfolge nach der Erbschaftsteuerreform 2016;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Stollfuß;Kirsch, Rechnungslegung;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;ZAP Verlag;Bauer, Die GmbH in der Krise;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;ZAP Verlag;Bormann/Kauka/Ockelmann, Handbuch GmbH-Recht;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;ZAP Verlag;Haag/Löffler, HGB;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;ZAP Verlag;Wachter, Praxis des Handels- und Gesellschaftsrechts;;;;;;;Wirtschaftsrecht12140;Gesellschaftsrecht12260;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Kunz/Henssler/Brand/Nebeling, Praxis des Arbeitsrechts;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002, Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162, Personalwesen & Antidiskriminierung10184, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Lunk, AnwaltFormulare Arbeitsrecht;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002, Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162, Personalwesen & Antidiskriminierung10184, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Pauly/Osnabrügge, Handbuch Kündigungsrecht;Arbeitsrecht10001;Arbeitszeit & Arbeitsschutz10162;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Arens/Brand, Arbeits- und Sozialrecht in der Insolvenz;Arbeitsrecht10001;Arbeitszeit & Arbeitsschutz10162, Arbeitsvertragsrecht10072, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;Wirtschaftsrecht12140;Insolvenzrecht12348;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Hofmann/Rohrbach, Internationaler Mitarbeitereinsatz;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Depré/Bachmann, 1x1 der Lohnpfändung;Arbeitsrecht10001;;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Schäder/Weber, Praxiskommentar zum Streitwertkatalog Arbeitsrecht;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Langohr-Plato, Betriebliche Altersversorgung;Arbeitsrecht10001;Betriebliche Altersversorgung10177;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Arens/Düwell/Wichert, Handbuch Umstrukturierung und Arbeitsrecht;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;Deutscher Anwaltverlag;Kleinmann/Meyer-Renkes/Fündling, Der Kündigungsschutzprozess – Strategie und Taktik;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002;;;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Adick/Höink/Kurt, Umsatzsteuer und Strafrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Füllsack/Bürger, Praxis der Selbstanzeige;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Quedenfeld/Füllsack, Verteidigung in Steuerstrafsachen;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Adick/Bülte, Fiskalstrafrecht;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Hüls/Reichling, Steuerstrafrecht;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;C.F. Müller;wistra – Zeitschrift für Wirtschafts- und Steuerstrafrecht;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;C.F. Müller;Achenbach/Ransiek/Rönnau, Handbuch Wirtschaftsstrafrecht;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;C.F. Müller;Berndt/Theile, Unternehmensstrafrecht und Unternehmensverteidigung;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Kirchhof/Söhn/Mellinghoff, EStG;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Bordewin/Brandt, EStG;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648;;;;;;;;;;;;;;;;;;
+;C.F. Müller;Offerhaus/Söhn/Lange, UStG;;;Steuerrecht & Finanzwesen10602;Umsatzsteuer10774;;;;;;;;;;;;;;;;;;
+;zerb Verlag;Riedel, Praxishandbuch Unternehmensnachfolge;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;zerb Verlag;Beckervordersandfort, Gestaltungen zum Erhalt des Familienvermögens;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;zerb Verlag;Süß, Erbrecht in Europa;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;zerb Verlag;Daragan/Halaczinsky/Riedel, Praxiskommentar ErbStG und BewG;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;Betriebswirtschaft hbfm10005;Unternehmensbewertunghbfm10010;;;;;;;;
+;zerb Verlag;Mayer/Bonefeld, Testamentsvollstreckung;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;zerb Verlag;Halaczinsky, Die Erbschaft- und Schenkungsteuererklärung;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;zerb Verlag;von Oertzen/Ponath, Asset Protection im deutschen Recht;;;;;;;;;;;;;;;;;;;;;;
+;zerb Verlag;ZErb – Zeitschrift für die Steuer- und Erbrechtpraxis;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;IWW Institut;SSP – Steuern sparen professionell;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;IWW Institut;LGP – Löhne und Gehälter professionell;;;Steuerrecht & Finanzwesen10602;Einkommensteuer10648, Kirchensteuer10759;;;;;;;;;;;;;;;;;;
+;IWW Institut;MBP – Mandat im Blickpunkt;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;IWW Institut;KP – Kanzleiführung professionell;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;IWW Institut;AStW – Aktuelles aus dem Steuer- und Wirtschaftsrecht;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;IWW Institut;BBP – Betriebswirtschaft im Blickpunkt;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006, Corporate Financehbfm10007;;;;;;;;
+;IWW Institut;ErbBstg – Erbfolgebesteuerung;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;;;;;;;;;;;;;;;;
+;IWW Institut;GStB – Gestaltende Steuerberatung;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;;;;;;;;;;;;;;;;
+;IWW Institut;PFB – Praxis Freiberufler-Beratung;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;IWW Institut;PIStB – Praxis Internationale Steuerberatung;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;IWW Institut;PStR – Praxis Steuerstrafrecht;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;IWW Institut;AK – Anwalt und Kanzlei;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;RVG prof. – RVG professionell;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;VE – Vollstreckung effektiv;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;FMP – Forderungsmanagement professionell;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007;;;;;;;;
+;IWW Institut;EE – Erbrecht effektiv;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;Erbrecht12788;;;;;;;;;;;;
+;IWW Institut;VA – Verkehrsrecht aktuell;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;AA – Arbeitsrecht aktiv;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Tarifvertrags- & Mitbestimmungsrecht10206, Personalwesen & Antidiskriminierung10184, Arbeitszeit & Arbeitsschutz10162;;;;;;;;;;;;;;;;;;;;
+;IWW Institut;MK – Mietrecht kompakt;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;Miete, Pacht & Leasing13124;;;;;;;;;;;;
+;IWW Institut;FK – Familienrecht kompakt;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;Familienrecht12882;;;;;;;;;;;;
+;IWW Institut;VK – Versicherung und Recht kompakt;;;;;;;Wirtschaftsrecht12140;Versicherungsrecht12499;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;SR – Seniorenrecht aktuell;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;VB – VereinsBrief;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;IWW Institut;SB – StiftungsBrief;;;;;;;;;Zivilrecht & Zivilprozessrecht12597;;;;;;;;;;;;;
+;Bundesanzeiger Verlag;BILANZ aktuell;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Bundesanzeiger Verlag;Petersen/Zwirner/Brösel, Systematischer Praxiskommentar Bilanzrecht;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;Bundesanzeiger Verlag;Petersen/Zwirner/Brösel, Handbuch Unternehmensbewertung;;;Steuerrecht & Finanzwesen10602;Erbschaft- & Schenkungsteuer10718;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Unternehmensbewertunghbfm10010;;;;;;;;
+;HBFM;DER BETRIEB;Arbeitsrecht10001;Arbeitsvertragsrecht10072, Arbeitskampf & Schlichtungswesen10065, Arbeitszeit & Arbeitsschutz10162, Betriebliche Altersversorgung10177, Personalwesen & Antidiskriminierung10184, Tarifvertrags- & Mitbestimmungsrecht10206;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167, Gesellschaftsrecht12260, Insolvenzrecht12348, Bankrecht, Darlehens- & Bürgschaftsrecht12141, Wettbewerbs-, Kartell- & Vergaberecht12532, Urheber-, Medien- & Datenschutzrecht12458;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006, M&Ahbfm10009, Unternehmensbewertunghbfm10010;;;Corporate Governancehbfm10014;;;;;
+;HBFM;DER BETRIEB Arbeitsrecht;Arbeitsrecht10001;Arbeitsgerichtsbarkeit10002, Arbeitskampf & Schlichtungswesen10065, Arbeitsvertragsrecht10072, Arbeitszeit & Arbeitsschutz10162, Betriebliche Altersversorgung10177, Personalwesen & Antidiskriminierung10184, Tarifvertrags- & Mitbestimmungsrecht10206;;;;;;;;;;;;;;;;;;;;
+;HBFM;DER KONZERN;;;Steuerrecht & Finanzwesen10602;Behördliches Verfahren & Finanzverwaltung10603, Körperschaftsteuer10764, Einkommensteuer10648, Erbschaft- & Schenkungsteuer10718, Gewerbesteuer10734, Grunderwerbsteuer10744, Grundsteuer10752, Kirchensteuer10759, Umsatzsteuer10774, Umwandlungsteuer10791, Verfahren vor den Finanzgerichten10797, Weitere Steuern10859;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167, Gesellschaftsrecht12260;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;Corporate Governancehbfm10014;;;;;
+;HBFM;KoR;;;;;;;Wirtschaftsrecht12140;Handels- & Bilanzrecht12167;;;;;Betriebswirtschaft hbfm10005;Bilanzrechthbfm10006;;;;;;;;
+;HBFM;CF;;;;;;;Wirtschaftsrecht12140;;;;;;Betriebswirtschaft hbfm10005;Corporate Financehbfm10007, M&Ahbfm10009, Unternehmensbewertunghbfm10010;;;;;;;;
+;HBFM;WuW;;;;;;;Wirtschaftsrecht12140;Wettbewerbs-, Kartell- & Vergaberecht12532;;;;;;;;;;;;;;
+;HBFM;Rethinking Law;;;;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;HBFM;Rethinking Finance;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;Betriebswirtschaft hbfm10005;;;;;;;;;
+;HBFM;Rethinking Tax;;;Steuerrecht & Finanzwesen10602;;;;;;;;;;;;;;;;;;;
+;Campus Verlag;Doppler/Lauterburg, Change Management;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Simon, 33 Sofortmaßnahmen gegen die Krise;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Simon, Hidden Champions - Aufbruch nach Globalia;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Groth, Führungsstark im Wandel;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Leadershiphbfm10022
+;Campus Verlag;Brandes/Gemmer/Koschek/Schültken, Management Y;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022, Personalhbfm10023
+;Campus Verlag;Knoblauch, Die Chef-Falle;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Malik, Führen, Leisten, Leben;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Pfläging, Führen mit flexiblen Zielen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Groth, Führungsstark in alle Richtungen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Lehky, Leadership 2.0;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Sprenger, Radikal führen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Michael, Tacheles aus der Chefetage;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022
+;Campus Verlag;Malik, Navigieren in Zeiten des Umbruchs;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022, Change Managementhbfm10020
+;Campus Verlag;Knoblauch/Kurz, Die besten Mitarbeiter finden und halten;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Campus Verlag;Knoblauch/Kuttler, Das Geheimnis der Champions;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Campus Verlag;Lehky, Mitarbeitergespräche sicher und kompetent führen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023, Leadershiphbfm10022
+;Campus Verlag;Sprenger, Mythos Motivation;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023, Leadershiphbfm10022
+;Campus Verlag;Sprenger, Das Prinzip Selbstverantwortung;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Campus Verlag;von Hertel, Professionelle Konfliktlösung;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Leadershiphbfm10022, Personalhbfm10023, Softskillshbfm10025
+;Campus Verlag;Hein, Sprechen wie der Profi;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Rock, Brain at Work;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Koch, Das 80/20-Prinzip;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Goldfuß, Endlich Chef - was nun?;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025, Leadershiphbfm10022
+;Campus Verlag;Sprenger, Die Entscheidung liegt bei dir!;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025, Leadershiphbfm10022
+;Campus Verlag;Lürssen/Opresnik, Die heimlichen Spielregeln der Karriere;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Weidner, Die Peperoni-Strategie;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Rückert, Schluss mit dem ewigen Aufschieben;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;W. Küstenmacher/M. Küstenmacher, simplify your life ;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Thiele, Sag es stärker!;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Shapiro, Verhandeln;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Softskillshbfm10025
+;Campus Verlag;Beise/Schäfer, Deutschland digital;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Volkens/Anderson, Digital human;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Weissman/Wegerer, Digitaler Wandel in Familienunternehmen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Purps-Pardigol/Kehren, Digitalisieren mit Hirn;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Welpe/Brosi/Schwarzmüller, Digital Work Design;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Brandes, Social Energy;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Campus Verlag;Wiegel/Frese, Das Konzept Eigeninitiative;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Softskillshbfm10025
+;Springer Gabler;Dachrodt/Koberski/Engelbert, Praxishandbuch Human Resources;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Springer Gabler;Dannhäuser, Praxishandbuch Social Media Recruiting;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Springer Gabler;Rump/Eilers, Lebensphasenorientierte Personalpolitik;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Springer Gabler;Künzel, Erfolgsfaktor Employer Branding;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Springer Gabler;Wegerich, Strategische Personalentwicklung in der Praxis;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Springer Gabler;Becker, Executive Health – Gesundheit als Führungsaufgabe;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023
+;Springer Gabler;Proksch, Konfliktmanagement im Unternehmen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Personalhbfm10023, Leadershiphbfm10022
+;Springer Gabler;Papmehl/Tümmers, Die Arbeitswelt im 21. Jahrhundert;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Personalhbfm10023
+;Springer Gabler;Parment, Die Generation Y;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Personalhbfm10023
+;Springer Gabler;Nerdinger/Wilke/Stracke/Drews, Innovation und Personalarbeit im demografischen Wandel;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Personalhbfm10023
+;Springer Gabler;Deutinger, Kommunikation im Change;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Personalhbfm10023
+;Springer Gabler;Erpenbeck/Sauter, So werden wir lernen!;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Personalhbfm10023
+;Springer Gabler;Krüger/Bach, Excellence in Change;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Springer Gabler;Lauer, Change Management;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;Springer Gabler;Noé, Change-Prozesse effizient durchführen;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020
+;HBFM;ZOE;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Leadershiphbfm10022
+;HBFM;Changement;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Change Managementhbfm10020, Leadershiphbfm10022
+;Erich Schmidt;Schläger/Thode, Handbuch Datenschutz und IT-Sicherheit;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;Erich Schmidt;Schaffland/Wiltfang, DS-GVO/BDSG;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;Erich Schmidt;PinG – Privacy in Germany;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;Erich Schmidt;ZfC – Zeitschrift für Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;;;;Datenschutzhbfm10017;;;
+;Erich Schmidt;Freidank/Velte, Corporate Governance, Abschlussprüfung und Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;;Corporate Governancehbfm10014;Aufsichtsrat/Beirathbfm10015, Compliance hbfm10016;;;;
+;Erich Schmidt;Werner, Die Familiengesellschaft;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Familienunternehmenhbfm10021
+;Erich Schmidt;Raabe, Die Mitbestimmung im Aufsichtsrat;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;Mitbestimmunghbfm10003;;;;;;;;;;
+;Erich Schmidt;Zülch/Beyhs/Hoffmann/Hirschböck, Enforcement-Guide;;;;;;;;;;;;;Betriebswirtschaft hbfm10005;Rechnungslegunghbfm10008;;;;;;;;
+;Erich Schmidt;Koeberle-Schmid/Fahrion/Witt, Family Business Governance;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;Familienunternehmenhbfm10002;;;;;;;;;;
+;Erich Schmidt;Peemöller/Kregel, Grundlagen der Internen Revision;;;;;;;;;;;;;;;;;Corporate Governancehbfm10014;Aufsichtsrat/Beirathbfm10015;;;;
+;Erich Schmidt;Günther/Ruter, Grundsätze nachhaltiger Unternehmensführung;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Aufsichtsrat/Beirathbfm10019, Unternehmensführunghbfm10026
+;Erich Schmidt;Hölscher/Altenhain, Handbuch Aufsichts- und Verwaltungsräte in Kreditinstituten;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;;;;;;
+;Erich Schmidt;Passarge/Behringer, Handbuch Compliance international;;;;;;;;;;;;;;;Compliancehbfm10011;Aufsichtsrat/Beirat hbfm10012, Unternehmensführunghbfm10013;;;;;;
+;Erich Schmidt;Wieland/Steinmeyer/Grüninger, Handbuch Compliance-Management;;;;;;;;;;;;;;;Compliancehbfm10011;Aufsichtsrat/Beirat hbfm10012, Unternehmensführunghbfm10013;;;;;;
+;Erich Schmidt;Bolin/Dreyer/Schäfer, Handbuch handelsrechtliche Rechnungslegung;;;;;;;;;;;;;Betriebswirtschaft hbfm10005;Rechnungslegunghbfm10008;;;;;;;;
+;Erich Schmidt;Freidank/Müller/Velte, Handbuch Integrated Reporting;;;;;;;;;;;;;Betriebswirtschaft hbfm10005;Rechnungslegunghbfm10008;;;;;;;;
+;Erich Schmidt;Bungartz, Handbuch Interne Kontrollsysteme (IKS);;;;;;;;;;;;;;;;;Corporate Governancehbfm10014;;;;;
+;Erich Schmidt;Müller/Stute/Withus, Handbuch Lagebericht;;;;;;;;;;;;;Betriebswirtschaft hbfm10005;M&Ahbfm10009, Rechnungslegunghbfm10008;;;;;;;;
+;Erich Schmidt;KSI – Krisen-, Sanierungs- und Insolvenzberatung;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Unternehmensführunghbfm10026
+;Erich Schmidt;Gleißner/Romeike, Praxishandbuch Risikomanagement;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;Risikomanagementhbfm10004;;;;;;;;;Managementhbfm10018;Risikomanagement hbfm10024
+;Erich Schmidt;Exler, Restrukturierungs- und Turnaround-Management;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Unternehmensführunghbfm10026
+;Erich Schmidt;Freidank/Velte, Unternehmenssteuerung im Umbruch;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Unternehmensführunghbfm10026, Aufsichtsrat/Beirathbfm10019
+;Erich Schmidt;Bruton, Unternehmensstrategie und Verantwortung;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Unternehmensführunghbfm10026, Aufsichtsrat/Beirathbfm10019
+;Erich Schmidt;Brandmüller/Klinger: Unternehmensverbundene Stiftungen;;;Steuerrecht & Finanzwesen10602;;;;Wirtschaftsrecht12140;;;;;;;;;;;;;;;
+;Erich Schmidt;van Kann, Vorstand der AG;;;;;;;;;;;;;;;;;Corporate Governancehbfm10014;;;;;
+;Erich Schmidt;Peemöller/Krehl/Hofmann, Bilanzskandale;;;;;;;;;;;;;Betriebswirtschaft hbfm10005;Rechnungslegunghbfm10008;;;;;;;;
+;Erich Schmidt;Bornemann/Reinhardt, Handbuch Wissensbilanz;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Unternehmensführunghbfm10026
+;Erich Schmidt;Heyd/Beyer, Corporate Governance in der Finanzwirtschaft;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;Erich Schmidt;ZCG – Zeitschrift für Corporate Governance;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;Erich Schmidt;ZIR – Zeitschrift Interne Revision;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;Erich Schmidt;ZRFC – Risk, Fraud & Compliance;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;Compliancehbfm10011;;;;;;;
+;Otto Schmidt;Moos, Datennutzungs- und Datenschutzverträge;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;Otto Schmidt;Hilber, Handbuch Cloud Computing;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;Otto Schmidt;Plath, BDSG/DSGVO;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;Bundesanzeiger Verlag;BOARD – Zeitschrift für Aufsichtsräte;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;Bundesanzeiger Verlag;comply – Fachmagazin für Compliance-Verantwortliche;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;Bundesanzeiger Verlag;Makowitz/Wolffgang, Praxishandbuch Compliance Management;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;Bundesanzeiger Verlag;Bosse, Checklisten-Handbuch GmbH-Geschäftsführer;;;;;;;;;;;;;;;;;Corporate Governancehbfm10014;;;;Managementhbfm10018;Unternehmensführunghbfm10026
+;Bundesanzeiger Verlag;BSI, Checklisten-Handbuch IT-Grundschutz – Sämtliche Prüffragen des BSI;;;;;;;;;;;;;;;Compliancehbfm10011;;;;Datenschutzhbfm10017;;;
+;Bundesanzeiger Verlag;Gierschmann, Kommentar Datenschutz-Grundverordnung;;;;;;;;;;;;;;;Compliancehbfm10011;;;;Datenschutzhbfm10017;;;
+;Bundesanzeiger Verlag;Kranig/Sachs/Gierschmann, Datenschutz-Compliance nach der DS-GVO;;;;;;;;;;;;;;;Compliancehbfm10011;;;;Datenschutzhbfm10017;;;
+;C.F. Müller;Inderst/Bannenberg/Poppe, Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Szesny/Kuthe, Kapitalmarkt Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Klösel/Klötzer-Assion/Mahngold, Contractor Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Knierim/Rübenstahl/Tsambikakis, Internal Investigations;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Schemmel/Ruhmannseder/Witzigmann, Hinweisgebersysteme;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Gercke/Kraft/Richter, Arbeitsstrafrecht;Arbeitsrecht10001;;;;Straf- & Ordnungswidrigkeitenrecht10869;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Ruhmannseder/Lehner/Beukelmann, Compliance aktuell;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;C.F. Müller;Rübenstahl/Idler, Tax Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;;;;;;;
+;dfv Mediengruppe;Datenschutz-Berater;;;;;;;;;;;;;;;;;;;Datenschutzhbfm10017;;;
+;HBFM;Achenbach/Gottschalck, Beirat und Aufsichtsrat;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;HBFM;Ghassemi-Tabar/Pauthner/Wilsing, Corporate Compliance;;;;;;;;;;;;;;;Compliancehbfm10011;Aufsichtsrat/Beirat hbfm10012, Unternehmensführunghbfm10013;;;;;;
+;HBFM;Pauthner/Ghassemi-Tabar, Compliance-Überwachung durch den Aufsichtsrat;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;Compliancehbfm10011;;Corporate Governancehbfm10014;;;;;
+;HBFM;Achenbach, Familienexternes Management im Mittelstand;;;;;;;;;;;;;;;;;;;;;Managementhbfm10018;Unternehmensführunghbfm10026, Unternehmensnachfolgehbfm10027, Familienunternehmenhbfm10021
+;HBFM;Thüsing/Giebeler/Hey, Handwörterbuch für Aufsichtsräte;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;HBFM;Der Aufsichtsrat;;;;;;;;;;;Aufsichtsrat/Beirathbfm10001;;;;;;Corporate Governancehbfm10014;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
