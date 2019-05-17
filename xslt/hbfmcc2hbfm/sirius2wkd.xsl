@@ -80,6 +80,12 @@
     </xsl:template>
 	
 	
+	<!-- Sonderfall für den Datenschutzberater: -->
+	<xsl:template match="all_source[@level='2'][text()='dsb']">
+		<all_source level='2'>dfv_dsb</all_source>
+	</xsl:template>
+	
+	
 	<xsl:template match="pub">
 		<pub>
 			<xsl:apply-templates select="pubtitle | pubabbr | pubyear | pubedition | date | pub_suppl | pages | pages_alt"/>
@@ -101,6 +107,18 @@
 		</pub>
 	</xsl:template>
 	
+	<xsl:template match="pubedition">
+		<pubedition>
+			<xsl:if test="string-length(text())=1"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="text()"/>
+		</pubedition>
+	</xsl:template>
+	
+	<xsl:template match="pub_suppl">
+		<pub_suppl>
+			<xsl:if test="string-length(text())=1"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="text()"/>
+		</pub_suppl>
+	</xsl:template>
+	
 	<xsl:template name="taxonomy">
 		<xsl:param name="werks_mapping" select="document('werks_mapping.xml')"/>
 		<xsl:param name="src-level-2" required="yes"></xsl:param>
@@ -116,12 +134,14 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<xsl:message>keys: <xsl:value-of select="$string-of-keys"/></xsl:message>
-		<taxonomy>
-			<xsl:for-each select="tokenize($string-of-keys, ' ')">
-				<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
-			</xsl:for-each>
-		</taxonomy>
+		<!--<xsl:message>keys: <xsl:value-of select="$string-of-keys"/></xsl:message>-->
+		<xsl:if test="not(normalize-space(string-join($string-of-keys, ' ')) = '')">
+			<taxonomy>
+				<xsl:for-each select="tokenize($string-of-keys, ' ')">
+					<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
+				</xsl:for-each>
+			</taxonomy>
+		</xsl:if>
 	</xsl:template>
 	
 	<xsl:template match="ressort">
@@ -740,6 +760,7 @@
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+												<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -776,6 +797,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -815,6 +837,7 @@
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="starts-with(descendant::pubedition, 'Spezial')">100</xsl:when>
+											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -852,6 +875,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -889,6 +913,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -926,6 +951,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -1001,6 +1027,7 @@
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+												<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -1036,6 +1063,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -1103,6 +1131,7 @@
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+												<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
