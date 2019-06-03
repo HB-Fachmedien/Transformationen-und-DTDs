@@ -14,6 +14,13 @@
         </rule>
     </pattern>
     
+    <!-- ab dem 1.Juni 2019 werden keine RS Nummern mehr im Dokument erlaubt sein: -->
+    <pattern>
+        <rule context="/*/body[number(replace(../metadata/pub/date, '-', '')) &gt;= 20190601]">
+            <report test="matches(string-join(descendant::*/text(), ' '), 'RS\d{7,7}')">RS Nummern werden nicht mehr vergeben: <value-of select="descendant::*[matches(string-join(text(), ' '), 'RS\d{7,7}')]"/></report>
+        </rule>
+    </pattern>
+    
     <!-- Nicht nötig, überprüft die DTD: -->
     <!--<pattern>  
         <rule context="/*">
