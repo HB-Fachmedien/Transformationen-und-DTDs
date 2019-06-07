@@ -1,6 +1,6 @@
 import time, os, zipfile, re
 import shutil
-import xml.etree.ElementTree as ET
+import lxml.etree as ET
 from collections import Counter
 import arrow
 
@@ -80,7 +80,7 @@ def process_xml_fix():
                         # then again insert year node:
                         global_toc.insert(0, expected_year_node)
 
-                        xml_file.write(os.path.join(WORKING_DIRECTORY, 'documents', f), encoding='utf-8')
+                        xml_file.write(os.path.join(WORKING_DIRECTORY, 'documents', f), encoding=xml_file.docinfo.encoding, xml_declaration=True)
 
 
                     else:
