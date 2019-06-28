@@ -68,7 +68,7 @@
                                         </xsl:variable>
                                         
                                         <div class="ihv_level2">
-                                            <div id="edi" class="ihv_headline ressort" style="margin-bottom: 5px;">Editorial</div>
+                                            <div class="ihv_headline ressort">Editorial</div>
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
                                                     <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$editorial-dbnummer}">
@@ -107,7 +107,7 @@
                                         </xsl:variable>
                                         
                                         <div class="ihv_level2">
-                                            <div id="gk" class="ihv_headline ressort" style="margin-bottom: 5px;">Gastkommentar</div>
+                                            <div class="ihv_headline ressort">Gastkommentar</div>
                                             <!-- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
@@ -141,7 +141,7 @@
                                         <!-- Ende Level2 - Gastkommentar -->
                                         
                                         <div class="ihv_level2">
-                                            <div id="bw" class="ihv_headline ressort" style="margin-bottom: 5px;">Betriebswirtschaft</div>
+                                            <div class="ihv_headline ressort">Betriebswirtschaft</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -180,7 +180,7 @@
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
-                                            <div id="sr" class="ihv_headline ressort" style="margin-bottom: 5px;">Steuerrecht</div>
+                                            <div class="ihv_headline ressort">Steuerrecht</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -213,7 +213,7 @@
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
-                                            <div id="wr" class="ihv_headline ressort" style="margin-bottom: 5px;">Wirtschaftsrecht</div>
+                                            <div class="ihv_headline ressort">Wirtschaftsrecht</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -246,7 +246,7 @@
                                         </div><xsl:comment>Ende Level 2</xsl:comment>
                                         
                                         <div class="ihv_level2">
-                                            <div id="ar" class="ihv_headline ressort" style="margin-bottom: 5px;">Arbeitsrecht</div>
+                                            <div class="ihv_headline ressort">Arbeitsrecht</div>
                                             <xsl:call-template name="listArticles">
                                                 <xsl:with-param name="self" select="./node()"/>
                                                 <xsl:with-param name="ueberschrift" select="'Aufsätze'"/>
@@ -283,7 +283,7 @@
                                         <xsl:if test="$anzahl-standpunkte&gt;0">
                                                                                   
                                             <div class="ihv_level2">
-           <!-- Rubrik existiert nicht im ihv-->  <div class="ihv_headline ressort" style="margin-bottom: 5px;">Standpunkt<xsl:if test="$anzahl-standpunkte&gt;1">e</xsl:if></div>
+           <!-- Rubrik existiert nicht im ihv-->  <div class="ihv_headline ressort">Standpunkt<xsl:if test="$anzahl-standpunkte&gt;1">e</xsl:if></div>
                                                 
                                                 <xsl:for-each select="output/DOKUMENT[DOCTYPGROUPBEZ='Standpunkt']">
                                                     
