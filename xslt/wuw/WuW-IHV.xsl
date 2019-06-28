@@ -36,7 +36,7 @@
                                                 
                                         <div class="ihv_level2"> 
                                         <xsl:if test="$aktuelles-Heft//gk">
-                                            <div class="ihv_headline ressort">Kommentar</div>
+                                            <div id="gk" class="ihv_headline ressort">Gastkommentar</div>
                                         </xsl:if>
                                             
                                             <div class="ihv_level3">
@@ -110,7 +110,7 @@
                                         
                                         <div class="ihv_level2">                                            
                                             <xsl:if test="$aktuelles-Heft//ressort[text()='Abhandlung']">
-                                                    <div class="ihv_headline ressort">Abhandlungen</div>
+                                                    <div id="abh" class="ihv_headline ressort">Abhandlungen</div>
                                             </xsl:if>
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
@@ -354,6 +354,18 @@
                                         </div>
                                         
                                         <div class="ihv_level2">
+                                           
+                                            <xsl:choose>
+                                                <xsl:when test="$aktuelles-Heft//ressort[text()='International Developments']">
+                                                    <div class="ihv_headline ressort">International Developments</div>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                            
+                                            
+                                            
+                                  <!--   
                                         <xsl:if test="$aktuelles-Heft//ressort[text()='International Developments']">
                                             <div class="ihv_headline ressort">International Developments</div>
                                         </xsl:if>
@@ -361,6 +373,8 @@
                                         <xsl:if test="$aktuelles-Heft//ressort[text()='Fusionskontrolle']">
                                             <div class="ihv_headline ressort">Fusionskontrolle</div>
                                         </xsl:if>
+                                         -->   
+
                                             
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
@@ -381,6 +395,54 @@
                                             <xsl:if test="$ressortbez='International Developments'">
                                                 <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
+                                                    <xsl:value-of select="/*/metadata/title"/>
+                                                </div>
+                                                    <div class="ihv_seite" >
+                                                        <xsl:choose>
+                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                <xsl:value-of select="$siriusID"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
+                                                    </div>
+                                                </a>
+                                            </xsl:if>
+                                            
+                                         
+                                        </xsl:for-each>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ihv_level2">
+                                            <xsl:if test="$aktuelles-Heft//ent or $aktuelles-Heft//nr">
+                                            <div id="entsch" class="ihv_headline ressort">Entscheidungen</div>
+                                        </xsl:if>
+                                            
+                                            <div class="ihv_level3">
+                                                <div class="ihv_level4">
+                                                    
+                                        <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
+                                        <xsl:for-each select="$aktuelles-Heft">
+                                            
+                                            <xsl:variable name="docum"
+                                                select="document(document-uri(.))"/>
+                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
+                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
+                                            <xsl:variable name="ressortbez"
+                                                select="$docum/*/metadata/ressort"/>
+                                            
+                                            
+                                            <!-- ENTSCHEIDUNGEN -->
+                                            
+                                            <xsl:if test="ent">
+                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <div class="ihv_headline titel">
+                                                    <i><xsl:value-of select="/*/metadata/instdoc/inst"/><xsl:text>: </xsl:text></i>
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
                                                     <div class="ihv_seite" >
@@ -425,54 +487,8 @@
                                         </div>
                                         
                                         <div class="ihv_level2">
-                                        <xsl:if test="$aktuelles-Heft//ent">
-                                            <div class="ihv_headline ressort">Entscheidungen</div>
-                                        </xsl:if>
-                                            
-                                            <div class="ihv_level3">
-                                                <div class="ihv_level4">
-                                                    
-                                        <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
-                                        <xsl:for-each select="$aktuelles-Heft">
-                                            
-                                            <xsl:variable name="docum"
-                                                select="document(document-uri(.))"/>
-                                            <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                            <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                            <xsl:variable name="ressortbez"
-                                                select="$docum/*/metadata/ressort"/>
-                                            
-                                            
-                                            <!-- ENTSCHEIDUNGEN -->
-                                            
-                                            <xsl:if test="ent">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
-                                                <div class="ihv_headline titel">
-                                                    <i><xsl:value-of select="/*/metadata/instdoc/inst"/><xsl:text>: </xsl:text></i>
-                                                    <xsl:value-of select="/*/metadata/title"/>
-                                                </div>
-                                                    <div class="ihv_seite" >
-                                                        <xsl:choose>
-                                                            <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
-                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>WUW</xsl:text>
-                                                                <xsl:value-of select="$siriusID"/>
-                                                            </xsl:when>
-                                                            <xsl:otherwise>
-                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
-                                                                <xsl:value-of select="$siriusID"/>
-                                                            </xsl:otherwise>
-                                                        </xsl:choose>
-                                                    </div>
-                                                </a>
-                                            </xsl:if>
-                                        </xsl:for-each>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="ihv_level2">
                                         <xsl:if test="$aktuelles-Heft//iv">
-                                            <div class="ihv_headline ressort">Interview</div>
+                                            <div id="interv" class="ihv_headline ressort">Interview</div>
                                         </xsl:if>
                                             
                                             <div class="ihv_level3">

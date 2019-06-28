@@ -67,13 +67,13 @@
                                                     <div class="ihv_headline ressort" style="margin-bottom: 5px;">Gastkommentar</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'iv'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Interview</div>
+                                                    <div id="interv" class="ihv_headline ressort" style="margin-bottom: 5px;">Interview</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'ent'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Rechtsprechung</div>
+                                                    <div id="resp" class="ihv_headline ressort" style="margin-bottom: 5px;">Rechtsprechung</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'rez'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
+                                                    <div id="rez" class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'divso'">
                                                     <div class="ihv_headline ressort" style="margin-bottom: 5px;">Neues aus der Datenbank</div>
@@ -84,10 +84,10 @@
                                                 <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number" order="ascending"/>
                                                 <xsl:choose>
                                                     <xsl:when test="current-grouping-key() = 'Das aktuelle Stichwort'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Das aktuelle Stichwort</div>
+                                                        <div id="aktstich" class="ihv_headline ressort" style="margin-bottom: 5px;">Das aktuelle Stichwort</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Beitrag'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Beiträge</div>
+                                                        <div id="beit" class="ihv_headline ressort" style="margin-bottom: 5px;">Beiträge</div>
                                                     </xsl:when>
                                                 </xsl:choose>
                                             </xsl:for-each-group>

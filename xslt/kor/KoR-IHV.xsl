@@ -56,7 +56,14 @@
                                         </div>
                                     </div>
                                     <div class="ihv_level2">
-                                        <div class="ihv_headline ressort">Aufsätze</div>
+                                        <div class="ihv_headline ressort">Editorial</div>
+                                        <xsl:for-each select="$aktuelles-Heft/*[name()='ed']" >
+                                            <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number"/>
+                                            <xsl:call-template name="ihv-eintrag">
+                                                <xsl:with-param name="dokumentknoten" select="."/>
+                                            </xsl:call-template>
+                                        </xsl:for-each>
+                                        <div id="au" class="ihv_headline ressort">Aufsätze</div>
                                         <xsl:for-each select="$aktuelles-Heft/*[name()='au' and metadata[not(ressort)]]" >
                                             <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number"/>
                                             <xsl:call-template name="ihv-eintrag">
@@ -89,7 +96,7 @@
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                         </xsl:for-each>
-                                        <div class="ihv_headline ressort">Reports</div>
+                                        <div id="rep" class="ihv_headline ressort">Reports</div>
                                         <xsl:for-each-group select="$aktuelles-Heft/*[name()='nr']" group-by="/nr/metadata/ressort">
                                             <xsl:sort select="/nr/metadata/ressort"></xsl:sort>
                                             <xsl:variable name="ressort" select="/*/metadata/ressort"/>
@@ -124,14 +131,14 @@
         <div class="ihv_level3">
             <div class="ihv_level4">
                 <!-- Rubriken: -->
-                <div class="ihv_rubriken">
+                <!--<div class="ihv_rubriken">
                     <xsl:for-each select="$dokumentknoten//metadata/keywords/keyword">
                         <xsl:if test="not(position()=1)">
                             <xsl:text> / </xsl:text>
                         </xsl:if>
                         <xsl:value-of select="."/>
                     </xsl:for-each>
-                </div>
+                </div>-->
                 <!-- verlinkter Artikel -->
                 <a href="https://kor-ifrs.owlit.de/document.aspx?docid={$dokid}" target="_blank">
                     <div class="ihv_headline titel">

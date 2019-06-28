@@ -77,40 +77,40 @@
                                                 
                                                 <xsl:choose>
                                                     <xsl:when test="current-grouping-key() = 'Reflexion'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Reflexion</div>
+                                                        <div id="reflx" class="ihv_headline ressort" style="margin-bottom: 5px;">Reflexion</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Gespräch'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Gespräch</div>
+                                                        <div id="gesp" class="ihv_headline ressort" style="margin-bottom: 5px;">Gespräch</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Erfahrung'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Erfahrung</div>
+                                                        <div id="erf" class="ihv_headline ressort" style="margin-bottom: 5px;">Erfahrung</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Einblick'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Einblick</div>
+                                                        <div id="einbck" class="ihv_headline ressort" style="margin-bottom: 5px;">Einblick</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Fallklinik'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Fallklinik</div>
+                                                        <div id="fallk" class="ihv_headline ressort" style="margin-bottom: 5px;">Fallklinik</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Werkzeugkiste'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Werkzeugkiste</div>
+                                                        <div id="wek" class="ihv_headline ressort" style="margin-bottom: 5px;">Werkzeugkiste</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Klassiker'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Klassiker</div>
+                                                        <div id="kls" class="ihv_headline ressort" style="margin-bottom: 5px;">Klassiker</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Recht'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Recht</div>
+                                                        <div id="recht" class="ihv_headline ressort" style="margin-bottom: 5px;">Recht</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Basiswissen'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Basiswissen</div>
+                                                        <div id="bawis" class="ihv_headline ressort" style="margin-bottom: 5px;">Basiswissen</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Perspektiven'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Perspektiven</div>
+                                                        <div id="persp" class="ihv_headline ressort" style="margin-bottom: 5px;">Perspektiven</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Bücher'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
+                                                        <div id="book" class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Ortmanns Ordnung'">
-                                                        <div class="ihv_headline ressort" style="margin-bottom: 5px;">Ortmanns Ordnung</div>
+                                                        <div id="ortord" class="ihv_headline ressort" style="margin-bottom: 5px;">Ortmanns Ordnung</div>
                                                     </xsl:when>
                                                     <xsl:otherwise>
                                                         <div class="ihv_headline ressort" style="margin-bottom: 5px;">[ 

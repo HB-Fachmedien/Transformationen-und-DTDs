@@ -76,7 +76,7 @@
             </head>
             <body>
                 <div class="content-wrapper">
-                    <h1 class="pagehead small">Inhaltsverzeichnis</h1>
+                    <h2 class="pagehead small">Inhaltsverzeichnis</h2>
                     <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von
                         Changement-Magazin? 
                         

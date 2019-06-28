@@ -32,16 +32,16 @@
                                             <xsl:sort select="*/name()"/>
                                             <xsl:choose>
                                                 <xsl:when test="current-grouping-key() = 'au'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Aufsätze</div>
+                                                    <div id="au" class="ihv_headline ressort" style="margin-bottom: 5px;">Aufsätze</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'ent'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
+                                                    <div id="ent" class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'entk'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
+                                                    <div id="entk" class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'va'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Verwaltungsanweisungen</div>
+                                                    <div id="va" class="ihv_headline ressort" style="margin-bottom: 5px;">Verwaltungsanweisungen</div>
                                                 </xsl:when>
                                                 <xsl:otherwise></xsl:otherwise>
                                             </xsl:choose>
@@ -102,7 +102,7 @@
                                                             <!-- Bei Aufsätzen wird der Summary Inhalt dargestellt -->
                                                             <xsl:if test="/*/name() = 'au'">
                                                                 <div class="ihv_abstract">
-                                                                    <p><xsl:value-of select="*/metadata/summary/*"/></p>
+                                                                    <xsl:value-of select="*/metadata/summary/*"/>
                                                                 </div>
                                                             </xsl:if>
                                                             <div class="ihv_seite" style="font-style: italic; padding-bottom: 5px; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">

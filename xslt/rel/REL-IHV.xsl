@@ -131,13 +131,18 @@
                                             <xsl:sort select="start_page" data-type="number" order="ascending"/>
                                             <!--</xsl:perform-sort>-->
                                             
-                                    
-                                            <div class="ihv_headline ressort" style="margin-bottom: 5px; font-weight: bold;" >
+                                     <xsl:variable name="ressort" select='/*/metadata/ressort/text()'> </xsl:variable>
+                                            
+                                     <xsl:variable name="inhalt" select='replace($ressort,"\s","")'> </xsl:variable>
+  
+                                     <xsl:variable name="text" select='replace($inhalt,"&amp;","")'> </xsl:variable>
+  
+                                     <div id="{$text}" class="ihv_headline ressort" style="margin-bottom: 5px; font-weight: bold;" >
                                                         
                                                         <!--<xsl:value-of select="/*/metadata/ressort/text()"/>--> 
                                                 <xsl:value-of select="concat(substring(translate(/*/metadata/ressort/text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,1),substring(/*/metadata/ressort/text(),2))"/> 
                                                 
-                                                    </div>
+                                     </div>
                                             
                                          <div class="ihv_level3">
                                                 <div class="ihv_level4">
