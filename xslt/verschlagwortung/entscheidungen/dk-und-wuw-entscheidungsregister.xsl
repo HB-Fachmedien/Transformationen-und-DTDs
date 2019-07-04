@@ -6,7 +6,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempDK/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempWuW/?recurse=yes;select=*.xml')"/>
     
     <!--<xsl:variable name="gerichts-sortierung" select="'&lt; Freshman &lt; Sophomore &lt; Junior   &lt; Senior'" />-->
     <!-- Definition hier: http://docs.oracle.com/javase/6/docs/api/java/text/RuleBasedCollator.html
@@ -130,7 +130,7 @@
     </xsl:variable>
     
     <xsl:variable name="array">
-        <xsl:value-of select="document('')/*/xsl:variable[@name='inline-array-dk']/*"/>
+        <xsl:value-of select="document('')/*/xsl:variable[@name='inline-array-wuw']/*"/>
     </xsl:variable>
     
     <!--<xsl:variable name="array">
@@ -162,12 +162,12 @@
                 <xsl:for-each-group select="current-group()" group-by="/*/metadata/instdoc/inst/text()">
                     <xsl:sort select="$inline-array-dk/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
                     
-                    <xsl:variable name="debug-v1" select="./attribute::*"/>
+                    <!--<xsl:variable name="debug-v1" select="./attribute::*"/>
                     <xsl:variable name="debug-v2" select="current-grouping-key()"/>
                     <xsl:variable name="debug-v3" select="$inline-array-dk/child::*[1]/text()"/>
                     <xsl:variable name="debug-v4" select="$inline-array-dk[child::*[ text() = current-grouping-key()]]/@sort"/>
                     <xsl:variable name="debug-v5" select="current-group()"/>
-                    <xsl:variable name="debug-v6" select="current()"/>
+                    <xsl:variable name="debug-v6" select="current()"/>-->
                     
                     <h2><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>
                         

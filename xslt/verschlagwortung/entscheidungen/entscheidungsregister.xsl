@@ -210,7 +210,17 @@
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. Thüringen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BayLfSt'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LfSt Niedersachsen'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
@@ -366,6 +376,11 @@
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LG München I'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'SchlHOLG'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
@@ -383,6 +398,12 @@
                 <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
                 <xsl:with-param name="schreibweise" select="'Bundesarbeitsgericht'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BGH'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+                <xsl:with-param name="schreibweise" select="'Bundesgerichtshof'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BVerwG'"/>
