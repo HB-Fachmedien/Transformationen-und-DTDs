@@ -49,7 +49,7 @@
         <xsl:if test="$alle-Hefte[1]/descendant::metadata/pub/pubtitle = ('Der Konzern', 'Wirtschaft und Wettbewerb')">!!! FÜR WUW ODER DK ENTSCHEIDUNGSREGISTER DAS ANDERE SKRIPT NEHMEN!!!</xsl:if>
         
         <xsl:text>&#xa;</xsl:text><entscheidungsregister><xsl:text>&#xa;</xsl:text>
-            
+            <WICHTIG>!!Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden!!</WICHTIG>
             <WICHTIG>REIHENFOLGE VON ENTSCHEIDUNGEN GLEICHEN DATUMS BEACHTEN! Siehe Mail von Eva 6.3.2018</WICHTIG>
             <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2>
             
@@ -220,16 +220,6 @@
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
-                <xsl:with-param name="gerichtsBezeichnung" select="'LfSt Niedersachsen'"/>
-                <xsl:with-param name="ressort" select="'sr'"/>
-                <xsl:with-param name="doctype" select="'va'"/>
-            </xsl:call-template>
-            <xsl:call-template name="entscheidungsdaten">
-                <xsl:with-param name="gerichtsBezeichnung" select="'LSF Sachsen'"/>
-                <xsl:with-param name="ressort" select="'sr'"/>
-                <xsl:with-param name="doctype" select="'va'"/>
-            </xsl:call-template>
-            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OFD Frankfurt/M.'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
@@ -239,6 +229,16 @@
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LfSt Niedersachsen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LSF Sachsen'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>       
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OFD Niedersachsen'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
