@@ -138,7 +138,7 @@
 		<xsl:if test="not(normalize-space(string-join($string-of-keys, ' ')) = '')">
 			<taxonomy>
 				<xsl:for-each select="tokenize($string-of-keys, ' ')">
-					<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
+					<key><xsl:text>http://taxonomy.wolterskluwer.de/law/</xsl:text><xsl:value-of select="current()"/></key>
 				</xsl:for-each>
 			</taxonomy>
 		</xsl:if>
@@ -202,7 +202,9 @@
 	<xsl:template match="authors">
 		<authors>
 			<xsl:apply-templates/>
-			<xsl:call-template name="build_authors_plain"/>
+			<xsl:if test="not(authors_plain)">
+				<xsl:call-template name="build_authors_plain"/>
+			</xsl:if>
 		</authors>
 	</xsl:template>
 	
@@ -266,13 +268,15 @@
 		<xsl:variable name="endPageForLoop"   select="($endPage - 2) cast as xs:integer"/>
 		
 		<xsl:if test="($endPageArab - $startPageArab) &gt; 1">
-			<intermed_pages>
-				<xsl:for-each select="$startPageArab to $endPageForLoop">
-					<xsl:variable name="currentPage" select="$startPageArab + position()"/>
-					<xsl:value-of select="$romanNumbersMap/descendant::romanMap[@arab = $currentPage]/@roman"/>
-					<xsl:text> </xsl:text>
-				</xsl:for-each>
-			</intermed_pages>
+			<xsl:if test="not(/*/metadata/pub/pages/intermed_pages)">
+				<intermed_pages>
+					<xsl:for-each select="$startPageArab to $endPageForLoop">
+						<xsl:variable name="currentPage" select="$startPageArab + position()"/>
+						<xsl:value-of select="$romanNumbersMap/descendant::romanMap[@arab = $currentPage]/@roman"/>
+						<xsl:text> </xsl:text>
+					</xsl:for-each>
+				</intermed_pages>
+			</xsl:if>
 		</xsl:if>
 	</xsl:template>
 	
@@ -304,13 +308,15 @@
 			<xsl:variable name="endPageForLoop"   select="($endPage - 2) cast as xs:integer"/>
 			
 			<xsl:if test="($endPage - $startPage) &gt; 1">
-				<intermed_pages>
-					<xsl:for-each select="$startPage to $endPageForLoop">
-						<xsl:value-of select="$pagePrefix"/>
-						<xsl:value-of select="$startPage + position()"/>
-						<xsl:text> </xsl:text>
-					</xsl:for-each>
-				</intermed_pages>
+				<xsl:if test="not(/*/metadata/pub/pages/intermed_pages)">
+					<intermed_pages>
+						<xsl:for-each select="$startPage to $endPageForLoop">
+							<xsl:value-of select="$pagePrefix"/>
+							<xsl:value-of select="$startPage + position()"/>
+							<xsl:text> </xsl:text>
+						</xsl:for-each>
+					</intermed_pages>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
 	</xsl:template>
@@ -640,7 +646,7 @@
 									<xsl:when test="number(substring(pub/date/text(), 1, 4)) &gt; 2016">
 										<xsl:variable name="get-pubedition">
 											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+												<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 											</xsl:choose>
 										</xsl:variable>
@@ -731,7 +737,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -760,7 +766,7 @@
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-												<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+												<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -781,7 +787,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -790,14 +796,16 @@
 										<xsl:choose>
 											<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
+											<xsl:when test="../name()='iv'">Interviews#300</xsl:when>
 											<xsl:when test="../name()='nr'">Reports#500</xsl:when>
 											<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+											<xsl:otherwise>Sonstiges#800</xsl:otherwise>
 										</xsl:choose>
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -816,7 +824,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:when test="starts-with(descendant::pubedition, 'Spezial')"><xsl:value-of select="descendant::pubedition"/></xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
@@ -837,7 +845,7 @@
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="starts-with(descendant::pubedition, 'Spezial')">100</xsl:when>
-											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -856,7 +864,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -875,7 +883,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -894,7 +902,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -913,7 +921,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -932,7 +940,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -951,7 +959,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -973,7 +981,7 @@
 									<xsl:choose>
 										<xsl:when test="$pub-abbr = 'CFL'">Heft CFL <xsl:value-of select="descendant::pubedition"/></xsl:when>
 										<xsl:when test="$pub-abbr = 'CFB'">Heft CFB <xsl:value-of select="descendant::pubedition"/></xsl:when>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -1027,7 +1035,7 @@
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-												<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+												<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -1063,7 +1071,7 @@
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-											<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="
 													(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -1094,7 +1102,7 @@
 								
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -1113,7 +1121,7 @@
 										</xsl:choose>
 									</xsl:variable>
 	
-									<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">
+									<!--<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">-->
 										<xsl:variable name="docTypeAndSeqN">
 											<xsl:choose>
 												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
@@ -1131,7 +1139,7 @@
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-												<xsl:when test="descendant::pages/start_page/text()='I'">10</xsl:when>
+												<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -1140,10 +1148,10 @@
 												</xsl:otherwise>
 											</xsl:choose>
 										</xsl:variable>
-										<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">
+										<!--<node title="{tokenize($docTypeAndSeqN, '#')[1]}" sequenceNr="{tokenize($docTypeAndSeqN, '#')[2]}" childOrder="BySequenceNr">-->
 											<leaf sequenceNr="{$leafseqnr}"/>
-										</node>
-									</node> 
+										<!--</node>-->
+									<!--</node>--> 
 								</node>
 							</xsl:when>
 							<!-- Rethinking Law: -->
@@ -1186,7 +1194,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">Online exklusiv</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
@@ -1209,8 +1217,35 @@
 			</xsl:if>
 	</xsl:template>
 	
+	<xsl:template name="calculate-leaf-number-for-roman-numbers">
+		<!-- string(number(normalize-space(descendant::pages/start_page))) = 'NaN' -->
+		<!-- get map -->
+		<xsl:variable name="romanNumbersMap">
+			<xsl:call-template name="getRomanNumbersMap"/>
+		</xsl:variable>
+		<!-- get pure roman numbers -->
+		<xsl:variable name="startPageRoman" select="replace(/*/metadata//pub/pages/start_page/text(), '[^ivxlc]+', '', 'i')"/>
+		<xsl:variable name="startPageRomanUC" select="upper-case($startPageRoman)"/>
+		<!-- look up arab numbers -->
+		
+		<xsl:choose>
+			<xsl:when test="$startPageRomanUC = ('I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIV', 'XXV', 'XXVI', 'XXVII', 'XXVIII', 'XXIX', 'XXX', 'XXXI', 'XXXII', 'XXXIII', 'XXXIV', 'XXXV', 'XXXVI', 'XXXVII', 'XXXVIII', 'XXXIX', 'XL', 'XLI', 'XLII', 'XLIII', 'XLIV', 'XLV', 'XLVI', 'XLVII', 'XLVIII', 'XLIX', 'L', 'LI', 'LII', 'LIII', 'LIV', 'LV', 'LVI', 'LVII', 'LVIII', 'LIX', 'LX', 'LXI', 'LXII', 'LXIII', 'LXIV', 'LXV', 'LXVI', 'LXVII', 'LXVIII', 'LXIX', 'LXX', 'LXXI', 'LXXII', 'LXXIII', 'LXXIV', 'LXXV', 'LXXVI', 'LXXVII', 'LXXVIII', 'LXXIX', 'LXXX', 'LXXXI', 'LXXXII', 'LXXXIII', 'LXXXIV', 'LXXXV', 'LXXXVI', 'LXXXVII', 'LXXXVIII', 'LXXXIX', 'XC', 'XCI', 'XCII', 'XCIII', 'XCIV', 'XCV', 'XCVI', 'XCVII', 'XCVIII', 'XCIX', 'C')">
+				<xsl:variable name="startPageArab" select="$romanNumbersMap/descendant::romanMap[@roman = $startPageRomanUC]/@arab"/>		
+				<!-- convert to "pure" numbers -->
+				<xsl:variable name="returnArabPageNumber" select="number($startPageArab) cast as xs:integer"/>
+				
+				<xsl:value-of select="$returnArabPageNumber"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="1 cast as xs:integer"/>
+			</xsl:otherwise>
+		</xsl:choose>
+		
+		
+	</xsl:template>
 	
-
+	
+	
 	<xsl:template match="body">
 		<body>
 			<xsl:apply-templates select="section[@class='rkvermerk']" mode="show"/>

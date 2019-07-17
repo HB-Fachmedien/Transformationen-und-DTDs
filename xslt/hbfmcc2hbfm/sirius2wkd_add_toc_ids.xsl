@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
+	<xsl:param name="sirius_object_name"></xsl:param>
 	<xsl:output indent="yes" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd" encoding="UTF-8"/>
 
 	<xsl:template match="/">
 
 		<!-- Generate seperate Document for Der Betrieb Arbeitsrecht -->
-		<xsl:if test="/*/metadata/all_source[@level='2']/text()='db' and /*/metadata/ressort/text()='Arbeitsrecht'">
+		<xsl:if test="/*/metadata/all_source[@level='2']/text()='db' and /*/metadata/ressort/text()='Arbeitsrecht' and not(starts-with(/*/@docid, 'DBL'))">
 			<xsl:call-template name="der-betrieb-arbeitsrecht"/>
 		</xsl:if>
 
@@ -28,19 +29,33 @@
 		<xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
 		<taxonomy>
 			<xsl:for-each select="$string-of-keys">
-				<key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
+				<key><xsl:text>http://taxonomy.wolterskluwer.de/law/</xsl:text><xsl:value-of select="current()"/></key>
 			</xsl:for-each>
 		</taxonomy>
 	</xsl:template>
 	
 
 	<xsl:template name="der-betrieb-arbeitsrecht">
-		<xsl:variable name="filename" select="concat(replace(substring-before(tokenize(base-uri(),'/')[last()], '.xml'), 'DB', 'DBAR'), '.xml')"/>
-
+		<xsl:variable name="filename">
+			<xsl:choose>
+				<xsl:when test="$sirius_object_name != ''">
+					<xsl:value-of select="concat(replace(substring-before($sirius_object_name, '.xml'), 'DB', 'DBAR'), '.xml')"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="concat(replace(substring-before(tokenize(base-uri(),'/')[last()], '.xml'), 'DB', 'DBAR'), '.xml')"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:message>Dateiname: </xsl:message>
+		<xsl:message><xsl:value-of select="$filename"/></xsl:message>
+		<xsl:message>sirius_object_name: </xsl:message>
+		<xsl:message><xsl:value-of select="$sirius_object_name"/></xsl:message>
+		
 		<xsl:result-document href="{$filename}" method="xml" encoding="UTF-8">
 			
 			<xsl:element name="{/*/name()}">
-				<xsl:apply-templates select="/*/attribute::*"/>
+				<xsl:apply-templates select="/*/attribute::*[not(name()='docid')]"/>
+				<xsl:attribute name="docid"><xsl:value-of select="replace(/*/@docid, 'DB', 'DBAR')"/></xsl:attribute>
 				<metadata>
 					<xsl:apply-templates select="/*/metadata/title | /*/metadata/subtitle | /*/metadata/coll_title | /*/metadata/authors | /*/metadata/summary | /*/metadata/summary_plain | /*/metadata/leitsaetze | /*/metadata/keywords "/>
 					

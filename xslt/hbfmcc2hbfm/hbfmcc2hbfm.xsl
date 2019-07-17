@@ -43,14 +43,19 @@
             <xsl:if test="metadata/extid">
                 <xsl:attribute name="extid"><xsl:value-of select="metadata/extid/text()"/></xsl:attribute>
             </xsl:if>
-            <!--<xsl:apply-templates select="*"/>-->
+            
             <metadata>
-                <!--<title><xsl:apply-templates select="metadata/title/*"/></title>-->
-                <xsl:copy-of select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:copy-of>
+                <xsl:apply-templates select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:apply-templates>
                 <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/><xsl:call-template name="build_authors_plain"/></authors></xsl:if>
                 <xsl:copy-of select="metadata/summary"></xsl:copy-of>
                 <xsl:call-template name="summary_plain"/>
-                <xsl:copy-of select="metadata/leitsaetze | metadata/keywords"></xsl:copy-of>
+                <xsl:copy-of select="metadata/leitsaetze"></xsl:copy-of>
+                <xsl:if test="metadata/count(keywords) = 1">
+                    <xsl:copy-of select="metadata/keywords"></xsl:copy-of>
+                </xsl:if>
+                <xsl:if test="metadata/count(keywords) > 1"> <!-- there is a bug in the hbfmcc.dtd which allows metadata/keywords*, but hbfm.dtd allows only metadata/keywords+ This if unites several keywords elements --> 
+                    <keywords><xsl:apply-templates select="metadata/keywords/keyword"/></keywords>
+                </xsl:if>
                 <xsl:call-template name="taxonomy">
                     <xsl:with-param name="src-level-2" select="metadata/all_source[@level='2']/text()"/>
                 </xsl:call-template>
@@ -96,11 +101,14 @@
         <xsl:param name="src-level-2" required="yes"></xsl:param>
         
         <xsl:variable name="string-of-keys" select="tokenize($werks_mapping/werke/werk[lower-case(@dpsi)=lower-case($src-level-2)]/text(), ' ')"/>
-        <taxonomy>
-            <xsl:for-each select="$string-of-keys">
-                <key><xsl:text></xsl:text><xsl:value-of select="current()"/></key>
-            </xsl:for-each>
-        </taxonomy>
+        <!--<xsl:message>keys: <xsl:value-of select="$string-of-keys"/>.</xsl:message>-->
+        <xsl:if test="not(normalize-space(string-join($string-of-keys, ' ')) = '')">
+            <taxonomy>
+                <xsl:for-each select="$string-of-keys">
+                    <key><xsl:text>http://taxonomy.wolterskluwer.de/law/</xsl:text><xsl:value-of select="current()"/></key>
+                </xsl:for-each>
+            </taxonomy>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="build_authors_plain">
@@ -151,6 +159,12 @@
         </global_toc>
     </xsl:template>
     
+    
+    <!-- TOC Workaround: WKD braucht den root node und die nächsten beiden nodes nicht: -->
+    <xsl:template match="toc/node[@title='root']">
+        <xsl:apply-templates select="node/node/node"/>
+    </xsl:template>
+    
     <xsl:template match="metadata/ressort">
         <ressort>
             <xsl:variable name="is_DB_or_DK" select="ancestor::metadata/pub/pubabbr/text() = ('DB', 'DK')"/>
@@ -193,29 +207,35 @@
             <pubtitle><xsl:value-of select="pubtitle"/></pubtitle>
             <pubabbr><xsl:value-of select="pubabbr"/></pubabbr>
             <pubyear><xsl:value-of select="pubyear"/></pubyear>
-            <pubedition><xsl:value-of select="pubedition"/></pubedition>
+            <pubedition><xsl:if test="string-length(pubedition/text())=1"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="pubedition"/></pubedition>
             <date><xsl:value-of select="ancestor::metadata/date/text()"/></date>
-            <xsl:copy-of select="pub_suppl"></xsl:copy-of>
+            <xsl:if test="pub_suppl">
+                <pub_suppl>
+                    <xsl:if test="string-length(pub_suppl/text())=1"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="pub_suppl"/>
+                </pub_suppl>
+            </xsl:if>
             <xsl:apply-templates select="pages | pages_alt"/>
             <xsl:copy-of select="marginnr"></xsl:copy-of>
             <xsl:apply-templates select="public"/>
             <xsl:copy-of select="add_target | version"></xsl:copy-of>
             
-            <xsl:if test="true()"> <!-- To-Do: Wer kriegt kein Publisher Element? -->
-                <xsl:variable name="all_source_l2_prefix">
-                    <xsl:choose>
-                        <xsl:when test="substring-before(ancestor::metadata/all_source[@level='2']/text(), '_') = ''">
-                            <xsl:value-of select="ancestor::metadata/all_source[@level='2']/text()"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="substring-before(ancestor::metadata/all_source[@level='2']/text(), '_')"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
+            <xsl:variable name="all_source_l2_prefix">
+                <xsl:choose>
+                    <xsl:when test="substring-before(ancestor::metadata/all_source[@level='2']/text(), '_') = ''">
+                        <xsl:value-of select="ancestor::metadata/all_source[@level='2']/text()"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="substring-before(ancestor::metadata/all_source[@level='2']/text(), '_')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            
+            <xsl:if test="not($all_source_l2_prefix = 'rbv')"> <!-- To-Do: Wer kriegt kein Publisher Element? -->
+                
                 <publisher>
                     <xsl:choose>
                         <!-- Fremdverlage: -->
-                        <xsl:when test="$all_source_l2_prefix = 'cv'">Campus Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'cv'"><xsl:value-of select="codepoints-to-string(169)"/> Campus Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'dg'">De Gruyter</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'esv'">Erich Schmidt Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'ovs'">Verlag Dr. Otto Schmidt</xsl:when>
@@ -247,7 +267,7 @@
     </xsl:template>
     
     <xsl:template match="intermed_page">
-        <intermed_pages><xsl:value-of select="text()"/></intermed_pages>
+        <intermed_pages><xsl:value-of select="replace(text(),'^0+|\s0+', ' ')"/></intermed_pages>
     </xsl:template>
     
     <xsl:template match="start_page | last_page">
@@ -260,7 +280,7 @@
     <xsl:template match="inst">
         <inst>
             <xsl:attribute name="type"><xsl:value-of select="following-sibling::insttype/@value"/></xsl:attribute>
-            <xsl:attribute name="code"><xsl:value-of select="following-sibling::instcode/@court"/></xsl:attribute>
+            <xsl:attribute name="code"><xsl:value-of select="following-sibling::instcode/@*[1]"/></xsl:attribute>
             <xsl:value-of select="text()"/>
         </inst>
     </xsl:template>
@@ -275,6 +295,13 @@
         </xsl:for-each>
     </xsl:template>
     
+    
+    <xsl:template match="newpage">
+        <newpage>
+            <xsl:attribute name="pagenumber"><xsl:value-of select="replace(@pagenumber,'^0+', '')"/></xsl:attribute>
+            <xsl:if test="@pagenumber_alt"><xsl:attribute name="pagenumber_alt"><xsl:value-of select="replace(@pagenumber_alt,'^0+', '')"/></xsl:attribute></xsl:if>
+        </newpage>
+    </xsl:template>
     
     <!-- Wir haben uns auf eine Umbenennung der Link Element Attribute geeinigt: -->
     <xsl:template match="link">
@@ -301,7 +328,7 @@
                 <xsl:attribute name="meta_target"><xsl:value-of select="@all_source"/></xsl:attribute>
             </xsl:if>
             <xsl:if test="@all_rubrik">
-                <xsl:attribute name="meta_rubrik"><xsl:value-of select="@all_rubrik"/></xsl:attribute>
+                <!--<xsl:attribute name="meta_rubrik"><xsl:value-of select="@all_rubrik"/></xsl:attribute>-->
             </xsl:if>
             <xsl:if test="@all_rz">
                 <xsl:attribute name="meta_marginnr"><xsl:value-of select="@all_rz"/></xsl:attribute>
