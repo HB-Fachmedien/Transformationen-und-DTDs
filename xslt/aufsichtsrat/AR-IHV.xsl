@@ -130,7 +130,7 @@
             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-            <a target="_blank" href="https://aufsichtsrat.owlit.de/document.aspx?docid=XQ{$siriusID}">
+            <a target="_blank" href="https://research.owlit.de/lx-document/XQ{$siriusID}">
                 <xsl:choose>
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
                     <xsl:otherwise><div class="ihv_headline titel"><xsl:value-of select="/*/metadata/title"/></div></xsl:otherwise>
@@ -165,7 +165,7 @@
             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-            <a target="_blank" href="https://aufsichtsrat.owlit.de/document.aspx?docid=AR{$siriusID}">
+            <a target="_blank" href="https://research.owlit.de/lx-document/AR{$siriusID}">
                 <xsl:choose>
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
                     <xsl:otherwise>

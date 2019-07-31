@@ -70,7 +70,7 @@
                                         </xsl:choose>
                                         <div class="ihv_level3">
                                             <div class="ihv_level4">
-                                                <a href="https://cf-fachportal.owlit.de/document.aspx?docid={$editorial-oder-gastkommentar/@docid}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/{$editorial-oder-gastkommentar/@docid}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                         <xsl:value-of select="$editorial-oder-gastkommentar/metadata/title"/>
                                                 </div>
@@ -119,7 +119,7 @@
                                                         </div>
                                                         
                                                         <!-- verlinkter Artikel -->
-                                                        <a href="https://cf-fachportal.owlit.de/document.aspx?docid={$dokid}" target="_blank">                                                        
+                                                        <a href="https://research.owlit.de/lx-document/{$dokid}" target="_blank">                                                        
                                                         <div class="ihv_headline titel"><xsl:value-of select="*/metadata/title"/></div>
                                                         
                                                         <!-- Autoren-->

@@ -71,7 +71,7 @@
                                             <div id="edi" class="ihv_headline ressort" style="margin-bottom: 5px;">Editorial</div>
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
-                                                    <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$editorial-dbnummer}">
+                                                    <a target="_blank" href="https://research.owlit.de/lx-document/DB{$editorial-dbnummer}">
                                                     <div class="ihv_headline titel">
                                                             <xsl:value-of disable-output-escaping="yes" select="$editorial-dokument/TITEL"/>
                                                     </div>
@@ -111,7 +111,7 @@
                                             <!-- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
-                                                    <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$gk-dbnummer}">
+                                                    <a target="_blank" href="https://research.owlit.de/lx-document/DB{$gk-dbnummer}">
                                                     <div class="ihv_headline titel">
                                                         <xsl:value-of disable-output-escaping="yes" select="$gk-dokument/TITEL"/>
                                                     </div>
@@ -298,7 +298,7 @@
                                                     <!-- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
-                                                            <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid=DB{$sp-dbnummer}">
+                                                            <a target="_blank" href="https://research.owlit.de/lx-document/DB{$sp-dbnummer}">
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of disable-output-escaping="yes" select="$sp-dokument/TITEL"/>
                                                             </div>
@@ -373,7 +373,7 @@
                             <xsl:value-of select="HAUPTRUBRIK/UNTERRUBRIK"/>
                         </div>
                         
-                        <a target="_blank" href="https://{$databaseDomain}/document.aspx?docid={$temp-sid}">
+                        <a target="_blank" href="https://research.owlit.de/lx-document/{$temp-sid}">
                         <div class="ihv_headline titel">
                             <xsl:value-of disable-output-escaping="yes" select="TITEL"/>
                         </div>

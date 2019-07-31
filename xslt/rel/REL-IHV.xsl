@@ -99,10 +99,10 @@
                             <xsl:variable name="siriusID" select="document(document-uri(.))/*/@rawid"/>
                             <div class="ihv_abstract">
                                 <xsl:variable name="temp" select="string-join(//body//text()[normalize-space()], ' ')"/>
-                                <p><xsl:value-of select="substring($temp, 1, 400)"/>...<a target="_blank" style="text-decoration: none; color: #4db36c;" href="https://rethinking-law.owlit.de/document.aspx?docid=REL{$siriusID}"><xsl:text>[Weiterlesen]</xsl:text> </a></p>
+                                <p><xsl:value-of select="substring($temp, 1, 400)"/>...<a target="_blank" style="text-decoration: none; color: #4db36c;" href="https://research.owlit.de/lx-document/REL{$siriusID}"><xsl:text>[Weiterlesen]</xsl:text> </a></p>
 							</div>
                             <xsl:if test="matches('/*/body/p/text()','Seite\s\d{1,3}')">
-                                <a target="_blank" href="https://rethinking-law.owlit.de/document.aspx?docid=REL{$siriusID}">Seite X </a> <!-- hier noch seite ersetzen -->
+                                <a target="_blank" href="https://research.owlit.de/lx-document/REL{$siriusID}">Seite X </a> <!-- hier noch seite ersetzen -->
                             </xsl:if>
                         </xsl:for-each>
                         
@@ -152,7 +152,7 @@
                                                         <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
                                                         <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                         <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                                        <a target="_blank" style="text-decoration: none;" href="https://rethinking-law.owlit.de/document.aspx?docid=REL{$siriusID}">
+                                                        <a target="_blank" style="text-decoration: none;" href="https://research.owlit.de/lx-document/REL{$siriusID}">
                                                             <div>
                                                                 <xsl:attribute name="class">
                                                                     <xsl:text>ihv_headline titel </xsl:text>

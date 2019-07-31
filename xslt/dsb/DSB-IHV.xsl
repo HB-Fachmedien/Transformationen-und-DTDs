@@ -100,7 +100,7 @@
                                                         <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                         <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
                                                         
-                                                        <a href="https://datenschutz-berater.owlit.de/document.aspx?docid=DSB{$siriusID}" target="_blank">
+                                                        <a href="https://research.owlit.de/lx-document/DSB{$siriusID}" target="_blank">
                                                             <div class="ihv_headline titel">
                                                                 <xsl:value-of select="/*/metadata/title"/>
                                                             </div>

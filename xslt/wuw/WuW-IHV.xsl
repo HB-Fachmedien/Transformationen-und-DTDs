@@ -56,7 +56,7 @@
                                             <!-- KOMMENTAR -->
                                             
                                             <xsl:if test="gk">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -130,7 +130,7 @@
                                             
                                      <!--       <xsl:if test="$ressortbez='Abhandlung'">   -->
                                             <xsl:if test="($ressortbez='Abhandlung')">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -209,7 +209,7 @@
                                                         <!-- Ökonomisches Lexikon -->
                                                         
                                                         <xsl:if test="($ressortbez='Ökonomisches Lexikon')">
-                                                            <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                            <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                                 <div class="ihv_headline titel">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </div>
@@ -285,7 +285,7 @@
                                                         <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
                                                         
                                                         <xsl:if test="rez">
-                                                            <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                            <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                                 <div class="ihv_headline titel">
                                                                     <xsl:value-of select="/*/metadata/title"/>
                                                                 </div>
@@ -330,7 +330,7 @@
                                             <!-- TAGUNGSBERICHT -->
                                             
                                             <xsl:if test="$ressortbez='Tagungsbericht'">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -393,7 +393,7 @@
                                             <!-- INTERNATIONAL DEVELOPMENTS -->
                                             
                                             <xsl:if test="$ressortbez='International Developments'">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>
@@ -440,7 +440,7 @@
                                             <!-- ENTSCHEIDUNGEN -->
                                             
                                             <xsl:if test="ent">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <i><xsl:value-of select="/*/metadata/instdoc/inst"/><xsl:text>: </xsl:text></i>
                                                     <xsl:value-of select="/*/metadata/title"/>
@@ -463,7 +463,7 @@
                                             <!-- FUSIONSKONTROLLE -->
                                             
                                             <xsl:if test="$ressortbez='Fusionskontrolle'">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                     <div class="ihv_headline titel">
                                                         <xsl:value-of select="/*/metadata/title"/>
                                                     </div>
@@ -507,7 +507,7 @@
                                             <!-- INTERVIEW -->
                                             
                                             <xsl:if test="iv">
-                                                <a href="https://wuw-online.owlit.de/document.aspx?docid=WUW{$siriusID}" target="_blank">
+                                                <a href="https://research.owlit.de/lx-document/WUW{$siriusID}" target="_blank">
                                                 <div class="ihv_headline titel">
                                                     <xsl:value-of select="/*/metadata/title"/>
                                                 </div>

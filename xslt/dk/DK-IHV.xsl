@@ -67,7 +67,7 @@
                                                     <xsl:variable name="dokid" select="/*/@docid"/>
                                                     <div class="ihv_level3">
                                                         <div class="ihv_level4">
-                                                            <a href="https://der-konzern.owlit.de/document.aspx?docid={$dokid}" target="_blank">
+                                                            <a href="https://research.owlit.de/lx-document/{$dokid}" target="_blank">
                                                             <!-- Rubriken: -->
                                                             <div class="ihv_rubriken">
                                                                 <xsl:for-each select="*/metadata/rubriken/rubrik">

@@ -101,7 +101,7 @@
                             <xsl:value-of select="/*/body/p"/>
                             </p></div>
                             <xsl:if test="matches('/*/body/p/text()','Seite\s\d{1,3}')">
-                                <a target="_blank" href="https://changement-magazin.owlit.de/document.aspx?docid=CM{$siriusID}">Seite X </a> <!-- hier noch seite ersetzen -->
+                                <a target="_blank" href="https://research.owlit.de/lx-document/CM{$siriusID}">Seite X </a> <!-- hier noch seite ersetzen -->
                             </xsl:if>
                         </xsl:for-each>
                         
@@ -146,7 +146,7 @@
                                                         <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
                                                         <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
                                                         <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                                        <a target="_blank" style="text-decoration: none;" href="https://changement-magazin.owlit.de/document.aspx?docid=CM{$siriusID}">
+                                                        <a target="_blank" style="text-decoration: none;" href="https://research.owlit.de/lx-document/CM{$siriusID}">
                                                             <div>
                                                                 <xsl:attribute name="class">
                                                                     <xsl:text>ihv_headline titel </xsl:text>

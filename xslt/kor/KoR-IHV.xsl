@@ -140,7 +140,7 @@
                     </xsl:for-each>
                 </div>-->
                 <!-- verlinkter Artikel -->
-                <a href="https://kor-ifrs.owlit.de/document.aspx?docid={$dokid}" target="_blank">
+                <a href="https://research.owlit.de/lx-document/{$dokid}" target="_blank">
                     <div class="ihv_headline titel">
                         <xsl:value-of select="$dokumentknoten/metadata/title"/>
                         <!-- Autoren- bzw. Behördenauszeichnung -->
