@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE toc
+  PUBLIC "-//Handelsblatt Fachmedien//DTD V1.0//DE" "hbfm.dtd">
+<toc sid="1310152" docid="CF1310152" rawid="1310152">
+   <metadata>
+      <title>Inhalt Heft 03-04/2019</title>
+      <summary_plain>Inhaltsverzeichnis</summary_plain>
+      <taxonomy>
+         <key>http://taxonomy.wolterskluwer.de/law/12140</key>
+         <key>http://taxonomy.wolterskluwer.de/law/hbfm10007</key>
+         <key>http://taxonomy.wolterskluwer.de/law/hbfm10009</key>
+         <key>http://taxonomy.wolterskluwer.de/law/hbfm10010</key>
+      </taxonomy>
+      <pub>
+         <pubtitle>Corporate Finance</pubtitle>
+         <pubabbr>CF</pubabbr>
+         <pubyear>2019</pubyear>
+         <pubedition>03-04</pubedition>
+         <date>2019-03-25</date>
+         <pages>
+            <start_page>M2</start_page>
+            <!-- Hier immer die Heftseite aus dem Print nehmen -->
+            <last_page>M2</last_page>
+            <article_order>1</article_order>
+         </pages>
+         <publisher>Handelsblatt Fachmedien</publisher>
+      </pub>
+      <global_toc>
+         <node title="2019" childOrder="ByTitleReverseAlphanumeric">
+            <node title="Heft 03-04" childOrder="BySequenceNr">
+               <node sequenceNr="2100"
+                     childOrder="BySequenceNr"
+                     expanded="true"
+                     title="Weitere Inhalte">
+                  <node title="Inhaltsverzeichnis"
+                        sequenceNr="10"
+                        childOrder="BySequenceNr">
+                     <leaf sequenceNr="200"/>
+                  </node>
+               </node>
+            </node>
+         </node>
+      </global_toc>
+      <all_doc_type level="1">zs</all_doc_type>
+      <all_source level="1">zsa</all_source>
+      <all_source level="2">cf</all_source>
+   </metadata>
+   <body>
+      <section>
+         <table border="0" width="100%">
+            <tr>
+               <td align="left" colspan="80%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <starke-betonung>
+                        <verknuepfung-mit-artikel ausgabe="18" herkunft="dienstleister" jahrgang="2019" seite="865" zeitschrift="ZInsO">Neuere Anwendungsprobleme der gesellschaftsrechtlichen Inhabilitätsvorschriften</verknuepfung-mit-artikel>
+                     </starke-betonung>
+                  </absatz>
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>Dr. iur. Christian Brand</nicht-verlinken>
+                  </absatz>
+               </td>
+               <td align="right" colspan="20%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>S. 865</nicht-verlinken>
+                  </absatz>
+               </td>
+            </tr>
+            <tr>
+               <td align="left" colspan="80%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <starke-betonung>
+                        <verknuepfung-mit-artikel ausgabe="18" herkunft="dienstleister" jahrgang="2019" seite="872" zeitschrift="ZInsO">Reform der Vorsatzanfechtung im Jahre 2017 &#x2212; § 3 AnfG</verknuepfung-mit-artikel>
+                     </starke-betonung>
+                  </absatz>
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>Professor Dr. Ulrich Foerste</nicht-verlinken>
+                  </absatz>
+               </td>
+               <td align="right" colspan="20%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>S. 872</nicht-verlinken>
+                  </absatz>
+               </td>
+            </tr>
+            <tr>
+               <td align="left" colspan="80%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <starke-betonung>
+                        <verknuepfung-mit-artikel ausgabe="18" herkunft="dienstleister" jahrgang="2019" seite="875" zeitschrift="ZInsO">Finanzwirtschaftliche Sanierung durch Sale and Lease Back: Vor- und Nachteile gegenüber dem besicherten Darlehen</verknuepfung-mit-artikel>
+                     </starke-betonung>
+                  </absatz>
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>Dr. Christoph Keller</nicht-verlinken>
+                  </absatz>
+               </td>
+               <td align="right" colspan="20%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>S. 875</nicht-verlinken>
+                  </absatz>
+               </td>
+            </tr>
+            <tr>
+               <td align="left" colspan="80%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <starke-betonung>
+                        <verknuepfung-mit-artikel ausgabe="18" herkunft="dienstleister" jahrgang="2019" seite="882" zeitschrift="ZInsO">Diskussionsentwurf des BMJV zur Reform des P-Kontos &ndash; Die Rückkehr zur Lohntüte?</verknuepfung-mit-artikel>
+                     </starke-betonung>
+                  </absatz>
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>Professor Dr. Hugo Grote</nicht-verlinken>
+                  </absatz>
+               </td>
+               <td align="right" colspan="20%" rowspan="1" valign="top">
+                  <absatz ausrichtung="links">
+                     <nicht-verlinken>S. 882</nicht-verlinken>
+                  </absatz>
+               </td>
+            </tr>
+         </table>
+      </section>
+   </body>
+</toc>
