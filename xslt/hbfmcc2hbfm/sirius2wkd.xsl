@@ -192,7 +192,7 @@
 						<xsl:value-of select="replace(substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="replace(substring(string-join(/*/body//p//text()[normalize-space()], concat(' ', codepoints-to-string(10))), 1, 500), '(\s\w*)$', ' ')"/>
+						<xsl:value-of select="normalize-space(replace(substring(string-join(/*/body//p//text()[normalize-space()], concat(' ', codepoints-to-string(10))), 1, 500), '(\s\w*)$', ' '))"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</summary_plain>
@@ -647,7 +647,7 @@
 										<xsl:variable name="get-pubedition">
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+												<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 											</xsl:choose>
 										</xsl:variable>
 										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
@@ -692,7 +692,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								
 								<node title="Schrift {descendant::pubedition}"
-									childOrder="BySequenceNr">
+									childOrder="BySequenceNr"><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									<!-- calculate sequenceNr from first page and article's position on page -->
 									<leaf
 										sequenceNr="{
@@ -738,7 +738,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}" childOrder="BySequenceNr">
@@ -788,7 +788,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
@@ -826,7 +826,7 @@
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
 										<xsl:when test="starts-with(descendant::pubedition, 'Spezial')"><xsl:value-of select="descendant::pubedition"/></xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}" childOrder="BySequenceNr">
@@ -865,7 +865,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
@@ -903,7 +903,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
@@ -941,7 +941,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
@@ -982,7 +982,7 @@
 										<xsl:when test="$pub-abbr = 'CFL'">Heft CFL <xsl:value-of select="descendant::pubedition"/></xsl:when>
 										<xsl:when test="$pub-abbr = 'CFB'">Heft CFB <xsl:value-of select="descendant::pubedition"/></xsl:when>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$cf-title}" childOrder="BySequenceNr">
@@ -1011,43 +1011,52 @@
 											<xsl:otherwise>2100</xsl:otherwise>
 										</xsl:choose>
 									</xsl:variable>
-									<node sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
-										<xsl:attribute name="title">
-											<!-- title="{$ressortname}" -->
-											<xsl:choose>
-												<xsl:when test="string($ressortname)=''">Weitere Inhalte</xsl:when>
-												<xsl:otherwise><xsl:value-of select="$ressortname"/></xsl:otherwise>
-											</xsl:choose>
-										</xsl:attribute>
-										<xsl:variable name="docType-SeqN">
-											<xsl:choose>
-												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
-												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
-												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
-												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
-												<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
-												<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
-												<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
-												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
-												<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-											</xsl:choose>
-										</xsl:variable>
-										<xsl:variable name="leafseqnr">
-											<xsl:choose>
-												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
-												<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
-												<xsl:otherwise>
-													<xsl:value-of select="
-														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
-														+
-														((number(descendant::article_order/text()) - 1) * 10)"/>
-												</xsl:otherwise>
-											</xsl:choose>
-										</xsl:variable>
-										<node title="{tokenize($docType-SeqN, '#')[1]}" sequenceNr="{tokenize($docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
-											<leaf sequenceNr="{$leafseqnr}"/>
-										</node>
-									</node>
+									<xsl:choose>
+										<xsl:when test="../name()='toc'"><!-- IHVs sollen zwei Ebenen höher einsortiert werden: -->
+											<leaf sequenceNr="1"/>
+										</xsl:when>
+										
+										<xsl:otherwise>
+											<node sequenceNr="{$cf-ressort-seq-nr}" childOrder="BySequenceNr" expanded="true">
+												<xsl:attribute name="title">
+													<!-- title="{$ressortname}" -->
+													<xsl:choose>
+														<xsl:when test="string($ressortname)=''">Weitere Inhalte</xsl:when>
+														<xsl:otherwise><xsl:value-of select="$ressortname"/></xsl:otherwise>
+													</xsl:choose>
+												</xsl:attribute>
+												<xsl:variable name="docType-SeqN">
+													<xsl:choose>
+														<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
+														<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+														<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
+														<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
+														<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
+														<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+														<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
+														<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+														<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
+													</xsl:choose>
+												</xsl:variable>
+												<xsl:variable name="leafseqnr">
+													<xsl:choose>
+														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
+														<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
+														<xsl:otherwise>
+															<xsl:value-of select="
+																(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+																+
+																((number(descendant::article_order/text()) - 1) * 10)"/>
+														</xsl:otherwise>
+													</xsl:choose>
+												</xsl:variable>
+												<node title="{tokenize($docType-SeqN, '#')[1]}" sequenceNr="{tokenize($docType-SeqN, '#')[2]}" childOrder="BySequenceNr">
+													<leaf sequenceNr="{$leafseqnr}"/>
+												</node>
+											</node>
+										</xsl:otherwise>
+									</xsl:choose>
 								</node>
 							</xsl:when>
 							
@@ -1103,7 +1112,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								
@@ -1195,7 +1204,7 @@
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
-										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise>
+										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
 								<node title="{$get-pubedition}"
