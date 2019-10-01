@@ -3,12 +3,12 @@
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="no" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd"/>
     <!--<xsl:strip-space elements="p summary"/>-->
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempCF/?recurse=yes;select=*.xml')"/>
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
     <xsl:template match="/">
         <toc>
             <metadata>
-                <title>Zeitschriften Inhalt Heft <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubedition"/>/<xsl:value-of select="$erstes-dokument/*/metadata/pub/pubyear"/></title>
+                <title>Inhaltsverzeichnis - <xsl:value-of select="upper-case($erstes-dokument/*/metadata/pub/pubtitle)"/><xsl:text> </xsl:text><xsl:value-of select="$erstes-dokument/*/metadata/pub/pubedition"/>/<xsl:value-of select="$erstes-dokument/*/metadata/pub/pubyear"/></title>
                 <pub>
                     <pubtitle>
                         <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubtitle"/>
@@ -41,22 +41,23 @@
             </metadata>
             <body>
                 <xsl:for-each select="$aktuelles-Heft/*[not(metadata/ressort)]">
-                    <xsl:choose>
-                        <xsl:when test="name() = 'ed'">
-                            Editorial
-                        </xsl:when>
-                        <xsl:when test="name() = 'gk'">
-                            Gastkommentar
-                        </xsl:when>
-                        <xsl:otherwise><!-- sollte eher unten stehen? -->
-                            Weitere Inhalte
-                        </xsl:otherwise>
-                    </xsl:choose>
-                    <hier-noch-ausfüllen>
-                        <title>
-                            <xsl:value-of select="current()/metadata/title"/>
-                        </title>
-                    </hier-noch-ausfüllen>
+                    <section>
+                        <xsl:choose>
+                            <xsl:when test="name() = 'ed'">
+                                <title>Editorial</title>
+                            </xsl:when>
+                            <xsl:when test="name() = 'gk'">
+                                <title>Gastkommentar</title>
+                            </xsl:when>
+                        </xsl:choose>
+                        <table frame="void" rules="none">
+                            <tbody>
+                                <xsl:call-template name="print-entry">
+                                    <xsl:with-param name="knoten" select="."/>
+                                </xsl:call-template>
+                            </tbody>
+                        </table>
+                    </section>
                 </xsl:for-each>
                 <xsl:for-each-group select="$aktuelles-Heft" group-by="*/metadata/ressort">
                     <xsl:variable name="ressort-ueberschrift">
@@ -74,47 +75,76 @@
                         <title>
                             <xsl:value-of select="$ressort-ueberschrift"/>
                         </title>
+                        <xsl:for-each select="current-group()">
+                            <table frame="void" rules="none">
+                                <tbody>
+                                    <xsl:for-each select="/*">
+                                        <xsl:call-template name="print-entry">
+                                            <xsl:with-param name="knoten" select="."/>
+                                        </xsl:call-template>
+                                    </xsl:for-each>
+                                </tbody>
+                            </table>
+                        </xsl:for-each>
                     </section>
-                    <xsl:for-each select="current-group()">
-                        <table>
+                </xsl:for-each-group>
+                <xsl:for-each select="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk'))]">
+                    <section>
+                        <title>Weiter Inhalte</title>
+                        <table frame="void" rules="none">
                             <tbody>
-                                <xsl:for-each select="/*">
-                                    <xsl:variable name="dokid" select="@docid"/>
-                                    <xsl:variable name="pubabbr" select="lower-case(metadata/pub/pubabbr/text())"/>
-                                    <xsl:variable name="pubyear" select="metadata/pub/pubyear/text()"/>
-                                    <xsl:variable name="pubpage" select="metadata/pub/pages/start_page/text()"/>
-                                    <tr>
-                                        <td>
-                                            <p class="ihv_title"><link meta_target="{$pubabbr}" meta_pubyear="{$pubyear}" meta_page="{$pubpage}" meta_context="{$pubabbr}"><xsl:value-of select="metadata/title"/></link></p>
-                                            <xsl:if test="metadata/authors">
-                                                <p class="ihv_author">
-                                                    <xsl:for-each select="metadata/authors/author">
-                                                        <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
-                                                        <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
-                                                    </xsl:for-each>
-                                                </p>
-                                            </xsl:if>
-                                            <xsl:if test="metadata/summary"><p class="ihv_summary"><xsl:value-of select="normalize-space(metadata/summary)"/></p></xsl:if> 
-                                        </td>
-                                        <td>
-                                            <p class="ihv_page">
-                                                <xsl:choose>
-                                                    <xsl:when test="metadata/pub/pages[start_page = last_page]">
-                                                        <xsl:value-of select="metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        <xsl:value-of select="metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="metadata/pub/pages/last_page"/>, <xsl:value-of select="$dokid"/>
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </xsl:for-each>
+                                <xsl:call-template name="print-entry">
+                                    <xsl:with-param name="knoten" select="."/>
+                                </xsl:call-template>
                             </tbody>
                         </table>
-                    </xsl:for-each>
-                </xsl:for-each-group>
+                    </section>
+                </xsl:for-each>
             </body>
         </toc>
+    </xsl:template>
+
+    <xsl:template name="print-entry">
+        <xsl:param name="knoten"/>
+        <xsl:variable name="dokid" select="@docid"/>
+        <xsl:variable name="pubabbr" select="lower-case($knoten/metadata/pub/pubabbr/text())"/>
+        <xsl:variable name="pubyear" select="$knoten/metadata/pub/pubyear/text()"/>
+        <xsl:variable name="pubpage" select="$knoten/metadata/pub/pages/start_page/text()"/>
+        <tr>
+            <td align="left" colspan="80%" rowspan="1" valign="top">
+                <p class="ihv_title">
+                    <link meta_target="{$pubabbr}" meta_pubyear="{$pubyear}" meta_page="{$pubpage}" meta_context="{$pubabbr}">
+                        <xsl:value-of select="$knoten/metadata/title"/>
+                    </link>
+                </p>
+                <xsl:if test="$knoten/metadata/authors">
+                    <p class="ihv_author">
+                        <xsl:for-each select="$knoten/metadata/authors/author">
+                            <xsl:if test="not(position()=1)">
+                                <xsl:text> / </xsl:text>
+                            </xsl:if>
+                            <xsl:value-of select="normalize-space(concat(prefix, ' ' , firstname, ' ', surname))"/>
+                        </xsl:for-each>
+                    </p>
+                </xsl:if>
+                <xsl:if test="$knoten/metadata/summary">
+                    <p class="ihv_summary">
+                        <xsl:value-of select="normalize-space($knoten/metadata/summary)"/>
+                    </p>
+                </xsl:if>
+            </td>
+            <td align="right" colspan="20%" rowspan="1" valign="top">
+                <p class="ihv_page">
+                    <xsl:choose>
+                        <xsl:when test="$knoten/metadata/pub/pages[start_page = last_page]">
+                            <xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>, <xsl:value-of select="$dokid"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$knoten/metadata/pub/pages/start_page"/> - <xsl:value-of select="$knoten/metadata/pub/pages/last_page"/>, <xsl:value-of select="$dokid"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </p>
+            </td>
+        </tr>
     </xsl:template>
 </xsl:stylesheet>

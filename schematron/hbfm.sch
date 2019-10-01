@@ -187,4 +187,12 @@
             <assert test=". =  tokenize(../text(),'\.')[last()]">Die Dateiendung des Filenamens "<value-of select="tokenize(../text(),'\.')[last()]"/>" muss mit dem @class Attribut "<value-of select="."/>" übereinstimmen!</assert>
         </rule>
     </pattern>
+    
+    <!-- Temporäre Regel, bis Dirk und Lisa feste Ressort Werte für alle Zeitschriften festgelegt haben: Alle Aufsätze sollen ein
+    ressort Element gesetzt haben. Zur Not soll es leer sein: -->
+    <pattern>
+        <rule context="/au[metadata/all_source[@level='1']='zsa']">
+            <assert test="/au/metadata/ressort">Das Ressort Element muss bei Aufsätzen gesetzt sein. Zur Not ohne Inhalt.</assert>
+        </rule>
+    </pattern>
 </schema>
