@@ -5,6 +5,23 @@
     <!--<xsl:strip-space elements="p summary"/>-->
     <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempCF/?recurse=yes;select=*.xml')"/>
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
+    
+    <xsl:template name="create_shortened_summary">
+        <xsl:param name="knoten"/>
+        <xsl:variable name="WORTGRENZE" select="49" as="xs:integer"/>
+        
+        <xsl:variable name="text">
+            <xsl:variable name="summary-word-list" select="tokenize($knoten/metadata/summary, ' ')"/>
+            <xsl:for-each select="1 to $WORTGRENZE">
+                <xsl:value-of select="$summary-word-list[current()]"/><xsl:text> </xsl:text>
+            </xsl:for-each>
+            <!--<xsl:value-of select="tokenize($knoten/metadata/summary, '[.!?]')"/>-->
+        </xsl:variable>        
+        <p class="ihv_summary">
+            <xsl:value-of select="concat(normalize-space($text), codepoints-to-string(8230))"/>
+        </p>
+    </xsl:template>
+    
     <xsl:template match="/">
         <toc>
             <metadata>
@@ -128,9 +145,9 @@
                     </p>
                 </xsl:if>
                 <xsl:if test="$knoten/metadata/summary">
-                    <p class="ihv_summary">
-                        <xsl:value-of select="normalize-space($knoten/metadata/summary)"/>
-                    </p>
+                    <xsl:call-template name="create_shortened_summary">
+                        <xsl:with-param name="knoten" select="$knoten"/>
+                    </xsl:call-template>
                 </xsl:if>
             </td>
             <td align="right" colspan="20%" rowspan="1" valign="top">
@@ -147,4 +164,5 @@
             </td>
         </tr>
     </xsl:template>
+    
 </xsl:stylesheet>
