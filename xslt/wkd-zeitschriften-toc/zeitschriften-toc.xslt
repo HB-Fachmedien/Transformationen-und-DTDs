@@ -7,18 +7,37 @@
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
     
     <xsl:template name="create_shortened_summary">
+        <!-- Kürzt die Beschreibung auf ungefähr mind 40 Wörter bis zum nächsten Satzende. 
+         Die Wortgrenze liegt bei 49, wegen den Whitespaces zwischen den XML Elementen. Zumindest bei CF ist das so.
+        -->
         <xsl:param name="knoten"/>
         <xsl:variable name="WORTGRENZE" select="49" as="xs:integer"/>
         
-        <xsl:variable name="text">
-            <xsl:variable name="summary-word-list" select="tokenize($knoten/metadata/summary, ' ')"/>
-            <xsl:for-each select="1 to $WORTGRENZE">
-                <xsl:value-of select="$summary-word-list[current()]"/><xsl:text> </xsl:text>
-            </xsl:for-each>
-            <!--<xsl:value-of select="tokenize($knoten/metadata/summary, '[.!?]')"/>-->
-        </xsl:variable>        
+        <xsl:variable name="beschreibung">
+            <xsl:variable name="summary-word-list" select="tokenize($knoten/metadata/summary/p[not(@lang='en')], ' ')"/>
+            <xsl:choose>
+                <xsl:when test="count($summary-word-list) &lt;= $WORTGRENZE">
+                    <xsl:value-of select="normalize-space($knoten/metadata/summary/p[not(@lang='en')])"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:variable name="text_vor_wortgrenze">
+                        <xsl:for-each select="1 to $WORTGRENZE">
+                            <xsl:value-of select="$summary-word-list[current()]"/><xsl:text> </xsl:text>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <xsl:variable name="text_nach_wortgrenze">
+                        <!--<xsl:value-of select="tokenize($knoten/metadata/summary, '[.!?]')"/>-->
+                        <xsl:for-each select="$WORTGRENZE+1 to count($summary-word-list)">
+                            <xsl:value-of select="$summary-word-list[current()]"/><xsl:text> </xsl:text>
+                        </xsl:for-each>        
+                    </xsl:variable>
+                    <xsl:value-of select="concat(normalize-space($text_vor_wortgrenze), ' ', normalize-space(substring-before($text_nach_wortgrenze, '.')), codepoints-to-string(8230))"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
         <p class="ihv_summary">
-            <xsl:value-of select="concat(normalize-space($text), codepoints-to-string(8230))"/>
+            <xsl:value-of select="$beschreibung"/>
         </p>
     </xsl:template>
     
