@@ -3,7 +3,7 @@
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="no" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd"/>
     <!--<xsl:strip-space elements="p summary"/>-->
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempCF/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
     
     <xsl:template name="create_shortened_summary">
@@ -68,6 +68,7 @@
                         <last_page>M2</last_page>
                         <article_order>1</article_order>
                     </pages>
+                    <public value='true'/>
                 </pub>
                 <all_doc_type level="1">zs</all_doc_type>
                 <all_source level="1">zsa</all_source>
@@ -154,14 +155,14 @@
                     </link>
                 </p>
                 <xsl:if test="$knoten/metadata/authors">
-                    <p class="ihv_author">
+                    <p class="ihv_author"><i>
                         <xsl:for-each select="$knoten/metadata/authors/author">
                             <xsl:if test="not(position()=1)">
                                 <xsl:text> / </xsl:text>
                             </xsl:if>
                             <xsl:value-of select="normalize-space(concat(prefix, ' ' , firstname, ' ', surname))"/>
                         </xsl:for-each>
-                    </p>
+                    </i></p>
                 </xsl:if>
                 <xsl:if test="$knoten/metadata/summary">
                     <xsl:call-template name="create_shortened_summary">
@@ -173,10 +174,10 @@
                 <p class="ihv_page">
                     <xsl:choose>
                         <xsl:when test="$knoten/metadata/pub/pages[start_page = last_page]">
-                            <xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>, <xsl:value-of select="$dokid"/>
+                            <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="$knoten/metadata/pub/pages/start_page"/> - <xsl:value-of select="$knoten/metadata/pub/pages/last_page"/>, <xsl:value-of select="$dokid"/>
+                            <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/> - <xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </p>
