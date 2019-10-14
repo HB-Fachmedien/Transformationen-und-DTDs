@@ -70,7 +70,7 @@
         	
             <xsl:call-template name="create_global_toc"/>
         	
-        	<xsl:if test="/*/body//section">
+        	<xsl:if test="/*[not(name()= 'toc')]/body//section">
         		<inner_toc/>
         	</xsl:if>
         	
@@ -1133,6 +1133,7 @@
 									<!--<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">-->
 										<xsl:variable name="docTypeAndSeqN">
 											<xsl:choose>
+												<xsl:when test="../name()='toc'">Inhaltsverzeichnis#1</xsl:when>
 												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 												<xsl:when test="../name()='gk'">Gastkommentar#70</xsl:when>
 												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
@@ -1149,6 +1150,7 @@
 											<xsl:choose>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 												<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
+												<xsl:when test="../name()='toc'">1</xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="
 														(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)

@@ -31,7 +31,7 @@
                             <xsl:value-of select="$summary-word-list[current()]"/><xsl:text> </xsl:text>
                         </xsl:for-each>        
                     </xsl:variable>
-                    <xsl:value-of select="concat(normalize-space($text_vor_wortgrenze), ' ', normalize-space(substring-before($text_nach_wortgrenze, '.')), codepoints-to-string(8230))"/>
+                    <xsl:value-of select="concat(normalize-space($text_vor_wortgrenze), ' ', normalize-space(substring-before($text_nach_wortgrenze, '.')), '. [', codepoints-to-string(8230), ']')"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -177,7 +177,7 @@
                             <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/> - <xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
+                            <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>-<xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </p>
