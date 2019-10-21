@@ -148,11 +148,11 @@
         <xsl:variable name="pubyear" select="$knoten/metadata/pub/pubyear/text()"/>
         <xsl:variable name="pubpage" select="$knoten/metadata/pub/pages/start_page/text()"/>
         <tr>
-            <td align="left" colspan="80%" rowspan="1" valign="top">
+            <td align="left" colspan="78%" rowspan="1" valign="top">
                 <p class="ihv_title">
-                    <link meta_target="{$pubabbr}" meta_pubyear="{$pubyear}" meta_page="{$pubpage}" meta_context="{$pubabbr}">
+                    <url src="https://research.owlit.de/lx-document/{$dokid}">
                         <xsl:value-of select="$knoten/metadata/title"/>
-                    </link>
+                    </url>
                 </p>
                 <xsl:if test="$knoten/metadata/authors">
                     <p class="ihv_author"><i>
@@ -170,14 +170,14 @@
                     </xsl:call-template>
                 </xsl:if>
             </td>
-            <td align="right" colspan="20%" rowspan="1" valign="top">
+            <td align="right" colspan="22%" rowspan="1" valign="top">
                 <p class="ihv_page">
                     <xsl:choose>
                         <xsl:when test="$knoten/metadata/pub/pages[start_page = last_page]">
-                            <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><br/><xsl:value-of select="$dokid"/>
+                            <xsl:text>S.</xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>S. </xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>-<xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
+                            <xsl:text>S.</xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>-<xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </p>
