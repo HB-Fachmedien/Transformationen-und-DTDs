@@ -31,7 +31,7 @@
                             <xsl:value-of select="$summary-word-list[current()]"/><xsl:text> </xsl:text>
                         </xsl:for-each>        
                     </xsl:variable>
-                    <xsl:value-of select="concat(normalize-space($text_vor_wortgrenze), ' ', normalize-space(substring-before($text_nach_wortgrenze, '.')), '. [', codepoints-to-string(8230), ']')"/>
+                    <xsl:value-of select="concat(normalize-space($text_vor_wortgrenze), ' ', normalize-space(substring-before($text_nach_wortgrenze, '.')), '.', codepoints-to-string(160),'[', codepoints-to-string(8230), ']')"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -150,8 +150,8 @@
         <tr>
             <td align="left" colspan="78%" rowspan="1" valign="top">
                 <p class="ihv_title">
-                    <url src="https://research.owlit.de/lx-document/{$dokid}">
-                        <xsl:value-of select="$knoten/metadata/title"/>
+                    <url src="/lx-document/{$dokid}">
+                        <b><xsl:value-of select="$knoten/metadata/title"/></b>
                     </url>
                 </p>
                 <xsl:if test="$knoten/metadata/authors">
@@ -164,20 +164,30 @@
                         </xsl:for-each>
                     </i></p>
                 </xsl:if>
-                <xsl:if test="$knoten/metadata/summary">
-                    <xsl:call-template name="create_shortened_summary">
-                        <xsl:with-param name="knoten" select="$knoten"/>
-                    </xsl:call-template>
-                </xsl:if>
+                
+                <!-- Entweder Summary oder Urteilsdaten: -->
+                <xsl:choose>
+                    <xsl:when test="$knoten/metadata/summary">
+                        <xsl:call-template name="create_shortened_summary">
+                            <xsl:with-param name="knoten" select="$knoten"/>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:when test="$knoten/metadata/instdoc">
+                        <xsl:variable name="instdoc" select="$knoten/metadata/instdoc"/>
+                        <p class="ihv_summary">
+                            <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'))"/>
+                        </p>
+                    </xsl:when>
+                </xsl:choose>
             </td>
             <td align="right" colspan="22%" rowspan="1" valign="top">
                 <p class="ihv_page">
                     <xsl:choose>
                         <xsl:when test="$knoten/metadata/pub/pages[start_page = last_page]">
-                            <xsl:text>S.</xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><br/><xsl:value-of select="$dokid"/>
+                            <xsl:text>S.</xsl:text><xsl:value-of select="codepoints-to-string(160)"/><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>S.</xsl:text><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>-<xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
+                            <xsl:text>S.</xsl:text><xsl:value-of select="codepoints-to-string(160)"/><xsl:value-of select="$knoten/metadata/pub/pages/start_page"/><xsl:value-of select="codepoints-to-string(8209)"/><xsl:value-of select="$knoten/metadata/pub/pages/last_page"/><br/><xsl:value-of select="$dokid"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </p>
