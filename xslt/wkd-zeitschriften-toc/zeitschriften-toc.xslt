@@ -2,8 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0" xmlns:hbfm="http:www.fachmedien.de/hbfm">
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="no" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd"/>
-    <!--<xsl:strip-space elements="p summary"/>-->
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+    <xsl:param name="src-documents-location" select="'file:/c:/tempkoR/?recurse=yes;select=*.xml'"/>
+    <xsl:variable name="aktuelles-Heft" select="collection($src-documents-location)"/>
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
     
     <xsl:template name="create_shortened_summary">
@@ -77,7 +77,7 @@
                 </all_source>
             </metadata>
             <body>
-                <xsl:for-each select="$aktuelles-Heft/*[not(metadata/ressort)]">
+                <xsl:for-each select="$aktuelles-Heft/*[not(name()='toc')][not(metadata/ressort)]">
                     <section>
                         <xsl:choose>
                             <xsl:when test="name() = 'ed'">
@@ -96,7 +96,7 @@
                         </table>
                     </section>
                 </xsl:for-each>
-                <xsl:for-each-group select="$aktuelles-Heft" group-by="*/metadata/ressort">
+                <xsl:for-each-group select="$aktuelles-Heft[not(name()='toc')]" group-by="*/metadata/ressort">
                     <xsl:variable name="ressort-ueberschrift">
                         <xsl:choose>
                             <xsl:when test="current-grouping-key() = 'sr'">Steuerrecht</xsl:when>
@@ -125,7 +125,7 @@
                         </xsl:for-each>
                     </section>
                 </xsl:for-each-group>
-                <xsl:for-each select="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk'))]">
+                <xsl:for-each select="$aktuelles-Heft[not(name()='toc')]/*[not(metadata/ressort)][not(name()=('ed', 'gk'))]">
                     <section>
                         <title>Weiter Inhalte</title>
                         <table frame="void" rules="none">
@@ -173,9 +173,26 @@
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:when test="$knoten/metadata/instdoc">
+                        <!-- Siehe Email von Andreas: Di 29.10.2019 13:07 -->
                         <xsl:variable name="instdoc" select="$knoten/metadata/instdoc"/>
+                        <xsl:variable name="aktenzeichen-string" select="string-join($instdoc/instdocnrs/instdocnr, ', ')"/>
+                        <xsl:variable name="urteilszeile">
+                            <xsl:choose>
+                                <xsl:when test="$instdoc/instdocaddnr and contains($aktenzeichen-string, ',')">
+                                    <!--<xsl:value-of select="insert-before($aktenzeichen-string, index-of($aktenzeichen-string, ','), concat(' ',$instdoc/instdocaddnr, ','))"/>-->
+                                    <xsl:value-of select="concat(substring-before($aktenzeichen-string, ','), ' ',$instdoc/instdocaddnr, ',', substring-after($aktenzeichen-string, ','))"/>
+                                </xsl:when>
+                                <xsl:when test="$instdoc/instdocaddnr">
+                                    <xsl:value-of select="concat($aktenzeichen-string, ' ', $instdoc/instdocaddnr)"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$aktenzeichen-string"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:value-of select="$instdoc/instdocnote"/>
+                        </xsl:variable>
                         <p class="ihv_summary">
-                            <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'))"/>
+                            <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'), ' ', codepoints-to-string(8211), ' ', $urteilszeile)"/>
                         </p>
                     </xsl:when>
                 </xsl:choose>
