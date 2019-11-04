@@ -138,7 +138,7 @@
         <rule context="metadata/ressort[ancestor::metadata/pub/pubtitle/text()='Corporate Finance']">
             <assert test="text()= 'Finanzierung' or text() ='Kapitalmarkt' or text() ='Bewertung' or text() ='Mergers &amp; Acquisitions' or text() ='Agenda' or text() ='Bildung' or text() ='Corporate Governance' or text() ='Existenzgründung' or text() ='Finanzmanagement' or text() ='Finanzmarkt' or text() ='Gründung' or text() ='Unternehmen' or text() ='Märkte' or text() ='Outlook' or text() ='Private Equity' or text() ='Scope' or text() ='Statements' or text() ='Tools' or text() ='Venture Capital' or text() ='Transaktionen'" >Das Ressort besitzt einen ungültigen Inhalt!</assert>
         </rule>
-        <rule context="metadata[not(parent::*[name()='ed']) and pub/pubtitle/text()='changement!']">
+        <rule context="metadata[not(parent::*[name()=('ed', 'toc')]) and pub/pubtitle/text()='changement!']">
             <assert test="ressort" >Alle Changement Dokumente (außer Editorial Dokumente) benötigen ein Ressort Element!</assert>
         </rule>
     </pattern>
