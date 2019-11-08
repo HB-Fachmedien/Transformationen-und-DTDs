@@ -47,7 +47,7 @@
             <metadata>
                 <xsl:apply-templates select="metadata/title | metadata/subtitle | metadata/coll_title"></xsl:apply-templates>
                 <xsl:if test="metadata/author_info"><authors><xsl:apply-templates select="metadata/author_info/node()"/><xsl:call-template name="build_authors_plain"/></authors></xsl:if>
-                <xsl:copy-of select="metadata/summary"></xsl:copy-of>
+                <xsl:if test="metadata/summary"><xsl:apply-templates select="metadata/summary"/></xsl:if>
                 <xsl:call-template name="summary_plain"/>
                 <xsl:copy-of select="metadata/leitsaetze"></xsl:copy-of>
                 <xsl:if test="metadata/count(keywords) = 1">
@@ -243,16 +243,17 @@
                         <xsl:when test="$all_source_l2_prefix = 'sf'">Stollfuß Medien</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'zap'">ZAP Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'spg'">Springer Gabler</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'ba'">Bundesanzeiger Verlag</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'ba'">Reguvis – Bundesanzeiger Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'dav'">Deutscher Anwaltverlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'cfm'">C.F. Müller</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'zv'">zerb Verlag</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'iww'">IWW Institut</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = 'dfv'">dfv Mediengruppe</xsl:when>
                         <xsl:when test="$all_source_l2_prefix = 'ifst'">Institut Finanzen und Steuern</xsl:when>
                         
                         <!-- Handelsblatt Fachmedien: -->
-                        <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
+                        <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','fb','kor','ref','rel','ret','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
                         <!--  -->
                         
                         <xsl:otherwise><FEHLER>Konnte all_source/@level='2' nicht auflösen: <xsl:value-of select="$all_source_l2_prefix"/></FEHLER></xsl:otherwise>

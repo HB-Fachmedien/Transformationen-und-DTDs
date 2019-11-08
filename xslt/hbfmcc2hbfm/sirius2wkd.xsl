@@ -609,6 +609,7 @@
 									
 										<xsl:variable name="docTypeAndSeqN">
 											<xsl:choose>
+												<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 												<xsl:when test="../name()='gh'">Ganzes Heft#50</xsl:when>
 												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
 												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
@@ -653,6 +654,7 @@
 										<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 											<xsl:variable name="bwp-docType-SeqN">
 												<xsl:choose>
+													<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 													<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 													<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
 													<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
@@ -668,6 +670,7 @@
 													<xsl:when test="descendant::pubedition = '00'">
 														<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
 													</xsl:when>
+													<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="
 															(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
@@ -744,6 +747,7 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr">
 									<xsl:variable name="dk-ressorts" >
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 											<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
 											<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
 											<xsl:when test="$ressortname='br'">Rechnungslegung/Corporate Governance#300</xsl:when>
@@ -765,6 +769,7 @@
 										</xsl:variable>
 										<xsl:variable name="leafseqnr">
 											<xsl:choose>
+												<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 												<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 												<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 												<xsl:otherwise>
@@ -794,6 +799,7 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 											<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='iv'">Interviews#300</xsl:when>
@@ -804,6 +810,7 @@
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
@@ -833,6 +840,7 @@
 									<xsl:if test="not(starts-with(descendant::pubedition, 'Spezial'))"><xsl:attribute name="expanded">true</xsl:attribute></xsl:if>
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 											<xsl:when test="../name()='ed'">Editorial#80</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
@@ -843,6 +851,7 @@
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="starts-with(descendant::pubedition, 'Spezial')">100</xsl:when>
 											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
@@ -871,6 +880,7 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 											<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 											<xsl:when test="../name()='gk'">Gastkommentar#60</xsl:when>
 											<xsl:when test="../name()='au'">Abhandlungen#100</xsl:when>
@@ -882,6 +892,7 @@
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
@@ -909,6 +920,7 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 											<xsl:when test="../name()='ed'">Editorial#80</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
@@ -920,6 +932,7 @@
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
@@ -947,6 +960,7 @@
 								<node title="{$get-pubedition}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="kor-docType-SeqN">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 											<xsl:when test="../name()='ed'">Editorial#80</xsl:when>
 											<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 											<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
@@ -958,6 +972,7 @@
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
@@ -988,6 +1003,7 @@
 								<node title="{$cf-title}" childOrder="BySequenceNr">
 									<xsl:variable name="cf-ressort-seq-nr" >
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">10</xsl:when>
 											<xsl:when test="$ressortname='Finanzierung'">100</xsl:when>
 											<xsl:when test="$ressortname='Kapitalmarkt'">200</xsl:when>
 											<xsl:when test="$ressortname='Bewertung'">300</xsl:when>
@@ -1041,6 +1057,7 @@
 												</xsl:variable>
 												<xsl:variable name="leafseqnr">
 													<xsl:choose>
+														<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 														<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 														<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 														<xsl:otherwise>
@@ -1067,6 +1084,7 @@
 								<node title="{$cm-title}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="cm-ressort-seq-nr" >
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">10</xsl:when>
 											<xsl:when test="../name()='ed'">50</xsl:when>
 											<xsl:when test="$ressortname='Corporate Culture'">100</xsl:when>
 											<xsl:when test="$ressortname='New Work'">200</xsl:when>
@@ -1079,6 +1097,7 @@
 									</xsl:variable>
 									<xsl:variable name="leafseqnr">
 										<xsl:choose>
+											<xsl:when test="../name()='toc'"><xsl:value-of select="1"/></xsl:when>
 											<xsl:when test="descendant::pubedition = '00'"><xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/></xsl:when>
 											<xsl:when test="string(number(normalize-space(descendant::pages/start_page))) = 'NaN' and not(starts-with(descendant::pages/start_page/text(), 'M'))"><xsl:call-template name="calculate-leaf-number-for-roman-numbers"/></xsl:when>
 											<xsl:otherwise>
@@ -1133,7 +1152,7 @@
 									<!--<node title="{tokenize($ressortNameAndSeqN, '#')[1]}" sequenceNr="{tokenize($ressortNameAndSeqN, '#')[2]}" childOrder="BySequenceNr" expanded="true">-->
 										<xsl:variable name="docTypeAndSeqN">
 											<xsl:choose>
-												<xsl:when test="../name()='toc'">Inhaltsverzeichnis#1</xsl:when>
+												<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
 												<xsl:when test="../name()='gk'">Gastkommentar#70</xsl:when>
 												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
@@ -1172,6 +1191,7 @@
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
 									<xsl:variable name="cm-ressort-seq-nr" >
 										<xsl:choose>
+											<xsl:when test="../name()='toc'">10</xsl:when>
 											<xsl:when test="../name()='ed'">50</xsl:when>
 											<xsl:when test="$ressortname='Legal Tech &amp; Innovation'">100</xsl:when>
 											<xsl:when test="$ressortname='Digital Economy &amp; Recht'">200</xsl:when>

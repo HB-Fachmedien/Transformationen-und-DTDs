@@ -94,6 +94,7 @@
 	<werk name="Doppler/Lauterburg, Change Management" dpsi="cv_cm">hbfm10020</werk>
 	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2016" dpsi="sf_estha">10648</werk>
 	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2017" dpsi="sf_estha17">10648</werk>
+	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2018" dpsi="sf_estha18">10648</werk>
 	<werk name="Dorsch, Zollrecht" dpsi="sf_zr">10602</werk>
 	<werk name="Dreier/Fritzsche/Verfürth, SpruchG" dpsi="esv_spruchg">12260 hbfm10010</werk>
 	<werk name="Drescher, Die Haftung des GmbH-Geschäftsführers" dpsi="rws_drescher">12260</werk>
@@ -341,7 +342,7 @@
 	<werk name="Reiß/Kraeusel/Langer, UStG" dpsi="sf_ustg">10774</werk>
 	<werk name="Reithmann/Martiny, Internationales Vertragsrecht" dpsi="ovs_iv">12140 12598</werk>
 	<werk name="Rendels/Zabel, Insolvenzplan" dpsi="rws_rendelszabel">12348</werk>
-	<werk name="Rethinking Finance" dpsi="ref">10602 hbfm10005</werk>
+	<werk name="Rethinking Finance" dpsi="ref">hbfm10007 hbfm10009 hbfm10008 hbfm10020 hbfm10022 hbfm10004 hbfm10025 hbfm10026</werk>
 	<werk name="Rethinking Law" dpsi="rel">12140</werk>
 	<werk name="Rethinking Tax" dpsi="ret">10602</werk>
 	<werk name="Riedel, Praxishandbuch Unternehmensnachfolge" dpsi="zv_untnachf">10602 12140</werk>
@@ -351,7 +352,9 @@
 	<werk name="Röhricht/Graf von Westphalen/Haas, HGB" dpsi="ovs_hgb">12167 hbfm10006 hbfm10014</werk>
 	<werk name="Rosarius/Geiermann, ABC der Bilanzierung" dpsi="sf_abcbil">10648 10764 10603 12167 hbfm10006</werk>
 	<werk name="Roscher, 360° GrStG eKommentar" dpsi="sf_grstgok">10752</werk>
+	<werk name="Strecker, 360° FZulG eKommentar" dpsi="sf_fzulgok">10602 10859</werk>
 	<werk name="Rübenstahl/Idler, Tax Compliance" dpsi="cfm_taxcompl">hbfm10011</werk>
+	<werk name="Strack/Mack/Schwedhelm, Tax Compliance" dpsi="ovs_sst">hbfm10011 hbfm10014</werk>
 	<werk name="Rückert, Schluss mit dem ewigen Aufschieben" dpsi="cv_schluss">hbfm10025</werk>
 	<werk name="Ruhmannseder/Lehner/Beukelmann, Compliance aktuell" dpsi="cfm_complakt">hbfm10011</werk>
 	<werk name="Rump/Eilers, Lebensphasenorientierte Personalpolitik" dpsi="spg_perspol">hbfm10023</werk>
