@@ -379,6 +379,9 @@
 									<xsl:when test="$pub-abbr = 'REF'">
 										<xsl:text>Rethinking Finance</xsl:text>
 									</xsl:when>
+									<xsl:when test="$pub-abbr = 'RET'">
+										<xsl:text>Rethinking Tax</xsl:text>
+									</xsl:when>
 									<xsl:otherwise>
 										<xsl:text>Unbekannte Zeitschrift</xsl:text>
 									</xsl:otherwise>

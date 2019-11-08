@@ -3,3 +3,7 @@
 /xslt/onix/ONIX_2.1_local_DTD_and_XSD_files
 /dtd/legios
 *.bak
+.idea
+/python-projects/wkd_global_toc_workaround/from_ftp_original
+/python-projects/wkd_global_toc_workaround/logging.txt
+*.zip

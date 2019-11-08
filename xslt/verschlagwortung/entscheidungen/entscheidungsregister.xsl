@@ -49,9 +49,9 @@
         <xsl:if test="$alle-Hefte[1]/descendant::metadata/pub/pubtitle = ('Der Konzern', 'Wirtschaft und Wettbewerb')">!!! FÜR WUW ODER DK ENTSCHEIDUNGSREGISTER DAS ANDERE SKRIPT NEHMEN!!!</xsl:if>
         
         <xsl:text>&#xa;</xsl:text><entscheidungsregister><xsl:text>&#xa;</xsl:text>
-            <WICHTIG>!!Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden!!</WICHTIG>
-            <WICHTIG>REIHENFOLGE VON ENTSCHEIDUNGEN GLEICHEN DATUMS BEACHTEN! Siehe Mail von Eva 6.3.2018</WICHTIG>
-            <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2>
+            <WICHTIG>!!Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden!!</WICHTIG><xsl:text>&#xa;</xsl:text>
+            <WICHTIG>REIHENFOLGE VON ENTSCHEIDUNGEN GLEICHEN DATUMS BEACHTEN! Siehe Mail von Eva 6.3.2018</WICHTIG><xsl:text>&#xa;</xsl:text>
+            <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2><xsl:text>&#xa;</xsl:text>
             
             <h1>Entscheidungen des europäischen Gerichtshofs</h1><xsl:text>&#xa;</xsl:text>
             <xsl:call-template name="entscheidungsdaten">
@@ -466,7 +466,7 @@
                 <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
-            <h2>ELEMENT FÜR DAS TESTEN. Anzahl Entscheidungen: </h2>
+            <h2>ELEMENT FÜR DAS TESTEN. Anzahl Entscheidungen: </h2><xsl:text>&#xa;</xsl:text>
         </entscheidungsregister>
     </xsl:template>
 

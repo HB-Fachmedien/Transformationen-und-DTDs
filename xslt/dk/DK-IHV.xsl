@@ -4,7 +4,7 @@
     xmlns:hbfm="http:www.fachmedien.de/hbfm">
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="yes"/>
-    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDerKonzern/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="aktuelles-Heft" select="collection('file:/c:/tempDK/?recurse=yes;select=*.xml')"/>
     <xsl:template match="/">
         <html>
             <head>

@@ -206,7 +206,9 @@
                     </xsl:for-each>    
                 </xsl:for-each-group>
             </xsl:for-each-group>
-            <xsl:text>&#xa;</xsl:text>
+            <xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text>
+            <WICHTIG>REIHENFOLGE VON ENTSCHEIDUNGEN GLEICHEN DATUMS BEACHTEN! Siehe Mail von Eva 6.3.2018</WICHTIG><xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text>
+            <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2>
         </entscheidungsregister>
     </xsl:template>
     
