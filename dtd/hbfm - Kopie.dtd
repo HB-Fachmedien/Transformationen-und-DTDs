@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-2.1
+1.29
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -161,56 +161,11 @@ Version 1.28 (11.08.17): Änderungen (SG):&#x0013;
 							<li><a href="#file">file</a>, Attribut class zulässige Werte erweitert um "exe"</li>
 							<li>Behörden-Mapping aktualisiert</li>
 						</ul>
-Version 2.0 (11.02.19): Änderungen (SG):&#x0013;&#x0013;
-						<b>größere Anpassungen für Datenlieferungen an WKD-Sytem</b>&#x0013;
+Version 1.29 (14.05.18): Änderungen (SG):&#x0013;
 						<ul>
 							<li>Gerichts- und Behörden-Mapping aktualisiert</li>
-							<li>NEUE DOCTYPES:<ul>
-								<li><a href="#com">com</a> "Kommentare"</li>
-								<li><a href="#fb">fb</a> "Fachbücher. Umfasst Fachbücher, Handbücher, Ratgeber und Lexika"</li>
-								<li><a href="#formb">formb</a> "Formularbücher"</li>
-								<li><a href="#ah">ah</a> "Arbeitshilfen"</li>
-								<li><a href="#gts">gts</a> "Rechtsquellen: Standards (IAS, IFRS, IFRIC, SIC)"</li></ul>
-							</li>
-							<li>ENTFÄLLT: <i>ref</i> vollständig entfernen&#x0013;
-								statt dessen NEU: <a href="#link">link</a> integrieren (analog zu hbfmcc.dtd), allerdings mit folgenden Attributen (alle optional):
-								<ul>
-								<li>anchor</li>
-								<li>meta_docid</li>
-								<li>meta_lawabbr</li>
-								<li>meta_artnum</li>
-								<li>meta_chapter</li>
-								<li>meta_target</li>
-								<li>meta_context</li>
-								<li>meta_marginnr</li>
-								<li>meta_page</li>
-								<li>meta_pagealt</li>
-								<li>meta_dept</li>
-								<li>meta_pubedition</li>
-								<li>meta_pubyear</li>
-								<li>generator (hier ohne Werte-Vorgabe)</li></ul>
-							</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#pub">&lt;pub&gt;</a><a href="#pages">&lt;pages&gt;</a><a href="#intermed_pages">&lt;intermed_pages&gt;</a> zwischen <a href="#start_page">&lt;start_page&gt;</a> und <a href="#last_page">&lt;last_page&gt;</a>. Optional. PCDATA</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#pub">&lt;pub&gt;</a><a href="#pages_alt">&lt;pages_alt&gt;</a><a href="#intermed_pages">&lt;intermed_pages&gt;</a> zwischen <a href="#start_page">&lt;start_page&gt;</a> und <a href="#last_page">&lt;last_page&gt;</a>. Optional. PCDATA</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#summary_plain">&lt;summary_plain&gt;</a> hinter <a href="#summary">&lt;summary&gt;</a>. Optional. Nur PCDATA</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#taxonomy">&lt;taxonomy&gt;</a> hinter <a href="#keywords">&lt;keywords&gt;</a>. Optional. Mit 1-n <a href="#key">&lt;key&gt;</a>-Kindern. <a href="#key">&lt;key&gt;</a> enthält PCDATA. Beschreibung: "Eindeutige Zuordnung eines Werks in die Themengebiet-Taxonomie. <a href="#key">&lt;key&gt;</a> enthält immer eine URI."</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#authors">&lt;authors&gt;</a><a href="#authors_plain">&lt;authors_plain&gt;</a> hinter <a href="#authors">&lt;authors&gt;</a><a href="#biography">&lt;biography&gt;</a>. Optional. Nur PCDATA</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#pub">&lt;pub&gt;</a><a href="#publisher">&lt;publisher&gt;</a> unterhalb von <a href="#pub">&lt;pub&gt;</a><a href="#version">&lt;version&gt;</a>. Optional. PCDATA. Beschreibung: "Verlagsname"</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#chapter">&lt;chapter&gt;</a> hinter <a href="#law_refs">&lt;law_refs&gt;</a>. Optional. Mehrfach möglich (0-n)</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#toc">&lt;toc&gt;</a> und <a href="#inner_toc">&lt;inner_toc&gt;</a> aus der hbfmcc.dtd hinter <a href="#chapter">&lt;chapter&gt;</a>. Nur soll <a href="#toc">&lt;toc&gt;</a> bitte zu <a href="#global_toc">&lt;global_toc&gt;</a> umbenannt werden.</li>
-							<li>NEU: <a href="#metadata">&lt;metadata&gt;</a><a href="#date_sort">&lt;date_sort&gt;</a> hinter <a href="#inner_toc">&lt;inner_toc&gt;</a>. Optional. PCDATA</li>
-							<li>ÄNDERUNG: <a href="#metadata">&lt;metadata&gt;</a><a href="#pub">&lt;pub&gt;</a><a href="#pages">&lt;pages&gt;</a> soll nur noch optional sein</li>
-							<li>ÄNDERUNG: <a href="#biography">&lt;biography&gt;</a> auch innerhalb von <a href="#metadata">&lt;metadata&gt;</a><a href="#authors">&lt;authors&gt;</a><a href="#author">&lt;author&gt;</a> zulassen</li>
-							<li>ÄNDERUNG: <a href="#section">&lt;section&gt;</a> bekommt noch zwei weitere class-Attributwerte: "aktuell" und "ausblick"</li>
 						</ul>
-Version 2.1 (15.10.19): Änderungen (SG):&#x0013;
-						<ul>
-							<li><a href="#link">link</a> darf nicht mehr child von <a href="#url">url</a> sein und umgekehrt</li>
-							<li><a href="#citation">citation</a> darf <a href="#link">link</a> enthalten</li>
-							<li><a href="#law">law</a> erhält neues Attribut @ref mit dem einzigen möglichen Value "true"</li>
-							<li><a href="#link">link</a> erhält neues Attribut @meta_pub_suppl</li>
-							<li>aus hbfmcc.dtd übernehmen: <a href="#metadata">metadata</a>/<a href="#pub">pub</a>/<a href="#marginnr">marginnr</a></li>
-						</ul>
+
 
 <h2>Aufbau der DTD</h2>
 
@@ -258,8 +213,7 @@ EMPTY - kein Inhalt
 <!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | sidenote | questionAndAnswer | newpage)*" >
 <!ENTITY % block_with_questionAndAnswer "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 
-<!ENTITY % inline "(#PCDATA | b | i | u | sub | sup | span | br | footnote | newpage | file | latex | link | url)*" >
-<!ENTITY % inline_no_links "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | latex)*" >
+<!ENTITY % inline "(#PCDATA | b | i | u | sub | sup | span | br | footnote | newpage | file | latex | ref | url)*" >
 
 <!ENTITY % attrId     " id       ID    #IMPLIED" >
 <!ENTITY % attrLang   " lang     (de | en | fr | es) #IMPLIED" >
@@ -277,13 +231,15 @@ EMPTY - kein Inhalt
 <!--Das Element <i>hbfmdoc</i> ist das root-Element für alle Arten von Dokumenten - dabei kann es sich sowohl um redaktionelle Beiträge (z.B. Aufsätze, bearbeitete Entscheidungen oder Nachrichten) handeln als auch um Volltext-Entscheidungen, Verwaltungsanweisungen, Gesetzestexte usw.
 _img hbfmdoc.png
 -->
-<!ELEMENT hbfmdoc (au | divah | divsu | divso | ed | ent | entk | entv | gh | gk | gtdraft | iv | kb | toc | kk | nbb | nr | rez | sp | va | vadraft | vav | com | fb | formb | ah | gts) >
+<!ELEMENT hbfmdoc (au | com | divah | divsu | divso | ed | ent | entk | entv | gh | gk | gtdraft | hb | iv | kb | toc | kk | nbb | nr | rez | sp | va | vadraft | vav) >
 
 
 <!--Das Element <i>au</i> ist das root-Element für Aufsätze
 _img au.png
 -->
 <!ELEMENT au   (metadata, body) >
+
+
 
 <!--@attr docid unique (pubcode plus rawid); wie bisher, jetzt als Attribut; This is the DocumentID which should be displayed in the SERP and the DocumentView.
 <i>docid</i> beinhaltet das Publikationskürzel, das aus dem Objektkürzel und dem Inhalt von <i><id></i> besteht. Der Ziffernanteil muss immer siebenstellig sein; ggf. muss dieser mit führenden Nullen aufgefüllt werden. Bei "DER BETRIEB" z.B.:
@@ -303,6 +259,11 @@ _img au.png
 <!ATTLIST au   %rootAttributes; >
 
 
+<!ELEMENT com   (metadata, body) >
+<!ATTLIST com   %rootAttributes; >
+
+<!ELEMENT hb   (metadata, body) >
+<!ATTLIST hb   %rootAttributes; >
 
 <!--Das Element <i>divah</i> ist das root-Element für Arbeitshilfe
 _img divah.png
@@ -495,77 +456,27 @@ _img vav.png
 <!ATTLIST vav   %rootAttributes; >
 
 
-<!--Das Element <i>com</i> ist das root-Element für „Kommentare“
-_img com.png
--->
-<!ELEMENT com   (metadata, body) >
-
-<!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
-<!ATTLIST com   %rootAttributes; >
-
-
-<!--Das Element <i>fb</i> ist das root-Element für „Fachbücher“. Umfasst Fachbücher, Handbücher, Ratgeber und Lexika
-_img fb.png
--->
-<!ELEMENT fb   (metadata, body) >
-
-<!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
-<!ATTLIST fb   %rootAttributes; >
-
-
-<!--Das Element <i>formb</i> ist das root-Element für „Formularbücher“
-_img formb.png
--->
-<!ELEMENT formb   (metadata, body) >
-
-<!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
-<!ATTLIST formb   %rootAttributes; >
-
-
-<!--Das Element <i>ah</i> ist das root-Element für „Arbeitshilfen“
-_img ah.png
--->
-<!ELEMENT ah   (metadata, body) >
-
-<!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
-<!ATTLIST ah   %rootAttributes; >
-
-
-<!--Rechtsquellen: Standards (IAS, IFRS, IFRIC, SIC)
-_img gts.png
--->
-<!ELEMENT gts   (metadata, body) >
-
-<!-- siehe Dokumentation der Attribute von Element <a href="#au">au</a> -->
-<!ATTLIST gts   %rootAttributes; >
-
-
-
-
-
-
 
 <!--Das Element <i>metadata</i> umschließt die Metadaten eines beliebigen Dokumenttyps.
 _img metadata.png
 -->
 <!ELEMENT metadata (title, subtitle?, coll_title?,
                     authors?,
-                    summary?, summary_plain?, leitsaetze?, keywords?, taxonomy?,
+                    summary?, summary_plain, leitsaetze?, keywords?,
                     ressort?, rubriken?,
                     pub,
                     extfile?,
                     law*,
                     (instdoc, preinstdocs?)?,
-                    law_refs?,
-                    chapter*,
-                    global_toc?, inner_toc?, date_sort?,
+                    law_refs?, chapter*,
+                    global_toc?, inner_toc?,
                     all_doc_type, all_source, all_source,
                     exportblocker*,
                     sgml_root_element?) >
 
 <!--Das Element <i>pub</i> enthält Informationen über das Werk, die Ausgabe des Werks (bei Zeitschriften) und die Seitenspanne des Artikels.
 _img pub.png-->
-<!ELEMENT pub       (pubtitle, pubabbr, pubyear, pubedition, date, pub_suppl?, pages?, pages_alt?, marginnr?, public?, add_target*, version?, publisher?) >
+<!ELEMENT pub       (pubtitle, pubabbr, pubyear, pubedition, date, pub_suppl?, pages?, pages_alt?, public?, add_target*, version?) >
 
 <!-- Das Element <i>pages</i> enthält u.a. die Start- und Endseitenzahl des Artikels/Beitrags.
 _img pages.png-->
@@ -666,7 +577,7 @@ Hat ein Text mehrere Autoren, können <i>author</i>-Elemente mehrfach in <i>auth
 
 _img author.png
 -->
-<!ELEMENT author         (((prefix?, firstname?, surname, suffix?) | fullname), biography?) >
+<!ELEMENT author         ((prefix?, firstname?, surname, suffix?) | fullname) >
 
 <!--Über das Element <i>organisation</i> können Institutionen als Autor genannt werden.
 _img organisation.png
@@ -704,12 +615,6 @@ _img fullname.png
 <!ELEMENT fullname       (#PCDATA) >
 
 
-<!--Das Element <i>authors_plain</i> 
-_img authors_plain.png
--->
-<!ELEMENT authors_plain       (#PCDATA) >
-
-
 <!--Das Element <i>biography</i> ist ein Blockelement, das für eine Beschreibung der Biographie des Autors bzw. der Autoren vorgesehen ist. <i>biography</i> kann neben normalen Textabsätzen auch weitere Strukturen wie Beispiele, Listen, Tabellen oder Zwischenüberschriften enthalten.
 
 <b>Beispiel:</b>
@@ -736,6 +641,7 @@ _img biography.png
 -->
 <!ELEMENT biography    (%block;) >
 
+<!ELEMENT authors_plain       (#PCDATA) >
 
 <!--Das Element <i>date</i> enthält das Datum des Dokuments im yyyy-mm-dd Format.
 _img date.png
@@ -743,24 +649,12 @@ _img date.png
 <!ELEMENT date       (#PCDATA) >
 
 
-<!--Das Element <i>date_sort</i> 
-_img date_sort.png
--->
-<!ELEMENT date_sort       (#PCDATA) >
-
-
 <!--Das Element <i>summary</i> ist ein Blockelement, das eine redaktionelle Zusammenfassung enthält.
 _img summary.png
 -->
 <!ELEMENT summary       (%block;) >
 
-
-<!--Das Element <i>summary_plain</i> 
-_img summary_plain.png
--->
-<!ELEMENT summary_plain    (#PCDATA) >
-
-
+<!ELEMENT summary_plain       (#PCDATA) >
 <!--Das Element <i>extfile</i> enthält den vollständigen Dateipfad, falls ein externes Dokument (binary file) referenziert werden soll (*.pdf, *.doc, etc.).
 If the <i>extfile</i> display attribute is set to 'false', <i>type</i> needs to be set to 'html' (html will be displayed in the document view then). If the display attribute is set to 'true', <i>type</i> needs to be set to the respective binary document type (e.g. 'pdf'), which will be displayed directly in the document view then (e.g. because there is no html document available). Additionally, in the result page, a PDF icon will be shown.
 
@@ -788,12 +682,6 @@ _img coll_title.png
 _img pubtitle.png
 -->
 <!ELEMENT pubtitle   (#PCDATA) >
-
-
-<!--Das Element <i>publisher</i> enthält den Verlagsnamen
-_img publisher.png
--->
-<!ELEMENT publisher   (#PCDATA) >
 
 
 <!--Im Element <i>pubabbr</i> ist die Abkürzung der Publikation eingetragen, zu der das Dokument gehört; z.B. "DB", "KoR", "WuW" oder "CF".
@@ -830,18 +718,12 @@ _img start_page.png
 <!ELEMENT start_page  (#PCDATA) >
 
 
-<!--Element <i>intermed_pages</i>: 
-_img intermed_pages.png
--->
-<!ELEMENT intermed_pages  (#PCDATA) >
-
-
-
 <!--Element <i>last_page</i>: mandatory for Zeitschriften: last page of article
 _img last_page.png
 -->
 <!ELEMENT last_page  (#PCDATA) >
 
+<!ELEMENT intermed_pages  (#PCDATA)>
 
 <!--Element <i>dept</i>: in case the secondary page count is divided into different departments, e.g. in WuW: "DE-R"
 _img dept.png
@@ -862,11 +744,6 @@ _img version.png
 -->
 <!ELEMENT version  (#PCDATA) >
 
-
-<!--Das Element <i>marginnr</i> enthält sämtliche im Dokument vorhandenen Randziffern, getrennt durch Leerzeichen.
-_img marginnr.png
--->
-<!ELEMENT marginnr  (#PCDATA) >
 
 
 <!--Element <i>public</i>: value 'true' for subscribed content which becomes free content when this flag is set (The <i>public</i> element should initially not be provided for subscribed content - the value 'false' is not handled by the research portal.)
@@ -897,28 +774,12 @@ _img keyword.png-->
 >
 
 
-<!--Eindeutige Zuordnung eines Werks in die Themengebiet-Taxonomie. <i>key</i> enthält immer eine URI
-_img taxonomy.png
--->
-<!ELEMENT taxonomy   (key)+ >
-
-<!--Das Element <i>key</i> enthält immer eine URI
-_img key.png-->
-<!ELEMENT key      (#PCDATA) >
-
-
 
 <!--Das Element <i>law</i> umschließt die Informationen zu dem entsprechenden Gesetzestext.
 _img law.png
 -->
 <!ELEMENT law (lawname?, lawabbr, lawyear?, artnum) >
 
-<!--@name 
-  Kennzeichnet bei Kommentierungen dasjenige Dokument aus möglicherweise mehreren Dokumenten zu einem Paragraphen
--->
-<!ATTLIST law
-	ref (true) #IMPLIED
->
 
 
 <!--Das Element <i>lawname</i> beinhaltet den vollen Namen der jeweiligen Norm (z.B. "Abgabenordnung").
@@ -1027,7 +888,7 @@ _img inst.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen	
+		| OLGThueringen
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -1343,7 +1204,7 @@ _img inst.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten		
+		| AGBretten
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1379,7 +1240,7 @@ _img inst.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim		
+		| AGBadMergentheim
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -2203,6 +2064,8 @@ _img inst.png
 		| NLAGAmsterdam
 		| RG
 
+
+
 		| EuropaeischerRat
 		| Europarat
 		| RatderEuropaeischenUnion
@@ -2305,7 +2168,6 @@ _img inst.png
 		| OFDMuenchen
 		| OFDNuernberg
 		| OFDErfurt
-		| LfStNiedersachsen
 		| OFDsMuenchenNuernberg
 		| OFDsDuesseldorfMuenster
 		| OFDsRheinlandMuenster
@@ -2328,7 +2190,6 @@ _img inst.png
 		| BA
 		| IFSt
 		| Monopolkommission
-
 	) #REQUIRED
 >
 
@@ -2388,7 +2249,7 @@ _img citations.png
 <!--Element <i>citation</i>: Fundstellen, in denen die Entscheidung bisher zitiert wurde (werden regelmäßig upgedated)
 _img citation.png
 -->
-<!ELEMENT citation     (#PCDATA | link)* >
+<!ELEMENT citation     (#PCDATA) >
 
 
 <!--Element <i>law_refs</i>: parent für mehrere <a href="#law_ref">law_ref</a>
@@ -2400,16 +2261,11 @@ _img law_ref.png-->
 <!ELEMENT law_ref    (#PCDATA) >
 
 
-<!--Element <i>chapter</i>
-_img chapter.png-->
-<!ELEMENT chapter    (#PCDATA) >
-
-
 <!--Das Element <i>ressort</i> beinhaltet den Code des Ressorts, in dem der Text veröffentlicht wird. Mögliche Codes: BW, SR, WR, AR.
 _img ressort.png-->
 <!ELEMENT ressort    (#PCDATA) >
 
-
+<!ELEMENT chapter    (#PCDATA) >
 <!--Element <i>rubriken</i>: Container-Element für <a href="#rubrik">rubrik</a>
 _img rubriken.png-->
 <!ELEMENT rubriken    (rubrik+) >
@@ -2418,6 +2274,46 @@ _img rubriken.png-->
 _img rubrik.png-->
 <!ELEMENT rubrik    (#PCDATA) >
 
+<!ELEMENT global_toc    (node+) >
+
+<!-- siehe Dokumentation zu <a href="#toc">toc</a>
+_img node.png
+-->
+<!ELEMENT node (node | leaf)+ >
+<!ATTLIST node
+	title      CDATA #REQUIRED
+	childOrder (BySequenceNr | ByTitleAlphanumeric | ByTitleReverseAlphanumeric) #REQUIRED
+	sequenceNr CDATA #IMPLIED
+	expanded (true)  #IMPLIED
+>
+
+<!-- siehe Dokumentation zu <a href="#toc">toc</a>
+_img leaf.png
+-->
+<!ELEMENT leaf EMPTY >
+<!ATTLIST leaf
+	sequenceNr CDATA #IMPLIED
+>
+
+<!ELEMENT inner_toc (item*) >
+
+<!-- siehe Dokumentation zu <a href="#inner_toc">inner_toc</a>
+_img item.png
+-->
+<!ELEMENT item (content, item*) >
+
+<!-- siehe Dokumentation zu <a href="#inner_toc">inner_toc</a>
+_img content.png
+-->
+<!ELEMENT content (name) >
+
+<!-- siehe Dokumentation zu <a href="#inner_toc">inner_toc</a>
+_img name.png
+-->
+<!ELEMENT name (#PCDATA) >
+<!ATTLIST name
+	href CDATA #REQUIRED
+>
 
 <!--Element <i>all_doc_type</i>: primary and secondary document type code
 _img all_doc_type.png-->
@@ -2533,198 +2429,6 @@ _img body.png
 
 
 
-<!-- ===========================================================================================================================
-=== global_toc and local_toc
-=========================================================================================================================== -->
-
-<!--
-This is about the table of contents definitions that are required for the Bibliothek-view, based on document metadata.
-
-<b>Syntax</b>
-
-In every document that must be included in the Bibliothek-view, metadata shall be defined according to the following syntax. The syntax fully defines the Bibliothek tree path and location where the document will be located. Any new Table of Contents (ToC) nodes defined here will be automatically added to the Bibliothek-view.
-
-%
-<global_toc>
-  <node title="root" childOrder="{childOrder}">
-    <node title="{title}" [sequenceNr="{nr}"] childorder="{childOrder}">
-          :
-        <node title="{title}" [sequenceNr="{nr}"] childorder="{childOrder}">
-          <leaf [sequenceNr="{nr}"]/>
-        </node>
-          :
-    </node>
-  </node>
-</global_toc>
-%
-
-<b>Description:</b>
-
-<ul>
-	<li>The top node must always be defined as <node title="root"...,  as this is the starting point for every ToC entry.</li>
-	<li>Every <node... entry represents a separate level in the ToC (Bibliothek).</li>
-	<li>Every <node... entry has the mandatory attribute: title="{title},  with {title} defining the text that is shown on the level in the ToC (Bibliothek).</li>
-	<li>Every <node... entry has the mandatory attribute: childOrder="{childOrder},  defining the type of ordering (sorting) of its child nodes, where {childOrder} is one of:
-	<ul><li>BySequenceNr,  meaning the child notes are sorted based on the sequenceNr attribute that each of the child notes then must have;
-	<li>ByTitleAlphanumeric,  meaning that the child notes are alphanumerically sorted by title attribute value;
-	<li>ByTitleReverseAlphanumeric,  meaning that the child notes are reverse-alphanumerically sorted by title attribute value.</li></ul></li>
-	<li>Every <node... entry has optional attribute: sequenceNr="{nr}",  with {nr} a positive integer, defining the order in which the <node... entry will appear between its siblings. Note: The sequenceNr is required when the parent node has childOrder=BySequenceNr.</li>
-	<li>The lowest level entry is always <leaf...,  this represents the document itself.</li>
-	<li>The <leaf... entry has optional attribute: sequenceNr="{nr}",  with {nr} a positive integer, defining the order in which the <leaf... entry will appear between its siblings. Note: The sequenceNr is required when the parent node has childOrder=BySequenceNr.</li>
-	<li>The <leaf... entry has no title attribute (the document title shown in Bibliothek is taken from the <title> element in the document metadata).</li>
-</ul>
-
-<b>Notes:</b>
-
-<ul>
-	<li>In case of ordering by sequence number, if two <node> or <leaf> siblings happen to have the same sequenceNr value, the order in which the entries are shown in the ToC is undefined.</li>
-	<li>In case the <toc> element does not follow the mandatory parts of this syntax, the document will not be included in the ToC (not shown in Bibliothek).</li>
-</ul>
-
-<b>Example</b>
-
-As an example, we define a ToC metadata entry like it could occur for an article for the Der Betrieb publication (of course, more node levels can be added when required).
-
-%
-  <metadata>
-      :
-    <global_toc>
-      <node title="root" childOrder="BySequenceNr">
-        <node title="Magazines" sequenceNr="200" childOrder="BySequenceNr">
-          <node title="Der Betrieb" sequenceNr="100" childOrder="ByTitleReverseAlphanumeric">
-            <node title="2013" childOrder="ByTitleReverseAlphanumeric">
-              <node title="Issue 27-28" childOrder="BySequenceNr">
-                <leaf sequenceNr="300"/>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </global_toc>
-      :
-  </metadata>
-  <body>
-    :
-  </body>
-%
-
-Note:
-
-The value of sequenceNr must be a positive integer. It is advised to use multiples of 100 (like shown here) at first, so that in a later stage extra entries can be added in between (150, 250 and such), if required.
-
-_img global_toc.png
--->
-<!ELEMENT global_toc    (node+) >
-
-<!-- siehe Dokumentation zu <a href="#global_toc">global_toc</a>
-_img node.png
--->
-<!ELEMENT node (node | leaf)+ >
-<!ATTLIST node
-	title      CDATA #REQUIRED
-	childOrder (BySequenceNr | ByTitleAlphanumeric | ByTitleReverseAlphanumeric) #REQUIRED
-	sequenceNr CDATA #IMPLIED
-	expanded (true)  #IMPLIED
->
-
-<!-- siehe Dokumentation zu <a href="#global_toc">global_toc</a>
-_img leaf.png
--->
-<!ELEMENT leaf EMPTY >
-<!ATTLIST leaf
-	sequenceNr CDATA #IMPLIED
->
-
-
-
-<!-- ===========================================================================================================================
-=== local toc
-=========================================================================================================================== -->
-
-<!--
-In every document that should have its internal table of contents (local ToC) displayed, metadata must be defined according to the following syntax. The syntax defines the local ToC display text and the references to the anchors in the <a href="#xml_body">xml_body</a> of the document.
-
-%
-<inner_toc>
-  <item>
-    <content>
-      <name>{textMainHeader}</name>
-    </content>
-      :
-    <item>
-      <content>
-        <name href="#{anchor001}">{textForAnchor001}</name>
-      </content>
-    </item>
-      :
-    <item>
-      <content>
-        <name>{textSubHeader}</name>
-      </content>
-        :
-      <item>
-        <content>
-          <name href="#{anchor002}">{textForAnchor002}</name>
-        </content>
-      </item>
-        :
-    </item>
-      :
-  </item>
-</inner_toc>
-%
-
-<b>Description:</b>
-
-<ul>
-	<li><a href="#item"><item></a> elements are added as appropriate (one for every line in the local ToC).</li>
-	<li><a href="#item"><item></a> elements can be nested as displayed, to indicate sub-levels in the local ToC.</li>
-	<li>Each {text...} element may contain any plain text.</li>
-	<li>Each {anchor...} must be unique, and match with an anchor in the <a href="#xml_body"><xml_body></a> of the document (see 0).</li>
-</ul>
-
- 
-<b>Syntax (anchors)</b>
-
-The link targets (anchors) occurs within the <a href="#xml_body"><xml_body></a> section of the document and are defined as follows:
-
-%
-<section number="{number}" id="{anchorname}">
-   <title>{title}</title>
-%
-
-<b>Description:</b>
-
-<ul>
-	<li>The {anchorname} must be unique within the document, and match with the local toc section (values of item/content/name&#x0040;href attribute) in the metadata part (see Syntax (metadata part)).</li>
-	<li>The <a href="#title"><title></a> element is always the first element in the <section> element</li>
-	<li>The {title} element may contain any plain text.</li>
-</ul>
-
-_img inner_toc.png
--->
-<!ELEMENT inner_toc (item*) >
-
-<!-- siehe Dokumentation zu <a href="#inner_toc">inner_toc</a>
-_img item.png
--->
-<!ELEMENT item (content, item*) >
-
-<!-- siehe Dokumentation zu <a href="#inner_toc">inner_toc</a>
-_img content.png
--->
-<!ELEMENT content (name) >
-
-<!-- siehe Dokumentation zu <a href="#inner_toc">inner_toc</a>
-_img name.png
--->
-<!ELEMENT name (#PCDATA) >
-<!ATTLIST name
-	href CDATA #REQUIRED
->
-
-
-
 <!-- ============================================================================================================================================
 =================================================================================================================================================
 = block elements
@@ -2798,6 +2502,7 @@ Die Befüllung des Attributes ist nicht zwingend erforderlich.
 <!ATTLIST section
 	%attrId;
 	class (tenor
+	       | aktuell
 	       | antrag
 	       | anmerkung
 	       | rkvermerk
@@ -2811,8 +2516,6 @@ Die Befüllung des Attributes ist nicht zwingend erforderlich.
 	       | entscheidung
 	       | konsequenz
 	       | streitjahre
-	       | aktuell
-	       | ausblick
 	       | toc.inhbw | toc.inhsr | toc.inhwr | toc.inhar | toc.inhmantel | toc.article | toc.inhrubr
 	       ) #IMPLIED
 	%attrNumber;
@@ -3321,26 +3024,13 @@ _img span.png
 
 
 <!--Element, um Quer- und Kapitelverweise innerhalb von Werken umzusetzen
-_img link.png
+_img ref.png
 -->
-<!ELEMENT link %inline_no_links; >
+<!ELEMENT ref %inline; >
 
-<!ATTLIST link
-	anchor CDATA #IMPLIED
-	meta_docid CDATA #IMPLIED
-	meta_lawabbr CDATA #IMPLIED
-	meta_artnum CDATA #IMPLIED
-	meta_chapter CDATA #IMPLIED
-	meta_target CDATA #IMPLIED
-	meta_context CDATA #IMPLIED
-	meta_marginnr CDATA #IMPLIED
-	meta_page CDATA #IMPLIED
-	meta_pagealt CDATA #IMPLIED
-	meta_dept CDATA #IMPLIED
-	meta_pubedition CDATA #IMPLIED
-	meta_pub_suppl CDATA #IMPLIED
-	meta_pubyear CDATA #IMPLIED
-	generator CDATA #IMPLIED
+<!ATTLIST ref
+	docref CDATA #REQUIRED
+	idref  CDATA #IMPLIED
 >
 
 
@@ -3349,7 +3039,7 @@ _img link.png
 URL abweichen kann, bildet den Elementinhalt
 _img url.png
 -->
-<!ELEMENT url %inline_no_links; >
+<!ELEMENT url %inline; >
 
 <!ATTLIST url
 	src CDATA #REQUIRED

@@ -6,7 +6,7 @@ Handelsblatt Fachmedien C-Content XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien CContent//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-1.28
+1.30
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfmcc/hbfmcc.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -147,6 +147,20 @@ Version 1.28 (11.08.17): Änderungen (SG):&#x0013;
 							<li>Neues Element <a href="#add_all_source">add_all_source</a> hinzugefügt</li>
 							<li>Element <a href="#toc_title">toc_title</a>: Inhaltsmodell nur noch #PCDATA und Dokutext zu diesem Element verändert</li>
 						</ul>
+Version 1.29 (14.05.18): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Gerichts- und Behörden-Mapping aktualisiert</li>
+							<li>neues Element <a href="#link">link</a>: Zur Auszeichnung von Such-Links, v.a. für die werksinterne Verlinkung. Die Attribute werden vom XSLT in ein a-Element mit dem onclick-Event 'OpenSearchForDocumentGeneralInNewTab' umgeschrieben.</li>
+							<li>Fortsetzung <a href="#link">link</a> (inline, optional, unterhalb von <a href="#url">url</a>): &#x0040;a &#x0040;all_docid &#x0040;all_lawabbr &#x0040;all_artnum &#x0040;all_paragraph &#x0040;all_source &#x0040;all_rubrik &#x0040;all_rz &#x0040;ts_page &#x0040;ts_pubedition &#x0040;ts_pubyear &#x0040;generator (values: manual, publisher). Alle optional</li>
+							<li>ref-Element vollständig entfernen</li>
+							<li><a href="#paragraph">paragraph</a> darf jetzt mehrmals vorkommen (<a href="#metadata">metadata</a> <a href="#paragraph">paragraph</a> *)</li>
+							<li>neues Attribut (optional): <a href="#summary">summary</a> &#x0040;generated = "true" (true ist einziger vorgegebener value)</li>
+						</ul>
+Version 1.30 (19.02.19): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Neues Element <a href="#asubtitle_rest">subtitle_rest</a> hinzugefügt</li>
+							<li>Gerichts- und Behörden-Mapping aktualisiert</li>
+						</ul>
 
 
 
@@ -240,7 +254,7 @@ EMPTY - kein Inhalt
 <!ENTITY % block "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 <!ENTITY % block_with_questionAndAnswer "(p | subhead | figure | table | list | rzblock | example | block | questionAndAnswer | sidenote | newpage)*" >
 
-<!ENTITY % inline "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | latex | ref | url)*" >
+<!ENTITY % inline "(#PCDATA | b| i | u | sub | sup | span | br | footnote | newpage | file | latex | url | link)*" >
 
 <!ENTITY % attrId     " id     ID    #IMPLIED" >
 <!ENTITY % attrLang   " lang   (de | en | fr | es) #IMPLIED" >
@@ -261,7 +275,7 @@ _img metadata.png
                     rawid?,
                     extid?,
                     maindate,
-                    title, subtitle?, coll_title?, toc_title?,
+                    title, subtitle?, subtitle_rest?, coll_title?, toc_title?,
                     author_info?, authors?,
                     summary?, leitsaetze?, keywords*,
                     ressort?, rubriken?,
@@ -272,7 +286,7 @@ _img metadata.png
                     law*,
                     (instdoc, preinstdocs?)?,
                     law_refs?,
-                    paragraph?,
+                    paragraph*,
                     toc?, inner_toc?,
                     all_doc_type, all_doc_type, all_source, all_source, add_all_source?) >
 
@@ -350,6 +364,12 @@ _img title.png
 _img subtitle.png
 -->
 <!ELEMENT subtitle   %inline; >
+
+
+<!--Enthält redundant alle inhaltlichen Bestandteile von <i>subtitle</i>, d.h. nicht die dort evtl. vorhandenen Verlinkungen
+_img subtitle_rest.png
+-->
+<!ELEMENT subtitle_rest   %inline; >
 
 
 <!--Das Element <i>author_info</i> enthält Angaben zum Autor des redaktionellen Textes. Es ist nicht zwingend erforderlich, das Element <i>author_info</i> in den Metadaten zu setzen. In <i>author_info</i> sind die Elemente <i>author</i> und <i>biography</i> geschachtelt, in deren jeweiligen Kindelementen dann die einzelnen Informationen enthalten sind. In <i>biography</i> steht die Biografie aller Autoren gemeinsam.
@@ -493,6 +513,9 @@ _img maindate.png -->
 _img summary.png
 -->
 <!ELEMENT summary  (%block;) >
+<!ATTLIST summary
+	generated (true) #IMPLIED
+>
 
 
 <!--Element <i>type</i>: File type is mostly 'html' (also for xhtml), but in case an external binary file is referenced, <i>type</i> needs to be set to e.g. 'pdf'.
@@ -925,6 +948,7 @@ _img instcode.png
 		| SaechsVerfGH
 		| VerfGHSachsenAnhalt
 		| VerfGHThueringen
+		| VerfGHRheinlandPfalz
 		| FGBadenWuerttemberg
 		| FGBerlinBrandenburg
 		| FGBremen
@@ -955,7 +979,7 @@ _img instcode.png
 		| OLGFrankfurtMain
 		| OLGHamburg
 		| OLGHamm
-		| OLGThueringen
+		| OLGThueringen	
 		| OLGKarlsruhe
 		| OLGKoblenz
 		| OLGKoeln
@@ -1271,7 +1295,7 @@ _img instcode.png
 		| AGHeidelberg
 		| AGSinsheim
 		| AGWiesloch
-		| AGBretten
+		| AGBretten		
 		| AGBruchsal
 		| AGEttlingen
 		| AGKarlsruhe
@@ -1307,7 +1331,7 @@ _img instcode.png
 		| AGSchopfheim
 		| AGWaldshutTiengen
 		| AGAalen
-		| AGBadMergentheim
+		| AGBadMergentheim		
 		| AGCrailsheim
 		| AGEllwangen
 		| AGHeidenheimBrenz
@@ -2130,7 +2154,6 @@ _img instcode.png
 		| ATVfGH
 		| NLAGAmsterdam
 		| RG
-
 			) #IMPLIED
 	authority (
 		  other
@@ -2236,6 +2259,7 @@ _img instcode.png
 		| OFDMuenchen
 		| OFDNuernberg
 		| OFDErfurt
+		| LfStNiedersachsen
 		| OFDsMuenchenNuernberg
 		| OFDsDuesseldorfMuenster
 		| OFDsRheinlandMuenster
@@ -3061,16 +3085,6 @@ _img br.png
 <!ELEMENT br EMPTY >
 
 
-<!--Element, um Quer- und Kapitelverweise innerhalb von Werken umzusetzen
-_img ref.png
--->
-<!ELEMENT ref %inline; >
-
-<!ATTLIST ref
-	docref CDATA #REQUIRED
-	idref  CDATA #IMPLIED
->
-
 <!-- Element, um Internetadressen auszuzeichnen. Die URL wird im Attribut <i>src</i> eingetragen, der dargestellte Text, der von der
 URL abweichen kann, bildet den Elementinhalt
 _img url.png
@@ -3081,6 +3095,25 @@ _img url.png
 	src CDATA #REQUIRED
 >
 
+<!-- Zur Auszeichnung von Such-Links, v.a. für die werksinterne Verlinkung. Die Attribute werden vom XSLT in ein a-Element mit dem onclick-Event 'OpenSearchForDocumentGeneralInNewTab' umgeschrieben.
+_img link.png
+-->
+<!ELEMENT link %inline; >
+
+<!ATTLIST link
+	a CDATA #IMPLIED
+	all_docid CDATA #IMPLIED
+	all_lawabbr CDATA #IMPLIED
+	all_artnum CDATA #IMPLIED
+	all_paragraph CDATA #IMPLIED
+	all_source CDATA #IMPLIED
+	all_rubrik CDATA #IMPLIED
+	all_rz CDATA #IMPLIED
+	ts_page CDATA #IMPLIED
+	ts_pubedition CDATA #IMPLIED
+	ts_pubyear CDATA #IMPLIED
+	generator (manual | publisher) #IMPLIED
+>
 
 
 
