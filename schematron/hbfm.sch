@@ -191,7 +191,7 @@
     <!-- Temporäre Regel, bis Dirk und Lisa feste Ressort Werte für alle Zeitschriften festgelegt haben: Alle Aufsätze sollen ein
     ressort Element gesetzt haben. Zur Not soll es leer sein: --> <!-- Bis auf bei der KoR -->
     <pattern>
-        <rule context="/au[metadata/all_source[@level='1']='zsa'][not(metadata/pub/pubtitle/text()='KoR')]">
+        <rule context="/au[metadata/all_source[@level='1']='zsa'][not(metadata/pub/pubtitle/text()=('KoR','Bewertungspraktiker'))]">
             <assert test="/au/metadata/ressort">Das Ressort Element muss bei Aufsätzen gesetzt sein. Zur Not ohne Inhalt.</assert>
         </rule>
     </pattern>
