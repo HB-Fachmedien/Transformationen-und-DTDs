@@ -180,7 +180,17 @@
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'Bayer. Staatsmin. d. Fin.'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'SenFin. Berlin'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'va'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'FinMin. Mecklenburg-Vorpommern'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
@@ -271,7 +281,7 @@
             </xsl:call-template>
             
             <!-- WR -->
-            <h1>Wirtschaftliche Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
+            <h1>Wirtschaftsrechtliche Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BGH'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
@@ -297,6 +307,11 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG Bamberg'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Brandenburg'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
