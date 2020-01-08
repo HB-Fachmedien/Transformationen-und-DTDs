@@ -28,6 +28,10 @@
 	<werk name="AStW – Aktuelles aus dem Steuer- und Wirtschaftsrecht" dpsi="iww_astw">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12140</werk>
 	<werk name="B+P – Zeitschrift für Betrieb und Personal" dpsi="sf_bup">10184 10602</werk>
 	<werk name="Baetge/Kirsch/Thiele, Bilanzrecht" dpsi="sf_br">10602 12167 hbfm10006</werk>
+	<werk name="Stein, Investition Immobilie" dpsi="esv_investimm">10602</werk>
+	<werk name="Veräußerung und Erwerb von Arzt- und Zahnarztpraxen" dpsi="esv_arztprax">10602</werk>
+	<werk name="Siebert/Sommer/Grün, Nachfolge im Mittelstand" dpsi="esv_nachfms">10602</werk>
+	<werk name="Schmitt/Schmitt/Apitz, Formularbuch der Steuer- und Wirtschaftspraxis" dpsi="esv_swprax">10602</werk>
 	<werk name="Bauer, Die GmbH in der Krise" dpsi="zap_gmbhkr">12260</werk>
 	<werk name="Bauer, Genossenschafts-Handbuch" dpsi="esv_gen">12140</werk>
 	<werk name="Bauer/Lingemann/Diller/Haußmann, Anwalts-Formularbuch Arbeitsrecht" dpsi="ovs_bfa">10072 10162</werk>
