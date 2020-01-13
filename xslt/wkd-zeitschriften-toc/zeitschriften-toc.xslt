@@ -101,7 +101,7 @@
                 </xsl:for-each>
                 
                 <!-- 2. Danach alle Ressort gruppierten Beiträge: -->
-                <xsl:for-each-group select="$aktuelles-Heft/*[not(name()=('toc','ed', 'gk'))][metadata/ressort]" group-by="metadata/ressort">
+                <xsl:for-each-group select="$aktuelles-Heft/*[not(name()=('toc','ed', 'gk'))][metadata/ressort][not(metadata/coll_title)]" group-by="metadata/ressort">
                     <xsl:variable name="ressort-ueberschrift">
                         <xsl:choose>
                             <xsl:when test="current-grouping-key() = 'sr'">Steuerrecht</xsl:when>
@@ -134,7 +134,7 @@
                 </xsl:for-each-group>
                 
                 <!-- 3. Letztendlich der Rest: -->
-                <xsl:if test="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))]">
+                <xsl:if test="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))][not(metadata/coll_title)]">
                     <section>
                         <title>Weitere Inhalte</title>
                         <xsl:for-each select="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))]">
