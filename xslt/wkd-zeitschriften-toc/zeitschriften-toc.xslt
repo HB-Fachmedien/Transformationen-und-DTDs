@@ -161,11 +161,11 @@
         <tr>
             <td align="left" colspan="78%" rowspan="1" valign="top">
                 <p class="ihv_title">
-                    <url src="/lx-document/{$dokid}">
+                    <link meta_docid="{$dokid}">
                         <b>
                             <xsl:value-of select="$knoten/metadata/title"/>
                         </b>
-                    </url>
+                    </link>
                 </p>
                 <xsl:if test="$knoten/metadata/authors">
                     <p class="ihv_author">
