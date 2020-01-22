@@ -17,7 +17,7 @@
             <xsl:variable name="summary-word-list" select="tokenize($knoten/metadata/summary/p[not(@lang='en')][1], ' ')"/>
             <xsl:choose>
                 <xsl:when test="count($summary-word-list) &lt;= $WORTGRENZE">
-                    <xsl:value-of select="normalize-space($knoten/metadata/summary/p[not(@lang='en')])"/>
+                    <xsl:value-of select="normalize-space($knoten/metadata/summary/p[not(@lang='en')][1])"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:variable name="text_vor_wortgrenze">
