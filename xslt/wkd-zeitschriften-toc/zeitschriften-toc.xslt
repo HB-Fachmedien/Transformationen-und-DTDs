@@ -46,7 +46,12 @@
     <xsl:template match="/">
         <toc>
             <metadata>
-                <title>Inhaltsverzeichnis - <xsl:value-of select="upper-case($erstes-dokument/*/metadata/pub/pubtitle)"/><xsl:text> </xsl:text><xsl:value-of select="$erstes-dokument/*/metadata/pub/pubedition"/>/<xsl:value-of select="$erstes-dokument/*/metadata/pub/pubyear"/></title>
+                <title>
+                    <xsl:choose>
+                        <xsl:when test="$erstes-dokument/*/metadata/all_source[@level='2']/text()='zuj'">Inhaltsverzeichnis - ZUJ <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubedition"/>/<xsl:value-of select="$erstes-dokument/*/metadata/pub/pubyear"/></xsl:when>
+                        <xsl:otherwise>Inhaltsverzeichnis - <xsl:value-of select="upper-case($erstes-dokument/*/metadata/pub/pubtitle)"/><xsl:text> </xsl:text><xsl:value-of select="$erstes-dokument/*/metadata/pub/pubedition"/>/<xsl:value-of select="$erstes-dokument/*/metadata/pub/pubyear"/></xsl:otherwise>
+                    </xsl:choose>
+                </title>
                 <pub>
                     <pubtitle>
                         <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubtitle"/>
@@ -102,7 +107,7 @@
 
 
                 <!-- 2. Danach alle Ressort gruppierten Beiträge: -->
-                <xsl:for-each-group select="$aktuelles-Heft/*[not(name()=('toc','ed', 'gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='db' and metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="metadata/ressort">
+                <xsl:for-each-group select="$aktuelles-Heft/*[not(name()=('toc','ed', 'gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='db' and metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                     <xsl:variable name="ressort-ueberschrift">
                         <xsl:choose>
                             <xsl:when test="current-grouping-key() = 'sr'">Steuerrecht</xsl:when>
