@@ -166,15 +166,14 @@
                                                             <xsl:if test="/*/metadata/authors">
                                                                 <div class="ihv_autor">
                                                                     <xsl:for-each select="/*/metadata/authors/author">
-                                                                        
-                                                                        
                                                                         <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
                                                                         <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>        
                                                                     </xsl:for-each>
+                                                                    <xsl:if test="/*/name() = 'iv'"><xsl:text> im Interview</xsl:text></xsl:if>
                                                                 </div>
                                                             </xsl:if>
                                                             
-                                                            <div class="ihv_abstract" style="line-height:17.5px !important; font-size:13px !important;"> <p><xsl:value-of select="/*/metadata/summary"/></p></div>
+                                                            <div class="ihv_abstract" style="line-height:17.5px !important; font-size:13px !important;"><p><xsl:value-of select="/*/metadata/summary"/></p></div>
                                                             <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
                                                                 <xsl:choose>
                                                                     <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
