@@ -11,6 +11,7 @@
     <xsl:template match="raw-reg">
         <xsl:text>&#xa;</xsl:text>
         <register><xsl:text>&#xa;</xsl:text>
+            <TODO>BEACHTEN: WuW AUTORENVERZEICHNIS KOMMTENTARE IN ERSTER TRANSFORMATION!</TODO>
             <xsl:for-each-group select="reg-zeile" group-by="autor">
                 <ebene1-autoren><xsl:value-of select="current-grouping-key()"/></ebene1-autoren><xsl:text>&#xa;</xsl:text>
                 <xsl:for-each select="current-group()">

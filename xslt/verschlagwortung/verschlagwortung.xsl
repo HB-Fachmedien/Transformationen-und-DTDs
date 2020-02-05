@@ -15,9 +15,37 @@
     <!-- XPath Ausdruck, um Knoten zu vergleichen. Vergleicht nur auf String Gleichheit //A[.= following-sibling::A]
         bzw. //A[some $sibling in following-sibling::A satisfies deep-equal(. ,$sibling)]
     -->
+    
+    <!-- FÜR DAS WuW AUTORENREGISTER:
+    
+    <h2>Abhandlungen</h2>
+    [ressort/text()='Abhandlung']
+    
+    <h2>Gastkommentare</h2>
+    /gk
+    
+    <h2>Urteilsanmerkungen</h2>
+    /ent
+    
+    <h2>Ökonomisches Lexikon</h2>
+    [ressort/text()='Ökonomisches Lexikon']
+    
+    <h2>Tagungsbericht</h2>
+    [ressort/text()='Tagungsbericht']
+    
+    <h2>International Developments</h2>
+    HIER HABE ICH BISHER NICHTS, WEIL KEINE AUTORENDATEN IN DIESEN DOKUMENTEN
+    
+    <h2>Literatur</h2>
+    HIER HABE ICH BISHER NICHTS, WEIL KEINE AUTORENDATEN IN DIESEN DOKUMENTEN
+    
+    <h2>Interview</h2>
+    /iv
+    
+    -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/tempWUW/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata[not(starts-with(pub/pages/start_page/text(), 'M'))]/keywords/keyword[@tmid]">
                 <xsl:sort/>
