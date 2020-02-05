@@ -94,6 +94,7 @@
 	<werk name="DER BETRIEB" dpsi="db-bw">hbfm10006 hbfm10009 hbfm10010 hbfm10014</werk>
 	<werk name="DER BETRIEB Arbeitsrecht" dpsi="dbar">10002 10065 10072 10162 10177 10184 10206</werk>
 	<werk name="DER KONZERN" dpsi="dk">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12167 12260 hbfm10006 hbfm10014</werk>
+	<werk name="Zeitschrift für Unternehmensjuristen" dpsi="zuj">12173, 12260, 12167, 12532, hbfm10011, hbfm10013, hbfm10018, hbfm10020, hbfm10023, hbfm10026</werk>
 	<werk name="Deutinger, Kommunikation im Change" dpsi="spg_kommchange">hbfm10020 hbfm10023</werk>
 	<werk name="Doppler/Lauterburg, Change Management" dpsi="cv_cm">hbfm10020</werk>
 	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2016" dpsi="sf_estha">10648</werk>
@@ -285,6 +286,7 @@
 	<werk name="Mader/Perach/Voss/Besgen, ABC des Lohnbüros 2017" dpsi="sf_abclohn17">10072 10648 10759</werk>
 	<werk name="Mader/Perach/Voss/Imping, ABC des Lohnbüros 2018" dpsi="sf_abclohn18">10072 10648 10759</werk>
 	<werk name="Mader/Perach/Voss/Imping, ABC des Lohnbüros 2019" dpsi="sf_abclohn19">10072 10648 10759</werk>
+	<werk name="Mader/Perach/Voss/Imping, ABC des Lohnbüros 2020" dpsi="sf_abclohn20">10072 10648 10759</werk>
 	<werk name="Makowitz/Wolffgang, Praxishandbuch Compliance Management" dpsi="ba_rmgtunt">hbfm10011</werk>
 	<werk name="Malik, Führen, Leisten, Leben" dpsi="cv_fuehrleile">hbfm10022</werk>
 	<werk name="Malik, Navigieren in Zeiten des Umbruchs" dpsi="cv_navigumbr">hbfm10022 hbfm10020</werk>
@@ -371,6 +373,7 @@
 	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2016" dpsi="sf_esterkl16">10648</werk>
 	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2017" dpsi="sf_esterkl17">10648</werk>
 	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2018" dpsi="sf_esterkl18">10648</werk>
+	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2019" dpsi="sf_esterkl19">10648</werk>
 	<werk name="Schaumburg, Internationales Steuerrecht" dpsi="ovs_sis">10859</werk>
 	<werk name="Schaumburg/Englisch, Europäisches Steuerrecht" dpsi="ovs_seu">10859</werk>
 	<werk name="Schaumburg/Hendricks, Steuerrechtsschutz" dpsi="ovs_sss">10603 10859</werk>

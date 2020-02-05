@@ -101,15 +101,20 @@
 			
 			<xsl:apply-templates select="public | add_target | version | publisher"/>
 			
-			<xsl:if test="/*/metadata/all_source[@level='2']/text() = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe')">
-				<publisher>Handelsblatt Fachmedien</publisher>
-			</xsl:if>
+			<xsl:choose>
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe', 'zuj')">
+					<publisher>Handelsblatt Fachmedien</publisher>
+				</xsl:when>
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
+					<publisher>Institut Finanzen und Steuern</publisher>
+				</xsl:when>
+			</xsl:choose>
 		</pub>
 	</xsl:template>
 	
 	<xsl:template match="pubedition">
 		<pubedition>
-			<xsl:if test="string-length(text())=1"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="text()"/>
+			<xsl:if test="string-length(text())=1 and /*/metadata/all_source[@level='1']/text()='zsa'"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="text()"/>
 		</pubedition>
 	</xsl:template>
 	
@@ -1308,8 +1313,8 @@
 									
 								</node>
 							</xsl:when>
-							<!-- Rethinking Titel: -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF')">
+							<!-- Rethinking Titel + ZUJ (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
@@ -1337,6 +1342,28 @@
 													<xsl:when test="$ressortname='Digital Economy &amp; Recht'">200</xsl:when>
 													<xsl:when test="$ressortname='Change Management &amp; New Work'">300</xsl:when>
 													<xsl:when test="$ressortname='Job Markt &amp; Gossip'">400</xsl:when>
+													
+													<!-- Rethinking Tax: -->
+													<xsl:when test="$ressortname='Technology &amp; Innovation'">100</xsl:when>
+													<xsl:when test="$ressortname='Strategy &amp; Transformation'">200</xsl:when>
+													<xsl:when test="$ressortname='Law &amp; Administration'">300</xsl:when>
+													<xsl:when test="$ressortname='Change &amp; Skills'">400</xsl:when>
+													
+													<!-- Rethinking Law: -->
+													<xsl:when test="$ressortname='Manifest &amp; Bestandsaufnahme'">100</xsl:when>
+													<xsl:when test="$ressortname='Positionen'">200</xsl:when>
+													<xsl:when test="$ressortname='Außensicht'">300</xsl:when>
+													<xsl:when test="$ressortname='Was wäre wenn ...'">400</xsl:when>
+													
+													<!-- ZUJ: -->
+													<xsl:when test="$ressortname='BUJ Inside'">100</xsl:when>
+													<xsl:when test="$ressortname='Recht &amp; Wirtschaft'">200</xsl:when>
+													<xsl:when test="$ressortname='Im Fokus'">300</xsl:when>
+													<xsl:when test="$ressortname='Management &amp; Business'">400</xsl:when>
+													<xsl:when test="$ressortname='Aktuelles'">450</xsl:when>
+													
+													<!-- hier natürlich aufpassen, dass sich die Ressorts über die Zeitschriften nicht überschneiden, ansonsten auch noch auf pubabbr filtern. -->
+
 													<xsl:otherwise>500</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>

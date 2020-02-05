@@ -207,7 +207,7 @@
             <pubtitle><xsl:value-of select="pubtitle"/></pubtitle>
             <pubabbr><xsl:value-of select="pubabbr"/></pubabbr>
             <pubyear><xsl:value-of select="pubyear"/></pubyear>
-            <pubedition><xsl:if test="string-length(pubedition/text())=1"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="pubedition"/></pubedition>
+            <pubedition><xsl:if test="string-length(pubedition/text())=1 and /*/metadata/all_source[@level='1']/text()='zsa'"><xsl:text>0</xsl:text></xsl:if><xsl:value-of select="pubedition"/></pubedition>
             <date><xsl:value-of select="ancestor::metadata/date/text()"/></date>
             <xsl:if test="pub_suppl">
                 <pub_suppl>
@@ -229,38 +229,45 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
-            
-            <xsl:if test="not($all_source_l2_prefix = 'rbv')"> <!-- To-Do: Wer kriegt kein Publisher Element? -->
                 
-                <publisher>
-                    <xsl:choose>
-                        <!-- Fremdverlage: -->
-                        <xsl:when test="$all_source_l2_prefix = 'cv'"><xsl:value-of select="codepoints-to-string(169)"/> Campus Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'dg'">De Gruyter</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'esv'">Erich Schmidt Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'ovs'">Verlag Dr. Otto Schmidt</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'rws'">RWS Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'sf'">Stollfuß Medien</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'zap'">ZAP Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'spg'">Springer Gabler</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'ba'">Reguvis – Bundesanzeiger Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'dav'">Deutscher Anwaltverlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'cfm'">C.F. Müller</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'zv'">zerb Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'iww'">IWW Institut</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'idw'">IDW Verlag</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'dfv'">dfv Mediengruppe</xsl:when>
-                        <xsl:when test="$all_source_l2_prefix = 'ifst'">Institut Finanzen und Steuern</xsl:when>
-                        
-                        <!-- Handelsblatt Fachmedien: -->
-                        <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','fb','kor','ref','rel','ret','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
-                        <!--  -->
-                        
-                        <xsl:otherwise><FEHLER>Konnte all_source/@level='2' nicht auflösen: <xsl:value-of select="$all_source_l2_prefix"/></FEHLER></xsl:otherwise>
-                    </xsl:choose>
-                </publisher>
-            </xsl:if>
+            <publisher>
+                <xsl:choose>
+                    <!-- Fremdverlage: -->
+                    <xsl:when test="$all_source_l2_prefix = 'cv'"><xsl:value-of select="codepoints-to-string(169)"/> Campus Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'dg'">De Gruyter</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'esv'">Erich Schmidt Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'ovs'">Verlag Dr. Otto Schmidt</xsl:when>
+
+                    <!-- Bei RWS gibt es Sonderfälle, da einzelne Titel an Otto Schmidt verkauft wurden -->
+                    <xsl:when test="$all_source_l2_prefix = 'rws'">
+                        <xsl:choose>
+                            <xsl:when test="ancestor::metadata/all_source[@level='2']/text()=('rws_ewir','rws_zip')">Verlag Dr. Otto Schmidt</xsl:when>
+                            <xsl:otherwise>RWS Verlag</xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'sf'">Stollfuß Medien</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'rbv'">Richard Boorberg Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'mwv'">Medizinisch Wissenschaftliche Verlagsgesellschaft</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'vvw'">Verlag Versicherungswirtschaft</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'zap'">ZAP Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'spg'">Springer Gabler</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'ba'">Reguvis – Bundesanzeiger Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'dav'">Deutscher Anwaltverlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'cfm'">C.F. Müller</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'zv'">zerb Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'iww'">IWW Institut</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'idw'">IDW Verlag</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'dfv'">dfv Mediengruppe</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'ifst'">Institut Finanzen und Steuern</xsl:when>
+                    
+                    <!-- Handelsblatt Fachmedien: -->
+                    <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','fb','kor','ref','rel','ret','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
+                    <!--  -->
+                    
+                    <xsl:otherwise><FEHLER>Konnte all_source/@level='2' nicht auflösen: <xsl:value-of select="$all_source_l2_prefix"/></FEHLER></xsl:otherwise>
+                </xsl:choose>
+            </publisher>
         </pub>
     </xsl:template>
     
