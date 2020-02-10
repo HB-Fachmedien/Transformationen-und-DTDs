@@ -480,4 +480,19 @@
 	<werk name="ZWeR – Zeitschrift für Wettbewerbsrecht" dpsi="rws_zwer">12532</werk>
 	<werk name="Bewertungspraktiker" dpsi="bwp">hbfm10006 hbfm10007 hbfm10008 hbfm10009 hbfm10010</werk>
 	<werk name="Ifst-Schriften" dpsi="ifst">10602</werk>
+	
+	<!-- neue IDW Werke: -->
+	<werk name="IDW (Hrsg.), Praxisleitfaden Governance, Risk und Compliance" dpsi="idw_praxgrc">hbfm10004 hbfm10012 hbfm10013</werk>
+	<werk name="IDW (Hrsg.), IDW Verlautbarungen zu Governance, Risk und Compliance" dpsi="idw_vlbgrc">hbfm10011 hbfm10016</werk>
+	<werk name="IDW (Hrsg.), Tax Compliance" dpsi="idw_taxcompl">10602 hbfm10013</werk>
+	<werk name="Schmidt, WPH Assurance, Kapitel K: Corporate Governance Systeme und deren Prüfung" dpsi="idw_wphk">hbfm10011 hbfm10016</werk>
+	<werk name="Koch/Stauder, WPH Assurance, Kapitel L: Tax Compliance" dpsi="idw_wphl">hbfm10012 hbfm10017</werk>
+	<werk name="IDW (Hrsg.), Veranlagungshandbuch Einkommensteuer 2018" dpsi="idw_est_2019">10648</werk>
+	<werk name="IDW (Hrsg.), Veranlagungshandbuch Körperschaftsteuer 2018" dpsi="idw_kst_2019">10764</werk>
+	<werk name="IDW (Hrsg.), Veranlagungshandbuch Gewerbesteuer 2018" dpsi="idw_gewst_2019">10734</werk>
+	<werk name="IDW (Hrsg.), Veranlagungshandbuch Umsatzsteuer 2018" dpsi="idw_ust_2019">10774</werk>
+	<werk name="IDW (Hrsg.), Praktiker-Handbuch Allgemeines Steuer- und Verfahrensrecht 2019" dpsi="idw_stverfr_2019">10603 10859</werk>
+	<werk name="IDW (Hrsg.), Neuregelung der Erbschaftsteuer" dpsi="idw_erbst">10718</werk>
+	<werk name="IDW (Hrsg.), Doppelstöckige Personengesellschaften" dpsi="idw_persg">10602</werk>
+	<werk name="WPg – Die Wirtschaftsprüfung" dpsi="idw_wpg">10602 hbfm10012</werk>
 </werke>
