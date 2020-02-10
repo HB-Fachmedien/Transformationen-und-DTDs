@@ -45,9 +45,9 @@
         <class sort="112">Hanseatisches OLG Hamburg</class>
         <class sort="115">OLG Hamm</class>
         <class sort="120">OLG Karlsruhe</class>
-        <class sort="130">OLG Köln</class>
-        <class sort="145">OLG München</class>
-        <class sort="130">OLG Nürnberg</class>
+        <class sort="125">OLG Köln</class>
+        <class sort="130">OLG München</class>
+        <class sort="135">OLG Nürnberg</class>
         <class sort="140">OLG Stuttgart</class>
         <class sort="145">OLG Thüringen</class>
         <class sort="150">LG Berlin</class>
