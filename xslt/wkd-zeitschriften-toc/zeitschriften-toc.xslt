@@ -110,6 +110,7 @@
                 <xsl:for-each-group select="$aktuelles-Heft/*[not(name()=('toc','ed', 'gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='db' and metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                     <xsl:variable name="ressort-ueberschrift">
                         <xsl:choose>
+                            <xsl:when test="current-grouping-key() = ''">Aufsätze</xsl:when>
                             <xsl:when test="current-grouping-key() = 'sr'">Steuerrecht</xsl:when>
                             <xsl:when test="current-grouping-key() = 'wr'">Wirtschaftsrecht</xsl:when>
                             <xsl:when test="current-grouping-key() = 'ar'">Arbeitsrecht</xsl:when>
