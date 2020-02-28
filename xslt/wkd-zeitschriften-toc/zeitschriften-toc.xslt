@@ -105,7 +105,27 @@
                     </section>
                 </xsl:for-each>
 
-
+                <!-- 1.b)Aufsätze für KoR haben kein Ressort: -->
+                <xsl:if test="$aktuelles-Heft/*[metadata/all_source[@level='2']/text()='kor']">
+                    <section>
+                        <title>Aufsätze</title>
+                        <xsl:for-each select="$aktuelles-Heft/au[not(name()=('toc','ed', 'gk'))][not(metadata/coll_title)][not(metadata/ressort)]">
+                            <!--<xsl:sort select="number(replace(metadata/pub/pages/start_page/text(), 'M', ''))"/>-->
+                            <table frame="void" rules="none">
+                                <tbody>
+                                    <xsl:for-each select="/*">
+                                        <xsl:call-template name="print-entry">
+                                            <xsl:with-param name="knoten" select="."/>
+                                            <xsl:with-param name="mantelteil" select="'yes'"/>
+                                        </xsl:call-template>
+                                    </xsl:for-each>
+                                </tbody>
+                            </table>
+                            
+                        </xsl:for-each>
+                    </section>
+                </xsl:if>
+                
                 <!-- 2. Danach alle Ressort gruppierten Beiträge: -->
                 <xsl:for-each-group select="$aktuelles-Heft/*[not(name()=('toc','ed', 'gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='db' and metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                     <xsl:variable name="ressort-ueberschrift">
@@ -139,7 +159,7 @@
                         </xsl:for-each>
                     </section>
                 </xsl:for-each-group>
-                
+
                 <!-- 2.b) Magazinteil für DB -->
                 <xsl:if test="$aktuelles-Heft/*[metadata/all_source[@level='2']/text()='db']">
                     <section>
@@ -156,25 +176,51 @@
                                     </xsl:for-each>
                                 </tbody>
                             </table>
-                            
+
                         </xsl:for-each>
                     </section>
                 </xsl:if>
+               
 
-                <!-- 3. Letztendlich der Rest: -->
-                <xsl:if test="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))][not(metadata/coll_title)]">
-                    <section>
-                        <title>Weitere Inhalte</title>
-                        <xsl:for-each select="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))]">
-                            <table frame="void" rules="none">
-                                <tbody>
-                                    <xsl:call-template name="print-entry">
-                                        <xsl:with-param name="knoten" select="."/>
-                                    </xsl:call-template>
-                                </tbody>
-                            </table>
-                        </xsl:for-each>
-                    </section>
+                <!-- 3. Letztendlich der Rest, der keine Ressorts hat: -->
+                <xsl:if test="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))][not(metadata/all_source[@level='2']/text()='kor')][not(metadata/coll_title)]">
+
+                    <!-- TODO DAS HIER IST BISHER NUR FÜR WUW GETESTET, KOR UND ANDERE DOCTYP-OHNE-RESSORT Magazine müssen noch getestet werden: -->
+                    <xsl:for-each-group select="$aktuelles-Heft/*[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))]" group-by="./name()">
+
+                        <xsl:variable name="ressort-ueberschrift">
+                            <xsl:choose>
+                                <xsl:when test="current-grouping-key() = 'ent'">Entscheidungen</xsl:when>
+                                <xsl:when test="current-grouping-key() = 'iv'">Interview</xsl:when>
+                                <xsl:when test="current-grouping-key() = 'rez'">Literatur</xsl:when>
+                                <!--<xsl:when test="current-grouping-key() = 'wr'">Wirtschaftsrecht</xsl:when>
+                                
+                                <xsl:when test="current-grouping-key() = 'bw'">Betriebswirtschaft</xsl:when>
+                                <xsl:when test="current-grouping-key() = 'kr'">Konzernrecht</xsl:when>
+                                <xsl:when test="current-grouping-key() = 'br'">Rechnungslegung/Corporate Governance</xsl:when>-->
+                                <xsl:otherwise>
+                                    <xsl:value-of select="'Weitere Inhalte'"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <section>
+                            <title>
+                                <xsl:value-of select="$ressort-ueberschrift"/>
+                            </title>
+                            <xsl:for-each select="current-group()">
+                                <table frame="void" rules="none">
+                                    <tbody>
+                                        <xsl:for-each select="/*">
+                                            <xsl:call-template name="print-entry">
+                                                <xsl:with-param name="knoten" select="."/>
+                                            </xsl:call-template>
+                                        </xsl:for-each>
+                                    </tbody>
+                                </table>
+                            </xsl:for-each>
+                        </section>
+                    </xsl:for-each-group>
+
                 </xsl:if>
             </body>
         </toc>
@@ -197,7 +243,7 @@
                                 <xsl:when test="$knoten/metadata/ressort/text() = 'wr'">Wirtschaftsrecht</xsl:when>
                                 <xsl:when test="$knoten/metadata/ressort/text() = 'ar'">Arbeitsrecht</xsl:when>
                                 <xsl:when test="$knoten/metadata/ressort/text() = 'bw'">Betriebswirtschaft</xsl:when>
-                                <xsl:otherwise></xsl:otherwise>
+                                <xsl:otherwise/>
                             </xsl:choose>
                         </xsl:variable>
                         <xsl:variable name="doctype">
