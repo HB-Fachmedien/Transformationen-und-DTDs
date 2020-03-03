@@ -116,7 +116,6 @@
                                     <xsl:for-each select="/*">
                                         <xsl:call-template name="print-entry">
                                             <xsl:with-param name="knoten" select="."/>
-                                            <xsl:with-param name="mantelteil" select="'yes'"/>
                                         </xsl:call-template>
                                     </xsl:for-each>
                                 </tbody>
