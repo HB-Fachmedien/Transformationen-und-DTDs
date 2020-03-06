@@ -146,7 +146,7 @@
                         <xsl:value-of select="replace(substring(string-join(/*/metadata/leitsaetze//text()[normalize-space()], ' '), 1, 500), '(\s\w*)$', '')"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="replace(substring(string-join(/*/xml_body//p//text()[normalize-space()], concat(' ', codepoints-to-string(10))), 1, 500), '(\s\w*)$', ' ')"/>
+                        <xsl:value-of select="replace(substring(string-join(/*/xml_body//p/ancestor-or-self::*[not(name()=footnote)]/text()[normalize-space()], concat(' ', codepoints-to-string(10))), 1, 500), '(\s\w*)$', ' ')"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </summary_plain>
