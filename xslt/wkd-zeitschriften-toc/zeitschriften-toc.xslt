@@ -265,19 +265,33 @@
                         </b>
                     </link>
                 </p>
-                <xsl:if test="$knoten/metadata/authors">
-                    <p class="ihv_author">
-                        <i>
-                            <xsl:for-each select="$knoten/metadata/authors/author">
-                                <xsl:if test="not(position()=1)">
-                                    <xsl:text> / </xsl:text>
-                                </xsl:if>
-                                <xsl:value-of select="normalize-space(concat(prefix, ' ' , firstname, ' ', surname))"/>
-                            </xsl:for-each>
-                        </i>
-                    </p>
-                </xsl:if>
-
+                <xsl:choose>
+                    <xsl:when test="$knoten/metadata/authors/author">
+                        <p class="ihv_author">
+                            <i>
+                                <xsl:for-each select="$knoten/metadata/authors/author">
+                                    <xsl:if test="not(position()=1)">
+                                        <xsl:text> / </xsl:text>
+                                    </xsl:if>
+                                    <xsl:value-of select="normalize-space(concat(prefix, ' ' , firstname, ' ', surname))"/>
+                                </xsl:for-each>
+                            </i>
+                        </p>
+                    </xsl:when>
+                    <xsl:when test="$knoten/metadata/authors/organisation">
+                        <p class="ihv_author">
+                            <i>
+                                <xsl:for-each select="$knoten/metadata/authors/organisation">
+                                    <xsl:if test="not(position()=1)">
+                                        <xsl:text> / </xsl:text>
+                                    </xsl:if>
+                                    <xsl:value-of select="text()"/>
+                                </xsl:for-each>
+                            </i>
+                        </p>
+                    </xsl:when>
+                </xsl:choose>
+                
                 <!-- Entweder Summary oder Urteilsdaten: -->
                 <xsl:choose>
                     <xsl:when test="$knoten/metadata/summary">
