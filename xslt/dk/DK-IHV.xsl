@@ -13,9 +13,7 @@
             <body>
                 <div class="content-wrapper">
                     <h1 class="pagehead small">Inhaltsverzeichnis</h1>
-                    <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von Der Konzern? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der 
-                        
-                        <a href="https://der-konzern.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.5812b0ada8c9454182ed43bf03f938ef&amp;title=Der+Konzern&amp;trailpos=2" target="_blank">Bibliothek der Recherche-Datenbank.</a>
+                    <div>Sie suchen das Inhaltsverzeichnis einer älteren Ausgabe von Der Konzern? Die Übersicht aller in der Datenbank verfügbaren Ausgaben finden Sie in der <a href="https://der-konzern.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.5812b0ada8c9454182ed43bf03f938ef&amp;title=Der+Konzern&amp;trailpos=2" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
                     <section class="left" id="content" style="width:630px">
                         <div class="content-list inhaltsverzeichnis">
@@ -29,7 +27,7 @@
                                     <div class="ihv_level2">
                                         <!-- FOR EACH GROUP ÜBER ALLE DOKUMENTE, GRUPPIERT NACH DOCTYPE-->
                                         <xsl:for-each-group select="$aktuelles-Heft" group-by="*[1]/name()" >
-                                            <xsl:sort select="*/name()"/>
+                                            <xsl:sort select="*[1]/metadata/pub/pages/start_page/text()" data-type="number"/>
                                             <xsl:choose>
                                                 <xsl:when test="current-grouping-key() = 'au'">
                                                     <div id="au" class="ihv_headline ressort" style="margin-bottom: 5px;">Aufsätze</div>
@@ -40,6 +38,9 @@
                                                 <xsl:when test="current-grouping-key() = 'entk'">
                                                     <div id="entk" class="ihv_headline ressort" style="margin-bottom: 5px;">Entscheidungen</div>
                                                 </xsl:when>
+                                                <xsl:when test="current-grouping-key() = 'kk'">
+                                                    <div id="va" class="ihv_headline ressort" style="margin-bottom: 5px;">Kompakt</div>
+                                                </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'va'">
                                                     <div id="va" class="ihv_headline ressort" style="margin-bottom: 5px;">Verwaltungsanweisungen</div>
                                                 </xsl:when>
@@ -48,7 +49,7 @@
                                             
                                             <!-- For-each-group, die alle Doctypen in die drei Ressorts gruppiert: kr, br und sr: -->
                                             <xsl:for-each-group select="current-group()" group-by="/*/metadata/ressort">
-                                                <xsl:sort select="/*/metadata/pub/pages/start_page"/>
+                                                <xsl:sort select="*[1]/metadata/pub/pages/start_page/text()" data-type="number"/>
                                                 
                                                 <xsl:choose>
                                                     <xsl:when test="current-grouping-key() = 'kr'">
