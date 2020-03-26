@@ -84,7 +84,7 @@
                                                             <div class="ihv_autor">
                                                                 <xsl:choose>
                                                                     <!-- Bei Aufsätzen kommen die Autorennamen über den Titel -->
-                                                                    <xsl:when test="/*/name() = 'au'">
+                                                                    <xsl:when test="/*/name() = ('au', 'kk')">
                                                                         <xsl:for-each select="*/metadata/authors/author">
                                                                             <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
                                                                             <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
