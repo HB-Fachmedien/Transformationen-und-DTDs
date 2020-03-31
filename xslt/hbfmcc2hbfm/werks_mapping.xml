@@ -95,7 +95,7 @@
 	<werk name="DER BETRIEB" dpsi="db-bw">hbfm10006 hbfm10009 hbfm10010 hbfm10014</werk>
 	<werk name="DER BETRIEB Arbeitsrecht" dpsi="dbar">10002 10065 10072 10162 10177 10184 10206</werk>
 	<werk name="DER KONZERN" dpsi="dk">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12167 12260 hbfm10006 hbfm10014</werk>
-	<werk name="Zeitschrift für Unternehmensjuristen" dpsi="zuj">12173, 12260, 12167, 12532, hbfm10011, hbfm10013, hbfm10018, hbfm10020, hbfm10023, hbfm10026</werk>
+	<werk name="Zeitschrift für Unternehmensjuristen" dpsi="zuj">12173 12260 12167 12532 hbfm10011 hbfm10013 hbfm10018 hbfm10020 hbfm10023 hbfm10026</werk>
 	<werk name="Deutinger, Kommunikation im Change" dpsi="spg_kommchange">hbfm10020 hbfm10023</werk>
 	<werk name="Doppler/Lauterburg, Change Management" dpsi="cv_cm">hbfm10020</werk>
 	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2016" dpsi="sf_estha">10648</werk>
@@ -120,6 +120,7 @@
 	<werk name="ErbBstg – Erbfolgebesteuerung" dpsi="iww_erbbstg">10718</werk>
 	<werk name="erbstb – Erbschaft-Steuerberater" dpsi="ovs_erbstb">10718</werk>
 	<werk name="Erman, BGB" dpsi="ovs_erman">12140</werk>
+	<werk name="Tillmann/Mohr, GmbH-Geschäftsführer" dpsi="ovs_ct1">12260 12499</werk>
 	<werk name="Ernst &amp; Young, KStG" dpsi="sf_kstg">10764</werk>
 	<werk name="Erpenbeck/Sauter, So werden wir lernen!" dpsi="spg_lernen">hbfm10020 hbfm10023</werk>
 	<werk name="estb – Ertrag-Steuerberater" dpsi="ovs_estb">10648 10734 10764</werk>
@@ -211,6 +212,7 @@
 	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2016" dpsi="sf_kstha">10764</werk>
 	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2017" dpsi="sf_kstha17">10764</werk>
 	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2018" dpsi="sf_kstha18">10764</werk>
+	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2019" dpsi="sf_kstha19">10764</werk>
 	<werk name="Hüls/Reichling, Steuerstrafrecht" dpsi="cfm_hdststrafr">10602</werk>
 	<werk name="Hüttemann, Gemeinnützigkeits- und Spendenrecht" dpsi="ovs_hgs">10603 10764 10648</werk>
 	<werk name="Ihrig/Schäfer, Rechte und Pflichten des Vorstands" dpsi="ovs_isv">12260 hbfm10015</werk>
@@ -226,6 +228,7 @@
 	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2016" dpsi="sf_gewstha">10734</werk>
 	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2017" dpsi="sf_gewstha17">10734</werk>
 	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2018" dpsi="sf_gewstha18">10734</werk>
+	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2019" dpsi="sf_gewstha19">10734</werk>
 	<werk name="Keunecke, Prospekte im Kapitalmarkt" dpsi="ENTFERNT">12140 hbfm10007</werk>
 	<werk name="Kirchhof, EStG" dpsi="ovs_kest">10648</werk>
 	<werk name="Kirchhof/Söhn/Mellinghoff, EStG" dpsi="cfm_kirchestg">10648</werk>
@@ -249,7 +252,8 @@
 	<werk name="KPMG, E-Bilanz" dpsi="ENTFERNT">10603 10648 10764 12167 hbfm10006</werk>
 	<werk name="Kraemer/Vallender/Vogelsang, Handbuch zur Insolvenz" dpsi="sf_insolv">10001 10602 12348</werk>
 	<werk name="Kranig/Sachs/Gierschmann, Datenschutz-Compliance nach der DS-GVO" dpsi="ba_dsgvocompl">hbfm10011 hbfm10017</werk>
-	<werk name="Krieger/Schneider, Handbuch Managerhaftung" dpsi="ovs_ksm">12260</werk>
+	<werk name="Krieger/Schneider, Handbuch Managerhaftung" dpsi="ovs_ksm">12260</werk>	
+	<werk name="Tillmann/Schiffers/Wälzholz/Rupp, Die GmbH im Gesellschafts- und Steuerrecht" dpsi="ovs_tw">12260</werk>
 	<werk name="Kroppen, Handbuch Internationale Verrechnungspreise" dpsi="ovs_bkv">10859</werk>
 	<werk name="Krüger/Bach, Excellence in Change" dpsi="spg_excchange">hbfm10020</werk>
 	<werk name="KSI – Krisen-, Sanierungs- und Insolvenzberatung" dpsi="esv_ksi">hbfm10026</werk>
