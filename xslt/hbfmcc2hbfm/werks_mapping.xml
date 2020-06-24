@@ -487,7 +487,13 @@
 	<werk name="ZWeR – Zeitschrift für Wettbewerbsrecht" dpsi="rws_zwer">12532</werk>
 	<werk name="Bewertungspraktiker" dpsi="bwp">hbfm10006 hbfm10007 hbfm10008 hbfm10009 hbfm10010</werk>
 	<werk name="Ifst-Schriften" dpsi="ifst">10602</werk>
-	
+	<werk dpsi="efv_gmbhstr">10602 10734 10744 10752 10764 10774 12140</werk>
+	<werk dpsi="efv_graofgo">10602 10603 10797</werk>
+	<werk dpsi="efv_grerbst">10602 10718</werk>
+	<werk dpsi="efv_grgewst">10602 10734</werk>
+	<werk dpsi="efv_grkst">10602 10764</werk>
+	<werk dpsi="efv_istr">10602</werk>
+	<werk dpsi="efv_ust">10602 10774</werk>
 	<!-- neue IDW Werke: -->
 	<werk name="IDW (Hrsg.), Praxisleitfaden Governance, Risk und Compliance" dpsi="idw_praxgrc">hbfm10004 hbfm10012 hbfm10013</werk>
 	<werk name="IDW (Hrsg.), IDW Verlautbarungen zu Governance, Risk und Compliance" dpsi="idw_vlbgrc">hbfm10011 hbfm10016</werk>
