@@ -256,6 +256,7 @@
                     <xsl:when test="$all_source_l2_prefix = 'cfm'">C.F. Müller</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'zv'">zerb Verlag</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'iww'">IWW Institut</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'efv'">Erich Fleischer Verlag</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'idw'">IDW Verlag</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'dfv'">dfv Mediengruppe</xsl:when>
