@@ -351,6 +351,11 @@
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Köln'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'AGH Nordrhein-Westfalen'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
@@ -372,6 +377,11 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'OLG Rostock'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'OLG Saarbrücken'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
@@ -402,6 +412,16 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'BVerwG'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'AGH München'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'VG Frankfurt/M.'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
