@@ -1,511 +1,505 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <werke xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<werk name="360° EnergieStG eKommentar" dpsi="sf_energstgok">10859</werk>
-	<werk name="360° GrEStG eKommentar" dpsi="sf_grestgok">10744</werk>
-	<werk name="360° KStG eKommentar" dpsi="sf_kstgok">10764</werk>
-	<werk name="360° MwStSystRL eKommentar" dpsi="sf_mwstok">10774</werk>
-	<werk name="360° StromStG eKommentar" dpsi="sf_stromstgok">10859</werk>
-	<werk name="360° VersStG eKommentar" dpsi="sf_versstgok">10859</werk>
-	<werk name="AA – Arbeitsrecht aktiv" dpsi="iww_aa">10072 10206 10184 10162</werk>
-	<werk name="Abels/Besgen/Deck/Rausch, Mini-Jobs, Aushilfen, Teilzeit" dpsi="sf_minijobs">10072 10602</werk>
-	<werk name="Achenbach, Familienexternes Management im Mittelstand" dpsi="hbfm_famextmgt">hbfm10026 hbfm10027 hbfm10021</werk>
-	<werk name="Achenbach/Gottschalck, Beirat und Aufsichtsrat" dpsi="hbfm_buar">hbfm10001 hbfm10014</werk>
-	<werk name="Achenbach/Ransiek/Rönnau, Handbuch Wirtschaftsstrafrecht" dpsi="cfm_wstrafr">10602 12140</werk>
-	<werk name="Adick/Bülte, Fiskalstrafrecht" dpsi="cfm_fiskstrafr">10602</werk>
-	<werk name="Adick/Höink/Kurt, Umsatzsteuer und Strafrecht" dpsi="cfm_uststrafr">10603 10774</werk>
-	<werk name="AG – Die Aktiengesellschaft" dpsi="ovs_ag">12260</werk>
-	<werk name="Ahrend/Förster/Rößler, Steuerrecht der betrieblichen Altersversorgung" dpsi="ovs_bav">10177 10648 10764</werk>
-	<werk name="Ahrens, Das neue Privatinsolvenzrecht" dpsi="rws_ahrens">12348</werk>
-	<werk name="AK – Anwalt und Kanzlei" dpsi="iww_ak">12597</werk>
-	<werk name="Aktuelle Entwicklungen im Wirtschafts- und Steuerrecht" dpsi="hbfm_ae">10603 10648 10718 10734 10744 10752 10759 10764 10774 10791 10797 10859 12141 12260 12167 12348 12458 12532</werk>
-	<werk name="aostb – AO-Steuerberater" dpsi="ovs_aostb">10603</werk>
-	<werk name="arbrb – Arbeits-Rechtsberater" dpsi="ovs_arbrb">10072 10002 10162 10184 10206</werk>
-	<werk name="Arens/Brand, Arbeits- und Sozialrecht in der Insolvenz" dpsi="dav_arinsolv">10162 10072 10206 12348</werk>
-	<werk name="Arens/Düwell/Wichert, Handbuch Umstrukturierung und Arbeitsrecht" dpsi="dav_umstrar">10072 10206</werk>
-	<werk name="Assmann/Pötzsch/Schneider, WpÜG" dpsi="ovs_aps">12140 hbfm10009</werk>
-	<werk name="Assmann/Schlitt/von Kopp-Colomb, WpPG/VerkProspG" dpsi="ovs_alr">12140 hbfm10007</werk>
-	<werk name="Assmann/Schneider, WpHG" dpsi="ovs_asw">12140</werk>
-	<werk name="Assmann/Wallach/Zetzsche, Kapitalanlagegesetzbuch" dpsi="ovs_awz">12140</werk>
-	<werk name="AStW – Aktuelles aus dem Steuer- und Wirtschaftsrecht" dpsi="iww_astw">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12140</werk>
-	<werk name="B+P – Zeitschrift für Betrieb und Personal" dpsi="sf_bup">10184 10602</werk>
-	<werk name="Baetge/Kirsch/Thiele, Bilanzrecht" dpsi="sf_br">10602 12167 hbfm10006</werk>
-	<werk name="Stein, Investition Immobilie" dpsi="esv_investimm">10602</werk>
-	<werk name="Veräußerung und Erwerb von Arzt- und Zahnarztpraxen" dpsi="esv_arztprax">10602</werk>
-	<werk name="Siebert/Sommer/Grün, Nachfolge im Mittelstand" dpsi="esv_nachfms">10602</werk>
-	<werk name="Schmitt/Schmitt/Apitz, Formularbuch der Steuer- und Wirtschaftspraxis" dpsi="esv_swprax">10602</werk>
-	<werk name="Bauer, Die GmbH in der Krise" dpsi="zap_gmbhkr">12260</werk>
-	<werk name="Bauer, Genossenschafts-Handbuch" dpsi="esv_gen">12140</werk>
-	<werk name="Bauer/Lingemann/Diller/Haußmann, Anwalts-Formularbuch Arbeitsrecht" dpsi="ovs_bfa">10072 10162</werk>
-	<werk name="Baum, AO/FGO Handausgabe 2017" dpsi="sf_aofgoha">10603 10797</werk>
-	<werk name="Baum, AO/FGO Handausgabe 2018" dpsi="sf_aofgoha18">10603 10797</werk>
-	<werk name="Baum, AO/FGO Handausgabe 2019" dpsi="sf_aofgoha19">10603 10797</werk>
-	<werk name="Baum, AO/FGO Handausgabe 2020" dpsi="sf_aofgoha20">10603 10797</werk>
-	<werk name="Baum/Buse/Brandl/Szymczak/etc., 360° AO eKommentar" dpsi="sf_aook">10603</werk>
-	<werk name="BBP – Betriebswirtschaft im Blickpunkt" dpsi="iww_bbp">12167 hbfm10006 hbfm10007</werk>
-	<werk name="BDI/Ebner Stolz, Unternehmensnachfolge nach der Erbschaftsteuerreform 2016" dpsi="sf_untnachf">10602 12140</werk>
-	<werk name="Becker, Executive Health – Gesundheit als Führungsaufgabe" dpsi="spg_exechealth">hbfm10023</werk>
-	<werk name="Beckervordersandfort, Gestaltungen zum Erhalt des Familienvermögens" dpsi="zv_famverm">10602</werk>
-	<werk name="Beckmann/Scholtz/Vollmer, Investment" dpsi="esv_investm">10859 12140</werk>
-	<werk name="Behrens/Wachter, Grunderwerbsteuergesetz Kommentar" dpsi="ovs_bwgr">10744</werk>
-	<werk name="Beise/Schäfer, Deutschland digital" dpsi="cv_dedig">hbfm10020</werk>
-	<werk name="Berndt/Theile, Unternehmensstrafrecht und Unternehmensverteidigung" dpsi="cfm_untstrafr">10602</werk>
-	<werk name="BeSt – Beratersicht zur Steuerrechtsprechung" dpsi="sf_best">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="BILANZ aktuell" dpsi="ba_bilanz">12167 hbfm10006</werk>
-	<werk name="Birkenfeld/Wäger, Das große Umsatzsteuer-Handbuch" dpsi="ovs_bu">10774</werk>
-	<werk name="Blaurock, Handbuch Stille Gesellschaft" dpsi="ovs_stg">10603 10648 10734 10744 10752 10774 10791 12260</werk>
-	<werk name="BOARD – Zeitschrift für Aufsichtsräte" dpsi="ba_board">hbfm10001 hbfm10014</werk>
-	<werk name="Bolin/Dreyer/Schäfer, Handbuch handelsrechtliche Rechnungslegung" dpsi="esv_hrrl">hbfm10008</werk>
-	<werk name="Bordewin/Brandt, EStG" dpsi="cfm_bordestg">10648</werk>
-	<werk name="Bork/Gehrlein, Aktuelle Probleme der Insolvenzanfechtung" dpsi="rws_borkgehrlein">12348</werk>
-	<werk name="Bork/Hölzle, Handbuch Insolvenzrecht" dpsi="rws_borkhoelzle">12348</werk>
-	<werk name="Bork/Schäfer, GmbHG" dpsi="rws_gmbhg">12260</werk>
-	<werk name="Bormann/Kauka/Ockelmann, Handbuch GmbH-Recht" dpsi="zap_gmbhr">12260</werk>
-	<werk name="Bornemann/Reinhardt, Handbuch Wissensbilanz" dpsi="esv_wissbil">hbfm10026</werk>
-	<werk name="Bös/Schmieszek/etc, 360° GewStG eKommentar" dpsi="sf_gewstgok">10734</werk>
-	<werk name="Bosse, Checklisten-Handbuch GmbH-Geschäftsführer" dpsi="ba_gmbhgf">hbfm10014 hbfm10026</werk>
-	<werk name="Brandes, Social Energy" dpsi="cv_energy">hbfm10020</werk>
-	<werk name="Brandes/Gemmer/Koschek/Schültken, Management Y" dpsi="cv_mgty">hbfm10022 hbfm10023</werk>
-	<werk name="Brandmüller/Klinger: Unternehmensverbundene Stiftungen" dpsi="esv_untstift">10602 12140</werk>
-	<werk name="Braun/Günther, Das Steuer-Handbuch" dpsi="ovs_bgst">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Brinkmann, Schätzungen im Steuerrecht" dpsi="esv_schaetzsr">10603</werk>
-	<werk name="Brogl, Handbuch Banken-Restrukturierung" dpsi="esv_brestr">12141 12348</werk>
-	<werk name="Bruton, Unternehmensstrategie und Verantwortung" dpsi="esv_untstrat">hbfm10026 hbfm10019</werk>
-	<werk name="BSI, Checklisten-Handbuch IT-Grundschutz – Sämtliche Prüffragen des BSI" dpsi="ba_itschutz">hbfm10011 hbfm10017</werk>
-	<werk name="Bungartz, Handbuch Interne Kontrollsysteme (IKS)" dpsi="esv_iks">hbfm10014</werk>
-	<werk name="Centrale für GmbH, GmbH-Handbuch" dpsi="ovs_gh">12260</werk>
-	<werk name="CF" dpsi="cf">12140 hbfm10007 hbfm10009 hbfm10010</werk>
-	<werk name="Changement" dpsi="cm">hbfm10020 hbfm10022</werk>
-	<werk name="Claudy/Henseler/Kümpel/Staats, KSt-/GewSt-/USt-Erklärung 2016" dpsi="sf_ksterkl">10764 10734 10774</werk>
-	<werk name="Claudy/Henseler/Kümpel/Staats, KSt-/GewSt-/USt-Erklärung 2017" dpsi="sf_ksterkl17">10764 10734 10774</werk>
-	<werk name="Claudy/Henseler/Kümpel/Staats, KSt-/GewSt-/USt-Erklärung 2018" dpsi="sf_ksterkl18">10764 10734 10774</werk>
-	<werk name="Claudy/Henseler/Kümpel/Staats, KSt-/GewSt-/USt-Erklärung 2019" dpsi="sf_ksterkl19">10764 10734 10774</werk>
-	<werk name="comply – Fachmagazin für Compliance-Verantwortliche" dpsi="ba_comply">hbfm10011</werk>
-	<werk name="Dachrodt/Koberski/Engelbert, Praxishandbuch Human Resources" dpsi="spg_hr">hbfm10023</werk>
-	<werk name="Dannhäuser, Praxishandbuch Social Media Recruiting" dpsi="spg_smr">hbfm10023</werk>
-	<werk name="Daragan/Halaczinsky/Riedel, Praxiskommentar ErbStG und BewG" dpsi="zv_erbstg">10718 hbfm10010</werk>
-	<werk name="Datenschutz-Berater" dpsi="dsb">hbfm10017</werk>
-	<werk name="Datenschutz-Berater" dpsi="dfv_dsb">hbfm10017</werk>
-	<werk name="Deck, Reisekosten" dpsi="sf_reisek">10072 10648 12140</werk>
-	<werk name="Deloitte, Der Lagebericht" dpsi="sf_lageb">12167 hbfm10006</werk>
-	<werk name="Deloitte, E-Bilanz" dpsi="sf_ebil">10602 hbfm10006</werk>
-	<werk name="Depré, ZVG" dpsi="rws_depre">12140</werk>
-	<werk name="Depré/Bachmann, 1x1 der Lohnpfändung" dpsi="dav_lohnpf">10001</werk>
-	<werk name="Der Aufsichtsrat" dpsi="ar">hbfm10001 hbfm10014</werk>
-	<werk name="DER BETRIEB" dpsi="db-ar">10072 10065 10162 10177 10184 10206</werk>
-	<werk name="DER BETRIEB" dpsi="db-sr">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="DER BETRIEB" dpsi="db-wr">12167 12260 12348 12141 12532 12458</werk>
-	<werk name="DER BETRIEB" dpsi="db-bw">hbfm10006 hbfm10009 hbfm10010 hbfm10014</werk>
-	<werk name="DER BETRIEB Arbeitsrecht" dpsi="dbar">10002 10065 10072 10162 10177 10184 10206</werk>
-	<werk name="DER KONZERN" dpsi="dk">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12167 12260 hbfm10006 hbfm10014</werk>
-	<werk name="Zeitschrift für Unternehmensjuristen" dpsi="zuj">12173 12260 12167 12532 hbfm10011 hbfm10013 hbfm10018 hbfm10020 hbfm10023 hbfm10026</werk>
-	<werk name="Deutinger, Kommunikation im Change" dpsi="spg_kommchange">hbfm10020 hbfm10023</werk>
-	<werk name="Doppler/Lauterburg, Change Management" dpsi="cv_cm">hbfm10020</werk>
-	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2016" dpsi="sf_estha">10648</werk>
-	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2017" dpsi="sf_estha17">10648</werk>
-	<werk name="Dorn/Rosenbaum, ESt-Handausgabe 2018" dpsi="sf_estha18">10648</werk>
-	<werk name="Dorsch, Zollrecht" dpsi="sf_zr">10602</werk>
-	<werk name="Dreier/Fritzsche/Verfürth, SpruchG" dpsi="esv_spruchg">12260 hbfm10010</werk>
-	<werk name="Drescher, Die Haftung des GmbH-Geschäftsführers" dpsi="rws_drescher">12260</werk>
-	<werk name="DStI, Steuerberater Branchenhandbuch" dpsi="sf_stbbranchen">10602</werk>
-	<werk name="DStI, Steuerberater Handbuch" dpsi="sf_stb">10602</werk>
-	<werk name="DStI, Steuerberater Rechtshandbuch" dpsi="sf_stbrecht">10602 12140</werk>
-	<werk name="DStZ – Deutsche Steuer-Zeitung" dpsi="sf_dstz">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Ebeling/Geck, Handbuch der Erbengemeinschaft" dpsi="ovs_ke">10718 10648 10603</werk>
-	<werk name="Ubg – Die Unternehmensbesteuerung" dpsi="ovs_ubg">10603 10648 10718 10734 10744 10752 10759 10764 10774 10791 10797 10859</werk>
-	<werk name="Ebner Stolz, IFRS-Jahresabschluss - Erstellung und Prüfung 2014/15" dpsi="sf_ifrsja">10602 12167 hbfm10006</werk>
-	<werk name="Ebner Stolz, IFRS-Jahresabschluss - Erstellung und Prüfung 2016/17" dpsi="sf_ifrsja16">10602 12167 hbfm10006</werk>
-	<werk name="Ebner Stolz, IFRS-Jahresabschluss - Erstellung und Prüfung 2017/18" dpsi="sf_ifrsja17">10602 12167 hbfm10006</werk>
-	<werk name="Ebner Stolz/BDI, Änderungen im Steuer- und Wirtschaftsrecht" dpsi="sf_aendstrwr">10602 12140</werk>
-	<werk name="EE – Erbrecht effektiv" dpsi="iww_ee">12788</werk>
-	<werk name="EFG – Entscheidungen der Finanzgerichte" dpsi="sf_efg">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Ekkenga/Maas, Das Recht der Wertpapieremissionen" dpsi="ENTFERNT">12140 hbfm10007</werk>
-	<werk name="ErbBstg – Erbfolgebesteuerung" dpsi="iww_erbbstg">10718</werk>
-	<werk name="erbstb – Erbschaft-Steuerberater" dpsi="ovs_erbstb">10718</werk>
-	<werk name="Erman, BGB" dpsi="ovs_erman">12140</werk>
-	<werk name="Tillmann/Mohr, GmbH-Geschäftsführer" dpsi="ovs_ct1">12260 12499</werk>
-	<werk name="Ernst &amp; Young, KStG" dpsi="sf_kstg">10764</werk>
-	<werk name="Erpenbeck/Sauter, So werden wir lernen!" dpsi="spg_lernen">hbfm10020 hbfm10023</werk>
-	<werk name="estb – Ertrag-Steuerberater" dpsi="ovs_estb">10648 10734 10764</werk>
-	<werk name="EU-ustb – EU-Umsatz-Steuerberater" dpsi="ovs_euustb">10774</werk>
-	<werk name="EWiR – Entscheidungen zum Wirtschaftsrecht" dpsi="rws_ewir">12348 12260</werk>
-	<werk name="Exler, Restrukturierungs- und Turnaround-Management" dpsi="esv_restrmgt">hbfm10026</werk>
-	<werk name="Farr, Vollstreckungsschutz, Stundung und Erlass" dpsi="esv_vollstrsch">10603</werk>
-	<werk name="Feiter, 360° StBVV eKommentar" dpsi="sf_stbvvok">10859</werk>
-	<werk name="Feldgen, Verdeckte Gewinnausschüttungen und verdeckte Einlagen" dpsi="sf_vga">10764</werk>
-	<werk name="Fischer/Günkel/Neubeck/Pannen, Bilanzrechtsreform 2010/2011" dpsi="sf_brref">10602 12167 hbfm10006</werk>
-	<werk name="Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2015/2016" dpsi="sf_hgbja">10602 12167 hbfm10006</werk>
-	<werk name="Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2016/2017" dpsi="sf_hgbja16">10602 12167 hbfm10006</werk>
-	<werk name="Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2017/2018" dpsi="sf_hgbja17">10602 12167 hbfm10006</werk>
-	<werk name="Fischer/Neubeck, HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2018/2019" dpsi="sf_hgbja18">10602 12167 hbfm10006</werk>
-	<werk name="FK – Familienrecht kompakt" dpsi="iww_fk">12882</werk>
-	<werk name="Fleischer/Hüttemann, Rechtshandbuch Unternehmensbewertung" dpsi="ovs_fhu">10602 12260 hbfm10010</werk>
-	<werk name="Flick Gocke Schaumburg/BDI, Der Umwandlungssteuer-Erlass 2011" dpsi="sf_umwsterl">10791</werk>
-	<werk name="Flick/Wassermeyer/Baumhoff/Schönfeld, Außensteuerrecht" dpsi="ovs_fwb">10859</werk>
-	<werk name="Flick/Wassermeyer/Kempermann, DBA Deutschland - Schweiz" dpsi="ovs_dba">10859</werk>
-	<werk name="FMP – Forderungsmanagement professionell" dpsi="iww_fmp">12597 hbfm10007</werk>
-	<werk name="FR – Finanz-Rundschau Ertragsteuerrecht" dpsi="ovs_fr">10648 10734 10764</werk>
-	<werk name="Freidank/Müller/Velte, Handbuch Integrated Reporting" dpsi="esv_integrep">hbfm10008</werk>
-	<werk name="Freidank/Velte, Corporate Governance, Abschlussprüfung und Compliance" dpsi="esv_cgcompl">hbfm10011 hbfm10015 hbfm10016</werk>
-	<werk name="Freidank/Velte, Unternehmenssteuerung im Umbruch" dpsi="esv_untstrg">hbfm10026 hbfm10019</werk>
-	<werk name="Fritsch/Huschens/Koisiak/Langer/etc., 360° UStG eKommentar" dpsi="sf_ustgok">10774</werk>
-	<werk name="Fuhrmann/Kraeusel/Schiffers, 360° EStG eKommentar" dpsi="sf_estgok">10648</werk>
-	<werk name="Fuhrmann/Wälzholz, Formularbuch Gesellschaftsrecht" dpsi="ovs_fwg">12260</werk>
-	<werk name="Füllsack/Bürger, Praxis der Selbstanzeige" dpsi="cfm_selbstanz">10602</werk>
-	<werk name="Geiken, Schnellübersicht Sozialversicherung 2019 Beitragsrecht" dpsi="sf_svbeitragsr">10184</werk>
-	<werk name="Geiken, Schnellübersicht Sozialversicherung 2019 Melderecht" dpsi="sf_svmelder">10184</werk>
-	<werk name="Gercke/Kraft/Richter, Arbeitsstrafrecht" dpsi="cfm_arbstrafr">10001 10869 hbfm10011</werk>
-	<werk name="Ghassemi-Tabar/Pauthner/Wilsing, Corporate Compliance" dpsi="hbfm_ccompl">hbfm10012 hbfm10013</werk>
-	<werk name="Gierschmann, Kommentar Datenschutz-Grundverordnung" dpsi="ba_dsgvo">hbfm10011 hbfm10017</werk>
-	<werk name="Gleißner/Romeike, Praxishandbuch Risikomanagement" dpsi="esv_risikomgt">hbfm10004 hbfm10024</werk>
-	<werk name="GmbHR – GmbH-Rundschau" dpsi="ovs_gmbhr">12260</werk>
-	<werk name="gmbhstb – GmbH-Steuerberater" dpsi="ovs_gmbhstb">10602 12140</werk>
-	<werk name="Goez, Steuerberatervergütungsverordnung" dpsi="sf_stbvv">10602</werk>
-	<werk name="Goldfuß, Endlich Chef - was nun?" dpsi="cv_chefnun">hbfm10025 hbfm10022</werk>
-	<werk name="Göpfert, Handbuch Arbeitsrecht in Restrukturierung und Insolvenz" dpsi="rws_goepfert">12348</werk>
-	<werk name="Gosch, AO/FGO" dpsi="sf_aofgo">10603</werk>
-	<werk name="Gosch/Schwedhelm/Spiegelberger, GmbH-Beratung" dpsi="ovs_ghb">10648 10734 10764 10718 10774 10603 10859 10791 12260</werk>
-	<werk name="Gossak, Praxis des Insolvenzarbeitsrechts" dpsi="rws_gossak">12348</werk>
-	<werk name="Göthel, Grenzüberschreitende M&amp;A-Transaktionen" dpsi="rws_goethel">10602 12260 hbfm10009</werk>
-	<werk name="Graf von Westphalen, Der Leasingvertrag" dpsi="ovs_wls">10648 10734 10764 10859 12140 hbfm10007</werk>
-	<werk name="Graf-Schlicker, InsO" dpsi="rws_kinso">12348</werk>
-	<werk name="Groll, Praxis-Handbuch Erbrechtsberatung" dpsi="ovs_gre">10718</werk>
-	<werk name="Groth, Führungsstark im Wandel" dpsi="cv_fuehrwand">hbfm10020 hbfm10022</werk>
-	<werk name="Groth, Führungsstark in alle Richtungen" dpsi="cv_fuehrstark">hbfm10022</werk>
-	<werk name="GStB – Gestaltende Steuerberatung" dpsi="iww_gstb">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Günther/Ruter, Grundsätze nachhaltiger Unternehmensführung" dpsi="esv_untf">hbfm10019 hbfm10026</werk>
-	<werk name="Gürsching/Stenger, Bewertungsrecht - BewG/ErbStG" dpsi="ovs_bv">10718 hbfm10010</werk>
-	<werk name="Gustavus, Handelsregister-Anmeldungen" dpsi="ovs_guh">12167</werk>
-	<werk name="Haag/Löffler, HGB" dpsi="zap_hgb">12167 hbfm10006</werk>
-	<werk name="Haase/Hruschka, UmwStG" dpsi="esv_umwstg">10791</werk>
-	<werk name="Habersack/Mülbert/Schlitt, Unternehmensfinanzierung am Kapitalmarkt" dpsi="ovs_hms">12140 hbfm10007</werk>
-	<werk name="Hachmeister/Kahle/Mock/Schüppen, Bilanzrecht" dpsi="ovs_br">10648 12167 hbfm10006 hbfm10014</werk>
-	<werk name="Halaczinsky, Die Erbschaft- und Schenkungsteuererklärung" dpsi="zv_erbsterkl">10718</werk>
-	<werk name="Halaczinsky/Wochner, Schenken, Erben, Steuern" dpsi="sf_schenken">10718</werk>
-	<werk name="Hanau/Arteaga/Rieble/Veit, Entgeltumwandlung" dpsi="ovs_hgu">10177</werk>
-	<werk name="Handbuch Betrieb und Personal" dpsi="sf_buphb">10184 10602</werk>
-	<werk name="Hartmann/Metzenmacher, UStG" dpsi="esv_ustg">10774</werk>
-	<werk name="Hebig, Existenzgründungsberatung" dpsi="esv_exgrb">10648 10734 10764 10774 10859</werk>
-	<werk name="Hein, Sprechen wie der Profi" dpsi="cv_sprechprofi">hbfm10025</werk>
-	<werk name="Heither, ArbGG" dpsi="esv_arbgg">10002</werk>
-	<werk name="Helmke/Bauer, Familienleistungsausgleich" dpsi="sf_famla">10602</werk>
-	<werk name="Henningfeld/Rosenke, 360° FGO eKommentar" dpsi="sf_fgook">10797</werk>
-	<werk name="Henseler/Pinkos/Spieker u.a., Steuer-Ratgeber" dpsi="sf_strg">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Henssler/Willemsen/Kalb, Arbeitsrecht" dpsi="ovs_hwk">10002 10072 10162 10206</werk>
-	<werk name="Henze/Born, GmbH-Recht - Höchstrichterliche Rechtsprechung" dpsi="rws_henzeborn">12260</werk>
-	<werk name="Henze/Born/Drescher, Aktienrecht - Höchstrichterliche Rechtsprechung" dpsi="rws_henzeborndrescher">12260</werk>
-	<werk name="Herrmann/Heuer/Raupach, EStG/KStG" dpsi="ovs_hhr">10648 10764</werk>
-	<werk name="Hesselmann/Tillmann/Mueller-Thuns, Handbuch GmbH &amp; Co. KG" dpsi="ovs_co">10648 10764 10734 10744 10791 10603 10718 12260</werk>
-	<werk name="Heuser/Theile, IFRS-Handbuch" dpsi="ovs_ias">12167 hbfm10006 hbfm10014</werk>
-	<werk name="Heyd/Beyer, Corporate Governance in der Finanzwirtschaft" dpsi="esv_cgfw">hbfm10001 hbfm10014</werk>
-	<werk name="HFR – Höchstrichterliche Finanzrechtsprechung" dpsi="sf_hfr">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Hilber, Handbuch Cloud Computing" dpsi="ovs_hcc">hbfm10017</werk>
-	<werk name="Hintzen, Lohnpfändung" dpsi="sf_lohnpf">10001 10602</werk>
-	<werk name="Hirte, Kapitalgesellschaftsrecht" dpsi="rws_hirte">12260</werk>
-	<werk name="Hofmann, Eigenverwaltung" dpsi="rws_hofmann">12348</werk>
-	<werk name="Hofmann/Rohrbach, Internationaler Mitarbeitereinsatz" dpsi="dav_intma">10072 10206</werk>
-	<werk name="Hölscher/Altenhain, Handbuch Aufsichts- und Verwaltungsräte in Kreditinstituten" dpsi="esv_arki">hbfm10001</werk>
-	<werk name="Hölscher/Gesmann-Nuisll/Hornbach, Systeme zur Geldwäschebekämpfung in der EU" dpsi="ENTFERNT">12140</werk>
-	<werk name="Hölters, Handbuch Unternehmenskauf" dpsi="ovs_hub">10648 10744 10718 10764 10734 10774 10791 10797 10859 12140 hbfm10009</werk>
-	<werk name="Holzapfel/Pöllath, Unternehmenskauf in Recht und Praxis" dpsi="rws_hp">10648 10744 10718 10764 10734 10774 10791 10797 10859 12140 hbfm10009</werk>
-	<werk name="Holzborn, WpPG" dpsi="esv_wppg">12140 hbfm10007</werk>
-	<werk name="Hölzle, Praxisleitfaden ESUG" dpsi="rws_hoelzle">12348</werk>
-	<werk name="Hopt/Seibt, Schuldverschreibungsrecht" dpsi="ovs_hs">12348</werk>
-	<werk name="Hübschmann/Hepp/Spitaler, AO/FGO" dpsi="ovs_hhsp">10603 10797</werk>
-	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2016" dpsi="sf_kstha">10764</werk>
-	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2017" dpsi="sf_kstha17">10764</werk>
-	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2018" dpsi="sf_kstha18">10764</werk>
-	<werk name="Huhn/Karthaus/Wenzel, KSt-Handausgabe 2019" dpsi="sf_kstha19">10764</werk>
-	<werk name="Hüls/Reichling, Steuerstrafrecht" dpsi="cfm_hdststrafr">10602</werk>
-	<werk name="Hüttemann, Gemeinnützigkeits- und Spendenrecht" dpsi="ovs_hgs">10603 10764 10648</werk>
-	<werk name="Ihrig/Schäfer, Rechte und Pflichten des Vorstands" dpsi="ovs_isv">12260 hbfm10015</werk>
-	<werk name="Inderst/Bannenberg/Poppe, Compliance" dpsi="cfm_compl">hbfm10011</werk>
-	<werk name="ISR – Internationale Steuer-Rundschau" dpsi="ovs_isr">10859</werk>
-	<werk name="Jaeger/Kokott/Pohlmann/Schroeder, Frankfurter Kommentar Kartellrecht" dpsi="ovs_fk">12532</werk>
-	<werk name="Jost, Vergütungs- und Kostenrecht im FG- und BFH-Verfahren" dpsi="esv_vergkostr">10797</werk>
-	<werk name="Juchem, Angehörigengeschäfte im Steuer- und Steuerstrafrecht" dpsi="esv_angehg">10764 10648 10603</werk>
-	<werk name="Kahlert, Steuerliche Aspekte der GmbH-Sanierung" dpsi="rws_kahlert">10602 12260 12348</werk>
-	<werk name="Kaligin, Die Betriebsaufspaltung" dpsi="esv_baufsp">10648 10734</werk>
-	<werk name="Kallmeyer, UmwG" dpsi="ovs_kug">12260</werk>
-	<werk name="Kapp/Ebeling, ErbStG" dpsi="ovs_ka">10718</werk>
-	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2016" dpsi="sf_gewstha">10734</werk>
-	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2017" dpsi="sf_gewstha17">10734</werk>
-	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2018" dpsi="sf_gewstha18">10734</werk>
-	<werk name="Karthaus/Sternkiker, GewSt-Handausgabe 2019" dpsi="sf_gewstha19">10734</werk>
-	<werk name="Keunecke, Prospekte im Kapitalmarkt" dpsi="ENTFERNT">12140 hbfm10007</werk>
-	<werk name="Kirchhof, EStG" dpsi="ovs_kest">10648</werk>
-	<werk name="Kirchhof/Söhn/Mellinghoff, EStG" dpsi="cfm_kirchestg">10648</werk>
-	<werk name="Kirsch, 360° BilR eKommentar" dpsi="sf_brok">10648 10859 12167 hbfm10006</werk>
-	<werk name="Kirsch, Rechnungslegung" dpsi="sf_rl">12167 hbfm10006</werk>
-	<werk name="Kleinmann/Meyer-Renkes/Fündling, Der Kündigungsschutzprozess – Strategie und Taktik" dpsi="dav_stratkdg">10002</werk>
-	<werk name="Klösel/Klötzer-Assion/Mahngold, Contractor Compliance" dpsi="cfm_concompl">hbfm10011</werk>
-	<werk name="Knierim/Rübenstahl/Tsambikakis, Internal Investigations" dpsi="cfm_investig">hbfm10011</werk>
-	<werk name="Knoblauch, Die Chef-Falle" dpsi="cv_cheffalle">hbfm10022</werk>
-	<werk name="Knoblauch/Kurz, Die besten Mitarbeiter finden und halten" dpsi="cv_bestma">hbfm10023</werk>
-	<werk name="Knoblauch/Kuttler, Das Geheimnis der Champions" dpsi="cv_gehchamp">hbfm10023</werk>
-	<werk name="Knott, Unternehmenskauf" dpsi="rws_km">10648 10744 10718 10764 10734 10774 10791 10797 10859 12140 hbfm10009</werk>
-	<werk name="Koch, Das 80/20-Prinzip" dpsi="cv_achtzig">hbfm10025</werk>
-	<werk name="Koeberle-Schmid/Fahrion/Witt, Family Business Governance" dpsi="esv_fambg">hbfm10002</werk>
-	<werk name="Kohlmann, Steuerstrafrecht" dpsi="ovs_kst">10603 10869</werk>
-	<werk name="Kolmann, Schutzschirmverfahren" dpsi="rws_kolmann">12348</werk>
-	<werk name="KoR" dpsi="kor">12167 hbfm10006</werk>
-	<werk name="Korn, EStG" dpsi="sf_estg">10648</werk>
-	<werk name="kösdi – Kölner Steuerdialog" dpsi="sf_koesdi">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="KP – Kanzleiführung professionell" dpsi="iww_kp">10602</werk>
-	<werk name="KPMG, E-Bilanz" dpsi="ENTFERNT">10603 10648 10764 12167 hbfm10006</werk>
-	<werk name="Kraemer/Vallender/Vogelsang, Handbuch zur Insolvenz" dpsi="sf_insolv">10001 10602 12348</werk>
-	<werk name="Kranig/Sachs/Gierschmann, Datenschutz-Compliance nach der DS-GVO" dpsi="ba_dsgvocompl">hbfm10011 hbfm10017</werk>
-	<werk name="Krieger/Schneider, Handbuch Managerhaftung" dpsi="ovs_ksm">12260</werk>	
-	<werk name="Tillmann/Schiffers/Wälzholz/Rupp, Die GmbH im Gesellschafts- und Steuerrecht" dpsi="ovs_tw">12260</werk>
-	<werk name="Kroppen, Handbuch Internationale Verrechnungspreise" dpsi="ovs_bkv">10859</werk>
-	<werk name="Krüger/Bach, Excellence in Change" dpsi="spg_excchange">hbfm10020</werk>
-	<werk name="KSI – Krisen-, Sanierungs- und Insolvenzberatung" dpsi="esv_ksi">hbfm10026</werk>
-	<werk name="Kübler, HRI – Handbuch Restrukturierung in der Insolvenz" dpsi="rws_hri">12348</werk>
-	<werk name="Kübler/Prütting/Bork, InsO" dpsi="rws_inso">12348</werk>
-	<werk name="Kümpel/Wittig, Bank- und Kapitalmarktrecht" dpsi="ovs_kueb">12140</werk>
-	<werk name="Kunschke/Schaffelhuber, FinTech" dpsi="esv_fintech">12140 hbfm10007</werk>
-	<werk name="Kunz/Henssler/Brand/Nebeling, Praxis des Arbeitsrechts" dpsi="dav_praxar">10002 10072 10162 10184 10206</werk>
-	<werk name="Künzel, Erfolgsfaktor Employer Branding" dpsi="spg_eb">hbfm10023</werk>
-	<werk name="Lakies, Das Arbeitsverhältnis in der Insolvenz" dpsi="ENTFERNT">10072 10648 12348</werk>
-	<werk name="Langenfeld/Miras, GmbH-Vertragspraxis" dpsi="ovs_lpg">12260</werk>
-	<werk name="Langer/Vellen, USt-Handausgabe 2016/17" dpsi="sf_ust">10774</werk>
-	<werk name="Langer/Vellen, USt-Handausgabe 2017/18" dpsi="sf_ust17">10774</werk>
-	<werk name="Langer/Vellen, USt-Handausgabe 2018/19" dpsi="sf_ust18">10774</werk>
-	<werk name="Langer/Vellen, Umsatzsteuer Handausgabe 2019/20" dpsi="sf_ust19">10774</werk>
-	<werk name="Langohr-Plato, Betriebliche Altersversorgung" dpsi="dav_bav">10177</werk>
-	<werk name="Lauer, Change Management" dpsi="spg_cm">hbfm10020</werk>
-	<werk name="Lehky, Leadership 2.0" dpsi="cv_leadership">hbfm10022</werk>
-	<werk name="Lehky, Mitarbeitergespräche sicher und kompetent führen" dpsi="cv_magespr">hbfm10023 hbfm10022</werk>
-	<werk name="Lenski/Steinberg, GewStG" dpsi="ovs_ls">10734</werk>
-	<werk name="Lepke, Kündigung bei Krankheit" dpsi="esv_kdgkrankh">10072 10162</werk>
-	<werk name="Lexikon des Rechts" dpsi="sf_rechtlex">10001 10602</werk>
-	<werk name="Lexikon des Steuerrechts" dpsi="sf_strlex">10602</werk>
-	<werk name="LGP – Löhne und Gehälter professionell" dpsi="iww_lgp">10648 10759</werk>
-	<werk name="Liebscher/Geiermann/L. Rosarius/R. Rosarius/Stuhrmann, AfA-Lexikon" dpsi="sf_afalex">10648 12140</werk>
-	<werk name="Lippross/Seibel, Basiskommentar Steuerrecht" dpsi="ovs_bkst">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Lunk, AnwaltFormulare Arbeitsrecht" dpsi="dav_formar">10002 10072 10162 10184 10206</werk>
-	<werk name="Lürssen/Opresnik, Die heimlichen Spielregeln der Karriere" dpsi="cv_heimlkarr">hbfm10025</werk>
-	<werk name="Lutter, UmwG" dpsi="ovs_lug">12260</werk>
-	<werk name="Lutter/Bayer, Holding-Handbuch" dpsi="ovs_luh">10744 10791 10764 10603 12260</werk>
-	<werk name="Lutter/Hommelhoff, GmbHG" dpsi="ovs_gk">12260</werk>
-	<werk name="Lutter/Hommelhoff/Teichmann, SE" dpsi="ovs_se">12260</werk>
-	<werk name="Lutter/Krieger/Verse, Rechte und Pflichten des Aufsichtsrats" dpsi="ovs_lka">12260 hbfm10015</werk>
-	<werk name="Lwowski/Fischer/Langenbucher, Das Recht der Kreditsicherung" dpsi="esv_rksich">12141 hbfm10007</werk>
-	<werk name="Mader/Perach/Voss/Besgen, ABC des Lohnbüros 2016" dpsi="sf_abclohn">10072 10648 10759</werk>
-	<werk name="Mader/Perach/Voss/Besgen, ABC des Lohnbüros 2017" dpsi="sf_abclohn17">10072 10648 10759</werk>
-	<werk name="Mader/Perach/Voss/Imping, ABC des Lohnbüros 2018" dpsi="sf_abclohn18">10072 10648 10759</werk>
-	<werk name="Mader/Perach/Voss/Imping, ABC des Lohnbüros 2019" dpsi="sf_abclohn19">10072 10648 10759</werk>
-	<werk name="Mader/Perach/Voss/Imping, ABC des Lohnbüros 2020" dpsi="sf_abclohn20">10072 10648 10759</werk>
-	<werk name="Makowitz/Wolffgang, Praxishandbuch Compliance Management" dpsi="ba_rmgtunt">hbfm10011</werk>
-	<werk name="Malik, Führen, Leisten, Leben" dpsi="cv_fuehrleile">hbfm10022</werk>
-	<werk name="Malik, Navigieren in Zeiten des Umbruchs" dpsi="cv_navigumbr">hbfm10022 hbfm10020</werk>
-	<werk name="Marsch-Barner/Schäfer, Handbuch börsennotierte AG" dpsi="ovs_fms">12260</werk>
-	<werk name="Masuch/Meyer, ABC des GmbH-Geschäftsführers" dpsi="sf_abcgmbh">10001 10648 10734 10759 10764 12260</werk>
-	<werk name="Mattern/Mohr/Schütz/Waldens/etc., 360° AStG eKommentar" dpsi="sf_astgok">10859</werk>
-	<werk name="Mayer/Bonefeld, Testamentsvollstreckung" dpsi="zv_testvollstr">10602</werk>
-	<werk name="MBP – Mandat im Blickpunkt" dpsi="iww_mbp">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Meßbacher-Hönsch/Götz, 360° ErbStG eKommentar" dpsi="sf_erbstgok">10718</werk>
-	<werk name="Meyer/Ball, Übertragung von Immobilien im Steuerrecht" dpsi="esv_immstr">10648 10734 10744 10764 10859</werk>
-	<werk name="Meyer/Goez/Schwamberger, Die Vergütung der steuerberatenden Berufe" dpsi="esv_vergstbb">10602</werk>
-	<werk name="Michael, Tacheles aus der Chefetage" dpsi="cv_tachchef">hbfm10022</werk>
-	<werk name="MK – Mietrecht kompakt" dpsi="iww_mk">13124</werk>
-	<werk name="Mönning, Betriebsfortführung in Restrukturierung und Insolvenz" dpsi="rws_moenning">12348</werk>
-	<werk name="Moos, Datennutzungs- und Datenschutzverträge" dpsi="ovs_mdv">hbfm10017</werk>
-	<werk name="Mössner u. a., Steuerrecht international tätiger Unternehmen" dpsi="ovs_mbu">10859</werk>
-	<werk name="Mues/Eisenbeis/Laber, Handbuch Kündigungsrecht" dpsi="ovs_mhk">10072</werk>
-	<werk name="Mühl, Haftung für fehlerhafte Ratings" dpsi="esv_haftrat">12140 hbfm10007</werk>
-	<werk name="Müller, Die Selbstanzeige im Steuerstrafverfahren" dpsi="ovs_msa">10603 10797 11122</werk>
-	<werk name="Müller/Stute/Withus, Handbuch Lagebericht" dpsi="esv_lageb">hbfm10009 hbfm10008</werk>
-	<werk name="Nacke, Die Haftung für Steuerschulden" dpsi="ovs_nh">10603</werk>
-	<werk name="Nerdinger/Wilke/Stracke/Drews, Innovation und Personalarbeit im demografischen Wandel" dpsi="spg_persarb">hbfm10020 hbfm10023</werk>
-	<werk name="Noé, Change-Prozesse effizient durchführen" dpsi="spg_effchange">hbfm10020</werk>
-	<werk name="Nußbaum/Rosenbaum, LSt-Handausgabe 2017" dpsi="sf_lstha">10759 10648</werk>
-	<werk name="Nußbaum/Rosenbaum, LSt-Handausgabe 2018" dpsi="sf_lstha18">10759 10648</werk>
-	<werk name="Nußbaum/Rosenbaum, LSt-Handausgabe 2019" dpsi="sf_lstha19">10759 10648</werk>
-	<werk name="Obermüller, Insolvenzrecht in der Bankpraxis" dpsi="ovs_ib">12141</werk>
-	<werk name="Offerhaus/Söhn/Lange, UStG" dpsi="cfm_ust">10774</werk>
-	<werk name="Ostrowicz/Künzl/Scholz, Handbuch des arbeitsgerichtlichen Verfahrens" dpsi="esv_arbgverf">10002</werk>
-	<werk name="Papmehl/Tümmers, Die Arbeitswelt im 21. Jahrhundert" dpsi="spg_arb21jh">hbfm10020 hbfm10023</werk>
-	<werk name="Papperitz/Keller, ABC Betriebsprüfung" dpsi="sf_abcbpr">10602 12140</werk>
-	<werk name="Parment, Die Generation Y" dpsi="spg_geny">hbfm10020 hbfm10023</werk>
-	<werk name="Passarge/Behringer, Handbuch Compliance international" dpsi="esv_complint">hbfm10012 hbfm10013</werk>
-	<werk name="Pauly/Osnabrügge, Handbuch Kündigungsrecht" dpsi="dav_kdgr">10162</werk>
-	<werk name="Pauthner/Ghassemi-Tabar, Compliance-Überwachung durch den Aufsichtsrat" dpsi="hbfm_complar">hbfm10001 hbfm10011 hbfm10014</werk>
-	<werk name="Pawlak/Ruge, Betriebsverfassungsrecht" dpsi="esv_betrvr">10206</werk>
-	<werk name="Peemöller/Kregel, Grundlagen der Internen Revision" dpsi="esv_internrev">hbfm10015</werk>
-	<werk name="Peemöller/Krehl/Hofmann, Bilanzskandale" dpsi="esv_bilskand">hbfm10008</werk>
-	<werk name="Petersen/Zwirner/Brösel, Handbuch Unternehmensbewertung" dpsi="ba_untbew">10718 12140 hbfm10010</werk>
-	<werk name="Petersen/Zwirner/Brösel, Systematischer Praxiskommentar Bilanzrecht" dpsi="ba_br">12167 hbfm10006</werk>
-	<werk name="PFB – Praxis Freiberufler-Beratung" dpsi="iww_pfb">10602 12140</werk>
-	<werk name="Pfläging, Führen mit flexiblen Zielen" dpsi="cv_fuehrflex">hbfm10022</werk>
-	<werk name="PinG – Privacy in Germany" dpsi="esv_ping">hbfm10017</werk>
-	<werk name="Pinkos/Püschner/Rosarius u.a., Steuer-Ratgeber" dpsi="ENTFERNT">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="PIStB – Praxis Internationale Steuerberatung" dpsi="iww_pistb">10602</werk>
-	<werk name="Plath, BDSG/DSGVO" dpsi="ovs_bdsg">hbfm10017</werk>
-	<werk name="Preis, Der Arbeitsvertrag" dpsi="ovs_hpa">10072</werk>
-	<werk name="Preuße, SchVG" dpsi="esv_schvg">12348</werk>
-	<werk name="Preuße/Zingel, WpDVerOV" dpsi="esv_wpdverov">12140</werk>
-	<werk name="Prinz, Umwandlungen im internationalen Steuerrecht" dpsi="ovs_psu">10791 10859</werk>
-	<werk name="Prinz/Witt, Steuerliche Organschaft" dpsi="ovs_pwo">10603 10648 10734 10744 10764 10774 10791</werk>
-	<werk name="Proksch, Konfliktmanagement im Unternehmen" dpsi="spg_konflmgt">hbfm10023 hbfm10022</werk>
-	<werk name="PStR – Praxis Steuerstrafrecht" dpsi="iww_pstr">10602</werk>
-	<werk name="Purps-Pardigol/Kehren, Digitalisieren mit Hirn" dpsi="cv_dighirn">hbfm10020</werk>
-	<werk name="Quedenfeld/Füllsack, Verteidigung in Steuerstrafsachen" dpsi="cfm_ststrafs">10602</werk>
-	<werk name="Raabe, Die Mitbestimmung im Aufsichtsrat" dpsi="esv_mitbestar">hbfm10003</werk>
-	<werk name="Rau/Dürrwächter, UStG" dpsi="ovs_ukm">10774</werk>
-	<werk name="Reischauer/Kleinhans, Kreditwesengesetz" dpsi="esv_kwg">12140</werk>
-	<werk name="Reiß/Kraeusel/Langer, UStG" dpsi="sf_ustg">10774</werk>
-	<werk name="Reithmann/Martiny, Internationales Vertragsrecht" dpsi="ovs_iv">12140 12598</werk>
-	<werk name="Rendels/Zabel, Insolvenzplan" dpsi="rws_rendelszabel">12348</werk>
-	<werk name="Rethinking Finance" dpsi="ref">hbfm10007 hbfm10009 hbfm10008 hbfm10020 hbfm10022 hbfm10004 hbfm10025 hbfm10026</werk>
-	<werk name="Rethinking Law" dpsi="rel">12140</werk>
-	<werk name="Rethinking Tax" dpsi="ret">10602</werk>
-	<werk name="Riedel, Praxishandbuch Unternehmensnachfolge" dpsi="zv_untnachf">10602 12140</werk>
-	<werk name="Rock, Brain at Work" dpsi="cv_brainwork">hbfm10025</werk>
-	<werk name="Rödder/Herlinghaus/Neumann, KStG" dpsi="ovs_rkst">10764</werk>
-	<werk name="Rödder/Herlinghaus/van Lishaut, UmwStG" dpsi="ovs_rug">10791</werk>
-	<werk name="Röhricht/Graf von Westphalen/Haas, HGB" dpsi="ovs_hgb">12167 hbfm10006 hbfm10014</werk>
-	<werk name="Rosarius/Geiermann, ABC der Bilanzierung" dpsi="sf_abcbil">10648 10764 10603 12167 hbfm10006</werk>
-	<werk name="Roscher, 360° GrStG eKommentar" dpsi="sf_grstgok">10752</werk>
-	<werk name="Strecker, 360° FZulG eKommentar" dpsi="sf_fzulgok">10602 10859</werk>
-	<werk name="Rübenstahl/Idler, Tax Compliance" dpsi="cfm_taxcompl">hbfm10011</werk>
-	<werk name="Strack/Mack/Schwedhelm, Tax Compliance" dpsi="ovs_sst">hbfm10011 hbfm10014</werk>
-	<werk name="Rückert, Schluss mit dem ewigen Aufschieben" dpsi="cv_schluss">hbfm10025</werk>
-	<werk name="Ruhmannseder/Lehner/Beukelmann, Compliance aktuell" dpsi="cfm_complakt">hbfm10011</werk>
-	<werk name="Rump/Eilers, Lebensphasenorientierte Personalpolitik" dpsi="spg_perspol">hbfm10023</werk>
-	<werk name="RVG prof. – RVG professionell" dpsi="iww_rvgprof">12597</werk>
-	<werk name="Santelmann/Hoppe/Suerbaum/Bukowski, Squeeze out" dpsi="esv_sqout">12260 hbfm10009 hbfm10010</werk>
-	<werk name="SB – StiftungsBrief" dpsi="iww_sb">12597</werk>
-	<werk name="Schäder/Weber, Praxiskommentar zum Streitwertkatalog Arbeitsrecht" dpsi="dav_strwertar">10002</werk>
-	<werk name="Schaffland/Wiltfang, DS-GVO/BDSG" dpsi="esv_bdsg">hbfm10017</werk>
-	<werk name="Schalburg/Franke, Einkommensteuer-Erklärung 2015" dpsi="sf_esterkl">10648</werk>
-	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2016" dpsi="sf_esterkl16">10648</werk>
-	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2017" dpsi="sf_esterkl17">10648</werk>
-	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2018" dpsi="sf_esterkl18">10648</werk>
-	<werk name="Schalburg/Muser, Einkommensteuer-Erklärung 2019" dpsi="sf_esterkl19">10648</werk>
-	<werk name="Schaumburg, Internationales Steuerrecht" dpsi="ovs_sis">10859</werk>
-	<werk name="Schaumburg/Englisch, Europäisches Steuerrecht" dpsi="ovs_seu">10859</werk>
-	<werk name="Schaumburg/Hendricks, Steuerrechtsschutz" dpsi="ovs_sss">10603 10859</werk>
-	<werk name="Schaumburg/Peters, Internationales Steuerstrafrecht" dpsi="ovs_spi">10859</werk>
-	<werk name="Schemmel/Ruhmannseder/Witzigmann, Hinweisgebersysteme" dpsi="cfm_whistleb">hbfm10011</werk>
-	<werk name="Schläger/Thode, Handbuch Datenschutz und IT-Sicherheit" dpsi="esv_dsitsec">hbfm10017</werk>
-	<werk name="Schlewing/Henssler/Schipp/Schnitker, Arbeitsrecht der betrieblichen Altersversorgung" dpsi="ovs_abav">10177</werk>
-	<werk name="Schmidt, Karsten/Uhlenbruck, Die GmbH in Krise, Sanierung und Insolvenz" dpsi="ovs_suk">10602 12348 12260</werk>
-	<werk name="Schmidt/Lutter, AktG" dpsi="ovs_ea">12260</werk>
-	<werk name="Schmittmann, Haftung von Organen in Krise und Insolvenz" dpsi="rws_schmittmann">12348 12260</werk>
-	<werk name="Scholz, GmbHG" dpsi="ovs_kg">12260</werk>
-	<werk name="Schönfeld/Ditz, DBA" dpsi="ovs_sddb">10859</werk>
-	<werk name="Schulze-Osterloh/Hennrichs/Wüstemann, HdJ" dpsi="ovs_hdj">10648 12167 hbfm10006</werk>
-	<werk name="Schumacher, Die Organschaft im Steuerrecht" dpsi="esv_orgstr">10734 10764 10774</werk>
-	<werk name="Schwab/Weth, ARbGG" dpsi="ENTFERNT">10002</werk>
-	<werk name="Schwedhelm, Die Unternehmensumwandlung" dpsi="ovs_stre4">10791</werk>
-	<werk name="Sernetz/Kruis, Kapitalaufbringung und -erhaltung in der GmbH" dpsi="rws_sernetzkruis">12260 hbfm10007</werk>
-	<werk name="Shapiro, Verhandeln" dpsi="cv_verh">hbfm10025</werk>
-	<werk name="Siering/Izzo-Wagner, VermAnlG" dpsi="esv_vermanlg">12140</werk>
-	<werk name="Simon, 33 Sofortmaßnahmen gegen die Krise" dpsi="cv_massnkrise">hbfm10020</werk>
-	<werk name="Simon, Hidden Champions - Aufbruch nach Globalia" dpsi="cv_globalia">hbfm10022</werk>
-	<werk name="Sönsken/Rosarius, Investitionsförderung Handbuch" dpsi="sf_investfoe">10602 hbfm10007</werk>
-	<werk name="Sprenger, Das Prinzip Selbstverantwortung" dpsi="cv_selbstver">hbfm10023</werk>
-	<werk name="Sprenger, Die Entscheidung liegt bei dir!" dpsi="cv_ebeidir">hbfm10025 hbfm10022</werk>
-	<werk name="Sprenger, Mythos Motivation" dpsi="cv_mythmot">hbfm10023 hbfm10022</werk>
-	<werk name="Sprenger, Radikal führen" dpsi="cv_fuehrrad">hbfm10022</werk>
-	<werk name="SR – Seniorenrecht aktuell" dpsi="iww_sr">12597</werk>
-	<werk name="SSP – Steuern sparen professionell" dpsi="iww_ssp">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Stadie, UStG" dpsi="ovs_stk">10774</werk>
-	<werk name="Stbg – Die Steuerberatung" dpsi="sf_stbg">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="StBp – Die steuerliche Betriebsprüfung" dpsi="esv_stbp">10603 10859 10648 10734 10764</werk>
-	<werk name="StBW – Steuerberater-Woche" dpsi="ovs_stbw">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="StEd – Steuer-Eildienst" dpsi="sf_sted">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Steinmeyer/Häger, WpÜG" dpsi="esv_wpueg">12140 hbfm10009</werk>
-	<werk name="StEK – Steuererlasse in Karteiform" dpsi="ENTFERNT">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Stotax Arbeitshilfen" dpsi="sf_ah">10001 10602 12140</werk>
-	<werk name="Strahl, Problemfelder Ertragsteuern" dpsi="sf_ertragst">10648 10734 10764</werk>
-	<werk name="Streck/Kamps/Olgemöller, Der Steuerstreit" dpsi="ovs_stre3">10603 10797</werk>
-	<werk name="Striegel, REITG" dpsi="esv_reitg">12140</werk>
-	<werk name="Strunk/Kaminski/Köhler, AStG/DBA" dpsi="sf_astgdba">10859</werk>
-	<werk name="StuW – Steuer und Wirtschaft" dpsi="ovs_stuw">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
-	<werk name="Süß, Erbrecht in Europa" dpsi="zv_erbreu">10718</werk>
-	<werk name="Szesny/Kuthe, Kapitalmarkt Compliance" dpsi="cfm_kmcompl">hbfm10011</werk>
-	<werk name="Thiele, Sag es stärker!" dpsi="cv_sages">hbfm10025</werk>
-	<werk name="Thiele/von Keitz/Brücks, Internationales Bilanzrecht" dpsi="sf_intbr">10602 12167 hbfm10006</werk>
-	<werk name="Thole, Gesellschaftsrechtliche Maßnahmen in der Insolvenz" dpsi="rws_thole">12348 12260</werk>
-	<werk name="Thüsing/Giebeler/Hey, Handwörterbuch für Aufsichtsräte" dpsi="hbfm_hwbar">hbfm10001 hbfm10014</werk>
-	<werk name="Tillmann/Mohr, GmbH-Geschäftsführer" dpsi="ENTFERNT">10602 12260</werk>
-	<werk name="Tillmann/Schiffers/Wälzholz/Rupp, Die GmbH im Gesellschafts- und Steuerrecht" dpsi="ENTFERNT">10602 12260</werk>
-	<werk name="Tipke/Kruse, AO/FGO" dpsi="ovs_tk">10603 10797</werk>
-	<werk name="Tipke/Lang, Steuerrecht" dpsi="ovs_tl">10603 10648 10718 10734 10744 10752 10759 10764 10774 10791 10797 10859</werk>
-	<werk name="Tschöpe, Arbeitsrecht Handbuch" dpsi="ovs_tar">10072 10162</werk>
-	<werk name="Ulmer/Brandner/Hensen, AGB-Recht" dpsi="ovs_agb">12140</werk>
-	<werk name="UmwSt-Handausgabe 2011/12" dpsi="sf_umwst">10791</werk>
-	<werk name="UR – Umsatzsteuer-Rundschau" dpsi="ovs_ur">10774</werk>
-	<werk name="ustb – Umsatz-Steuerberater" dpsi="ovs_ustb">10774</werk>
-	<werk name="UVR – Umsatzsteuer- und Verkehrsteuer-Recht" dpsi="sf_uvr">10774</werk>
-	<werk name="VA – Verkehrsrecht aktuell" dpsi="iww_va">12597</werk>
-	<werk name="van Kann, Vorstand der AG" dpsi="esv_vorstag">hbfm10014</werk>
-	<werk name="VB – VereinsBrief" dpsi="iww_vb">12597</werk>
-	<werk name="VE – Vollstreckung effektiv" dpsi="iww_ve">12597</werk>
-	<werk name="VK – Versicherung und Recht kompakt" dpsi="iww_vk">12499 12597</werk>
-	<werk name="Volkens/Anderson, Digital human" dpsi="cv_dighum">hbfm10020</werk>
-	<werk name="von Hertel, Professionelle Konfliktlösung" dpsi="cv_profkonfl">hbfm10022 hbfm10023 hbfm10025</werk>
-	<werk name="von Oertzen/Loose, ErbStG" dpsi="ovs_ohe">10718</werk>
-	<werk name="von Oertzen/Ponath, Asset Protection im deutschen Recht" dpsi="zv_apdr">10602 12597</werk>
-	<werk name="Vorwerk, Das Prozessformularbuch" dpsi="ovs_pfb">13566</werk>
-	<werk name="W. Küstenmacher/M. Küstenmacher, simplify your life " dpsi="cv_simplify">hbfm10025</werk>
-	<werk name="Wachter, AktG" dpsi="rws_wachter">12260</werk>
-	<werk name="Wächter, M&amp;A Litigation - M&amp;A-Recht im Streit" dpsi="rws_waechter">12260 hbfm10009</werk>
-	<werk name="Wachter, Praxis des Handels- und Gesellschaftsrechts" dpsi="zap_hgr">12260</werk>
-	<werk name="Wassermeyer/Andresen/Ditz, Betriebsstätten-Handbuch" dpsi="ovs_wbh">10859</werk>
-	<werk name="Wassermeyer/Baumhoff, Verrechnungspreise international verbundener Unternehmen" dpsi="ovs_wvp">10859</werk>
-	<werk name="Wassermeyer/Richter/Schnittker, Personengesellschaften im Internationalen Steuerrecht" dpsi="ovs_wrs">10859 10734</werk>
-	<werk name="Wegerich, Strategische Personalentwicklung in der Praxis" dpsi="spg_persentw">hbfm10023</werk>
-	<werk name="Weidner, Die Peperoni-Strategie" dpsi="cv_pepstrat">hbfm10025</werk>
-	<werk name="Weissman/Wegerer, Digitaler Wandel in Familienunternehmen" dpsi="cv_digwand">hbfm10020</werk>
-	<werk name="Welpe/Brosi/Schwarzmüller, Digital Work Design" dpsi="cv_digwork">hbfm10020</werk>
-	<werk name="Wendt/Suchanek/Möllmann/Heinemann, GewStG" dpsi="ovs_wsg">10734</werk>
-	<werk name="Werner, Die Familiengesellschaft" dpsi="esv_famg">hbfm10021</werk>
-	<werk name="Westermann, Handbuch Personengesellschaften" dpsi="ovs_ph">10648 10734 10774 10791 12260</werk>
-	<werk name="Widmann/Bauschatz, 360° UmwStG eKommentar" dpsi="sf_umwstgok">10791</werk>
-	<werk name="Widmann/Mayer, Umwandlungsrecht" dpsi="sf_umwr">10791 12260</werk>
-	<werk name="Wiegel/Frese, Das Konzept Eigeninitiative" dpsi="cv_eigenini">hbfm10020 hbfm10025</werk>
-	<werk name="Wieland/Steinmeyer/Grüninger, Handbuch Compliance-Management" dpsi="esv_complmgt">hbfm10012 hbfm10013</werk>
-	<werk name="Wilhelmi/Achtelik/Kunschke/Sigmundt, Handbuch EMIR" dpsi="esv_emir">12140</werk>
-	<werk name="Wilken/Schaumann/Zenker, Anleihen in Restrukturierung und Insolvenz" dpsi="rws_wilkenschaumann">12348</werk>
-	<werk name="Wilms/Jochum, ErbStG und SchenkStG" dpsi="sf_erbstg">10718</werk>
-	<werk name="wistra – Zeitschrift für Wirtschafts- und Steuerstrafrecht" dpsi="cfm_wistra">10602 12140</werk>
-	<werk name="WuW" dpsi="wuw">12532</werk>
-	<werk name="ZCG – Zeitschrift für Corporate Governance" dpsi="esv_zcg">hbfm10001 hbfm10014</werk>
-	<werk name="ZErb – Zeitschrift für die Steuer- und Erbrechtpraxis" dpsi="zv_zerb">10718</werk>
-	<werk name="ZfC – Zeitschrift für Compliance" dpsi="esv_zfc">hbfm10011 hbfm10017</werk>
-	<werk name="Ziemons/Binnewies, Handbuch Aktiengesellschaft" dpsi="ovs_ah">10764 10774 10734 10744 10791 10859 12260</werk>
-	<werk name="Zimmer, Insolvenzbuchhaltung" dpsi="rws_zimmer">10602 12167 hbfm10006</werk>
-	<werk name="ZIP – Zeitschrift für Wirtschaftsrecht" dpsi="rws_zip">12348 12260</werk>
-	<werk name="ZIR – Zeitschrift Interne Revision" dpsi="esv_zir">hbfm10001 hbfm10014</werk>
-	<werk name="ZOE" dpsi="zoe">hbfm10020 hbfm10022</werk>
-	<werk name="Zöller, ZPO" dpsi="ovs_zpo">13566</werk>
-	<werk name="ZRFC – Risk, Fraud &amp; Compliance" dpsi="esv_zrfc">hbfm10001 hbfm10011</werk>
-	<werk name="Zülch/Beyhs/Hoffmann/Hirschböck, Enforcement-Guide" dpsi="esv_enfguide">hbfm10008</werk>
-	<werk name="ZVI – Zeitschrift für Verbraucher- und Privat-Insolvenzrecht" dpsi="rws_zvi">12348</werk>
-	<werk name="ZWeR – Zeitschrift für Wettbewerbsrecht" dpsi="rws_zwer">12532</werk>
-	<werk name="Bewertungspraktiker" dpsi="bwp">hbfm10006 hbfm10007 hbfm10008 hbfm10009 hbfm10010</werk>
-	<werk name="Ifst-Schriften" dpsi="ifst">10602</werk>
-	<werk dpsi="efv_gmbhstr">10602 10734 10744 10752 10764 10774 12140</werk>
-	<werk dpsi="efv_graofgo">10602 10603 10797</werk>
-	<werk dpsi="efv_grerbst">10602 10718</werk>
-	<werk dpsi="efv_grgewst">10602 10734</werk>
-	<werk dpsi="efv_grkst">10602 10764</werk>
-	<werk dpsi="efv_istr">10602</werk>
-	<werk dpsi="efv_ust">10602 10774</werk>
-	<!-- neue IDW Werke: -->
-	<werk name="IDW (Hrsg.), Praxisleitfaden Governance, Risk und Compliance" dpsi="idw_praxgrc">hbfm10004 hbfm10012 hbfm10013</werk>
-	<werk name="IDW (Hrsg.), IDW Verlautbarungen zu Governance, Risk und Compliance" dpsi="idw_vlbgrc">hbfm10011 hbfm10016</werk>
-	<werk name="IDW (Hrsg.), Tax Compliance" dpsi="idw_taxcompl">10602 hbfm10013</werk>
-	<werk name="Schmidt, WPH Assurance, Kapitel K: Corporate Governance Systeme und deren Prüfung" dpsi="idw_wphk">hbfm10011 hbfm10016</werk>
-	<werk name="Koch/Stauder, WPH Assurance, Kapitel L: Tax Compliance" dpsi="idw_wphl">hbfm10012 hbfm10017</werk>
-	<werk name="IDW (Hrsg.), Veranlagungshandbuch Einkommensteuer 2018" dpsi="idw_est_2019">10648</werk>
-	<werk name="IDW (Hrsg.), Veranlagungshandbuch Körperschaftsteuer 2018" dpsi="idw_kst_2019">10764</werk>
-	<werk name="IDW (Hrsg.), Veranlagungshandbuch Gewerbesteuer 2018" dpsi="idw_gewst_2019">10734</werk>
-	<werk name="IDW (Hrsg.), Veranlagungshandbuch Umsatzsteuer 2018" dpsi="idw_ust_2019">10774</werk>
-	<werk name="IDW (Hrsg.), Praktiker-Handbuch Allgemeines Steuer- und Verfahrensrecht 2019" dpsi="idw_stverfr_2019">10603 10859</werk>
-	<werk name="IDW (Hrsg.), Neuregelung der Erbschaftsteuer" dpsi="idw_erbst">10718</werk>
-	<werk name="IDW (Hrsg.), Doppelstöckige Personengesellschaften" dpsi="idw_persg">10602</werk>
-	<werk name="WPg – Die Wirtschaftsprüfung" dpsi="idw_wpg">10602 hbfm10012</werk>
+	<werk dpsi="cv_cm" name="Change Management">hbfm10020</werk>
+	<werk dpsi="cv_massnkrise" name="33 Sofortmaßnahmen gegen die Krise">hbfm10020</werk>
+	<werk dpsi="cv_globalia" name="Hidden Champions - Aufbruch nach Globalia">hbfm10022</werk>
+	<werk dpsi="cv_fuehrwand" name="Führungsstark im Wandel">hbfm10020 hbfm10022</werk>
+	<werk dpsi="cv_mgty" name="Management Y">hbfm10022 hbfm10023</werk>
+	<werk dpsi="cv_cheffalle" name="Die Chef-Falle">hbfm10022</werk>
+	<werk dpsi="cv_fuehrleile" name="Führen, Leisten, Leben">hbfm10022</werk>
+	<werk dpsi="cv_fuehrflex" name="Führen mit flexiblen Zielen">hbfm10022</werk>
+	<werk dpsi="cv_fuehrstark" name="Führungsstark in alle Richtungen">hbfm10022</werk>
+	<werk dpsi="cv_leadership" name="Leadership 2.0">hbfm10022</werk>
+	<werk dpsi="cv_fuehrrad" name="Radikal führen">hbfm10022</werk>
+	<werk dpsi="cv_tachchef" name="Tacheles aus der Chefetage">hbfm10022</werk>
+	<werk dpsi="cv_navigumbr" name="Navigieren in Zeiten des Umbruchs">hbfm10022 hbfm10020</werk>
+	<werk dpsi="cv_bestma" name="Die besten Mitarbeiter finden und halten">hbfm10023</werk>
+	<werk dpsi="cv_gehchamp" name="Das Geheimnis der Champions">hbfm10023</werk>
+	<werk dpsi="cv_magespr" name="Mitarbeitergespräche sicher und kompetent führen">hbfm10023 hbfm10022</werk>
+	<werk dpsi="cv_mythmot" name="Mythos Motivation">hbfm10023 hbfm10022</werk>
+	<werk dpsi="cv_selbstver" name="Das Prinzip Selbstverantwortung">hbfm10023</werk>
+	<werk dpsi="cv_profkonfl" name="Professionelle Konfliktlösung">hbfm10022 hbfm10023 hbfm10025</werk>
+	<werk dpsi="cv_sprechprofi" name="Sprechen wie der Profi">hbfm10025</werk>
+	<werk dpsi="cv_brainwork" name="Brain at Work">hbfm10025</werk>
+	<werk dpsi="cv_achtzig" name="Das 80/20-Prinzip">hbfm10025</werk>
+	<werk dpsi="cv_chefnun" name="Endlich Chef - was nun?">hbfm10025 hbfm10022</werk>
+	<werk dpsi="cv_ebeidir" name="Die Entscheidung liegt bei dir!">hbfm10025 hbfm10022</werk>
+	<werk dpsi="cv_heimlkarr" name="Die heimlichen Spielregeln der Karriere">hbfm10025</werk>
+	<werk dpsi="cv_pepstrat" name="Die Peperoni-Strategie">hbfm10025</werk>
+	<werk dpsi="cv_schluss" name="Schluss mit dem ewigen Aufschieben">hbfm10025</werk>
+	<werk dpsi="cv_simplify" name="simplify your life">hbfm10025</werk>
+	<werk dpsi="cv_sages" name="Sag es stärker!">hbfm10025</werk>
+	<werk dpsi="cv_verh" name="Verhandeln">hbfm10025</werk>
+	<werk dpsi="cv_dedig" name="Deutschland digital">hbfm10020</werk>
+	<werk dpsi="cv_dighum" name="Digital human">hbfm10020</werk>
+	<werk dpsi="cv_digwand" name="Digitaler Wandel in Familienunternehmen">hbfm10020</werk>
+	<werk dpsi="cv_dighirn" name="Digitalisieren mit Hirn">hbfm10020</werk>
+	<werk dpsi="cv_digwork" name="Digital Work Design">hbfm10020</werk>
+	<werk dpsi="cv_energy" name="Social Energy">hbfm10020</werk>
+	<werk dpsi="cv_eigenini" name="Das Konzept Eigeninitiative">hbfm10020 hbfm10025</werk>
+	<werk dpsi="esv_arbgg" name="ArbGG">10002</werk>
+	<werk dpsi="esv_arbgverf" name="Handbuch des arbeitsgerichtlichen Verfahrens">10002</werk>
+	<werk dpsi="esv_kdgkrankh" name="Kündigung bei Krankheit">10072 10162</werk>
+	<werk dpsi="esv_rksich" name="Das Recht der Kreditsicherung">12141 hbfm10007</werk>
+	<werk dpsi="esv_gen" name="Genossenschafts-Handbuch">12140</werk>
+	<werk dpsi="esv_haftrat" name="Haftung für fehlerhafte Ratings">12140 hbfm10007</werk>
+	<werk dpsi="esv_brestr" name="Handbuch Banken-Restrukturierung">12141 12348</werk>
+	<werk dpsi="esv_kwg" name="Kreditwesengesetz">12140</werk>
+	<werk dpsi="esv_reitg" name="REITG">12140</werk>
+	<werk dpsi="esv_schvg" name="SchVG">12348</werk>
+	<werk dpsi="esv_spruchg" name="SpruchG">12260 hbfm10010</werk>
+	<werk dpsi="esv_sqout" name="Squeeze out">12260 hbfm10009 hbfm10010</werk>
+	<werk dpsi="esv_wpdverov" name="WpDVerOV">12140</werk>
+	<werk dpsi="esv_wppg" name="WpPG">12140 hbfm10007</werk>
+	<werk dpsi="esv_wpueg" name="WpÜG">12140 hbfm10009</werk>
+	<werk dpsi="esv_emir" name="Handbuch EMIR">12140</werk>
+	<werk dpsi="esv_investm" name="Investment">10859 12140</werk>
+	<werk dpsi="esv_bdsg" name="DS-GVO/BDSG">hbfm10017</werk>
+	<werk dpsi="esv_ping" name="PinG – Privacy in Germany">hbfm10017</werk>
+	<werk dpsi="esv_zfc" name="ZfC – Zeitschrift für Compliance">hbfm10011 hbfm10017</werk>
+	<werk dpsi="esv_angehg" name="Angehörigengeschäfte im Steuer- und Steuerstrafrecht">10764 10648 10603</werk>
+	<werk dpsi="esv_baufsp" name="Die Betriebsaufspaltung">10648 10734</werk>
+	<werk dpsi="esv_orgstr" name="Die Organschaft im Steuerrecht">10734 10764 10774</werk>
+	<werk dpsi="esv_stbp" name="StBp – Die steuerliche Betriebsprüfung">10603 10859 10648 10734 10764</werk>
+	<werk dpsi="esv_vergstbb" name="Die Vergütung der steuerberatenden Berufe">10602</werk>
+	<werk dpsi="esv_exgrb" name="Existenzgründungsberatung">10648 10734 10764 10774 10859</werk>
+	<werk dpsi="esv_immstr" name="Übertragung von Immobilien im Steuerrecht">10648 10734 10744 10764 10859</werk>
+	<werk dpsi="esv_ustg" name="UStG">10774</werk>
+	<werk dpsi="esv_umwstg" name="UmwStG">10791</werk>
+	<werk dpsi="esv_vergkostr" name="Vergütungs- und Kostenrecht im FG- und BFH-Verfahren">10797</werk>
+	<werk dpsi="esv_vollstrsch" name="Vollstreckungsschutz, Stundung und Erlass">10603</werk>
+	<werk dpsi="esv_betrvr" name="Betriebsverfassungsrecht">10206</werk>
+	<werk dpsi="esv_cgcompl" name="Corporate Governance, Abschlussprüfung und Compliance">hbfm10011 hbfm10015 hbfm10016</werk>
+	<werk dpsi="esv_famg" name="Die Familiengesellschaft">hbfm10021</werk>
+	<werk dpsi="esv_mitbestar" name="Die Mitbestimmung im Aufsichtsrat">hbfm10003</werk>
+	<werk dpsi="esv_enfguide" name="Enforcement-Guide">hbfm10008</werk>
+	<werk dpsi="esv_fambg" name="Family Business Governance">hbfm10002</werk>
+	<werk dpsi="esv_internrev" name="Grundlagen der Internen Revision">hbfm10015</werk>
+	<werk dpsi="esv_untf" name="Grundsätze nachhaltiger Unternehmensführung">hbfm10019 hbfm10026</werk>
+	<werk dpsi="esv_arki" name="Handbuch Aufsichts- und Verwaltungsräte in Kreditinstituten">hbfm10001</werk>
+	<werk dpsi="esv_complint" name="Handbuch Compliance international">hbfm10012 hbfm10013</werk>
+	<werk dpsi="esv_complmgt" name="Handbuch Compliance-Management">hbfm10012 hbfm10013</werk>
+	<werk dpsi="esv_hrrl" name="Handbuch handelsrechtliche Rechnungslegung">hbfm10008</werk>
+	<werk dpsi="esv_integrep" name="Handbuch Integrated Reporting">hbfm10008</werk>
+	<werk dpsi="esv_iks" name="Handbuch Interne Kontrollsysteme (IKS)">hbfm10014</werk>
+	<werk dpsi="esv_lageb" name="Handbuch Lagebericht">hbfm10009 hbfm10008</werk>
+	<werk dpsi="esv_ksi" name="KSI Krisen-, Sanierungs- und Insolvenzberatung">hbfm10026</werk>
+	<werk dpsi="esv_risikomgt" name="Praxishandbuch Risikomanagement">hbfm10004 hbfm10024</werk>
+	<werk dpsi="esv_restrmgt" name="Restrukturierungs- und Turnaround-Management">hbfm10026</werk>
+	<werk dpsi="esv_untstrg" name="Unternehmenssteuerung im Umbruch">hbfm10026 hbfm10019</werk>
+	<werk dpsi="esv_untstrat" name="Unternehmensstrategie und Verantwortung">hbfm10026 hbfm10019</werk>
+	<werk dpsi="esv_untstift" name="Unternehmensverbundene Stiftungen">10602 12140</werk>
+	<werk dpsi="esv_vorstag" name="Vorstand der AG">hbfm10014</werk>
+	<werk dpsi="esv_bilskand" name="Bilanzskandale">hbfm10008</werk>
+	<werk dpsi="esv_wissbil" name="Handbuch Wissensbilanz">hbfm10026</werk>
+	<werk dpsi="esv_cgfw" name="Corporate Governance in der Finanzwirtschaft">hbfm10001 hbfm10014</werk>
+	<werk dpsi="esv_schaetzsr" name="Schätzungen im Steuerrecht">10603</werk>
+	<werk dpsi="esv_vermanlg" name="VermAnlG">12140</werk>
+	<werk dpsi="esv_fintech" name="FinTech">12140 hbfm10007</werk>
+	<werk dpsi="esv_dsitsec" name="Handbuch Datenschutz und IT-Sicherheit">hbfm10017</werk>
+	<werk dpsi="esv_investimm" name="Investition Immobilie">10602</werk>
+	<werk dpsi="esv_arztprax" name="Gründung, Veräußerung und Erwerb von Arzt- und Zahnarztpraxen">10602</werk>
+	<werk dpsi="esv_nachfms" name="Nachfolge im Mittelstand">10602</werk>
+	<werk dpsi="esv_swprax" name="Formularbuch der Steuer- und Wirtschaftspraxis">10602</werk>
+	<werk dpsi="esv_zcg" name="ZCG Zeitschrift für Corporate Governance">hbfm10001 hbfm10014</werk>
+	<werk dpsi="esv_zir" name="ZIR Zeitschrift Interne Revision">hbfm10001 hbfm10014</werk>
+	<werk dpsi="esv_zrfc" name="ZRFC Risk, Fraud &amp; Compliance">hbfm10001 hbfm10011</werk>
+	<werk dpsi="ovs_hhsp" name="AO/FGO">10603 10797</werk>
+	<werk dpsi="ovs_mdv" name="Datennutzungs- und Datenschutzverträge">hbfm10017</werk>
+	<werk dpsi="ovs_hcc" name="Handbuch Cloud Computing">hbfm10017</werk>
+	<werk dpsi="ovs_gre" name="Praxis-Handbuch Erbrechtsberatung">10718</werk>
+	<werk dpsi="ovs_bv" name="Bewertungsrecht - BewG/ErbStG">10718 hbfm10010</werk>
+	<werk dpsi="ovs_erbstb" name="Erbschaft-Steuerberater">10718</werk>
+	<werk dpsi="ovs_ka" name="ErbStG">10718</werk>
+	<werk dpsi="ovs_ohe" name="ErbStG">10718</werk>
+	<werk dpsi="ovs_ke" name="Handbuch der Erbengemeinschaft">10718 10648 10603</werk>
+	<werk dpsi="efv_grerbst" name="Erbschaftsteuer und Schenkungsteuer">10602 10718</werk>
+	<werk dpsi="ovs_kest" name="EStG">10648</werk>
+	<werk dpsi="ovs_estb" name="Ertrag-Steuerberater">10648 10734 10764</werk>
+	<werk dpsi="ovs_fr" name="Finanz-Rundschau Ertragsteuerrecht">10648 10734 10764</werk>
+	<werk dpsi="ovs_ls" name="GewStG">10734</werk>
+	<werk dpsi="ovs_tl" name="Steuerrecht">10603 10648 10718 10734 10744 10752 10759 10764 10774 10791 10797 10859</werk>
+	<werk dpsi="ovs_hhr" name="EStG KStG, Kommentar">10648 10764</werk>
+	<werk dpsi="ovs_rug" name="UmwStG">10791</werk>
+	<werk dpsi="efv_grgewst" name="Gewerbesteuer">10602 10734</werk>
+	<werk dpsi="efv_grkst" name="Körperschaftsteuer">10602 10764</werk>
+	<werk dpsi="efv_est" name="Einkommensteuer">10602 10648</werk>
+	<werk dpsi="ovs_fwb" name="Außensteuerrecht">10859</werk>
+	<werk dpsi="ovs_wbh" name="Betriebsstätten-Handbuch">10859</werk>
+	<werk dpsi="ovs_dba" name="DBA Deutschland - Schweiz">10859</werk>
+	<werk dpsi="ovs_sddb" name="DBA">10859</werk>
+	<werk dpsi="ovs_seu" name="Europäisches Steuerrecht">10859</werk>
+	<werk dpsi="ovs_bkv" name="Handbuch Internationale Verrechnungspreise">10859</werk>
+	<werk dpsi="ovs_isr" name="Internationale Steuer-Rundschau">10859</werk>
+	<werk dpsi="ovs_sis" name="Internationales Steuerrecht">10859</werk>
+	<werk dpsi="ovs_spi" name="Internationales Steuerstrafrecht">10859</werk>
+	<werk dpsi="ovs_sss" name="Steuerrechtsschutz">10603 10859</werk>
+	<werk dpsi="ovs_wrs" name="Personengesellschaften im Internationalen Steuerrecht">10859 10734</werk>
+	<werk dpsi="ovs_mbu" name="Steuerrecht international tätiger Unternehmen">10859</werk>
+	<werk dpsi="ovs_psu" name="Umwandlungen im internationalen Steuerrecht">10791 10859</werk>
+	<werk dpsi="ovs_wvp" name="Verrechnungspreise international verbundener Unternehmen">10859</werk>
+	<werk dpsi="efv_istr" name="Internationales Steuerrecht">10602</werk>
+	<werk dpsi="ovs_rkst" name="KStG">10764</werk>
+	<werk dpsi="ovs_bu" name="Das große Umsatzsteuer-Handbuch">10774</werk>
+	<werk dpsi="ovs_ukm" name="UStG">10774</werk>
+	<werk dpsi="ovs_ustb" name="ustb – Umsatz-Steuerberater">10774</werk>
+	<werk dpsi="ovs_euustb" name="EU-ustb – EU-Umsatz-Steuerberater">10774</werk>
+	<werk dpsi="ovs_ur" name="UR – Umsatzsteuer-Rundschau">10774</werk>
+	<werk dpsi="ovs_stk" name="UStG">10774</werk>
+	<werk dpsi="efv_ust" name="Umsatzsteuer">10602 10774</werk>
+	<werk dpsi="efv_graofgo" name="Abgabenordnung und FGO">10602 10603 10797</werk>
+	<werk dpsi="ovs_tk" name="AO/FGO">10603 10797</werk>
+	<werk dpsi="ovs_agb" name="AGB-Recht">12140</werk>
+	<werk dpsi="ovs_ea" name="AktG">12260</werk>
+	<werk dpsi="ovs_bfa" name="Anwalts-Formularbuch Arbeitsrecht">10072 10162</werk>
+	<werk dpsi="ovs_aostb" name="AO-Steuerberater">10603</werk>
+	<werk dpsi="ovs_arbrb" name="Arbeits-Rechtsberater">10072 10002 10162 10184 10206</werk>
+	<werk dpsi="ovs_tar" name="Arbeitsrecht Handbuch">10072 10162</werk>
+	<werk dpsi="ovs_hwk" name="Arbeitsrecht">10002 10072 10162 10206</werk>
+	<werk dpsi="ovs_erman" name="BGB">12140</werk>
+	<werk dpsi="ovs_hpa" name="Der Arbeitsvertrag">10072</werk>
+	<werk dpsi="ovs_gmbhstb" name="gmbhstb – GmbH-Steuerberater">10602 12140</werk>
+	<werk dpsi="ovs_wls" name="Der Leasingvertrag">10648 10734 10764 10859 12140 hbfm10007</werk>
+	<werk dpsi="ovs_stre3" name="Der Steuerstreit">10603 10797</werk>
+	<werk dpsi="ovs_ag" name="Die Aktiengesellschaft">12260</werk>
+	<werk dpsi="ovs_nh" name="Die Haftung für Steuerschulden">10603</werk>
+	<werk dpsi="ovs_msa" name="Die Selbstanzeige im Steuerstrafverfahren">10603 10797 11122</werk>
+	<werk dpsi="ovs_fwg" name="Formularbuch Gesellschaftsrecht">12260</werk>
+	<werk dpsi="ovs_hgs" name="Gemeinnützigkeits- und Spendenrecht">10603 10764 10648</werk>
+	<werk dpsi="ovs_gh" name="GmbH-Handbuch">12260</werk>
+	<werk dpsi="ovs_gmbhr" name="GmbHR – GmbH-Rundschau">12260</werk>
+	<werk dpsi="ovs_gk" name="GmbHG">12260</werk>
+	<werk dpsi="ovs_kg" name="GmbHG">12260</werk>
+	<werk dpsi="ovs_pwo" name="Steuerliche Organschaft">10603 10648 10734 10744 10764 10774 10791</werk>
+	<werk dpsi="efv_gmbhstr" name="Die GmbH im Steuerrecht">10602 10734 10744 10752 10764 10774 12140</werk>
+	<werk dpsi="ovs_ghb" name="GmbH-Beratung">10648 10734 10764 10718 10774 10603 10859 10791 12260</werk>
+	<werk dpsi="ovs_ah" name="Handbuch Aktiengesellschaft">10764 10774 10734 10744 10791 10859 12260</werk>
+	<werk dpsi="ovs_co" name="Handbuch GmbH &amp; Co. KG">10648 10764 10734 10744 10791 10603 10718 12260</werk>
+	<werk dpsi="ovs_ph" name="Handbuch Personengesellschaften">10648 10734 10774 10791 12260</werk>
+	<werk dpsi="ovs_hdj" name="HdJ">10648 12167 hbfm10006</werk>
+	<werk dpsi="ovs_mhk" name="Handbuch Kündigungsrecht">10072</werk>
+	<werk dpsi="ovs_stg" name="Handbuch Stille Gesellschaft">10603 10648 10734 10744 10752 10774 10791 12260</werk>
+	<werk dpsi="ovs_hgb" name="HGB">12167 hbfm10006 hbfm10014</werk>
+	<werk dpsi="ovs_luh" name="Holding-Handbuch">10744 10791 10764 10603 12260</werk>
+	<werk dpsi="ovs_ias" name="IFRS-Handbuch">12167 hbfm10006 hbfm10014</werk>
+	<werk dpsi="ovs_br" name="Bilanzrecht">10648 12167 hbfm10006 hbfm10014</werk>
+	<werk dpsi="ovs_iv" name="Internationales Vertragsrecht">12140 12598</werk>
+	<werk dpsi="ovs_bdsg" name="Kommentar zum BDSG sowie den Datenschutzbestimmungen des TMG und TKG">hbfm10017</werk>
+	<werk dpsi="ovs_suk" name="Die GmbH in Krise, Sanierung und Insolvenz">10602 12348 12260</werk>
+	<werk dpsi="ovs_guh" name="Handelsregister-Anmeldungen">12167</werk>
+	<werk dpsi="ovs_ct1" name="GmbH-Geschäftsführer">12260 12499</werk>
+	<werk dpsi="ovs_lpg" name="GmbH-Vertragspraxis">12260</werk>
+	<werk dpsi="ovs_tw" name="Die GmbH im Gesellschafts- und Steuerrecht">12260</werk>
+	<werk dpsi="ovs_stre4" name="Die Unternehmensumwandlung">10791</werk>
+	<werk dpsi="ovs_bwgr" name="Grunderwerbsteuergesetz Kommentar">10744</werk>
+	<werk dpsi="ovs_lka" name="Rechte und Pflichten des Aufsichtsrats">12260 hbfm10015</werk>
+	<werk dpsi="ovs_isv" name="Rechte und Pflichten des Vorstands">12260 hbfm10015</werk>
+	<werk dpsi="ovs_fhu" name="Rechtshandbuch Unternehmensbewertung">10602 12260 hbfm10010</werk>
+	<werk dpsi="ovs_se" name="SE-Kommentar">12260</werk>
+	<werk dpsi="ovs_kst" name="Steuerstrafrecht">10603 10869</werk>
+	<werk dpsi="ovs_kug" name="UmwG">12260</werk>
+	<werk dpsi="ovs_lug" name="UmwG">12260</werk>
+	<werk dpsi="ovs_bkst" name="Basiskommentar Steuerrecht">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="ovs_bgst" name="Das Steuer-Handbuch">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="ovs_fk" name="Frankfurter Kommentar Kartellrecht">12532</werk>
+	<werk dpsi="ovs_stbw" name="StBW – Steuerberater-Woche">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="ovs_bav" name="Steuerrecht der betrieblichen Altersversorgung">10177 10648 10764</werk>
+	<werk dpsi="ovs_abav" name="Arbeitsrecht der betrieblichen Altersversorgung">10177</werk>
+	<werk dpsi="ovs_hgu" name="Entgeltumwandlung">10177</werk>
+	<werk dpsi="ovs_fms" name="Handbuch börsennotierte AG">12260</werk>
+	<werk dpsi="ovs_kueb" name="Bank- und Kapitalmarktrecht">12140</werk>
+	<werk dpsi="ovs_asw" name="WpHG">12140</werk>
+	<werk dpsi="ovs_aps" name="WpÜG">12140 hbfm10009</werk>
+	<werk dpsi="ovs_alr" name="WpPG/VerkProspG">12140 hbfm10007</werk>
+	<werk dpsi="ovs_hms" name="Unternehmensfinanzierung am Kapitalmarkt">12140 hbfm10007</werk>
+	<werk dpsi="ovs_ib" name="Insolvenzrecht in der Bankpraxis">12141</werk>
+	<werk dpsi="ovs_zpo" name="ZPO">13566</werk>
+	<werk dpsi="ovs_pfb" name="Das Prozessformularbuch">13566</werk>
+	<werk dpsi="ovs_hub" name="Handbuch Unternehmenskauf">10648 10744 10718 10764 10734 10774 10791 10797 10859 12140 hbfm10009</werk>
+	<werk dpsi="ovs_ksm" name="Handbuch Managerhaftung">12260</werk>
+	<werk dpsi="ovs_hs" name="Schuldverschreibungsrecht">12348</werk>
+	<werk dpsi="ovs_wsg" name="GewStG">10734</werk>
+	<werk dpsi="ovs_awz" name="Kapitalanlagegesetzbuch">12140</werk>
+	<werk dpsi="ovs_sst" name="Tax Compliance">hbfm10011 hbfm10014</werk>
+	<werk dpsi="ovs_stuw" name="StuW - Steuer und Wirtschaft">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="ovs_ubg" name="Ubg - Die Unternehmensbesteuerung">10603 10648 10718 10734 10744 10752 10759 10764 10774 10791 10797 10859</werk>
+	<werk dpsi="rws_borkgehrlein" name="Aktuelle Probleme der Insolvenzanfechtung">12348</werk>
+	<werk dpsi="rws_wilkenschaumann" name="Anleihen in Restrukturierung und Insolvenz">12348</werk>
+	<werk dpsi="rws_moenning" name="Betriebsfortführung in Restrukturierung und Insolvenz">12348</werk>
+	<werk dpsi="rws_ahrens" name="Aktuelles Privatinsolvenzrecht">12348</werk>
+	<werk dpsi="rws_hofmann" name="Eigenverwaltung">12348</werk>
+	<werk dpsi="rws_thole" name="Gesellschaftsrechtliche Maßnahmen in der Insolvenz">12348 12260</werk>
+	<werk dpsi="rws_schmittmann" name="Haftung von Organen in Krise und Insolvenz">12348 12260</werk>
+	<werk dpsi="rws_goepfert" name="Handbuch Arbeitsrecht in Restrukturierung und Insolvenz">12348</werk>
+	<werk dpsi="rws_borkhoelzle" name="Handbuch Insolvenzrecht">12348</werk>
+	<werk dpsi="rws_hri" name="HRI - Handbuch Restrukturierung in der Insolvenz">12348</werk>
+	<werk dpsi="rws_kinso" name="InsO">12348</werk>
+	<werk dpsi="rws_inso" name="InsO">12348</werk>
+	<werk dpsi="rws_zimmer" name="Insolvenzbuchhaltung">10602 12167 hbfm10006</werk>
+	<werk dpsi="rws_rendelszabel" name="Insolvenzplan">12348</werk>
+	<werk dpsi="rws_gossak" name="Praxis des Insolvenzarbeitsrechts">12348</werk>
+	<werk dpsi="rws_hoelzle" name="Praxisleitfaden ESUG">12348</werk>
+	<werk dpsi="rws_kolmann" name="Schutzschirmverfahren">12348</werk>
+	<werk dpsi="rws_kahlert" name="Steuerliche Aspekte der GmbH-Sanierung">10602 12260 12348</werk>
+	<werk dpsi="rws_zip" name="ZIP - Zeitschrift für Wirtschaftsrecht">12348 12260</werk>
+	<werk dpsi="rws_depre" name="ZVG">12140</werk>
+	<werk dpsi="rws_zvi" name="ZVI - Zeitschrift für Verbraucher- und Privat-Insolvenzrecht">12348</werk>
+	<werk dpsi="rws_zwer" name="ZWeR - Zeitschrift für Wettbewerbsrecht">12532</werk>
+	<werk dpsi="rws_ewir" name="EWiR - Entscheidungen zum Wirtschaftsrecht">12348 12260</werk>
+	<werk dpsi="rws_wachter" name="AktG">12260</werk>
+	<werk dpsi="rws_henzeborndrescher" name="Aktienrecht - Höchstrichterliche Rechtsprechung">12260</werk>
+	<werk dpsi="rws_drescher" name="Die Haftung des GmbH-Geschäftsführers">12260</werk>
+	<werk dpsi="rws_henzeborn" name="GmbH-Recht - Höchstrichterliche Rechtsprechung">12260</werk>
+	<werk dpsi="rws_gmbhg" name="GmbHG">12260</werk>
+	<werk dpsi="rws_goethel" name="Grenzüberschreitende M&amp;A-Transaktionen">10602 12260 hbfm10009</werk>
+	<werk dpsi="rws_sernetzkruis" name="Kapitalaufbringung und -erhaltung in der GmbH">12260 hbfm10007</werk>
+	<werk dpsi="rws_hirte" name="Kapitalgesellschaftsrecht">12260</werk>
+	<werk dpsi="rws_waechter" name="M&amp;A Litigation - M&amp;A-Recht im Streit">12260 hbfm10009</werk>
+	<werk dpsi="rws_km" name="Unternehmenskauf">10648 10744 10718 10764 10734 10774 10791 10797 10859 12140 hbfm10009</werk>
+	<werk dpsi="rws_hp" name="Unternehmenskauf in Recht und Praxis">10648 10744 10718 10764 10734 10774 10791 10797 10859 12140 hbfm10009</werk>
+	<werk dpsi="sf_aook" name="360° AO eKommentar">10603</werk>
+	<werk dpsi="sf_astgok" name="360° AStG eKommentar">10859</werk>
+	<werk dpsi="sf_brok" name="360° BilR eKommentar">10648 10859 12167 hbfm10006</werk>
+	<werk dpsi="sf_energstgok" name="360° EnergieStG eKommentar">10859</werk>
+	<werk dpsi="sf_erbstgok" name="360° ErbStG eKommentar">10718</werk>
+	<werk dpsi="sf_estgok" name="360° EStG eKommentar">10648</werk>
+	<werk dpsi="sf_fgook" name="360° FGO eKommentar">10797</werk>
+	<werk dpsi="sf_fzulgok" name="360° FZulG eKommentar">10602 10859</werk>
+	<werk dpsi="sf_gewstgok" name="360° GewStG eKommentar">10734</werk>
+	<werk dpsi="sf_grestgok" name="360° GrEStG eKommentar">10744</werk>
+	<werk dpsi="sf_grstgok" name="360° GrStG eKommentar">10752</werk>
+	<werk dpsi="sf_kstgok" name="360° KStG eKommentar">10764</werk>
+	<werk dpsi="sf_mwstok" name="360° MwStSystRL eKommentar">10774</werk>
+	<werk dpsi="sf_stbvvok" name="360° StBVV eKommentar">10859</werk>
+	<werk dpsi="sf_stromstgok" name="360° StromStG eKommentar">10859</werk>
+	<werk dpsi="sf_umwstgok" name="360° UmwStG eKommentar">10791</werk>
+	<werk dpsi="sf_ustgok" name="360° UStG eKommentar">10774</werk>
+	<werk dpsi="sf_versstgok" name="360° VersStG eKommentar">10859</werk>
+	<werk dpsi="sf_ah" name="Stotax Arbeitshilfen">10001 10602 12140</werk>
+	<werk dpsi="sf_abcbil" name="ABC der Bilanzierung 2019/2020">10648 10764 10603 12167 hbfm10006</werk>
+	<werk dpsi="sf_abcgmbh" name="ABC des GmbH-Geschäftsführers 2020">10001 10648 10734 10759 10764 12260</werk>
+	<werk dpsi="sf_abclohn" name="ABC des Lohnbüros 2016">10072 10648 10759</werk>
+	<werk dpsi="sf_abclohn17" name="ABC des Lohnbüros 2017">10072 10648 10759</werk>
+	<werk dpsi="sf_abclohn18" name="ABC des Lohnbüros 2018">10072 10648 10759</werk>
+	<werk dpsi="sf_abclohn19" name="ABC des Lohnbüros 2019">10072 10648 10759</werk>
+	<werk dpsi="sf_abclohn20" name="ABC des Lohnbüros 2020">10072 10648 10759</werk>
+	<werk dpsi="sf_aofgo" name="AO/FGO">10603</werk>
+	<werk dpsi="sf_afalex" name="AfA-Lexikon">10648 12140</werk>
+	<werk dpsi="sf_aendstrwr" name="Steuer- und Wirtschaftsrecht 2020">10602 12140</werk>
+	<werk dpsi="sf_aofgoha" name="AO/FGO Handausgabe 2017">10603 10797</werk>
+	<werk dpsi="sf_aofgoha18" name="AO/FGO Handausgabe 2018">10603 10797</werk>
+	<werk dpsi="sf_aofgoha19" name="AO/FGO Handausgabe 2019">10603 10797</werk>
+	<werk dpsi="sf_aofgoha20" name="AO/FGO Handausgabe 2020">10603 10797</werk>
+	<werk dpsi="sf_astgdba" name="AStG/DBA">10859</werk>
+	<werk dpsi="sf_bup" name="Zeitschrift für Betrieb und Personal (B+P)">10184 10602</werk>
+	<werk dpsi="sf_br" name="Bilanzrecht">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_brref" name="Bilanzrechtsreform 2010/2011">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_umwsterl" name="Der Umwandlungssteuer-Erlass 2011">10791</werk>
+	<werk dpsi="sf_dstz" name="Deutsche Steuer-Zeitung (DStZ)">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_ebil" name="E-Bilanz">10602 hbfm10006</werk>
+	<werk dpsi="sf_efg" name="Entscheidungen der Finanzgerichte (EFG)">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_esterkl" name="Einkommensteuer-Erklärung 2015">10648</werk>
+	<werk dpsi="sf_esterkl16" name="Einkommensteuer-Erklärung 2016">10648</werk>
+	<werk dpsi="sf_esterkl17" name="Einkommensteuer-Erklärung 2017">10648</werk>
+	<werk dpsi="sf_esterkl18" name="Einkommensteuer-Erklärung 2018">10648</werk>
+	<werk dpsi="sf_esterkl19" name="Einkommensteuer-Erklärung 2019">10648</werk>
+	<werk dpsi="sf_estha" name="ESt-Handausgabe 2016">10648</werk>
+	<werk dpsi="sf_estha17" name="ESt-Handausgabe 2017">10648</werk>
+	<werk dpsi="sf_estha18" name="ESt-Handausgabe 2018">10648</werk>
+	<werk dpsi="sf_estg" name="EStG">10648</werk>
+	<werk dpsi="sf_erbstg" name="ErbStG und SchenkStG">10718</werk>
+	<werk dpsi="sf_gewstha" name="GewSt-Handausgabe 2016">10734</werk>
+	<werk dpsi="sf_gewstha17" name="GewSt-Handausgabe 2017">10734</werk>
+	<werk dpsi="sf_gewstha18" name="GewSt-Handausgabe 2018">10734</werk>
+	<werk dpsi="sf_gewstha19" name="GewSt-Handausgabe 2019">10734</werk>
+	<werk dpsi="sf_buphb" name="Handbuch Betrieb und Personal">10184 10602</werk>
+	<werk dpsi="sf_insolv" name="Handbuch zur Insolvenz">10001 10602 12348</werk>
+	<werk dpsi="sf_hfr" name="Höchstrichterliche Finanzrechtsprechung (HFR)">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_hgbja" name="HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2015/2016">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_hgbja16" name="HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2016/2017">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_hgbja17" name="HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2017/2018">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_hgbja18" name="HGB-Jahresabschluss - Erstellung, prüferische Durchsicht und Prüfung 2018/2019">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_ifrsja" name="IFRS-Jahresabschluss - Erstellung und Prüfung 2014/15">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_ifrsja16" name="IFRS-Jahresabschluss - Erstellung und Prüfung 2016/17">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_ifrsja17" name="IFRS-Jahresabschluss - Erstellung und Prüfung 2017/18">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_intbr" name="Internationales Bilanzrecht">10602 12167 hbfm10006</werk>
+	<werk dpsi="sf_investfoe" name="Investitionsförderung Handbuch">10602 hbfm10007</werk>
+	<werk dpsi="sf_best" name="Kommentierte Rechtsprechung (Beratersicht zur Steuerrechtsprechung, ab 2001)">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_ksterkl" name="KSt-/GewSt-/USt-Erklärung 2016">10764 10734 10774</werk>
+	<werk dpsi="sf_ksterkl17" name="KSt-/GewSt-/USt-Erklärung 2017">10764 10734 10774</werk>
+	<werk dpsi="sf_ksterkl18" name="KSt-/GewSt-/USt-Erklärung 2018">10764 10734 10774</werk>
+	<werk dpsi="sf_ksterkl19" name="KSt-/GewSt-/USt-Erklärung 2019">10764 10734 10774</werk>
+	<werk dpsi="sf_kstha" name="KSt-Handausgabe 2016">10764</werk>
+	<werk dpsi="sf_kstha17" name="KSt-Handausgabe 2017">10764</werk>
+	<werk dpsi="sf_kstha18" name="KSt-Handausgabe 2018">10764</werk>
+	<werk dpsi="sf_kstha19" name="KSt-Handausgabe 2019">10764</werk>
+	<werk dpsi="sf_kstg" name="KStG">10764</werk>
+	<werk dpsi="sf_rechtlex" name="Lexikon des Rechts">10001 10602</werk>
+	<werk dpsi="sf_strlex" name="Lexikon des Steuerrechts">10602</werk>
+	<werk dpsi="sf_lohnpf" name="Lohnpfändung 2020">10001 10602</werk>
+	<werk dpsi="sf_lstha" name="LSt-Handausgabe 2017">10759 10648</werk>
+	<werk dpsi="sf_lstha18" name="LSt-Handausgabe 2018">10759 10648</werk>
+	<werk dpsi="sf_lstha19" name="LSt-Handausgabe 2019">10759 10648</werk>
+	<werk dpsi="sf_minijobs" name="Mini-Jobs, Aushilfen, Teilzeit">10072 10602</werk>
+	<werk dpsi="sf_reisek" name="Reisekosten 2020">10072 10648 12140</werk>
+	<werk dpsi="sf_schenken" name="Schenken, Erben, Steuern">10718</werk>
+	<werk dpsi="sf_svbeitragsr" name="Schnellübersicht Sozialversicherung 2020 Beitragsrecht">10184</werk>
+	<werk dpsi="sf_svmelder" name="Schnellübersicht Sozialversicherung 2020 Melderecht">10184</werk>
+	<werk dpsi="sf_stbg" name="Stbg – Die Steuerberatung">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_sted" name="StEd – Steuer-Eildienst">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_koesdi" name="kösdi – Kölner Steuerdialog">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_strg" name="Steuer-Ratgeber 2020">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="sf_stbbranchen" name="Steuerberater Branchenhandbuch">10602</werk>
+	<werk dpsi="sf_stb" name="Steuerberater Handbuch 2019">10602</werk>
+	<werk dpsi="sf_stbrecht" name="Steuerberater Rechtshandbuch">10602 12140</werk>
+	<werk dpsi="sf_stbvv" name="Steuerberatervergütungsverordnung">10602</werk>
+	<werk dpsi="sf_ust" name="USt-Handausgabe 2016/17">10774</werk>
+	<werk dpsi="sf_ust17" name="USt-Handausgabe 2017/18">10774</werk>
+	<werk dpsi="sf_ust18" name="USt-Handausgabe 2018/19">10774</werk>
+	<werk dpsi="sf_ust19" name="USt-Handausgabe 2019/20">10774</werk>
+	<werk dpsi="sf_ustg" name="UStG">10774</werk>
+	<werk dpsi="sf_umwr" name="Umwandlungsrecht">10791 12260</werk>
+	<werk dpsi="sf_umwst" name="UmwSt-Handausgabe 2011/12">10791</werk>
+	<werk dpsi="sf_uvr" name="UVR – Umsatzsteuer- und Verkehrsteuer-Recht">10774</werk>
+	<werk dpsi="sf_vga" name="Verdeckte Gewinnausschüttungen und verdeckte Einlagen">10764</werk>
+	<werk dpsi="sf_zr" name="Zollrecht">10602</werk>
+	<werk dpsi="sf_abcbpr" name="ABC Betriebsprüfung">10602 12140</werk>
+	<werk dpsi="sf_lageb" name="Der Lagebericht">12167 hbfm10006</werk>
+	<werk dpsi="sf_ertragst" name="Problemfelder Ertragsteuern">10648 10734 10764</werk>
+	<werk dpsi="sf_famla" name="Familienleistungsausgleich">10602</werk>
+	<werk dpsi="sf_untnachf" name="Unternehmensnachfolge nach der Erbschaftsteuerreform 2016">10602 12140</werk>
+	<werk dpsi="sf_rl" name="Rechnungslegung">12167 hbfm10006</werk>
+	<werk dpsi="zap_gmbhkr" name="Die GmbH in der Krise">12260</werk>
+	<werk dpsi="zap_gmbhr" name="Handbuch GmbH-Recht">12260</werk>
+	<werk dpsi="zap_hgb" name="HGB">12167 hbfm10006</werk>
+	<werk dpsi="zap_hgr" name="Praxis des Handels- und Gesellschaftsrechts">12260</werk>
+	<werk dpsi="spg_hr" name="Praxishandbuch Human Resources">hbfm10023</werk>
+	<werk dpsi="spg_smr" name="Praxishandbuch Social Media Recruiting">hbfm10023</werk>
+	<werk dpsi="spg_perspol" name="Lebensphasenorientierte Personalpolitik">hbfm10023</werk>
+	<werk dpsi="spg_eb" name="Erfolgsfaktor Employer Branding">hbfm10023</werk>
+	<werk dpsi="spg_persentw" name="Strategische Personalentwicklung in der Praxis">hbfm10023</werk>
+	<werk dpsi="spg_exechealth" name="Executive Health - Gesundheit als Führungsaufgabe">hbfm10023</werk>
+	<werk dpsi="spg_konflmgt" name="Konfliktmanagement im Unternehmen">hbfm10023 hbfm10022</werk>
+	<werk dpsi="spg_arb21jh" name="Die Arbeitswelt im 21. Jahrhundert">hbfm10020 hbfm10023</werk>
+	<werk dpsi="spg_geny" name="Die Generation Y">hbfm10020 hbfm10023</werk>
+	<werk dpsi="spg_persarb" name="Innovation und Personalarbeit im demografischen Wandel">hbfm10020 hbfm10023</werk>
+	<werk dpsi="spg_kommchange" name="Kommunikation im Change">hbfm10020 hbfm10023</werk>
+	<werk dpsi="spg_lernen" name="So werden wir lernen!">hbfm10020 hbfm10023</werk>
+	<werk dpsi="spg_excchange" name="Excellence in Change">hbfm10020</werk>
+	<werk dpsi="spg_cm" name="Change Management">hbfm10020</werk>
+	<werk dpsi="spg_effchange" name="Change-Prozesse effizient durchführen">hbfm10020</werk>
+	<werk dpsi="ba_board" name="BOARD - Zeitschrift für Aufsichtsräte">hbfm10001 hbfm10014</werk>
+	<werk dpsi="ba_comply" name="comply">hbfm10011</werk>
+	<werk dpsi="ba_rmgtunt" name="Praxishandbuch Compliance Management">hbfm10011</werk>
+	<werk dpsi="ba_gmbhgf" name="Checklisten-Handbuch GmbH-Geschäftsführer">hbfm10014 hbfm10026</werk>
+	<werk dpsi="ba_itschutz" name="Checklisten-Handbuch IT-Grundschutz">hbfm10011 hbfm10017</werk>
+	<werk dpsi="ba_dsgvo" name="Kommentar Datenschutz-Grundverordnung">hbfm10011 hbfm10017</werk>
+	<werk dpsi="ba_dsgvocompl" name="Datenschutz-Compliance nach der DS-GVO">hbfm10011 hbfm10017</werk>
+	<werk dpsi="ba_bilanz" name="BILANZ aktuell">12167 hbfm10006</werk>
+	<werk dpsi="ba_br" name="Systematischer Praxiskommentar Bilanzrecht">12167 hbfm10006</werk>
+	<werk dpsi="ba_untbew" name="Handbuch Unternehmensbewertung">10718 12140 hbfm10010</werk>
+	<werk dpsi="hbfm_buar" name="Beirat und Aufsichtsrat">hbfm10001 hbfm10014</werk>
+	<werk dpsi="hbfm_ccompl" name="Corporate Compliance">hbfm10012 hbfm10013</werk>
+	<werk dpsi="hbfm_complar" name="Compliance-Überwachung durch den Aufsichtsrat">hbfm10001 hbfm10011 hbfm10014</werk>
+	<werk dpsi="hbfm_famextmgt" name="Familienexternes Management im Mittelstand">hbfm10026 hbfm10027 hbfm10021</werk>
+	<werk dpsi="hbfm_hwbar" name="Handwörterbuch für Aufsichtsräte">hbfm10001 hbfm10014</werk>
+	<werk dpsi="hbfm_ae" name="Aktuelle Entwicklungen im Wirtschafts- und Steuerrecht">10603 10648 10718 10734 10744 10752 10759 10764 10774 10791 10797 10859 12141 12260 12167 12348 12458 12532</werk>
+	<werk dpsi="bwp" name="Bewertungspraktiker">hbfm10006 hbfm10007 hbfm10008 hbfm10009 hbfm10010</werk>
+	<werk dpsi="cm" name="changement!">hbfm10020 hbfm10022</werk>
+	<werk dpsi="cf" name="CORPORATE FINANCE">12140 hbfm10007 hbfm10009 hbfm10010</werk>
+	<werk dpsi="ar" name="Der Aufsichtsrat">hbfm10001 hbfm10014</werk>
+	<werk dpsi="db-ar" name="DER BETRIEB">10072 10065 10162 10177 10184 10206</werk>
+	<werk dpsi="db-sr" name="DER BETRIEB">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="db-wr" name="DER BETRIEB">12167 12260 12348 12141 12532 12458</werk>
+	<werk dpsi="db-bw" name="DER BETRIEB">hbfm10006 hbfm10009 hbfm10010 hbfm10014</werk>
+	<werk dpsi="dbar" name="DER BETRIEB Arbeitsrecht">10002 10065 10072 10162 10177 10184 10206</werk>
+	<werk dpsi="dk" name="DER KONZERN">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12167 12260 hbfm10006 hbfm10014</werk>
+	<werk dpsi="ifst" name="ifst-Schriften">10602</werk>
+	<werk dpsi="kor" name="KoR">12167 hbfm10006</werk>
+	<werk dpsi="zoe" name="OrganisationsEntwicklung">hbfm10020 hbfm10022</werk>
+	<werk dpsi="ref" name="REthinking: Finance">hbfm10007 hbfm10009 hbfm10008 hbfm10020 hbfm10022 hbfm10004 hbfm10025 hbfm10026</werk>
+	<werk dpsi="rel" name="REthinking: Law">12140</werk>
+	<werk dpsi="ret" name="REthinking: Tax">10602</werk>
+	<werk dpsi="wuw" name="WIRTSCHAFT und WETTBEWERB">12532</werk>
+	<werk dpsi="zuj" name="ZUJ - Zeitschrift für Unternehmensjuristen">12173 12260 12167 12532 hbfm10011 hbfm10013 hbfm10018 hbfm10020 hbfm10023 hbfm10026</werk>
+	<werk dpsi="dav_praxar" name="Praxis des Arbeitsrechts">10002 10072 10162 10184 10206</werk>
+	<werk dpsi="dav_formar" name="AnwaltFormulare Arbeitsrecht">10002 10072 10162 10184 10206</werk>
+	<werk dpsi="dav_kdgr" name="Handbuch Kündigungsrecht">10162</werk>
+	<werk dpsi="dav_arinsolv" name="Arbeits- und Sozialrecht in der Insolvenz">10162 10072 10206 12348</werk>
+	<werk dpsi="dav_intma" name="Internationaler Mitarbeitereinsatz">10072 10206</werk>
+	<werk dpsi="dav_lohnpf" name="1x1 der Lohnpfändung">10001</werk>
+	<werk dpsi="dav_strwertar" name="Praxiskommentar zum Streitwertkatalog Arbeitsrecht">10002</werk>
+	<werk dpsi="dav_bav" name="Betriebliche Altersversorgung">10177</werk>
+	<werk dpsi="dav_umstrar" name="Handbuch Umstrukturierung und Arbeitsrecht">10072 10206</werk>
+	<werk dpsi="dav_stratkdg" name="Der Kündigungsschutzprozess - Strategie und Taktik">10002</werk>
+	<werk dpsi="cfm_compl" name="Compliance">hbfm10011</werk>
+	<werk dpsi="cfm_kmcompl" name="Kapitalmarkt Compliance">hbfm10011</werk>
+	<werk dpsi="cfm_concompl" name="Contractor Compliance">hbfm10011</werk>
+	<werk dpsi="cfm_investig" name="Internal Investigations">hbfm10011</werk>
+	<werk dpsi="cfm_whistleb" name="Hinweisgebersysteme">hbfm10011</werk>
+	<werk dpsi="cfm_arbstrafr" name="Arbeitsstrafrecht">10001 10869 hbfm10011</werk>
+	<werk dpsi="cfm_complakt" name="Compliance aktuell">hbfm10011</werk>
+	<werk dpsi="cfm_taxcompl" name="Tax Compliance">hbfm10011</werk>
+	<werk dpsi="cfm_uststrafr" name="Umsatzsteuer und Strafrecht">10603 10774</werk>
+	<werk dpsi="cfm_selbstanz" name="Praxis der Selbstanzeige">10602</werk>
+	<werk dpsi="cfm_ststrafs" name="Verteidigung in Steuerstrafsachen">10602</werk>
+	<werk dpsi="cfm_fiskstrafr" name="Fiskalstrafrecht">10602</werk>
+	<werk dpsi="cfm_hdststrafr" name="Steuerstrafrecht">10602</werk>
+	<werk dpsi="cfm_wistra" name="Zeitschrift für Wirtschafts- und Steuerstrafrecht">10602 12140</werk>
+	<werk dpsi="cfm_wstrafr" name="Handbuch Wirtschaftsstrafrecht">10602 12140</werk>
+	<werk dpsi="cfm_untstrafr" name="Unternehmensstrafrecht und Unternehmensverteidigung">10602</werk>
+	<werk dpsi="cfm_kirchestg" name="EStG">10648</werk>
+	<werk dpsi="cfm_bordestg" name="EStG">10648</werk>
+	<werk dpsi="cfm_ust" name="UStG">10774</werk>
+	<werk dpsi="zv_untnachf" name="Praxishandbuch Unternehmensnachfolge">10602 12140</werk>
+	<werk dpsi="zv_famverm" name="Gestaltungen zum Erhalt des Familienvermögens">10602</werk>
+	<werk dpsi="zv_erbreu" name="Erbrecht in Europa">10718</werk>
+	<werk dpsi="zv_erbstg" name="Praxiskommentar ErbStG und BewG">10718 hbfm10010</werk>
+	<werk dpsi="zv_testvollstr" name="Testamentsvollstreckung">10602</werk>
+	<werk dpsi="zv_erbsterkl" name="Die Erbschaft- und Schenkungsteuererklärung">10718</werk>
+	<werk dpsi="zv_apdr" name="Asset Protection im deutschen Recht">10602 12597</werk>
+	<werk dpsi="zv_zerb" name="ZErb - Zeitschrift für die Steuer- und Erbrechtpraxis">10718</werk>
+	<werk dpsi="iww_ssp" name="SSP - Steuern sparen professionell">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="iww_lgp" name="LGP - Löhne und Gehälter professionell">10648 10759</werk>
+	<werk dpsi="iww_mbp" name="MBP - Mandat im Blickpunkt">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="iww_kp" name="KP - Kanzleiführung professionell">10602</werk>
+	<werk dpsi="iww_astw" name="AStW - Aktuelles aus dem Steuer- und Wirtschaftsrecht">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859 12140</werk>
+	<werk dpsi="iww_bbp" name="BBP - Betriebswirtschaft im Blickpunkt">12167 hbfm10006 hbfm10007</werk>
+	<werk dpsi="iww_erbbstg" name="ErbBstg - Erbfolgebesteuerung">10718</werk>
+	<werk dpsi="iww_gstb" name="GStB - Gestaltende Steuerberatung">10603 10764 10648 10718 10734 10744 10752 10759 10774 10791 10797 10859</werk>
+	<werk dpsi="iww_pfb" name="PFB - Praxis Freiberufler-Beratung">10602 12140</werk>
+	<werk dpsi="iww_pistb" name="PIStB - Praxis Internationale Steuerberatung">10602</werk>
+	<werk dpsi="iww_pstr" name="PStR - Praxis Steuerstrafrecht">10602</werk>
+	<werk dpsi="iww_ak" name="AK - Anwalt und Kanzlei">12597</werk>
+	<werk dpsi="iww_rvgprof" name="RVG prof. - RVG professionell">12597</werk>
+	<werk dpsi="iww_ve" name="VE - Vollstreckung effektiv">12597</werk>
+	<werk dpsi="iww_fmp" name="FMP - Forderungsmanagement professionell">12597 hbfm10007</werk>
+	<werk dpsi="iww_ee" name="EE - Erbrecht effektiv">12788</werk>
+	<werk dpsi="iww_va" name="VA - Verkehrsrecht aktuell">12597</werk>
+	<werk dpsi="iww_aa" name="AA - Arbeitsrecht aktiv">10072 10206 10184 10162</werk>
+	<werk dpsi="iww_mk" name="MK - Mietrecht kompakt">13124</werk>
+	<werk dpsi="iww_fk" name="FK - Familienrecht kompakt">12882</werk>
+	<werk dpsi="iww_vk" name="VK - Versicherung und Recht kompakt">12499 12597</werk>
+	<werk dpsi="iww_sr" name="SR - Seniorenrecht aktuell">12597</werk>
+	<werk dpsi="iww_vb" name="VB - VereinsBrief">12597</werk>
+	<werk dpsi="iww_sb" name="SB - StiftungsBrief">12597</werk>
+	<werk dpsi="idw_praxgrc" name="Praxisleitfaden Governance, Risk und Compliance">hbfm10004 hbfm10012 hbfm10013</werk>
+	<werk dpsi="idw_vlbgrc" name="IDW Verlautbarungen zu Governance, Risk und Compliance">hbfm10011 hbfm10016</werk>
+	<werk dpsi="idw_taxcompl" name="Tax Compliance">10602 hbfm10013</werk>
+	<werk dpsi="idw_wphk" name="WPH Assurance, Kapitel K: Corporate Governance Systeme und deren Prüfung">hbfm10011 hbfm10016</werk>
+	<werk dpsi="idw_wphl" name="WPH Assurance, Kapitel L: Tax Compliance">hbfm10012 hbfm10017</werk>
+	<werk dpsi="idw_est_2020" name="Veranlagungshandbuch Einkommensteuer 2019">10648</werk>
+	<werk dpsi="idw_kst_2020" name="Veranlagungshandbuch Körperschaftsteuer 2019">10764</werk>
+	<werk dpsi="idw_gewst_2020" name="Veranlagungshandbuch Gewerbesteuer 2019">10734</werk>
+	<werk dpsi="idw_ust_2020" name="Veranlagungshandbuch Umsatzsteuer 2019">10774</werk>
+	<werk dpsi="idw_stverfr_2020" name="Praktiker-Handbuch Allgemeines Steuer- und Verfahrensrecht 2020">10603 10859</werk>
+	<werk dpsi="idw_erbst" name="Neuregelung der Erbschaftsteuer">10718</werk>
+	<werk dpsi="idw_persg" name="Doppelstöckige Personengesellschaften">10602</werk>
+	<werk dpsi="idw_jetest" name="Journal Entry Testing">hbfm10005 hbfm10018 hbfm10024</werk>
+	<werk dpsi="idw_dsprax" name="Datenschutz in der Praxis">hbfm10014 hbfm10017 hbfm10018 hbfm10026</werk>
+	<werk dpsi="idw_exceljap" name="Excel-Tipps für die JAP">hbfm10005 hbfm10018</werk>
+	<werk dpsi="idw_digmod" name="Digitale Geschäftsmodelle">hbfm10005 hbfm10014 hbfm10018 hbfm10020 hbfm10026</werk>
+	<werk dpsi="idw_japcc" name="Jahresabschlussprüfung bei Outsourcing und Cloud-Computing">hbfm10017 hbfm10018 hbfm10024</werk>
+	<werk dpsi="idw_cybersec" name="Cybersecurity">hbfm10011 hbfm10014 hbfm10016 hbfm10017 hbfm10018 hbfm10024 hbfm10026</werk>
+	<werk dpsi="dfv_dsb" name="Datenschutz-Berater">hbfm10017</werk>
 </werke>
