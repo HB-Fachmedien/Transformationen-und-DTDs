@@ -17,7 +17,7 @@
     <!-- ab dem 1.Juni 2019 werden keine RS Nummern mehr im Dokument erlaubt sein: -->
     <pattern>
         <rule context="/*/body[number(replace(../metadata/pub/date, '-', '')) &gt;= 20190601]">
-            <report test="matches(string-join(descendant::*/text(), ' '), 'RS\d{7,7}')">RS Nummern werden nicht mehr vergeben: <value-of select="descendant::*[matches(string-join(text(), ' '), 'RS\d{7,7}')]"/></report>
+            <report test="matches(string-join(descendant::*[not(ancestor-or-self::note and /*/metadata/pub/pubabbr/text()='WUW')]/text(), ' '), 'RS\d{7,7}')">RS Nummern werden nicht mehr vergeben: <value-of select="descendant::*[matches(string-join(text(), ' '), 'RS\d{7,7}')]"/></report>
         </rule>
     </pattern>
     
@@ -43,7 +43,7 @@
     
     <pattern>
         <rule context="instdoctype">
-            <assert test="text()=('(Teilversäumnis- und End-) Urteil' , 'Merkblatt', 'Richtlinie', 'Änderungsbeschluss', 'Koalitionsvertrag', 'Bekanntmachung', 'Berichtigungsbeschluss', 'Hinweispapier', 'Ländererlass', 'Geschäftsanweisung', 'Richtlinienvorschlag', 'Sachstandsbericht', 'Aufforderung', 'Entwurf', 'Teilversäumnis- und Teilendurteil', 'Gesetzentwurf', 'Terminpläne', 'Issues Paper', 'Mitteilung', 'Hauptgutachten', 'Leitfaden', 'Zwischenbericht', 'Bericht', 'Arbeitspapier', 'Studie', 'Grünbuch', 'Persönliche Erklärung', 'Referentenentwurf', 'Pressemitteilung', 'Commission Staff Working Document', 'Verordnung', 'Report', 'Kurzinformation','Beschluss','Beschlüsse','Beschluss (Teilentscheidung)','Beschluss (Zwischenentscheidung)','Vorlagebeschluss','Hinweisbeschluss','Nichtannahmebeschluss','Zwischenbeschluss','Teilbeschluss','Schlussbeschluss','Feststellungsbeschluss','Abstellungsbeschluss','Kammerbeschluss','Kostenbeschluss','Ergänzungsbeschluss','Verweisungsbeschluss','Widerspruchsbeschluss','Auflösungsbeschluss','Senatsbeschluss','Normenkontrollbeschluss','Prozesskostenhilfebeschluss','Untersagungsbeschluss','Verpflichtungszusagenbeschluss','Freigabebeschluss','Entscheidung','Entscheidungen','Vorabentscheidung','Rechtsentscheid','Antrag auf Vorabentscheidung','Freigabe-Entscheidung','Verpflichtungsentscheidung','Untersagungsentscheidung','Urteil','Urteile','Teilurteil','Teilurteile','Versäumnisurteil','Urteil und Versäumnisurteil','Teilversäumnisurteil','Schlussurteil','Anerkenntnisurteil','Ergänzungsurteil','Zwischenurteil','Endurteil','Aufhebungsurteil','Grundurteil','Einzelrichterurteil','Normenkontrollurteil','Senatsurteil','Senatszwischenurteil','Verzichtsurteil','Vorbehaltsurteil','(Grund- und End-) Urteil','(Grund- und Teil-) Urteil','(Teilversäumnis- und Schluss-) Urteil','(Versäumnisteil-) Urteil','(Adhäsions-) Urteil','Erlass','gleichlautender Erlass','gleichlautende Erlasse','Verfügung','Allgemeinverfügung','Rundverfügung','Hinweisverfügung','Zwischenverfügung','Einstellungsverfügung','Schlussantrag','Schlussanträge','Information','Schreiben','Vergleich','Hinweis','Teil-Schiedsspruch','Entscheid','Entscheide','Beschwerde-Entscheid','Beschwerde-Entscheide','Bescheid','Bescheide','Gerichtsbescheid','Gerichtsbescheide','Gutachten','Rechtsgutachten','Sondergutachten','Anhängiges Verfahren','Senatssitzung','Stellungnahme','EuGH-Vorlage','Schlussbericht','Monitoringbericht','Fallbericht','Leitlinien','Hintergrundpapier','Papier','Konsultation','Bußgeldbescheid','Grüner Brief')">Dieser instdoctype "<value-of select="."/>" ist nicht erlaubt!</assert>
+            <assert test="text()=('Gemeinsame Erklärung', '(Teilversäumnis- und End-) Urteil' , 'Merkblatt', 'Richtlinie', 'Änderungsbeschluss', 'Koalitionsvertrag', 'Bekanntmachung', 'Berichtigungsbeschluss', 'Hinweispapier', 'Ländererlass', 'Geschäftsanweisung', 'Richtlinienvorschlag', 'Sachstandsbericht', 'Aufforderung', 'Entwurf', 'Teilversäumnis- und Teilendurteil', 'Gesetzentwurf', 'Terminpläne', 'Issues Paper', 'Mitteilung', 'Hauptgutachten', 'Leitfaden', 'Zwischenbericht', 'Bericht', 'Arbeitspapier', 'Studie', 'Grünbuch', 'Persönliche Erklärung', 'Referentenentwurf', 'Pressemitteilung', 'Commission Staff Working Document', 'Verordnung', 'Report', 'Kurzinformation','Beschluss','Beschlüsse','Beschluss (Teilentscheidung)','Beschluss (Zwischenentscheidung)','Vorlagebeschluss','Hinweisbeschluss','Nichtannahmebeschluss','Zwischenbeschluss','Teilbeschluss','Schlussbeschluss','Feststellungsbeschluss','Abstellungsbeschluss','Kammerbeschluss','Kostenbeschluss','Ergänzungsbeschluss','Verweisungsbeschluss','Widerspruchsbeschluss','Auflösungsbeschluss','Senatsbeschluss','Normenkontrollbeschluss','Prozesskostenhilfebeschluss','Untersagungsbeschluss','Verpflichtungszusagenbeschluss','Freigabebeschluss','Entscheidung','Entscheidungen','Vorabentscheidung','Rechtsentscheid','Antrag auf Vorabentscheidung','Freigabe-Entscheidung','Verpflichtungsentscheidung','Untersagungsentscheidung','Urteil','Urteile','Teilurteil','Teilurteile','Versäumnisurteil','Urteil und Versäumnisurteil','Teilversäumnisurteil','Schlussurteil','Anerkenntnisurteil','Ergänzungsurteil','Zwischenurteil','Endurteil','Aufhebungsurteil','Grundurteil','Einzelrichterurteil','Normenkontrollurteil','Senatsurteil','Senatszwischenurteil','Verzichtsurteil','Vorbehaltsurteil','(Grund- und End-) Urteil','(Grund- und Teil-) Urteil','(Teilversäumnis- und Schluss-) Urteil','(Versäumnisteil-) Urteil','(Adhäsions-) Urteil','Erlass','gleichlautender Erlass','gleichlautende Erlasse','Verfügung','Allgemeinverfügung','Rundverfügung','Hinweisverfügung','Zwischenverfügung','Einstellungsverfügung','Schlussantrag','Schlussanträge','Information','Schreiben','Vergleich','Hinweis','Teil-Schiedsspruch','Entscheid','Entscheide','Beschwerde-Entscheid','Beschwerde-Entscheide','Bescheid','Bescheide','Gerichtsbescheid','Gerichtsbescheide','Gutachten','Rechtsgutachten','Sondergutachten','Anhängiges Verfahren','Senatssitzung','Stellungnahme','EuGH-Vorlage','Schlussbericht','Monitoringbericht','Fallbericht','Leitlinien','Hintergrundpapier','Papier','Konsultation','Bußgeldbescheid','Grüner Brief')">Dieser instdoctype "<value-of select="."/>" ist nicht erlaubt!</assert>
         </rule>
     </pattern>
     
@@ -155,6 +155,18 @@
     <pattern>
         <rule context="metadata/authors/author/surname">
             <assert test="not(contains(text(),','))">Autoren Nachnamen dürfen keine Zusatzinformationen getrennt durch Kommata enthalten!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="metadata/authors/organisation">
+            <assert test=".[text()]">Organisation Felder dürfen nicht leer sein.</assert>
+            <report test=".[comment()]">Fehler: XML Kommentar im organisation Element!</report>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="body//p/comment()">
+            <!-- Siehe Teams Chat mit Lisa/Dirk am 07.10.2020 -->
+            <report test=".='Achtung: Liste Einzug'">Listen Einzug Kommentar vom Konverter entdeckt.</report>
         </rule>
     </pattern>
     <pattern>
