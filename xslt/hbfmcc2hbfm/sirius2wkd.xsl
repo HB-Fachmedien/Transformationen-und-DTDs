@@ -102,7 +102,7 @@
 			<xsl:apply-templates select="public | add_target | version | publisher"/>
 			
 			<xsl:choose>
-				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe', 'zuj')">
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm', 'hbfm_ae', 'hbfm_dbs', 'ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe', 'zuj')">
 					<publisher>Handelsblatt Fachmedien</publisher>
 				</xsl:when>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
@@ -729,6 +729,23 @@
 								</node>
 							</xsl:when>
 							
+							<!-- DBS -->
+							<xsl:when test="$pub-abbr = 'DBS'">
+								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
+								
+								<node title="Heft {descendant::pubedition}"
+									childOrder="BySequenceNr"><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
+									<!-- calculate sequenceNr from first page and article's position on page -->
+									<leaf
+										sequenceNr="{
+										(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
+										+
+										((number(descendant::article_order/text()) - 1) * 10)
+										}"
+									/>
+								</node>
+							</xsl:when>
+							
 							<!-- StR Kompakt -->
 							<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
 								<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
@@ -1178,7 +1195,7 @@
 							</xsl:when>
 							
 							<!-- Changement -->
-							<xsl:when test="$pub-abbr = 'CM'">
+							<!--<xsl:when test="$pub-abbr = 'CM'">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="cm-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$cm-title}" childOrder="BySequenceNr" expanded="true">									
@@ -1230,10 +1247,10 @@
 										</xsl:otherwise>
 									</xsl:choose>							
 								</node>
-							</xsl:when>
+							</xsl:when>-->
 							
 							<!-- Der Betrieb -->
-							<xsl:when test="descendant::pubtitle/text() = 'Der Betrieb'">
+							<xsl:when test="descendant::pubtitle/text() = ('Der Betrieb', 'Aktuelle Entwicklungen im Wirtschafts- und Steuerrecht')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								
 								<xsl:variable name="get-pubedition">
@@ -1313,8 +1330,9 @@
 									
 								</node>
 							</xsl:when>
-							<!-- Rethinking Titel + ZUJ (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ')">
+							
+							<!-- Rethinking Titel + ZUJ + CM (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
@@ -1328,6 +1346,9 @@
 										<xsl:when test="../name()='gk'">
 											<leaf sequenceNr="7"/>
 										</xsl:when>
+										<xsl:when test="../name()='gh'">
+											<leaf sequenceNr="9999999"/>
+										</xsl:when>
 										<xsl:when test="descendant::pubedition = '00'">
 											<leaf>
 												<xsl:attribute name="sequenceNr">
@@ -1336,43 +1357,15 @@
 											</leaf>
 										</xsl:when>
 										<xsl:otherwise>
-											<xsl:variable name="cm-ressort-seq-nr" >
-												<xsl:choose>
-													<xsl:when test="$ressortname='Legal Tech &amp; Innovation'">100</xsl:when>
-													<xsl:when test="$ressortname='Digital Economy &amp; Recht'">200</xsl:when>
-													<xsl:when test="$ressortname='Change Management &amp; New Work'">300</xsl:when>
-													<xsl:when test="$ressortname='Job Markt &amp; Gossip'">400</xsl:when>
-													
-													<!-- Rethinking Tax: -->
-													<xsl:when test="$ressortname='Technology &amp; Innovation'">100</xsl:when>
-													<xsl:when test="$ressortname='Strategy &amp; Transformation'">200</xsl:when>
-													<xsl:when test="$ressortname='Law &amp; Administration'">300</xsl:when>
-													<xsl:when test="$ressortname='Change &amp; Skills'">400</xsl:when>
-													
-													<!-- Rethinking Law: -->
-													<xsl:when test="$ressortname='Manifest &amp; Bestandsaufnahme'">100</xsl:when>
-													<xsl:when test="$ressortname='Positionen'">200</xsl:when>
-													<xsl:when test="$ressortname='Außensicht'">300</xsl:when>
-													<xsl:when test="$ressortname='Was wäre wenn ...'">400</xsl:when>
-													
-													<!-- ZUJ: -->
-													<xsl:when test="$ressortname='BUJ Inside'">100</xsl:when>
-													<xsl:when test="$ressortname='Recht &amp; Wirtschaft'">200</xsl:when>
-													<xsl:when test="$ressortname='Im Fokus'">300</xsl:when>
-													<xsl:when test="$ressortname='Management &amp; Business'">400</xsl:when>
-													<xsl:when test="$ressortname='Aktuelles'">450</xsl:when>
-													
-													<!-- hier natürlich aufpassen, dass sich die Ressorts über die Zeitschriften nicht überschneiden, ansonsten auch noch auf pubabbr filtern. -->
-
-													<xsl:otherwise>500</xsl:otherwise>
-												</xsl:choose>
-											</xsl:variable>
 											<xsl:variable name="leafseqnr">
 												<xsl:value-of select="(number(replace(descendant::pages/start_page/text(), '[^\d]', '')) * 100)
 													+
 													((number(descendant::article_order/text()) - 1) * 10)"/>
 											</xsl:variable>
-											<node sequenceNr="{$cm-ressort-seq-nr}" childOrder="BySequenceNr">
+											<xsl:variable name="ressort-seq-nr" >
+												<xsl:value-of select="$leafseqnr"/><!-- Das ist neu, hier teste ich die dynamische Sortierung von Ressortordnern -->	
+											</xsl:variable>
+											<node sequenceNr="{$ressort-seq-nr}" childOrder="BySequenceNr">
 												<xsl:attribute name="title">
 													<xsl:value-of select="$ressortname"/>
 												</xsl:attribute>

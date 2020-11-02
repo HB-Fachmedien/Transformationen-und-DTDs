@@ -6,7 +6,7 @@ Handelsblatt Fachmedien XML-DTD V1.0
 <code>PUBLIC ID -//Handelsblatt Fachmedien//DTD V1.0//DE</code>
 
 <b>Interne Version:</b>
-2.1
+2.2
 
 &#x0013;<b>Die aktuelle Version kann <a href="http://intranet.fachmedien.de/dtd/hbfm.dtd">hier</a> heruntergeladen werden (Rechtsklick > Ziel speichern unter).</b>
 
@@ -207,9 +207,13 @@ Version 2.1 (15.10.19): Änderungen (SG):&#x0013;
 						<ul>
 							<li><a href="#link">link</a> darf nicht mehr child von <a href="#url">url</a> sein und umgekehrt</li>
 							<li><a href="#citation">citation</a> darf <a href="#link">link</a> enthalten</li>
-							<li><a href="#law">law</a> erhält neues Attribut @ref mit dem einzigen möglichen Value "true"</li>
-							<li><a href="#link">link</a> erhält neues Attribut @meta_pub_suppl</li>
+							<li><a href="#law">law</a> erhält neues Attribut <i>ref</i> mit dem einzigen möglichen Value <i>true</i></li>
+							<li><a href="#link">link</a> erhält neues Attribut <i>meta_pub_suppl</i></li>
 							<li>aus hbfmcc.dtd übernehmen: <a href="#metadata">metadata</a>/<a href="#pub">pub</a>/<a href="#marginnr">marginnr</a></li>
+						</ul>
+Version 2.2 (05.10.20): Änderungen (SG):&#x0013;
+						<ul>
+							<li>Gerichts- und Behörden-Mapping aktualisiert</li>
 						</ul>
 
 <h2>Aufbau der DTD</h2>
@@ -979,1356 +983,1356 @@ _img inst.png
 	type (court | authority | unknown) #REQUIRED
 	code (
 		other
-		| EuGH
-		| EuG
-		| EGMR
-		| EFTAGH
-		| BVerfG
-		| GmSOGB
-		| BAG
-		| BaFin
-		| BFH
-		| BGH
-		| BPatG
-		| BSG
-		| BVerwG
-		| BayVerfGH
-		| HbGVerfG
-		| SaechsVerfGH
-		| VerfGHSachsenAnhalt
-		| VerfGHThueringen
-		| VerfGHRheinlandPfalz
-		| FGBadenWuerttemberg
-		| FGBerlinBrandenburg
-		| FGBremen
-		| FGDuesseldorf
-		| FGHamburg
-		| FGHessen
-		| FGKoeln
-		| FGMecklenburgVorpommern
-		| FGMuenchen
-		| FGMuenster
-		| FGNiedersachsen
-		| FGNuernberg
-		| FGRheinlandPfalz
-		| FGSaarland
-		| FGSachsenAnhalt
-		| FGSachsen
-		| FGSchleswigHolstein
-		| FGThueringen
-		| BayObLG
-		| OLGBamberg
-		| KGBerlin
-		| OLGBrandenburg
-		| OLGBraunschweig
-		| OLGBremen
-		| OLGCelle
-		| OLGDresden
-		| OLGDuesseldorf
-		| OLGFrankfurtMain
-		| OLGHamburg
-		| OLGHamm
-		| OLGThueringen	
-		| OLGKarlsruhe
-		| OLGKoblenz
-		| OLGKoeln
-		| OLGMuenchen
-		| OLGNaumburg
-		| OLGNuernberg
-		| OLGOldenburg
-		| OLGRostock
-		| OLGSaarbruecken
-		| OLGSchleswig
-		| OLGStuttgart
-		| OLGZweibruecken
-		| LAGBadenWuerttemberg
-		| LAGBerlinBrandenburg
-		| LAGBremen
-		| LAGDuesseldorf
-		| LAGHamburg
-		| LAGHamm
-		| LAGHessen
-		| LAGKoeln
-		| LAGMecklenburgVorpommern
-		| LAGMuenchen
-		| LAGNuernberg
-		| LAGNiedersachsen
-		| LAGRheinlandPfalz
-		| LAGSaarland
-		| LAGSachsen
-		| LAGSachsenAnhalt
-		| LAGSchleswigHolstein
-		| LAGThueringen
-		| OVGBadenWuerttemberg
-		| BayVGH
-		| OVGBerlinBrandenburg
-		| OVGBremen
-		| OVGHamburg
-		| OVGHessen
-		| OVGMecklenburgVorpommern
-		| OVGNiedersachsen
-		| OVGNordrheinWestfalen
-		| OVGRheinlandPfalz
-		| OVGSaarland
-		| OVGSachsen
-		| OVGSachsenAnhalt
-		| OVGSchleswigHolstein
-		| OVGThueringen
-		| LSGBadenWuerttemberg
-		| LSGBayern
-		| LSGBerlinBrandenburg
-		| LSGNiedersachsenBremen
-		| LSGHamburg
-		| LSGHessen
-		| LSGMecklenburgVorpommern
-		| LSGNordrheinWestfalen
-		| LSGRheinlandPfalz
-		| LSGSaarland
-		| LSGSachsen
-		| LSGSachsenAnhalt
-		| LSGSchleswigHolstein
-		| LSGThueringen
-		| LGBadenBaden
-		| LGFreiburg
-		| LGHeidelberg
-		| LGKarlsruhe
-		| LGKonstanz
-		| LGMannheim
-		| LGMosbach
-		| LGOffenburg
-		| LGWaldshutTiengen
-		| LGEllwangenJagst
-		| LGHechingen
-		| LGHeilbronn
-		| LGRavensburg
-		| LGRottweil
-		| LGStuttgart
-		| LGTuebingen
-		| LGUlm
-		| LGAschaffenburg
-		| LGBamberg
-		| LGBautzen
-		| LGBayreuth
-		| LGCoburg
-		| LGHofSaale
-		| LGSchweinfurt
-		| LGWuerzburg
-		| LGAugsburg
-		| LGDeggendorf
-		| LGIngolstadt
-		| LGKempten
-		| LGLandshut
-		| LGMemmingen
-		| LGMuenchenI
-		| LGMuenchenII
-		| LGPassau
-		| LGTraunstein
-		| LGAmberg
-		| LGAnsbach
-		| LGNuernbergFuerth
-		| LGRegensburg
-		| LGWeidenOberpfalz
-		| LGBerlin
-		| LGCottbus
-		| LGFrankfurtOder
-		| LGNeuruppin
-		| LGPotsdam
-		| LGBremen
-		| LGHamburg
-		| LGDarmstadt
-		| LGFrankfurtMain
-		| LGFulda
-		| LGGiessen
-		| LGHanau
-		| LGKassel
-		| LGLimburg
-		| LGMarburg
-		| LGWiesbaden
-		| LGNeubrandenburg
-		| LGRostock
-		| LGSchwerin
-		| LGStralsund
-		| LGBraunschweig
-		| LGGoettingen
-		| LGBueckeburg
-		| LGHannover
-		| LGHildesheim
-		| LGStade
-		| LGVerden
-		| LGAurich
-		| LGOldenburg
-		| LGOsnabrueck
-		| LGDuisburg
-		| LGDuesseldorf
-		| LGKleve
-		| LGKrefeld
-		| LGMoenchengladbach
-		| LGWuppertal
-		| LGArnsberg
-		| LGBielefeld
-		| LGBochum
-		| LGDetmold
-		| LGDortmund
-		| LGEssen
-		| LGHagen
-		| LGMuenster
-		| LGPaderborn
-		| LGSiegen
-		| LGAachen
-		| LGBonn
-		| LGKoeln
-		| LGFrankenthalPfalz
-		| LGKaiserslautern
-		| LGLandauPfalz
-		| LGZweibruecken
-		| LGBadKreuznach
-		| LGKoblenz
-		| LGMainz
-		| LGTrier
-		| LGSaarbruecken
-		| LGChemnitz
-		| LGDresden
-		| LGGoerlitz
-		| LGLeipzig
-		| LGZwickau
-		| LGDessauRosslau
-		| LGHalle
-		| LGMagdeburg
-		| LGStendal
-		| LGFlensburg
-		| LGItzehoe
-		| LGKiel
-		| LGLuebeck
-		| LGErfurt
-		| LGGera
-		| LGMeiningen
-		| LGMuehlhausen
-		| LGLueneburg
-		| SGFreiburg
-		| SGHeilbronn
-		| SGKarlsruhe
-		| SGKonstanz
-		| SGMannheim
-		| SGReutlingen
-		| SGStuttgart
-		| SGUlm
-		| SGAugsburg
-		| SGBayreuth
-		| SGLandshut
-		| SGMuenchen
-		| SGNuernberg
-		| SGRegensburg
-		| SGWuerzburg
-		| SGBerlin
-		| SGCottbus
-		| SGFrankfurtOder
-		| SGNeuruppin
-		| SGPotsdam
-		| SGAurich
-		| SGBraunschweig
-		| SGBremen
-		| SGHannover
-		| SGHildesheim
-		| SGLueneburg
-		| SGOldenburg
-		| SGOsnabrueck
-		| SGStade
-		| SGDarmstadt
-		| SGFrankfurtMain
-		| SGFulda
-		| SGGiessen
-		| SGKassel
-		| SGMarburg
-		| SGWiesbaden
-		| SGNeubrandenburg
-		| SGRostock
-		| SGSchwerin
-		| SGStralsund
-		| SGAachen
-		| SGDetmold
-		| SGDortmund
-		| SGDuesseldorf
-		| SGDuisburg
-		| SGGelsenkirchen
-		| SGKoeln
-		| SGMuenster
-		| SGKoblenz
-		| SGMainz
-		| SGSpeyer
-		| SGTrier
-		| SGSaarbruecken
-		| SGChemnitz
-		| SGDresden
-		| SGLeipzig
-		| SGDessauRosslau
-		| SGHalle
-		| SGHamburg
-		| SGMagdeburg
-		| SGItzehoe
-		| SGKiel
-		| SGLuebeck
-		| SGSchleswig
-		| SGAltenburg
-		| SGGotha
-		| SGMeiningen
-		| SGNordhausen
-		| SGStendal
-		| VGFreiburg
-		| VGKarlsruhe
-		| VGSigmaringen
-		| VGStuttgart
-		| VGAnsbach
-		| VGAugsburg
-		| VGBayreuth
-		| VGMuenchen
-		| VGRegensburg
-		| VGWuerzburg
-		| VGBerlin
-		| VGCottbus
-		| VGFrankfurtOder
-		| VGPotsdam
-		| VGBremen
-		| VGHamburg
-		| VGDarmstadt
-		| VGDessau
-		| VGFrankfurtMain
-		| VGGiessen
-		| VGKassel
-		| VGWiesbaden
-		| VGSchwerin
-		| VGGreifswald
-		| VGBraunschweig
-		| VGGoettingen
-		| VGHannover
-		| VGLueneburg
-		| VGOldenburg
-		| VGOsnabrueck
-		| VGStade
-		| VGAachen
-		| VGArnsberg
-		| VGDuesseldorf
-		| VGGelsenkirchen
-		| VGKoeln
-		| VGMinden
-		| VGMuenster
-		| VGKoblenz
-		| VGMainz
-		| VGNeustadtWeinstrasse
-		| VGTrier
-		| VGSaarland
-		| VGChemnitz
-		| VGDresden
-		| VGLeipzig
-		| VGHalle
-		| VGMagdeburg
-		| VGSchleswigHolstein
-		| VGGera
-		| VGMeiningen
-		| VGWeimar
-		| AGAchern
-		| AGAnnaberg
-		| AGBadenBaden
-		| AGBuehl
-		| AGGernsbach
-		| AGRastatt
-		| AGBreisach
-		| AGEmmendingen
-		| AGEttenheim
-		| AGFreiburg
-		| AGKenzingen
-		| AGLoerrach
-		| AGMuellheimBaden
-		| AGStaufenBreisgau
-		| AGTitiseeNeustadt
-		| AGWaldkirch
-		| AGHeidelberg
-		| AGSinsheim
-		| AGWiesloch
-		| AGBretten		
-		| AGBruchsal
-		| AGEttlingen
-		| AGKarlsruhe
-		| AGKarlsruheDurlach
-		| AGMaulbronn
-		| AGPforzheim
-		| AGPhilippsburg
-		| AGDonaueschingen
-		| AGKonstanz
-		| AGRadolfzell
-		| AGSingenHohentwiel
-		| AGStockach
-		| AGUeberlingen
-		| AGVillingenSchwenningen
-		| AGMannheim
-		| AGSchwetzingen
-		| AGWeinheim
-		| AGAdelsheim
-		| AGBuchenOdenwald
-		| AGMosbach
-		| AGTauberbischofsheim
-		| AGWertheim
-		| AGGengenbach
-		| AGKehl
-		| AGLahr
-		| AGOberkirch
-		| AGOffenburg
-		| AGWolfach
-		| AGBadArolsen
-		| AGBadSaeckingen
-		| AGStBlasien
-		| AGSchoenau
-		| AGSchopfheim
-		| AGWaldshutTiengen
-		| AGAalen
-		| AGBadMergentheim		
-		| AGCrailsheim
-		| AGEllwangen
-		| AGHeidenheimBrenz
-		| AGLangenburg
-		| AGNeresheim
-		| AGSchwaebischGmuend
-		| AGAlbstadt
-		| AGBalingen
-		| AGHechingen
-		| AGSigmaringen
-		| AGBesigheim
-		| AGBrackenheim
-		| AGHeilbronn
-		| AGKuenzelsau
-		| AGMarbachNeckar
-		| AGOehringen
-		| AGSchwaebischHall
-		| AGVaihingenEnz
-		| AGBadSaulgau
-		| AGBiberachRiss
-		| AGLeutkirchAllgaeu
-		| AGRavensburg
-		| AGRiedlingen
-		| AGTettnang
-		| AGWangenAllgaeu
-		| AGFreudenstadt
-		| AGHorbNeckar
-		| AGOberndorfNeckar
-		| AGRottweil
-		| AGSpaichinen
-		| AGTuttlingen
-		| AGBacknang
-		| AGBoeblingen
-		| AGEsslingenNeckar
-		| AGKirchheimTeck
-		| AGLeonberg
-		| AGLudwigsburg
-		| AGNuertingen
-		| AGSchorndorf
-		| AGStuttgart
-		| AGStuttgartBadCannstatt
-		| AGWaiblingen
-		| AGBadUrach
-		| AGCalw
-		| AGMuensingen
-		| AGNagold
-		| AGReutlingen
-		| AGRottenburgNeckar
-		| AGTuebingen
-		| AGEhingenDonau
-		| AGGeislingenSteige
-		| AGGoeppingen
-		| AGUlm
-		| AGAschaffenburg
-		| AGObernburgMain
-		| AGBamberg
-		| AGForchheim
-		| AGHassfurt
-		| AGBayreuth
-		| AGKulmbach
-		| AGCoburg
-		| AGKronach
-		| AGLichtenfels
-		| AGHofSaale
-		| AGWunsiedel
-		| AGBadNeustadtSaale
-		| AGBadKissingen
-		| AGSchweinfurt
-		| AGGemuendenMain
-		| AGKitzingen
-		| AGWuerzburg
-		| AGAichach
-		| AGAugsburg
-		| AGDillingenDonau
-		| AGLandsbergLech
-		| AGNoerdlingen
-		| AGDeggendorf
-		| AGViechtach
-		| AGIngolstadt
-		| AGNeuburgDonau
-		| AGPfaffenhofenIlm
-		| AGKaufbeuren
-		| AGKemptenAllgaeu
-		| AGLindauBodensee
-		| AGSonthofen
-		| AGEggenfelden
-		| AGErding
-		| AGFreising
-		| AGLandauIsar
-		| AGLandshut
-		| AGGuenzburg
-		| AGMemmingen
-		| AGNeuUlm
-		| AGMuenchen
-		| AGDachau
-		| AGEbersberg
-		| AGFuerstenfeldbruck
-		| AGGarmischPartenkirchen
-		| AGMiesbach
-		| AGStarnberg
-		| AGWeilheimOberbayern
-		| AGWolfratshausen
-		| AGFreyung
-		| AGPassau
-		| AGAltoetting
-		| AGLaufen
-		| AGMuehldorfInn
-		| AGRosenheim
-		| AGTraunstein
-		| AGAmberg
-		| AGSchwandorf
-		| AGAnsbach
-		| AGWeissenburg
-		| AGErlangen
-		| AGFuerthOdenwald
-		| AGFuerthBayern
-		| AGHersbruck
-		| AGNeumarktOberpfalz
-		| AGNeustadtAisch
-		| AGNuernberg
-		| AGSchwabach
-		| AGCham
-		| AGKelheim
-		| AGRegensburg
-		| AGStraubing
-		| AGTirschenreuth
-		| AGWeidenOberpfalz
-		| AGCharlottenburg
-		| AGTiergarten
-		| AGKoepenick
-		| AGLichtenberg
-		| AGMitte
-		| AGNeukoelln
-		| AGPankowWeissensee
-		| AGSchoeneberg
-		| AGSpandau
-		| AGTempelhofKreuzberg
-		| AGWedding
-		| AGBadLiebenwerda
-		| AGCottbus
-		| AGGuben
-		| AGKoenigsWusterhausen
-		| AGLuebbenSpreewald
-		| AGSenftenberg
-		| AGBadFreienwaldeOder
-		| AGBernauBerlin
-		| AGEberswalde
-		| AGEisenhuettenstadt
-		| AGFrankfurtOder
-		| AGFuerstenwaldeSpree
-		| AGStrausberg
-		| AGNeuruppin
-		| AGOranienburg
-		| AGPerleberg
-		| AGPrenzlau
-		| AGSchwedtOder
-		| AGZehdenick
-		| AGBrandenburgHavel
-		| AGLuckenwalde
-		| AGNauen
-		| AGPotsdam
-		| AGRathenow
-		| AGZossen
-		| AGBremen
-		| AGBremenBlumenthal
-		| AGBremerhaven
-		| AGHamburg
-		| AGHamburgAltona
-		| AGHamburgBarmbek
-		| AGHamburgBergedorf
-		| AGHamburgBlankenese
-		| AGHamburgHarburg
-		| AGHamburgStGeorg
-		| AGHamburgWandsbek
-		| AGBensheim
-		| AGDarmstadt
-		| AGButzbach
-		| AGDieburg
-		| AGGrossGerau
-		| AGLampertheim
-		| AGLangen
-		| AGGeestland
-		| AGMichelstadt
-		| AGOffenbachMain
-		| AGRuesselsheim
-		| AGSeligenstadt
-		| AGFrankfurtMain
-		| AGBadHomburgSaar
-		| AGBadHomburg
-		| AGKoenigsteinTaunus
-		| AGBadHersfeld
-		| AGFulda
-		| AGHuenfeld
-		| AGAlsfeld
-		| AGBuedingen
-		| AGFriedbergHessen
-		| AGGiessen
-		| AGGelnhausen
-		| AGHanau
-		| AGEschwege
-		| AGFritzlar
-		| AGKassel
-		| AGKorbach
-		| AGMelsungen
-		| AGDillenburg
-		| AGLimburgLahn
-		| AGWeilburg
-		| AGWetzlar
-		| AGBiedenkopf
-		| AGFrankenbergEder
-		| AGKirchhain
-		| AGMarburg
-		| AGSchwalmstadt
-		| AGBadSchwalbach
-		| AGRuedesheim
-		| AGIdstein
-		| AGWiesbaden
-		| AGDemmin
-		| AGNeubrandenburg
-		| AGNeustrelitz
-		| AGPasewalk
-		| AGUeckermuende
-		| AGWarenMueritz
-		| AGBadDoberan
-		| AGGuestrow
-		| AGRostock
-		| AGGrevesmuehlen
-		| AGHagenow
-		| AGLudwigslust
-		| AGParchim
-		| AGSchwerin
-		| AGWismar
-		| AGAnklam
-		| AGBergenRuegen
-		| AGGreifswald
-		| AGRibnitzDamgarten
-		| AGStralsund
-		| AGWolgast
-		| AGBadGandersheim
-		| AGBraunschweig
-		| AGClausthalZellerfeld
-		| AGGoslar
-		| AGHelmstedt
-		| AGSalzgitter
-		| AGSeesen
-		| AGWolfenbuettel
-		| AGWolfsburg
-		| AGDuderstadt
-		| AGEinbeck
-		| AGGoettingen
-		| AGHannMuenden
-		| AGHerzbergHarz
-		| AGNortheim
-		| AGOsterodeHarz
-		| AGBueckeburg
-		| AGRinteln
-		| AGStadthagen
-		| AGBurgwedel
-		| AGHameln
-		| AGHannover
-		| AGNeustadtRuebenberge
-		| AGSpringe
-		| AGWennigsenDeister
-		| AGAlfeldLeine
-		| AGBurgdorf
-		| AGElze
-		| AGGifhorn
-		| AGHildesheim
-		| AGHolzminden
-		| AGLehrte
-		| AGPeine
-		| AGCelle
-		| AGDannenbergElbe
-		| AGLueneburg
-		| AGSoltau
-		| AGUelzen
-		| AGWinsen
-		| AGBremervoerde
-		| AGBuxtehude
-		| AGCuxhaven
-		| AGOtterndorf
-		| AGStade
-		| AGTostedt
-		| AGZeven
-		| AGAchim
-		| AGDiepholz
-		| AGNidda
-		| AGNienburg
-		| AGOsterholzScharmbeck
-		| AGRotenburgFulda
-		| AGRotenburgWuemme
-		| AGStolzenau
-		| AGSulingen
-		| AGSyke
-		| AGVerden
-		| AGWalsrode
-		| AGAurich
-		| AGEmden
-		| AGLeer
-		| AGNorden
-		| AGWittmund
-		| AGBrake
-		| AGCloppenburg
-		| AGDelmenhorst
-		| AGJever
-		| AGNordenham
-		| AGOldenburgNI
-		| AGOldenburgSH
-		| AGVarel
-		| AGVechta
-		| AGWesterstede
-		| AGWildeshausen
-		| AGWilhelmshaven
-		| AGBadIburg
-		| AGBersenbrueck
-		| AGLingen
-		| AGMeppen
-		| AGNordhorn
-		| AGOsnabrueck
-		| AGPapenburg
-		| AGDinslaken
-		| AGDuisburg
-		| AGDuisburgHamborn
-		| AGDuisburgRuhrort
-		| AGMuelheimRuhr
-		| AGOberhausen
-		| AGWesel
-		| AGDuesseldorf
-		| AGLangenfeldRheinland
-		| AGNeuss
-		| AGRatingen
-		| AGKleve
-		| AGEmmerich
-		| AGGeldern
-		| AGMoers
-		| AGRheinberg
-		| AGKempen
-		| AGKrefeld
-		| AGNettetal
-		| AGErkelenz
-		| AGGrevenbroich
-		| AGMoenchengladbach
-		| AGMoenchengladbachRheydt
-		| AGViersen
-		| AGMettmann
-		| AGRemscheid
-		| AGSolingen
-		| AGVelbert
-		| AGWuppertal
-		| AGArnsberg
-		| AGBrilon
-		| AGMarsberg
-		| AGMedebach
-		| AGMendenSauerland
-		| AGMeschede
-		| AGSchmallenberg
-		| AGSchmalkalden
-		| AGSoest
-		| AGWarstein
-		| AGWerl
-		| AGBielefeld
-		| AGBuende
-		| AGGuetersloh
-		| AGHalleWestfalen
-		| AGHalleSaalkreis
-		| AGHerford
-		| AGLuebbecke
-		| AGMinden
-		| AGBadOeynhausen
-		| AGRahden
-		| AGRhedaWiedenbrueck
-		| AGBochum
-		| AGHerne
-		| AGRecklinghausen
-		| AGHerneWanne
-		| AGWitten
-		| AGBlomberg
-		| AGDetmold
-		| AGLemgo
-		| AGCastropRauxel
-		| AGDortmund
-		| AGHamm
-		| AGKamen
-		| AGLuenen
-		| AGUnna
-		| AGBottrop
-		| AGDorsten
-		| AGEssen
-		| AGEssenBorbeck
-		| AGEssenSteele
-		| AGGelsenkirchen
-		| AGGelsenkirchenBuer
-		| AGGladbeck
-		| AGHattingen
-		| AGMarl
-		| AGAltena
-		| AGHagen
-		| AGIserlohn
-		| AGLuedenscheid
-		| AGMeinerzhagen
-		| AGPlettenberg
-		| AGSchwelm
-		| AGWetterRuhr
-		| AGAhaus
-		| AGAhlen
-		| AGSchwerte
-		| AGBeckum
-		| AGBocholt
-		| AGBorken
-		| AGBuchen
-		| AGCoesfeld
-		| AGDuelmen
-		| AGGronauWestfalen
-		| AGHadamar
-		| AGHainichen
-		| AGHerborn
-		| AGHofgeismar
-		| AGIbbenbueren
-		| AGLuedinghausen
-		| AGMuensterWestfalen
-		| AGOschatz
-		| AGRheine
-		| AGStollberg
-		| AGTecklenburg
-		| AGWarendorf
-		| AGBrakel
-		| AGDelbrueck
-		| AGHoexter
-		| AGHohenschönhausen
-		| AGLippstadt
-		| AGPaderborn
-		| AGWarburg
-		| AGBadBerleburg
-		| AGLennestadt
-		| AGOlpe
-		| AGSiegen
-		| AGAachen
-		| AGDueren
-		| AGEschweiler
-		| AGGeilenkirchen
-		| AGHeinsberg
-		| AGJuelich
-		| AGMonschau
-		| AGSchleiden
-		| AGBonn
-		| AGEuskirchen
-		| AGKoenigswinter
-		| AGRheinbach
-		| AGSiegburg
-		| AGWaldbroel
-		| AGBergheim
-		| AGBergischGladbach
-		| AGBruehl
-		| AGGummersbach
-		| AGKerpen
-		| AGKoeln
-		| AGLeverkusen
-		| AGWermelskirchen
-		| AGWipperfuerth
-		| AGBadDuerkheim
-		| AGFrankenthalPfalz
-		| AGGruenstadt
-		| AGLudwigshafenRhein
-		| AGNeustadtWeinstrasse
-		| AGSpeyer
-		| AGKaiserslautern
-		| AGKusel
-		| AGRockenhausen
-		| AGGermersheim
-		| AGKandelPfalz
-		| AGLandauPfalz
-		| AGLandstuhl
-		| AGZweibruecken
-		| AGPirmasens
-		| AGBadKreuznach
-		| AGBadSobernheim
-		| AGIdarOberstein
-		| AGSimmernHunsrueck
-		| AGAltenkirchen
-		| AGAndernach
-		| AGBadNeuenahrAhrweiler
-		| AGBetzdorf
-		| AGCochem
-		| AGDiez
-		| AGKoblenz
-		| AGLahnstein
-		| AGLinzRhein
-		| AGMayen
-		| AGMontabaur
-		| AGNeuwied
-		| AGSanktGoar
-		| AGSinzig
-		| AGWesterburg
-		| AGAlzey
-		| AGBingenRhein
-		| AGMainz
-		| AGWorms
-		| AGBernkastelKues
-		| AGBitburg
-		| AGDaun
-		| AGHermeskeil
-		| AGPruem
-		| AGSaarburg
-		| AGTrier
-		| AGWittlich
-		| AGLebach
-		| AGMerzig
-		| AGNeunkirchen
-		| AGOttweiler
-		| AGSaarbruecken
-		| AGSaarlouis
-		| AGStIngbert
-		| AGStWendel
-		| AGVoelklingen
-		| AGAue
-		| AGChemnitz
-		| AGDoebeln
-		| AGFreiberg
-		| AGMarienberg
-		| AGDippoldiswalde
-		| AGDresden
-		| AGMeissen
-		| AGPirna
-		| AGRiesa
-		| AGBautzen
-		| AGGoerlitz
-		| AGHoyerswerda
-		| AGKamenz
-		| AGWeisswasser
-		| AGZittau
-		| AGBorna
-		| AGEilenburg
-		| AGGrimma
-		| AGLeipzig
-		| AGTorgau
-		| AGAuerbach
-		| AGHohensteinErnstthal
-		| AGPlauen
-		| AGZwickau
-		| AGBitterfeldWolfen
-		| AGDessauRosslau
-		| AGKoethen
-		| AGWittenberg
-		| AGZerbst
-		| AGEisleben
-		| AGMerseburg
-		| AGNaumburg
-		| AGSangerhausen
-		| AGWeissenfels
-		| AGZeitz
-		| AGAschersleben
-		| AGBernburg
-		| AGHalberstadt
-		| AGHaldensleben
-		| AGMagdeburg
-		| AGOschersleben
-		| AGQuedlinburg
-		| AGSchoenebeck
-		| AGWernigerode
-		| AGBurg
-		| AGGardelegen
-		| AGSalzwedel
-		| AGSteinfurt
-		| AGStendal
-		| AGFlensburg
-		| AGHusum
-		| AGNiebuell
-		| AGSchleswig
-		| AGElmshorn
-		| AGItzehoe
-		| AGMeldorf
-		| AGPinneberg
-		| AGBadSegeberg
-		| AGEckernfoerde
-		| AGKiel
-		| AGNeumuenster
-		| AGNorderstedt
-		| AGPloen
-		| AGRendsburg
-		| AGAhrensburg
-		| AGEutin
-		| AGLuebeck
-		| AGRatzeburg
-		| AGReinbek
-		| AGSchwarzenbek
-		| AGApolda
-		| AGSaalfeld
-		| AGArnstadt
-		| AGErfurt
-		| AGGotha
-		| AGSoemmerda
-		| AGWeimar
-		| AGAltenburg
-		| AGGera
-		| AGGreiz
-		| AGJena
-		| AGPoessneck
-		| AGRudolstadt
-		| AGStadtroda
-		| AGBadSalzungen
-		| AGEisenach
-		| AGHildburghausen
-		| AGIlmenau
-		| AGMeiningen
-		| AGSonneberg
-		| AGSuhl
-		| AGHeilbadHeiligenstadt
-		| AGMuehlhausenThueringen
-		| AGNordhausen
-		| AGSondershausen
-		| ArbGFreiburg
-		| ArbGHeilbronn
-		| ArbGKarlsruhe
-		| ArbGLoerrach
-		| ArbGMannheim
-		| ArbGPforzheim
-		| ArbGReutlingen
-		| ArbGSenfenberg
-		| ArbGStuttgart
-		| ArbGUlm
-		| ArbGAugsburg
-		| ArbGKempten
-		| ArbGMuenchen
-		| ArbGPassau
-		| ArbGRegensburg
-		| ArbGRosenheim
-		| ArbGBamberg
-		| ArbGBayreuth
-		| ArbGNuernberg
-		| ArbGWeidenOberpfalz
-		| ArbGWuerzburg
-		| ArbGBerlin
-		| ArbGBrandenburg
-		| ArbGCottbus
-		| ArbGEberswalde
-		| ArbGFrankfurtOder
-		| ArbGNeuruppin
-		| ArbGPotsdam
-		| ArbGBremen
-		| ArbGBremenBremerhaven
-		| ArbGHamburg
-		| ArbGDarmstadt
-		| ArbGWetzlar
-		| ArbGMarburg
-		| ArbGLimburg
-		| ArbGBadHersfeld
-		| ArbGFrankfurtMain
-		| ArbGFulda
-		| ArbGGiessen
-		| ArbGHanau
-		| ArbGKassel
-		| ArbGOffenbachMain
-		| ArbGWiesbaden
-		| ArbGNeubrandenburg
-		| ArbGRostock
-		| ArbGSchwerin
-		| ArbGStralsund
-		| ArbGBraunschweig
-		| ArbGCelle
-		| ArbGEmden
-		| ArbGGoettingen
-		| ArbGHameln
-		| ArbGHannover
-		| ArbGHildesheim
-		| ArbGLingen
-		| ArbGLueneburg
-		| ArbGNienburg
-		| ArbGOldenburg
-		| ArbGOsnabrueck
-		| ArbGStade
-		| ArbGVerden
-		| ArbGWilhelmshaven
-		| ArbGDuisburg
-		| ArbGDuesseldorf
-		| ArbGEssen
-		| ArbGKrefeld
-		| ArbGMoenchengladbach
-		| ArbGOberhausen
-		| ArbGSolingen
-		| ArbGWesel
-		| ArbGWuppertal
-		| ArbGArnsberg
-		| ArbGBielefeld
-		| ArbGBocholt
-		| ArbGBochum
-		| ArbGDetmold
-		| ArbGDortmund
-		| ArbGGelsenkirchen
-		| ArbGHagen
-		| ArbGHalberstadt
-		| ArbGHamm
-		| ArbGHerford
-		| ArbGHerne
-		| ArbGIserlohn
-		| ArbGMinden
-		| ArbGMuenster
-		| ArbGPaderborn
-		| ArbGRheine
-		| ArbGSiegen
-		| ArbGAachen
-		| ArbGBonn
-		| ArbGKoeln
-		| ArbGSiegburg
-		| ArbGKaiserslautern
-		| ArbGKoblenz
-		| ArbGLudwigshafenRhein
-		| ArbGMainz
-		| ArbGTrier
-		| ArbGNeunkirchen
-		| ArbGNeustrelitz
-		| ArbGSaarbruecken
-		| ArbGSaarlouis
-		| ArbGBautzen
-		| ArbGChemnitz
-		| ArbGDresden
-		| ArbGLeipzig
-		| ArbGZwickau
-		| ArbGDessauRosslau
-		| ArbGHalle
-		| ArbGMagdeburg
-		| ArbGStendal
-		| ArbGElmshorn
-		| ArbGFlensburg
-		| ArbGKiel
-		| ArbGLuebeck
-		| ArbGNeumuenster
-		| ArbGEisenach
-		| ArbGErfurt
-		| ArbGGotha
-		| ArbGGera
-		| ArbGJena
-		| ArbGSuhl
-		| ArbGNordhausen
-		| AGHBadenWuerttemberg
-		| AGHBayern
-		| AGHBerlin
-		| AGHBrandenburg
-		| AGHFrankfurt
-		| AGHHamburg
-		| AGHHessen
-		| AGHMecklenburgVorpommern
-		| AGHNiedersachsen
-		| AGHNordrheinWestfalen
-		| AGHRheinlandPfalz
-		| AGHSachsenAnhalt
-		| AGHSchleswigHolstein
-		| AGHThueringen
-		| GStAKarlsruhe
-		| GStAHamm
-		| GStAKoblenz
-		| GStAMuenchen
-		| StABerlin
-		| StABonn
-		| StADuisburg
-		| StADuesseldorf
-		| StAFrankenthalPfalz
-		| StAKoblenz
-		| StAKoeln
-		| StALandauinderPfalz
-		| StALeipzig
-		| StAMainz
-		| StAMoenchengladbach
-		| StAMuenchenI
-		| StANuernbergFuerth
-		| StAStuttgart
-		| StATrier
-		| StATuebingen
-		| StAWuppertal
-		| BezirksGCottbus
-		| BezirksGDresden
-		| BezirksGErfurt
-		| BezirksGFrankfurtOder
-		| BezirksGGera
-		| BezirksGHalle
-		| BezirksGKarlMarxStadt
-		| BezirksGChemnitz
-		| BezirksGLeipzig
-		| BezirksGMagdeburg
-		| BezirksGMeiningen
-		| BezirksGNeubrandenburg
-		| BezirksGPotsdam
-		| BezirksGRostock
-		| BezirksGSchwerin
-		| BezirksGSuhl
-		| KreisGAnnaberg
-		| KreisGCottbus
-		| KreisGDoebeln
-		| KreisGDresden
-		| KreisGEisenhuettenstadt
-		| KreisGErfurt
-		| KreisGFrankfurtOder
-		| KreisGFreiberg
-		| KreisGGrimma
-		| KreisGGoerlitz
-		| KreisGHalle
-		| KreisGHalleStadt
-		| KreisGKamenz
-		| KreisGKoenigsWusterhausen
-		| KreisGLoebau
-		| KreisGMagdeburg
-		| KreisGNeustrelitz
-		| KreisGOschatz
-		| KreisGPirna
-		| KreisGPotsdamStadt
-		| KreisGRostockLand
-		| KreisGSchwerinStadt
-		| KreisGSömmerda
-		| KreisGSuhl
-		| KreisGChemnitzStadt
-		| KreisGLeipzigStadt
-		| KreisGSaalfeld
-		| KreisGZerbst
-		| DGHBerlin
-		| DGHHamm
-		| DGHNiedersachsen
-		| DGHStuttgart
-		| TDiGNord
-		| TDiGSüd
-		| HandelskammerHamburg
-		| ATVfGH
-		| NLAGAmsterdam
-		| RG
+| EuGH
+| EuG
+| EGMR
+| EFTAGH
+| BVerfG
+| GmSOGB
+| BAG
+| BFH
+| BGH
+| BPatG
+| BSG
+| BVerwG
+| BayVerfGH
+| HbGVerfG
+| SaechsVerfGH
+| VerfGHSachsenAnhalt
+| VerfGHThueringen
+| VerfGHRheinlandPfalz
+| FGBadenWuerttemberg
+| FGBerlinBrandenburg
+| FGBremen
+| FGDuesseldorf
+| FGHamburg
+| FGHessen
+| FGKoeln
+| FGMecklenburgVorpommern
+| FGMuenchen
+| FGMuenster
+| FGNiedersachsen
+| FGNuernberg
+| FGRheinlandPfalz
+| FGSaarland
+| FGSachsenAnhalt
+| FGSachsen
+| FGSchleswigHolstein
+| FGThueringen
+| BayObLG
+| OLGBamberg
+| KGBerlin
+| OLGBrandenburg
+| OLGBraunschweig
+| OLGBremen
+| OLGCelle
+| OLGDresden
+| OLGDuesseldorf
+| OLGFrankfurtMain
+| OLGHamburg
+| OLGHamm
+| OLGThueringen
+| OLGKarlsruhe
+| OLGKoblenz
+| OLGKoeln
+| OLGMuenchen
+| OLGNaumburg
+| OLGNuernberg
+| OLGOldenburg
+| OLGRostock
+| OLGSaarbruecken
+| OLGSchleswig
+| OLGStuttgart
+| OLGZweibruecken
+| LAGBadenWuerttemberg
+| LAGBerlinBrandenburg
+| LAGBremen
+| LAGDuesseldorf
+| LAGHamburg
+| LAGHamm
+| LAGHessen
+| LAGKoeln
+| LAGMecklenburgVorpommern
+| LAGMuenchen
+| LAGNuernberg
+| LAGNiedersachsen
+| LAGRheinlandPfalz
+| LAGSaarland
+| LAGSachsen
+| LAGSachsenAnhalt
+| LAGSchleswigHolstein
+| LAGThueringen
+| OVGBadenWuerttemberg
+| BayVGH
+| OVGBerlinBrandenburg
+| OVGBremen
+| OVGHamburg
+| OVGHessen
+| OVGMecklenburgVorpommern
+| OVGNiedersachsen
+| OVGNordrheinWestfalen
+| OVGRheinlandPfalz
+| OVGSaarland
+| OVGSachsen
+| OVGSachsenAnhalt
+| OVGSchleswigHolstein
+| OVGThueringen
+| LSGBadenWuerttemberg
+| LSGBayern
+| LSGBerlinBrandenburg
+| LSGNiedersachsenBremen
+| LSGHamburg
+| LSGHessen
+| LSGMecklenburgVorpommern
+| LSGNordrheinWestfalen
+| LSGRheinlandPfalz
+| LSGSaarland
+| LSGSachsen
+| LSGSachsenAnhalt
+| LSGSchleswigHolstein
+| LSGThueringen
+| LGBadenBaden
+| LGFreiburg
+| LGHeidelberg
+| LGKarlsruhe
+| LGKonstanz
+| LGMannheim
+| LGMosbach
+| LGOffenburg
+| LGWaldshutTiengen
+| LGEllwangenJagst
+| LGHechingen
+| LGHeilbronn
+| LGRavensburg
+| LGRottweil
+| LGStuttgart
+| LGTuebingen
+| LGUlm
+| LGAschaffenburg
+| LGBamberg
+| LGBautzen
+| LGBayreuth
+| LGCoburg
+| LGHofSaale
+| LGSchweinfurt
+| LGWuerzburg
+| LGAugsburg
+| LGDeggendorf
+| LGIngolstadt
+| LGKempten
+| LGLandshut
+| LGMemmingen
+| LGMuenchenI
+| LGMuenchenII
+| LGPassau
+| LGTraunstein
+| LGAmberg
+| LGAnsbach
+| LGNuernbergFuerth
+| LGRegensburg
+| LGWeidenOberpfalz
+| LGBerlin
+| LGCottbus
+| LGFrankfurtOder
+| LGNeuruppin
+| LGPotsdam
+| LGBremen
+| LGHamburg
+| LGDarmstadt
+| LGFrankfurtMain
+| LGFulda
+| LGGiessen
+| LGHanau
+| LGKassel
+| LGLimburg
+| LGMarburg
+| LGWiesbaden
+| LGNeubrandenburg
+| LGRostock
+| LGSchwerin
+| LGStralsund
+| LGBraunschweig
+| LGGoettingen
+| LGBueckeburg
+| LGHannover
+| LGHildesheim
+| LGStade
+| LGVerden
+| LGAurich
+| LGOldenburg
+| LGOsnabrueck
+| LGDuisburg
+| LGDuesseldorf
+| LGKleve
+| LGKrefeld
+| LGMoenchengladbach
+| LGWuppertal
+| LGArnsberg
+| LGBielefeld
+| LGBochum
+| LGDetmold
+| LGDortmund
+| LGEssen
+| LGHagen
+| LGMuenster
+| LGPaderborn
+| LGSiegen
+| LGAachen
+| LGBonn
+| LGKoeln
+| LGFrankenthalPfalz
+| LGKaiserslautern
+| LGLandauPfalz
+| LGZweibruecken
+| LGBadKreuznach
+| LGKoblenz
+| LGMainz
+| LGTrier
+| LGSaarbruecken
+| LGChemnitz
+| LGDresden
+| LGGoerlitz
+| LGLeipzig
+| LGZwickau
+| LGDessauRosslau
+| LGHalle
+| LGMagdeburg
+| LGStendal
+| LGFlensburg
+| LGItzehoe
+| LGKiel
+| LGLuebeck
+| LGErfurt
+| LGGera
+| LGMeiningen
+| LGMuehlhausen
+| LGLueneburg
+| SGFreiburg
+| SGHeilbronn
+| SGKarlsruhe
+| SGKonstanz
+| SGMannheim
+| SGReutlingen
+| SGStuttgart
+| SGUlm
+| SGAugsburg
+| SGBayreuth
+| SGLandshut
+| SGMuenchen
+| SGNuernberg
+| SGRegensburg
+| SGWuerzburg
+| SGBerlin
+| SGCottbus
+| SGFrankfurtOder
+| SGNeuruppin
+| SGPotsdam
+| SGAurich
+| SGBraunschweig
+| SGBremen
+| SGHannover
+| SGHildesheim
+| SGLueneburg
+| SGOldenburg
+| SGOsnabrueck
+| SGStade
+| SGDarmstadt
+| SGFrankfurtMain
+| SGFulda
+| SGGiessen
+| SGKassel
+| SGMarburg
+| SGWiesbaden
+| SGNeubrandenburg
+| SGRostock
+| SGSchwerin
+| SGStralsund
+| SGAachen
+| SGDetmold
+| SGDortmund
+| SGDuesseldorf
+| SGDuisburg
+| SGGelsenkirchen
+| SGKoeln
+| SGMuenster
+| SGKoblenz
+| SGMainz
+| SGSpeyer
+| SGTrier
+| SGSaarbruecken
+| SGChemnitz
+| SGDresden
+| SGLeipzig
+| SGDessauRosslau
+| SGHalle
+| SGHamburg
+| SGMagdeburg
+| SGItzehoe
+| SGKiel
+| SGLuebeck
+| SGSchleswig
+| SGAltenburg
+| SGGotha
+| SGMeiningen
+| SGNordhausen
+| SGStendal
+| VGFreiburg
+| VGKarlsruhe
+| VGSigmaringen
+| VGStuttgart
+| VGAnsbach
+| VGAugsburg
+| VGBayreuth
+| VGMuenchen
+| VGRegensburg
+| VGWuerzburg
+| VGBerlin
+| VGCottbus
+| VGFrankfurtOder
+| VGPotsdam
+| VGBremen
+| VGHamburg
+| VGDarmstadt
+| VGDessau
+| VGFrankfurtMain
+| VGGiessen
+| VGKassel
+| VGWiesbaden
+| VGSchwerin
+| VGGreifswald
+| VGBraunschweig
+| VGGoettingen
+| VGHannover
+| VGLueneburg
+| VGOldenburg
+| VGOsnabrueck
+| VGStade
+| VGAachen
+| VGArnsberg
+| VGDuesseldorf
+| VGGelsenkirchen
+| VGKoeln
+| VGMinden
+| VGMuenster
+| VGKoblenz
+| VGMainz
+| VGNeustadtWeinstrasse
+| VGTrier
+| VGSaarland
+| VGChemnitz
+| VGDresden
+| VGLeipzig
+| VGHalle
+| VGMagdeburg
+| VGSchleswigHolstein
+| VGGera
+| VGMeiningen
+| VGWeimar
+| AGAchern
+| AGAnnaberg
+| AGBadenBaden
+| AGBuehl
+| AGGernsbach
+| AGRastatt
+| AGBreisach
+| AGEmmendingen
+| AGEttenheim
+| AGFreiburg
+| AGKenzingen
+| AGLoerrach
+| AGMuellheimBaden
+| AGStaufenBreisgau
+| AGTitiseeNeustadt
+| AGWaldkirch
+| AGHeidelberg
+| AGSinsheim
+| AGWiesloch
+| AGBretten
+| AGBruchsal
+| AGEttlingen
+| AGKarlsruhe
+| AGKarlsruheDurlach
+| AGMaulbronn
+| AGPforzheim
+| AGPhilippsburg
+| AGDonaueschingen
+| AGKonstanz
+| AGRadolfzell
+| AGSingenHohentwiel
+| AGStockach
+| AGUeberlingen
+| AGVillingenSchwenningen
+| AGMannheim
+| AGSchwetzingen
+| AGWeinheim
+| AGAdelsheim
+| AGBuchenOdenwald
+| AGMosbach
+| AGTauberbischofsheim
+| AGWertheim
+| AGGengenbach
+| AGKehl
+| AGLahr
+| AGOberkirch
+| AGOffenburg
+| AGWolfach
+| AGBadArolsen
+| AGBadSaeckingen
+| AGStBlasien
+| AGSchoenau
+| AGSchopfheim
+| AGWaldshutTiengen
+| AGAalen
+| AGBadMergentheim
+| AGCrailsheim
+| AGEllwangen
+| AGHeidenheimBrenz
+| AGLangenburg
+| AGNeresheim
+| AGSchwaebischGmuend
+| AGAlbstadt
+| AGBalingen
+| AGHechingen
+| AGSigmaringen
+| AGBesigheim
+| AGBrackenheim
+| AGHeilbronn
+| AGKuenzelsau
+| AGMarbachNeckar
+| AGOehringen
+| AGSchwaebischHall
+| AGVaihingenEnz
+| AGBadSaulgau
+| AGBiberachRiss
+| AGLeutkirchAllgaeu
+| AGRavensburg
+| AGRiedlingen
+| AGTettnang
+| AGWangenAllgaeu
+| AGFreudenstadt
+| AGHorbNeckar
+| AGOberndorfNeckar
+| AGRottweil
+| AGSpaichinen
+| AGTuttlingen
+| AGBacknang
+| AGBoeblingen
+| AGEsslingenNeckar
+| AGKirchheimTeck
+| AGLeonberg
+| AGLudwigsburg
+| AGNuertingen
+| AGSchorndorf
+| AGStuttgart
+| AGStuttgartBadCannstatt
+| AGWaiblingen
+| AGBadUrach
+| AGCalw
+| AGMuensingen
+| AGNagold
+| AGReutlingen
+| AGRottenburgNeckar
+| AGTuebingen
+| AGEhingenDonau
+| AGGeislingenSteige
+| AGGoeppingen
+| AGUlm
+| AGAschaffenburg
+| AGObernburgMain
+| AGBamberg
+| AGForchheim
+| AGHassfurt
+| AGBayreuth
+| AGKulmbach
+| AGCoburg
+| AGKronach
+| AGLichtenfels
+| AGHofSaale
+| AGWunsiedel
+| AGBadNeustadtSaale
+| AGBadKissingen
+| AGSchweinfurt
+| AGGemuendenMain
+| AGKitzingen
+| AGWuerzburg
+| AGAichach
+| AGAugsburg
+| AGDillingenDonau
+| AGLandsbergLech
+| AGNoerdlingen
+| AGDeggendorf
+| AGViechtach
+| AGIngolstadt
+| AGNeuburgDonau
+| AGPfaffenhofenIlm
+| AGKaufbeuren
+| AGKemptenAllgaeu
+| AGLindauBodensee
+| AGSonthofen
+| AGEggenfelden
+| AGErding
+| AGFreising
+| AGLandauIsar
+| AGLandshut
+| AGGuenzburg
+| AGMemmingen
+| AGNeuUlm
+| AGMuenchen
+| AGDachau
+| AGEbersberg
+| AGFuerstenfeldbruck
+| AGGarmischPartenkirchen
+| AGMiesbach
+| AGStarnberg
+| AGWeilheimOberbayern
+| AGWolfratshausen
+| AGFreyung
+| AGPassau
+| AGAltoetting
+| AGLaufen
+| AGMuehldorfInn
+| AGRosenheim
+| AGTraunstein
+| AGAmberg
+| AGSchwandorf
+| AGAnsbach
+| AGWeissenburg
+| AGErlangen
+| AGFuerthOdenwald
+| AGFuerthBayern
+| AGHersbruck
+| AGNeumarktOberpfalz
+| AGNeustadtAisch
+| AGNuernberg
+| AGSchwabach
+| AGCham
+| AGKelheim
+| AGRegensburg
+| AGStraubing
+| AGTirschenreuth
+| AGWeidenOberpfalz
+| AGCharlottenburg
+| AGTiergarten
+| AGKoepenick
+| AGLichtenberg
+| AGMitte
+| AGNeukoelln
+| AGPankowWeissensee
+| AGSchoeneberg
+| AGSpandau
+| AGTempelhofKreuzberg
+| AGWedding
+| AGBadLiebenwerda
+| AGCottbus
+| AGGuben
+| AGKoenigsWusterhausen
+| AGLuebbenSpreewald
+| AGSenftenberg
+| AGBadFreienwaldeOder
+| AGBernauBerlin
+| AGEberswalde
+| AGEisenhuettenstadt
+| AGFrankfurtOder
+| AGFuerstenwaldeSpree
+| AGStrausberg
+| AGNeuruppin
+| AGOranienburg
+| AGPerleberg
+| AGPrenzlau
+| AGSchwedtOder
+| AGZehdenick
+| AGBrandenburgHavel
+| AGLuckenwalde
+| AGNauen
+| AGPotsdam
+| AGRathenow
+| AGZossen
+| AGBremen
+| AGBremenBlumenthal
+| AGBremerhaven
+| AGHamburg
+| AGHamburgAltona
+| AGHamburgBarmbek
+| AGHamburgBergedorf
+| AGHamburgBlankenese
+| AGHamburgHarburg
+| AGHamburgStGeorg
+| AGHamburgWandsbek
+| AGBensheim
+| AGDarmstadt
+| AGButzbach
+| AGDieburg
+| AGGrossGerau
+| AGLampertheim
+| AGLangen
+| AGGeestland
+| AGMichelstadt
+| AGOffenbachMain
+| AGRuesselsheim
+| AGSeligenstadt
+| AGFrankfurtMain
+| AGBadHomburgSaar
+| AGBadHomburg
+| AGKoenigsteinTaunus
+| AGBadHersfeld
+| AGFulda
+| AGHuenfeld
+| AGAlsfeld
+| AGBuedingen
+| AGFriedbergHessen
+| AGGiessen
+| AGGelnhausen
+| AGHanau
+| AGEschwege
+| AGFritzlar
+| AGKassel
+| AGKorbach
+| AGMelsungen
+| AGDillenburg
+| AGLimburgLahn
+| AGWeilburg
+| AGWetzlar
+| AGBiedenkopf
+| AGFrankenbergEder
+| AGKirchhain
+| AGMarburg
+| AGSchwalmstadt
+| AGBadSchwalbach
+| AGRuedesheim
+| AGIdstein
+| AGWiesbaden
+| AGDemmin
+| AGNeubrandenburg
+| AGNeustrelitz
+| AGPasewalk
+| AGUeckermuende
+| AGWarenMueritz
+| AGBadDoberan
+| AGGuestrow
+| AGRostock
+| AGGrevesmuehlen
+| AGHagenow
+| AGLudwigslust
+| AGParchim
+| AGSchwerin
+| AGWismar
+| AGAnklam
+| AGBergenRuegen
+| AGGreifswald
+| AGRibnitzDamgarten
+| AGStralsund
+| AGWolgast
+| AGBadGandersheim
+| AGBraunschweig
+| AGClausthalZellerfeld
+| AGGoslar
+| AGHelmstedt
+| AGSalzgitter
+| AGSeesen
+| AGWolfenbuettel
+| AGWolfsburg
+| AGDuderstadt
+| AGEinbeck
+| AGGoettingen
+| AGHannMuenden
+| AGHerzbergHarz
+| AGNortheim
+| AGOsterodeHarz
+| AGBueckeburg
+| AGRinteln
+| AGStadthagen
+| AGBurgwedel
+| AGHameln
+| AGHannover
+| AGNeustadtRuebenberge
+| AGSpringe
+| AGWennigsenDeister
+| AGAlfeldLeine
+| AGBurgdorf
+| AGElze
+| AGGifhorn
+| AGHildesheim
+| AGHolzminden
+| AGLehrte
+| AGPeine
+| AGCelle
+| AGDannenbergElbe
+| AGLueneburg
+| AGSoltau
+| AGUelzen
+| AGWinsen
+| AGBremervoerde
+| AGBuxtehude
+| AGCuxhaven
+| AGOtterndorf
+| AGStade
+| AGTostedt
+| AGZeven
+| AGAchim
+| AGDiepholz
+| AGNidda
+| AGNienburg
+| AGOsterholzScharmbeck
+| AGRotenburgFulda
+| AGRotenburgWuemme
+| AGStolzenau
+| AGSulingen
+| AGSyke
+| AGVerden
+| AGWalsrode
+| AGAurich
+| AGEmden
+| AGLeer
+| AGNorden
+| AGWittmund
+| AGBrake
+| AGCloppenburg
+| AGDelmenhorst
+| AGJever
+| AGNordenham
+| AGOldenburgNI
+| AGOldenburgSH
+| AGVarel
+| AGVechta
+| AGWesterstede
+| AGWildeshausen
+| AGWilhelmshaven
+| AGBadIburg
+| AGBersenbrueck
+| AGLingen
+| AGMeppen
+| AGNordhorn
+| AGOsnabrueck
+| AGPapenburg
+| AGDinslaken
+| AGDuisburg
+| AGDuisburgHamborn
+| AGDuisburgRuhrort
+| AGMuelheimRuhr
+| AGOberhausen
+| AGWesel
+| AGDuesseldorf
+| AGLangenfeldRheinland
+| AGNeuss
+| AGRatingen
+| AGKleve
+| AGEmmerich
+| AGGeldern
+| AGMoers
+| AGRheinberg
+| AGKempen
+| AGKrefeld
+| AGNettetal
+| AGErkelenz
+| AGGrevenbroich
+| AGMoenchengladbach
+| AGMoenchengladbachRheydt
+| AGViersen
+| AGMettmann
+| AGRemscheid
+| AGSolingen
+| AGVelbert
+| AGWuppertal
+| AGArnsberg
+| AGBrilon
+| AGMarsberg
+| AGMedebach
+| AGMendenSauerland
+| AGMeschede
+| AGSchmallenberg
+| AGSchmalkalden
+| AGSoest
+| AGWarstein
+| AGWerl
+| AGBielefeld
+| AGBuende
+| AGGuetersloh
+| AGHalleWestfalen
+| AGHalleSaalkreis
+| AGHerford
+| AGLuebbecke
+| AGMinden
+| AGBadOeynhausen
+| AGRahden
+| AGRhedaWiedenbrueck
+| AGBochum
+| AGHerne
+| AGRecklinghausen
+| AGHerneWanne
+| AGWitten
+| AGBlomberg
+| AGDetmold
+| AGLemgo
+| AGCastropRauxel
+| AGDortmund
+| AGHamm
+| AGKamen
+| AGLuenen
+| AGUnna
+| AGBottrop
+| AGDorsten
+| AGEssen
+| AGEssenBorbeck
+| AGEssenSteele
+| AGGelsenkirchen
+| AGGelsenkirchenBuer
+| AGGladbeck
+| AGHattingen
+| AGMarl
+| AGAltena
+| AGHagen
+| AGIserlohn
+| AGLuedenscheid
+| AGMeinerzhagen
+| AGPlettenberg
+| AGSchwelm
+| AGWetterRuhr
+| AGAhaus
+| AGAhlen
+| AGSchwerte
+| AGBeckum
+| AGBocholt
+| AGBorken
+| AGBuchen
+| AGCoesfeld
+| AGDuelmen
+| AGGronauWestfalen
+| AGHadamar
+| AGHainichen
+| AGHerborn
+| AGHofgeismar
+| AGIbbenbueren
+| AGLuedinghausen
+| AGMuensterWestfalen
+| AGOschatz
+| AGRheine
+| AGStollberg
+| AGTecklenburg
+| AGWarendorf
+| AGBrakel
+| AGDelbrueck
+| AGHoexter
+| AGHohenschönhausen
+| AGLippstadt
+| AGPaderborn
+| AGWarburg
+| AGBadBerleburg
+| AGLennestadt
+| AGOlpe
+| AGSiegen
+| AGAachen
+| AGDueren
+| AGEschweiler
+| AGGeilenkirchen
+| AGHeinsberg
+| AGJuelich
+| AGMonschau
+| AGSchleiden
+| AGBonn
+| AGEuskirchen
+| AGKoenigswinter
+| AGRheinbach
+| AGSiegburg
+| AGWaldbroel
+| AGBergheim
+| AGBergischGladbach
+| AGBruehl
+| AGGummersbach
+| AGKerpen
+| AGKoeln
+| AGLeverkusen
+| AGWermelskirchen
+| AGWipperfuerth
+| AGBadDuerkheim
+| AGFrankenthalPfalz
+| AGGruenstadt
+| AGLudwigshafenRhein
+| AGNeustadtWeinstrasse
+| AGSpeyer
+| AGKaiserslautern
+| AGKusel
+| AGRockenhausen
+| AGGermersheim
+| AGKandelPfalz
+| AGLandauPfalz
+| AGLandstuhl
+| AGZweibruecken
+| AGPirmasens
+| AGBadKreuznach
+| AGBadSobernheim
+| AGIdarOberstein
+| AGSimmernHunsrueck
+| AGAltenkirchen
+| AGAndernach
+| AGBadNeuenahrAhrweiler
+| AGBetzdorf
+| AGCochem
+| AGDiez
+| AGKoblenz
+| AGLahnstein
+| AGLinzRhein
+| AGMayen
+| AGMontabaur
+| AGNeuwied
+| AGSanktGoar
+| AGSinzig
+| AGWesterburg
+| AGAlzey
+| AGBingenRhein
+| AGMainz
+| AGWorms
+| AGBernkastelKues
+| AGBitburg
+| AGDaun
+| AGHermeskeil
+| AGPruem
+| AGSaarburg
+| AGTrier
+| AGWittlich
+| AGLebach
+| AGMerzig
+| AGNeunkirchen
+| AGOttweiler
+| AGSaarbruecken
+| AGSaarlouis
+| AGStIngbert
+| AGStWendel
+| AGVoelklingen
+| AGAue
+| AGChemnitz
+| AGDoebeln
+| AGFreiberg
+| AGMarienberg
+| AGDippoldiswalde
+| AGDresden
+| AGMeissen
+| AGPirna
+| AGRiesa
+| AGBautzen
+| AGGoerlitz
+| AGHoyerswerda
+| AGKamenz
+| AGWeisswasser
+| AGZittau
+| AGBorna
+| AGEilenburg
+| AGGrimma
+| AGLeipzig
+| AGTorgau
+| AGAuerbach
+| AGHohensteinErnstthal
+| AGPlauen
+| AGZwickau
+| AGBitterfeldWolfen
+| AGDessauRosslau
+| AGKoethen
+| AGWittenberg
+| AGZerbst
+| AGEisleben
+| AGMerseburg
+| AGNaumburg
+| AGSangerhausen
+| AGWeissenfels
+| AGZeitz
+| AGAschersleben
+| AGBernburg
+| AGHalberstadt
+| AGHaldensleben
+| AGMagdeburg
+| AGOschersleben
+| AGQuedlinburg
+| AGSchoenebeck
+| AGWernigerode
+| AGBurg
+| AGGardelegen
+| AGSalzwedel
+| AGSteinfurt
+| AGStendal
+| AGFlensburg
+| AGHusum
+| AGNiebuell
+| AGSchleswig
+| AGElmshorn
+| AGItzehoe
+| AGMeldorf
+| AGPinneberg
+| AGBadSegeberg
+| AGEckernfoerde
+| AGKiel
+| AGNeumuenster
+| AGNorderstedt
+| AGPloen
+| AGRendsburg
+| AGAhrensburg
+| AGEutin
+| AGLuebeck
+| AGRatzeburg
+| AGReinbek
+| AGSchwarzenbek
+| AGApolda
+| AGSaalfeld
+| AGArnstadt
+| AGErfurt
+| AGGotha
+| AGSoemmerda
+| AGWeimar
+| AGAltenburg
+| AGGera
+| AGGreiz
+| AGJena
+| AGPoessneck
+| AGRudolstadt
+| AGStadtroda
+| AGBadSalzungen
+| AGEisenach
+| AGHildburghausen
+| AGIlmenau
+| AGMeiningen
+| AGSonneberg
+| AGSuhl
+| AGHeilbadHeiligenstadt
+| AGMuehlhausenThueringen
+| AGNordhausen
+| AGSondershausen
+| ArbGFreiburg
+| ArbGHeilbronn
+| ArbGKarlsruhe
+| ArbGLoerrach
+| ArbGMannheim
+| ArbGPforzheim
+| ArbGReutlingen
+| ArbGSenfenberg
+| ArbGStuttgart
+| ArbGUlm
+| ArbGAugsburg
+| ArbGKempten
+| ArbGMuenchen
+| ArbGPassau
+| ArbGRegensburg
+| ArbGRosenheim
+| ArbGBamberg
+| ArbGBayreuth
+| ArbGNuernberg
+| ArbGWeidenOberpfalz
+| ArbGWuerzburg
+| ArbGBerlin
+| ArbGBrandenburg
+| ArbGCottbus
+| ArbGEberswalde
+| ArbGFrankfurtOder
+| ArbGNeuruppin
+| ArbGPotsdam
+| ArbGBremen
+| ArbGBremenBremerhaven
+| ArbGHamburg
+| ArbGDarmstadt
+| ArbGWetzlar
+| ArbGMarburg
+| ArbGLimburg
+| ArbGBadHersfeld
+| ArbGFrankfurtMain
+| ArbGFulda
+| ArbGGiessen
+| ArbGHanau
+| ArbGKassel
+| ArbGOffenbachMain
+| ArbGWiesbaden
+| ArbGNeubrandenburg
+| ArbGRostock
+| ArbGSchwerin
+| ArbGStralsund
+| ArbGBraunschweig
+| ArbGCelle
+| ArbGEmden
+| ArbGGoettingen
+| ArbGHameln
+| ArbGHannover
+| ArbGHildesheim
+| ArbGLingen
+| ArbGLueneburg
+| ArbGNienburg
+| ArbGOldenburg
+| ArbGOsnabrueck
+| ArbGStade
+| ArbGVerden
+| ArbGWilhelmshaven
+| ArbGDuisburg
+| ArbGDuesseldorf
+| ArbGEssen
+| ArbGKrefeld
+| ArbGMoenchengladbach
+| ArbGOberhausen
+| ArbGSolingen
+| ArbGWesel
+| ArbGWuppertal
+| ArbGArnsberg
+| ArbGBielefeld
+| ArbGBocholt
+| ArbGBochum
+| ArbGDetmold
+| ArbGDortmund
+| ArbGGelsenkirchen
+| ArbGHagen
+| ArbGHalberstadt
+| ArbGHamm
+| ArbGHerford
+| ArbGHerne
+| ArbGIserlohn
+| ArbGMinden
+| ArbGMuenster
+| ArbGPaderborn
+| ArbGRheine
+| ArbGSiegen
+| ArbGAachen
+| ArbGBonn
+| ArbGKoeln
+| ArbGSiegburg
+| ArbGKaiserslautern
+| ArbGKoblenz
+| ArbGLudwigshafenRhein
+| ArbGMainz
+| ArbGTrier
+| ArbGNeunkirchen
+| ArbGNeustrelitz
+| ArbGSaarbruecken
+| ArbGSaarlouis
+| ArbGBautzen
+| ArbGChemnitz
+| ArbGDresden
+| ArbGLeipzig
+| ArbGZwickau
+| ArbGDessauRosslau
+| ArbGHalle
+| ArbGMagdeburg
+| ArbGStendal
+| ArbGElmshorn
+| ArbGFlensburg
+| ArbGKiel
+| ArbGLuebeck
+| ArbGNeumuenster
+| ArbGEisenach
+| ArbGErfurt
+| ArbGGotha
+| ArbGGera
+| ArbGJena
+| ArbGSuhl
+| ArbGNordhausen
+| AGHBadenWuerttemberg
+| AGHBayern
+| AGHBerlin
+| AGHBrandenburg
+| AGHFrankfurt
+| AGHHamburg
+| AGHHessen
+| AGHMecklenburgVorpommern
+| AGHNiedersachsen
+| AGHNordrheinWestfalen
+| AGHRheinlandPfalz
+| AGHSachsenAnhalt
+| AGHSchleswigHolstein
+| AGHThueringen
+| GStAKarlsruhe
+| GStAHamm
+| GStAKoblenz
+| GStAMuenchen
+| StABerlin
+| StABonn
+| StADuisburg
+| StADuesseldorf
+| StAFrankenthalPfalz
+| StAKoblenz
+| StAKoeln
+| StALandauinderPfalz
+| StALeipzig
+| StAMainz
+| StAMoenchengladbach
+| StAMuenchenI
+| StANuernbergFuerth
+| StAStuttgart
+| StATrier
+| StATuebingen
+| StAWuppertal
+| BezirksGCottbus
+| BezirksGDresden
+| BezirksGErfurt
+| BezirksGFrankfurtOder
+| BezirksGGera
+| BezirksGHalle
+| BezirksGKarlMarxStadt
+| BezirksGChemnitz
+| BezirksGLeipzig
+| BezirksGMagdeburg
+| BezirksGMeiningen
+| BezirksGNeubrandenburg
+| BezirksGPotsdam
+| BezirksGRostock
+| BezirksGSchwerin
+| BezirksGSuhl
+| KreisGAnnaberg
+| KreisGCottbus
+| KreisGDoebeln
+| KreisGDresden
+| KreisGEisenhuettenstadt
+| KreisGErfurt
+| KreisGFrankfurtOder
+| KreisGFreiberg
+| KreisGGrimma
+| KreisGGoerlitz
+| KreisGHalle
+| KreisGHalleStadt
+| KreisGKamenz
+| KreisGKoenigsWusterhausen
+| KreisGLoebau
+| KreisGMagdeburg
+| KreisGNeustrelitz
+| KreisGOschatz
+| KreisGPirna
+| KreisGPotsdamStadt
+| KreisGRostockLand
+| KreisGSchwerinStadt
+| KreisGSömmerda
+| KreisGSuhl
+| KreisGChemnitzStadt
+| KreisGLeipzigStadt
+| KreisGSaalfeld
+| KreisGZerbst
+| DGHBerlin
+| DGHHamm
+| DGHNiedersachsen
+| DGHStuttgart
+| TDiGNord
+| TDiGSüd
+| HandelskammerHamburg
+| ATVfGH
+| NLAGAmsterdam
+| RG
 
-		| EuropaeischerRat
-		| Europarat
-		| RatderEuropaeischenUnion
-		| DeutscherBundestag
-		| DeutscherBundesrat
-		| BMF
-		| FinMinDerLaender
-		| FinMinDerNeuenBundeslaender
-		| FinMinBadenWuerttemberg
-		| FinMinBayern
-		| FinMinBerlin
-		| FinMinBrandenburg
-		| FinMinBremen
-		| FinMinHamburg
-		| FinMinHessen
-		| FinMinMecklenburgVorpommern
-		| FinMinNiedersachsen
-		| FinMinNordrheinWestfalen
-		| FinMinRheinlandPfalz
-		| FinMinSaarland
-		| FinMinSachsenAnhalt
-		| FinMinSachsen
-		| FinMinSchleswigHolstein
-		| FinMinThueringen
-		| BKartA
-		| LKartBBadenWuerttemberg
-		| LKartBBayern
-		| LKartBBerlin
-		| LKartBBrandenburg
-		| LKartBBremen
-		| LKartBHamburg
-		| LKartBHessen
-		| LKartBMecklenburgVorpommern
-		| LKartBNiedersachsen
-		| LKartBNordrheinWestfalen
-		| LKartBRheinlandPfalz
-		| LKartBSaarland
-		| LKartBSachsen
-		| LKartBSachsenAnhalt
-		| LKartBSchleswigHolstein
-		| LKartBThueringen
-		| VergabekammerBund
-		| VergabeueberwachungsausschussBund
-		| VUEASachsenAnhalt
-		| VUEASaarland
-		| VUEAHessen
-		| VUEANiedersachsen
-		| VUEANordrheinWestfalen
-		| VUEABrandenburg
-		| VUEABayern
-		| VKArnsberg
-		| VKBerlin
-		| VKBrandenburg
-		| VKBremen
-		| VKHamburg
-		| VKMecklenburgVorpommern
-		| VKBadenWuerttemberg
-		| VKDuesseldorf
-		| VKDetmold
-		| VKKoeln
-		| VKMuenster
-		| VKNiedersachsen
-		| VKHessen
-		| VKRheinlandPfalz
-		| VKSchleswigHolstein
-		| VKSaarland
-		| VKSachsen
-		| VKSachsenAnhalt
-		| VKSuedbayern
-		| VKNordbayern
-		| VKThueringen
-		| VKWestfalen
-		| VKRheinland
-		| VOBStelleNiedersachsen
-		| VOBStelleSachsenAnhalt
-		| OFDRheinland
-		| OFDMuenster
-		| OFDNRW
-		| OFDFrankfurtMain
-		| OFDNiedersachsen
-		| OFDThueringen
-		| OFDChemnitz
-		| LSFSachsen
-		| OFDKoblenz
-		| LfStKoblenz
-		| OFDBayern
-		| OFDKarlsruhe
-		| OFDMagdeburg
-		| OFDBerlin
-		| OFDBrandenburg
-		| OFDBremen
-		| OFDHamburg
-		| OFDRostock
-		| OFDSaarbruecken
-		| OFDStuttgart
-		| OFDFreiburg
-		| OFDKiel
-		| OFDKoeln
-		| OFDDuesseldorf
-		| OFDMuenchen
-		| OFDNuernberg
-		| OFDErfurt
-		| LfStNiedersachsen
-		| OFDsMuenchenNuernberg
-		| OFDsDuesseldorfMuenster
-		| OFDsRheinlandMuenster
-		| OFDsKarlsruheStuttgart
-		| BFDMitte
-		| BFDNord
-		| BFDSuedost
-		| BFDSuedwest
-		| BFDWest
-		| BfF
-		| BZSt
-		| BMiB
-		| BMI
-		| BMJV
-		| BMWi
-		| BLK
-		| EUKommission
-		| BNetzA
-		| Bundesregierung
-		| BA
-		| IFSt
-		| Monopolkommission
+| EuropaeischerRat
+| Europarat
+| RatderEuropaeischenUnion
+| DeutscherBundestag
+| DeutscherBundesrat
+| BMF
+| FinMinDerLaender
+| FinMinDerNeuenBundeslaender
+| FinMinBadenWuerttemberg
+| FinMinBayern
+| FinMinBerlin
+| FinMinBrandenburg
+| FinMinBremen
+| FinMinHamburg
+| FinMinHessen
+| FinMinMecklenburgVorpommern
+| FinMinNiedersachsen
+| FinMinNordrheinWestfalen
+| FinMinRheinlandPfalz
+| FinMinSaarland
+| FinMinSachsenAnhalt
+| FinMinSachsen
+| FinMinSchleswigHolstein
+| FinMinThueringen
+| BKartA
+| LKartBBadenWuerttemberg
+| LKartBBayern
+| LKartBBerlin
+| LKartBBrandenburg
+| LKartBBremen
+| LKartBHamburg
+| LKartBHessen
+| LKartBMecklenburgVorpommern
+| LKartBNiedersachsen
+| LKartBNordrheinWestfalen
+| LKartBRheinlandPfalz
+| LKartBSaarland
+| LKartBSachsen
+| LKartBSachsenAnhalt
+| LKartBSchleswigHolstein
+| LKartBThueringen
+| VergabekammerBund
+| VergabeueberwachungsausschussBund
+| VUEASachsenAnhalt
+| VUEASaarland
+| VUEAHessen
+| VUEANiedersachsen
+| VUEANordrheinWestfalen
+| VUEABrandenburg
+| VUEABayern
+| VKArnsberg
+| VKBerlin
+| VKBrandenburg
+| VKBremen
+| VKHamburg
+| VKMecklenburgVorpommern
+| VKBadenWuerttemberg
+| VKDuesseldorf
+| VKDetmold
+| VKKoeln
+| VKMuenster
+| VKNiedersachsen
+| VKHessen
+| VKRheinlandPfalz
+| VKSchleswigHolstein
+| VKSaarland
+| VKSachsen
+| VKSachsenAnhalt
+| VKSuedbayern
+| VKNordbayern
+| VKThueringen
+| VKWestfalen
+| VKRheinland
+| VOBStelleNiedersachsen
+| VOBStelleSachsenAnhalt
+| OFDRheinland
+| OFDMuenster
+| OFDNRW
+| OFDFrankfurtMain
+| OFDNiedersachsen
+| OFDThueringen
+| OFDChemnitz
+| LSFSachsen
+| OFDKoblenz
+| LfStKoblenz
+| OFDBayern
+| OFDKarlsruhe
+| OFDMagdeburg
+| OFDBerlin
+| OFDBrandenburg
+| OFDBremen
+| OFDHamburg
+| OFDRostock
+| OFDSaarbruecken
+| OFDStuttgart
+| OFDFreiburg
+| OFDKiel
+| OFDKoeln
+| OFDDuesseldorf
+| OFDMuenchen
+| OFDNuernberg
+| OFDErfurt
+| LfStNiedersachsen
+| OFDsMuenchenNuernberg
+| OFDsDuesseldorfMuenster
+| OFDsRheinlandMuenster
+| OFDsKarlsruheStuttgart
+| BFDMitte
+| BFDNord
+| BFDSuedost
+| BFDSuedwest
+| BFDWest
+| BfF
+| BZSt
+| BMiB
+| BMI
+| BMJV
+| BMWi
+| BLK
+| EUKommission
+| BNetzA
+| Bundesregierung
+| BA
+| BaFin
+| IFSt
+| Monopolkommission
 
 	) #REQUIRED
 >
