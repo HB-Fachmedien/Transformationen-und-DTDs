@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register>
+<ebene1>Abfindung</ebene1>
+<ebene2>Barabfindung</ebene2>
+<ebene3>Squeeze-out<fundstelle>	92 (E), 410 (E)</fundstelle></ebene3>
+<ebene1>Abgabenordnung</ebene1>
+<ebene2>Feststellungsbescheid</ebene2>
+<ebene3>Verschmelzung<fundstelle>	337 (E)</fundstelle></ebene3>
+<ebene2>Verlustvortrag<fundstelle>	420 (E)</fundstelle></ebene2>
+<ebene1>Abschlussprüfung</ebene1>
+<ebene2>nichtfinanzielle Berichterstattung<fundstelle>	201 (A), 214 (A), 437 (A)</fundstelle></ebene2>
+<ebene1>AG</ebene1>
+<ebene2>Geschäfte börsennotierter Unternehmen</ebene2>
+<ebene3>Umsetzung der Aktionärsrechterichtlinie<fundstelle>	295 (A)</fundstelle></ebene3>
+<ebene2>Hauptversammlung</ebene2>
+<ebene3>organschaftliche Kompetenzen<fundstelle>	227 (E)</fundstelle></ebene3>
+<ebene2>Vorstandsmitglied</ebene2>
+<ebene3>Abberufung<fundstelle>	295 (A)</fundstelle></ebene3>
+<ebene1>Aktionär</ebene1>
+<ebene2>Aktionärsrechterichtlinie<fundstelle>	295 (A), 361 (E)</fundstelle></ebene2>
+<ebene2>Ausgleichszahlung</ebene2>
+<ebene3>Squeeze-out<fundstelle>	92 (E), 410 (E)</fundstelle></ebene3>
+<ebene2>Barabfindung<fundstelle>	92 (E), 410 (E)</fundstelle></ebene2>
+<ebene2>Beschlussmängelrecht</ebene2>
+<ebene3>Anfechtungsgründe<fundstelle>	273 (E)</fundstelle></ebene3>
+<ebene3>Nichtigkeit von Beschlüssen<fundstelle>	273 (E)</fundstelle></ebene3>
+<ebene2>Gleichbehandlungsgebot<fundstelle>	267 (E)</fundstelle></ebene2>
+<ebene2>Minderheitsaktionär<fundstelle>	92 (E), 140 (E), 361 (E)</fundstelle></ebene2>
+<ebene2>Spruchverfahren<fundstelle>	92 (E), 410 (E)</fundstelle></ebene2>
+<ebene2>Stimmrechtszurechnung</ebene2>
+<ebene3>abgestimmtes Verhalten<fundstelle>	140 (E)</fundstelle></ebene3>
+<ebene1>Anlagevermögen</ebene1>
+<ebene2>Teilwertabschreibung<fundstelle>	463 (E)</fundstelle></ebene2>
+<ebene1>Anteilsveräußerung</ebene1>
+<ebene2>Bewertungseinheit<fundstelle>	156 (A)</fundstelle></ebene2>
+<ebene2>Veräußerungsgewinn<fundstelle>	156 (A)</fundstelle></ebene2>
+<ebene2>Veräußerungskosten<fundstelle>	156 (A)</fundstelle></ebene2>
+<ebene2>veräußerungspreisbezogene Währungssicherungsgewinne</ebene2>
+<ebene3>Steuerbefreiung<fundstelle>	156 (A)</fundstelle></ebene3>
+<ebene1>Aufsichtsrat</ebene1>
+<ebene2>Beschlussfassung</ebene2>
+<ebene3>Nichtigkeit<fundstelle>	273 (E)</fundstelle></ebene3>
+<ebene2>Bestellung<fundstelle>	273 (E), 295 (A)</fundstelle></ebene2>
+<ebene2>Corporate Governance<fundstelle>	15 (A), 61 (A)</fundstelle></ebene2>
+<ebene2>Einsichts- und Prüfungsrecht<fundstelle>	437 (A)</fundstelle></ebene2>
+<ebene2>Haftung des Aufsichtsrats<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene2>Hauptversammlung</ebene2>
+<ebene3>Wahlvorschlag<fundstelle>	267 (E), 273 (E)</fundstelle></ebene3>
+<ebene2>Mitbestimmung</ebene2>
+<ebene3>Arbeitnehmerüberlassung<fundstelle>	405 (E)</fundstelle></ebene3>
+<ebene3>Arbeitnehmervertreter<fundstelle>	405 (E), 456 (E), 526 (E)</fundstelle></ebene3>
+<ebene3>Leiharbeitnehmer<fundstelle>	405 (E)</fundstelle></ebene3>
+<ebene2>Vergütung<fundstelle>	15 (A), 61 (A)</fundstelle></ebene2>
+<ebene2>Vertretung<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene2>Vertretungsbefugnis</ebene2>
+<ebene3>Geschäfte mit Vorstand<fundstelle>	187 (E)</fundstelle></ebene3>
+<ebene2>zu prüfende Unterlagen</ebene2>
+<ebene3>CSR-Berichte<fundstelle>	214 (A)</fundstelle></ebene3>
+<ebene2>Zusammensetzung</ebene2>
+<ebene3>SE<fundstelle>	459 (E)</fundstelle></ebene3>
+<ebene1>Aufsichtsratsmitglied</ebene1>
+<ebene2>Abberufung<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene2>Beschlussfassung<fundstelle>	273 (E)</fundstelle></ebene2>
+<ebene2>Bestellung<fundstelle>	273 (E), 295 (A)</fundstelle></ebene2>
+<ebene2>DCGK</ebene2>
+<ebene3>Wahlvorschlag<fundstelle>	267 (E)</fundstelle></ebene3>
+<ebene2>Haftung<fundstelle>	29 (E), 53 (A)</fundstelle></ebene2>
+<ebene2>Pflichtverletzung<fundstelle>	29 (E), 53 (A)</fundstelle></ebene2>
+<ebene2>Schadensersatzanspruch</ebene2>
+<ebene3>Verjährung<fundstelle>	29 (E), 53 (A)</fundstelle></ebene3>
+<ebene2>Umsatzsteuer<fundstelle>	328 (E)</fundstelle></ebene2>
+<ebene2>Vergütung<fundstelle>	15 (A), 61 (A)</fundstelle></ebene2>
+<ebene2>Vertretung<fundstelle>	273 (E), 295 (A)</fundstelle></ebene2>
+<ebene1>Außensteuerrecht</ebene1>
+<ebene2>Hinzurechnungsbesteuerung</ebene2>
+<ebene3>Feststellungsbescheid<fundstelle>	337 (E)</fundstelle></ebene3>
+<ebene1>Bank</ebene1>
+<ebene2>Bilanzanalyse<fundstelle>	70 (A)</fundstelle></ebene2>
+<ebene2>Jahresabschluss</ebene2>
+<ebene3>Prüfung<fundstelle>	70 (A), 437 (A)</fundstelle></ebene3>
+<ebene2>Kennzahlen<fundstelle>	70 (A)</fundstelle></ebene2>
+<ebene1>Beherrschungsvertrag</ebene1>
+<ebene2>Ausgleichszahlung<fundstelle>	410 (E)</fundstelle></ebene2>
+<ebene1>Beteiligung</ebene1>
+<ebene2>Minderheitsaktionär<fundstelle>	92 (E)</fundstelle></ebene2>
+<ebene1>Betriebsaufspaltung</ebene1>
+<ebene2>Einbringung</ebene2>
+<ebene3>Bedeutung des Sonderbetriebsvermögens bei Einbringung eines Mitunternehmeranteils<fundstelle>	372 (E)</fundstelle></ebene3>
+<ebene2>Verpächterwahlrecht<fundstelle>	372 (E)</fundstelle></ebene2>
+<ebene1>Bilanzanalyse</ebene1>
+<ebene2>Bank<fundstelle>	70 (A)</fundstelle></ebene2>
+<ebene2>Kennzahlen<fundstelle>	70 (A)</fundstelle></ebene2>
+<ebene1>Bilanzsteuerrecht</ebene1>
+<ebene2>Darlehen</ebene2>
+<ebene3>Verzinsungsabrede<fundstelle>	40 (E)</fundstelle></ebene3>
+<ebene2>Gesellschafterdarlehen<fundstelle>	527 (E)</fundstelle></ebene2>
+<ebene2>notwendiges Betriebsvermögen</ebene2>
+<ebene3>Kapitalbeteiligung<fundstelle>	368 (E)</fundstelle></ebene3>
+<ebene1>Cash-Pooling</ebene1>
+<ebene2>gewerbesteuerliche Hinzurechnung<fundstelle>	195 (E)</fundstelle></ebene2>
+<ebene2>Insolvenz<fundstelle>	505 (E)</fundstelle></ebene2>
+<ebene2>Insolvenzanfechtung<fundstelle>	505 (E)</fundstelle></ebene2>
+<ebene2>Teilwertabschreibung<fundstelle>	463 (E), 465 (E)</fundstelle></ebene2>
+<ebene2>Verrechnungspreise<fundstelle>	195 (E)</fundstelle></ebene2>
+<ebene1>Compliance</ebene1>
+<ebene2>Compliance Management System<fundstelle>	112 (A), 289 (A)</fundstelle></ebene2>
+<ebene2>DSGVO-Compliance</ebene2>
+<ebene3>Konzerngesellschaften<fundstelle>	289 (A)</fundstelle></ebene3>
+<ebene2>Tax Compliance Management System<fundstelle>	112 (A)</fundstelle></ebene2>
+<ebene1>Corporate Governance</ebene1>
+<ebene2>Aktionärsrechterichtlinie<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene2>DCGK</ebene2>
+<ebene3>Aufsichtsratswahl<fundstelle>	267 (E), 295 (A)</fundstelle></ebene3>
+<ebene3>Entsprechenserklärung<fundstelle>	267 (E)</fundstelle></ebene3>
+<ebene1>Darlehen</ebene1>
+<ebene2>Abzinsung<fundstelle>	40 (E)</fundstelle></ebene2>
+<ebene2>Verzinsungsabrede<fundstelle>	40 (E)</fundstelle></ebene2>
+<ebene1>Datenschutz</ebene1>
+<ebene2>DSGVO-Compliance</ebene2>
+<ebene3>Konzerngesellschaften<fundstelle>	289 (A)</fundstelle></ebene3>
+<ebene1>Deutsche Prüfstelle für Rechnungslegung</ebene1>
+<ebene2>Enforcement</ebene2>
+<ebene3>Fehlerfeststellung<fundstelle>	341 (A), 365 (E)</fundstelle></ebene3>
+<ebene1>Digitalisierung</ebene1>
+<ebene2>Digitalsteuer</ebene2>
+<ebene3>Frankreich<fundstelle>	389 (A)</fundstelle></ebene3>
+<ebene3>Online-Werbung<fundstelle>	385 (A), 389 (A)</fundstelle></ebene3>
+<ebene3>Österreich<fundstelle>	385 (A)</fundstelle></ebene3>
+<ebene2>ESEF<fundstelle>	253 (A)</fundstelle></ebene2>
+<ebene2>Künstliche Intelligenz</ebene2>
+<ebene3>Immaterielle Vermögenswerte<fundstelle>	394 (A)</fundstelle></ebene3>
+<ebene1>Einbringung</ebene1>
+<ebene2>Aufwärtsverschmelzung<fundstelle>	190 (E)</fundstelle></ebene2>
+<ebene1>Einkommensteuer</ebene1>
+<ebene2>Steuerstundungsmodell<fundstelle>	420 (E)</fundstelle></ebene2>
+<ebene1>Enforcement</ebene1>
+<ebene2>Deutsche Prüfstelle für Rechnungslegung<fundstelle>	341 (A), 365 (E)</fundstelle></ebene2>
+<ebene2>Fehlerfeststellung<fundstelle>	341 (A), 365 (E)</fundstelle></ebene2>
+<ebene1>Erbschaft-/Schenkungsteuer</ebene1>
+<ebene2>begünstigtes Betriebsvermögen</ebene2>
+<ebene3>Poolvereinbarung<fundstelle>	286 (E)</fundstelle></ebene3>
+<ebene3>Verwaltungsvermögen<fundstelle>	286 (E)</fundstelle></ebene3>
+<ebene2>Lohnsummenregelung</ebene2>
+<ebene3>Holding<fundstelle>	197 (E)</fundstelle></ebene3>
+<ebene1>Formwechsel</ebene1>
+<ebene2>formwechselnde Umwandlung</ebene2>
+<ebene3>Aufzinsung des KSt-Guthabens<fundstelle>	424 (E)</fundstelle></ebene3>
+<ebene3>Gewinnerhöhung<fundstelle>	424 (E)</fundstelle></ebene3>
+<ebene2>Gesellschafter</ebene2>
+<ebene3>Ausscheiden<fundstelle>	138 (E)</fundstelle></ebene3>
+<ebene1>Geschäftsführer</ebene1>
+<ebene2>Drittanstellung<fundstelle>	402 (E)</fundstelle></ebene2>
+<ebene2>Geschäftsführervergütung<fundstelle>	402 (E)</fundstelle></ebene2>
+<ebene1>Gesellschafter</ebene1>
+<ebene2>Formwechsel</ebene2>
+<ebene3>Ausscheiden<fundstelle>	138 (E)</fundstelle></ebene3>
+<ebene1>Gesellschafterdarlehen<fundstelle>	527 (E)</fundstelle></ebene1>
+<ebene1>Gesellschafterversammlung</ebene1>
+<ebene2>Geschäftsführer</ebene2>
+<ebene3>Drittanstellung<fundstelle>	402 (E)</fundstelle></ebene3>
+<ebene3>Geschäftsführervergütung<fundstelle>	402 (E)</fundstelle></ebene3>
+<ebene1>Gewerbebetrieb</ebene1>
+<ebene2>Steuerstundungsmodell<fundstelle>	420 (E)</fundstelle></ebene2>
+<ebene1>Gewerbesteuer</ebene1>
+<ebene2>Hinzurechnungen</ebene2>
+<ebene3>Leasingunternehmen<fundstelle>	238 (E)</fundstelle></ebene3>
+<ebene3>Miet- und Pachtzinsen<fundstelle>	238 (E)</fundstelle></ebene3>
+<ebene1>Gewerbeverlust</ebene1>
+<ebene2>Ausgliederung<fundstelle>	331 (E)</fundstelle></ebene2>
+<ebene2>Verlustübernahmeregelung<fundstelle>	331 (E)</fundstelle></ebene2>
+<ebene2>Verlustvortrag<fundstelle>	331 (E)</fundstelle></ebene2>
+<ebene1>Gewinnermittlung</ebene1>
+<ebene2>Beteiligung</ebene2>
+<ebene3>notwendiges Betriebsvermögen<fundstelle>	368 (E)</fundstelle></ebene3>
+<ebene2>Immaterielle Vermögenswerte<fundstelle>	394 (A)</fundstelle></ebene2>
+<ebene2>Veräußerungskosten</ebene2>
+<ebene3>Betriebsausgaben<fundstelle>	236 (E)</fundstelle></ebene3>
+<ebene1>GmbH</ebene1>
+<ebene2>Verschmelzung</ebene2>
+<ebene3>Differenzhaftung<fundstelle>	83 (E)</fundstelle></ebene3>
+<ebene3>Existenzvernichtungshaftung<fundstelle>	83 (E)</fundstelle></ebene3>
+<ebene1>Goodwill</ebene1>
+<ebene2>Goodwill-Bilanzierung</ebene2>
+<ebene3>International Financial Reporting Standards (IFRS)<fundstelle>	170 (A)</fundstelle></ebene3>
+<ebene1>Grunderwerbsteuer</ebene1>
+<ebene2>Änderung des Gesellschafterbestands<fundstelle>	486 (A)</fundstelle></ebene2>
+<ebene2>Anteilsvereinigung<fundstelle>	98 (E), 486 (A)</fundstelle></ebene2>
+<ebene2>Erwerbsvorgänge<fundstelle>	98 (E)</fundstelle></ebene2>
+<ebene2>Fiktiver Grundstückserwerb</ebene2>
+<ebene3>Mittelbare Anteilsvereinigung<fundstelle>	486 (A)</fundstelle></ebene3>
+<ebene2>Konzernklausel<fundstelle>	98 (E), 486 (A)</fundstelle></ebene2>
+<ebene2>RETT-Blocker-Modelle<fundstelle>	48 (V), 486 (A)</fundstelle></ebene2>
+<ebene2>Share Deals<fundstelle>	486 (A)</fundstelle></ebene2>
+<ebene2>Steuervergünstigung bei Umstrukturierung im Konzern<fundstelle>	98 (E)</fundstelle></ebene2>
+<ebene2>Verschmelzung<fundstelle>	98 (E)</fundstelle></ebene2>
+<ebene1>Handelsbilanz</ebene1>
+<ebene2>CSR-Richtlinie<fundstelle>	201 (A), 214 (A)</fundstelle></ebene2>
+<ebene1>Hauptversammlung</ebene1>
+<ebene2>Aktionär</ebene2>
+<ebene3>Einladung<fundstelle>	140 (E), 267 (E)</fundstelle></ebene3>
+<ebene2>Aktionärsrechterichtlinie<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene2>Aufsichtsratswahl<fundstelle>	267 (E), 295 (A)</fundstelle></ebene2>
+<ebene2>Einberufung<fundstelle>	267 (E)</fundstelle></ebene2>
+<ebene2>Mitteilungspflichten</ebene2>
+<ebene3>Mitteilung über Mehrheitsverhältnisse an einer AG<fundstelle>	140 (E), 459 (E)</fundstelle></ebene3>
+<ebene2>organschaftliche Kompetenzen<fundstelle>	227 (E)</fundstelle></ebene2>
+<ebene2>Versammlungsleiter</ebene2>
+<ebene3>Wahlverfahren<fundstelle>	267 (E)</fundstelle></ebene3>
+<ebene2>Vorstandsabberufung<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene1>Immaterielle Vermögenswerte</ebene1>
+<ebene2>Künstliche Intelligenz<fundstelle>	394 (A)</fundstelle></ebene2>
+<ebene1>Insolvenz</ebene1>
+<ebene2>Organschaft</ebene2>
+<ebene3>Beendigung<fundstelle>	467 (E)</fundstelle></ebene3>
+<ebene2>Verlustausgleich</ebene2>
+<ebene3>Abwicklungsbesteuerung<fundstelle>	9 (A), 43 (E)</fundstelle></ebene3>
+<ebene1>Insolvenzanfechtung</ebene1>
+<ebene2>Deckungsanfechtung</ebene2>
+<ebene3>Cash-Pooling<fundstelle>	505 (E)</fundstelle></ebene3>
+<ebene1>Internationales Steuerrecht</ebene1>
+<ebene2>BEPS<fundstelle>	245 (A)</fundstelle></ebene2>
+<ebene2>Hinzurechnungsbesteuerung</ebene2>
+<ebene3>Feststellungsbescheid<fundstelle>	337 (E)</fundstelle></ebene3>
+<ebene2>Konzern</ebene2>
+<ebene3>Einkünftekorrektur nach § 1 AStG<fundstelle>	334 (E)</fundstelle></ebene3>
+<ebene3>Fremdvergleich<fundstelle>	334 (E)</fundstelle></ebene3>
+<ebene3>Konzernrückhalt<fundstelle>	334 (E)</fundstelle></ebene3>
+<ebene3>organschaftliche Einkommenszurechnung<fundstelle>	334 (E)</fundstelle></ebene3>
+<ebene2>OECD</ebene2>
+<ebene3>Besteuerung der Digitalwirtschaft<fundstelle>	245 (A)</fundstelle></ebene3>
+<ebene3>Marketing Intangibles<fundstelle>	245 (A)</fundstelle></ebene3>
+<ebene1>International Financial Reporting Standards (IFRS)</ebene1>
+<ebene2>Rahmenkonzept<fundstelle>	170 (A)</fundstelle></ebene2>
+<ebene1>Kapitalertragsteuer</ebene1>
+<ebene2>Aktienzuteilung<fundstelle>	240 (E)</fundstelle></ebene2>
+<ebene2>Sachausschüttung<fundstelle>	240 (E)</fundstelle></ebene2>
+<ebene2>Spin-off<fundstelle>	240 (E)</fundstelle></ebene2>
+<ebene1>Kapitalmarkt</ebene1>
+<ebene2>Ad-hoc-Publizität</ebene2>
+<ebene3>Dieselskandal<fundstelle>	323 (E)</fundstelle></ebene3>
+<ebene3>Schadensersatzanspruch<fundstelle>	323 (E), 323 (E)</fundstelle></ebene3>
+<ebene2>Musterverfahren</ebene2>
+<ebene3>Sperrwirkung<fundstelle>	323 (E), 323 (E)</fundstelle></ebene3>
+<ebene1>Kartell</ebene1>
+<ebene2>Bußgeld</ebene2>
+<ebene3>Managerhaftung<fundstelle>	452 (E)</fundstelle></ebene3>
+<ebene2>Kartellverstöße</ebene2>
+<ebene3>Konzernhaftung<fundstelle>	452 (E)</fundstelle></ebene3>
+<ebene3>Organhaftung<fundstelle>	452 (E)</fundstelle></ebene3>
+<ebene1>Konzern</ebene1>
+<ebene2>Ausland<fundstelle>	89 (E)</fundstelle></ebene2>
+<ebene2>Betriebsrat<fundstelle>	89 (E), 456 (E)</fundstelle></ebene2>
+<ebene2>Bußgeld<fundstelle>	452 (E)</fundstelle></ebene2>
+<ebene2>DSGVO-Compliance<fundstelle>	289 (A)</fundstelle></ebene2>
+<ebene2>faktischer Konzern</ebene2>
+<ebene3>faktischer Aktienkonzern<fundstelle>	1 (A)</fundstelle></ebene3>
+<ebene3>Informationsfluss zwischen Mutter- und Tochterunternehmen<fundstelle>	1 (A)</fundstelle></ebene3>
+<ebene2>Konzernhaftung<fundstelle>	452 (E)</fundstelle></ebene2>
+<ebene2>Konzerninternes Darlehen<fundstelle>	463 (E)</fundstelle></ebene2>
+<ebene2>Konzernklausel<fundstelle>	145 (E)</fundstelle></ebene2>
+<ebene2>Konzernobergesellschaft<fundstelle>	227 (E)</fundstelle></ebene2>
+<ebene2>Mitbestimmungsrecht</ebene2>
+<ebene3>Schwellenwert<fundstelle>	405 (E), 456 (E)</fundstelle></ebene3>
+<ebene2>Mitteilungspflichten<fundstelle>	273 (E)</fundstelle></ebene2>
+<ebene2>Organschaft</ebene2>
+<ebene3>kommunaler Bereich<fundstelle>	220 (A)</fundstelle></ebene3>
+<ebene3>Umsatzsteuer<fundstelle>	200 (V)</fundstelle></ebene3>
+<ebene2>Rechnungslegung</ebene2>
+<ebene3>Rechnungslegungseinheit<fundstelle>	120 (A)</fundstelle></ebene3>
+<ebene2>Sonderkonzernrecht</ebene2>
+<ebene3>Haftung<fundstelle>	452 (E)</fundstelle></ebene3>
+<ebene2>Teilwertabschreibung<fundstelle>	463 (E), 465 (E)</fundstelle></ebene2>
+<ebene2>Tochtergesellschaft</ebene2>
+<ebene3>Tax Compliance Management System<fundstelle>	112 (A)</fundstelle></ebene3>
+<ebene2>Transparenzrichtlinie<fundstelle>	253 (A), 437 (A)</fundstelle></ebene2>
+<ebene1>Konzernabschluss</ebene1>
+<ebene2>befreiender Abschluss<fundstelle>	23 (A), 33 (E), 36 (E)</fundstelle></ebene2>
+<ebene2>Befreiung von der Offenlegungspflicht<fundstelle>	23 (A), 33 (E), 36 (E)</fundstelle></ebene2>
+<ebene2>Finanzberichtserstattung</ebene2>
+<ebene3>ESEF<fundstelle>	253 (A)</fundstelle></ebene3>
+<ebene2>Gewinnabführungsvertrag<fundstelle>	23 (A)</fundstelle></ebene2>
+<ebene2>Goodwill-Bilanzierung</ebene2>
+<ebene3>IFRS-Rahmenkonzept<fundstelle>	170 (A)</fundstelle></ebene3>
+<ebene2>Inhalt einer Verlustübernahmeverpflichtung<fundstelle>	23 (A), 33 (E), 36 (E), 244 (V)</fundstelle></ebene2>
+<ebene2>Konsolidierung</ebene2>
+<ebene3>Aufwandskonsolidierung<fundstelle>	23 (A)</fundstelle></ebene3>
+<ebene3>Ertragskonsolidierung<fundstelle>	23 (A), 33 (E), 36 (E)</fundstelle></ebene3>
+<ebene3>Schuldenkonsolidierung<fundstelle>	23 (A)</fundstelle></ebene3>
+<ebene2>Konzernlagebericht</ebene2>
+<ebene3>nichtfinanzielle Erklärung<fundstelle>	201 (A), 214 (A)</fundstelle></ebene3>
+<ebene2>nichtfinanzielle Berichterstattung<fundstelle>	201 (A), 214 (A)</fundstelle></ebene2>
+<ebene1>Körperschaftsteuer</ebene1>
+<ebene2>Einlagekonto</ebene2>
+<ebene3>sinngemäße Anwendung auf andere Körperschaften und Personenvereinigungen<fundstelle>	104 (V)</fundstelle></ebene3>
+<ebene2>Konzernklausel<fundstelle>	145 (E)</fundstelle></ebene2>
+<ebene2>Organschaft</ebene2>
+<ebene3>kommunaler Bereich<fundstelle>	220 (A)</fundstelle></ebene3>
+<ebene2>Sanierungsklausel<fundstelle>	101 (V)</fundstelle></ebene2>
+<ebene2>Verlustabzug</ebene2>
+<ebene3>Sanierungsklausel<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene2>Verlustvortrag</ebene2>
+<ebene3>Sanierungserlass<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene1>Lagebericht</ebene1>
+<ebene2>nichtfinanzielle Berichterstattung<fundstelle>	201 (A), 214 (A)</fundstelle></ebene2>
+<ebene1>Leasing</ebene1>
+<ebene2>gewerbesteuerliche Hinzurechnung<fundstelle>	238 (E)</fundstelle></ebene2>
+<ebene1>OHG</ebene1>
+<ebene2>Abfindung aus dem Gesellschaftsvermögen<fundstelle>	302 (A)</fundstelle></ebene2>
+<ebene2>Rechnungslegung bei Ausscheiden eines Gesellschafters<fundstelle>	302 (A)</fundstelle></ebene2>
+<ebene1>Organschaft</ebene1>
+<ebene2>Gewerbesteuer</ebene2>
+<ebene3>erweiterte Kürzung<fundstelle>	529 (E)</fundstelle></ebene3>
+<ebene2>Gewinnabführungsvertrag</ebene2>
+<ebene3>Mindestlaufzeit<fundstelle>	244 (V), 425 (E)</fundstelle></ebene3>
+<ebene3>tatsächliche Durchführung<fundstelle>	425 (E)</fundstelle></ebene3>
+<ebene3>Verlustübernahmeregelung<fundstelle>	244 (V), 425 (E)</fundstelle></ebene3>
+<ebene2>Körperschaftsteuer</ebene2>
+<ebene3>kommunaler Bereich<fundstelle>	220 (A)</fundstelle></ebene3>
+<ebene2>Organgesellschaft</ebene2>
+<ebene3>Organgesellschaftsfähigkeit<fundstelle>	356 (A), 375 (E)</fundstelle></ebene3>
+<ebene2>Organträger</ebene2>
+<ebene3>negative Einkünfte<fundstelle>	425 (E)</fundstelle></ebene3>
+<ebene2>Verlustverrechnung<fundstelle>	425 (E)</fundstelle></ebene2>
+<ebene1>Personengesellschaft</ebene1>
+<ebene2>gesellschaftsrechtliche Treuepflicht<fundstelle>	363 (E)</fundstelle></ebene2>
+<ebene1>Rahmenkonzept</ebene1>
+<ebene2>IFRS-Rahmenkonzept</ebene2>
+<ebene3>Goodwill-Bilanzierung<fundstelle>	170 (A)</fundstelle></ebene3>
+<ebene1>Rechnungslegung</ebene1>
+<ebene2>CSR-Richtlinie<fundstelle>	201 (A), 214 (A)</fundstelle></ebene2>
+<ebene2>Finanzberichtserstattung</ebene2>
+<ebene3>Berichterstattungsfrequenz<fundstelle>	253 (A)</fundstelle></ebene3>
+<ebene2>IFRS</ebene2>
+<ebene3>Rechnungslegungseinheit<fundstelle>	120 (A)</fundstelle></ebene3>
+<ebene2>öffentliche Unternehmen</ebene2>
+<ebene3>European Public Sector Accounting Standards<fundstelle>	177 (A), 446 (A)</fundstelle></ebene3>
+<ebene2>Transparenz<fundstelle>	446 (A)</fundstelle></ebene2>
+<ebene1>Sanierung</ebene1>
+<ebene2>Sanierungsgewinn</ebene2>
+<ebene3>Altfälle<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene3>EU-Beihilferecht<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene3>Steuerbefreiung<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene2>Sanierungsklausel<fundstelle>	101 (V)</fundstelle></ebene2>
+<ebene1>SE</ebene1>
+<ebene2>anzuwendendes Recht<fundstelle>	459 (E)</fundstelle></ebene2>
+<ebene1>Steuerschuldnerschaft</ebene1>
+<ebene2>Organschaft<fundstelle>	200 (V)</fundstelle></ebene2>
+<ebene1>Stille Gesellschaft</ebene1>
+<ebene2>atypisch stilles Beteiligungsverhältnis</ebene2>
+<ebene3>Organschaft<fundstelle>	356 (A), 375 (E)</fundstelle></ebene3>
+<ebene1>Umsatzsteuer</ebene1>
+<ebene2>Aufsichtsratsmitglied<fundstelle>	328 (E)</fundstelle></ebene2>
+<ebene2>Geschäftsveräußerung im Ganzen</ebene2>
+<ebene3>Beendigung der Organschaft<fundstelle>	467 (E)</fundstelle></ebene3>
+<ebene2>Organschaft</ebene2>
+<ebene3>Steuerschuldnerschaft<fundstelle>	200 (V)</fundstelle></ebene3>
+<ebene2>Vorsteuerabzug</ebene2>
+<ebene3>Änderung der Verhältnisse<fundstelle>	285 (E)</fundstelle></ebene3>
+<ebene3>Berichtigung<fundstelle>	285 (E)</fundstelle></ebene3>
+<ebene3>Betriebseinstellung<fundstelle>	285 (E)</fundstelle></ebene3>
+<ebene3>Erfolgloser Unternehmer<fundstelle>	285 (E)</fundstelle></ebene3>
+<ebene1>Umwandlung</ebene1>
+<ebene2>Formwechsel<fundstelle>	98 (E), 424 (E), 459 (E)</fundstelle></ebene2>
+<ebene1>Umwandlungssteuergesetz</ebene1>
+<ebene2>Abwärtsverschmelzung<fundstelle>	36 (E)</fundstelle></ebene2>
+<ebene2>Aufwärtsverschmelzung<fundstelle>	190 (E)</fundstelle></ebene2>
+<ebene2>ausländische Anteilseignerin<fundstelle>	459 (E)</fundstelle></ebene2>
+<ebene2>Einbringung<fundstelle>	98 (E)</fundstelle></ebene2>
+<ebene2>Schachtelstrafe<fundstelle>	36 (E)</fundstelle></ebene2>
+<ebene2>übergehende Wirtschaftsgüter<fundstelle>	36 (E)</fundstelle></ebene2>
+<ebene2>Übertragungsgewinn<fundstelle>	190 (E)</fundstelle></ebene2>
+<ebene2>Verschmelzung</ebene2>
+<ebene3>Feststellungsbescheid<fundstelle>	337 (E)</fundstelle></ebene3>
+<ebene1>Unternehmensbewertung</ebene1>
+<ebene2>IDW S 1<fundstelle>	105 (A), 149 (A)</fundstelle></ebene2>
+<ebene2>Reinvestitionsrate<fundstelle>	105 (A), 149 (A)</fundstelle></ebene2>
+<ebene2>Unternehmenswertsteigerung<fundstelle>	149 (A)</fundstelle></ebene2>
+<ebene2>Wachstumsthesaurierung<fundstelle>	105 (A), 149 (A)</fundstelle></ebene2>
+<ebene1>Unternehmenskauf</ebene1>
+<ebene2>Haftung<fundstelle>	78 (E)</fundstelle></ebene2>
+<ebene2>Kauf von GmbH-Geschäftsanteilen</ebene2>
+<ebene3>Sachmängelgewährleistungsrecht<fundstelle>	78 (E)</fundstelle></ebene3>
+<ebene1>Unternehmensnachfolge</ebene1>
+<ebene2>begünstigtes Vermögen</ebene2>
+<ebene3>Poolvereinbarung<fundstelle>	286 (E)</fundstelle></ebene3>
+<ebene1>Unternehmer</ebene1>
+<ebene2>Organschaft<fundstelle>	467 (E)</fundstelle></ebene2>
+<ebene1>Veranlagungsverfahren</ebene1>
+<ebene2>Zwischenveranlagung</ebene2>
+<ebene3>endgültige<fundstelle>	9 (A)</fundstelle></ebene3>
+<ebene3>vorläufige<fundstelle>	9 (A)</fundstelle></ebene3>
+<ebene1>Verdeckte Gewinnausschüttung</ebene1>
+<ebene2>Rückstellungen</ebene2>
+<ebene3>drohende Haftungsinanspruchnahme<fundstelle>	193 (E)</fundstelle></ebene3>
+<ebene1>Verfahrensrecht</ebene1>
+<ebene2>Verlustfeststellung<fundstelle>	420 (E)</fundstelle></ebene2>
+<ebene1>Verjährung</ebene1>
+<ebene2>Schadensersatzanspruch</ebene2>
+<ebene3>Haftung des Aufsichtsrats<fundstelle>	29 (E), 53 (A)</fundstelle></ebene3>
+<ebene1>Verluste</ebene1>
+<ebene2>endgültige Verluste<fundstelle>	324 (E), 366 (E)</fundstelle></ebene2>
+<ebene2>Konzern</ebene2>
+<ebene3>Abzug von Verlusten gebietsfremder Tochtergesellschaften<fundstelle>	324 (E), 366 (E)</fundstelle></ebene3>
+<ebene3>Gestaltungsmissbrauch<fundstelle>	366 (E)</fundstelle></ebene3>
+<ebene2>Mindestbesteuerung<fundstelle>	9 (A), 43 (E), 324 (E), 366 (E)</fundstelle></ebene2>
+<ebene2>Verlustuntergang<fundstelle>	9 (A), 43 (E), 101 (V), 324 (E), 366 (E)</fundstelle></ebene2>
+<ebene2>Verlustverrechnung<fundstelle>	9 (A), 43 (E), 101 (V), 324 (E)</fundstelle></ebene2>
+<ebene2>Verlustvortrag</ebene2>
+<ebene3>Antragserfordernis<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene3>Fortführungsbindung<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene3>schädliches Ereignis<fundstelle>	101 (V)</fundstelle></ebene3>
+<ebene1>Verrechnungspreise</ebene1>
+<ebene2>Konzernfinanzierung</ebene2>
+<ebene3>Cash-Pooling<fundstelle>	195 (E)</fundstelle></ebene3>
+<ebene3>grenzüberschreitende<fundstelle>	195 (E)</fundstelle></ebene3>
+<ebene1>Verschmelzung</ebene1>
+<ebene2>Abwärtsverschmelzung<fundstelle>	36 (E)</fundstelle></ebene2>
+<ebene2>Aufwärtsverschmelzung</ebene2>
+<ebene3>Organschaftsfälle<fundstelle>	190 (E)</fundstelle></ebene3>
+<ebene2>Differenzhaftung<fundstelle>	83 (E)</fundstelle></ebene2>
+<ebene2>Existenzvernichtungshaftung<fundstelle>	83 (E)</fundstelle></ebene2>
+<ebene2>Verschmelzungsgewinn<fundstelle>	190 (E)</fundstelle></ebene2>
+<ebene1>Vorstandsmitglied</ebene1>
+<ebene2>Abberufung<fundstelle>	295 (A)</fundstelle></ebene2>
+<ebene2>Aufsichtsrat</ebene2>
+<ebene3>Vertretungsbefugnis<fundstelle>	187 (E), 295 (A)</fundstelle></ebene3>
+<ebene2>Compliance<fundstelle>	15 (A), 61 (A)</fundstelle></ebene2>
+<ebene2>Corporate Governance<fundstelle>	15 (A), 61 (A)</fundstelle></ebene2>
+<ebene2>Haftung<fundstelle>	127 (E)</fundstelle></ebene2>
+<ebene2>Schadensersatz<fundstelle>	127 (E)</fundstelle></ebene2>
+<ebene2>Vergütung<fundstelle>	15 (A), 61 (A)</fundstelle></ebene2>
+<ebene1>Wertpapiererwerbs- und Übernahmegesetz</ebene1>
+<ebene2>Übernahmerecht</ebene2>
+<ebene3>angemessene Gegenleistung<fundstelle>	473 (A), 509 (E)</fundstelle></ebene3>
+<ebene3>Rechtsschutz<fundstelle>	473 (A), 509 (E)</fundstelle></ebene3>
+<ebene3>Verhinderungsverbot<fundstelle>	473 (A), 509 (E)</fundstelle></ebene3>
+</register>

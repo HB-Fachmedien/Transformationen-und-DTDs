@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register>
+<ebene1>Abgabenordnung</ebene1>
+<ebene2>Austausch von Informationen über Finanzkonten in Steuersachen<fundstelle>	160</fundstelle></ebene2>
+<ebene2>Buchführungsunterlagen</ebene2>
+<ebene3>Neufassung der GoBD<fundstelle>	466</fundstelle></ebene3>
+<ebene2>Kassendaten</ebene2>
+<ebene3>Ordnungsmäßigkeit<fundstelle>	262</fundstelle></ebene3>
+<ebene3>Schnittstelle für den Datenexport (DSFinV-K 2.0)<fundstelle>	420</fundstelle></ebene3>
+<ebene1>Abschlussprüfung</ebene1>
+<ebene2>Aufsichtsrat<fundstelle>	386</fundstelle></ebene2>
+<ebene2>Bestätigungsvermerk</ebene2>
+<ebene3>Angaben zu Key Audit Matters<fundstelle>	284, 386</fundstelle></ebene3>
+<ebene3>Vorgaben des IDW PS 400 n.F.<fundstelle>	386</fundstelle></ebene3>
+<ebene2>Code of Ethics<fundstelle>	468</fundstelle></ebene2>
+<ebene2>Key Audit Matters</ebene2>
+<ebene3>Auswahlprozess nach IDW PS 401<fundstelle>	386</fundstelle></ebene3>
+<ebene3>Bedeutung für den Bericht des Aufsichtsrats<fundstelle>	386</fundstelle></ebene3>
+<ebene3>empirische Studie über die KAM-Berichterstattung in den Abschlüssen der DAX-, MDAX-, SDAX- und TecDAX-Unternehmen 2017/2018<fundstelle>	284</fundstelle></ebene3>
+<ebene3>empirische Studie über die KAM-Berichterstattung in den Aufsichtsratsberichten der DAX-, MDAX-, SDAX-Unternehmen 2017<fundstelle>	386</fundstelle></ebene3>
+<ebene3>Herausforderungen für den Abschlussprüfer<fundstelle>	284</fundstelle></ebene3>
+<ebene3>inhaltliche Konsistenz<fundstelle>	284</fundstelle></ebene3>
+<ebene3>normative Anforderungen<fundstelle>	284</fundstelle></ebene3>
+<ebene3>relevante Prüfungshandlungen<fundstelle>	284</fundstelle></ebene3>
+<ebene3>wichtige Prüfungssachverhalte<fundstelle>	284</fundstelle></ebene3>
+<ebene2>nichtfinanzielle Informationen<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Nichtprüfungsleistungen des Abschlussprüfers<fundstelle>	225</fundstelle></ebene2>
+<ebene2>Prüfungsqualität</ebene2>
+<ebene3>15%-Honorarobergrenze in Bezug auf einzelne Mandanten<fundstelle>	290</fundstelle></ebene3>
+<ebene3>Cap für Nichtprüfungsleistungen<fundstelle>	290</fundstelle></ebene3>
+<ebene3>empirische Studie auf Basis der Fehlerfeststellungen deutscher börsennotierter Unternehmen 2005-2017<fundstelle>	225, 290, 343</fundstelle></ebene3>
+<ebene3>externe Rotation des Abschlussprüfers<fundstelle>	343</fundstelle></ebene3>
+<ebene3>Fehlerfeststellungen im Enforcement als Indikator<fundstelle>	225</fundstelle></ebene3>
+<ebene3>Verschärfung des Verbots von Nichtprüfungsleistungen<fundstelle>	225</fundstelle></ebene3>
+<ebene2>spezielle Finanzinformationen bei M&amp;A-Transaktionen</ebene2>
+<ebene3>Auftragsannahme<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Basis of Preparation<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Berichterstattung<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Closing Accounts<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Effective Date Financial Statements<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Prüfungsbesonderheiten<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Umfang des Prüfungsauftrags<fundstelle>	161</fundstelle></ebene3>
+<ebene3>vereinbarte Untersuchungshandlungen<fundstelle>	161</fundstelle></ebene3>
+<ebene1>Alternative Leistungsmaße</ebene1>
+<ebene2>Analystenperspektive<fundstelle>	149</fundstelle></ebene2>
+<ebene2>Controlling<fundstelle>	149</fundstelle></ebene2>
+<ebene2>ESMA-Leitlinien</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene2>Verhältnis Abschlussprüfung und alternative Leistungsmaße<fundstelle>	149</fundstelle></ebene2>
+<ebene1>Anhang</ebene1>
+<ebene2>Angaben zu Finanzinstrumenten</ebene2>
+<ebene3>Erstanwendung IFRS 9<fundstelle>	126</fundstelle></ebene3>
+<ebene3>Sensitivitätsanalysen<fundstelle>	14</fundstelle></ebene3>
+<ebene3>Zinsänderungsrisiko<fundstelle>	14</fundstelle></ebene3>
+<ebene2>Auswirkungen neuer Standards</ebene2>
+<ebene3>IFRS 16<fundstelle>	482</fundstelle></ebene3>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Angaben zu Zinssensitivitäten der DAX- und MDAX-Unternehmen 2006-2008 und 2014-2016<fundstelle>	14</fundstelle></ebene3>
+<ebene2>IFRS 7<fundstelle>	14</fundstelle></ebene2>
+<ebene2>Leasingverhältnisse</ebene2>
+<ebene3>Anhangangabe nach IFRS 16.53<fundstelle>	324</fundstelle></ebene3>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene3>Erstanwendung IFRS 16<fundstelle>	324</fundstelle></ebene3>
+<ebene3>gewichterer Abzinsungssatz<fundstelle>	324</fundstelle></ebene3>
+<ebene3>interner Zinsfuß<fundstelle>	324</fundstelle></ebene3>
+<ebene3>Konzernabschluss<fundstelle>	324</fundstelle></ebene3>
+<ebene3>Überleitung der Leasingverbindlichkeiten<fundstelle>	324</fundstelle></ebene3>
+<ebene3>Umstellungseffekte vor der Erstanwendung<fundstelle>	324</fundstelle></ebene3>
+<ebene3>Zwischenberichterstattung<fundstelle>	324</fundstelle></ebene3>
+<ebene2>Umsatzerlöse</ebene2>
+<ebene3>Auswirkungen der Erstanwendung des IFRS 15<fundstelle>	73</fundstelle></ebene3>
+<ebene1>Annual Improvements</ebene1>
+<ebene2>Zyklus 2015-2017<fundstelle>	1, 42</fundstelle></ebene2>
+<ebene2>Zyklus 2018-2020<fundstelle>	313</fundstelle></ebene2>
+<ebene1>Anschaffungskosten</ebene1>
+<ebene2>Accumulated-Cost-Methode<fundstelle>	565</fundstelle></ebene2>
+<ebene2>Fair Value as Deemed Cost<fundstelle>	565</fundstelle></ebene2>
+<ebene2>sukzessiver Erwerb eines Tochterunternehmens<fundstelle>	565</fundstelle></ebene2>
+<ebene1>Assoziiertes Unternehmen</ebene1>
+<ebene2>Abbildung der Nettoinvestition beim Mutterunternehmen<fundstelle>	349</fundstelle></ebene2>
+<ebene2>Equity-Bewertung<fundstelle>	349</fundstelle></ebene2>
+<ebene2>gegenseitige Beteiligung<fundstelle>	349</fundstelle></ebene2>
+<ebene2>IAS 28<fundstelle>	1, 349</fundstelle></ebene2>
+<ebene2>langfristige Investments<fundstelle>	349</fundstelle></ebene2>
+<ebene2>langfristig gehaltene Anteile<fundstelle>	1, 349</fundstelle></ebene2>
+<ebene2>Verlusterfassung<fundstelle>	349</fundstelle></ebene2>
+<ebene1>Aufsichtsrat</ebene1>
+<ebene2>Abschlussprüfung<fundstelle>	386</fundstelle></ebene2>
+<ebene2>Berichterstattung</ebene2>
+<ebene3>Bedeutung der Key Audit Matters<fundstelle>	386</fundstelle></ebene3>
+<ebene1>BFH</ebene1>
+<ebene2>Beschluss vom 10.07.2019 - XI R 47/17<fundstelle>	520</fundstelle></ebene2>
+<ebene2>Beschluss vom 13.02.2019 - XI R 34/16<fundstelle>	363</fundstelle></ebene2>
+<ebene2>Beschluss vom 16.01.2019 - I R 72/16<fundstelle>	261</fundstelle></ebene2>
+<ebene2>Urteil vom 07.03.2019 - IV R 18/17<fundstelle>	312</fundstelle></ebene2>
+<ebene2>Urteil vom 08.11.2018 - III R 13/16<fundstelle>	312</fundstelle></ebene2>
+<ebene2>Urteil vom 10.04.2019 - I R 15/16<fundstelle>	465</fundstelle></ebene2>
+<ebene2>Urteil vom 10.07.2019 - XI R 53/17<fundstelle>	574</fundstelle></ebene2>
+<ebene2>Urteil vom 11.04.2018 - I R 34/15<fundstelle>	159</fundstelle></ebene2>
+<ebene2>Urteil vom 11.04.2019 - IV R 1/17<fundstelle>	418</fundstelle></ebene2>
+<ebene2>Urteil vom 12.06.2019 - X R 38/17<fundstelle>	418</fundstelle></ebene2>
+<ebene2>Urteil vom 13.02.2019 - XI R 41/17<fundstelle>	363</fundstelle></ebene2>
+<ebene2>Urteil vom 13.02.2019 - XI R 42/17<fundstelle>	418</fundstelle></ebene2>
+<ebene2>Urteil vom 13.09.2018 - I R 19/16<fundstelle>	159</fundstelle></ebene2>
+<ebene2>Urteil vom 14.11.2018 - I R 81/16<fundstelle>	260</fundstelle></ebene2>
+<ebene2>Urteil vom 17.01.2019 - III R 35/17<fundstelle>	418</fundstelle></ebene2>
+<ebene2>Urteil vom 17.06.2019 - IV R 19/16<fundstelle>	465</fundstelle></ebene2>
+<ebene2>Urteil vom 19.07.2018 - IV R 14/16<fundstelle>	109</fundstelle></ebene2>
+<ebene2>Urteil vom 20.07.2018 - IX R 5/15<fundstelle>	109</fundstelle></ebene2>
+<ebene2>Urteil vom 20.09.2018 - IV R 6/16<fundstelle>	109</fundstelle></ebene2>
+<ebene2>Urteil vom 22.05.2019 - X R 19/17<fundstelle>	465, 574</fundstelle></ebene2>
+<ebene2>Urteil vom 22.11.2018 - VI R 50/16<fundstelle>	260</fundstelle></ebene2>
+<ebene2>Urteil vom 24.10.2018 - I R 78/16<fundstelle>	261</fundstelle></ebene2>
+<ebene2>Urteil vom 25.10.2018 - IV R 35/16<fundstelle>	212</fundstelle></ebene2>
+<ebene2>Urteil vom 26.09.2018 - I R 16/16<fundstelle>	261</fundstelle></ebene2>
+<ebene2>Urteil vom 27.02.2019 - I R 51/17<fundstelle>	575</fundstelle></ebene2>
+<ebene2>Urteil vom 27.02.2019 - I R 73/16<fundstelle>	311</fundstelle></ebene2>
+<ebene2>Urteil vom 30.05.2018 - I R 31/16<fundstelle>	51</fundstelle></ebene2>
+<ebene2>Urteil vom 31.07.2018 - VIII R 6/15<fundstelle>	159</fundstelle></ebene2>
+<ebene1>BGH</ebene1>
+<ebene2>Urteil vom 11.07.2019 - IX ZR 210/18<fundstelle>	465</fundstelle></ebene2>
+<ebene2>Urteil vom 16.07.2019 - II ZR 175/18<fundstelle>	519</fundstelle></ebene2>
+<ebene1>Bilanzierungsfehler</ebene1>
+<ebene2>Änderungen der Bilanzierungsmethode</ebene2>
+<ebene3>Auswirkungen von IFRS IC-Agendaentscheidungen<fundstelle>	137</fundstelle></ebene3>
+<ebene2>ED/2018/1</ebene2>
+<ebene3>Auswertung der Comment Letter<fundstelle>	137</fundstelle></ebene3>
+<ebene2>IAS 8<fundstelle>	268</fundstelle></ebene2>
+<ebene2>Wesentlichkeitsdefinition<fundstelle>	268</fundstelle></ebene2>
+<ebene1>Bilanzpolitik</ebene1>
+<ebene2>Ergebnisqualität</ebene2>
+<ebene3>Abschlussprüfer<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Einflussfaktoren<fundstelle>	113</fundstelle></ebene3>
+<ebene3>empirische Studie über die Ergebnisqualität deutscher kapitalmarktorientierter Unternehmen 2005-2016<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Profitabilität<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Unternehmensgröße<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Unternehmenswachstum<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Verschuldungsgrad<fundstelle>	113</fundstelle></ebene3>
+<ebene1>Bilanzsteuerrecht</ebene1>
+<ebene2>Anschaffungsnebenkosten</ebene2>
+<ebene3>Optionsprämien von Aktien<fundstelle>	465</fundstelle></ebene3>
+<ebene2>Aufbewahrungskosten von Mandantendaten im DATEV-Rechenzentrum<fundstelle>	418</fundstelle></ebene2>
+<ebene2>Darlehen</ebene2>
+<ebene3>Filmförderdarlehen<fundstelle>	574</fundstelle></ebene3>
+<ebene2>Einlage</ebene2>
+<ebene3>Nachholung einer im Vorjahr unterlassenen Einlage<fundstelle>	465</fundstelle></ebene3>
+<ebene2>festverzinsliche Kapitalanlage</ebene2>
+<ebene3>Agio/Disagio<fundstelle>	212</fundstelle></ebene3>
+<ebene2>Genussrechtskapital</ebene2>
+<ebene3>Bilanzansatz<fundstelle>	52</fundstelle></ebene3>
+<ebene2>Gesellschafterdarlehen</ebene2>
+<ebene3>Rangrücktritt<fundstelle>	52</fundstelle></ebene3>
+<ebene2>Kreditinstitut</ebene2>
+<ebene3>Ausweis von Spareinlagen der Kunden<fundstelle>	312</fundstelle></ebene3>
+<ebene2>Pensionsrückstellungen</ebene2>
+<ebene3>Abfindungsklausel und Eindeutigkeitsgebot<fundstelle>	520</fundstelle></ebene3>
+<ebene3>Berücksichtigung neuer Heubeck-Richttafeln<fundstelle>	363</fundstelle></ebene3>
+<ebene2>Pfandgelder<fundstelle>	212</fundstelle></ebene2>
+<ebene2>Rücklage nach § 6b EStG</ebene2>
+<ebene3>Übertragung<fundstelle>	260</fundstelle></ebene3>
+<ebene2>Unternehmenszusammenschluss</ebene2>
+<ebene3>Berücksichtigung erworbener Marken<fundstelle>	61</fundstelle></ebene3>
+<ebene2>Verbindlichkeiten</ebene2>
+<ebene3>rückwirkend verzinste<fundstelle>	574</fundstelle></ebene3>
+<ebene3>unverzinsliche<fundstelle>	363</fundstelle></ebene3>
+<ebene1>BMF</ebene1>
+<ebene2>Schreiben vom 02.07.2019 - IV C 6 - S 2133-b/19/10001 [2019/0523916]<fundstelle>	467</fundstelle></ebene2>
+<ebene2>Schreiben vom 03.04.2019 - IV C 2 - S 2770/08/10004:001<fundstelle>	312</fundstelle></ebene2>
+<ebene2>Schreiben vom 05.04.2019 - IV C 6 - S 2244/17/10001<fundstelle>	419</fundstelle></ebene2>
+<ebene2>Schreiben vom 11.07.2019 - IV A 4 - S 0316/19/10003:001<fundstelle>	466</fundstelle></ebene2>
+<ebene2>Schreiben vom 21.02.2019 - IV C 6 - S 2133/13/10002<fundstelle>	212</fundstelle></ebene2>
+<ebene2>Schreiben vom 27.12.2018 - IV C 6 - S 2242/07/10004<fundstelle>	110</fundstelle></ebene2>
+<ebene2>Schreiben vom 29.01.2019 - IV B 6 - S 1315/13/10021:052<fundstelle>	160</fundstelle></ebene2>
+<ebene1>Brexit</ebene1>
+<ebene2>Angabepflichten</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene1>Controlling</ebene1>
+<ebene2>alternative Leistungsmaße<fundstelle>	149</fundstelle></ebene2>
+<ebene2>Digitalisierung<fundstelle>	408</fundstelle></ebene2>
+<ebene2>ERP-System</ebene2>
+<ebene3>Aufgaben<fundstelle>	550</fundstelle></ebene3>
+<ebene3>Funktionen<fundstelle>	550</fundstelle></ebene3>
+<ebene3>kalkulatorische und buchhalterische Ergebnisrechnung in SAP ERP 2005<fundstelle>	550</fundstelle></ebene3>
+<ebene3>SAP HANA<fundstelle>	550</fundstelle></ebene3>
+<ebene2>Konvergenz internes und externes Rechnungswesen</ebene2>
+<ebene3>Einfluss des ERP-Systems<fundstelle>	550</fundstelle></ebene3>
+<ebene1>Corporate Governance</ebene1>
+<ebene2>Deutscher Corporate Governance Kodex</ebene2>
+<ebene3>Änderungsentwurf<fundstelle>	52</fundstelle></ebene3>
+<ebene3>Kodexreform 2019<fundstelle>	364</fundstelle></ebene3>
+<ebene2>Erklärung zur Unternehmensführung<fundstelle>	42</fundstelle></ebene2>
+<ebene2>Unternehmensführung<fundstelle>	149</fundstelle></ebene2>
+<ebene2>Vergütungsbericht<fundstelle>	42, 565</fundstelle></ebene2>
+<ebene1>Country-by-Country-Reporting</ebene1>
+<ebene2>steuerliches</ebene2>
+<ebene3>XML-Schema<fundstelle>	467</fundstelle></ebene3>
+<ebene1>Darstellung des Abschlusses</ebene1>
+<ebene2>IAS 1<fundstelle>	268</fundstelle></ebene2>
+<ebene2>Wesentlichkeitsdefinition</ebene2>
+<ebene3>Auslassung der Nennung von Informationen<fundstelle>	268</fundstelle></ebene3>
+<ebene3>fehlerhafte Darstellung von Informationen<fundstelle>	268</fundstelle></ebene3>
+<ebene3>Informationsbedürfnisse der Adressaten<fundstelle>	268</fundstelle></ebene3>
+<ebene3>Konzeption<fundstelle>	268</fundstelle></ebene3>
+<ebene3>primäre Adressaten von IFRS-Abschlüssen<fundstelle>	268</fundstelle></ebene3>
+<ebene3>Prozessmodell zur Wesentlichkeitseinschätzung<fundstelle>	268</fundstelle></ebene3>
+<ebene3>unternehmensindividuelle Umstände<fundstelle>	268</fundstelle></ebene3>
+<ebene3>Verschleierung von Informationen<fundstelle>	268</fundstelle></ebene3>
+<ebene3>Wesentlichkeitsbezug<fundstelle>	268</fundstelle></ebene3>
+<ebene3>Wesentlichkeitsschwelle<fundstelle>	268</fundstelle></ebene3>
+<ebene1>Deutsche Prüfstelle für Rechnungslegung</ebene1>
+<ebene2>Prüfungsschwerpunkte 2019<fundstelle>	51, 53</fundstelle></ebene2>
+<ebene2>Prüfungsschwerpunkte</ebene2>
+<ebene3>Abschlüsse 2019<fundstelle>	574</fundstelle></ebene3>
+<ebene2>Tätigkeitsbericht<fundstelle>	158</fundstelle></ebene2>
+<ebene1>Deutsches Rechnungslegungs Standards Committee (DRSC)</ebene1>
+<ebene2>Fachausschusssitzungen</ebene2>
+<ebene3>44. HGB-FA-Sitzung<fundstelle>	464</fundstelle></ebene3>
+<ebene3>71. IFRS-FA-Sitzung<fundstelle>	108</fundstelle></ebene3>
+<ebene3>74. IFRS-FA-Sitzung<fundstelle>	311</fundstelle></ebene3>
+<ebene3>77. IFRS-FA-Sitzung<fundstelle>	464</fundstelle></ebene3>
+<ebene3>78. IFRS-FA-Sitzung<fundstelle>	573</fundstelle></ebene3>
+<ebene2>Standardentwürfe</ebene2>
+<ebene3>E-DRÄS 10 "Änderungen an DRS 25, DRS 16, DRS 19 und DRS 23"<fundstelle>	417</fundstelle></ebene3>
+<ebene3>E-DRÄS 9 "Änderungen an DRS 17 und DRS 20 aufgrund des ARUG II"<fundstelle>	417</fundstelle></ebene3>
+<ebene2>Standards</ebene2>
+<ebene3>DRÄS 10 "Änderungen an diversen DRS"<fundstelle>	573</fundstelle></ebene3>
+<ebene2>Stellungnahmen</ebene2>
+<ebene3>ARUG II Referentenentwurf<fundstelle>	51</fundstelle></ebene3>
+<ebene3>DP/2018/1 "Finanzinstrumente mit Eigenschaften von Eigenkapital"<fundstelle>	108</fundstelle></ebene3>
+<ebene3>ED/2018/2 "Bealstende Verträge - Kosten für die Erfülung eines Vertrags (Vorgeschlagene Änderungen an IAS 37)<fundstelle>	259</fundstelle></ebene3>
+<ebene3>ED/2019/1 "Interest Rate Benchmark Reform (Vorgeschlagene Änderungen an IFRS 9 und IAS 39)"<fundstelle>	363</fundstelle></ebene3>
+<ebene3>ED/2019/3 "Verweis auf das Rahmenkonzept (Vorgeschlagene Änderungen an IFRS 3)"<fundstelle>	519</fundstelle></ebene3>
+<ebene3>ED/2019/4 "Änderungen an IFRS 17"<fundstelle>	463</fundstelle></ebene3>
+<ebene3>EFRAG-DP "Non-Exchange Transfers"<fundstelle>	211</fundstelle></ebene3>
+<ebene3>EU-Leitlinien zur nichtfinanziellen Berichterstattung<fundstelle>	211</fundstelle></ebene3>
+<ebene3>IFRS IC-Agenda-Entscheidung zu IAS 19<fundstelle>	363</fundstelle></ebene3>
+<ebene3>IFRS IC-Agenda-Entscheidung zu Kryptowährungen<fundstelle>	363</fundstelle></ebene3>
+<ebene2>Verlautbarungen</ebene2>
+<ebene3>Quartalsbericht Q4/2018<fundstelle>	108</fundstelle></ebene3>
+<ebene1>Digitalisierung</ebene1>
+<ebene2>Analyse potenzieller Vertragsabschlüsse<fundstelle>	145</fundstelle></ebene2>
+<ebene2>Auswirkungen auf die Unternehmensführung<fundstelle>	149</fundstelle></ebene2>
+<ebene2>Big-Data-Management<fundstelle>	453</fundstelle></ebene2>
+<ebene2>Business Analytics<fundstelle>	453</fundstelle></ebene2>
+<ebene2>CFO-Bereich<fundstelle>	265, 453</fundstelle></ebene2>
+<ebene2>Cloud Computing Arrangements</ebene2>
+<ebene3>Aktivierung von SaaS-Kosten nach IFRS und HGB<fundstelle>	469</fundstelle></ebene3>
+<ebene3>Kosten der Softwareprogrammierung und -einrichtung<fundstelle>	469</fundstelle></ebene3>
+<ebene3>Kosten für die Schnittstellenprogrammierung und -einrichtung<fundstelle>	469</fundstelle></ebene3>
+<ebene2>Controlling<fundstelle>	265, 408</fundstelle></ebene2>
+<ebene2>Finanzfunktion<fundstelle>	145, 149, 420</fundstelle></ebene2>
+<ebene2>Fortbildung der Mitarbeiter<fundstelle>	145</fundstelle></ebene2>
+<ebene2>Geschäftsberichterstattung</ebene2>
+<ebene3>Möglichkeiten<fundstelle>	156</fundstelle></ebene3>
+<ebene3>Nutzung von Online-Geschäftsberichten im Jahresverlauf<fundstelle>	156</fundstelle></ebene3>
+<ebene2>künstliche Intelligenz<fundstelle>	453</fundstelle></ebene2>
+<ebene2>Machine Learning<fundstelle>	453</fundstelle></ebene2>
+<ebene2>Prozessautomatisierung<fundstelle>	453</fundstelle></ebene2>
+<ebene2>Rechnungswesen</ebene2>
+<ebene3>Fallbeispiele<fundstelle>	145</fundstelle></ebene3>
+<ebene2>Reporting</ebene2>
+<ebene3>Self-Service-Reporting<fundstelle>	265</fundstelle></ebene3>
+<ebene3>Standardisierung<fundstelle>	265</fundstelle></ebene3>
+<ebene1>E-Bilanz</ebene1>
+<ebene2>Taxonomie</ebene2>
+<ebene3>Version 6.3<fundstelle>	467</fundstelle></ebene3>
+<ebene1>Einkommensteuer</ebene1>
+<ebene2>betriebliches Kraftfahrzeug</ebene2>
+<ebene3>Listenpreis<fundstelle>	312</fundstelle></ebene3>
+<ebene3>Privatnutzung eines Taxis<fundstelle>	312</fundstelle></ebene3>
+<ebene2>Betriebsausgaben</ebene2>
+<ebene3>Veräußerungskosten i.S.d. § 16 Abs. 2 EStG<fundstelle>	312</fundstelle></ebene3>
+<ebene2>Betriebsvermögen</ebene2>
+<ebene3>Beteiligung an KapGes.<fundstelle>	418</fundstelle></ebene3>
+<ebene2>Einkünfte</ebene2>
+<ebene3>gewerbliche Tätigkeit einer Wohneigentümergemeinschaft<fundstelle>	109</fundstelle></ebene3>
+<ebene2>Gewinnermittlung</ebene2>
+<ebene3>Betriebsausgabenabzug bei betrieblicher Altersversorgung<fundstelle>	159</fundstelle></ebene3>
+<ebene3>Betriebsausgabenabzug bei Geschenken<fundstelle>	262</fundstelle></ebene3>
+<ebene3>ertragsteuerliche Behandlung einer Erengemeinschaft und ihrer Auseinandersetzung<fundstelle>	110</fundstelle></ebene3>
+<ebene3>nachträgliche Anschaffungskosten gem. § 17 EStG<fundstelle>	109, 419</fundstelle></ebene3>
+<ebene3>nichtabzugsfähige Schuldzinsen<fundstelle>	261</fundstelle></ebene3>
+<ebene3>Teilwertabschreibung auf Anteile an eingestellten offenen Investmentfonds<fundstelle>	363</fundstelle></ebene3>
+<ebene3>Teilwert als AfA-Bemessungsgrundlage<fundstelle>	212</fundstelle></ebene3>
+<ebene2>Steuerliches Einlagenkonto</ebene2>
+<ebene3>Zuordnung von Leistungen aus dem steuerlichen Einlagekonto<fundstelle>	575</fundstelle></ebene3>
+<ebene1>Energieversorgungsunternehmen</ebene1>
+<ebene2>IFRS 9</ebene2>
+<ebene3>Eigenbedarfsausnahme<fundstelle>	194</fundstelle></ebene3>
+<ebene2>Warentermingeschäfte</ebene2>
+<ebene3>Future-Stromkontrakte<fundstelle>	194</fundstelle></ebene3>
+<ebene1>Enforcement</ebene1>
+<ebene2>bilanzieller Fehlerbegriff<fundstelle>	465</fundstelle></ebene2>
+<ebene2>Deutschland</ebene2>
+<ebene3>Bundesanstalt für Finanzdienstleistungsaufsicht<fundstelle>	465</fundstelle></ebene3>
+<ebene3>Deutsche Prüfstelle für Rechnungslegung<fundstelle>	465</fundstelle></ebene3>
+<ebene2>Erkenntnisse aus den Enforcementprüfungen</ebene2>
+<ebene3>Prüfungssaison 2019<fundstelle>	506</fundstelle></ebene3>
+<ebene2>Fehlerfeststellung</ebene2>
+<ebene3>Auslegungskompetenz der BaFin<fundstelle>	465</fundstelle></ebene3>
+<ebene3>Voraussetzungen<fundstelle>	465</fundstelle></ebene3>
+<ebene2>Prüfungsschwerpunkte 2019<fundstelle>	53</fundstelle></ebene2>
+<ebene1>Ertragsteuern</ebene1>
+<ebene2>IFRIC 23<fundstelle>	1, 565</fundstelle></ebene2>
+<ebene2>Steuerrisiken<fundstelle>	1, 565</fundstelle></ebene2>
+<ebene1>Europäisches Einheitliches Elektronisches Berichtsformat (ESEF)</ebene1>
+<ebene2>Delegierte Verordnung zur ESEF-Umsetzung<fundstelle>	521</fundstelle></ebene2>
+<ebene2>Einführungsprojekt</ebene2>
+<ebene3>beispielhafter Projektablauf<fundstelle>	521</fundstelle></ebene3>
+<ebene2>technische Grundlagen</ebene2>
+<ebene3>iXBRL-Format<fundstelle>	257, 521</fundstelle></ebene3>
+<ebene3>XHTML<fundstelle>	257, 521</fundstelle></ebene3>
+<ebene2>Überblick<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Umsetzung im Unternehmen<fundstelle>	257</fundstelle></ebene2>
+<ebene2>Umsetzung in Deutschland</ebene2>
+<ebene3>Änderungen außerhalb des HGB<fundstelle>	521</fundstelle></ebene3>
+<ebene3>Änderungen im HGB<fundstelle>	521</fundstelle></ebene3>
+<ebene3>Referentenentwurf<fundstelle>	521</fundstelle></ebene3>
+<ebene1>Europäische Union</ebene1>
+<ebene2>Aktionsplan Sustainable Finance<fundstelle>	354</fundstelle></ebene2>
+<ebene2>Beiheilferecht</ebene2>
+<ebene3>steuerliche Abschreibung des Goodwill in Spanien<fundstelle>	111</fundstelle></ebene3>
+<ebene2>Endorsement</ebene2>
+<ebene3>Änderungen an IAS 19 "Planänderung, -kürzung oder -abgeltung"<fundstelle>	211</fundstelle></ebene3>
+<ebene3>Änderungen an IAS 28 "Langfristige Beteiligungen an assoziierten Unternehmen und Joint Ventures"<fundstelle>	158</fundstelle></ebene3>
+<ebene3>Annual Improvements - Zyklus 2015-2017<fundstelle>	211</fundstelle></ebene3>
+<ebene2>EU-Parlament</ebene2>
+<ebene3>Forderung nach Pflichtrotation für Abschlussprüfer<fundstelle>	263</fundstelle></ebene3>
+<ebene2>Europäische Bankenaufsichtsbehörde (EBA)</ebene2>
+<ebene3>Studie zu den Auswirkungen des IFRS 9<fundstelle>	108</fundstelle></ebene3>
+<ebene2>Europäische Wertpapier und Kapitalmarktaufsichtsbehörde (ESMA)</ebene2>
+<ebene3>Bericht über die Aktivitäten und Erkenntnisse der EU-Aufsichten im Bereich Rechnungslegung<fundstelle>	259</fundstelle></ebene3>
+<ebene3>Durchsetzungsentscheidungen europäischer Enforcementstellen<fundstelle>	417</fundstelle></ebene3>
+<ebene3>Entwurf zur Anpassung von ESEF an den aktuellen Stand der IFRS<fundstelle>	362</fundstelle></ebene3>
+<ebene3>Feedback Statement zur Konsultation über Kurzfristigkeit auf den Finanzmärkten<fundstelle>	463</fundstelle></ebene3>
+<ebene3>Prüfungsschwerpunkte 2019<fundstelle>	53</fundstelle></ebene3>
+<ebene3>Prüfungsschwerpunkte 2020<fundstelle>	573</fundstelle></ebene3>
+<ebene2>klimabezogene Berichterstattung</ebene2>
+<ebene3>Einrichtung einer Technischen Expertengruppe<fundstelle>	160</fundstelle></ebene3>
+<ebene2>Konsultationen</ebene2>
+<ebene3>Fitness Check zur Überprüfung der Rechnungslegungsnormen<fundstelle>	506</fundstelle></ebene3>
+<ebene3>klimabezogene Berichterstattung<fundstelle>	212</fundstelle></ebene3>
+<ebene2>Richtlinien</ebene2>
+<ebene3>Transparenzrichtlinie-Änderungsrichtlinie<fundstelle>	521</fundstelle></ebene3>
+<ebene2>Verlautbarungen der EU-Kommission</ebene2>
+<ebene3>Leitlinien zur Berichterstattung über klimabezogene Informationen<fundstelle>	417</fundstelle></ebene3>
+<ebene2>Verordnungen</ebene2>
+<ebene3>Delegierte Verordnung zur ESEF-Umsetzung<fundstelle>	107, 362, 521</fundstelle></ebene3>
+<ebene1>European Financial Reporting Advisory Group (EFRAG)</ebene1>
+<ebene2>Diskussionspapiere</ebene2>
+<ebene3>Pensionspläne mit Vermögensertragszusage<fundstelle>	362</fundstelle></ebene3>
+<ebene3>Übertragungen ohne direkte Gegenleistung<fundstelle>	50, 310</fundstelle></ebene3>
+<ebene2>Feedback Statements</ebene2>
+<ebene3>DP/2018/1 "Finanzinstrumente mit Eigenschaften von Eigenkapital"<fundstelle>	210</fundstelle></ebene3>
+<ebene3>EFRAG-DP "Non-Exchange Transfers"<fundstelle>	417</fundstelle></ebene3>
+<ebene2>Jahresbericht<fundstelle>	310</fundstelle></ebene2>
+<ebene2>Konsultationen</ebene2>
+<ebene3>Bewertung von Eigenkapitalinstrumenten<fundstelle>	310</fundstelle></ebene3>
+<ebene3>Hedge Accounting und IFRS 17<fundstelle>	361</fundstelle></ebene3>
+<ebene3>Kryptovermögenswerte<fundstelle>	463</fundstelle></ebene3>
+<ebene2>neues Personal</ebene2>
+<ebene3>fachliche Direktorin<fundstelle>	311</fundstelle></ebene3>
+<ebene2>Stellungnahmeentwürfe</ebene2>
+<ebene3>ED/2019/1 "Interest Rate Benchmark Reform (Vorgeschlagene Änderungen an IFRS 9 und IAS 39)"<fundstelle>	362</fundstelle></ebene3>
+<ebene3>ED/2019/2 "Annual Improvements - Zyklus 2018-2020"<fundstelle>	362</fundstelle></ebene3>
+<ebene3>ED/2019/5 "Latente Steuern, die sich auf Vermögenswerte und Schulden beziehen, die aus einer einzigen Transaktion entstehen (Vorgeschlagene Änderungen an IAS 12)"<fundstelle>	463</fundstelle></ebene3>
+<ebene3>ED/2019/6 "Angabe von Bilanzierungs- und Bewertungsmethoden (Vogreschlagene Änderungen an IAS 1 und IFRS Practice Statement 2)"<fundstelle>	518</fundstelle></ebene3>
+<ebene3>Entwurf für "Vorgeschlagene Änderungen am Handbuch für den Konsultationsprozess der IFRS-Stiftung"<fundstelle>	361</fundstelle></ebene3>
+<ebene2>Stellungnahmen</ebene2>
+<ebene3>DP/2018/1 "Finanzinstrumente mit Eigenschaften von Eigenkapital"<fundstelle>	158</fundstelle></ebene3>
+<ebene3>ED/2019/1 "Interest Rate Benchmark Reform (Vorgeschlagene Änderungen an IFRS 9 und IAS 39)"<fundstelle>	416</fundstelle></ebene3>
+<ebene3>ED/2019/2 "Annual Improvements - Zyklus 2018-2020"<fundstelle>	416</fundstelle></ebene3>
+<ebene3>ED/2019/3 "Verweis auf das Rahmenkonzept (Vorgeschlagene Änderungen an IFRS 3)"<fundstelle>	518</fundstelle></ebene3>
+<ebene3>ED/2019/5 "Latente Steuern, die sich auf Vermögenswerte und Schulden beziehen, die aus einer einzigen Transaktion entstehen (Vorgeschlagene Änderungen an IAS 12)"<fundstelle>	573</fundstelle></ebene3>
+<ebene2>Technical Experts Group</ebene2>
+<ebene3>neue Mitglieder<fundstelle>	463</fundstelle></ebene3>
+<ebene2>Übernahmeempfehlungen</ebene2>
+<ebene3>Änderungen an IAS 1 und IAS 8 "Definition von wesentlich"<fundstelle>	210</fundstelle></ebene3>
+<ebene3>Änderungen an IAS 39 und IFRS 9 "Interest Rate Benchmark Reform - Phase 1"<fundstelle>	519</fundstelle></ebene3>
+<ebene2>Übernahmeempfehlungsentwürfe</ebene2>
+<ebene3>Änderungen an IAS 1 und IAS 8 "Definition von wesentlich"<fundstelle>	50</fundstelle></ebene3>
+<ebene3>Änderungen an IFRS 3 "Definition eines Geschäftsbetriebs"<fundstelle>	107</fundstelle></ebene3>
+<ebene2>Verlautbarungen</ebene2>
+<ebene3>Arbeitspapier zu DP/2018/1<fundstelle>	210</fundstelle></ebene3>
+<ebene3>Bericht über Auswirkungen von IFRS 9 auf langfristige Investitionen<fundstelle>	50</fundstelle></ebene3>
+<ebene1>Fair Value</ebene1>
+<ebene2>IFRS 13<fundstelle>	424</fundstelle></ebene2>
+<ebene2>Immobilien<fundstelle>	424</fundstelle></ebene2>
+<ebene1>Finanzgerichte</ebene1>
+<ebene2>FG Köln</ebene2>
+<ebene3>Urteil vom 12.12.2018 - 12 K 2317/16<fundstelle>	261</fundstelle></ebene3>
+<ebene2>FG Münster</ebene2>
+<ebene3>Urteil vom 13.09.2018 - 10 K 504/15 K,G,F<fundstelle>	52</fundstelle></ebene3>
+<ebene1>Finanzinstrumente</ebene1>
+<ebene2>Angabepflichten</ebene2>
+<ebene3>Angaben zur Erstanwendung von IFRS 9<fundstelle>	126</fundstelle></ebene3>
+<ebene2>Ansatz<fundstelle>	199</fundstelle></ebene2>
+<ebene2>Ausbuchung</ebene2>
+<ebene3>Barwerttest<fundstelle>	313</fundstelle></ebene3>
+<ebene3>Gebühren<fundstelle>	313</fundstelle></ebene3>
+<ebene2>Ausweis<fundstelle>	199</fundstelle></ebene2>
+<ebene2>Bewertung</ebene2>
+<ebene3>Kategorien<fundstelle>	247</fundstelle></ebene3>
+<ebene2>Derivate</ebene2>
+<ebene3>eingebettete<fundstelle>	100</fundstelle></ebene3>
+<ebene2>derivative Finanzinstrumente<fundstelle>	199, 247</fundstelle></ebene2>
+<ebene2>ED/2019/2<fundstelle>	313</fundstelle></ebene2>
+<ebene2>eigene Anteile<fundstelle>	247</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Zwischenberichte der SDAX-Unternehmen zum 30.06.2018<fundstelle>	126</fundstelle></ebene3>
+<ebene2>Forderungen<fundstelle>	247</fundstelle></ebene2>
+<ebene2>Hegde Accounting</ebene2>
+<ebene3>Ausnahmeregelungen im Rahmen der IBOR-Reform<fundstelle>	421</fundstelle></ebene3>
+<ebene3>Cashflow Hedge<fundstelle>	421</fundstelle></ebene3>
+<ebene3>Hoch-wahrscheinlich-Kriterium<fundstelle>	421</fundstelle></ebene3>
+<ebene2>IAS 39<fundstelle>	421</fundstelle></ebene2>
+<ebene2>IBOR-Reform</ebene2>
+<ebene3>ED/2019/1<fundstelle>	421</fundstelle></ebene3>
+<ebene3>IASB-Projektphasen 1 und 2<fundstelle>	421</fundstelle></ebene3>
+<ebene3>Referenzzinsumstellung<fundstelle>	421</fundstelle></ebene3>
+<ebene2>IFRS 7<fundstelle>	421</fundstelle></ebene2>
+<ebene2>IFRS 9</ebene2>
+<ebene3>Änderungen gegenüber IAS 39<fundstelle>	126</fundstelle></ebene3>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene2>Kategorisierung<fundstelle>	298</fundstelle></ebene2>
+<ebene2>originäre Finanzinstrumente<fundstelle>	199</fundstelle></ebene2>
+<ebene2>Vorfälligkeitsregelungen mit negativer Kompensation<fundstelle>	1</fundstelle></ebene2>
+<ebene2>Warentermingeschäfte</ebene2>
+<ebene3>Eigenverbrauchsverträge<fundstelle>	194</fundstelle></ebene3>
+<ebene3>Kaskadierung von Jahres- und Quartals-Futures<fundstelle>	194</fundstelle></ebene3>
+<ebene3>Kontraktprofilierung<fundstelle>	194</fundstelle></ebene3>
+<ebene3>Nettoausgleich<fundstelle>	194</fundstelle></ebene3>
+<ebene2>Zugangsbewertung<fundstelle>	199, 247</fundstelle></ebene2>
+<ebene1>Fremdkapital</ebene1>
+<ebene2>Debt Covenants</ebene2>
+<ebene3>Anforderungen an die Rechnungslegung<fundstelle>	235</fundstelle></ebene3>
+<ebene3>Arten<fundstelle>	235</fundstelle></ebene3>
+<ebene3>Capital-Covenants<fundstelle>	235</fundstelle></ebene3>
+<ebene3>Performance-Covenants<fundstelle>	235</fundstelle></ebene3>
+<ebene2>Informationswert der Rechnungslegung für Fremdkapitalgeber</ebene2>
+<ebene3>Bankkredite<fundstelle>	235</fundstelle></ebene3>
+<ebene3>öffentliche Anleihen<fundstelle>	235</fundstelle></ebene3>
+<ebene3>Prinzipal-Agent-Theorie<fundstelle>	235</fundstelle></ebene3>
+<ebene3>Property-Rights-Ansatz<fundstelle>	235</fundstelle></ebene3>
+<ebene3>syndizierte Darlehen<fundstelle>	235</fundstelle></ebene3>
+<ebene1>Geschäftsberichterstattung</ebene1>
+<ebene2>aktuelle Entwicklungen<fundstelle>	459</fundstelle></ebene2>
+<ebene2>digitaler Geschäftsbericht</ebene2>
+<ebene3>Berichtsformate<fundstelle>	414</fundstelle></ebene3>
+<ebene3>Best Practice in DAX und MDAX 2017 und 2018<fundstelle>	414</fundstelle></ebene3>
+<ebene3>Entscheidungsnützlichkeit<fundstelle>	414</fundstelle></ebene3>
+<ebene3>Nutzerfreundlichkeit<fundstelle>	414</fundstelle></ebene3>
+<ebene2>empirische Studien</ebene2>
+<ebene3>BARC-Studie zur Zukunft des Reporting<fundstelle>	468</fundstelle></ebene3>
+<ebene2>Online Berichterstattung</ebene2>
+<ebene3>empirische Studie zur Umsetzung der DAX-, MDAX-, SDAX- und TecDAX-Unternehmen 2017<fundstelle>	105</fundstelle></ebene3>
+<ebene3>Potenziale<fundstelle>	105</fundstelle></ebene3>
+<ebene2>Quartalsberichterstattung</ebene2>
+<ebene3>Berichtspraxis in DAX, MDAX, SDAX und TecDAX-Unternehmen 2015-2017<fundstelle>	183</fundstelle></ebene3>
+<ebene3>normativer Rahmen in Deutschland<fundstelle>	183</fundstelle></ebene3>
+<ebene3>Quartalsfinanzbericht<fundstelle>	183</fundstelle></ebene3>
+<ebene3>Quartalsmitteilung<fundstelle>	183</fundstelle></ebene3>
+<ebene2>Vorschläge der IDW-Arbeitsgruppe Trendwatch</ebene2>
+<ebene3>Adressaten<fundstelle>	143</fundstelle></ebene3>
+<ebene3>Fortentwicklung des Lageberichts<fundstelle>	143</fundstelle></ebene3>
+<ebene3>Positionspapier<fundstelle>	143</fundstelle></ebene3>
+<ebene3>Prognoserechnungen<fundstelle>	143</fundstelle></ebene3>
+<ebene3>Überleitung vom Buchwert zum Marktwert<fundstelle>	143</fundstelle></ebene3>
+<ebene3>Zielsetzung des Reporting<fundstelle>	143</fundstelle></ebene3>
+<ebene2>Vorstandsvorwort</ebene2>
+<ebene3>Untersuchung des Sprachprofils<fundstelle>	208</fundstelle></ebene3>
+<ebene3>Zusammenhang mit Analystenprognosen<fundstelle>	208</fundstelle></ebene3>
+<ebene1>Gesetzgebung</ebene1>
+<ebene2>Gesetz zur steuerlichen Förderung von Forschung und Entwicklung (Forschungszulagengesetz)</ebene2>
+<ebene3>Regierungsentwurf<fundstelle>	364</fundstelle></ebene3>
+<ebene3>Stellungnahme des DStV<fundstelle>	419</fundstelle></ebene3>
+<ebene2>Gesetz zur Umsetzung der einheitlichen europäischen elektronischen Finanzberichterstattung</ebene2>
+<ebene3>Referentenentwurf<fundstelle>	520</fundstelle></ebene3>
+<ebene1>Gewerbesteuer</ebene1>
+<ebene2>Hinzurechnungen</ebene2>
+<ebene3>betrieblicher Veranlassungszusammenhang<fundstelle>	109</fundstelle></ebene3>
+<ebene2>Kürzungen</ebene2>
+<ebene3>Gewinne aus Anteilen an Tochtergesellschaften aus Drittstaaten<fundstelle>	160, 262</fundstelle></ebene3>
+<ebene2>Verlustvortrag</ebene2>
+<ebene3>Übergang bei Ausgliederung von einer KapGes. auf eine PersGes.<fundstelle>	418</fundstelle></ebene3>
+<ebene1>Goodwill</ebene1>
+<ebene2>Abschreibung<fundstelle>	42, 459, 506</fundstelle></ebene2>
+<ebene2>Impairment-only-Ansatz<fundstelle>	459</fundstelle></ebene2>
+<ebene2>Risikofaktoren<fundstelle>	459</fundstelle></ebene2>
+<ebene1>Handelsbilanzrecht</ebene1>
+<ebene2>aktuelle Entwicklungen<fundstelle>	42</fundstelle></ebene2>
+<ebene2>Eigenkapital<fundstelle>	247</fundstelle></ebene2>
+<ebene2>Einlagen<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Entnahmen<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Factoring<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Finanzinstrumente</ebene2>
+<ebene3>Ansatz<fundstelle>	199</fundstelle></ebene3>
+<ebene3>Ausweis<fundstelle>	199</fundstelle></ebene3>
+<ebene3>Bewertungseinheiten<fundstelle>	298</fundstelle></ebene3>
+<ebene3>Definition<fundstelle>	199</fundstelle></ebene3>
+<ebene3>derivative Finanzinstrumente<fundstelle>	199, 247</fundstelle></ebene3>
+<ebene3>eingebettete Derivate<fundstelle>	100</fundstelle></ebene3>
+<ebene3>Erstbewertung<fundstelle>	199, 247</fundstelle></ebene3>
+<ebene3>Folgebewertung<fundstelle>	298</fundstelle></ebene3>
+<ebene3>Forderungen<fundstelle>	247, 298</fundstelle></ebene3>
+<ebene3>originäre Finanzinstrumente<fundstelle>	199</fundstelle></ebene3>
+<ebene2>Forderungen</ebene2>
+<ebene3>darlehensgleiche Stundung<fundstelle>	465</fundstelle></ebene3>
+<ebene2>immaterielle Vermögensgegenstände</ebene2>
+<ebene3>IDW RS HFA 11 n.F.<fundstelle>	42</fundstelle></ebene3>
+<ebene3>Software<fundstelle>	42</fundstelle></ebene3>
+<ebene2>Kapitalkonsolidierung<fundstelle>	446</fundstelle></ebene2>
+<ebene2>Leasingverhältnisse<fundstelle>	91</fundstelle></ebene2>
+<ebene2>Pensionsrückstellungen<fundstelle>	555</fundstelle></ebene2>
+<ebene2>Reverse Factoring<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Rückstellungen<fundstelle>	555</fundstelle></ebene2>
+<ebene2>Segmentberichterstattung</ebene2>
+<ebene3>Angabepflichten<fundstelle>	546</fundstelle></ebene3>
+<ebene3>Bewertungsannahmen<fundstelle>	546</fundstelle></ebene3>
+<ebene3>Datenermittlung<fundstelle>	546</fundstelle></ebene3>
+<ebene3>E-DRS 36<fundstelle>	546</fundstelle></ebene3>
+<ebene3>gesetzliche Grundlagen<fundstelle>	546</fundstelle></ebene3>
+<ebene3>Management Approach<fundstelle>	546</fundstelle></ebene3>
+<ebene3>operative Segmente<fundstelle>	546</fundstelle></ebene3>
+<ebene3>Segment-Größenmerkmale<fundstelle>	546</fundstelle></ebene3>
+<ebene3>Stetigkeitsprinzip<fundstelle>	546</fundstelle></ebene3>
+<ebene3>Überleitung zum Konzern<fundstelle>	546</fundstelle></ebene3>
+<ebene2>Software-as-a-Service-Verträge<fundstelle>	469</fundstelle></ebene2>
+<ebene2>Unternehmenszusammenschluss</ebene2>
+<ebene3>erworbene immaterielle Vermögenswerte<fundstelle>	61</fundstelle></ebene3>
+<ebene3>Marken<fundstelle>	61</fundstelle></ebene3>
+<ebene2>Vorräte<fundstelle>	400, 499</fundstelle></ebene2>
+<ebene1>IFRS Interpretations Committee (IFRS IC)</ebene1>
+<ebene2>Agenda Entscheidungen</ebene2>
+<ebene3>ED/2018/1<fundstelle>	137</fundstelle></ebene3>
+<ebene3>Verbindlichkeit<fundstelle>	137</fundstelle></ebene3>
+<ebene2>Mitglieder</ebene2>
+<ebene3>Bewerbungsaufruf<fundstelle>	158</fundstelle></ebene3>
+<ebene1>Immaterielle Vermögenswerte</ebene1>
+<ebene2>Ansatz<fundstelle>	32</fundstelle></ebene2>
+<ebene2>Anschaffungsnebenkosten<fundstelle>	469</fundstelle></ebene2>
+<ebene2>Bewertung</ebene2>
+<ebene3>Impairment-Test<fundstelle>	32</fundstelle></ebene3>
+<ebene2>genutzte Software<fundstelle>	32</fundstelle></ebene2>
+<ebene2>IAS 38<fundstelle>	32, 61, 469</fundstelle></ebene2>
+<ebene2>Kryptowährungen<fundstelle>	42</fundstelle></ebene2>
+<ebene2>Marken</ebene2>
+<ebene3>Bewertungsmethoden nach IDW S 5<fundstelle>	61</fundstelle></ebene3>
+<ebene3>Bilanzierung erworbener Marken bei einem Unternehmenszusammenschluss<fundstelle>	61</fundstelle></ebene3>
+<ebene3>Kapitalisierungszinssatz<fundstelle>	61</fundstelle></ebene3>
+<ebene3>Lizenzpreisanalogiemthode<fundstelle>	61</fundstelle></ebene3>
+<ebene3>Lizenzpreisrate<fundstelle>	61</fundstelle></ebene3>
+<ebene3>ökonomische Nutzungsdauer<fundstelle>	61</fundstelle></ebene3>
+<ebene3>Steuerbe- und -entlastungseffekte<fundstelle>	61</fundstelle></ebene3>
+<ebene2>selbst geschaffene immaterielle Vermögenswerte<fundstelle>	32, 469</fundstelle></ebene2>
+<ebene2>Software-as-a-Service-Verträge</ebene2>
+<ebene3>Customizing<fundstelle>	469</fundstelle></ebene3>
+<ebene3>Kosten für die Schnittstellenprogrammierung und -einrichtung<fundstelle>	469</fundstelle></ebene3>
+<ebene3>nicht aktivierbare Kosten<fundstelle>	469</fundstelle></ebene3>
+<ebene3>Programmierungs- und Einrichtungskosten<fundstelle>	469</fundstelle></ebene3>
+<ebene1>Immobilien</ebene1>
+<ebene2>Empirische Studien zur Bilanzierung von Renditeimmobilien</ebene2>
+<ebene3>Leitindizes von 15 EU-Staaten 2017<fundstelle>	424</fundstelle></ebene3>
+<ebene2>IAS 40<fundstelle>	424</fundstelle></ebene2>
+<ebene2>Investment Properties</ebene2>
+<ebene3>Fair-Value-Bewertung<fundstelle>	424</fundstelle></ebene3>
+<ebene1>Immobilienunternehmen</ebene1>
+<ebene2>alternative Leistungsmaße<fundstelle>	506</fundstelle></ebene2>
+<ebene2>Herausforderungen bei der Immobilienbewertung<fundstelle>	506</fundstelle></ebene2>
+<ebene1>Institut der Wirtschaftsprüfer (IDW)</ebene1>
+<ebene2>Positionspapiere</ebene2>
+<ebene3>Nichtprüfungsleistungen des Abschlussprüfers<fundstelle>	576</fundstelle></ebene3>
+<ebene3>Rechnungslegung der öffentlichen Hand<fundstelle>	260</fundstelle></ebene3>
+<ebene3>Trendwatch kapitalmarktorientiertes Reporting<fundstelle>	143</fundstelle></ebene3>
+<ebene2>Stellungnahmen</ebene2>
+<ebene3>DP/2018/1 "Finanzinstrumente mit Eigenschaften von Eigenkapital"<fundstelle>	108</fundstelle></ebene3>
+<ebene3>ED/2019/4 "Änderungen an IFRS 17"<fundstelle>	519</fundstelle></ebene3>
+<ebene3>E-DRÄS 10 "Änderungen an DRS 25, DRS 16, DRS 19 und DRS 23"<fundstelle>	417</fundstelle></ebene3>
+<ebene3>E-DRÄS 9 "Änderungen an DRS 17 und DRS 20 aufgrund des ARUG II"<fundstelle>	417</fundstelle></ebene3>
+<ebene2>Verlautbarungen</ebene2>
+<ebene3>Erfahrungsbericht zur durch BilRUG geänderten Umsatzerlösdefinition<fundstelle>	468</fundstelle></ebene3>
+<ebene3>Hinweise zur Auslagerung von Teilen des Bestätigungsvermerks<fundstelle>	263</fundstelle></ebene3>
+<ebene3>IDW EPS 340 n.F. "Die Prüfung von Maßnahmen nach § 91 Abs. 2 AktG im Rahmen der Jahresabschlussprüfung gem. § 317 Abs. 4  HGB"<fundstelle>	576</fundstelle></ebene3>
+<ebene3>IDW ES 2 "Anforderung an Insolvenzpläne"<fundstelle>	264</fundstelle></ebene3>
+<ebene3>IDW PS 475 "Mitteilung von Mängeln am Internen Kontrollsystem"<fundstelle>	263</fundstelle></ebene3>
+<ebene3>IDW PS 750 "Prüfung von Vereinen"<fundstelle>	112</fundstelle></ebene3>
+<ebene3>IDW PS 830 n.F. "Prüfung von Bauträgern und Baubetreuern i.S.d. § 34c Abs. 1 Satz 1 Nr. 3 GewO nach § 16 Abs. 1 Satz 1 MaBV"<fundstelle>	264</fundstelle></ebene3>
+<ebene3>IDW PS 840 n.F. "Prüfung von Finanzanlagevermittlern i.S.d. § 34f Abs. 1 Satz 1 GewO nach § 24 Abs. 1 Satz 1 Finanzanlagenvermittlungsordnung"<fundstelle>	112</fundstelle></ebene3>
+<ebene3>IDW RS HFA 45 "Einzelfragen zur Darstellung von Finanzinstrumenten nach IAS 32"<fundstelle>	51</fundstelle></ebene3>
+<ebene3>Musterformulierungen für Bestätigungsvermerke nach IDW PS 400 n.F.<fundstelle>	52</fundstelle></ebene3>
+<ebene3>Musterklauseln zur Inanspruchnahme externer Dienstleister durch WP<fundstelle>	212</fundstelle></ebene3>
+<ebene1>International Accounting Standards Board (IASB)</ebene1>
+<ebene2>Accounting Standards Advisory Forum (ASAF)</ebene2>
+<ebene3>Ergebnisse der Beratungen<fundstelle>	158</fundstelle></ebene3>
+<ebene3>Forschungsergebnisse zu hybriden Pensionsplänen<fundstelle>	260</fundstelle></ebene3>
+<ebene2>Boardsitzungen</ebene2>
+<ebene3>Ankündigung von Änderungen an IFRS 17<fundstelle>	107</fundstelle></ebene3>
+<ebene2>Forschungsforum<fundstelle>	463, 573</fundstelle></ebene2>
+<ebene2>IFRS-Stiftung</ebene2>
+<ebene3>Entwurf einer Überarbeitung des Due Process Handbook<fundstelle>	310</fundstelle></ebene3>
+<ebene3>Jahresbericht<fundstelle>	310</fundstelle></ebene3>
+<ebene2>neu anzuwendende Standards</ebene2>
+<ebene3>01.01.2019<fundstelle>	1</fundstelle></ebene3>
+<ebene2>Post Implementation Review</ebene2>
+<ebene3>IFRS 13<fundstelle>	107</fundstelle></ebene3>
+<ebene2>Projekte</ebene2>
+<ebene3>Änderungen an IFRS 17<fundstelle>	259</fundstelle></ebene3>
+<ebene3>Angabeprinzipien<fundstelle>	259</fundstelle></ebene3>
+<ebene3>Better Communication<fundstelle>	506</fundstelle></ebene3>
+<ebene3>Finanzinstrumente mit Eigenkapitalcharakter<fundstelle>	506</fundstelle></ebene3>
+<ebene3>Goodwill und Impairment<fundstelle>	565</fundstelle></ebene3>
+<ebene3>Primary Financial Statements<fundstelle>	565</fundstelle></ebene3>
+<ebene3>Projektzusammenfassung zu Abzinsungssätzen<fundstelle>	210</fundstelle></ebene3>
+<ebene3>Projektzusammenfassung zu Verbesserungen an IFRS 8 (ED/2017/2)<fundstelle>	210</fundstelle></ebene3>
+<ebene2>Standardentwürfe</ebene2>
+<ebene3>ED/2018/2 "Bealstende Verträge - Kosten für die Erfülung eines Vertrags (Vorgeschlagene Änderungen an IAS 37)<fundstelle>	50, 107</fundstelle></ebene3>
+<ebene3>ED/2019/1 "Interest Rate Benchmark Reform (Vorgeschlagene Änderungen an IFRS 9 und IAS 39)"<fundstelle>	310</fundstelle></ebene3>
+<ebene3>ED/2019/2 "Annual Improvements - Zyklus 2018-2020"<fundstelle>	361</fundstelle></ebene3>
+<ebene3>ED/2019/3 "Verweis auf das Rahmenkonzept (Vorgeschlagene Änderungen an IFRS 3)"<fundstelle>	361</fundstelle></ebene3>
+<ebene3>ED/2019/4 "Änderungen an IFRS 17"<fundstelle>	416</fundstelle></ebene3>
+<ebene3>ED/2019/5 "Latente Steuern, die sich auf Vermögenswerte und Schulden beziehen, die aus einer einzigen Transaktion entstehen (Vorgeschlagene Änderungen an IAS 12)"<fundstelle>	416</fundstelle></ebene3>
+<ebene3>ED/2019/6 "Angabe von Bilanzierungs- und Bewertungsmethoden (Vogreschlagene Änderungen an IAS 1 und IFRS Practice Statement 2)"<fundstelle>	416</fundstelle></ebene3>
+<ebene2>Standards</ebene2>
+<ebene3>Änderungen an IAS 39 und IFRS 9 "Interest Rate Benchmark Reform - Phase 1"<fundstelle>	518</fundstelle></ebene3>
+<ebene3>formale Korrekturen<fundstelle>	50, 210, 361</fundstelle></ebene3>
+<ebene1>Internationales Steuerrecht</ebene1>
+<ebene2>ausländische Rechtsnormen i.S.d. § 140 AO</ebene2>
+<ebene3>auf ausländischem Recht basierende Buchführungspflicht in Deutschland<fundstelle>	260</fundstelle></ebene3>
+<ebene2>Einkünftekorrektur nach § 1 Abs. 1 AStG</ebene2>
+<ebene3>Ausbuchung unbesicherter im Konzern begebener Darlehensforderung<fundstelle>	311</fundstelle></ebene3>
+<ebene2>unbesicherte Forderungen aus Konzernlieferbeziehungen<fundstelle>	575</fundstelle></ebene2>
+<ebene1>International Financial Reporting Standards (IFRS)</ebene1>
+<ebene2>Bedeutung für die Kapitalmarktanalyse<fundstelle>	506</fundstelle></ebene2>
+<ebene2>Berichterstattung bei Spin-Off, IPO oder Ausgliederung<fundstelle>	100</fundstelle></ebene2>
+<ebene2>Ergebnisqualität</ebene2>
+<ebene3>Abschlussprüfer<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Einflussfaktoren<fundstelle>	113</fundstelle></ebene3>
+<ebene3>empirische Studie über die Ergebnisqualität deutscher kapitalmarktorientierter Unternehmen 2005-2016<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Messung<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Profitabilität<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Unternehmensgröße<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Unternehmenswachstum<fundstelle>	113</fundstelle></ebene3>
+<ebene3>Verschuldungsgrad<fundstelle>	113</fundstelle></ebene3>
+<ebene2>erstmalige Anwendung</ebene2>
+<ebene3>ED/2019/2<fundstelle>	313</fundstelle></ebene3>
+<ebene3>IFRS 1<fundstelle>	313</fundstelle></ebene3>
+<ebene3>kumulative Translationsdifferenzen<fundstelle>	313</fundstelle></ebene3>
+<ebene2>XBRL-Taxonomie</ebene2>
+<ebene3>aktualisierter Erstellerleitfaden<fundstelle>	158</fundstelle></ebene3>
+<ebene3>Ergänzungen infolge der IBOR-Reform<fundstelle>	518</fundstelle></ebene3>
+<ebene3>neue Version<fundstelle>	259</fundstelle></ebene3>
+<ebene3>vorgeschlagene Verbeserungen<fundstelle>	50</fundstelle></ebene3>
+<ebene2>Zwischenberichterstattung</ebene2>
+<ebene3>Anforderungen<fundstelle>	126</fundstelle></ebene3>
+<ebene3>Angaben zu Leasingverhältnissen bei der Erstanwendung des IFRS 16<fundstelle>	324</fundstelle></ebene3>
+<ebene3>IAS 34<fundstelle>	126, 324</fundstelle></ebene3>
+<ebene1>Investor Relations</ebene1>
+<ebene2>Analystenkonferenz</ebene2>
+<ebene3>Ablauf<fundstelle>	394</fundstelle></ebene3>
+<ebene3>Bedeutung für die Kapitalmarktkommunikation<fundstelle>	394</fundstelle></ebene3>
+<ebene3>empirische Studie zum Ablauf von Analystenkonferenzen der DAX-Unternehmen 2017<fundstelle>	394</fundstelle></ebene3>
+<ebene2>Creditor Relations<fundstelle>	359</fundstelle></ebene2>
+<ebene2>Europäisches einheitliches elektronisches Berichtsformat<fundstelle>	257</fundstelle></ebene2>
+<ebene2>Investors´ Darling</ebene2>
+<ebene3>Ergebnisse 2019<fundstelle>	516</fundstelle></ebene3>
+<ebene2>Kommunikation von Wertsteigerungspotenzialen</ebene2>
+<ebene3>DIRK-EY-Studie<fundstelle>	419</fundstelle></ebene3>
+<ebene2>Online Berichterstattung</ebene2>
+<ebene3>empirische Studie zur Umsetzung der DAX-, MDAX-, SDAX- und TecDAX-Unternehmen 2017<fundstelle>	105</fundstelle></ebene3>
+<ebene3>Potenziale<fundstelle>	105</fundstelle></ebene3>
+<ebene2>Qualität der Finanzkommunikation</ebene2>
+<ebene3>Austrian Financial Communications Award<fundstelle>	571</fundstelle></ebene3>
+<ebene2>Shareholder Aktivismus</ebene2>
+<ebene3>Auswirkungen auf die Investor-Relations-Arbeit<fundstelle>	461</fundstelle></ebene3>
+<ebene3>Empirische Studie zu den Anwesenheitsquoten auf Hauptversammlungen der DAX-, MDAX- und SDAX-Unternehmen 2018<fundstelle>	461</fundstelle></ebene3>
+<ebene3>Fall Grammer<fundstelle>	461</fundstelle></ebene3>
+<ebene2>Social Media</ebene2>
+<ebene3>Einsatzmöglichkeiten in der Finanzkommunikation<fundstelle>	308</fundstelle></ebene3>
+<ebene1>Kapitalflussrechnung</ebene1>
+<ebene2>Finanzschulden<fundstelle>	565</fundstelle></ebene2>
+<ebene1>Kapitalmarkt</ebene1>
+<ebene2>Kapitalstruktur börsennotierter Unternehmen</ebene2>
+<ebene3>Auswirkungen der IFRS-Einführung<fundstelle>	328</fundstelle></ebene3>
+<ebene3>Corporate Governance<fundstelle>	328</fundstelle></ebene3>
+<ebene3>empirische Studie für Deutschland 2005-2017<fundstelle>	328</fundstelle></ebene3>
+<ebene3>Kapitalstrukturtheorien<fundstelle>	328</fundstelle></ebene3>
+<ebene3>Pecking-Order-Theorie<fundstelle>	328</fundstelle></ebene3>
+<ebene3>Trade-off-Theorie<fundstelle>	328</fundstelle></ebene3>
+<ebene1>Konzernabschluss</ebene1>
+<ebene2>Erstkonsolidierung<fundstelle>	446</fundstelle></ebene2>
+<ebene2>Full-Goodwill-Methode<fundstelle>	446</fundstelle></ebene2>
+<ebene2>Kapitalkonsolidierung</ebene2>
+<ebene3>Fallstudie<fundstelle>	446</fundstelle></ebene3>
+<ebene3>HGB<fundstelle>	446</fundstelle></ebene3>
+<ebene3>IFRS 10<fundstelle>	446</fundstelle></ebene3>
+<ebene3>Zweck<fundstelle>	446</fundstelle></ebene3>
+<ebene2>Neubewertungsmethode<fundstelle>	446</fundstelle></ebene2>
+<ebene2>nicht-beherrschende Anteile<fundstelle>	446</fundstelle></ebene2>
+<ebene1>Körperschaftsteuer</ebene1>
+<ebene2>Drittstaatengesellschaft</ebene2>
+<ebene3>Einlagenrückgewähr<fundstelle>	465</fundstelle></ebene3>
+<ebene2>offene Gewinnausschüttung</ebene2>
+<ebene3>Bewertung<fundstelle>	159</fundstelle></ebene3>
+<ebene2>Organschaft</ebene2>
+<ebene3>Gewinnabführungsvertrag<fundstelle>	312</fundstelle></ebene3>
+<ebene2>pauschales Betriebsausgabenabzugsverbot nach § 8b KStG</ebene2>
+<ebene3>grenzüberschreitende Betriebsaufspaltung<fundstelle>	261</fundstelle></ebene3>
+<ebene2>Sachausschüttung<fundstelle>	159</fundstelle></ebene2>
+<ebene2>Steuerliches Einlagenkonto</ebene2>
+<ebene3>Übertragung der Regelungen des § 27 KStG auf andere Körperschaften<fundstelle>	110</fundstelle></ebene3>
+<ebene2>verdeckte Gewinnausschüttungen</ebene2>
+<ebene3>Rückstellung für drohende Haftungsinanspruchnahme<fundstelle>	261</fundstelle></ebene3>
+<ebene2>Verlustabzug</ebene2>
+<ebene3>Sanierungsklausel<fundstelle>	110</fundstelle></ebene3>
+<ebene1>Kreditinstitut</ebene1>
+<ebene2>IFRS 9</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene2>Kapitalverwaltungsgesellschaft</ebene2>
+<ebene3>Prüfungspflicht<fundstelle>	520</fundstelle></ebene3>
+<ebene1>Lagebericht</ebene1>
+<ebene2>CSR-Richtlinie-Umsetzungsgesetz<fundstelle>	21</fundstelle></ebene2>
+<ebene2>Darstellung des Geschäftsverlaufs</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene2>DRS 20<fundstelle>	432</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Nichtfinanzielle Berichte/Erklärungen der DAX160-Unternehmen 2017<fundstelle>	21</fundstelle></ebene3>
+<ebene3>Nicht offensichtliche finanzielle Leistungsindikatoren der SDAX-Unternehmen 2017<fundstelle>	432</fundstelle></ebene3>
+<ebene2>finanzielle Leistungsindikatoren<fundstelle>	432</fundstelle></ebene2>
+<ebene2>Kennzahlensteuerung<fundstelle>	432</fundstelle></ebene2>
+<ebene2>nichtfinanzielle Erklärung<fundstelle>	21</fundstelle></ebene2>
+<ebene2>TCFD-Empfehlungen zur klimabezogenen Berichterstattung<fundstelle>	506</fundstelle></ebene2>
+<ebene1>Landwirtschaft</ebene1>
+<ebene2>ED/2019/2<fundstelle>	313</fundstelle></ebene2>
+<ebene2>Fair Value</ebene2>
+<ebene3>Steuereffekte<fundstelle>	313</fundstelle></ebene3>
+<ebene2>IAS 41<fundstelle>	313</fundstelle></ebene2>
+<ebene1>Leasing</ebene1>
+<ebene2>Anhangangaben</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene2>Ausweis<fundstelle>	91, 172</fundstelle></ebene2>
+<ebene2>Bereitstellungsdatum des Leasingobjekts (commencement date)<fundstelle>	476</fundstelle></ebene2>
+<ebene2>Datum des Vertragsabschlusses (inception date)<fundstelle>	476</fundstelle></ebene2>
+<ebene2>ED/2013/6</ebene2>
+<ebene3>Analyse der Kommentierungsschreiben<fundstelle>	219</fundstelle></ebene3>
+<ebene2>ED/2019/2<fundstelle>	313</fundstelle></ebene2>
+<ebene2>Einzelhandel<fundstelle>	506</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Interviewstudie mit Vertretern deutscher nach IFRS bilanzierender Unternehmen zur Umstellung auf IFRS 16<fundstelle>	274</fundstelle></ebene3>
+<ebene3>vergleichende Analyse der erwarteten und tatsächlichen Auswirkungen der IFRS-16-Einführung bei im EURO STOXX 50 gelisteten Unternehmen<fundstelle>	482</fundstelle></ebene3>
+<ebene2>Erstansatz<fundstelle>	91, 172</fundstelle></ebene2>
+<ebene2>Firmenwagen<fundstelle>	565</fundstelle></ebene2>
+<ebene2>Folgebewertung<fundstelle>	91, 172</fundstelle></ebene2>
+<ebene2>IAS 17<fundstelle>	274</fundstelle></ebene2>
+<ebene2>IFRS 16</ebene2>
+<ebene3>Lobbying während des Standentwicklungsprozesses<fundstelle>	219</fundstelle></ebene3>
+<ebene3>Übergangsregelungen<fundstelle>	172</fundstelle></ebene3>
+<ebene2>Implementierung von IFRS 16<fundstelle>	274</fundstelle></ebene2>
+<ebene2>Incentives<fundstelle>	313</fundstelle></ebene2>
+<ebene2>Initial Direct Costs<fundstelle>	469, 476</fundstelle></ebene2>
+<ebene2>Klassifizierung<fundstelle>	91</fundstelle></ebene2>
+<ebene2>Laufzeit des Leasingvertrags</ebene2>
+<ebene3>Kündigungsoptionen<fundstelle>	374</fundstelle></ebene3>
+<ebene3>unkündbare Grundlaufzeit<fundstelle>	374</fundstelle></ebene3>
+<ebene3>Verlängerungsoption<fundstelle>	374</fundstelle></ebene3>
+<ebene2>Leasinggeber<fundstelle>	172</fundstelle></ebene2>
+<ebene2>Leasingverhältnis</ebene2>
+<ebene3>Definition<fundstelle>	91</fundstelle></ebene3>
+<ebene2>Nutzungsrecht</ebene2>
+<ebene3>Impairment-Test<fundstelle>	565</fundstelle></ebene3>
+<ebene3>Leasinganreize<fundstelle>	476</fundstelle></ebene3>
+<ebene3>Rückbaukosten<fundstelle>	476</fundstelle></ebene3>
+<ebene3>Vorauszahlungen<fundstelle>	476</fundstelle></ebene3>
+<ebene3>Zusammensetzung<fundstelle>	476</fundstelle></ebene3>
+<ebene2>Optionen<fundstelle>	365</fundstelle></ebene2>
+<ebene2>Prozesse im Unternehmen<fundstelle>	274</fundstelle></ebene2>
+<ebene2>Sale-and-lease-back<fundstelle>	172</fundstelle></ebene2>
+<ebene2>US-GAAP</ebene2>
+<ebene3>ASC 842<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Konvergenz mit IFRS 16<fundstelle>	172</fundstelle></ebene3>
+<ebene2>Vendor Leasing</ebene2>
+<ebene3>Grundstruktur<fundstelle>	365</fundstelle></ebene3>
+<ebene3>Hersteller<fundstelle>	365</fundstelle></ebene3>
+<ebene3>Leasingunternehmen<fundstelle>	365</fundstelle></ebene3>
+<ebene3>Rückkaufgeschäfte<fundstelle>	365</fundstelle></ebene3>
+<ebene3>Umsatzerfassung im Zusammenspiel mit IFRS 15<fundstelle>	365</fundstelle></ebene3>
+<ebene2>Vertragscontrolling</ebene2>
+<ebene3>Datenextraktion<fundstelle>	213</fundstelle></ebene3>
+<ebene3>Texterkennung und -analyse<fundstelle>	213</fundstelle></ebene3>
+<ebene3>Vertragsinventur<fundstelle>	213</fundstelle></ebene3>
+<ebene2>Zugangsbewertung<fundstelle>	91</fundstelle></ebene2>
+<ebene1>Leistungen an Arbeitnehmer</ebene1>
+<ebene2>IAS 19<fundstelle>	1, 565</fundstelle></ebene2>
+<ebene2>Planänderungen, -kürzungen oder -abgeltungen<fundstelle>	1</fundstelle></ebene2>
+<ebene2>Überlassung eines Firmenwagens<fundstelle>	565</fundstelle></ebene2>
+<ebene1>Nachhaltigkeitsberichterstattung</ebene1>
+<ebene2>Deutscher Nachhaltigkeitskodex (DNK)</ebene2>
+<ebene3>Überarbeitung<fundstelle>	468</fundstelle></ebene3>
+<ebene2>empirische Erkenntnisse<fundstelle>	354</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>DAX160-Unternehmen 2018<fundstelle>	575</fundstelle></ebene3>
+<ebene3>Umfrage des CFA-Institute über Regulierungsbedarf der Nachhaltigkeitsberichterstattung<fundstelle>	467</fundstelle></ebene3>
+<ebene2>EU-Aktionsplan Sustainable Finance<fundstelle>	354</fundstelle></ebene2>
+<ebene2>nichtfinanzielle Berichterstattung<fundstelle>	42</fundstelle></ebene2>
+<ebene2>Prüfung<fundstelle>	354</fundstelle></ebene2>
+<ebene2>Rating<fundstelle>	354</fundstelle></ebene2>
+<ebene2>Stakeholder</ebene2>
+<ebene3>Anwendungserfahrungen und Anforderungen<fundstelle>	354</fundstelle></ebene3>
+<ebene2>Standardsetting<fundstelle>	354</fundstelle></ebene2>
+<ebene1>Nichtfinanzielle Berichterstattung</ebene1>
+<ebene2>Berichtspflichten</ebene2>
+<ebene3>Unterschiede zwischen Deutschland und Österreich<fundstelle>	81</fundstelle></ebene3>
+<ebene2>Beste Practice<fundstelle>	100</fundstelle></ebene2>
+<ebene2>CSR-RUG</ebene2>
+<ebene3>Erkenntnisse zur Erstanwendung<fundstelle>	149</fundstelle></ebene3>
+<ebene2>empirische Erkenntnisse<fundstelle>	440</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Berichtspraxis der ATX Prime-Unternehmen 2017<fundstelle>	81</fundstelle></ebene3>
+<ebene2>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene2>
+<ebene2>Integration in Nachhaltigkeitsberichterstattung<fundstelle>	575</fundstelle></ebene2>
+<ebene2>Prüfung<fundstelle>	100</fundstelle></ebene2>
+<ebene1>Nichtfinanzielle Erklärung</ebene1>
+<ebene2>formale Gestaltungsmöglichkeiten<fundstelle>	440</fundstelle></ebene2>
+<ebene2>Geschäftsmodell<fundstelle>	440</fundstelle></ebene2>
+<ebene2>Prüfung<fundstelle>	440</fundstelle></ebene2>
+<ebene2>Rahmenwerke<fundstelle>	440</fundstelle></ebene2>
+<ebene2>Verortung im Geschäftsbericht<fundstelle>	440</fundstelle></ebene2>
+<ebene1>Öffentlicher Sektor</ebene1>
+<ebene2>IPSAS</ebene2>
+<ebene3>Finanzinstrumente<fundstelle>	199, 247, 298</fundstelle></ebene3>
+<ebene3>Immaterielle Vermögenswerte<fundstelle>	32</fundstelle></ebene3>
+<ebene3>Leasingverhältnisse<fundstelle>	91</fundstelle></ebene3>
+<ebene3>Rückstellungen<fundstelle>	555</fundstelle></ebene3>
+<ebene3>Vorräte<fundstelle>	400, 499</fundstelle></ebene3>
+<ebene2>Standards staatlicher Doppik</ebene2>
+<ebene3>Finanzinstrumente<fundstelle>	199, 247, 298</fundstelle></ebene3>
+<ebene3>Immaterielle Vermögenswerte<fundstelle>	32</fundstelle></ebene3>
+<ebene3>Leasingverhältnisse<fundstelle>	91</fundstelle></ebene3>
+<ebene3>Rückstellungen<fundstelle>	555</fundstelle></ebene3>
+<ebene3>Unterschiede zum HGB<fundstelle>	298</fundstelle></ebene3>
+<ebene3>Vorräte<fundstelle>	400, 499</fundstelle></ebene3>
+<ebene1>Pensionsrückstellungen</ebene1>
+<ebene2>Besonderheiten bei Definition, Ansatz und Ausweis<fundstelle>	555</fundstelle></ebene2>
+<ebene2>Bewertung<fundstelle>	506</fundstelle></ebene2>
+<ebene2>Dotierungsgrad<fundstelle>	491</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>DAX-Unternehmen 2018<fundstelle>	491</fundstelle></ebene3>
+<ebene2>IAS 19<fundstelle>	491, 555</fundstelle></ebene2>
+<ebene2>Neubewertung<fundstelle>	491</fundstelle></ebene2>
+<ebene1>Publizität</ebene1>
+<ebene2>Ad-hoc-Publizität<fundstelle>	111</fundstelle></ebene2>
+<ebene2>Dauer der Veröffentlichung von Jahresabschlussinformationen<fundstelle>	535</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Reporting Lag der DAX-Unternehmen 2005-2015<fundstelle>	535</fundstelle></ebene3>
+<ebene3>Studie zu Erfahrungen mit der Marktmißbrauchsverordnung bei der DAX-, MDAX-, SDAX- und TecDAX-Unternehmen<fundstelle>	111</fundstelle></ebene3>
+<ebene2>Offenlegungsfristen<fundstelle>	535</fundstelle></ebene2>
+<ebene1>Rechnungslegung</ebene1>
+<ebene2>Shared Service Center</ebene2>
+<ebene3>Studie zum Aufgabenspektrum<fundstelle>	264</fundstelle></ebene3>
+<ebene2>Vorsichtsprinzip<fundstelle>	235</fundstelle></ebene2>
+<ebene2>Zuverlässigkeit<fundstelle>	235</fundstelle></ebene2>
+<ebene1>Risikomanagementsystem</ebene1>
+<ebene2>Struktur<fundstelle>	408</fundstelle></ebene2>
+<ebene1>Rückstellungen</ebene1>
+<ebene2>Ansammlungsrückstellungen<fundstelle>	555</fundstelle></ebene2>
+<ebene2>Ausweis<fundstelle>	555</fundstelle></ebene2>
+<ebene2>belastende Verträge</ebene2>
+<ebene3>Kostenbestandteile<fundstelle>	7</fundstelle></ebene3>
+<ebene3>Kosten der Vertragserfüllung<fundstelle>	7</fundstelle></ebene3>
+<ebene2>ED/2018/2<fundstelle>	7</fundstelle></ebene2>
+<ebene2>IAS 37<fundstelle>	7, 555</fundstelle></ebene2>
+<ebene2>Kriterium Außenverpflichtung<fundstelle>	555</fundstelle></ebene2>
+<ebene1>Segmentberichterstattung</ebene1>
+<ebene2>berichtspflichtige Segmente<fundstelle>	53</fundstelle></ebene2>
+<ebene2>HGB<fundstelle>	546</fundstelle></ebene2>
+<ebene2>IFRS 8</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene2>Überleitungsrechnungen<fundstelle>	53</fundstelle></ebene2>
+<ebene1>Strategieberichterstattung</ebene1>
+<ebene2>empirische Studien</ebene2>
+<ebene3>DAX160-Unternehmen 2018<fundstelle>	48</fundstelle></ebene3>
+<ebene2>Investor Relations<fundstelle>	48</fundstelle></ebene2>
+<ebene2>Potenziale<fundstelle>	48</fundstelle></ebene2>
+<ebene1>Umsatzerlöse</ebene1>
+<ebene2>Anhangangaben</ebene2>
+<ebene3>Anforderungen bei der Erstanwendung<fundstelle>	73, 527</fundstelle></ebene3>
+<ebene2>empirische Studien</ebene2>
+<ebene3>Konzern(halbjahres)abschlüsse 2017 und 2018 der SDAX-Unternehmen<fundstelle>	527</fundstelle></ebene3>
+<ebene3>Konzernhalbjahresabschlüsse zum 30.06.2018 der SDAX-Unternehmen<fundstelle>	73</fundstelle></ebene3>
+<ebene2>Fünf-Schritte-Modell<fundstelle>	53, 365, 527</fundstelle></ebene2>
+<ebene2>IFRS 15</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene3>Erstanwendung<fundstelle>	527</fundstelle></ebene3>
+<ebene3>Implementierung<fundstelle>	100</fundstelle></ebene3>
+<ebene3>Übergangserleichterungen<fundstelle>	527</fundstelle></ebene3>
+<ebene2>Vendor Leasing<fundstelle>	365</fundstelle></ebene2>
+<ebene2>wirtschaftlich verbundene Einzelverträge</ebene2>
+<ebene3>IFRS IC Agenda-Entscheidung vom März 2018<fundstelle>	9</fundstelle></ebene3>
+<ebene3>Streitfrage der Rechnungslegungseinheit<fundstelle>	9</fundstelle></ebene3>
+<ebene3>Tatbestandsmerkmale<fundstelle>	9</fundstelle></ebene3>
+<ebene2>zeitpunktbezogene Umsatzerfassung<fundstelle>	53</fundstelle></ebene2>
+<ebene2>zeitraumbezogene Umsatzerfassung<fundstelle>	53</fundstelle></ebene2>
+<ebene1>Umwandlung</ebene1>
+<ebene2>Formwechsel</ebene2>
+<ebene3>Wirksamkeit eines Teilgewinnabführungsvertrags nach einem Formwechsel<fundstelle>	519</fundstelle></ebene3>
+<ebene2>Umwandlungssteuerrecht</ebene2>
+<ebene3>Abwärtsverschmelzung mit ausländischer Anteilseignerin<fundstelle>	51</fundstelle></ebene3>
+<ebene3>offene Rücklagen bei einem Formwechsel von KapGes. in PersGes.<fundstelle>	418</fundstelle></ebene3>
+<ebene3>Übertragungsgewinn aus Aufwärtsverschmelzung im Organschaftsfall<fundstelle>	261</fundstelle></ebene3>
+<ebene3>Wertaufstockung bei Einbringung eines Mitunternehmeranteils mit negativem Kapitalkonto<fundstelle>	159</fundstelle></ebene3>
+<ebene1>Unternehmensbewertung</ebene1>
+<ebene2>Bewertungsstandards</ebene2>
+<ebene3>IVSC-Entwurf zur Bewertung nicht-finanzieller Verbindlichkeiten<fundstelle>	109</fundstelle></ebene3>
+<ebene1>Unternehmenszusammenschluss</ebene1>
+<ebene2>Allianzen</ebene2>
+<ebene3>einschlägige IFRS-Standards<fundstelle>	506</fundstelle></ebene3>
+<ebene2>Closing Accounts</ebene2>
+<ebene3>Abschlussersteller<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Bestandteile<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Bilanzierungsfehler<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Einspruchsmöglichkeiten<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Prüfung<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Rechnungslegungsgrundsätze<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Stetigkeitsprinzip<fundstelle>	161</fundstelle></ebene3>
+<ebene3>zeitlicher Rahmen<fundstelle>	161</fundstelle></ebene3>
+<ebene2>erworbene immaterielle Vermögenswerte</ebene2>
+<ebene3>Marken<fundstelle>	61</fundstelle></ebene3>
+<ebene2>Geschäftsbetriebsdefinition<fundstelle>	42</fundstelle></ebene2>
+<ebene2>IFRS 3<fundstelle>	61</fundstelle></ebene2>
+<ebene2>Kaufpreisermittlung</ebene2>
+<ebene3>Closing-Accounts-Mechanismus<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Enterprise Value<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Equity Value<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Locked-Box-Mechanismus<fundstelle>	161</fundstelle></ebene3>
+<ebene2>Locked-Box-Modell</ebene2>
+<ebene3>Anti-Leakage-Vereinbarung<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Carve-out-Transaktionen<fundstelle>	161</fundstelle></ebene3>
+<ebene3>Zwischenabschluss<fundstelle>	161</fundstelle></ebene3>
+<ebene2>Reverse Acquisition<fundstelle>	506</fundstelle></ebene2>
+<ebene1>US-GAAP</ebene1>
+<ebene2>Leasing</ebene2>
+<ebene3>ASC 842<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Erstbewertung<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Folgebewertung<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Klassifikation von Leasingverhältnissen<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Konvergenz mit IFRS 16<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Leasinggeber<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Leasingnehmer<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Leasingverhältnis<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Sale-and-lease-back<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Sales-Type Lease<fundstelle>	172</fundstelle></ebene3>
+<ebene3>Übergangsregelungen<fundstelle>	172</fundstelle></ebene3>
+<ebene1>Verbindlichkeiten</ebene1>
+<ebene2>kurzfristige<fundstelle>	565</fundstelle></ebene2>
+<ebene1>Versicherungsunternehmen</ebene1>
+<ebene2>IFRS 9</ebene2>
+<ebene3>Enforcement-Prüfungsschwerpunkt<fundstelle>	53</fundstelle></ebene3>
+<ebene1>Versicherungsverträge</ebene1>
+<ebene2>Ansatz<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Bewertung<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Definition<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Diskontierung<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Erfüllungswert<fundstelle>	315</fundstelle></ebene2>
+<ebene2>IFRS 17</ebene2>
+<ebene3>Änderungsvorschläge des ED/2019/4<fundstelle>	380</fundstelle></ebene3>
+<ebene3>Anwendungsbereich<fundstelle>	315</fundstelle></ebene3>
+<ebene3>Bewertungsvereinfachungen für bestimmte Vertragstypen<fundstelle>	380</fundstelle></ebene3>
+<ebene2>Komponenten<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Portfolioidentifikation<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Premium Allocation Approach<fundstelle>	380</fundstelle></ebene2>
+<ebene2>risikobedingte Anpassung<fundstelle>	315</fundstelle></ebene2>
+<ebene2>Rückversicherungsverträge</ebene2>
+<ebene3>ausgegebene (aktive)<fundstelle>	380</fundstelle></ebene3>
+<ebene3>gehaltene (passive)<fundstelle>	380</fundstelle></ebene3>
+<ebene2>Variable Fee Approach<fundstelle>	380</fundstelle></ebene2>
+<ebene2>Versicherungsrisiko<fundstelle>	315</fundstelle></ebene2>
+<ebene2>vertragliche Servicemarge<fundstelle>	315</fundstelle></ebene2>
+<ebene1>Verwaltungsanweisungen</ebene1>
+<ebene2>Finanzministerium Bayern</ebene2>
+<ebene3>Fristverlängerung für die Umstellung von Registrierkassen<fundstelle>	520</fundstelle></ebene3>
+<ebene2>Finanzministerium NRW</ebene2>
+<ebene3>Erlass vom 18.07.2018 - S 2133-000036-V B 1/S 2741-91-V B 4<fundstelle>	52</fundstelle></ebene3>
+<ebene2>Landesamt für Steuern Niedersachsen</ebene2>
+<ebene3>Verfügung vom 01.04.2019 - S 2175-103-St 242<fundstelle>	312</fundstelle></ebene3>
+<ebene3>Verfügung vom 02.05.2019 - S 2741-436-St 242<fundstelle>	363</fundstelle></ebene3>
+<ebene3>Verfügung vom 17.12.2018 - S 2836-1-St 241<fundstelle>	110</fundstelle></ebene3>
+<ebene2>Oberste Finanzbehörden der Länder</ebene2>
+<ebene3>Gleichlautende Erlasse vom 25.01.2019<fundstelle>	160, 262</fundstelle></ebene3>
+<ebene2>OFD Frankfurt/M.</ebene2>
+<ebene3>Verfügung vom 05.02.2019 - S 2133 A-002-St 210<fundstelle>	212</fundstelle></ebene3>
+<ebene3>Verfügung vom 27.02.2019 - S 2145 A-005-St 210<fundstelle>	262</fundstelle></ebene3>
+<ebene3>Verfügung vom 30.10.2019 - S 2244 A-41-St 519<fundstelle>	575</fundstelle></ebene3>
+<ebene2>OFD Karlsruhe</ebene2>
+<ebene3>Verfügung vom 03.04.2019 - S 0315-St 42<fundstelle>	262</fundstelle></ebene3>
+<ebene2>OFD NRW</ebene2>
+<ebene3>Verfügung vom 20.12.2018 - S 2745 a-2015/0011-St 135<fundstelle>	110</fundstelle></ebene3>
+<ebene1>Vorräte</ebene1>
+<ebene2>Ausweis</ebene2>
+<ebene3>Besonderheiten bei Emissionsrechten<fundstelle>	400</fundstelle></ebene3>
+<ebene2>Durchschnittsbewertung<fundstelle>	499</fundstelle></ebene2>
+<ebene2>Eigentumsvorbehalt<fundstelle>	400</fundstelle></ebene2>
+<ebene2>Folgebewertung<fundstelle>	499</fundstelle></ebene2>
+<ebene2>geleistete Anzahlungen auf Bestellungen<fundstelle>	400</fundstelle></ebene2>
+<ebene2>HGB<fundstelle>	400, 499</fundstelle></ebene2>
+<ebene2>IAS 2<fundstelle>	400, 499</fundstelle></ebene2>
+<ebene2>Konsignationslager<fundstelle>	400</fundstelle></ebene2>
+<ebene2>kundenbezogen beschaffte Werkzeuge<fundstelle>	400</fundstelle></ebene2>
+<ebene2>nicht genutzte Maschinen<fundstelle>	400</fundstelle></ebene2>
+<ebene2>Produktproben<fundstelle>	400</fundstelle></ebene2>
+<ebene2>Retrograde Bewertungsmethode (Retail-Methode)<fundstelle>	499</fundstelle></ebene2>
+<ebene2>selbst erstellte</ebene2>
+<ebene3>aktivierungsfähige Abschreibungen<fundstelle>	400</fundstelle></ebene3>
+<ebene3>Fremdkapitalzinsen<fundstelle>	400</fundstelle></ebene3>
+<ebene3>Herstellungskosten von Kuppelprodukten<fundstelle>	400</fundstelle></ebene3>
+<ebene3>Zugangsbewertung<fundstelle>	400</fundstelle></ebene3>
+<ebene2>unterwegs befindliche Waren<fundstelle>	400</fundstelle></ebene2>
+<ebene2>Verbrauchsfolgebewertung<fundstelle>	499</fundstelle></ebene2>
+<ebene2>verdeckte Finanzierungskosten<fundstelle>	499</fundstelle></ebene2>
+<ebene2>verkaufsbestimmte Software<fundstelle>	400</fundstelle></ebene2>
+<ebene2>Zugangsbewertung</ebene2>
+<ebene3>vereinfachte<fundstelle>	499</fundstelle></ebene3>
+<ebene1>Wirtschaftsprüfer</ebene1>
+<ebene2>Abschlussprüferaufsichtsstelle (APAS)</ebene2>
+<ebene3>Inspektionsschwerpunkte<fundstelle>	160</fundstelle></ebene3>
+<ebene3>Verlautbarung Nr. 4 zur Informationspflicht nach Art. 14 EU-Abschlussprüferverordnung<fundstelle>	112</fundstelle></ebene3>
+<ebene1>Wirtschaftsprüferkammer (WPK)</ebene1>
+<ebene2>Stellungnahmen</ebene2>
+<ebene3>Änderungen am Code of Ethics bezüglich der Erbringun von Nichtprüfungsleistungen<fundstelle>	468</fundstelle></ebene3>
+<ebene1>Wissenschaft</ebene1>
+<ebene2>Ehrungen</ebene2>
+<ebene3>Ehrenpreis der BVBC-Stiftung<fundstelle>	267, 576</fundstelle></ebene3>
+<ebene3>IVC Controlling Excellence Award<fundstelle>	273</fundstelle></ebene3>
+<ebene2>Veranstaltungen</ebene2>
+<ebene3>VHB-Pfingsttagung<fundstelle>	364</fundstelle></ebene3>
+<ebene1>Zahlungsbericht</ebene1>
+<ebene2>Aufstellungspflicht<fundstelle>	335</fundstelle></ebene2>
+<ebene2>Befreiungsvoraussetzungen<fundstelle>	335</fundstelle></ebene2>
+<ebene2>Einzelzahlungsbericht<fundstelle>	335</fundstelle></ebene2>
+<ebene2>empirische Studien</ebene2>
+<ebene3>deutsche börsennotierte Unternehmen 2016<fundstelle>	335</fundstelle></ebene3>
+<ebene2>Erstanwendung<fundstelle>	335</fundstelle></ebene2>
+<ebene2>Gestaltungsspielräume<fundstelle>	335</fundstelle></ebene2>
+<ebene2>Hauptwirtschaftstätigkeit<fundstelle>	335</fundstelle></ebene2>
+<ebene2>Konzernzahlungsbericht<fundstelle>	335</fundstelle></ebene2>
+<ebene2>NACE-Tätigkeitsliste<fundstelle>	335</fundstelle></ebene2>
+<ebene2>Rohstoffunternehmen<fundstelle>	335</fundstelle></ebene2>
+</register>
