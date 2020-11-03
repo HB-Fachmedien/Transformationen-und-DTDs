@@ -45,7 +45,7 @@
     -->
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/verschlagwortung/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata[not(starts-with(pub/pages/start_page/text(), 'M'))]/keywords/keyword[@tmid]">
                 <xsl:sort/>
@@ -57,8 +57,7 @@
     </xsl:template>
     
     <xsl:template match="author">
-        <!--<xsl:if test="ancestor::metadata/keywords/keyword">--> <!-- hier weiter: habe das auskommentiert... weil DB keine keywords hat  -->
-        <!-- Keine Mantelseiten -->
+        <!-- Keine Mantelseiten mit ins Register nehmen:-->
         <xsl:variable name="isDB" select="ancestor::metadata/pub/pubtitle = 'Der Betrieb'"/>
         
         <xsl:if test="not(string(number(normalize-space(ancestor::metadata/pub/pages/start_page))) = 'NaN')">
