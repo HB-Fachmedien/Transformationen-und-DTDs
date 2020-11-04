@@ -4,7 +4,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/c:/verschlagwortung/?recurse=yes;select=*.xml')"/>
     <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
     
     <!-- Zum Debuggen unten den das if-Statement auf true() schalten! -->
