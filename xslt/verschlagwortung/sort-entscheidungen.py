@@ -3,8 +3,7 @@
 Ein Pyhton Skript, welches Entscheidungen vom Entscheidungsregister sortiert, die vom selben Gericht und vom selben
 Datum stammen.
 
-Nimmt als einzigen Parameter den Speicherort der Entscheidungsregister Datei entgegen und schreibt die Ergbebnisdatei
-in den gleichen Ordner mit dem [-sortiert] Suffix.
+Nimmt als einzigen Parameter den Speicherort der Entscheidungsregister Datei entgegen.
 
 '''
 
@@ -21,12 +20,6 @@ def read_xml_file(file):
     content = [x.strip() for x in content]
 
     return content
-
-def write_xml(file): # muss noch editiert werden
-    with open("yourfile.txt", "w") as f:
-        for line in lines:
-            if line.strip("\n") != "nickname_to_delete":
-                f.write(line)
 
 
 def get_gerichts_indices(filecontent):
@@ -92,6 +85,9 @@ def delete_empty_lines(filename):
         fd.writelines(line for line in lines if line.strip())
         fd.truncate()
 
+def _increment_all_elements_of_list(l):
+	return [x+1 for x in l]
+
 if __name__ == '__main__':
     if not sys.argv[1].endswith('.xml'):
         raise IOError('Input Datei scheint keine XML Datei zu sein. Das Skript benötigt nur einen Parameter -> den absoluten Pfad zur Verschlagwortungsdatei.')
@@ -104,8 +100,8 @@ if __name__ == '__main__':
 
     resultlist_of_court_decisions, needless_headlines = get_needless_h2_and_line_intervals_with_affected_court_decisions(filecontent, indices_list)
 
-    print('Urteilszeilen, die sortiert werden müssen:', resultlist_of_court_decisions, '', sep='\n')
+    print('Urteilszeilen, die sortiert werden müssen:', list(map(_increment_all_elements_of_list, resultlist_of_court_decisions)), '', sep='\n')
     print('Überflüssige Gerichtsüberschriften', needless_headlines) # sollte aber mittlerweile unnötig sein, wird vorher mit einer XSLT Regel abgefangen
 
-    filecontent = sort_court_decisions(filecontent, resultlist_of_court_decisions)
+    # filecontent = sort_court_decisions(filecontent, resultlist_of_court_decisions)
     
