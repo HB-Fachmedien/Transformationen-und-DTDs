@@ -5,7 +5,6 @@
     <xsl:preserve-space elements="seite-gericht"/>
     
     <xsl:variable name="alle-Hefte" select="collection('file:/c:/verschlagwortung/?recurse=yes;select=*.xml')"/>
-    <!--<xsl:variable name="alle-ent-dateien" select="$alle-Hefte/*[name()= ('ent', 'entk')]"/> -->
     
     <!-- Zum Debuggen unten den das if-Statement auf true() schalten! -->
     
@@ -21,28 +20,7 @@
     
     /* Anzahl Entscheidungen pro Gericht ausgeben: */
     //h2/concat(text(), ';', abs(506-count(following-sibling::zeile-gericht)-count(following-sibling::h2[1]/preceding-sibling::zeile-gericht)))
-    
-    mit diesem Regex alle Gerichte entfernen, die nicht vorkommen:
-    .*?\;0$
-    
-    -->
-    
-    <!-- 
-    
-    ToDo:
-    
-    ********************************************************************************************************
-    
-    
-    Entscheidungen vom selben Tag nach Römischen Zahlen sortieren! -->
-    
-    
-    <!-- ALLE ENTSCHEIDUNGEN AUßER KOMMENTIERTE UND AUS DEM MANTELTEIL
-    
-        
-    
-    ********************************************************************************************************
-    
+
     -->
 
     <xsl:template match="/">
