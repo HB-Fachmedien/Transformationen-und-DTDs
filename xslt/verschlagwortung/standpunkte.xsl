@@ -8,7 +8,7 @@
     <xsl:preserve-space elements="seite"/>
     
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/tempDB/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/c:/verschlagwortung/?recurse=yes;select=*.xml')"/>
         <entscheidungsregister><xsl:text>&#xa;</xsl:text>
             <h2>Beilagen</h2>
             <zeile><!-- Hier muss noch nach Beilagen sortiert werden und die Ausgabe dementsprechend verändert werden. Das hier war nur ein Quickfix. Standpunkte funktionieren. -->
