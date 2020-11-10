@@ -36,6 +36,7 @@
                     <document>
                         <uri><xsl:value-of select="base-uri()"/></uri>
                         <xsl:copy-of select="./.."/>
+                        <doctype><xsl:value-of select="/*/name()"/></doctype>
                         <ressort><xsl:value-of select="ancestor::metadata/ressort"/></ressort>
                     </document>
                 </xsl:if>
