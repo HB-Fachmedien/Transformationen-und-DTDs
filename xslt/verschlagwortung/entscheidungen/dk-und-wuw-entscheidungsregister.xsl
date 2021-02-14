@@ -37,6 +37,7 @@
         <class sort="85">BPatG</class>
         <class sort="86">BVerwG</class>
         <class sort="87">BayObLG</class>
+        <class sort="87">BayObLG München</class>
         <class sort="88">KG Berlin</class>
         <class sort="89">OLG Brandenburg</class>
         <class sort="90">OLG Celle</class>
@@ -48,6 +49,8 @@
         <class sort="125">OLG Köln</class>
         <class sort="130">OLG München</class>
         <class sort="135">OLG Nürnberg</class>
+        <class sort="137">OLG Oldenburg</class>
+        <class sort="138">SchlHOLG</class>
         <class sort="140">OLG Stuttgart</class>
         <class sort="145">OLG Thüringen</class>
         <class sort="150">LG Berlin</class>
@@ -57,15 +60,20 @@
         <class sort="170">LG Hamburg</class>
         <class sort="180">LG Hannover</class>
         <class sort="190">LG Köln</class>
-        <class sort="200">LG Mannheim</class>
+        <class sort="200">LG Leipzig</class>
+        <class sort="202">LG Magdeburg</class>
+        <class sort="203">LG Mannheim</class> 
         <class sort="205">LG München I</class>
+        <class sort="207">LG Nürnberg-Fürth</class>
         <class sort="210">LG Potsdam</class>
         <class sort="215">LG Stuttgart</class>
         <class sort="220">AG Bonn</class>
         <class sort="225">FG Köln</class>
         <class sort="230">LAG Düsseldorf</class>
+        <class sort="233">OVG Nordrhein-Westfalen</class>
         <class sort="235">VG Arnsberg</class>
         <class sort="240">VG Düsseldorf</class>
+        <class sort="245">VG Köln</class>
         <class sort="250">VG München</class>
         <class sort="255">Bundesregierung</class>
         <class sort="256">Deutscher Bundestag</class>
@@ -93,6 +101,7 @@
         <class sort="350">Bund-Länder-Kommission</class>
         <class sort="360">Europäischer Rat</class>
         <class sort="370">Europäisches Hochschulinstitut</class>
+        <class sort="375">European Competition Network (ECN)</class>
         <class sort="380">Prof. Dr. Daniel Zimmer</class>
     </xsl:variable>
     
