@@ -15,37 +15,10 @@
     <!-- XPath Ausdruck, um Knoten zu vergleichen. Vergleicht nur auf String Gleichheit //A[.= following-sibling::A]
         bzw. //A[some $sibling in following-sibling::A satisfies deep-equal(. ,$sibling)]
     -->
-    
-    <!-- FÜR DAS WuW AUTORENREGISTER:
-    
-    <h2>Abhandlungen</h2>
-    [ressort/text()='Abhandlung']
-    
-    <h2>Gastkommentare</h2>
-    /gk
-    
-    <h2>Urteilsanmerkungen</h2>
-    /ent
-    
-    <h2>Ökonomisches Lexikon</h2>
-    [ressort/text()='Ökonomisches Lexikon']
-    
-    <h2>Tagungsbericht</h2>
-    [ressort/text()='Tagungsbericht']
-    
-    <h2>International Developments</h2>
-    HIER HABE ICH BISHER NICHTS, WEIL KEINE AUTORENDATEN IN DIESEN DOKUMENTEN
-    
-    <h2>Literatur</h2>
-    HIER HABE ICH BISHER NICHTS, WEIL KEINE AUTORENDATEN IN DIESEN DOKUMENTEN
-    
-    <h2>Interview</h2>
-    /iv
-    
-    -->
+
 
     <xsl:template match="/">
-        <xsl:variable name="file-collection" select="collection('file:/c:/verschlagwortung/?recurse=yes;select=*.xml')"/>
+        <xsl:variable name="file-collection" select="collection('file:/D:/programmierung/workspace/hbfm/Register_2020/WUW_2020/?recurse=yes;select=*.xml')"/>
         <Register>
             <xsl:apply-templates select="$file-collection/*/metadata[not(starts-with(pub/pages/start_page/text(), 'M'))]/keywords/keyword[@tmid]">
                 <xsl:sort/>
@@ -59,6 +32,7 @@
     <xsl:template match="author">
         <!-- Keine Mantelseiten mit ins Register nehmen:-->
         <xsl:variable name="isDB" select="ancestor::metadata/pub/pubtitle = 'Der Betrieb'"/>
+        <xsl:variable name="isWUW" select="ancestor::metadata/pub/pubtitle = 'Wirtschaft und Wettbewerb'"/>
         
         <xsl:if test="not(string(number(normalize-space(ancestor::metadata/pub/pages/start_page))) = 'NaN')">
             <autoren-zeile>
@@ -68,10 +42,24 @@
                     <xsl:choose>
                         <xsl:when test="$isDB and /*/name()='kk'"> (K)</xsl:when>
                         <xsl:when test="$isDB and /*/name()='au'"> (A)</xsl:when>
-                        <xsl:when test="$isDB and /*/name()='va'"> (Anm.)</xsl:when>
+                        <xsl:when test="$isDB and /*/name()='va'"> (Anm.)</xsl:when>                 
                         <xsl:otherwise></xsl:otherwise>
                     </xsl:choose>
                 </abkuerzung>
+                <xsl:if test="$isWUW">
+                    <wuw-ueberschriften>
+                        <xsl:choose>
+                            <xsl:when test="/*/metadata/ressort/text()='Abhandlung'">Abhandlungen</xsl:when>
+                            <xsl:when test="/*/metadata/ressort/text()='Tagungsbericht'">Abhandlungen</xsl:when> <!-- war vorher Tagungsberichte-->
+                            <xsl:when test="/*/metadata/ressort/text()='Ökonomisches Lexikon'">Ökonomisches Lexikon</xsl:when>
+                            <xsl:when test="/gk">Gastkommentare</xsl:when>
+                            <xsl:when test="/iv">Interview</xsl:when>
+                            <xsl:when test="/ent">Urteilsanmerkungen</xsl:when>
+                            <xsl:when test="/rez">Rezensionen</xsl:when>
+                            <xsl:otherwise>International Developments</xsl:otherwise>
+                        </xsl:choose>
+                    </wuw-ueberschriften>
+                </xsl:if>
                 <xsl:comment><xsl:if test="ancestor::metadata/pub/pub_suppl"><xsl:text>Beilage </xsl:text><xsl:value-of select="ancestor::metadata/pub/pub_suppl"/><!--<xsl:text>|</xsl:text>--></xsl:if><xsl:if test="not(ancestor::metadata/pub/pub_suppl)"><xsl:value-of select="../../pub/pages/start_page"/></xsl:if></xsl:comment>
             </autoren-zeile>
         </xsl:if>
