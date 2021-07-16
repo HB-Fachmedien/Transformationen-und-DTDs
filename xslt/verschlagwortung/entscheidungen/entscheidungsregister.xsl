@@ -4,7 +4,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/verschlagwortung/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/C:/verschlagwortung/?recurse=yes;select=*.xml')"/>
     
     <!-- Zum Debuggen unten den das if-Statement auf true() schalten! -->
     
@@ -52,7 +52,19 @@
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
                 <xsl:with-param name="schreibweise" select="'Bundesfinanzhof'"/>
-            </xsl:call-template>           
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BFH'"/>
+                <xsl:with-param name="ressort" select="'sr'"/>
+                <xsl:with-param name="doctype" select="'au'"/>
+                <xsl:with-param name="schreibweise" select="'Bundesfinanzhof'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BFH'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+                <xsl:with-param name="schreibweise" select="'Bundesfinanzhof'"/>
+            </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'FG Baden-Württemberg'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
@@ -240,8 +252,7 @@
                 <xsl:with-param name="gerichtsBezeichnung" select="'OFD NRW'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
-            </xsl:call-template>
-                        
+            </xsl:call-template>          
             <!-- ist das richtig hier? -->
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'Rheinland-Pfälzisches Landesamt für Steuern'"/>
@@ -249,13 +260,11 @@
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
             <!-- bis hier -->
-            
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'LfSt Rheinland-Pfalz'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
                 <xsl:with-param name="doctype" select="'va'"/>
             </xsl:call-template>
-            
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'Finanzbehörde Hamburg'"/>
                 <xsl:with-param name="ressort" select="'sr'"/>
@@ -407,6 +416,16 @@
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'AG Hamburg'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'AG Köln'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
             
             <!-- AR -->
             <h1>Arbeits- und sozialrechtliche Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
@@ -432,6 +451,11 @@
                 <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
                 <xsl:with-param name="schreibweise" select="'Bundessozialgericht'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'LAG Berlin-Brandenburg'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'LAG Düsseldorf'"/>
@@ -480,6 +504,11 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'KG Berlin'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'ArbG Köln'"/>
                 <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>

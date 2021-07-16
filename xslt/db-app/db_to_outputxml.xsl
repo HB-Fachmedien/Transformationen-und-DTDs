@@ -4,11 +4,11 @@
     <xsl:output indent="yes" omit-xml-declaration="yes"/>
     
     <xsl:variable name="ausgabennummer" as="xs:string">
-        <xsl:value-of select="tokenize(document-uri(collection('../../../../../webexport/export/DB_3/XML/?recurse=yes;select=*.xml')[1]),'/')[last()-1]"/>
+        <xsl:value-of select="tokenize(document-uri(collection('file:/C:/webexport/export/DB_3/XML/?recurse=yes;select=*.xml')[1]),'/')[last()-1]"/>
     </xsl:variable>
     
     <xsl:variable name="pubdatum">
-        <xsl:value-of select="document(document-uri(collection(concat('../../../../../webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))[1]))/*/metadata/pub/date"/>    
+        <xsl:value-of select="document(document-uri(collection(concat('file:/C:/webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))[1]))/*/metadata/pub/date"/>    
     </xsl:variable>
 
     <xsl:template match="/">
@@ -16,7 +16,7 @@
         <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
         <output nr="{$ausgabennummer}" pubdatum="{$pubdatum}">
         <xsl:for-each
-            select="collection(concat('../../../../../webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))">
+            select="collection(concat('file:/C:/webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))">
 
             <xsl:variable name="docum" select="document(document-uri(.))"/>
             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
