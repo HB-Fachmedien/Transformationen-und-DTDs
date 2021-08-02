@@ -47,7 +47,7 @@
                         
                         <a href="https://aufsichtsrat.owlit.de/Browse.aspx?level=roex%3abron.Zeitschriften.166da8952f2d4dd69db07d45271dd3df&amp;title=Aufsichtsrat" target="_blank">Bibliothek der Recherche-Datenbank.</a>
                     </div>
-                    <section class="left" id="content" style="width:630px">
+                    <section class="left" id="content">
                         <div class="content-list inhaltsverzeichnis">
                             <div class="content-text">
                                 <div class="ihv_level1">
@@ -64,19 +64,19 @@
                                             <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number" order="ascending"/>
                                             <xsl:choose>
                                                 <xsl:when test="current-grouping-key() = 'gk'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Gastkommentar</div>
+                                                    <div class="ihv_headline ressort">Gastkommentar</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'iv'">
-                                                    <div id="interv" class="ihv_headline ressort" style="margin-bottom: 5px;">Interview</div>
+                                                    <div id="interv" class="ihv_headline ressort">Interview</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'ent'">
-                                                    <div id="resp" class="ihv_headline ressort" style="margin-bottom: 5px;">Rechtsprechung</div>
+                                                    <div id="resp" class="ihv_headline ressort">Rechtsprechung</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'rez'">
-                                                    <div id="rez" class="ihv_headline ressort" style="margin-bottom: 5px;">Bücher</div>
+                                                    <div id="rez" class="ihv_headline ressort">Bücher</div>
                                                 </xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'divso'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Neues aus der Datenbank</div>
+                                                    <div class="ihv_headline ressort">Neues aus der Datenbank</div>
                                                 </xsl:when>
                                                 <xsl:otherwise/>
                                             </xsl:choose>
@@ -84,22 +84,14 @@
                                                 <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number" order="ascending"/>
                                                 <xsl:choose>
                                                     <xsl:when test="current-grouping-key() = 'Das aktuelle Stichwort'">
-                                                        <div id="aktstich" class="ihv_headline ressort" style="margin-bottom: 5px;">Das aktuelle Stichwort</div>
+                                                        <div id="aktstich" class="ihv_headline ressort">Das aktuelle Stichwort</div>
                                                     </xsl:when>
                                                     <xsl:when test="current-grouping-key() = 'Beitrag'">
-                                                        <div id="beit" class="ihv_headline ressort" style="margin-bottom: 5px;">Beiträge</div>
+                                                        <div id="beit" class="ihv_headline ressort">Beiträge</div>
                                                     </xsl:when>
                                                 </xsl:choose>
                                             </xsl:for-each-group>
-                                            <xsl:choose>
-                                                <xsl:when test="/nr/metadata/title/text()!='Aktuelle Fachbeiträge'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Nachrichten</div>
-                                                </xsl:when>
-                                                <xsl:when test="/*/metadata/title/text()='Aktuelle Fachbeiträge'">
-                                                    <div class="ihv_headline ressort" style="margin-bottom: 5px;">Aktuelle Fachbeiträge</div>
-                                                </xsl:when>
-                                                <xsl:otherwise></xsl:otherwise>
-                                            </xsl:choose>
+                                 
                                             
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
@@ -135,7 +127,7 @@
                     <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
                     <xsl:otherwise><div class="ihv_headline titel"><xsl:value-of select="/*/metadata/title"/></div></xsl:otherwise>
                 </xsl:choose>
-                <div class="ihv_autor"  style="display: inline;">
+                <div class="ihv_autor">
                     <xsl:for-each select="/*/metadata/authors/author">
                         <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
                     </xsl:for-each>
@@ -145,7 +137,7 @@
                         <xsl:value-of select="/*/metadata/summary"/>
                     </div>
                 </xsl:if>
-                <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                <div class="ihv_seite">
                     <xsl:choose>
                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
                             <xsl:value-of select="/*/metadata/pub/pages/start_page"/>, <xsl:text>XQ</xsl:text><xsl:value-of select="$siriusID"/>
@@ -166,15 +158,13 @@
             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
             <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
             <a target="_blank" href="https://research.owlit.de/lx-document/AR{$siriusID}">
-                <xsl:choose>
-                    <xsl:when test="/*/metadata[title='Aktuelle Fachbeiträge']"/>
-                    <xsl:otherwise>
-                        <div class="ihv_headline titel"><xsl:value-of select="/*/metadata/title"/></div>
-                    </xsl:otherwise>
-                </xsl:choose>
-                <div class="ihv_autor"  style="display: inline;">
+                <div class="ihv_headline titel">
+                    <xsl:value-of select="/*/metadata/title">
+                    </xsl:value-of>
+                </div>        
+                <div class="ihv_autor">
                     <xsl:for-each select="/*/metadata/authors/author">
-                            <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>    
+                        <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if><xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>    
                     </xsl:for-each>
                 </div>
                 <xsl:if test="/*/metadata/summary">
@@ -182,7 +172,7 @@
                         <p><xsl:value-of select="/*/metadata/summary"/></p>
                     </div>
                 </xsl:if>
-                <div class="ihv_seite" style="font-style: italic; padding-right: 5px; color: #666666; margin-bottom: 30px; text-align: left;">
+                <div class="ihv_seite">
                     <xsl:choose>
                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]"><xsl:value-of select="/*/metadata/pub/pages/start_page"/>, <xsl:text>AR</xsl:text><xsl:value-of select="$siriusID"/></xsl:when>
                         <xsl:otherwise>
