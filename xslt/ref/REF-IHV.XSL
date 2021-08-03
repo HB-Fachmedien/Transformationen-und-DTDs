@@ -95,13 +95,10 @@
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:when>
                                                                     <xsl:otherwise>
-																		<xsl:text>REF vom </xsl:text> 
-																	<xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" />,
-																	<xsl:text>Heft </xsl:text> 
-																	<xsl:value-of select="/*/metadata/pub/pubedition"/>,  
-																	<xsl:text> Seite </xsl:text> 
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; 
-																		<xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>REF</xsl:text><xsl:value-of select="$siriusID"/> 
+                                                                        <xsl:text>REF vom </xsl:text>
+                                                                        <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" /><xsl:text>, Heft </xsl:text>
+                                                                        <xsl:value-of select="/*/metadata/pub/pubedition"/><xsl:text>, Seite </xsl:text>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/><xsl:text>, REF</xsl:text><xsl:value-of select="$siriusID"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
                                                             </div>
