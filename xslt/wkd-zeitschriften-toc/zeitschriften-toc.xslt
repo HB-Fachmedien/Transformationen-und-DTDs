@@ -338,7 +338,7 @@
                             <xsl:text>S.</xsl:text>
                             <xsl:value-of select="codepoints-to-string(160)"/>
                             <xsl:value-of select="$knoten/metadata/pub/pages/start_page"/>
-                            <xsl:value-of select="codepoints-to-string(8209)"/>
+                            <xsl:value-of select="codepoints-to-string(8208)"/>
                             <xsl:value-of select="$knoten/metadata/pub/pages/last_page"/>
                             <br/>
                             <xsl:value-of select="$dokid"/>
