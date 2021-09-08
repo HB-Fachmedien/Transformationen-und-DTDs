@@ -69,10 +69,9 @@
                         <xsl:value-of select="$erstes-dokument/*/metadata/pub/date"/>
                     </date>
                     <pages>
-                        <start_page>M2</start_page>
+                        <start_page/>
                         <!-- Hier immer die Heftseite aus dem Print nehmen -->
                         <!-- dafür hier eine Mappingtabelle? -->
-                        <last_page>M2</last_page>
                         <article_order>1</article_order>
                     </pages>
                     <public value="true"/>
