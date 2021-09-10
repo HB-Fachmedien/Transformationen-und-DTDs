@@ -10,14 +10,13 @@
     <xsl:variable name="pubdatum">
         <xsl:value-of select="document(document-uri(collection(concat('file:/C:/webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))[1]))/*/metadata/pub/date"/>    
     </xsl:variable>
-
+    
     <xsl:template match="/">
 
         <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
         <output nr="{$ausgabennummer}" pubdatum="{$pubdatum}">
-        <xsl:for-each
-            select="collection(concat('file:/C:/webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))">
-
+        <xsl:for-each select="collection(concat('file:/C:/webexport/export/DB_3/XML/',$ausgabennummer,'/?recurse=yes;select=*.xml'))">
+                
             <xsl:variable name="docum" select="document(document-uri(.))"/>
             <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
             <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
@@ -207,25 +206,27 @@
                         <xsl:otherwise/>
                     </xsl:choose>
                 </xsl:variable>
-
-                <xsl:variable name="startpage" select="xs:integer(replace($pagetemp, '[M|S]', ''))"
-                    as="xs:integer"/>
-
-                <xsl:variable name="lastpage"
-                    select="xs:integer(replace($docum/*/metadata/pub/pages/last_page, '[M|S]', ''))"
-                    as="xs:integer"/>
-
-                <xsl:variable name="year" select="$docum/*/metadata/pub/pubyear"/>
-
-                <xsl:variable name="s-id-anzahl" select="1 + ($startpage - $lastpage)"/>
-
-                <!-- Für jede Seite ein Eintrag -->
-                <xsl:for-each select="$startpage to $lastpage">
-                    <SELBST-ID>ZEI_KUR_DB_J_<xsl:value-of select="$year"/>_S_<xsl:value-of
-                            select="$page-praefix"/><xsl:value-of
-                            select="position() + $startpage - 1"/></SELBST-ID>
-                </xsl:for-each>
-
+                
+                <xsl:if test="$pagetemp != ''">
+                    <xsl:variable name="startpage" select="xs:integer(replace($pagetemp, '[M|S]', ''))"
+                        as="xs:integer"/>
+    
+                    <xsl:variable name="lastpage"
+                        select="xs:integer(replace($docum/*/metadata/pub/pages/last_page, '[M|S]', ''))"
+                        as="xs:integer"/>
+    
+                    <xsl:variable name="year" select="$docum/*/metadata/pub/pubyear"/>
+    
+                    <xsl:variable name="s-id-anzahl" select="1 + ($startpage - $lastpage)"/>
+    
+                    <!-- Für jede Seite ein Eintrag -->
+                    <xsl:for-each select="$startpage to $lastpage">
+                        <SELBST-ID>ZEI_KUR_DB_J_<xsl:value-of select="$year"/>_S_<xsl:value-of
+                                select="$page-praefix"/><xsl:value-of
+                                select="position() + $startpage - 1"/></SELBST-ID>
+                    </xsl:for-each>
+                </xsl:if>
+                
                 <PUBDATUM><xsl:value-of select="$docum/*/metadata/pub/date"/>T00:00:00</PUBDATUM>
 
                 <HEFTNR>
