@@ -261,9 +261,10 @@
                     <xsl:when test="$all_source_l2_prefix = 'dsb'">dfv Mediengruppe</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'dfv'">dfv Mediengruppe</xsl:when>
                     <xsl:when test="$all_source_l2_prefix = 'ifst'">Institut Finanzen und Steuern</xsl:when>
+                    <xsl:when test="$all_source_l2_prefix = 'bv'">Bund Verlag</xsl:when>
                     
-                    <!-- Handelsblatt Fachmedien: -->
-                    <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','fb','kor','ref','rel','ret','wuw','zoe')">Handelsblatt Fachmedien</xsl:when>
+                    <!-- Fachmedien Otto Schmidt: -->
+                    <xsl:when test="$all_source_l2_prefix = ('hbfm','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','fb','kor','ref','rel','ret','wuw','zoe','paw')">Fachmedien Otto Schmidt</xsl:when>
                     <!--  -->
                     
                     <xsl:otherwise><FEHLER>Konnte all_source/@level='2' nicht auflösen: <xsl:value-of select="$all_source_l2_prefix"/></FEHLER></xsl:otherwise>
