@@ -102,8 +102,8 @@
 			<xsl:apply-templates select="public | add_target | version | publisher"/>
 			
 			<xsl:choose>
-				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm', 'hbfm_ae', 'hbfm_dbs', 'ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe', 'zuj')">
-					<publisher>Handelsblatt Fachmedien</publisher>
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm', 'hbfm_ae', 'hbfm_dbs', 'ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe', 'zuj','paw')">
+					<publisher>Fachmedien Otto Schmidt</publisher>
 				</xsl:when>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
 					<publisher>Institut Finanzen und Steuern</publisher>
@@ -1331,8 +1331,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
