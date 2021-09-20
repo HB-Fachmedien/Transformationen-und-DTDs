@@ -22,9 +22,6 @@
             <xsl:when test="$publisher='db'">
                 <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
                     <xsl:call-template name="fill_db"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='ret'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_ret"/></xsl:result-document></xsl:when>
             <xsl:when test="$publisher='rel'">
                 <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
                     <xsl:call-template name="fill_rel"/></xsl:result-document></xsl:when>
@@ -46,6 +43,9 @@
             <xsl:when test="$publisher='zuj'">
                 <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
                     <xsl:call-template name="fill_zuj"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher=('ret','bwp','paw')">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_ihv"/></xsl:result-document></xsl:when>
             <xsl:otherwise>
                 <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
                     <xsl:text>Ungültige Zeitschrift</xsl:text></xsl:result-document></xsl:otherwise>
@@ -60,8 +60,6 @@
             <head>
                 <meta charset="UTF-8"/>
                 <link media="screen" type="text/css" href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css" rel="stylesheet"/>
-                <style> 
-                </style>
             </head>
             <body>
                 <div class="content-wrapper">
@@ -152,7 +150,7 @@
                                                                         <xsl:text>ZUJ vom </xsl:text>
                                                                         <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" /><xsl:text>, Heft </xsl:text> 
                                                                         <xsl:value-of select="/*/metadata/pub/pubedition"/><xsl:text>, Seite </xsl:text> 
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/><xsl:text>, ZUJ</xsl:text><xsl:value-of select="$siriusID"/> 
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/><xsl:text>, ZUJ</xsl:text><xsl:value-of select="$siriusID"/> 
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
                                                             </div>
@@ -262,7 +260,7 @@
                                                                         <xsl:text>REF vom </xsl:text> 
                                                                         <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" /><xsl:text>, Heft </xsl:text> 
                                                                         <xsl:value-of select="/*/metadata/pub/pubedition"/><xsl:text>, Seite </xsl:text>
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/><xsl:text>, REF</xsl:text><xsl:value-of select="$siriusID"/>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/><xsl:text>, REF</xsl:text><xsl:value-of select="$siriusID"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
                                                             </div>
@@ -451,7 +449,7 @@
                                 <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
+                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </div>
@@ -567,7 +565,7 @@
                                                                             <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
                                                                         </xsl:when>
                                                                         <xsl:otherwise>
-                                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
+                                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:value-of select="$dokid"/>
                                                                         </xsl:otherwise>
                                                                     </xsl:choose>
                                                                 </div>
@@ -726,7 +724,7 @@
                             <xsl:value-of select="/*/metadata/pub/pages/start_page"/>, <xsl:text>XQ</xsl:text><xsl:value-of select="$siriusID"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:text>XQ</xsl:text><xsl:value-of select="$siriusID"/>
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:text>XQ</xsl:text><xsl:value-of select="$siriusID"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </div>
@@ -759,7 +757,7 @@
                     <xsl:choose>
                         <xsl:when test="/*/metadata/pub/pages[start_page = last_page]"><xsl:value-of select="/*/metadata/pub/pages/start_page"/>, <xsl:text>AR</xsl:text><xsl:value-of select="$siriusID"/></xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:text>AR</xsl:text><xsl:value-of select="$siriusID"/>
+                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:text>AR</xsl:text><xsl:value-of select="$siriusID"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </div>
@@ -914,7 +912,7 @@
                                                                     <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:value-of select="$dokid"/>
                                                                 </xsl:when>
                                                                 <xsl:otherwise>
-                                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:value-of select="$dokid"/>
+                                                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>, <xsl:value-of select="$dokid"/>
                                                                 </xsl:otherwise>
                                                             </xsl:choose></div>
                                                         </a>
@@ -937,71 +935,6 @@
             <head>
                 <meta charset="UTF-8"/>
                 <link media="screen" type="text/css" href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css" rel="stylesheet"/>
-                <style>
-                    @charset "UTF-8";
-                    @font-face{
-                    font-family:"Unit Slab Pro Bold";
-                    font-weight:bold;
-                    src:url("fonts/unitslabpro-bold.woff") format("woff");
-                    }
-                    @font-face{
-                    font-family:"Unit Slab Pro Medium";
-                    src:url("fonts/unitslabpro-medium.woff") format("woff");
-                    }
-                    @font-face{
-                    font-family:"Unit Slab Pro";
-                    src:url("fonts/unitslabpro.woff") format("woff");
-                    }
-                    @font-face{
-                    font-family:"Unit Pro Medium";
-                    src:url("fonts/unitpro-medium.woff") format("woff");
-                    }
-                    @font-face{
-                    font-family:"Unit Pro";
-                    src:url("fonts/unitpro.woff") format("woff");
-                    }
-                    
-                    .ihv_abstract{
-                    line-height:17.5px !important;
-                    }
-                    #content{
-                    width: 100% !important;
-                    }
-                    #content_innen{
-                    display: inline !important;
-                    }
-                    .ihv_datum{
-                    font-weight: bold;
-                    }
-                    .ihv_heftnr{
-                    font-weight: bold;
-                    }
-                    .ihv_headline ressort{
-                    margin-bottom: 5px;
-                    font-weight: bold; 
-                    }
-                    .ihv_seite{
-                    font-style: italic;
-                    padding-right: 5px;
-                    color: #666666;
-                    margin-bottom: 30px;
-                    text-align: left;
-                    }
-                    .pagehead.small{
-                    line-height: 0.8;
-                    }
-                    
-                    .ihv_datum{
-                    border-bottom: 2px solid #00abd6 !important;
-                    }
-                    .ihv_headline{
-                    font-weight:bold !important;
-                    }
-                    .ihv_seite,
-                    .ihv_dbnummer{
-                    text-align:right;
-                    padding:0px;
-                    }</style>
             </head>
             <body>
                 <div class="content-wrapper">
@@ -1122,7 +1055,7 @@
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:when>
                                                                     <xsl:otherwise>
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>REL</xsl:text>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>REL</xsl:text>
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
@@ -1143,102 +1076,122 @@
     </xsl:template>
     
     
-    <xsl:template name="fill_ret">
+    <xsl:template name="fill_ihv">
         <html>
             <head>
-                <meta charset="UTF-8"/>
-                <link media="screen" type="text/css" href="http://beta.der-betrieb.de/wp-content/themes/Der-Betrieb/style.css" rel="stylesheet"/>
-                <style> 
-                </style>
+                <meta charset="UTF-8"/> 
             </head>
             <body>
                 <div class="content-wrapper">
-                    <!--                    <div>
-                        <h2>Editorial</h2>
-                        <xsl:for-each select="$aktuelles-Heft[position()=1]">
-                            <xsl:value-of select="/*/body/p"/>
-                        </xsl:for-each>  
-                    </div>-->
                     <!-- Linke Spalte -->
-                    <section id="content_innen">
-                        <h2>Editorial</h2>
-                        <xsl:for-each select="$aktuelles-Heft[position()=1]">
-                            <xsl:variable name="siriusID" select="document(document-uri(.))/*/@rawid"/>
-                            <div class="ihv_abstract"><p>
-                                <xsl:value-of select="/*/body/p"/>
-                            </p></div>
-                            <xsl:if test="matches('/*/body/p/text()','Seite\s\d{1,3}')">
-                                <a target="_blank" href="https://research.owlit.de/lx-document/RET{$siriusID}">Seite X </a> <!-- hier noch seite ersetzen -->
-                            </xsl:if>
-                        </xsl:for-each>       
+                    <section id="content_innen">     
                         <div class="content-list inhaltsverzeichnis">
                             <div class="content-text">
                                 <div class="ihv_level1">
-                                    
-                                    <!-- style="border-bottom:#ee7000" -->
                                     <div class="ihv_level2">
-                                        <!-- FOR EACH GROUP ÜBER ALLE DOKUMENTE, GRUPPIERT NACH DOCTYPE-->
-                                        <xsl:for-each-group select="$aktuelles-Heft" group-by="/*/metadata/ressort">
-                                            
-                                            <!-- <xsl:sort select="*/metadata/pub/pages/start_page[1]" data-type="number" order="ascending"/> -->
-                                            
-                                            <!--<xsl:perform-sort select="*/metadata/pub/pages/start_page">-->
-                                            <xsl:sort select="start_page" data-type="number" order="ascending"/>
-                                            <!--</xsl:perform-sort>-->
-                                            
-                                            <hr></hr>
-                                            <div class="ihv_headline ressort">
-                                                
-                                                <!--<xsl:value-of select="/*/metadata/ressort/text()"/>--> 
-                                                <xsl:value-of select="concat(substring(translate(/*/metadata/ressort/text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,1),substring(/*/metadata/ressort/text(),2))"/> 
-                                                
+                                        <!-- Editorials dann Gastkommentare-->
+                                        <xsl:if test="$aktuelles-Heft/*[name()='ed']">
+                                            <div class="ihv_headline ressort">Editorial</div>
+                                            <div class="ihv_level3">
+                                                <div class="ihv_level4">
+                                                    <xsl:for-each select="$aktuelles-Heft/*[name()='ed']">
+                                                        <xsl:sort select="/*/metadata/pub/pages/start_page" data-type="number"/>
+                                                        
+                                                        <a href="https://research.owlit.de/lx-document/{./@docid}" target="_blank">
+                                                            <div class="ihv_headline titel"><xsl:value-of select="./metadata/title"/></div>
+                                                            <div class="ihv_autor">
+                                                                <xsl:for-each select="./metadata/authors/author">
+                                                                    <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
+                                                                    <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                                                </xsl:for-each>
+                                                            </div>
+                                                            <div class="ihv_seite">M1,  <xsl:value-of select="./@docid"/></div>
+                                                        </a>
+                                                    </xsl:for-each>
+                                                </div>
                                             </div>
+                                        </xsl:if>
+                                        <xsl:if test="$aktuelles-Heft/*[name()='gk']">
+                                            <div class="ihv_headline ressort">Gastkommentar</div>
+                                            <div class="ihv_level3">
+                                                <div class="ihv_level4">
+                                                    <xsl:for-each select="$aktuelles-Heft/*[name()='gk']">
+                                                        <a href="https://research.owlit.de/lx-document/{./@docid}" target="_blank">
+                                                            <div class="ihv_headline titel"><xsl:value-of select="./metadata/title"/></div>
+                                                            <div class="ihv_autor">
+                                                                <xsl:for-each select="./metadata/authors/author">
+                                                                    <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
+                                                                    <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
+                                                                </xsl:for-each>
+                                                            </div>
+                                                            <div class="ihv_seite">M1,  <xsl:value-of select="./@docid"/></div>
+                                                        </a>
+                                                    </xsl:for-each>
+                                                </div>
+                                            </div>
+                                        </xsl:if>
+                                        
+                                        <!-- Documets are grouped according to ressorts. And an additional group for articles with no ressort (excluding TOC and Editorial) -->
+                                        <xsl:for-each-group select="$aktuelles-Heft" group-by="if (/*/metadata/ressort) then /*/metadata/ressort else if (/*[not(name()=('toc','ed'))]) then 'Weitere Inhalte' else ()">
+                                            
+                                            <xsl:sort select="start_page" data-type="number" order="ascending"/>
+                                            <xsl:sort select="current-grouping-key()" data-type="text" order="ascending"/>
+                                            
+                                            <div class="ihv_headline ressort">
+                                                <!--just converting the first letter into an upper case--> 
+                                                <xsl:value-of select="concat(substring(translate(current-grouping-key(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,1),substring(current-grouping-key(),2))"/> 
+                                            </div>
+                                            
                                             <div class="ihv_level3">
                                                 <div class="ihv_level4">
                                                     <xsl:for-each select="current-group()">
                                                         <xsl:sort select="*/metadata/pub/pages/start_page" data-type="number"/>
                                                         <xsl:variable name="docum" select="document(document-uri(.))"/>
                                                         <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
-                                                        <xsl:variable name="dok-nr" select="$docum/*/@sid"/>
-                                                        <xsl:variable name="ressortbez" select="$docum/*/metadata/ressort"/>
-                                                        <xsl:variable name="ti" select="/*/metadata/title"/>
-                                                        <a target="_blank" href="https://research.owlit.de/lx-document/RET{$siriusID}" title="{$ti}">
+                                                        <a target="_blank" href="https://research.owlit.de/lx-document/{upper-case($publisher)}{$siriusID}" title="{/*/metadata/title}">
                                                             <div>
                                                                 <xsl:attribute name="class">
                                                                     <xsl:text>ihv_headline titel </xsl:text>
                                                                     <xsl:text></xsl:text>
-                                                                    <!--<xsl:if test="*/metadata/rubriken/rubrik/text()='Schwerpunkt'">
-                                                                        <xsl:text>schwerpunkt</xsl:text>
-                                                                    </xsl:if>-->
                                                                 </xsl:attribute>
                                                                 <xsl:value-of select="/*/metadata/title"/>
-                                                                <!-- <xsl:if test="/*/metadata/ressort/text()=('Ortmanns Ordnung' , 'Klassiker' , 'Werkzeugkiste')">
-                                                                    <xsl:text>: </xsl:text><xsl:value-of select="/*/metadata/subtitle"/>
-                                                                </xsl:if>-->
-                                                                
                                                             </div>
-                                                            
                                                             <xsl:if test="/*/metadata/authors">
                                                                 <div class="ihv_autor">
                                                                     <xsl:for-each select="/*/metadata/authors/author">
                                                                         <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
                                                                         <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>        
                                                                     </xsl:for-each>
-                                                                    
                                                                 </div>
                                                             </xsl:if>
                                                             <div class="ihv_abstract"><p><xsl:value-of select="/*/metadata/summary"/></p></div>
                                                             <div class="ihv_seite">
                                                                 <xsl:choose>
                                                                     <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/>,  <xsl:text>RET</xsl:text>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                                        <xsl:text>, </xsl:text>
+                                                                        <xsl:value-of select="upper-case($publisher)"/>
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:when>
                                                                     <xsl:otherwise>
-                                                                        <xsl:text>RET vom </xsl:text> 
+                                                                        <xsl:value-of select="upper-case($publisher)"/>
+                                                                        <xsl:text> vom </xsl:text>
                                                                         <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" /><xsl:text>, Heft </xsl:text> 
                                                                         <xsl:value-of select="/*/metadata/pub/pubedition"/><xsl:text>, Seite </xsl:text> 
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/><xsl:text>, RET</xsl:text><xsl:value-of select="$siriusID"/> 
+                                                                        <xsl:choose>
+                                                                            <xsl:when test="/*/metadata/pub/pages/last_page =''">
+                                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                                                <xsl:text>, </xsl:text>
+                                                                                <xsl:value-of select="upper-case($publisher)"/>
+                                                                                <xsl:value-of select="$siriusID"/> 
+                                                                            </xsl:when>
+                                                                            <xsl:otherwise>
+                                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>
+                                                                                <xsl:text>, </xsl:text>
+                                                                                <xsl:value-of select="upper-case($publisher)"/>
+                                                                                <xsl:value-of select="$siriusID"/> 
+                                                                            </xsl:otherwise>
+                                                                        </xsl:choose>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
                                                             </div>
@@ -1325,7 +1278,7 @@
                                                       <xsl:value-of select="$siriusID"/>
                                                   </xsl:when>
                                                   <xsl:otherwise>
-                                                      <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                      <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                       <xsl:value-of select="$siriusID"/>
                                                   </xsl:otherwise>
                                               </xsl:choose>
@@ -1379,7 +1332,7 @@
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -1435,7 +1388,7 @@
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:when>
                                                                     <xsl:otherwise>
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
@@ -1479,7 +1432,7 @@
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:when>
                                                                     <xsl:otherwise>
-                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                                         <xsl:value-of select="$siriusID"/>
                                                                     </xsl:otherwise>
                                                                 </xsl:choose>
@@ -1524,7 +1477,7 @@
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -1587,7 +1540,7 @@
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -1635,7 +1588,7 @@
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -1657,7 +1610,7 @@
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -1701,7 +1654,7 @@
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#x2011; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
+                                                            <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>,  <xsl:text>WUW</xsl:text>
                                                             <xsl:value-of select="$siriusID"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -2191,7 +2144,7 @@
                                             <xsl:value-of select="$startpage"/>, <xsl:value-of select="$temp-sid"/>
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            <xsl:value-of select="$startpage"/> &#x2011; <xsl:value-of select="$lastpage"/>, <xsl:value-of select="$temp-sid"/>
+                                            <xsl:value-of select="$startpage"/> &#45; <xsl:value-of select="$lastpage"/>, <xsl:value-of select="$temp-sid"/>
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </div>
