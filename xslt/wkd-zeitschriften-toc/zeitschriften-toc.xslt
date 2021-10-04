@@ -2,18 +2,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0" xmlns:hbfm="http:www.fachmedien.de/hbfm">
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="no" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd"/>
-    
-    <xsl:param name="input_path" select="'c:/tempInputTOC'"/>
-    <xsl:param name="output_path" select="'c:/tempOutputTOC/'"/>
-    
-    <xsl:variable name="src-documents-location" select="iri-to-uri(concat('file:///', $input_path, '/?recurse=yes;select=*.xml'))"/>
+    <xsl:param name="src-documents-location" select="'file:/c:/toc/?recurse=yes;select=*.xml'"/>
     <xsl:variable name="aktuelles-Heft" select="collection($src-documents-location)"/>
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
-    
-    <xsl:variable name="pubabbr" select="$erstes-dokument/*/metadata/pub/pubabbr"/>
-    <xsl:variable name="pubyr" select="$erstes-dokument/*/metadata/pub/pubyear"/>
-    <xsl:variable name="pubed" select="$erstes-dokument/*/metadata/pub/pubedition"/>
-    
+
     <xsl:template name="create_shortened_summary">
         <!-- Kürzt die Beschreibung auf ungefähr mind 40 Wörter bis zum nächsten Satzende. 
          Die Wortgrenze liegt bei 49, wegen den Whitespaces zwischen den XML Elementen. Zumindest bei CF ist das so.
@@ -51,9 +43,8 @@
         </p>
     </xsl:template>
 
-    <xsl:template name="main" match="/">
-        <xsl:result-document method="xml" href="file:///{$output_path}{$pubabbr}_{$pubyr}_{$pubed}_TOC.xml">
-            <toc><!--sid="{$erstes-dokument/*/@sid}" docid="{$erstes-dokument/*/@docid}" rawid="{$erstes-dokument/*/@rawid}"-->
+    <xsl:template match="/">
+        <toc>
             <metadata>
                 <title>
                     <xsl:text>Inhaltsverzeichnis:&#x20;</xsl:text>
@@ -233,7 +224,6 @@
                 </xsl:if>
             </body>
         </toc>
-        </xsl:result-document>
     </xsl:template>
 
     <xsl:template name="print-entry">
