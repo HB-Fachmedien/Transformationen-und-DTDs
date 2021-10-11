@@ -47,13 +47,15 @@
         <toc>
             <metadata>
                 <title>
-                    <xsl:text>Inhaltsverzeichnis:&#x20;</xsl:text>
+                    <xsl:text>Inhaltsverzeichnis</xsl:text>
+                </title>
+                <subtitle><b>
                     <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubtitle"/>
                     <xsl:text>&#x20;</xsl:text>
                     <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubedition"/>
                     <xsl:text>/</xsl:text>
                     <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubyear"/>
-                </title>
+                </b></subtitle>
                 <pub>
                     <pubtitle>
                         <xsl:value-of select="$erstes-dokument/*/metadata/pub/pubtitle"/>
