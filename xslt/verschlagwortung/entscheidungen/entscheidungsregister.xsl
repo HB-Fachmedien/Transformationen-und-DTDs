@@ -292,6 +292,11 @@
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'BayObLG'"/>
+                <xsl:with-param name="ressort" select="'wr'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'KG Berlin'"/>
                 <xsl:with-param name="ressort" select="'wr'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
@@ -504,6 +509,11 @@
             </xsl:call-template>
             <xsl:call-template name="entscheidungsdaten">
                 <xsl:with-param name="gerichtsBezeichnung" select="'KG Berlin'"/>
+                <xsl:with-param name="ressort" select="'ar'"/>
+                <xsl:with-param name="doctype" select="'ent'"/>
+            </xsl:call-template>
+            <xsl:call-template name="entscheidungsdaten">
+                <xsl:with-param name="gerichtsBezeichnung" select="'ArbG Berlin'"/>
                 <xsl:with-param name="ressort" select="'ar'"/>
                 <xsl:with-param name="doctype" select="'ent'"/>
             </xsl:call-template>
