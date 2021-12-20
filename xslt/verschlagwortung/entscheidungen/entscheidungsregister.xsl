@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:num="http://dummy" exclude-result-prefixes="xs num" version="2.0">
     
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
@@ -543,6 +543,10 @@
             <xsl:when test="not($doctype = 'va')"> <!-- hier Test auf ent  -->
                 <xsl:for-each select="$alle-Hefte/*[name()=$doctype][if ($ressort != 'all') then (metadata/ressort/text()= $ressort) else (true())][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
                     <xsl:sort select="replace(metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                    <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
+                    <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
+                    <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
+                    <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
                     <xsl:variable name="datum-tokenized" select="tokenize(metadata/instdoc/instdocdate/text(), '-')"/>
                     <zeile-gericht>
                         <datum-gericht><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
@@ -563,6 +567,10 @@
             <xsl:when test="$doctype = 'va'"> <!-- hier Test auf va  -->
                 <xsl:for-each select="$alle-Hefte/*[name()='va'][if ($ressort != 'all') then (metadata/ressort/text()= $ressort) else (true())][metadata/instdoc/inst/text()=$gerichtsBezeichnung and (not(starts-with(metadata/pub/pages/start_page, 'M')) or starts-with(metadata/pub/pages/start_page, 'S'))]">
                     <xsl:sort select="replace(metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                    <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
+                    <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
+                    <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
+                    <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
                     <xsl:variable name="datum-tokenized" select="tokenize(metadata/instdoc/instdocdate/text(), '-')"/>
                     <zeile-gericht>
                         <datum><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>. </xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
@@ -645,5 +653,49 @@
         </xsl:choose>
     </xsl:template>
 
-
+    <xsl:function name="num:RomanToInteger" as="xs:integer">
+       <xsl:param name="r" as="xs:string?"/>
+       <xsl:choose>
+            <xsl:when test="ends-with($r,'XC')">
+                   <xsl:sequence select="90+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'L')">
+                   <xsl:sequence select="50+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'C')">
+                   <xsl:sequence select="100+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'D')">
+                   <xsl:sequence select="500+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'M')">
+                   <xsl:sequence select="1000+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'IV')">
+                   <xsl:sequence select="4+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'IX')">
+                   <xsl:sequence select="9+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'IIX')">
+                   <xsl:sequence select="8+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'I')">
+                   <xsl:sequence select="1+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'V')">
+                   <xsl:sequence select="5+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+            <xsl:when test="ends-with($r,'X')">
+                   <xsl:sequence select="10+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+                </xsl:when>
+           <xsl:when test="floor(number($r)) = number($r)">
+               <xsl:sequence select="xs:integer(number($r))"/>
+           </xsl:when>
+            <xsl:otherwise>
+                    <xsl:sequence select="0"/>
+                </xsl:otherwise>
+           </xsl:choose>
+    </xsl:function>
+    
 </xsl:stylesheet>
