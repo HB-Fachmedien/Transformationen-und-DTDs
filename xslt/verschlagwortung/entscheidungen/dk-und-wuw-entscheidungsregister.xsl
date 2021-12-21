@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs"
-    version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:num="http://dummy" exclude-result-prefixes="xs num" version="2.0">
+    
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="seite-gericht"/>
     
-    <xsl:variable name="alle-Hefte" select="collection('file:/c:/tempWUW/?recurse=yes;select=*.xml')"/>
+    <xsl:variable name="alle-Hefte" select="collection('file:/C:/verschlagwortung/?recurse=yes;select=*.xml')"/>
     
     <!--<xsl:variable name="gerichts-sortierung" select="'&lt; Freshman &lt; Sophomore &lt; Junior   &lt; Senior'" />-->
     <!-- Definition hier: http://docs.oracle.com/javase/6/docs/api/java/text/RuleBasedCollator.html
@@ -120,10 +118,13 @@
         <class sort="27">OLG Dresden</class>
         <class sort="30">OLG Düsseldorf</class>
         <class sort="40">OLG Frankfurt/M.</class>
+        <class sort="45">OLG Hamburg</class>
+        <class sort="46">OLG Hamm</class>
         <class sort="50">OLG Karlsruhe</class>
         <class sort="60">OLG Koblenz</class>
         <class sort="70">OLG Köln</class>
         <class sort="80">OLG München</class>
+        <class sort="85">OLG Rostock</class>
         <class sort="90">OLG Saarbrücken</class>
         <class sort="95">OLG Stuttgart</class>
         <class sort="101">LG Berlin</class>
@@ -157,9 +158,6 @@
    
     
     <xsl:template match="/">
-        <DEBUG-INFO><xsl:value-of select="$alle-Hefte[1]/*/metadata/pub/pubtitle/text()"/><xsl:text> Entscheidungsregister</xsl:text></DEBUG-INFO>
-        <xsl:text>&#xa;</xsl:text>
-        
         <entscheidungsregister><xsl:text>&#xa;</xsl:text>
             <xsl:for-each-group select="$alle-Hefte/*[name() = ('ent','va')]" group-by="/*/name()">
                 <xsl:choose>
@@ -185,6 +183,10 @@
                     <xsl:for-each select="current-group()">
                         <!-- hier nach Datum sortieren -->
                         <xsl:sort select="replace(/*/metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                        <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
+                        <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
+                        <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
+                        <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
                         <xsl:variable name="datum-tokenized" select="tokenize(/*/metadata/instdoc/instdocdate/text(), '-')"/>
                         <zeile-gericht>
                             <!-- Hier weiter: VAs und Ent sehen anders aus -->
@@ -222,5 +224,50 @@
             <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2>
         </entscheidungsregister>
     </xsl:template>
+    
+    <xsl:function name="num:RomanToInteger" as="xs:integer">
+        <xsl:param name="r" as="xs:string?"/>
+        <xsl:choose>
+            <xsl:when test="ends-with($r,'XC')">
+                <xsl:sequence select="90+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'L')">
+                <xsl:sequence select="50+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'C')">
+                <xsl:sequence select="100+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'D')">
+                <xsl:sequence select="500+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'M')">
+                <xsl:sequence select="1000+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'IV')">
+                <xsl:sequence select="4+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'IX')">
+                <xsl:sequence select="9+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'IIX')">
+                <xsl:sequence select="8+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'I')">
+                <xsl:sequence select="1+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'V')">
+                <xsl:sequence select="5+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="ends-with($r,'X')">
+                <xsl:sequence select="10+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
+            </xsl:when>
+            <xsl:when test="floor(number($r)) = number($r)">
+                <xsl:sequence select="xs:integer(number($r))"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:sequence select="0"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
     
 </xsl:stylesheet>
