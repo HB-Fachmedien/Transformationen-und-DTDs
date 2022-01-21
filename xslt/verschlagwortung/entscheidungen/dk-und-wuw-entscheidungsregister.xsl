@@ -27,6 +27,7 @@
         <class sort="20">GA Kokott</class>
         <class sort="30">Generalanwalt beim EuGH Nils Wahl</class>
         <class sort="40">EuG</class>
+        <class sort="45">EG-Kommission</class>
         <class sort="50">EU-Kommission</class>
         <class sort="55">Europäisches Parlament/Europäischer Rat</class>
         <class sort="60">BVerfG</class>
@@ -39,6 +40,7 @@
         <class sort="88">KG Berlin</class>
         <class sort="89">OLG Brandenburg</class>
         <class sort="90">OLG Celle</class>
+        <class sort="95">OLG Dresden</class>
         <class sort="100">OLG Düsseldorf</class>
         <class sort="110">OLG Frankfurt/M.</class>
         <class sort="112">Hanseatisches OLG Hamburg</class>
@@ -52,6 +54,7 @@
         <class sort="140">OLG Stuttgart</class>
         <class sort="145">OLG Thüringen</class>
         <class sort="150">LG Berlin</class>
+        <class sort="153">LG Bonn</class>
         <class sort="155">LG Dortmund</class>
         <class sort="160">LG Düsseldorf</class>
         <class sort="165">LG Frankfurt/M.</class>
@@ -64,6 +67,7 @@
         <class sort="205">LG München I</class>
         <class sort="207">LG Nürnberg-Fürth</class>
         <class sort="210">LG Potsdam</class>
+        <class sort="213">LG Saarbrücken</class>
         <class sort="215">LG Stuttgart</class>
         <class sort="220">AG Bonn</class>
         <class sort="225">FG Köln</class>
