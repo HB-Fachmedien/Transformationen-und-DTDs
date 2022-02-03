@@ -3,8 +3,8 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" cdata-section-elements="" />
     
-    <xsl:param name="input_path" select="'c:/tempInput'"/>
-    <xsl:param name="output_path" select="'c:/tempOutput/'"/>
+    <xsl:param name="input_path" select="'c:/tempInputRSS'"/>
+    <xsl:param name="output_path" select="'c:/tempOutputRSS/'"/>
     
     <xsl:variable name="src-documents-location" select="concat('file:///', $input_path, '/?recurse=yes;select=*.xml')"/>
     <xsl:variable name="aktuelles-Heft" select="collection($src-documents-location)"/>
@@ -12,12 +12,21 @@
     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
     <xsl:variable name="publisher" select="$erstes-dokument/*/metadata/all_source[@level='2']/text()"/>
     <xsl:variable name="pubEdition" select="$erstes-dokument/*/metadata/pub/pubedition"/>
+    <xsl:variable name="pubDate" select="$erstes-dokument/*/metadata/pub/date"/>
+    <xsl:variable name="pubTitle" select="$erstes-dokument/*/metadata/pub/pubtitle"/>
+    
     <xsl:variable name="publisherLink">
         <xsl:choose>
             <xsl:when test="$publisher='wuw'"><xsl:text>https://www.wuw-online.de</xsl:text></xsl:when>
             <xsl:when test="$publisher='kor'"><xsl:text>https://www.kor-ifrs.de</xsl:text></xsl:when>
             <xsl:when test="$publisher='db'"><xsl:text>https://www.der-betrieb.de</xsl:text></xsl:when>
-            <xsl:otherwise><xsl:text>Not Yet Programmed</xsl:text></xsl:otherwise>
+            <xsl:when test="$publisher='ar'"><xsl:text>https://www.aufsichtsrat.de</xsl:text></xsl:when>
+            <xsl:when test="$publisher='cf'"><xsl:text>https://www.cf-fachportal.de</xsl:text></xsl:when>
+            <xsl:when test="$publisher='rel'"><xsl:text>https://rethinking-law.com</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ret'"><xsl:text>https://rethinking-tax.com</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ref'"><xsl:text>https://rethinking-finance.com</xsl:text></xsl:when>
+            <xsl:when test="$publisher='paw'"><xsl:text>https://peopleandwork.online</xsl:text></xsl:when>
+            <xsl:otherwise><xsl:text>Not Yet Programmed. Please add the URL to the RSS_Mail_WP.xsl file.</xsl:text></xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
     <xsl:variable name="publisherTitle">
@@ -25,6 +34,12 @@
             <xsl:when test="$publisher='wuw'"><xsl:text>WIRTSCHAFT und WETTBEWERB</xsl:text></xsl:when>
             <xsl:when test="$publisher='kor'"><xsl:text>KoR IFRSB</xsl:text></xsl:when>
             <xsl:when test="$publisher='db'"><xsl:text>DER BETRIEB</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ar'"><xsl:text>Der Aufsichtsrat</xsl:text></xsl:when>
+            <xsl:when test="$publisher='cf'"><xsl:text>Corporate Finance</xsl:text></xsl:when>
+            <xsl:when test="$publisher='rel'"><xsl:text>REthinking Law</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ret'"><xsl:text>REthinking Tax</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ref'"><xsl:text>REthinking Finance</xsl:text></xsl:when>
+            <xsl:when test="$publisher='paw'"><xsl:value-of select="$pubTitle"/></xsl:when>
             <xsl:otherwise><xsl:text>Not Yet Programmed</xsl:text></xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
@@ -33,27 +48,35 @@
             <xsl:when test="$publisher='wuw'"><xsl:text>Mit WIRTSCHAFT und WETTBEWERB ist führende deutsche Medium zu den Themen, Kartellverbot, Fusionskontrolle, Kartellschadensersatz, Marktbeherrschung, Missbrauchsaufsicht, Bußgeldverfahren u.v.m. Hochrangige Experten stellen die unterschiedlichen Sichtweisen dar.</xsl:text></xsl:when>
             <xsl:when test="$publisher='kor'"><xsl:text>KoR IFRS - Ihr Magazin zum Thema internationale und kapitalmarktorientierte Rechnungslegung versorgt Sie stets mit aktuellen Entwicklungen für Ihr Accounting-Business. Egal ob Rechnungslegung nach IFRS oder dem deutschen Standard DRS - mit uns bleiben Sie immer aktuell.</xsl:text></xsl:when>
             <xsl:when test="$publisher='db'"><xsl:text>DER BETRIEB ist die optimale Verbindung aus Steuerrecht, Wirtschaftsrecht, Arbeitsrecht und Betriebswirtschaft und liefert Ihnen das notwendige Know-how für weitsichtige Entscheidungen.</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ar'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
+            <xsl:when test="$publisher='cf'"><xsl:text>Corporate Finance: Ihr Spezialist für die Themen Kapitalmarkt, Finanzierung und Mergers &#38; Acquisitions. Informieren Sie sich jetzt über aktuelle Entwicklungen.</xsl:text></xsl:when>
+            <xsl:when test="$publisher='rel'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ret'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
+            <xsl:when test="$publisher='ref'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
+            <xsl:when test="$publisher='paw'"><xsl:value-of select="concat(upper-case($publisher), ' vom ', format-date($pubDate, '[D,2].[M,2].[Y]'), ', Heft', $pubEdition)"/></xsl:when>
             <xsl:otherwise><xsl:text>Not Yet Programmed</xsl:text></xsl:otherwise>
-        </xsl:choose>
+        </xsl:choose>    
     </xsl:variable>
     <xsl:variable name="feeds">
         <xsl:choose>
-            <xsl:when test="$publisher=('wuw','kor')">  <feed1>general</feed1>  </xsl:when>
+            <xsl:when test="$publisher=('wuw','kor','ar','cf','rel','ret','ref','paw')">  <feed1>general</feed1>  </xsl:when>
             <xsl:when test="$publisher='db' and not($pubEdition='00')">   <feed1>general</feed1>   <feed2>bw</feed2>  <feed3>sr</feed3>   <feed4>wr</feed4>   <feed5>ar</feed5>   <feed6>kr</feed6>   <feed7>br</feed7>  </xsl:when>
             <xsl:when test="$publisher='db' and $pubEdition='00'">   <feed1>sr</feed1>  </xsl:when>
             <xsl:otherwise>  Not Yet Programmed   </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
     
+    
     <xsl:template name="main" match="/">
         <xsl:for-each select="$feeds/*">
             <xsl:variable name="feed" select="text()"/>
-            <!-- Acticles in reverse order as requested by steffi -->
-            <xsl:variable name="generalArticles" select="reverse($aktuelles-Heft/*)[not(name()=('toc','rss'))][not(metadata/ressort) or not(metadata/ressort/text()=$feeds/*/text())]"/>
-            <xsl:variable name="currentRessortArticles" select="reverse($aktuelles-Heft)/*[not(name()=('toc','rss'))][metadata/ressort/text()=$feed]"/>
+            <xsl:variable name="generalArticles" select="reverse($aktuelles-Heft/*)[not(name()=('toc','rss'))][not(metadata/ressort) or not(metadata/ressort/text()=$feeds/*/text())]"/> <!-- Acticles in reverse order as requested by steffi -->
+            <!-- only if onlinefirst: editorial added to sr file and order is not reversed -->
+            <xsl:variable name="currentRessortArticles" select="reverse($aktuelles-Heft)/*[not(name()=('toc','rss'))][if ($pubEdition='00') then metadata/ressort/text()=$feed or name()='ed' else metadata/ressort/text()=$feed]"/>
+            
             <!-- create rss feeds only if the equivalent ressort articles or general articles are available in the heft-->
             <xsl:if test="($feed='general' and $generalArticles) or ($currentRessortArticles)">
-                <xsl:result-document method="xml" href="file:///{$output_path}RSS_Feed_{upper-case($publisher)}-{$feed}.xml">    <!-- for debugging only: {format-dateTime(current-dateTime(),'[M01]-[D01]-[Y0001]-[h1].[m01].[s01]')}-->
+                <xsl:result-document method="xml" href="file:///{$output_path}RSS_Feed_{upper-case($publisher)}-{if ($pubEdition='00') then 'online' else $feed}.xml">    <!-- for debugging only: {format-dateTime(current-dateTime(),'[M01]-[D01]-[Y0001]-[h1].[m01].[s01]')}-->
                     <rss version="2.0" xmlns:maileon="http://rssext.maileon.com/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
                         <channel>
                             <!-- obligatory -->
@@ -71,7 +94,7 @@
                                     </xsl:for-each>
                                 </xsl:when>
                                 <xsl:otherwise>                                      
-                                    <xsl:for-each select="$currentRessortArticles">
+                                    <xsl:for-each select="if ($pubEdition='00') then reverse($currentRessortArticles) else $currentRessortArticles">
                                         <xsl:call-template name="fill_item"/>
                                     </xsl:for-each>  
                                 </xsl:otherwise>
@@ -107,6 +130,7 @@
                     <xsl:when test="./name()='sp'">Standpunkt</xsl:when>
                     <xsl:when test="./name()='ed'">Editorial</xsl:when>
                     <xsl:when test="./name()='iv'">Interview</xsl:when>
+                    <xsl:when test="./name()='rez'">Rezension</xsl:when>
                     <xsl:otherwise>Not Yet Programmed</xsl:otherwise>
                 </xsl:choose>
             </category>
@@ -124,9 +148,9 @@
                 </xsl:if>
             </dc:creator>
             
-            <maileon:DB-number>
+            <maileon:DBnumber>
                 <xsl:value-of select="./@docid"/>
-            </maileon:DB-number>
+            </maileon:DBnumber>
             
             <maileon:Urteilszeile>
                 <xsl:if test="metadata/instdoc">
@@ -178,7 +202,8 @@
             
             <xsl:if test="$publisher='db' and $pubEdition='00'">
                 <maileon:rubrik>
-                    <xsl:if test="metadata/authors/author">
+                    <!--<xsl:if test="metadata/authors/author">-->
+                    <xsl:if test="metadata/rubriken/rubrik">
                         <xsl:for-each select="metadata/rubriken/rubrik">
                             <xsl:if test="not(position()=1)">
                                 <xsl:text> / </xsl:text>
@@ -192,10 +217,29 @@
             <description>
                 <xsl:if test="metadata/summary">
                     <xsl:text disable-output-escaping="yes">&lt;![CDATA[ </xsl:text>
-                    <xsl:for-each select="metadata/summary/*[name() !='figure']">
-                        <xsl:if test="not(position()=1)">   <br/>   </xsl:if>
-                        <xsl:copy-of select="."/>
-                    </xsl:for-each>
+                    <!-- check the first paragraph's language and then take only the paragraphs of this language -->
+                    <xsl:variable name="first-paragraph" select="metadata/summary/*[name() !='figure'][1]"/>
+                    <xsl:if test="name($first-paragraph)=('p')">
+                        <xsl:if test="not($first-paragraph/@lang)">
+                            <xsl:for-each select="metadata/summary/*[name() !='figure' and not(@lang)]">
+                                <xsl:if test="not(position()=1)">   <br/>   </xsl:if>
+                                <xsl:copy-of select="."/>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="$first-paragraph/@lang">
+                            <xsl:for-each select="metadata/summary/*[name() !='figure' and @lang]">
+                                <xsl:if test="not(position()=1)">   <br/>   </xsl:if>
+                                <xsl:copy-of select="."/>
+                            </xsl:for-each>
+                        </xsl:if>                        
+                    </xsl:if>
+                    <!-- if the first is not a paragraph, then copy all -->
+                    <xsl:if test="name($first-paragraph)!=('p')">
+                        <xsl:for-each select="metadata/summary/*[name() !='figure']">
+                            <xsl:if test="not(position()=1)">   <br/>   </xsl:if>
+                            <xsl:copy-of select="."/>
+                        </xsl:for-each>
+                    </xsl:if>
                     <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
                 </xsl:if>
             </description>
@@ -206,23 +250,37 @@
                         <xsl:text disable-output-escaping="yes">&lt;![CDATA[ </xsl:text>
                         <xsl:for-each select="body/*[not(name()=('figure','note'))]">
                             <xsl:if test="not(position()=1)">   <br/>   </xsl:if>
-                            <xsl:copy-of select="."/>
+                            <xsl:element name="{name()}">
+                                <xsl:for-each select="./node()">
+                                    <xsl:choose>
+                                        <xsl:when test="(.[(name()='b')]) and (starts-with(text(),'['))">
+                                            <xsl:variable name="refNr">
+                                                <xsl:value-of select="substring-before(substring-after(., '['), ']')"/>
+                                            </xsl:variable>
+                                            <a href="https://research.owlit.de/lx-document/{$refNr}"><xsl:value-of select="$refNr"/></a>
+                                        </xsl:when> 
+                                        <xsl:otherwise>
+                                            <xsl:copy-of select="."/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </xsl:element>
                         </xsl:for-each>
                         <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
                     </xsl:when> 
                     <xsl:otherwise>
                         <xsl:if test="not(metadata/summary) and (body/*)">
-                            <xsl:choose>
-                                <xsl:when test="$publisher=('wuw','kor')">
-                                    <xsl:text disable-output-escaping="yes">&lt;![CDATA[ </xsl:text>
-                                    <!-- convert to string and take only the first 350 characters -->
-                                    <xsl:copy-of select="concat(substring(string-join(body/*[not(name()=('figure','note'))], ' '),1,347),'...')"/>
-                                    <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
-                                </xsl:when>
+                            <!--                            <xsl:choose>
+                                <xsl:when test="$publisher=('wuw','kor')">-->
+                            <xsl:text disable-output-escaping="yes">&lt;![CDATA[ </xsl:text>
+                            <!-- convert to string and take only the first 350 characters -->
+                            <xsl:copy-of select="concat(substring(string-join(body/*[not(name()=('figure','note'))], ' '),1,347),'...')"/>
+                            <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+                            <!--                                </xsl:when>
                                 <xsl:otherwise>
                                     Not yet programmed
                                 </xsl:otherwise>
-                            </xsl:choose>
+                            </xsl:choose>-->
                         </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
