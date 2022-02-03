@@ -14,6 +14,7 @@
     <xsl:variable name="pubEdition" select="$erstes-dokument/*/metadata/pub/pubedition"/>
     <xsl:variable name="pubDate" select="$erstes-dokument/*/metadata/pub/date"/>
     <xsl:variable name="pubTitle" select="$erstes-dokument/*/metadata/pub/pubtitle"/>
+    <xsl:variable name="publisherDescription"><xsl:value-of select="concat(upper-case($publisher), ' vom ', format-date($pubDate, '[D,2].[M,2].[Y]'), ', Heft ', $pubEdition)"/></xsl:variable>
     
     <xsl:variable name="publisherLink">
         <xsl:choose>
@@ -26,43 +27,16 @@
             <xsl:when test="$publisher='ret'"><xsl:text>https://rethinking-tax.com</xsl:text></xsl:when>
             <xsl:when test="$publisher='ref'"><xsl:text>https://rethinking-finance.com</xsl:text></xsl:when>
             <xsl:when test="$publisher='paw'"><xsl:text>https://peopleandwork.online</xsl:text></xsl:when>
-            <xsl:otherwise><xsl:text>Not Yet Programmed. Please add the URL to the RSS_Mail_WP.xsl file.</xsl:text></xsl:otherwise>
+            <xsl:otherwise><xsl:text>Not Yet added to the RSS_Mail_WP.xsl file..</xsl:text></xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="publisherTitle">
-        <xsl:choose>
-            <xsl:when test="$publisher='wuw'"><xsl:text>WIRTSCHAFT und WETTBEWERB</xsl:text></xsl:when>
-            <xsl:when test="$publisher='kor'"><xsl:text>KoR IFRSB</xsl:text></xsl:when>
-            <xsl:when test="$publisher='db'"><xsl:text>DER BETRIEB</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ar'"><xsl:text>Der Aufsichtsrat</xsl:text></xsl:when>
-            <xsl:when test="$publisher='cf'"><xsl:text>Corporate Finance</xsl:text></xsl:when>
-            <xsl:when test="$publisher='rel'"><xsl:text>REthinking Law</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ret'"><xsl:text>REthinking Tax</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ref'"><xsl:text>REthinking Finance</xsl:text></xsl:when>
-            <xsl:when test="$publisher='paw'"><xsl:value-of select="$pubTitle"/></xsl:when>
-            <xsl:otherwise><xsl:text>Not Yet Programmed</xsl:text></xsl:otherwise>
-        </xsl:choose>
-    </xsl:variable>
-    <xsl:variable name="publisherDescription">
-        <xsl:choose>
-            <xsl:when test="$publisher='wuw'"><xsl:text>Mit WIRTSCHAFT und WETTBEWERB ist führende deutsche Medium zu den Themen, Kartellverbot, Fusionskontrolle, Kartellschadensersatz, Marktbeherrschung, Missbrauchsaufsicht, Bußgeldverfahren u.v.m. Hochrangige Experten stellen die unterschiedlichen Sichtweisen dar.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='kor'"><xsl:text>KoR IFRS - Ihr Magazin zum Thema internationale und kapitalmarktorientierte Rechnungslegung versorgt Sie stets mit aktuellen Entwicklungen für Ihr Accounting-Business. Egal ob Rechnungslegung nach IFRS oder dem deutschen Standard DRS - mit uns bleiben Sie immer aktuell.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='db'"><xsl:text>DER BETRIEB ist die optimale Verbindung aus Steuerrecht, Wirtschaftsrecht, Arbeitsrecht und Betriebswirtschaft und liefert Ihnen das notwendige Know-how für weitsichtige Entscheidungen.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ar'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='cf'"><xsl:text>Corporate Finance: Ihr Spezialist für die Themen Kapitalmarkt, Finanzierung und Mergers &#38; Acquisitions. Informieren Sie sich jetzt über aktuelle Entwicklungen.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='rel'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ret'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ref'"><xsl:text>Eine Seite der Fachmedien Otto Schmidt KG.</xsl:text></xsl:when>
-            <xsl:when test="$publisher='paw'"><xsl:value-of select="concat(upper-case($publisher), ' vom ', format-date($pubDate, '[D,2].[M,2].[Y]'), ', Heft', $pubEdition)"/></xsl:when>
-            <xsl:otherwise><xsl:text>Not Yet Programmed</xsl:text></xsl:otherwise>
-        </xsl:choose>    
-    </xsl:variable>
+
     <xsl:variable name="feeds">
         <xsl:choose>
-            <xsl:when test="$publisher=('wuw','kor','ar','cf','rel','ret','ref','paw')">  <feed1>general</feed1>  </xsl:when>
+            <!--<xsl:when test="$publisher=('wuw','kor','ar','cf','rel','ret','ref','paw')">  <feed1>general</feed1>  </xsl:when>-->
             <xsl:when test="$publisher='db' and not($pubEdition='00')">   <feed1>general</feed1>   <feed2>bw</feed2>  <feed3>sr</feed3>   <feed4>wr</feed4>   <feed5>ar</feed5>   <feed6>kr</feed6>   <feed7>br</feed7>  </xsl:when>
             <xsl:when test="$publisher='db' and $pubEdition='00'">   <feed1>sr</feed1>  </xsl:when>
-            <xsl:otherwise>  Not Yet Programmed   </xsl:otherwise>
+            <xsl:otherwise>  <feed1>general</feed1>   </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
     
@@ -80,7 +54,7 @@
                     <rss version="2.0" xmlns:maileon="http://rssext.maileon.com/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
                         <channel>
                             <!-- obligatory -->
-                            <title><xsl:value-of select="$publisherTitle"></xsl:value-of></title>
+                            <title><xsl:value-of select="$pubTitle"></xsl:value-of></title>
                             <link><xsl:value-of select="$publisherLink"></xsl:value-of></link>
                             <description><xsl:value-of select="$publisherDescription"></xsl:value-of></description>
                             <!-- optional -->
