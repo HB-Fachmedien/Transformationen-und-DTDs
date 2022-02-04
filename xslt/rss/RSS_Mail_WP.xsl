@@ -44,9 +44,9 @@
     <xsl:template name="main" match="/">
         <xsl:for-each select="$feeds/*">
             <xsl:variable name="feed" select="text()"/>
-            <xsl:variable name="generalArticles" select="reverse($aktuelles-Heft/*)[not(name()=('toc','rss'))][not(metadata/ressort) or not(metadata/ressort/text()=$feeds/*/text())]"/> <!-- Acticles in reverse order as requested by steffi -->
+            <xsl:variable name="generalArticles" select="$aktuelles-Heft/*[not(name()=('toc','rss'))][not(metadata/ressort) or not(metadata/ressort/text()=$feeds/*/text())]"/>
             <!-- only if onlinefirst: editorial added to sr file and order is not reversed -->
-            <xsl:variable name="currentRessortArticles" select="reverse($aktuelles-Heft)/*[not(name()=('toc','rss'))][if ($pubEdition='00') then metadata/ressort/text()=$feed or name()='ed' else metadata/ressort/text()=$feed]"/>
+            <xsl:variable name="currentRessortArticles" select="$aktuelles-Heft/*[not(name()=('toc','rss'))][if ($pubEdition='00') then metadata/ressort/text()=$feed or name()='ed' else metadata/ressort/text()=$feed]"/>
             
             <!-- create rss feeds only if the equivalent ressort articles or general articles are available in the heft-->
             <xsl:if test="($feed='general' and $generalArticles) or ($currentRessortArticles)">
@@ -67,7 +67,8 @@
                                         <xsl:call-template name="fill_item"/>
                                     </xsl:for-each>
                                 </xsl:when>
-                                <xsl:otherwise>                                      
+                                <xsl:otherwise>
+                                    <!-- Acticles in reverse order only for str kompakt, as requested by steffi -->
                                     <xsl:for-each select="if ($pubEdition='00') then reverse($currentRessortArticles) else $currentRessortArticles">
                                         <xsl:call-template name="fill_item"/>
                                     </xsl:for-each>  
