@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
-    <!-- Version 2022-02-08 -->
+    <!-- Version 2022-02-16 -->
 
-    <!-- Version 2022-02-08 Änderungen: Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv.
+    <!-- Version 2022-02-16 Änderung: Für die Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv wurde die Ausnahme für ZUJ-Aufsätze Ressort "Aktuelles" eingefügt.
+                                                                                                                              -->
+
+    <!-- Version 2022-02-08 Änderung: Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv.
                                       Prüfung, ob surname in author nicht leer ist.                                           -->
     <!-- TODO:
     
@@ -155,7 +158,8 @@
         </rule>
     </pattern>
     <pattern>
-        <rule context="au/metadata">
+        <!-- Regel für alle Werke außer ZUJ-Ressort "Aktuelles": -->
+        <rule context="au/metadata[ancestor::au/metadata/ressort/not(text()='Aktuelles') and ancestor::au/metadata/all_source[@level='2' and text()='zuj']]">
             <assert test="(authors)">Im Aufsatz fehlt der Autor oder die Organisation!</assert>
         </rule>
     </pattern>
