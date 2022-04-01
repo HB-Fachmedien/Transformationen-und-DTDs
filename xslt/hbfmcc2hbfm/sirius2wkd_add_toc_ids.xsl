@@ -5,14 +5,13 @@
 	<xsl:output indent="yes" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd" encoding="UTF-8"/>
 
 	<xsl:template match="/">
-
-		<!-- Generate seperate Document for Der Betrieb Arbeitsrecht -->
-		<xsl:if test="/*/metadata/all_source[@level='2']/text()='db' and /*/metadata/ressort/text()='Arbeitsrecht' and not(starts-with(/*/@docid, 'DBL'))">
+		<xsl:variable name="pubYear" select="number(/*/metadata/pub/pubyear/text())"/>
+		<xsl:variable name="pubEdition" select="number(substring(/*/metadata/pub/pubedition/text(),1,2))"/>
+		<!--Generate seperate Document for Der Betrieb Arbeitsrecht -->
+		<xsl:if test="/*/metadata/all_source[@level='2']/text()='db' and /*/metadata/ressort/text()='Arbeitsrecht' and not(starts-with(/*/@docid, 'DBL')) and $pubYear &gt;= 1989 and (($pubYear &lt; 2022) or ($pubYear = 2022 and $pubEdition &lt;= 13))">
 			<xsl:call-template name="der-betrieb-arbeitsrecht"/>
 		</xsl:if>
-
 		<xsl:apply-templates/>
-
 	</xsl:template>
 
 	<xsl:template match="metadata" name="md">
