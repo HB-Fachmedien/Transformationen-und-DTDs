@@ -1,0 +1,15 @@
+https://www.oxygenxml.com/doc/versions/23.1/ug-editor/topics/apply-batch-transformation.html#:~:text=Select%20the%20files%20you%20want,files%20in%20the%20logical%20folder.
+
+Batch Transformations:
+A transformation action can be applied on a batch of selected files from the contextual menu of the Project view without having to open the files involved in the transformation. You can apply the same scenario to a batch of files or multiple scenarios to a single file or batch of files.
+
+1- (Optional, but recommended) Organize the files you want to transform in logical folders.
+	a- Create a logical folder in the Project view by using the New > Logical Folder action from the contextual menu of the root file.
+	b- Add the files you want to transform to the logical folder by using the Add Files or Add Edited File actions from the contextual menu of the logical folder.
+	Note: You can skip this step if the files are already in a dedicated folder that does not include any additional files or folders. You can also manually select the individual files in the Project view each time you want to transform them, but this can be tedious.
+2- Select the files you want to transform (or the newly created logical folder) and from the contextual menu, select Transform > Configure Transformation Scenario(s) to choose one or more transformation scenarios to be applied on all the files in the logical folder.
+3- Use Oxygen XML Editor editor variables to specify the input and output files. This ensures that each file from the selected set of resources is processed and that the output is not overwritten by the subsequent processing.
+	a- Edit the transformation scenario to make sure the appropriate editor variable is assigned for the input file. For example, for a DocBook PDF transformation, make sure the XML URL input box is set to the ${currentFileURL} editor variable. For a DITA PDF transformation, make sure the args.input parameter is set to the ${cf} editor variable.
+	b- Edit the transformation scenario to make sure the appropriate editor variable is assigned for the output file. For example, for an XML transformation with XSLT, switch to the Output tab and set the path of the output file using a construct of editor variables, such as ${cfd}/${cfn}.html.
+4- Now that the logical folder has been associated with one or more transformation scenarios, whenever you want to apply the same batch transformation, you can select Transform > Transform with from the contextual menu and the same previously associated scenario(s) will be applied.
+5- If you want a different type of transformation to be applied to each file inside the logical folder, associate individual scenarios for each file and select Transform > Apply Transformation Scenario(s) from the contextual menu of the logical folder.
