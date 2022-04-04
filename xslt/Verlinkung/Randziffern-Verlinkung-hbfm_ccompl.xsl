@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     
+    <xsl:variable name="current_paragraph" select="./*/metadata/paragraph/text()"/>
+    
     <xsl:template match="@*|node()">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()"/>
@@ -86,7 +88,7 @@
                         </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
-                        <link all_source="hbfm_ccompl" all_rz="{$linkNr}" a="{concat('rz_', $linkNr)}" generator="publisher"><xsl:value-of select="$txtToLink"/></link>
+                        <link all_source="hbfm_ccompl" all_paragraph="{$current_paragraph}" all_rz="{$linkNr}" a="{concat('rz_', $linkNr)}" generator="publisher"><xsl:value-of select="$txtToLink"/></link>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>
