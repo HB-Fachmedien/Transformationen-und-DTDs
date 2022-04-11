@@ -102,7 +102,7 @@
 			<xsl:apply-templates select="public | add_target | version | publisher"/>
 			
 			<xsl:choose>
-				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm', 'hbfm_ae', 'hbfm_dbs', 'ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe', 'zuj','paw')">
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm','hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic')">
 					<publisher>Fachmedien Otto Schmidt</publisher>
 				</xsl:when>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
@@ -1331,8 +1331,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM + PAW (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
@@ -1343,7 +1343,8 @@
 										<xsl:when test="../name()='ed'">
 											<leaf sequenceNr="5"/>
 										</xsl:when>
-										<xsl:when test="../name()='gk'">
+										<!-- bei ZAU die Gastkommentare mit in das Ressort nehmen, nicht außerhalb -->
+										<xsl:when test="not($pub-abbr='ZAU') and ../name()='gk'">
 											<leaf sequenceNr="7"/>
 										</xsl:when>
 										<xsl:when test="../name()='gh'">
