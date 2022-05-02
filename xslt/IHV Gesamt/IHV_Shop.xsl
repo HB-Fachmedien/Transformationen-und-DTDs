@@ -15,45 +15,23 @@
     <xsl:variable name="publisher" select="$erstes-dokument/*/metadata/all_source[@level='2']/text()"/>
 
     <xsl:template name="main" match="/">
-        <xsl:choose>
-            <xsl:when test="$publisher='wuw'">
-                <xsl:result-document method="xml" href="file:///{$output_path}WuW-IHV.html">
-                <xsl:call-template name="fill_wuw"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='db'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_db"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='rel'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_rel"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='cf'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_cf"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='ar'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_ar"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='dk'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_dk"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='kor'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_kor"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='ref'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_ref"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher='zuj'">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_zuj"/></xsl:result-document></xsl:when>
-            <xsl:when test="$publisher=('ret','bwp','paw')">
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:call-template name="fill_ihv"/></xsl:result-document></xsl:when>
-            <xsl:otherwise>
-                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-                    <xsl:text>Ungültige Zeitschrift</xsl:text></xsl:result-document></xsl:otherwise>
-        </xsl:choose>   
+        <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+            <xsl:choose>
+                <xsl:when test="$publisher='wuw'"><xsl:call-template name="fill_wuw"/></xsl:when>
+                <xsl:when test="$publisher='db'"><xsl:call-template name="fill_db"/></xsl:when>
+                <xsl:when test="$publisher='rel'"><xsl:call-template name="fill_rel"/></xsl:when>
+                <xsl:when test="$publisher='cf'"><xsl:call-template name="fill_cf"/></xsl:when>
+                <xsl:when test="$publisher='ar'"><xsl:call-template name="fill_ar"/></xsl:when>
+                <xsl:when test="$publisher='dk'"><xsl:call-template name="fill_dk"/></xsl:when>
+                <xsl:when test="$publisher='kor'"><xsl:call-template name="fill_kor"/></xsl:when>
+                <xsl:when test="$publisher='ref'"><xsl:call-template name="fill_ref"/></xsl:when>
+                <xsl:when test="$publisher='zuj'"><xsl:call-template name="fill_zuj"/></xsl:when>
+                <!-- NEW PUBLISHER? Quickly add it just here!-->
+                <xsl:when test="$publisher=('ret','bwp','paw','zau')"><xsl:call-template name="fill_ihv"/></xsl:when>
+                <xsl:otherwise><xsl:text>Ungültige Zeitschrift</xsl:text></xsl:otherwise>
+            </xsl:choose>
+        </xsl:result-document>
     </xsl:template>
-    
-    <!--<xsl:template name="fill_wuw">
-    </xsl:template>-->
     
     <xsl:template name="fill_zuj">
         <html>

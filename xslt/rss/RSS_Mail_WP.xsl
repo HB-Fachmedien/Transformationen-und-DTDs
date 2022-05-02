@@ -27,6 +27,7 @@
             <xsl:when test="$publisher='ret'"><xsl:text>https://rethinking-tax.com</xsl:text></xsl:when>
             <xsl:when test="$publisher='ref'"><xsl:text>https://rethinking-finance.com</xsl:text></xsl:when>
             <xsl:when test="$publisher='paw'"><xsl:text>https://peopleandwork.online</xsl:text></xsl:when>
+            <xsl:when test="$publisher='zau'"><xsl:text>https://zau-zeitschrift.de</xsl:text></xsl:when>
             <xsl:otherwise><xsl:text>Not Yet added to the RSS_Mail_WP.xsl file..</xsl:text></xsl:otherwise>
         </xsl:choose>
     </xsl:variable>

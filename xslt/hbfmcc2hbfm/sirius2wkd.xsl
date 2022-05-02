@@ -1331,8 +1331,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + ECONIC (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'ECONIC')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
@@ -1343,7 +1343,7 @@
 										<xsl:when test="../name()='ed'">
 											<leaf sequenceNr="5"/>
 										</xsl:when>
-										<!-- bei ZAU die Gastkommentare mit in das Ressort nehmen, nicht außerhalb -->
+										<!-- bei ZAU die Gastkommentare mit in die Ressortebene nehmen, nicht oberhalb -->
 										<xsl:when test="not($pub-abbr='ZAU') and ../name()='gk'">
 											<leaf sequenceNr="7"/>
 										</xsl:when>
