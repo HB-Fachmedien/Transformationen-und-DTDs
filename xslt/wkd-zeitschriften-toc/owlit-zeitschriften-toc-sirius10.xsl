@@ -154,7 +154,7 @@
                                 </xsl:if>
                                 
                                 <!-- 2. Danach alle Ressort gruppierten Beiträge: -->
-                                <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed','gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()=('db','zau') and starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
+                                <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed','gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='zau') and not(starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                                     <xsl:variable name="ressort-ueberschrift">
                                         <xsl:choose>
                                             <xsl:when test="current-grouping-key() = ''">Aufsätze</xsl:when>

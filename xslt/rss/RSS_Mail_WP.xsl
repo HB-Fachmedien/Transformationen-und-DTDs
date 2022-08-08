@@ -29,6 +29,7 @@
             <xsl:when test="$publisher='paw'"><xsl:text>https://peopleandwork.online</xsl:text></xsl:when>
             <xsl:when test="$publisher='zau'"><xsl:text>https://zau-zeitschrift.de</xsl:text></xsl:when>
             <xsl:when test="$publisher='bwp'"><xsl:text>https://bewertungspraktiker.de</xsl:text></xsl:when>
+            <xsl:when test="$publisher=('esgz','econic')"><xsl:text>nachhaltigkeit.fachmedien.de</xsl:text></xsl:when>
             <xsl:otherwise><xsl:text>Not Yet added to the RSS_Mail_WP.xsl file..</xsl:text></xsl:otherwise>
         </xsl:choose>
     </xsl:variable>

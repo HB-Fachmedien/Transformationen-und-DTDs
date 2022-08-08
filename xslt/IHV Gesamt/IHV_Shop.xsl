@@ -27,7 +27,7 @@
                 <xsl:when test="$publisher='ref'"><xsl:call-template name="fill_ref"/></xsl:when>
                 <xsl:when test="$publisher='zuj'"><xsl:call-template name="fill_zuj"/></xsl:when>
                 <!-- NEW PUBLISHER? Quickly add it just here!-->
-                <xsl:when test="$publisher=('db','ret','bwp','paw','zau')"><xsl:call-template name="fill_ihv"/></xsl:when>
+                <xsl:when test="$publisher=('db','ret','bwp','paw','zau','esgz','econic')"><xsl:call-template name="fill_ihv"/></xsl:when>
                 <xsl:otherwise><xsl:text>Ungültige Zeitschrift</xsl:text></xsl:otherwise>
             </xsl:choose>
         </xsl:result-document>
