@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:num="http://dummy" exclude-result-prefixes="xs hbfm num" version="2.0" xmlns:hbfm="http:www.fachmedien.de/hbfm">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs hbfm" version="2.0" xmlns:hbfm="http:www.fachmedien.de/hbfm">
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no" omit-xml-declaration="no" doctype-public="-//Handelsblatt Fachmedien//DTD V1.0//DE" doctype-system="hbfm.dtd"/>
     
@@ -59,7 +59,7 @@
                     <xsl:variable name="pubdate" select="$erstes-dokument/metadata/pub/date"/>
                     
                     <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($pubabbr)}_{$pubyr}_{$pubed}_TOC.xml">
-                        <toc docid="{$pubabbr}_{$pubyr}_{$pubed}_toc" extid="{$pubabbr}_{$pubyr}_{$pubed}_toc">
+                        <toc docid="{$pubabbr}_{$pubyr}_{$pubed}_toc">
                             <metadata>
                                 <title>
                                     <xsl:text>Inhaltsverzeichnis</xsl:text>
@@ -94,15 +94,7 @@
                                         <article_order>1</article_order>
                                     </pages>
                                     <public value="true"/>
-                                    <publisher>Fachmedien Otto Schmidt</publisher>
                                 </pub>
-                                <global_toc>
-                                    <node title="{$pubyr}" childOrder="ByTitleReverseAlphanumeric">
-                                        <node title="Heft {$pubed}" childOrder="BySequenceNr">
-                                            <leaf sequenceNr="1"/>
-                                        </node>
-                                    </node>
-                                </global_toc>
                                 <all_doc_type level="1">zs</all_doc_type>
                                 <all_source level="1">zsa</all_source>
                                 <all_source level="2">
@@ -162,7 +154,7 @@
                                 </xsl:if>
                                 
                                 <!-- 2. Danach alle Ressort gruppierten Beiträge: -->
-                                <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed','gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='zau') and not(starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
+                                <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed','gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()=('db','zau') and starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                                     <xsl:variable name="ressort-ueberschrift">
                                         <xsl:choose>
                                             <xsl:when test="current-grouping-key() = ''">Aufsätze</xsl:when>
@@ -182,12 +174,6 @@
                                             <xsl:value-of select="$ressort-ueberschrift"/>
                                         </title>
                                         <xsl:for-each select="current-group()">
-                                            <xsl:sort select="number(metadata/pub/pages/start_page/text())"/>
-                                            <!--<xsl:sort select="metadata/pub/pages/start_page/text()"/>-->
-                                            <xsl:sort select="number(num:RomanToInteger(metadata/pub/pages/start_page/text()))"/>
-                                                <!-- <xsl:sort select="number(num:RomanToInteger(metadata/pub/pages/last_page/text()))"/>
-                                            <xsl:sort select="number(num:RomanToInteger(metadata/pub/pages/article_order/text()))"/>-->
-
                                             <table frame="void" rules="none">
                                                 <tbody>
                                                     <xsl:for-each select="/*">
@@ -236,7 +222,7 @@
                                 </xsl:for-each-group>
                                 
                                 <!-- 2.b) Magazinteil für DB -->
-                                <xsl:if test="$aktuelles-Heft[not(name()=('toc','ed', 'gk'))][metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M')][not(metadata/coll_title)]">
+                                <xsl:if test="$aktuelles-Heft[metadata/all_source[@level='2']/text()='db']">
                                     <section>
                                         <title>Weitere Magazin-Inhalte</title>
                                         <xsl:for-each select="$aktuelles-Heft[not(name()=('toc','ed', 'gk'))][metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M')][not(metadata/coll_title)]">
@@ -429,50 +415,5 @@
             </td>
         </tr>
     </xsl:template>
-    
-    <xsl:function name="num:RomanToInteger" as="xs:integer">
-        <xsl:param name="r" as="xs:string?"/>
-        <xsl:choose>
-            <xsl:when test="ends-with($r,'XC')">
-                <xsl:sequence select="90+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'L')">
-                <xsl:sequence select="50+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'C')">
-                <xsl:sequence select="100+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'D')">
-                <xsl:sequence select="500+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'M')">
-                <xsl:sequence select="1000+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'IV')">
-                <xsl:sequence select="4+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'IX')">
-                <xsl:sequence select="9+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'IIX')">
-                <xsl:sequence select="8+num:RomanToInteger(substring($r,1,string-length($r)-2))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'I')">
-                <xsl:sequence select="1+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'V')">
-                <xsl:sequence select="5+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="ends-with($r,'X')">
-                <xsl:sequence select="10+num:RomanToInteger(substring($r,1,string-length($r)-1))"/>
-            </xsl:when>
-            <xsl:when test="floor(number($r)) = number($r)">
-                <xsl:sequence select="xs:integer(number($r))"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:sequence select="0"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
-    
+
 </xsl:stylesheet>

@@ -15,23 +15,45 @@
     <xsl:variable name="publisher" select="$erstes-dokument/*/metadata/all_source[@level='2']/text()"/>
 
     <xsl:template name="main" match="/">
-        <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
-            <xsl:choose>
-                <xsl:when test="$publisher='wuw'"><xsl:call-template name="fill_wuw"/></xsl:when>
-                <!--<xsl:when test="$publisher='db'"><xsl:call-template name="fill_db"/></xsl:when>-->
-                <xsl:when test="$publisher='rel'"><xsl:call-template name="fill_rel"/></xsl:when>
-                <xsl:when test="$publisher='cf'"><xsl:call-template name="fill_cf"/></xsl:when>
-                <xsl:when test="$publisher='ar'"><xsl:call-template name="fill_ar"/></xsl:when>
-                <xsl:when test="$publisher='dk'"><xsl:call-template name="fill_dk"/></xsl:when>
-                <xsl:when test="$publisher='kor'"><xsl:call-template name="fill_kor"/></xsl:when>
-                <xsl:when test="$publisher='ref'"><xsl:call-template name="fill_ref"/></xsl:when>
-                <xsl:when test="$publisher='zuj'"><xsl:call-template name="fill_zuj"/></xsl:when>
-                <!-- NEW PUBLISHER? Quickly add it just here!-->
-                <xsl:when test="$publisher=('db','ret','bwp','paw','zau','esgz','econic')"><xsl:call-template name="fill_ihv"/></xsl:when>
-                <xsl:otherwise><xsl:text>Ungültige Zeitschrift</xsl:text></xsl:otherwise>
-            </xsl:choose>
-        </xsl:result-document>
+        <xsl:choose>
+            <xsl:when test="$publisher='wuw'">
+                <xsl:result-document method="xml" href="file:///{$output_path}WuW-IHV.html">
+                <xsl:call-template name="fill_wuw"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='db'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_db"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='rel'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_rel"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='cf'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_cf"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='ar'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_ar"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='dk'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_dk"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='kor'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_kor"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='ref'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_ref"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher='zuj'">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_zuj"/></xsl:result-document></xsl:when>
+            <xsl:when test="$publisher=('ret','bwp','paw')">
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:call-template name="fill_ihv"/></xsl:result-document></xsl:when>
+            <xsl:otherwise>
+                <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($publisher)}-IHV.html">
+                    <xsl:text>Ungültige Zeitschrift</xsl:text></xsl:result-document></xsl:otherwise>
+        </xsl:choose>   
     </xsl:template>
+    
+    <!--<xsl:template name="fill_wuw">
+    </xsl:template>-->
     
     <xsl:template name="fill_zuj">
         <html>
@@ -1083,13 +1105,7 @@
                                                                     <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
                                                                 </xsl:for-each>
                                                             </div>
-                                                            <div class="ihv_seite">  
-                                                                <xsl:text>Seite </xsl:text><xsl:value-of select="./metadata/pub/pages/start_page"/> 
-                                                                <xsl:if test="not(./metadata/pub/pages[start_page = last_page or last_page =''])">
-                                                                    <xsl:text> &#45; </xsl:text><xsl:value-of select="./metadata/pub/pages/last_page"/>
-                                                                </xsl:if>
-                                                                <xsl:text>, </xsl:text><xsl:value-of select="./@docid"/>
-                                                            </div>
+                                                            <div class="ihv_seite">M1,  <xsl:value-of select="./@docid"/></div>
                                                         </a>
                                                     </xsl:for-each>
                                                 </div>
@@ -1108,13 +1124,7 @@
                                                                     <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname)"/>
                                                                 </xsl:for-each>
                                                             </div>
-                                                            <div class="ihv_seite">
-                                                                <xsl:text>Seite </xsl:text><xsl:value-of select="./metadata/pub/pages/start_page"/> 
-                                                                <xsl:if test="not(./metadata/pub/pages[start_page = last_page or last_page =''])">
-                                                                    <xsl:text> &#45; </xsl:text><xsl:value-of select="./metadata/pub/pages/last_page"/>
-                                                                </xsl:if>
-                                                                <xsl:text>, </xsl:text><xsl:value-of select="./@docid"/>
-                                                            </div>
+                                                            <div class="ihv_seite">M1,  <xsl:value-of select="./@docid"/></div>
                                                         </a>
                                                     </xsl:for-each>
                                                 </div>
@@ -1122,7 +1132,7 @@
                                         </xsl:if>
                                         
                                         <!-- Documets are grouped according to ressorts. And an additional group for articles with no ressort (excluding TOC and Editorial) -->
-                                        <xsl:for-each-group select="$aktuelles-Heft" group-by="if (/*/metadata/ressort) then /*/metadata/ressort else if (/*[not(name()=('toc','ed','gk'))]) then 'Weitere Inhalte' else ()">
+                                        <xsl:for-each-group select="$aktuelles-Heft" group-by="if (/*/metadata/ressort) then /*/metadata/ressort else if (/*[not(name()=('toc','ed'))]) then 'Weitere Inhalte' else ()">
                                             
                                             <xsl:sort select="start_page" data-type="number" order="ascending"/>
                                             <xsl:sort select="current-grouping-key()" data-type="text" order="ascending"/>
@@ -1156,14 +1166,34 @@
                                                             </xsl:if>
                                                             <div class="ihv_abstract"><p><xsl:value-of select="/*/metadata/summary"/></p></div>
                                                             <div class="ihv_seite">
-                                                                <xsl:value-of select="upper-case($publisher)"/><xsl:text> vom </xsl:text>
-                                                                <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" /><xsl:text>, Heft </xsl:text> 
-                                                                <xsl:value-of select="/*/metadata/pub/pubedition"/><xsl:text>, Seite </xsl:text>
-                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                                                                <xsl:if test="not(/*/metadata/pub/pages[start_page = last_page or last_page =''])">
-                                                                    <xsl:text> &#45; </xsl:text><xsl:value-of select="/*/metadata/pub/pages/last_page"/>
-                                                                </xsl:if>                                                            
-                                                                <xsl:text>, </xsl:text><xsl:value-of select="upper-case($publisher)"/><xsl:value-of select="$siriusID"/> 
+                                                                <xsl:choose>
+                                                                    <xsl:when test="/*/metadata/pub/pages[start_page = last_page]">
+                                                                        <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                                        <xsl:text>, </xsl:text>
+                                                                        <xsl:value-of select="upper-case($publisher)"/>
+                                                                        <xsl:value-of select="$siriusID"/>
+                                                                    </xsl:when>
+                                                                    <xsl:otherwise>
+                                                                        <xsl:value-of select="upper-case($publisher)"/>
+                                                                        <xsl:text> vom </xsl:text>
+                                                                        <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" /><xsl:text>, Heft </xsl:text> 
+                                                                        <xsl:value-of select="/*/metadata/pub/pubedition"/><xsl:text>, Seite </xsl:text> 
+                                                                        <xsl:choose>
+                                                                            <xsl:when test="/*/metadata/pub/pages/last_page =''">
+                                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                                                                <xsl:text>, </xsl:text>
+                                                                                <xsl:value-of select="upper-case($publisher)"/>
+                                                                                <xsl:value-of select="$siriusID"/> 
+                                                                            </xsl:when>
+                                                                            <xsl:otherwise>
+                                                                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/> &#45; <xsl:value-of select="/*/metadata/pub/pages/last_page"/>
+                                                                                <xsl:text>, </xsl:text>
+                                                                                <xsl:value-of select="upper-case($publisher)"/>
+                                                                                <xsl:value-of select="$siriusID"/> 
+                                                                            </xsl:otherwise>
+                                                                        </xsl:choose>
+                                                                    </xsl:otherwise>
+                                                                </xsl:choose>
                                                             </div>
                                                         </a>
                                                     </xsl:for-each>
@@ -1644,7 +1674,7 @@
         </html>
     </xsl:template>
     
-    <!--<xsl:template name="fill_db">
+    <xsl:template name="fill_db">
         <html>
             <head>
                 <meta charset="UTF-8"/>
@@ -1683,7 +1713,7 @@
             <body>
                 <div class="content-wrapper">
                     <h2 class="pagehead small">Inhaltsverzeichnis</h2>
-                    <!-\- Linke Spalte -\->
+                    <!-- Linke Spalte -->
                     <section class="left" id="content" style="width:630px">
                         <div class="content-list inhaltsverzeichnis">
                             <div class="content-text">
@@ -1699,7 +1729,7 @@
                                             <xsl:value-of select="format-date(/*/metadata/pub/date, '[D].[M].[Y]')" />
                                         </xsl:for-each>
                                     </div>
-                                    <!-\- Editorial -\->
+                                    <!-- Editorial -->
                                     <div class="ihv_level2">
                                         <xsl:if test="$aktuelles-Heft//ed">
                                             <div class="ihv_headline ressort">Editorial</div>
@@ -1708,7 +1738,7 @@
                                         <div class="ihv_level3">
                                             <div class="ihv_level4">
                                                 
-                                                <!-\- SCHLEIFE ÜBER JEDES XML DOKUMENT -\->
+                                                <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
                                                 <xsl:for-each select="$aktuelles-Heft">
                                                     <xsl:variable name="docum" select="document(document-uri(.))"/>
                                                     <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
@@ -1735,20 +1765,20 @@
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </div>
-                                            <!-\- Ende Level4 -\->
+                                            <!-- Ende Level4 -->
                                         </div>
-                                        <!-\- Ende Level3 -\->
+                                        <!-- Ende Level3 -->
                                     </div>
-                                    <!-\- Ende Level2 - Editorial -\->
-                                    <!-\- Ende: Editorial -\->
+                                    <!-- Ende Level2 - Editorial -->
+                                    <!-- Ende: Editorial -->
                                     
-                                    <!-\- Gastkommentar -\->
+                                    <!-- Gastkommentar -->
                                     <div class="ihv_level2">
                                         <div class="ihv_headline ressort">Gastkommentar</div>
-                                        <!-\- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -\->
+                                        <!-- GK KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                         <div class="ihv_level3">
                                             <div class="ihv_level4">
-                                                <!-\- SCHLEIFE ÜBER JEDES XML DOKUMENT -\->
+                                                <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
                                                 <xsl:for-each select="$aktuelles-Heft">
                                                     <xsl:variable name="docum" select="document(document-uri(.))"/>
                                                     <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
@@ -1761,7 +1791,7 @@
                                                                 <xsl:for-each select="/*/metadata/authors/author">
                                                                     <xsl:if test="not(position()=1)"><xsl:text> / </xsl:text></xsl:if>
                                                                     <xsl:value-of select="concat(prefix, ' ' , firstname, ' ', surname, suffix)"/>
-                                                                    <!-\-<xsl:if test="$docum/*/metadata/authors/author/suffix"><xsl:value-of select="suffix"/></xsl:if>-\->
+                                                                    <!--<xsl:if test="$docum/*/metadata/authors/author/suffix"><xsl:value-of select="suffix"/></xsl:if>-->
                                                                 </xsl:for-each>
                                                             </div>
                                                             <xsl:for-each select="/*/metadata/authors/author">
@@ -1778,11 +1808,11 @@
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </div>
-                                            <!-\- Ende Level4 -\->
+                                            <!-- Ende Level4 -->
                                         </div>
-                                        <!-\- Ende Level3 -\->
+                                        <!-- Ende Level3 -->
                                     </div>
-                                    <!-\- Ende Level2 - Gastkommentar -\->
+                                    <!-- Ende Level2 - Gastkommentar -->
                                     
                                     
                                     <div class="ihv_level2">
@@ -1923,7 +1953,7 @@
                                         </xsl:call-template>
                                     </div><xsl:comment>Ende Level 2</xsl:comment>
                                     
-                                    <!-\- Standpunkte -\->
+                                    <!-- Standpunkte -->
                                     <xsl:variable name="standpunkte">
                                         <xsl:for-each select="$aktuelles-Heft">
                                             <xsl:variable name="docum" select="document(document-uri(.))"/>
@@ -1939,13 +1969,13 @@
                                     <xsl:variable name="anzahl-standpunkte" select="count($standpunkte/sp)"/>
                                     <xsl:if test="$anzahl-standpunkte&gt;0">
                                         <div class="ihv_level2">
-                                            <!-\- Rubrik existiert nicht im ihv-\->  
+                                            <!-- Rubrik existiert nicht im ihv-->  
                                             <div class="ihv_headline ressort">Standpunkt<xsl:if test="$anzahl-standpunkte&gt;1">e</xsl:if></div>
                                             <xsl:for-each select="$standpunkte/sp">
                                                 <xsl:variable name="sp-dokument" select="."/>
                                                 <xsl:variable name="sp-dbnummer" select="./*/@rawid"/>
                                                 
-                                                <!-\- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -\->
+                                                <!-- SP KANN WOMÖGLICH AUCH VON MEHREREN AUTOREN GESCHRIEBEN WERDEN -->
                                                 <div class="ihv_level3">
                                                     <div class="ihv_level4">
                                                         <a target="_blank" href="https://research.owlit.de/lx-document/DB{$sp-dbnummer}">
@@ -1973,14 +2003,14 @@
                                                             </div>
                                                         </a>
                                                     </div>
-                                                    <!-\- Ende Level4 -\->
+                                                    <!-- Ende Level4 -->
                                                 </div>
-                                                <!-\- Ende Level3 -\->
+                                                <!-- Ende Level3 -->
                                                 <br/>
                                             </xsl:for-each>
                                         </div>
                                     </xsl:if>
-                                    <!-\- Ende: Standpunkte -\->
+                                    <!-- Ende: Standpunkte -->
                                 </div><xsl:comment>Ende Level 1</xsl:comment>
                             </div>
                         </div>
@@ -1988,9 +2018,9 @@
                 </div>
             </body>
         </html>
-    </xsl:template>-->
+    </xsl:template>
     
-    <!--<xsl:template name="listArticles">
+    <xsl:template name="listArticles">
         <xsl:param name="self"/>
         <xsl:param name="ueberschrift" as="xs:string"/>
         <xsl:param name="art-nr" as="xs:integer"/>
@@ -2017,9 +2047,9 @@
                         <xsl:when test="$doctype = 'kb'">65</xsl:when> 
                         <xsl:when test="$doctype = 'nr'">70</xsl:when>
                         <xsl:when test="$doctype = 'ed'">10</xsl:when>
-                        <!-\-<xsl:when test="$doctype = 'toc'">0</xsl:when>-\->
+                        <!--<xsl:when test="$doctype = 'toc'">0</xsl:when>-->
                         <xsl:when test="$doctype = 'gk'">20</xsl:when>
-                        <!-\-<xsl:when test="$doctype = 'sp'">Standpunkt</xsl:when>-\->
+                        <!--<xsl:when test="$doctype = 'sp'">Standpunkt</xsl:when>-->
                         <xsl:otherwise>1000</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -2033,7 +2063,7 @@
             <div class="ihv_level3">
                 <div class="ihv_headline doktyp"><xsl:value-of select="$ueberschrift"/></div>
             
-                <!-\- SCHLEIFE ÜBER JEDES XML DOKUMENT -\->
+                <!-- SCHLEIFE ÜBER JEDES XML DOKUMENT -->
                 <xsl:for-each select="$aktuelles-Heft">
                     <xsl:variable name="docum" select="document(document-uri(.))"/>
                     <xsl:variable name="siriusID" select="$docum/*/@rawid"/>
@@ -2057,9 +2087,9 @@
                             <xsl:when test="$doctype = 'kb'">65</xsl:when> 
                             <xsl:when test="$doctype = 'nr'">70</xsl:when>
                             <xsl:when test="$doctype = 'ed'">10</xsl:when>
-                            <!-\-<xsl:when test="$doctype = 'toc'">0</xsl:when>-\->
+                            <!--<xsl:when test="$doctype = 'toc'">0</xsl:when>-->
                             <xsl:when test="$doctype = 'gk'">20</xsl:when>
-                            <!-\-<xsl:when test="$doctype = 'sp'">Standpunkt</xsl:when>-\->
+                            <!--<xsl:when test="$doctype = 'sp'">Standpunkt</xsl:when>-->
                             <xsl:otherwise>1000</xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
@@ -2125,11 +2155,11 @@
                 </xsl:for-each>
             </div><xsl:comment>Ende Level 3</xsl:comment>
         </xsl:if>
-    </xsl:template>-->
+    </xsl:template>
     
-<!--    <xsl:function name="hbfm:autorenkuerzel">
+    <xsl:function name="hbfm:autorenkuerzel">
         <xsl:param name="aut-name" as="xs:string"/>
         <xsl:value-of select="lower-case(replace(replace(tokenize($aut-name, ',')[1],'[\.|-]','_'),' ','_'))"/>
-    </xsl:function>-->
+    </xsl:function>
     
 </xsl:stylesheet>
