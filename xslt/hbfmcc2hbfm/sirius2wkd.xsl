@@ -66,9 +66,13 @@
         		<xsl:with-param name="src-level-2" select="all_source[@level='2']/text()"/>
         	</xsl:call-template>
         	
-        	<xsl:apply-templates select="ressort | rubriken | pub | extfile | law | instdoc | preinstdoc | law_refs | chapter"/>
-        	
-            <xsl:call-template name="create_global_toc"/>
+        	<xsl:apply-templates select="ressort | rubriken | pub"/>
+
+			<xsl:call-template name="ereader_file"/>
+
+        	<xsl:apply-templates select="extfile | law | instdoc | preinstdoc | law_refs | chapter"/>
+
+			<xsl:call-template name="create_global_toc"/>
         	
         	<xsl:if test="/*[not(name()= 'toc')]/body//section">
         		<inner_toc/>
@@ -586,8 +590,25 @@
 	</xsl:template>
 
  
-
-
+	<!-- =========================================================
+	=== adds ereader_file
+	=========================================================== -->
+	<xsl:template name="ereader_file">
+		<xsl:variable name="page" select="/*/metadata/pub/pages/start_page/text()"/>
+		<xsl:variable name="pub-abbr" select="/*/metadata/pub/pubabbr/text()"/>
+		<xsl:variable name="pub-edition" select="/*/metadata/pub/pubedition/text()"/>
+		<xsl:variable name="pub-year" select="/*/metadata/pub/pubyear/text()"/>
+		<xsl:variable name="pub-beilage" select="/*/metadata/pub/pub_suppl/text()"/>
+		<ereader_file page="{$page}" pagetype="label" pdfonly="false">
+			<xsl:value-of select="$pub-abbr"/><xsl:text>_</xsl:text>
+			<xsl:value-of select="$pub-year"/><xsl:text>_</xsl:text>
+			<xsl:value-of select="$pub-edition"/><xsl:text>_</xsl:text>
+			<xsl:if test="$pub-beilage">
+				<xsl:text>B</xsl:text><xsl:value-of select="$pub-beilage"/><xsl:text>_</xsl:text>
+			</xsl:if>
+			<xsl:text>Owlit.pdf</xsl:text>
+		</ereader_file>
+	</xsl:template>
 
 
 	<!-- =========================================================
