@@ -1371,7 +1371,8 @@
 										<xsl:when test="../name()='gh'">
 											<leaf sequenceNr="9999999"/>
 										</xsl:when>
-										<xsl:when test="descendant::pubedition = '00'">
+										<!-- hier zusätzlich sicherstellen, dass es definitiv keine Zeitschrift ist (= keine Seitenzahl hat), denn wir haben Null-Nummern, z.B. REL 00/2018, die natürlich wie alle anderen Ausgaben auch ein vollständiges <global_toc> erhalten sollen -->
+										<xsl:when test="descendant::pubedition = '00' and descendant::pages/start_page/text() = ''">
 											<leaf>
 												<xsl:attribute name="sequenceNr">
 													<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>

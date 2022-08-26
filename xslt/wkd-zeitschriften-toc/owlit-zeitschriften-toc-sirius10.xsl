@@ -76,7 +76,7 @@
                                         <xsl:value-of select="$pubtitle"/>
                                     </pubtitle>
                                     <pubabbr>
-                                        <xsl:value-of select="upper-case($pubabbr)"/>
+                                        <xsl:value-of select="$pubabbr"/>
                                     </pubabbr>
                                     <pubyear>
                                         <xsl:value-of select="$pubyr"/>
