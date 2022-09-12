@@ -53,7 +53,7 @@
                 <xsl:for-each-group select="current-group()" group-by="metadata/pub/pubedition">
                     <xsl:variable name="pubed" select="current-grouping-key()"/>
 
-                    <xsl:variable name="aktuelles-Heft" select="current-group()"/>
+                    <xsl:variable name="aktuelles-Heft" select="current-group()[not(metadata/pub/pub_suppl)]"/>
                     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
                     <xsl:variable name="pubtitle" select="$erstes-dokument/metadata/pub/pubtitle"/>
                     <xsl:variable name="pubdate" select="$erstes-dokument/metadata/pub/date"/>
@@ -162,7 +162,7 @@
                                 </xsl:if>
                                 
                                 <!-- 2. Danach alle Ressort gruppierten Beiträge: -->
-                                <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed','gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='zau') and not(starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
+                                <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed','gk'))][metadata/ressort][not(metadata/all_source[@level='2']/text()='zau') and not(starts-with(metadata/pub/pages/start_page/text(), 'M') or starts-with(metadata/pub/pages/start_page/text(), 'I') or starts-with(metadata/pub/pages/start_page/text(), 'V') or starts-with(metadata/pub/pages/start_page/text(), 'X'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                                     <xsl:variable name="ressort-ueberschrift">
                                         <xsl:choose>
                                             <xsl:when test="current-grouping-key() = ''">Aufsätze</xsl:when>
@@ -235,7 +235,7 @@
                                     </section>
                                 </xsl:for-each-group>
                                 
-                                <!-- 2.b) Magazinteil für DB -->
+                                <!-- 2.b.1) Magazinteil für DB (ab 2010) -->
                                 <xsl:if test="$aktuelles-Heft[not(name()=('toc','ed', 'gk'))][metadata/all_source[@level='2']/text()='db' and starts-with(metadata/pub/pages/start_page/text(), 'M')][not(metadata/coll_title)]">
                                     <section>
                                         <title>Weitere Magazin-Inhalte</title>
@@ -255,7 +255,26 @@
                                         </xsl:for-each>
                                     </section>
                                 </xsl:if>
-                                
+                                <!-- 2.b.2) Magazinteil für DB (vor 2010) -->
+                                <xsl:if test="$aktuelles-Heft[not(name()=('toc','ed', 'gk'))][metadata/all_source[@level='2']/text()='db' and (starts-with(metadata/pub/pages/start_page/text(), 'I') or starts-with(metadata/pub/pages/start_page/text(), 'V') or starts-with(metadata/pub/pages/start_page/text(), 'X'))][not(metadata/coll_title)]">
+                                    <section>
+                                        <title>Weitere Mantel-Inhalte</title>
+                                        <xsl:for-each select="$aktuelles-Heft[not(name()=('toc','ed', 'gk'))][metadata/all_source[@level='2']/text()='db' and (starts-with(metadata/pub/pages/start_page/text(), 'I') or starts-with(metadata/pub/pages/start_page/text(), 'V') or starts-with(metadata/pub/pages/start_page/text(), 'X'))][not(metadata/coll_title)]">
+                                            <xsl:sort select="number(num:RomanToInteger(metadata/pub/pages/start_page/text()))"/>
+                                            <table frame="void" rules="none">
+                                                <tbody>
+                                                    <xsl:for-each select="/*">
+                                                        <xsl:call-template name="print-entry">
+                                                            <xsl:with-param name="knoten" select="."/>
+                                                            <xsl:with-param name="mantelteil" select="'yes'"/>
+                                                        </xsl:call-template>
+                                                    </xsl:for-each>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </xsl:for-each>
+                                    </section>
+                                </xsl:if>
                                 
                                 <!-- 3. Letztendlich der Rest, der keine Ressorts hat: -->
                                 <xsl:if test="$aktuelles-Heft[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))][not(metadata/all_source[@level='2']/text()='kor')][not(metadata/coll_title)]">
