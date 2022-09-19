@@ -57,6 +57,7 @@
                     <xsl:variable name="erstes-dokument" select="$aktuelles-Heft[1]"/>
                     <xsl:variable name="pubtitle" select="$erstes-dokument/metadata/pub/pubtitle"/>
                     <xsl:variable name="pubdate" select="$erstes-dokument/metadata/pub/date"/>
+                    <xsl:variable name="pubabbrForMeta" select="$erstes-dokument/metadata/pub/pubabbr"/>
                     
                     <xsl:result-document method="xml" href="file:///{$output_path}{upper-case($pubabbr)}_{$pubyr}_{$pubed}_TOC.xml">
                         <toc docid="{$pubabbr}_{$pubyr}_{$pubed}_toc" extid="{$pubabbr}_{$pubyr}_{$pubed}_toc">
@@ -76,7 +77,7 @@
                                         <xsl:value-of select="$pubtitle"/>
                                     </pubtitle>
                                     <pubabbr>
-                                        <xsl:value-of select="$pubabbr"/>
+                                        <xsl:value-of select="$pubabbrForMeta"/>
                                     </pubabbr>
                                     <pubyear>
                                         <xsl:value-of select="$pubyr"/>
