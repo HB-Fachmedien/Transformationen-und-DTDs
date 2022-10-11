@@ -68,8 +68,10 @@
         	
         	<xsl:apply-templates select="ressort | rubriken | pub"/>
 
-			<xsl:call-template name="ereader_file"/>
-
+        	<xsl:if test="not(/*/metadata/all_source[@level='2']/text()='ifst') and (/*/metadata/all_source[@level='1']/text()='zsa' and string-length(/*/metadata/pub/pages/start_page/text())>0)">
+        		<xsl:call-template name="ereader_file"/>
+        	</xsl:if>
+        	
         	<xsl:apply-templates select="extfile | law | instdoc | preinstdoc | law_refs | chapter"/>
 
 			<xsl:call-template name="create_global_toc"/>
