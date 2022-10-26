@@ -403,14 +403,18 @@
                     <xsl:when test="$knoten/metadata/instdoc">
                         <!-- Siehe Email von Andreas: Di 29.10.2019 13:07 -->
                         <xsl:variable name="instdoc" select="$knoten/metadata/instdoc"/>
-                        <xsl:variable name="aktenzeichen-string" select="string-join($instdoc/instdocnrs/instdocnr, ', ')"/>
+                        <xsl:variable name="aktenzeichen-string">
+                            <xsl:if test="$instdoc/instdocnrs/instdocnr">
+                                <xsl:value-of select="concat(codepoints-to-string(8211), ' ', $instdoc/instdocnrs/instdocnr)"/>
+                            </xsl:if>
+                        </xsl:variable>
                         <xsl:variable name="urteilszeile">
                             <xsl:choose>
                                 <xsl:when test="$instdoc/instdocaddnr and contains($aktenzeichen-string, ',')">
                                     <!--<xsl:value-of select="insert-before($aktenzeichen-string, index-of($aktenzeichen-string, ','), concat(' ',$instdoc/instdocaddnr, ','))"/>-->
                                     <xsl:value-of select="concat(substring-before($aktenzeichen-string, ','), ' ',$instdoc/instdocaddnr, ',', substring-after($aktenzeichen-string, ','))"/>
                                 </xsl:when>
-                                <xsl:when test="$instdoc/instdocaddnr">
+                                <xsl:when test="$instdoc/instdocaddnr and not(contains($aktenzeichen-string, ','))">
                                     <xsl:value-of select="concat($aktenzeichen-string, ' ', $instdoc/instdocaddnr)"/>
                                 </xsl:when>
                                 <xsl:otherwise>
@@ -420,7 +424,7 @@
                             <xsl:value-of select="$instdoc/instdocnote"/>
                         </xsl:variable>
                         <p class="ihv_summary">
-                            <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'), ' ', codepoints-to-string(8211), ' ', $urteilszeile)"/>
+                            <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'), ' ', $urteilszeile)"/>
                         </p>
                     </xsl:when>
                 </xsl:choose>
