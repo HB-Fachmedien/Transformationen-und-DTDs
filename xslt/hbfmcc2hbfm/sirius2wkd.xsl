@@ -1354,8 +1354,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + ECONIC (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'ECONIC')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
