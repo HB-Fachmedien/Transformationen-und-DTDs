@@ -403,11 +403,13 @@
                     <xsl:when test="$knoten/metadata/instdoc">
                         <!-- Siehe Email von Andreas: Di 29.10.2019 13:07 -->
                         <xsl:variable name="instdoc" select="$knoten/metadata/instdoc"/>
+                        
                         <xsl:variable name="aktenzeichen-string">
                             <xsl:if test="$instdoc/instdocnrs/instdocnr">
-                                <xsl:value-of select="concat(codepoints-to-string(8211), ' ', $instdoc/instdocnrs/instdocnr)"/>
+                                <xsl:value-of select="concat(codepoints-to-string(8211), ' ', string-join($instdoc/instdocnrs/instdocnr, ', '))"/>
                             </xsl:if>
                         </xsl:variable>
+                        
                         <xsl:variable name="urteilszeile">
                             <xsl:choose>
                                 <xsl:when test="$instdoc/instdocaddnr and contains($aktenzeichen-string, ',')">

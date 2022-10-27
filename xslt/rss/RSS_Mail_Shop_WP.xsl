@@ -143,13 +143,18 @@
             <maileon:Urteilszeile>
                 <xsl:if test="metadata/instdoc">
                     <xsl:variable name="instdoc" select="metadata/instdoc"/>
-                    <xsl:variable name="aktenzeichen-string" select="string-join($instdoc/instdocnrs/instdocnr, ', ')"/>
+                    <xsl:variable name="aktenzeichen-string">
+                        <xsl:if test="$instdoc/instdocnrs/instdocnr">
+                            <xsl:value-of select="concat(codepoints-to-string(8211), ' ', string-join($instdoc/instdocnrs/instdocnr, ', '))"/>
+                        </xsl:if>
+                    </xsl:variable>
+                    
                     <xsl:variable name="urteilszeile">
                         <xsl:choose>
                             <xsl:when test="$instdoc/instdocaddnr and contains($aktenzeichen-string, ',')">
                                 <xsl:value-of select="concat(substring-before($aktenzeichen-string, ','), ' ',$instdoc/instdocaddnr, ',', substring-after($aktenzeichen-string, ','))"/>
                             </xsl:when>
-                            <xsl:when test="$instdoc/instdocaddnr">
+                            <xsl:when test="$instdoc/instdocaddnr and not(contains($aktenzeichen-string, ','))">
                                 <xsl:value-of select="concat($aktenzeichen-string, ' ', $instdoc/instdocaddnr)"/>
                             </xsl:when>
                             <xsl:otherwise>
@@ -158,7 +163,7 @@
                         </xsl:choose>
                         <xsl:value-of select="$instdoc/instdocnote"/>
                     </xsl:variable>
-                    <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'), ' ', codepoints-to-string(8211), ' ', $urteilszeile)"/>    
+                    <xsl:value-of select="concat($instdoc/inst/text(), ', ', $instdoc/instdoctype/text(), ' vom ', format-date($instdoc/instdocdate, '[D,2].[M,2].[Y]'), ' ', $urteilszeile)"/>
                 </xsl:if>
             </maileon:Urteilszeile>
             
