@@ -43,6 +43,7 @@
         <class sort="95">OLG Dresden</class>
         <class sort="100">OLG Düsseldorf</class>
         <class sort="110">OLG Frankfurt/M.</class>
+        <class sort="111">OLG Hamburg</class>
         <class sort="112">Hanseatisches OLG Hamburg</class>
         <class sort="115">OLG Hamm</class>
         <class sort="120">OLG Karlsruhe</class>
@@ -70,8 +71,10 @@
         <class sort="213">LG Saarbrücken</class>
         <class sort="215">LG Stuttgart</class>
         <class sort="220">AG Bonn</class>
+        <class sort="222">AG Düsseldorf</class>
         <class sort="225">FG Köln</class>
         <class sort="230">LAG Düsseldorf</class>
+        <class sort="232">OVG Berlin-Brandenburg</class>
         <class sort="233">OVG Nordrhein-Westfalen</class>
         <class sort="235">VG Arnsberg</class>
         <class sort="240">VG Düsseldorf</class>
@@ -96,8 +99,9 @@
         <class sort="324">Competition Appeal Tribunal</class>
         <class sort="325">Competition Appeal Tribunal (Vereinigtes Königreich)</class>
         <class sort="326">High Court of Justice (Mr. Justice Birss)</class>
-        <class sort="327">OGH Österreich</class>
-        <class sort="328">U.S. Department of Justice, Federal Trade Commission</class>
+        <class sort="327">OGH</class>
+        <class sort="328">OGH Österreich</class>
+        <class sort="329">U.S. Department of Justice, Federal Trade Commission</class>
         <class sort="330">Polnische Wettbewerbsbehörde (UOKiK)</class>
         <class sort="340">VK Südbayern</class>
         <class sort="350">Bund-Länder-Kommission</class>
@@ -141,6 +145,7 @@
         <class sort="109">LG München I</class>
         <class sort="115">BFH</class>
         <class sort="120">FG Düsseldorf</class>
+        <class sort="120">FG Hamburg</class>
         <class sort="130">FG Hessen</class>
         <class sort="140">FG Köln</class>
         <class sort="143">FG Mecklenburg-Vorpommern</class>
@@ -157,6 +162,7 @@
         <class sort="220">OFD Karlsruhe</class>
         <class sort="225">LfSt Niedersachsen</class>
         <class sort="230">OFD NRW</class>
+        <class sort="240">OGH Wien</class>
         <!-- End DK -->
     </xsl:variable>
    
