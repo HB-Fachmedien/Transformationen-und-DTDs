@@ -213,7 +213,7 @@
                                     <xsl:value-of select="."/>
                             </xsl:for-each></az>
                             <xsl:if test="not(/*[name()='va'])">
-                                <xsl:text>, </xsl:text><xsl:text>&#xa;</xsl:text>
+                                <xsl:text>,***</xsl:text>
                                 <xsl:value-of select="/*/metadata/title"/>
                             </xsl:if>
                             <seite-gericht>
@@ -267,7 +267,7 @@
                                 <xsl:value-of select="."/>
                             </xsl:for-each></az>
                             <xsl:if test="not(/*[name()='va'])">
-                                <xsl:text>, </xsl:text><xsl:text>&#xa;</xsl:text>
+                                <xsl:text>,***</xsl:text>
                                 <xsl:value-of select="/*/metadata/title"/>
                             </xsl:if>
                             <seite-gericht>
