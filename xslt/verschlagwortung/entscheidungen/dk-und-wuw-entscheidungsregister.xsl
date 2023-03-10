@@ -171,114 +171,153 @@
     
     <xsl:template match="/">
         <entscheidungsregister><xsl:text>&#xa;</xsl:text>
-            <xsl:if test="$alle-Hefte/*[name() = ('ent','nr')]">
-                <h1>Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
-                <xsl:for-each-group select="$alle-Hefte/*[name() = ('ent','nr')]" group-by="/*/metadata/instdoc/inst/text()">
-                    <xsl:sort select="$sort-variable/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
-                    
-                    <!--<xsl:variable name="debug-v1" select="./attribute::*"/>
-                    <xsl:variable name="debug-v2" select="current-grouping-key()"/>
-                    <xsl:variable name="debug-v3" select="$inline-array-dk/child::*[1]/text()"/>
-                    <xsl:variable name="debug-v4" select="$inline-array-dk[child::*[ text() = current-grouping-key()]]/@sort"/>
-                    <xsl:variable name="debug-v5" select="current-group()"/>
-                    <xsl:variable name="debug-v6" select="current()"/>-->
-                    
-                    <h2><xsl:if test="not($sort-variable/child::*/text() = current-grouping-key())"><GERICHT_NICHT_BEKANNT/></xsl:if><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>
-                        
-                    <xsl:for-each select="current-group()">
-                        <!-- hier nach Datum sortieren -->
-                        <xsl:sort select="replace(/*/metadata/instdoc/instdocdate,'-','')" data-type="number"/>
-                        <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
-                        <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
-                        <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
-                        <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
-                        <xsl:variable name="datum-tokenized" select="tokenize(/*/metadata/instdoc/instdocdate/text(), '-')"/>
-                        <zeile-gericht>
-                            <!-- Hier weiter: VAs und Ent sehen anders aus -->
-                            <xsl:if test="/*[name()='va']">
-                                <xsl:value-of select="/*/metadata/title"/>
-                                <br/>
-                            </xsl:if>
-                            <xsl:value-of select="/*/metadata/instdoc/inst"/>
-                            <xsl:text>, </xsl:text>
-                            <xsl:value-of select="replace(replace(replace(/*/metadata/instdoc/instdoctype,'Beschluss','Beschl.'),'Urteil','Urt.'),'Schreiben','Schr.')"/>
-                            <xsl:text> v. </xsl:text>
-                            <datum-gericht><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
-                                <xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum-gericht>
-                            <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
-                            <az><xsl:for-each select="/*/metadata/instdoc/instdocnrs/instdocnr">
+            <!-- DK -->
+            <xsl:if test="$alle-Hefte/*/metadata/all_source[@level='2']/text() = 'dk'">
+                <xsl:for-each-group select="$alle-Hefte/*[name() = ('ent','va')]" group-by="/*/name()">
+                    <xsl:choose>
+                        <xsl:when test="current-grouping-key() = 'ent'">
+                            <h1>Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="current-grouping-key() = 'va'">
+                            <h1>Verwaltungsanweisungen</h1><xsl:text>&#xa;</xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
+                    <xsl:for-each-group select="current-group()" group-by="/*/metadata/instdoc/inst/text()">
+                        <xsl:sort select="$sort-variable/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
+                        <h2><xsl:if test="not($sort-variable/child::*/text() = current-grouping-key())"><GERICHT_NICHT_BEKANNT/></xsl:if><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>
+                        <xsl:for-each select="current-group()">
+                            <!-- hier nach Datum sortieren -->
+                            <xsl:sort select="replace(/*/metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                            <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
+                            <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
+                            <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
+                            <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
+                            <xsl:variable name="datum-tokenized" select="tokenize(/*/metadata/instdoc/instdocdate/text(), '-')"/>
+                            <zeile-gericht>
+                                <!-- Hier weiter: VAs und Ent sehen anders aus -->
+                                <xsl:if test="/*[name()='va']">
+                                    <xsl:value-of select="/*/metadata/title"/>
+                                    <br/>
+                                </xsl:if>
+                                <xsl:value-of select="/*/metadata/instdoc/inst"/>
+                                <xsl:text>, </xsl:text>
+                                <xsl:value-of select="replace(replace(replace(/*/metadata/instdoc/instdoctype,'Beschluss','Beschl.'),'Urteil','Urt.'),'Schreiben','Schr.')"/>
+                                <xsl:text> v. </xsl:text>
+                                <datum-gericht><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
+                                    <xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum-gericht>
+                                <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
+                                <az><xsl:for-each select="/*/metadata/instdoc/instdocnrs/instdocnr">
                                     <xsl:if test="not(position()=1)">
                                         <xsl:text>, </xsl:text>
                                     </xsl:if>
                                     <xsl:value-of select="."/>
-                            </xsl:for-each></az>
-                            <xsl:if test="not(/*[name()='va'])">
-                                <xsl:text>,***</xsl:text>
-                                <xsl:value-of select="/*/metadata/title"/>
-                            </xsl:if>
-                            <seite-gericht>
-                                <xsl:text>&#x09;</xsl:text>
-                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                            </seite-gericht>
-                        </zeile-gericht><xsl:text>&#xa;</xsl:text>
-                    </xsl:for-each>    
-                </xsl:for-each-group>
-            </xsl:if>
-            
-            <xsl:if test="$alle-Hefte/*[name() = 'va']">
-                <h1>Verwaltungsanweisungen</h1><xsl:text>&#xa;</xsl:text>
-                <xsl:for-each-group select="$alle-Hefte/*[name() = 'va']" group-by="/*/metadata/instdoc/inst/text()">
-                    <xsl:sort select="$sort-variable/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
-                    
-                    <!--<xsl:variable name="debug-v1" select="./attribute::*"/>
-                    <xsl:variable name="debug-v2" select="current-grouping-key()"/>
-                    <xsl:variable name="debug-v3" select="$inline-array-dk/child::*[1]/text()"/>
-                    <xsl:variable name="debug-v4" select="$inline-array-dk[child::*[ text() = current-grouping-key()]]/@sort"/>
-                    <xsl:variable name="debug-v5" select="current-group()"/>
-                    <xsl:variable name="debug-v6" select="current()"/>-->
-                    
-                    <h2><xsl:if test="not($sort-variable/child::*/text() = current-grouping-key())"><GERICHT_NICHT_BEKANNT/></xsl:if><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>
-                    
-                    <xsl:for-each select="current-group()">
-                        <!-- hier nach Datum sortieren -->
-                        <xsl:sort select="replace(/*/metadata/instdoc/instdocdate,'-','')" data-type="number"/>
-                        <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
-                        <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
-                        <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
-                        <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
-                        <xsl:variable name="datum-tokenized" select="tokenize(/*/metadata/instdoc/instdocdate/text(), '-')"/>
-                        <zeile-gericht>
-                            <!-- Hier weiter: VAs und Ent sehen anders aus -->
-                            <xsl:if test="/*[name()='va']">
-                                <xsl:value-of select="/*/metadata/title"/>
-                                <br/>
-                            </xsl:if>
-                            <xsl:value-of select="/*/metadata/instdoc/inst"/>
-                            <xsl:text>, </xsl:text>
-                            <xsl:value-of select="replace(replace(replace(/*/metadata/instdoc/instdoctype,'Beschluss','Beschl.'),'Urteil','Urt.'),'Schreiben','Schr.')"/>
-                            <xsl:text> v. </xsl:text>
-                            <datum-gericht><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
-                                <xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum-gericht>
-                            <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
-                            <az><xsl:for-each select="/*/metadata/instdoc/instdocnrs/instdocnr">
-                                <xsl:if test="not(position()=1)">
-                                    <xsl:text>, </xsl:text>
+                                </xsl:for-each></az>
+                                <xsl:if test="not(/*[name()='va'])">
+                                    <xsl:text>,***</xsl:text>
+                                    <xsl:value-of select="/*/metadata/title"/>
                                 </xsl:if>
-                                <xsl:value-of select="."/>
-                            </xsl:for-each></az>
-                            <xsl:if test="not(/*[name()='va'])">
-                                <xsl:text>,***</xsl:text>
-                                <xsl:value-of select="/*/metadata/title"/>
-                            </xsl:if>
-                            <seite-gericht>
-                                <xsl:text>&#x09;</xsl:text>
-                                <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
-                            </seite-gericht>
-                        </zeile-gericht><xsl:text>&#xa;</xsl:text>
-                    </xsl:for-each>    
+                                <seite-gericht>
+                                    <xsl:text>&#x09;</xsl:text>
+                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                </seite-gericht>
+                            </zeile-gericht><xsl:text>&#xa;</xsl:text>
+                        </xsl:for-each>    
+                    </xsl:for-each-group>
                 </xsl:for-each-group>
             </xsl:if>
             
+            <!-- WUW -->
+            <xsl:if test="$alle-Hefte/*/metadata/all_source[@level='2']/text() = 'wuw'">
+                <xsl:if test="$alle-Hefte/*[name() = ('ent','nr')]">
+                    <h1>Entscheidungen</h1><xsl:text>&#xa;</xsl:text>
+                    <xsl:for-each-group select="$alle-Hefte/*[name() = ('ent','nr')]" group-by="/*/metadata/instdoc/inst/text()">
+                        <xsl:sort select="$sort-variable/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>                    
+                        <h2><xsl:if test="not($sort-variable/child::*/text() = current-grouping-key())"><GERICHT_NICHT_BEKANNT/></xsl:if><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>                      
+                        <xsl:for-each select="current-group()">
+                            <!-- hier nach Datum sortieren -->
+                            <xsl:sort select="replace(/*/metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                            <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
+                            <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
+                            <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
+                            <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
+                            <xsl:variable name="datum-tokenized" select="tokenize(/*/metadata/instdoc/instdocdate/text(), '-')"/>
+                            <zeile-gericht>
+                                <!-- Hier weiter: VAs und Ent sehen anders aus -->
+                                <xsl:if test="/*[name()='va']">
+                                    <xsl:value-of select="/*/metadata/title"/>
+                                    <br/>
+                                </xsl:if>
+                                <xsl:value-of select="/*/metadata/instdoc/inst"/>
+                                <xsl:text>, </xsl:text>
+                                <xsl:value-of select="replace(replace(replace(/*/metadata/instdoc/instdoctype,'Beschluss','Beschl.'),'Urteil','Urt.'),'Schreiben','Schr.')"/>
+                                <xsl:text> v. </xsl:text>
+                                <datum-gericht><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
+                                    <xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum-gericht>
+                                <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
+                                <az><xsl:for-each select="/*/metadata/instdoc/instdocnrs/instdocnr">
+                                        <xsl:if test="not(position()=1)">
+                                            <xsl:text>, </xsl:text>
+                                        </xsl:if>
+                                        <xsl:value-of select="."/>
+                                </xsl:for-each></az>
+                                <xsl:if test="not(/*[name()='va'])">
+                                    <xsl:text>,***</xsl:text>
+                                    <xsl:value-of select="/*/metadata/title"/>
+                                </xsl:if>
+                                <seite-gericht>
+                                    <xsl:text>&#x09;</xsl:text>
+                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                </seite-gericht>
+                            </zeile-gericht><xsl:text>&#xa;</xsl:text>
+                        </xsl:for-each>    
+                    </xsl:for-each-group>
+                </xsl:if>
+                
+                <xsl:if test="$alle-Hefte/*[name() = 'va']">
+                    <h1>Verwaltungsanweisungen</h1><xsl:text>&#xa;</xsl:text>
+                    <xsl:for-each-group select="$alle-Hefte/*[name() = 'va']" group-by="/*/metadata/instdoc/inst/text()">
+                        <xsl:sort select="$sort-variable/child::*[text() = current-grouping-key()]/@sort" data-type="number"/>
+                        <h2><xsl:if test="not($sort-variable/child::*/text() = current-grouping-key())"><GERICHT_NICHT_BEKANNT/></xsl:if><xsl:value-of select="current-grouping-key()"/></h2><xsl:text>&#xa;</xsl:text>
+                        <xsl:for-each select="current-group()">
+                            <!-- hier nach Datum sortieren -->
+                            <xsl:sort select="replace(/*/metadata/instdoc/instdocdate,'-','')" data-type="number"/>
+                            <xsl:sort select="num:RomanToInteger(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[1])" data-type="number"/>
+                            <xsl:sort select="tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[2]" data-type="text"/>
+                            <xsl:sort select="substring-after(metadata/instdoc/instdocnrs/instdocnr[1],'/')" data-type="text"/>
+                            <xsl:sort select="substring-before(tokenize(metadata/instdoc/instdocnrs/instdocnr[1],' ')[3],'/')" data-type="number"/>
+                            <xsl:variable name="datum-tokenized" select="tokenize(/*/metadata/instdoc/instdocdate/text(), '-')"/>
+                            <zeile-gericht>
+                                <!-- Hier weiter: VAs und Ent sehen anders aus -->
+                                <xsl:if test="/*[name()='va']">
+                                    <xsl:value-of select="/*/metadata/title"/>
+                                    <br/>
+                                </xsl:if>
+                                <xsl:value-of select="/*/metadata/instdoc/inst"/>
+                                <xsl:text>, </xsl:text>
+                                <xsl:value-of select="replace(replace(replace(/*/metadata/instdoc/instdoctype,'Beschluss','Beschl.'),'Urteil','Urt.'),'Schreiben','Schr.')"/>
+                                <xsl:text> v. </xsl:text>
+                                <datum-gericht><xsl:value-of select="$datum-tokenized[3]"/><xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[2]"/>
+                                    <xsl:text>.</xsl:text><xsl:value-of select="$datum-tokenized[1]"/></datum-gericht>
+                                <trennzeichen><xsl:text> - </xsl:text></trennzeichen>
+                                <az><xsl:for-each select="/*/metadata/instdoc/instdocnrs/instdocnr">
+                                    <xsl:if test="not(position()=1)">
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:if>
+                                    <xsl:value-of select="."/>
+                                </xsl:for-each></az>
+                                <xsl:if test="not(/*[name()='va'])">
+                                    <xsl:text>,***</xsl:text>
+                                    <xsl:value-of select="/*/metadata/title"/>
+                                </xsl:if>
+                                <seite-gericht>
+                                    <xsl:text>&#x09;</xsl:text>
+                                    <xsl:value-of select="/*/metadata/pub/pages/start_page"/>
+                                </seite-gericht>
+                            </zeile-gericht><xsl:text>&#xa;</xsl:text>
+                        </xsl:for-each>    
+                    </xsl:for-each-group>
+                </xsl:if>
+            </xsl:if>
             <xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text>
             <WICHTIG>REIHENFOLGE VON ENTSCHEIDUNGEN GLEICHEN DATUMS BEACHTEN! Siehe Mail von Eva 6.3.2018</WICHTIG><xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text>
             <WICHTIG2>Eva immer vorm Register die Behörden Liste für die Reihenfolge zusenden</WICHTIG2>
