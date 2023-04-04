@@ -105,7 +105,22 @@
 				</marginnr>
 			</xsl:if>
 			
-			<xsl:apply-templates select="public | add_target | version | publisher"/>
+			
+			<xsl:choose>
+				<!-- Ausgewählte ZAU-Beiträge vor die Bezahlschranke setzen -->
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'zau' and (starts-with(/*/metadata/title,'(Z)Ausblick') or /*/metadata/ressort/text() = 'Arbeitsrecht im Unternehmen')" >
+					<public value='true'/>
+				</xsl:when>
+				<!-- Alle br/sr-Beiträge vor die Bezahlschranke setzen -->
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('rb','sb')" >
+					<public value='true'/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="public"/>
+				</xsl:otherwise>
+			</xsl:choose>
+			
+			<xsl:apply-templates select="add_target | version | publisher"/>
 			
 			<xsl:choose>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm','hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic')">
@@ -618,7 +633,7 @@
 	=========================================================== -->
 	<xsl:template name="create_global_toc">
 		<xsl:variable name="pub-abbr" select="/*/metadata/pub/pubabbr/text()"/>
-		<xsl:if test="not( (/gh and all_source[@level='2']='ar') or (descendant::pubtitle/text() = 'Steuerboard-Blog') or ($pub-abbr='SU') or (descendant::pubtitle/text() = 'Rechtsboard-Blog') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah' and not($pub-abbr='BWP'))or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft') or ( pub/pubtitle='OrganisationsEntwicklung' and starts-with(coll_title/text(), 'ZOE Spezial')))">
+		<xsl:if test="not( (/gh and all_source[@level='2']='ar') or ($pub-abbr='SU') or (/*/local-name() = 'gtdraft') or (/*/local-name() = 'divso') or (/*/local-name() = 'divah' and not($pub-abbr='BWP'))or (/*/local-name() = 'entv') or (/*/local-name() = 'vav') or (/*/local-name() = 'vadraft') or ( pub/pubtitle='OrganisationsEntwicklung' and starts-with(coll_title/text(), 'ZOE Spezial')))">
 				<global_toc>
 					<!-- get year from element date -->
 					<node title="{replace(descendant::date/text(), '(\d+).*', '$1')}">
@@ -769,8 +784,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- StR Kompakt -->
-							<xsl:when test="descendant::pubtitle/text() = 'StR kompakt'">
+							<!-- StR Kompakt / sb / rb -->
+							<xsl:when test="(descendant::pubtitle/text() = 'StR kompakt') or (all_source[@level='2']='sb') or (all_source[@level='2']='rb')">
 								<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
 								
 								<xsl:variable name="monat" select="number(tokenize(descendant::date/text(), '-')[2])"/>
