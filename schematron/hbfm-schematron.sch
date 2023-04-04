@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
-    <!-- Version 2022-02-16 -->
+    <!-- Version 2022-08-24 -->
+    
+    <!-- Version 2022-08-24 Änderung: die Prüfung des coll_title funktionierte nicht bei allen Zeitschriften und wurde korrigiert -->
+
+    <!-- Version 2022-08-17 Änderung: wegen des Präfix "econic" und zukünftiger möglicher anderer längerer Präfixe wird auf die Längenprüfung der DokID und AltDokID verzichtet (auskommentiert!) -->
+
+    <!-- Version 2022-07-07 Änderung: Prüfung, ob ein überflüssiger Sammeltitel und eine überflüssige bzw. falsche Beilagennummer vorhanden ist.
+                                                                                                                              -->
 
     <!-- Version 2022-02-16 Änderung: Für die Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv wurde die Ausnahme für ZUJ-Aufsätze Ressort "Aktuelles" eingefügt.
                                                                                                                               -->
@@ -87,13 +94,13 @@
     </pattern>
     <pattern>
         <rule context="/*/@altdocid">
-            <assert test="string-length(replace(., '[A-Z]','')) &gt;= 7">Das @altdocid Attribut besitzt die falsche Länge!</assert>
+            <!-- <assert test="string-length(replace(., '[A-Z]','')) &gt;= 7">Das @altdocid Attribut besitzt die falsche Länge!</assert> -->
             <assert test="string(number(.)) = 'NaN'">Das @altdocid Attribut darf nicht nur aus Ziffern bestehen, sondern benötigt noch einen Buchstaben Präfix!</assert>
         </rule>
     </pattern>
     <pattern>
         <rule context="/*/@docid">
-            <assert test="string-length(replace(., '[A-Z]','')) = 7">Das @docid Attribut besitzt die falsche Länge!</assert>
+            <!--  <assert test="string-length(replace(., '[A-Z]','')) = 7">Das @docid Attribut besitzt die falsche Länge!</assert>  -->
             <assert test="string(number(.)) = 'NaN'">Das @docid Attribut darf nicht nur aus Ziffern bestehen, sondern benötigt noch einen Buchstaben Präfix!</assert>
         </rule>
     </pattern>
@@ -208,6 +215,30 @@
     <pattern>
         <rule context="kk/metadata//leitsaetze">
             <assert test="false()">In einem Kompaktbeitrag ist kein Leitsatz erlaubt!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="metadata/coll_title">
+            <assert test="text() != 'Bewertungspraktiker'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'Corporate Finance'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'Der Aufsichtsrat'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'Der Betrieb'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'Der Konzern'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'econic'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'ESGZ'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'KoR'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'people&amp;work'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'REthinking: Law'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'REthinking: Finance'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'REthinking: Tax'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'WuW Wirtschaft und Wettbewerb'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'ZAU – Zeitschrift für Arbeitsrecht im Unternehmen'">Es gibt einen überflüssigen Sammeltitel!</assert>
+            <assert test="text() != 'ZUJ'">Es gibt einen überflüssigen Sammeltitel!</assert>
+        </rule>
+    </pattern>
+    <pattern>
+        <rule context="metadata/pub/pub_suppl">
+            <assert test="text() != 'NaN'">Es gibt eine falsche oder überflüssige Beilagennummer!</assert>
         </rule>
     </pattern>
     <pattern>
