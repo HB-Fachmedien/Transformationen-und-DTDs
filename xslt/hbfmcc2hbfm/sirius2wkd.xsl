@@ -123,7 +123,7 @@
 			<xsl:apply-templates select="add_target | version | publisher"/>
 			
 			<xsl:choose>
-				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm','hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic')">
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic','bhr','sb','rb')">
 					<publisher>Fachmedien Otto Schmidt</publisher>
 				</xsl:when>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
@@ -789,7 +789,6 @@
 								<xsl:attribute name="childOrder">BySequenceNr</xsl:attribute>
 								
 								<xsl:variable name="monat" select="number(tokenize(descendant::date/text(), '-')[2])"/>
-								
 								<xsl:variable name="monatAusgeschrieben">
 									<xsl:choose>
 										<xsl:when test="$monat=1">Januar</xsl:when>
@@ -806,10 +805,17 @@
 										<xsl:when test="$monat=12">Dezember</xsl:when>
 									</xsl:choose>
 								</xsl:variable>
+								
 								<!-- Dezember soll oben stehen, daher nachfolgende Absolutfunktion-->
-								<node title="{$monatAusgeschrieben}"
-									childOrder="ByTitleAlphanumeric" sequenceNr="{abs($monat - 13)}">
-									<leaf sequenceNr="100" />
+								<node title="{$monatAusgeschrieben}" childOrder="BySequenceNr" sequenceNr="{abs($monat - 13)}">
+									<leaf>
+										<xsl:attribute name="sequenceNr">
+											<!--Descending: newer first-->
+											<xsl:variable name="datum" select="substring(translate(descendant::date/text(), '-', ''), 5)"/>
+											<xsl:value-of select="format-number(1232 - number($datum), '0')"/>
+											<!--<xsl:value-of select="format-number(99999999 - number(../@rawid), '0')"/>-->
+										</xsl:attribute>
+									</leaf>
 								</node>
 							</xsl:when>
 							

@@ -112,38 +112,39 @@
                             
                             </metadata>
                             <body>
-                                <!-- 1. Zunächst obene alle Editorials und Gastkommentare darstellen: -->
-                                <xsl:for-each select="$aktuelles-Heft[name()=('ed', 'gk')]">
-                                    <xsl:choose>
-                                        <xsl:when test="name() = 'ed'">
-                                            <section>
-                                                <title>Editorial</title>
-                                                <table frame="void" rules="none">
-                                                    <tbody>
-                                                        <xsl:call-template name="print-entry">
-                                                            <xsl:with-param name="knoten" select="."/>
-                                                        </xsl:call-template>
-                                                    </tbody>
-                                                </table>
-                                            </section>
-                                        </xsl:when>
-                                        <xsl:when test="name() = 'gk' and not(./metadata/all_source[@level='2']/text()='zau')">
-                                            <section>
-                                                <title>Gastkommentar</title>
-                                                <table frame="void" rules="none">
-                                                    <tbody>
-                                                        <xsl:call-template name="print-entry">
-                                                            <xsl:with-param name="knoten" select="."/>
-                                                        </xsl:call-template>
-                                                    </tbody>
-                                                </table>
-                                            </section>
-                                        </xsl:when>
-                                    </xsl:choose>
+                                <!-- 1. Zunächst oben alle Editorials darstellen (immer nur ein): -->
+                                <xsl:for-each select="$aktuelles-Heft[name()='ed']">
+                                    <section>
+                                        <title>Editorial</title>
+                                        <table frame="void" rules="none">
+                                            <tbody>
+                                                <xsl:call-template name="print-entry">
+                                                    <xsl:with-param name="knoten" select="."/>
+                                                </xsl:call-template>
+                                            </tbody>
+                                        </table>
+                                    </section>
                                 </xsl:for-each>
                                 
+                                <!-- 1. Zunächst oben alle Gastkommentare darstellen (kann mehrere): -->
+                                <!-- bei ZAU die Gastkommentare mit in das Ressort später genommen -->
+                                <xsl:if test="not($pubabbr='zau') and $aktuelles-Heft[name()='gk']">
+                                    <section>
+                                        <title>Gastkommentar</title>
+                                        <xsl:for-each select="$aktuelles-Heft[name()='gk']">
+                                            <table frame="void" rules="none">
+                                                <tbody>
+                                                    <xsl:call-template name="print-entry">
+                                                        <xsl:with-param name="knoten" select="."/>
+                                                    </xsl:call-template>
+                                                </tbody>
+                                            </table>
+                                        </xsl:for-each>
+                                    </section>
+                                </xsl:if>
+                                
                                 <!-- 1.b)Aufsätze für KoR haben kein Ressort: -->
-                                <xsl:if test="$aktuelles-Heft[metadata/all_source[@level='2']/text()='kor']">
+                                <xsl:if test="$pubabbr='kor'">
                                     <section>
                                         <title>Aufsätze</title>
                                         <xsl:for-each select="$aktuelles-Heft[not(name()=('toc','ed', 'gk'))][not(metadata/coll_title)][not(metadata/ressort)]">
@@ -173,6 +174,7 @@
                                             <xsl:when test="current-grouping-key() = 'bw'">Betriebswirtschaft</xsl:when>
                                             <xsl:when test="current-grouping-key() = 'kr'">Konzernrecht</xsl:when>
                                             <xsl:when test="current-grouping-key() = 'br'">Rechnungslegung/Corporate Governance</xsl:when>
+                                            <xsl:when test="current-grouping-key() = 'Abhandlung'">Abhandlungen</xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="current-grouping-key()"/>
                                             </xsl:otherwise>
