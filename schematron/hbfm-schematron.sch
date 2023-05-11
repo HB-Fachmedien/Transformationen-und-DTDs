@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
-    <!-- Version 2022-08-24 -->
-    
-    <!-- Version 2022-08-24 Änderung: die Prüfung des coll_title funktionierte nicht bei allen Zeitschriften und wurde korrigiert -->
+    <!-- Version 2023-05-11 -->
+
+    <!-- Version 2023-05-11 Änderung: Bei der Prüfung auf fehlende authors-taggings wurde als weitere Ausnahme das Ressort "ZUJ aktuell" für ZUJ-Aufsätze dazugenommen. -->
+
+    <!-- Version 2023-05-02 Änderung: die Rubrikenprüfung wurde um die beiden Rubriken "Nachhaltigkeit" und "Internationales Arbeitsrecht" erweitert. -->
+
+    <!-- Version 2023-04-03 Änderung: Um ältere Steuerrecht-Kompakt-Beiträge (STRK), die Leitsätze enthalten, in Sirius wieder einladen zu können, wurde die zugehörige Leitsatz-Prüfung auskommentiert. -->
+
+    <!-- Version 2022-08-24 Änderung: die Prüfung des coll_title funktionierte nicht bei allen Zeitschriften und wurde korrigiert. -->
 
     <!-- Version 2022-08-17 Änderung: wegen des Präfix "econic" und zukünftiger möglicher anderer längerer Präfixe wird auf die Längenprüfung der DokID und AltDokID verzichtet (auskommentiert!) -->
 
-    <!-- Version 2022-07-07 Änderung: Prüfung, ob ein überflüssiger Sammeltitel und eine überflüssige bzw. falsche Beilagennummer vorhanden ist.
-                                                                                                                              -->
+    <!-- Version 2022-07-07 Änderung: Prüfung, ob ein überflüssiger Sammeltitel und eine überflüssige bzw. falsche Beilagennummer vorhanden ist. -->
 
-    <!-- Version 2022-02-16 Änderung: Für die Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv wurde die Ausnahme für ZUJ-Aufsätze Ressort "Aktuelles" eingefügt.
-                                                                                                                              -->
+    <!-- Version 2022-02-16 Änderung: Für die Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv wurde die Ausnahme für ZUJ-Aufsätze Ressort "Aktuelles" eingefügt.  -->
 
     <!-- Version 2022-02-08 Änderung: Prüfung auf fehlende authors-taggings in den Dokumenttypen au, kk, ed, gk, sp und iv.
                                       Prüfung, ob surname in author nicht leer ist.                                           -->
@@ -73,7 +77,7 @@
             <!--<assert test="matches( text(), '(Compliance|Abgabenordnung|Abschlussprüfung|Aktienrecht|Allgemeine BWL|Allgemeine Geschäftsbedingungen|Arbeitnehmerüberlassung|Arbeitsförderung|Arbeitskampfrecht|Arbeitsschutzrecht|Arbeitsvertragsrecht|Arbeitszeitrecht|Bankrecht|Befristungsrecht|Behindertenrecht|Berufsbildungsrecht|Betriebliche Altersversorgung|Betriebsübergang|Betriebsverfassungsrecht|Bewertungsgesetz|Bilanzanalyse|Bilanzsteuerrecht|Controlling|Corporate Governance|Datenschutz|Eigenheimzulage|Einkommensteuer|Elternrecht|Entgeltrecht|Erbschaft-/Schenkungsteuer|Europarecht|Finanzgerichtsordnung|Finanzierung|Genossenschaftsrecht|Gewerbesteuer|Gewinnermittlung|Gleichbehandlung|GmbH-Recht|Grunderwerbsteuer|Grundgesetz|Grundsteuer|Haftungsrecht|Handelsbilanzrecht|Handelsrecht|Handelsvertreterrecht|IFRS|Insolvenzrecht|Internationales Privatrecht|Internationales Steuerrecht|Investitionszulage|Investmentsteuergesetz|Investor Relations|Kapitalanlage|Kapitalertragsteuer|Kapitalmarktrecht|Kartellrecht|Kirchensteuer|Koalitionsrecht|Körperschaftsteuer|Kreditsicherungsrecht|Kündigungsrecht|Leasing|Limited|Lohnsteuer|Mitbestimmungsrecht|Notarrecht|Öffentlicher Dienst|Personengesellschaftsrecht|Produkthaftung|Rechnungslegung|Rechtsanwaltsrecht|Schuldrecht|Solidaritätszuschlag|Sonstige BWL|Sonstige Steuerarten|Sonstiges Recht|Sozialversicherung|Steuerberaterrecht|Steuerstrafrecht|Strafrecht|Tarifvertragsrecht|Teilzeitrecht|Umsatzsteuer|Umwandlungsrecht|Umwandlungssteuerrecht|Unfallversicherung|Unternehmensbewertung|Unternehmenskauf|Unternehmensorganisation|Urlaubsrecht|Verbraucherrecht|Verfahrensrecht|Versicherungsrecht|Wettbewerbsrecht|Wettbewerbsverbot|Wirtschaftsprüferrecht|Zollrecht|Zwangsvollstreckung)')">
                 Die Rubrik "<value-of select="."/>" ist nicht erlaubt!
             </assert>-->
-            <assert test="text()=('Abgabenordnung','Abschlussprüfung','Aktienrecht','Allgemeine BWL','Allgemeine Geschäftsbedingungen','Arbeitnehmerüberlassung','Arbeitsförderung','Arbeitskampfrecht','Arbeitsschutzrecht','Arbeitsvertragsrecht','Arbeitszeitrecht','Außenwirtschaftsrecht','Bankrecht','Befristungsrecht','Behindertenrecht','Berufsbildungsrecht','Betriebliche Altersversorgung','Betriebsübergang','Betriebsverfassungsrecht','Bewertungsgesetz','Bilanzanalyse','Bilanzsteuerrecht','Compliance','Controlling','Corporate Governance','Datenschutz','Digitalisierung', 'Eigenheimzulage','Einkommensteuer','Elternrecht','Entgeltrecht','Erbschaft-/Schenkungsteuer','Europarecht','Factoring','Finanzgerichtsordnung','Finanzierung','Franchising','Genossenschaftsrecht','Gewerbesteuer','Gewinnermittlung','Gleichbehandlung','GmbH-Recht','Grunderwerbsteuer','Grundgesetz','Grundsteuer','Haftungsrecht','Handelsbilanzrecht','Handelsrecht','Handelsvertreterrecht','IFRS','Insolvenzrecht','Internationales Privatrecht','Internationales Steuerrecht','Investitionszulage','Investmentsteuergesetz','Investor Relations','Kapitalanlage','Kapitalertragsteuer','Kapitalmarktrecht','Kartellrecht','Kirchensteuer','Koalitionsrecht','Körperschaftsteuer','Kreditsicherungsrecht','Kündigungsrecht','Leasing','Limited','Lohnsteuer','Mitbestimmungsrecht','Nachhaltigkeitsberichterstattung','Notarrecht','Öffentlicher Dienst','Personengesellschaftsrecht','Produkthaftung','Rechnungslegung','Rechtsanwaltsrecht','Restrukturierung','Schuldrecht','Solidaritätszuschlag','Sonstige BWL','Sonstige Steuerarten','Sonstiges Recht','Sozialversicherung','Steuerberaterrecht','Steuerstrafrecht','Strafrecht','Tarifvertragsrecht','Teilzeitrecht','Umsatzsteuer','Umwandlungsrecht','Umwandlungssteuerrecht','Unfallversicherung','Unternehmensbewertung','Unternehmenskauf','Unternehmensorganisation','Urlaubsrecht','Verbraucherrecht','Verfahrensrecht','Versicherungsrecht','Vertriebsrecht','Wettbewerbsrecht','Wettbewerbsverbot','Wirtschaftsprüferrecht','Zollrecht','Zwangsvollstreckung')"> Die Rubrik "<value-of select="."/>" ist nicht erlaubt! </assert>
+            <assert test="text()=('Abgabenordnung','Abschlussprüfung','Aktienrecht','Allgemeine BWL','Allgemeine Geschäftsbedingungen','Arbeitnehmerüberlassung','Arbeitsförderung','Arbeitskampfrecht','Arbeitsschutzrecht','Arbeitsvertragsrecht','Arbeitszeitrecht','Außenwirtschaftsrecht','Bankrecht','Befristungsrecht','Behindertenrecht','Berufsbildungsrecht','Betriebliche Altersversorgung','Betriebsübergang','Betriebsverfassungsrecht','Bewertungsgesetz','Bilanzanalyse','Bilanzsteuerrecht','Compliance','Controlling','Corporate Governance','Datenschutz','Digitalisierung', 'Eigenheimzulage','Einkommensteuer','Elternrecht','Entgeltrecht','Erbschaft-/Schenkungsteuer','Europarecht','Factoring','Finanzgerichtsordnung','Finanzierung','Franchising','Genossenschaftsrecht','Gewerbesteuer','Gewinnermittlung','Gleichbehandlung','GmbH-Recht','Grunderwerbsteuer','Grundgesetz','Grundsteuer','Haftungsrecht','Handelsbilanzrecht','Handelsrecht','Handelsvertreterrecht','IFRS','Insolvenzrecht','Internationales Arbeitsrecht','Internationales Privatrecht','Internationales Steuerrecht','Investitionszulage','Investmentsteuergesetz','Investor Relations','Kapitalanlage','Kapitalertragsteuer','Kapitalmarktrecht','Kartellrecht','Kirchensteuer','Koalitionsrecht','Körperschaftsteuer','Kreditsicherungsrecht','Kündigungsrecht','Leasing','Limited','Lohnsteuer','Mitbestimmungsrecht','Nachhaltigkeit','Nachhaltigkeitsberichterstattung','Notarrecht','Öffentlicher Dienst','Personengesellschaftsrecht','Produkthaftung','Rechnungslegung','Rechtsanwaltsrecht','Restrukturierung','Schuldrecht','Solidaritätszuschlag','Sonstige BWL','Sonstige Steuerarten','Sonstiges Recht','Sozialversicherung','Steuerberaterrecht','Steuerstrafrecht','Strafrecht','Tarifvertragsrecht','Teilzeitrecht','Umsatzsteuer','Umwandlungsrecht','Umwandlungssteuerrecht','Unfallversicherung','Unternehmensbewertung','Unternehmenskauf','Unternehmensorganisation','Urlaubsrecht','Verbraucherrecht','Verfahrensrecht','Versicherungsrecht','Vertriebsrecht','Wettbewerbsrecht','Wettbewerbsverbot','Wirtschaftsprüferrecht','Zollrecht','Zwangsvollstreckung')"> Die Rubrik "<value-of select="."/>" ist nicht erlaubt! </assert>
             <report role="warn" test="text()=('Factoring','Franchising')">Die Rubrik "<value-of select="."/>" ist veraltet!</report>
         </rule>
     </pattern>
@@ -165,8 +169,8 @@
         </rule>
     </pattern>
     <pattern>
-        <!-- Regel für alle Werke außer ZUJ-Ressort "Aktuelles": -->
-        <rule context="au/metadata[ancestor::au/metadata/ressort/not(text()='Aktuelles') and ancestor::au/metadata/all_source[@level='2' and text()='zuj']]">
+        <!-- Regel für alle Werke außer ZUJ-Ressorts "Aktuelles" und "ZUJ aktuell": -->
+        <rule context="au/metadata[ancestor::au/metadata/ressort/not(text()=('Aktuelles','ZUJ aktuell')) and ancestor::au/metadata/all_source[@level='2' and text()='zuj']]">
             <assert test="(authors)">Im Aufsatz fehlt der Autor oder die Organisation!</assert>
         </rule>
     </pattern>
@@ -212,11 +216,11 @@
             <assert test="false()">In einer Entscheidung darf es kein Abstract geben!</assert>
         </rule>
     </pattern>
-    <pattern>
+    <!-- <pattern>
         <rule context="kk/metadata//leitsaetze">
             <assert test="false()">In einem Kompaktbeitrag ist kein Leitsatz erlaubt!</assert>
         </rule>
-    </pattern>
+    </pattern> -->
     <pattern>
         <rule context="metadata/coll_title">
             <assert test="text() != 'Bewertungspraktiker'">Es gibt einen überflüssigen Sammeltitel!</assert>
