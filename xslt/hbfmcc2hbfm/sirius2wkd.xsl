@@ -653,17 +653,18 @@
 										<xsl:variable name="docTypeAndSeqN">
 											<xsl:choose>
 												<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
-												<xsl:when test="../name()='gh'">Ganzes Heft#50</xsl:when>
+												<xsl:when test="../name()='gh'">Ganzes Heft#40</xsl:when>
+												<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+												<xsl:when test="../name()='gk'">Gastkommentar#70</xsl:when>
 												<xsl:when test="../name()='au'">Aufsätze#100</xsl:when>
 												<xsl:when test="../name()='kk'">Kompakt#200</xsl:when>
 												<xsl:when test="../name()='va'">Verwaltungsanweisungen#300</xsl:when>
 												<xsl:when test="../name()='ent'">Entscheidungen#400</xsl:when>
 												<xsl:when test="../name()='entk'">Entscheidungen#400</xsl:when>
+												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
+												<xsl:when test="../name()='iv'">Interview#700</xsl:when>
 												<xsl:when test="../name()='nr'">Nachrichten#800</xsl:when>
 												<xsl:when test="../name()='kb'">Kurzbeiträge#850</xsl:when>
-												<xsl:when test="../name()='sp'">Standpunkte#600</xsl:when>
-												<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
-												<xsl:when test="../name()='ed'">Editorial#500</xsl:when>
 											</xsl:choose>
 										</xsl:variable>
 										
@@ -1375,8 +1376,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic + BHR (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic', 'BHR')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
