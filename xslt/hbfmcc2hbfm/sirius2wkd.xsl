@@ -907,10 +907,10 @@
 												<xsl:choose>
 													<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 													<xsl:when test="../name()='ed'">Editorial#50</xsl:when>
+													<xsl:when test="../name()='gk'">Gastkommentar#70</xsl:when>
 													<xsl:when test="../name()='au'">Beiträge#100</xsl:when>
 													<xsl:when test="../name()='iv'">Interviews#300</xsl:when>
 													<xsl:when test="../name()='nr'">Reports#500</xsl:when>
-													<xsl:when test="../name()='gk'">Gastkommentar#700</xsl:when>
 													<xsl:otherwise>Sonstiges#800</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>
