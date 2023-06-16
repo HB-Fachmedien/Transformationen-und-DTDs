@@ -989,7 +989,7 @@
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="get-pubedition">
 									<xsl:choose>
-										<xsl:when test="descendant::pubedition = '00'">0nline-Zusatzbeiträge</xsl:when>
+										<xsl:when test="descendant::pubedition = '00'">Online-Zusatzbeiträge</xsl:when>
 										<xsl:otherwise>Heft <xsl:value-of select="descendant::pubedition"/></xsl:otherwise><!-- ÄNDERUNGEN HIER HABEN AUSWIRKUNGEN AUF DEN BREADCRUMB UND DAMIT AUCH AUF DEN PUBMANAGER !!!! -->
 									</xsl:choose>
 								</xsl:variable>
