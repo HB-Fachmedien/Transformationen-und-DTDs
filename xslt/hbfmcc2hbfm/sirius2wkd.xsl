@@ -123,7 +123,7 @@
 			<xsl:apply-templates select="add_target | version | publisher"/>
 			
 			<xsl:choose>
-				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic','bhr','sb','rb')">
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic','bhr','sb','rb','zure')">
 					<publisher>Fachmedien Otto Schmidt</publisher>
 				</xsl:when>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
@@ -192,7 +192,7 @@
 						<xsl:when test="text() = 'kr'">
 							<xsl:text>Konzernrecht</xsl:text>
 						</xsl:when>
-						<xsl:when test="text() = 'br'">
+						<xsl:when test="(text() = 'br') or (text() = 'cg')">
 							<xsl:text>Rechnungslegung/Corporate Governance</xsl:text>
 						</xsl:when>
 						<xsl:otherwise>
@@ -846,7 +846,7 @@
 													<xsl:when test="../name()='toc'">Inhaltsverzeichnis#10</xsl:when>
 													<xsl:when test="$ressortname='kr'">Konzernrecht#100</xsl:when>
 													<xsl:when test="$ressortname='sr'">Steuerrecht#200</xsl:when>
-													<xsl:when test="$ressortname='br'">Rechnungslegung/Corporate Governance#300</xsl:when>
+													<xsl:when test="($ressortname='br') or ($ressortname='cg')">Rechnungslegung/Corporate Governance#300</xsl:when>
 													<xsl:otherwise>Weitere Inhalte#2100</xsl:otherwise>
 												</xsl:choose>
 											</xsl:variable>
@@ -1376,8 +1376,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic + BHR (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic', 'BHR')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic + BHR + ZURe (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic', 'BHR', 'ZURe')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">
