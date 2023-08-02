@@ -30,15 +30,17 @@
             <xsl:when test="$publisher='zau'"><xsl:text>https://zau-zeitschrift.de</xsl:text></xsl:when>
             <xsl:when test="$publisher='bwp'"><xsl:text>https://bewertungspraktiker.de</xsl:text></xsl:when>
             <xsl:when test="$publisher=('esgz','econic')"><xsl:text>nachhaltigkeit.fachmedien.de</xsl:text></xsl:when>
-            <xsl:otherwise><xsl:text>Not Yet added to the RSS_Mail_WP.xsl file..</xsl:text></xsl:otherwise>
+            <xsl:otherwise><xsl:text>Not Yet added to the RSS_Mail_Shop_WP.xsl file..</xsl:text></xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
 
     <xsl:variable name="feeds">
         <xsl:choose>
-            <!--<xsl:when test="$publisher=('wuw','kor','ar','cf','rel','ret','ref','paw')">  <feed1>general</feed1>  </xsl:when>-->
+            <!--Several different feeds after one another. Feeds order is relevant -->
             <xsl:when test="$publisher='db' and not($pubEdition='00')">   <feed1>general</feed1>   <feed2>bw</feed2>  <feed3>sr</feed3>   <feed4>wr</feed4>   <feed5>ar</feed5>   <feed6>kr</feed6>   <feed7>br</feed7>  </xsl:when>
+            <!--Only 1 feed-->
             <xsl:when test="$publisher='db' and $pubEdition='00'">   <feed1>sr</feed1>  </xsl:when>
+            <!--Only 1 feed-->
             <xsl:otherwise>  <feed1>general</feed1>   </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
@@ -58,7 +60,7 @@
                     <xsl:for-each select="$feeds/*">
                         <xsl:variable name="feed" select="text()"/>
                         <xsl:variable name="generalArticles" select="$aktuelles-Heft/*[not(name()=('toc','rss'))][not(metadata/ressort) or not(metadata/ressort/text()=$feeds/*/text())]"/>
-                        <!-- only if onlinefirst: editorial added to sr file and order is not reversed -->
+                        <!-- only if onlinefirst: editorial added to feed-->
                         <xsl:variable name="currentRessortArticles" select="$aktuelles-Heft/*[not(name()=('toc','rss'))][if ($pubEdition='00') then metadata/ressort/text()=$feed or name()='ed' else metadata/ressort/text()=$feed]"/>
                         
                         <!-- create items only if the equivalent ressort articles or general articles are available in the heft-->
@@ -93,6 +95,9 @@
                 <xsl:when test="metadata/ressort/text()='sr'"><xsl:text>Steuerrecht</xsl:text></xsl:when>
                 <xsl:when test="metadata/ressort/text()='wr'"><xsl:text>Wirtschaftsrecht</xsl:text></xsl:when>
                 <xsl:when test="metadata/ressort/text()='ar'"><xsl:text>Arbeitsrecht</xsl:text></xsl:when>
+                <xsl:when test="metadata/ressort/text()='br'"><xsl:text>Rechnungslegung/Corporate Governance</xsl:text></xsl:when>
+                <xsl:when test="metadata/ressort/text()='kr'"><xsl:text>Konzernrecht</xsl:text></xsl:when>
+                <xsl:when test="metadata/ressort/text()='cg'"><xsl:text>Rechnungslegung/Corporate Governance</xsl:text></xsl:when>
                 <xsl:otherwise><xsl:value-of select="metadata/ressort/text()"/></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -119,7 +124,7 @@
                     <xsl:when test="./name()='ed'">Editorial</xsl:when>
                     <xsl:when test="./name()='iv'">Interview</xsl:when>
                     <xsl:when test="./name()='rez'">Rezension</xsl:when>
-                    <xsl:otherwise>Not Yet Programmed</xsl:otherwise>
+                    <xsl:otherwise><xsl:value-of select="./name()"/></xsl:otherwise>
                 </xsl:choose>
             </category>
             
