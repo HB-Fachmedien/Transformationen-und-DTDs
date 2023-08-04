@@ -114,7 +114,8 @@
                 <xsl:choose>
                     <xsl:when test="./name()='gk'">Gastkommentar</xsl:when>
                     <xsl:when test="./name()='au'">Aufsatz</xsl:when>
-                    <xsl:when test="./name()='kk'">Kompakt</xsl:when>
+                    <xsl:when test="./name()='kk' and $publisher!='wuw'">Kompakt</xsl:when>
+                    <xsl:when test="./name()='kk' and $publisher='wuw'"></xsl:when>
                     <xsl:when test="./name()='va'">Verwaltungsanweisung</xsl:when>
                     <xsl:when test="./name()='ent'">Entscheidung</xsl:when>
                     <xsl:when test="./name()='entk'">Entscheidung</xsl:when>

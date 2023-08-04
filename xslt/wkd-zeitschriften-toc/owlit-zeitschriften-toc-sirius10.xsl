@@ -174,7 +174,9 @@
                                             <xsl:when test="current-grouping-key() = 'bw'">Betriebswirtschaft</xsl:when>
                                             <xsl:when test="current-grouping-key() = 'kr'">Konzernrecht</xsl:when>
                                             <xsl:when test="current-grouping-key() = 'br'">Rechnungslegung/Corporate Governance</xsl:when>
+                                            <xsl:when test="current-grouping-key() = 'cg'">Rechnungslegung/Corporate Governance</xsl:when>
                                             <xsl:when test="current-grouping-key() = 'Abhandlung'">Abhandlungen</xsl:when>
+                                            <xsl:when test="current-grouping-key() = 'Entscheidungsanmerkung'">Entscheidungsanmerkungen</xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="current-grouping-key()"/>
                                             </xsl:otherwise>
@@ -208,16 +210,8 @@
                                 <xsl:for-each-group select="$aktuelles-Heft[not(name()=('toc','ed'))][metadata/ressort][metadata/all_source[@level='2']/text()='zau' and not(starts-with(metadata/pub/pages/start_page/text(), 'M'))][not(metadata/coll_title)]" group-by="descendant::metadata/ressort">
                                     <xsl:variable name="ressort-ueberschrift">
                                         <xsl:choose>
-                                            <xsl:when test="current-grouping-key() = ''">Aufsätze</xsl:when>
-                                            <xsl:when test="current-grouping-key() = 'sr'">Steuerrecht</xsl:when>
-                                            <xsl:when test="current-grouping-key() = 'wr'">Wirtschaftsrecht</xsl:when>
-                                            <xsl:when test="current-grouping-key() = 'ar'">Arbeitsrecht</xsl:when>
-                                            <xsl:when test="current-grouping-key() = 'bw'">Betriebswirtschaft</xsl:when>
-                                            <xsl:when test="current-grouping-key() = 'kr'">Konzernrecht</xsl:when>
-                                            <xsl:when test="current-grouping-key() = 'br'">Rechnungslegung/Corporate Governance</xsl:when>
-                                            <xsl:otherwise>
-                                                <xsl:value-of select="current-grouping-key()"/>
-                                            </xsl:otherwise>
+                                            <xsl:when test="current-grouping-key() != ''"><xsl:value-of select="current-grouping-key()"/></xsl:when>
+                                            <xsl:otherwise>Weitere Inhalte</xsl:otherwise>
                                         </xsl:choose>
                                     </xsl:variable>
                                     <section>
@@ -279,7 +273,7 @@
                                     </section>
                                 </xsl:if>
                                 
-                                <!-- 3. Letztendlich der Rest, der keine Ressorts hat: -->
+                                <!-- 3. Letztendlich der Rest, der kein Ressort-Element hat (also nicht mal ein leeres): -->
                                 <xsl:if test="$aktuelles-Heft[not(metadata/ressort)][not(name()=('ed', 'gk', 'toc'))][not(metadata/all_source[@level='2']/text()='kor')][not(metadata/coll_title)]">
                                     
                                     <!-- TODO DAS HIER IST BISHER NUR FÜR WUW GETESTET, KOR UND ANDERE DOCTYP-OHNE-RESSORT Magazine müssen noch getestet werden: -->
@@ -290,11 +284,7 @@
                                                 <xsl:when test="current-grouping-key() = 'ent'">Entscheidungen</xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'iv'">Interview</xsl:when>
                                                 <xsl:when test="current-grouping-key() = 'rez'">Literatur</xsl:when>
-                                                <!--<xsl:when test="current-grouping-key() = 'wr'">Wirtschaftsrecht</xsl:when>
-                                    
-                                    <xsl:when test="current-grouping-key() = 'bw'">Betriebswirtschaft</xsl:when>
-                                    <xsl:when test="current-grouping-key() = 'kr'">Konzernrecht</xsl:when>
-                                    <xsl:when test="current-grouping-key() = 'br'">Rechnungslegung/Corporate Governance</xsl:when>-->
+                                                <xsl:when test="current-grouping-key() = 'nr'">Nachrichten</xsl:when>
                                                 <xsl:otherwise>
                                                     <xsl:value-of select="'Weitere Inhalte'"/>
                                                 </xsl:otherwise>
