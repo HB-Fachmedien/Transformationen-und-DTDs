@@ -123,7 +123,7 @@
 			<xsl:apply-templates select="add_target | version | publisher"/>
 			
 			<xsl:choose>
-				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic','bhr','sb','rb','zure')">
+				<xsl:when test="/*/metadata/all_source[@level='2']/text() = ('hbfm_ae','hbfm_dbs','ar','bwp','cf','cfb','cfl','cm','db','dbl','dk','dsb','fb','kor','ref','rel','ret','wuw','zoe','zuj','paw','zau','esgz','econic','crz','sb','rb','zure')">
 					<publisher>Fachmedien Otto Schmidt</publisher>
 				</xsl:when>
 				<xsl:when test="/*/metadata/all_source[@level='2']/text() = 'ifst'">
@@ -1020,6 +1020,7 @@
 													<xsl:when test="../name()='au'">Abhandlungen#100</xsl:when>
 													<xsl:when test="../name()='nr'">Nachrichten#500</xsl:when>
 													<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
+													<xsl:when test="../name()='kk'">Entscheidungsanmerkungen#540</xsl:when>
 													<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
 													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
 												</xsl:choose>
@@ -1376,8 +1377,8 @@
 								</node>
 							</xsl:when>
 							
-							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic + BHR + ZURe (da ähnlich): -->
-							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic', 'BHR', 'ZURe')">
+							<!-- Rethinking Titel + ZUJ + CM + PAW + ZAU + ESGZ + econic + CRZ + ZURe (da ähnlich): -->
+							<xsl:when test="$pub-abbr = ('REL', 'RET', 'REF', 'ZUJ', 'CM', 'PAW', 'ZAU', 'ESGZ', 'econic', 'CRZ', 'ZURe')">
 								<xsl:attribute name="childOrder">ByTitleReverseAlphanumeric</xsl:attribute>
 								<xsl:variable name="rel-title">Heft <xsl:value-of select="descendant::pubedition"/></xsl:variable>
 								<node title="{$rel-title}" childOrder="BySequenceNr" expanded="true">

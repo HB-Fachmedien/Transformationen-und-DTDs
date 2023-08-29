@@ -15,24 +15,6 @@
     <xsl:variable name="pubDate" select="$erstes-dokument/*/metadata/pub/date"/>
     <xsl:variable name="pubTitle" select="$erstes-dokument/*/metadata/pub/pubtitle"/>
     <xsl:variable name="publisherDescription"><xsl:value-of select="concat(upper-case($publisher), ' vom ', format-date($pubDate, '[D,2].[M,2].[Y]'), ', Heft ', $pubEdition)"/></xsl:variable>
-    
-    <xsl:variable name="publisherLink">
-        <xsl:choose>
-            <xsl:when test="$publisher='wuw'"><xsl:text>https://www.wuw-online.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher='kor'"><xsl:text>https://www.kor-ifrs.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher='db'"><xsl:text>https://www.der-betrieb.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ar'"><xsl:text>https://www.aufsichtsrat.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher='cf'"><xsl:text>https://www.cf-fachportal.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher='rel'"><xsl:text>https://rethinking-law.com</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ret'"><xsl:text>https://rethinking-tax.com</xsl:text></xsl:when>
-            <xsl:when test="$publisher='ref'"><xsl:text>https://rethinking-finance.com</xsl:text></xsl:when>
-            <xsl:when test="$publisher='paw'"><xsl:text>https://peopleandwork.online</xsl:text></xsl:when>
-            <xsl:when test="$publisher='zau'"><xsl:text>https://zau-zeitschrift.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher='bwp'"><xsl:text>https://bewertungspraktiker.de</xsl:text></xsl:when>
-            <xsl:when test="$publisher=('esgz','econic')"><xsl:text>nachhaltigkeit.fachmedien.de</xsl:text></xsl:when>
-            <xsl:otherwise><xsl:text>Not Yet added to the RSS_Mail_Shop_WP.xsl file..</xsl:text></xsl:otherwise>
-        </xsl:choose>
-    </xsl:variable>
 
     <xsl:variable name="feeds">
         <xsl:choose>
@@ -52,7 +34,7 @@
                 <channel>
                     <!-- obligatory -->
                     <title><xsl:value-of select="$pubTitle"></xsl:value-of></title>
-                    <link><xsl:value-of select="$publisherLink"></xsl:value-of></link>
+                    <link>https://www.fachmedien.de</link>
                     <description><xsl:value-of select="$publisherDescription"></xsl:value-of></description>
                     <!-- optional -->
                     <copyright>Fachmedien Otto Schmidt <xsl:value-of select="year-from-date(current-date())"></xsl:value-of></copyright>

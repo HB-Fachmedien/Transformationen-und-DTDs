@@ -26,9 +26,17 @@
                 <xsl:when test="$publisher='kor'"><xsl:call-template name="fill_kor"/></xsl:when>
                 <xsl:when test="$publisher='ref'"><xsl:call-template name="fill_ref"/></xsl:when>
                 <xsl:when test="$publisher='zuj'"><xsl:call-template name="fill_zuj"/></xsl:when>
-                <!-- NEW PUBLISHER? Quickly add it just here!-->
-                <xsl:when test="$publisher=('db','ret','bwp','paw','zau','esgz','econic')"><xsl:call-template name="fill_ihv"/></xsl:when>
-                <xsl:otherwise><xsl:text>Ungültige Zeitschrift</xsl:text></xsl:otherwise>
+                <xsl:when test="$publisher=('db','ret','bwp','paw','zau','esgz','econic','crz')"><xsl:call-template name="fill_ihv"/></xsl:when>
+                <xsl:otherwise>
+                    <xsl:if test="$publisher">
+                        <!-- NEW PUBLISHER? No more need to add it to the script 
+							(except if it has a special case like one of the above)!-->
+                      <xsl:call-template name="fill_ihv"/>
+                    </xsl:if>
+                    <xsl:if test="not($publisher)">
+                      <xsl:text>Ungültige Zeitschrift</xsl:text>
+                    </xsl:if>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:result-document>
     </xsl:template>
