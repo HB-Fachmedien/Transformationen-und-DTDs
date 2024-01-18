@@ -51,6 +51,7 @@
         <class sort="120">OLG Karlsruhe</class>
         <class sort="125">OLG Köln</class>
         <class sort="130">OLG München</class>
+        <class sort="133">OLG Naumburg</class>
         <class sort="135">OLG Nürnberg</class>
         <class sort="137">OLG Oldenburg</class>
         <class sort="138">SchlHOLG</class>
@@ -65,10 +66,12 @@
         <class sort="180">LG Hannover</class>
         <class sort="190">LG Köln</class>
         <class sort="200">LG Leipzig</class>
+        <class sort="201">LG Mainz</class>
         <class sort="202">LG Magdeburg</class>
         <class sort="203">LG Mannheim</class> 
         <class sort="205">LG München I</class>
         <class sort="207">LG Nürnberg-Fürth</class>
+        <class sort="209">LG Paderborn</class>
         <class sort="210">LG Potsdam</class>
         <class sort="213">LG Saarbrücken</class>
         <class sort="215">LG Stuttgart</class>

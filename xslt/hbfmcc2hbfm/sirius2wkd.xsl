@@ -131,9 +131,11 @@
 						<xsl:otherwise>pw-</xsl:otherwise>
 					</xsl:choose>
 				</xsl:variable>
-				
+				<xsl:variable name="beilag">
+					<xsl:if test="/*/metadata/pub/pub_suppl"><xsl:value-of select="concat('B', /*/metadata/pub/pub_suppl, '-')"></xsl:value-of></xsl:if>
+				</xsl:variable>
 				<xsl:value-of select="concat($pw-, 'vgzm.2276023-', /*/metadata/all_source[@level='2']/text(), '-', /*/metadata/pub/pubyear/text(), '-', 
-					replace(/*/metadata/pub/pubedition/text(), '-', '_'), '-', /*/metadata/pub/pages/start_page/text(), '-', /*/metadata/pub/pages/article_order/text(), '-', /*/name(), '-', /*/@docid)"/>
+					replace(/*/metadata/pub/pubedition/text(), '-', '_'), '-', $beilag, /*/metadata/pub/pages/start_page/text(), '-', /*/metadata/pub/pages/article_order/text(), '-', /*/name(), '-', /*/@docid)"/>
 			</vgwort>
 		</pub>
 	</xsl:template>
@@ -979,6 +981,7 @@
 													<xsl:when test="../name()='rez'">Literatur#530</xsl:when>
 													<xsl:when test="../name()='kk'">Entscheidungsanmerkungen#540</xsl:when>
 													<xsl:when test="../name()='ent'">Entscheidungen#550</xsl:when>
+													<xsl:when test="../name()='sp'">Standpunkte#400</xsl:when>
 													<xsl:when test="../name()='iv'">Interview#600</xsl:when>
 												</xsl:choose>
 											</xsl:variable>
@@ -1197,11 +1200,43 @@
 									<xsl:choose>
 										<xsl:when test="descendant::pubedition = '00'">
 											<node title="{tokenize($OnlineSublevels, '#')[1]}" sequenceNr="{tokenize($OnlineSublevels, '#')[2]}" childOrder="BySequenceNr" expanded="true">
-												<leaf>
-													<xsl:attribute name="sequenceNr">
-														<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
-													</xsl:attribute>
-												</leaf>
+												<xsl:choose>
+													<xsl:when test="$OnlineSublevels='Kompakt-Beiträge#200'">
+														<xsl:variable name="monat" select="number(tokenize(descendant::date/text(), '-')[2])"/>
+														<xsl:variable name="monatAusgeschrieben">
+															<xsl:choose>
+																<xsl:when test="$monat=1">Januar</xsl:when>
+																<xsl:when test="$monat=2">Februar</xsl:when>
+																<xsl:when test="$monat=3">März</xsl:when>
+																<xsl:when test="$monat=4">April</xsl:when>
+																<xsl:when test="$monat=5">Mai</xsl:when>
+																<xsl:when test="$monat=6">Juni</xsl:when>
+																<xsl:when test="$monat=7">Juli</xsl:when>
+																<xsl:when test="$monat=8">August</xsl:when>
+																<xsl:when test="$monat=9">September</xsl:when>
+																<xsl:when test="$monat=10">Oktober</xsl:when>
+																<xsl:when test="$monat=11">November</xsl:when>
+																<xsl:when test="$monat=12">Dezember</xsl:when>
+															</xsl:choose>
+														</xsl:variable>
+														
+														<!-- Dezember soll oben stehen, daher nachfolgende Absolutfunktion-->
+														<node title="{$monatAusgeschrieben}" childOrder="BySequenceNr" sequenceNr="{abs($monat - 13)}">
+															<leaf>
+																<xsl:attribute name="sequenceNr">
+																	<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
+																</xsl:attribute>
+															</leaf>
+														</node>
+													</xsl:when>
+													<xsl:otherwise>
+														<leaf>
+															<xsl:attribute name="sequenceNr">
+																<xsl:value-of select="21000000 - number(replace(pub/date,'-',''))"/>
+															</xsl:attribute>
+														</leaf>
+													</xsl:otherwise>
+												</xsl:choose>
 											</node>
 										</xsl:when>
 										<xsl:when test="../name()='toc'">
