@@ -140,6 +140,7 @@
         <class sort="85">OLG Rostock</class>
         <class sort="90">OLG Saarbrücken</class>
         <class sort="95">OLG Stuttgart</class>
+        <class sort="99">OLG Zweibrücken</class>
         <class sort="101">LG Berlin</class>
         <class sort="102">LG Bonn</class>
         <class sort="103">LG Dortmund</class>
@@ -149,8 +150,9 @@
         <class sort="108">LG Köln</class>
         <class sort="109">LG München I</class>
         <class sort="115">BFH</class>
-        <class sort="120">FG Düsseldorf</class>
-        <class sort="120">FG Hamburg</class>
+        <class sort="118">FG Berlin-Brandenburg</class>
+        <class sort="122">FG Düsseldorf</class>
+        <class sort="126">FG Hamburg</class>
         <class sort="130">FG Hessen</class>
         <class sort="140">FG Köln</class>
         <class sort="143">FG Mecklenburg-Vorpommern</class>
@@ -162,6 +164,7 @@
         <class sort="170">VG Frankfurt/M.</class>
         <class sort="180">ArbG Berlin</class>
         <class sort="190">BAG</class>
+        <class sort="200">LAG Nürnberg</class>
         <class sort="210">FinMin. Schleswig-Holstein</class>
         <class sort="215">OFD Frankfurt/M.</class>
         <class sort="220">OFD Karlsruhe</class>
