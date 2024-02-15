@@ -1438,6 +1438,7 @@
 	
 	<xsl:template match="body">
 		<body>
+			<xsl:apply-templates/>
 			<xsl:apply-templates select="section[@class='rkvermerk']" mode="show"/>
 			<xsl:apply-templates select="section[@class='veroeffhinw']" mode="show"/>
 			<xsl:apply-templates select="section[@class='extnote']" mode="show"/>
@@ -1448,8 +1449,6 @@
 			<xsl:apply-templates select="section[@class='gruende']" mode="show"/>
 			<xsl:apply-templates select="section[@class='entscheidung']" mode="show"/>
 			<xsl:apply-templates select="section[@class='konsequenz']" mode="show"/>
-	
-			<xsl:apply-templates/>
 			
 			<xsl:apply-templates select="section[@class='replik']" mode="show"/>
 			<xsl:apply-templates select="note" mode="show"/>
@@ -1480,6 +1479,7 @@
 	                             or @class='replik'
 	                            ]"
 	              mode="show">
+		
 		<section>
 			<xsl:copy-of select="@*"/>
 			<xsl:apply-templates/>
